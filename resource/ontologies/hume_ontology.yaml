@@ -51,7 +51,12 @@
     - war:
       - "war"
       - "invasion"
-    - "attack"
+    - attack:
+      - "attack"
+      - psychological attack:
+        - "psychological warfare"
+    - repression:
+      - "oppression"
     - "fight"
     - "fight"
     - "explosion"
@@ -63,8 +68,15 @@
     - "infighting"
     - "civil unrest"
     - "genocide"
-    - "clash"
+    - collision:
+      - "clash"
     - "raid"
+    - terrorism:
+      - "terrorism"
+    - sabotage:
+      - "sabotage"
+    - strike:
+      - "strike"
   - death:
     - "death"
     - "mortality"
@@ -76,9 +88,12 @@
     - "die"
     - "suicide"
     - "mortality"
-  - crime:
-    - "bribery"
-    - "ransom"
+  - offense:
+    - crime:
+      - "bribery"
+      - "ransom"
+    - exploitation:
+      - "exploitation"
   - healthcare:
     - famine:
       - "famine"
@@ -183,6 +198,8 @@
       - "devaluation"
       - "net profit"
       - "earning"
+    - consumption:
+      - "consumption"
     - competition:
       - "competition for resources"
       - "economic competition"
@@ -238,14 +255,25 @@
         - "electricity shortage"
         - "land shortage"
         - "information shortage"
+    - command:
+      - "order"
+      - "veto"
+    - sanction:
+      - "sanction"
+    - military operation:
+      - counter terrorism operation:
+        - "counterinsurgency"
   - crisis:
     - "crisis"
     - "emergency"
     - "catastrophe"
     - "urgency"
     - disaster:
-      - "earthquake"
+      - earthquake:
+        - "earthquake"
       - "disaster"
+    - fire:
+      - "fire"
   - trend:
     - "incline"
     - "decline"
@@ -268,6 +296,9 @@
       - "expect"
       - "suggest"
       - "predict"
+  - tension:
+    - "tension"
+    - "stress"
   - emotion:
     - _source:
       - wikidata.BASIC_EMOTION
@@ -287,6 +318,13 @@
     - "broadcast"
     - "tell"
     - "analysis"
+  - personal:
+    - marriage or divorce:
+      - "divorce"
+  - legal:
+    - "trail"
+  - defensive:
+    - "defend"
   - condition:
     - _source:
       - wikidata.CONDITION
