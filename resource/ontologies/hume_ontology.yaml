@@ -123,7 +123,7 @@
       - "vaccination"
       - "surgery"
     - "healthcare"
-    - "injury"
+    - injury
     - "infestation"
   - movement:
     - transport:
@@ -174,7 +174,6 @@
       - "oil production"
       - "diamond production"
       - "opium poppy cultivation"
-    - manufacture:
       - "industry"
       - "manufacture"
       - "construct"
@@ -188,7 +187,7 @@
       - "exchange"
       - "trade"
       - "commerce"
-      - Transaction:
+      - transaction:
         - "transfer money"
       - "profit"
       - "revenue"
@@ -321,8 +320,11 @@
   - personal:
     - marriage or divorce:
       - "divorce"
+    - meet
+  - employment
   - legal:
     - "trail"
+    - arrest
   - defensive:
     - "defend"
   - condition:
@@ -334,6 +336,7 @@
       - wikidata.STATE
       - wikidata.SYMPTOM
     - "poor"
+  - event group
   - KBP event # more types are defined in kbp.yaml
   - factor # more types are defined in factor.yaml
 - entity:
@@ -847,8 +850,8 @@
       - wikidata.QUALITY
       - wikidata.RATE
     - "permeability"
-- relationship:
-  - event relationship:
+- relation:
+  - event relation:
     - causal assertion:
       - Cause-Effect:
         - argument role:
@@ -874,13 +877,13 @@
       - argument role:
         - has_before
         - has_after
-    - Unifies:
-      - argument role: group
-      - argument role: member
-  - entity relationship: # ACE relations
+    - unifies:
+      - argument role: has_group
+      - argument role: has_member
+  - entity relation: # ACE relations
     - argument role:
-      - left_arg
-      - right_arg
+      - has_left_arg
+      - has_right_arg
     - GEN-AFF:
       - Org-Location
       - Citizen-Resident-Religion-Ethnicity
