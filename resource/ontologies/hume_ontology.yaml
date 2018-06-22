@@ -222,7 +222,7 @@
     - tax:
       - _source:
         - wikidata.TAX
-      - "tarriff"
+      - "tariff"
     - education:
       - "training"
       - "agriculture training"
@@ -323,7 +323,7 @@
     - meet
   - employment
   - legal:
-    - "trail"
+    - "trial"
     - arrest
   - defensive:
     - "defend"
