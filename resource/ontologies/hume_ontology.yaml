@@ -352,6 +352,7 @@
     - wikidata.GEOLOGY
     - wikidata.HOME_APPLIANCE
   - indicator:
+    - "Flood Potential Index"
     - "population"
     - World Development Indicators: # more indicators are defined in world_development_indicators.yaml
       - 2005 PPP conversion factor, GDP (LCU per international $):
