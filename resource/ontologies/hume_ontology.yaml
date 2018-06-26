@@ -336,9 +336,6 @@
       - wikidata.STATE
       - wikidata.SYMPTOM
     - "poor"
-  - event group
-  - KBP event # more types are defined in kbp.yaml
-  - factor # more types are defined in factor.yaml
 - entity:
   - _source:
     - wikidata.ANOMALY
@@ -353,7 +350,6 @@
     - wikidata.HOME_APPLIANCE
   - indicator:
     - "Flood Potential Index"
-    - "population"
     - World Development Indicators: # more indicators are defined in world_development_indicators.yaml
       - 2005 PPP conversion factor, GDP (LCU per international $):
         - code: "PA.NUS.PPP.05"
