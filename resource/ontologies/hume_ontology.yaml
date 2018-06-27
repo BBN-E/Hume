@@ -321,7 +321,8 @@
     - marriage or divorce:
       - "divorce"
     - meet
-  - employment
+  - employment:
+    - "recruit"
   - legal:
     - "trial"
     - arrest
@@ -336,6 +337,7 @@
       - wikidata.STATE
       - wikidata.SYMPTOM
     - "poor"
+  - event group
 - entity:
   - _source:
     - wikidata.ANOMALY
