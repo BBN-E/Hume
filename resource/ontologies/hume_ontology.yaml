@@ -141,6 +141,8 @@
       - "refugee migration"
       - "emigration"
       - "flee"
+    - evacuate humanitarian workers:
+      - "evacuate"
   - economic activity:
     - _source:
       - wikidata.ECONOMIC_ACTIVITY
@@ -159,6 +161,10 @@
           - "guano"
           - "nitrophosphates"
           - "composts"
+        - crop production:
+          - "crop production"
+        - livestock production:
+          - "milk production"
         - "grow"
         - "cultivate"
         - "farm"
@@ -171,7 +177,8 @@
         - "fishery"
         - "food production"
         - "crop cultivation"
-      - "oil production"
+      - oil production:
+        - "oil production"
       - "diamond production"
       - "opium poppy cultivation"
       - "industry"
@@ -179,7 +186,21 @@
       - "construct"
       - "build"
     - market:
-      - "inflation"
+      - transaction:
+        - "transfer money"
+        - oil transaction:
+          - "fuel exports"
+      - inflation:
+        - "inflation"
+        - "hyperinflation"
+        - "food inflation"
+      - currency devaluation:
+        - "devaluate"
+        - "devaluation"
+      - food price:
+        - "food price"
+      - oil price:
+        - "fuel price"
       - "depreciation"
       - "market"
       - "sell"
@@ -187,18 +208,17 @@
       - "exchange"
       - "trade"
       - "commerce"
-      - transaction:
-        - "transfer money"
       - "profit"
       - "revenue"
       - "earn"
       - "export"
       - "import"
-      - "devaluation"
       - "net profit"
       - "earning"
     - consumption:
       - "consumption"
+      - food consumption:
+        - "food consumption"
     - competition:
       - "competition for resources"
       - "economic competition"
@@ -207,10 +227,17 @@
       - "agricultural development"
     - demand:
       - "demand for oil"
+    - cross border trade:
+      - "trade"
+      - import:
+        - "import"
+      - export:
+        - "export"
+    - business:
+      - "bankrupt"
     - "economy"
     - "finance"
     - "supply chain disruption"
-    - "trade"
     - "poverty"
   - intervention:
     - "intervention"
@@ -219,6 +246,34 @@
     - "pest control"
     - "government spending"
     - "subsidy"
+    - anti-retroviral treatment:
+      - "anti-retroviral"
+    - sexual violence management:
+      - "post-exposure prophylaxis"
+    - vector control:
+      - "vector control"
+      - "mosquito control"
+    - capacity building human rights:
+      - "respects"
+    - child friendly learning spaces:
+      - "protective environment"
+    - provide humanitarian resources:
+      - provide hygiene tool
+      - provide delivery kit
+      - provide farming tool
+      - provide seed:
+        - "seed aid"
+      - provide livestock feed
+      - provide veterinary service
+      - provide stationary
+      - provide fishing tool
+      - provide cash
+      - provide food:
+        - "food aid"
+        - "food assistance"
+      - provide veterinary drugs vaccines:
+        - "veterinary care"
+      - provide moving of houseHolds
     - tax:
       - _source:
         - wikidata.TAX
@@ -337,7 +392,40 @@
       - wikidata.STATE
       - wikidata.SYMPTOM
     - "poor"
+  - factor:
+    - "bias"
+    - "evidence"
+  - personnel:
+    - "hire"
+  - refugee population:
+    - "refugee population"
+  - lean season:
+    - "lean season"
+  - peace treaty:
+    - "truce"
+    - "peace treaty"
+  - destroy crops
   - event group
+- indicator:
+  - Agriculture:
+    - Livestock Production:
+      - "Livestock Production"
+    - Crop Production:
+      - "Crop Production"
+  - Health:
+    - Global Acute Malnutrition (GAM) rate:
+      - "Global Acute Malnutrition (GAM) rate"
+  - Conflict:
+    - Population Displacement:
+      - "population displacement"
+  - Rainfall:
+    - "rainfall"
+  - Commerce:
+    - Cross Border Trade:
+      - "cross borader trade"
+  - Wealth:
+    - Inflation Rate:
+      - "inflation rate"
 - entity:
   - _source:
     - wikidata.ANOMALY
@@ -350,43 +438,6 @@
     - wikidata.FORM_OF_GOVERNMENT
     - wikidata.GEOLOGY
     - wikidata.HOME_APPLIANCE
-  - indicator:
-    - "Human Poverty Index (UN, 1997)"
-    - "Legatum Prosperity Index"
-    - "Global Food Security Index"
-    - "Human Security Index"
-    - "Financial Security Index"
-    - "International Agricultural Productivity"
-    - "Infant Mortality Rate"
-    - "Total Fertility Rate"
-    - "Soil Fertility Index"
-    - "JP Morgan Longevity Index (LifeMetrics Index)"
-    - "Hansen 1959 Accessibility Index (and many others)"
-    - "Shannon Diversity Index"
-    - "Sustainable Society Index"
-    - "Social Vulnerability Index"
-    - "Economic Policy Uncertainty Index"
-    - "Palmer Drought Index"
-    - "Flood Potential Index"
-    - "Water Scarcity Index"
-    - "Global Hunger Index"
-    - "Human Development Index"
-    - "Household Resiliency Index"
-    - "Global Peace Index"
-    - "Vegetation Health Index"
-    - "CBOE Volatility Index"
-    - "Meyer-Briggs Type Indicator"
-    - "Intelligence Quotient"
-    - "Political stability and absence of violence/terrorism (index)"
-    - "Drought index"
-    - "Global food security index"
-    - World Development Indicators: # more indicators are defined in world_development_indicators.yaml
-      - 2005 PPP conversion factor, GDP (LCU per international $):
-        - code: "PA.NUS.PPP.05"
-        - definition: "Purchasing power parity conversion factor is the number of units of a country's currency required to buy the same amounts of goods and services in the domestic market as U.S. dollar would buy in the United States. This conversion factor is for GDP. Historical estimates are provided for the 2005 benchmark year only. A separate series is available for extrapolated estimates based on the latest ICP round."
-      - 2005 PPP conversion factor, private consumption (LCU per international $):
-        - code: "PA.NUS.PRVT.PP.05"
-        - definition: "Purchasing power parity conversion factor is the number of units of a country's currency required to buy the same amounts of goods and services in the domestic market as U.S. dollar would buy in the United States. This conversion factor is for private consumption (i.e., household final consumption expenditure). Historical estimates are provided for the 2005 benchmark year only. A separate series is available for extrapolated estimates based on the latest ICP round."
   - agriculture:
     - food:
       - _source:
