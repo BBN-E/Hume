@@ -239,6 +239,26 @@
     - "finance"
     - "supply chain disruption"
     - "poverty"
+  - access:
+    - "access"
+    - "access to education"
+    - "access to financial markets"
+    - "access to water"
+    - "food access"
+    - "availability"
+    - "need"
+    - "availability of cropland"
+    - "availability of schools"
+    - shortage:
+      - food shortage:
+        - "food shortage"
+      - water shortage:
+        - "water scarcity"
+      - "medicine shortage"
+      - "housing shortage"
+      - "electricity shortage"
+      - "land shortage"
+      - "information shortage"
   - intervention:
     - "intervention"
     - "government intervention"
@@ -289,26 +309,6 @@
       - "humanitarian support"
       - "support"
       - "help"
-    - access:
-      - "access"
-      - "access to education"
-      - "access to financial markets"
-      - "access to water"
-      - "food access"
-      - "availability"
-      - "need"
-      - "availability of cropland"
-      - "availability of schools"
-      - shortage:
-        - food shortage:
-          - "food shortage"
-        - water shortage:
-          - "water scarcity"
-        - "medicine shortage"
-        - "housing shortage"
-        - "electricity shortage"
-        - "land shortage"
-        - "information shortage"
     - command:
       - "order"
       - "veto"
