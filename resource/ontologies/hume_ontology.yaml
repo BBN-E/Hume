@@ -283,22 +283,31 @@
     - child friendly learning spaces:
       - "protective environment"
     - provide humanitarian resources:
-      - provide hygiene tool
-      - provide delivery kit
-      - provide farming tool
+      - provide hygiene tool:
+        - _NA
+      - provide delivery kit:
+        - _NA
+      - provide farming tool:
+        - _NA
       - provide seed:
         - "seed aid"
-      - provide livestock feed
-      - provide veterinary service
-      - provide stationary
-      - provide fishing tool
-      - provide cash
+      - provide livestock feed:
+        - _NA
+      - provide veterinary service:
+        - _NA
+      - provide stationary:
+        - _NA
+      - provide fishing tool:
+        - _NA
+      - provide cash:
+        - _NA
       - provide food:
         - "food aid"
         - "food assistance"
       - provide veterinary drugs vaccines:
         - "veterinary care"
-      - provide moving of houseHolds
+      - provide moving of houseHolds:
+        - _NA
     - tax:
       - _source:
         - wikidata.TAX
@@ -409,8 +418,10 @@
   - peace treaty:
     - "truce"
     - "peace treaty"
-  - destroy crops
-  - event group
+  - destroy crops:
+    - _NA
+  - event group:
+    - _NA
 - indicator:
   - Agriculture:
     - Livestock Production:
