@@ -240,7 +240,6 @@
     - "economy"
     - "finance"
     - "supply chain disruption"
-    - "poverty"
   - access:
     - "access"
     - "access to education"
@@ -405,7 +404,9 @@
       - wikidata.FAO_RISK_STATUS
       - wikidata.STATE
       - wikidata.SYMPTOM
-    - "poor"
+    - poverty:
+      - "poverty"
+      - "poor"
   - factor:
     - "bias"
     - "evidence"
