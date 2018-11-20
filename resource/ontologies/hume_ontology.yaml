@@ -95,6 +95,8 @@
     - exploitation:
       - "exploitation"
   - healthcare:
+    - pest infestation:
+      - "pest infestation"
     - famine:
       - "famine"
       - "hunger"
@@ -266,6 +268,9 @@
     - "pest control"
     - "government spending"
     - "subsidy"
+    - therapeutic feeding or treating:
+      - "therapeutic feeding"
+      - "therapeutic treating"
     - anti-retroviral treatment:
       - "anti-retroviral"
     - sexual violence management:
