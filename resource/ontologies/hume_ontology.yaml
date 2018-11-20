@@ -306,8 +306,8 @@
         - "food assistance"
       - provide veterinary drugs vaccines:
         - "veterinary care"
-      - provide moving of houseHolds:
-        - _NA
+    - provide moving of houseHolds:
+      - _NA
     - tax:
       - _source:
         - wikidata.TAX
