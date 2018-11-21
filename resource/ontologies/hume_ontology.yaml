@@ -165,20 +165,17 @@
           - "composts"
         - crop production:
           - "crop production"
+          - "crop cultivation"
+          - "farming"
         - livestock production:
           - "milk production"
+          - "fishery"
+          - "fishing"
         - "grow"
         - "cultivate"
-        - "farm"
-        - "fish.v"
         - "produce"
-        - "food production"
         - "agriculture production"
         - "agricultural productivity"
-        - "farming"
-        - "fishery"
-        - "food production"
-        - "crop cultivation"
       - oil production:
         - "oil production"
       - "diamond production"
@@ -199,22 +196,20 @@
       - currency devaluation:
         - "devaluate"
         - "devaluation"
-      - food price:
-        - "food price"
-      - oil price:
-        - "fuel price"
+      - price:
+        - food price:
+          - "food price"
+        - oil price:
+          - "fuel price"
       - "depreciation"
       - "market"
       - "sell"
       - "buy"
       - "exchange"
-      - "trade"
       - "commerce"
       - "profit"
       - "revenue"
       - "earn"
-      - "export"
-      - "import"
       - "net profit"
       - "earning"
     - consumption:
