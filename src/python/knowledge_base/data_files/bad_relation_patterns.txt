@@ -1,0 +1,3 @@
+# Learnit pattern strings as the appear in the file output by RelationTSVSerializer
+verb:spread[<obj> = 0][<sub> = 1]
+verb:set[<obj> = 1][<sub> = 0]

@@ -1,0 +1,892 @@
+(per_family
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 25 noun:son[<poss> = 0][<ref> = 1] -->
+		(nprop (id per_family_ere_7) (score 0.9) (score_group 1) (predicate son) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200000)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 23 {0}  {1}&[slot=1, word=son, lang=english] -->
+		(regex (id per_family_ere_10) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200001)) (entitylabel AGENT1) (acetype PER)) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "son"))))))))
+
+		<!-- 23 noun:wife[<poss> = pronoun:his[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_family_ere_8) (score 0.9) (score_group 1) (predicate wife) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200002)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 23 noun:family[<poss> = 0][<ref> = 1] -->
+		(nprop (id per_family_ere_9) (score 0.9) (score_group 1) (predicate family) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200003)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 22 noun:daughter[<poss> = 0][<ref> = 1] -->
+		(nprop (id per_family_ere_12) (score 0.9) (score_group 1) (predicate daughter) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200004)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 20 {0}  {1}&[slot=1, word=wife, lang=english] -->
+		(regex (id per_family_ere_14) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200005)) (entitylabel AGENT1) (acetype PER)) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "wife"))))))))
+
+		<!-- 16 {1}  {0}&[slot=0, word=family, lang=english] -->
+		(regex (id per_family_ere_20) (score 0.9) (score_group 1) (re (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200006)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "family"))))))))
+
+		<!-- 16 {0}  {1}&[slot=1, word=father, lang=english] -->
+		(regex (id per_family_ere_19) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200007)) (entitylabel AGENT1) (acetype PER)) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "father"))))))))
+
+		<!-- 14 {0}  {1}&[slot=1, word=dad, lang=english] -->
+		(regex (id per_family_ere_26) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200008)) (entitylabel AGENT1) (acetype PER)) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "dad"))))))))
+
+		<!-- 14 noun:parents[<poss> = 0][<ref> = 1] -->
+		(nprop (id per_family_ere_25) (score 0.9) (score_group 1) (predicate parents) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200009)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 13 noun:mum[<poss> = 0][<ref> = 1] -->
+		(nprop (id per_family_ere_32) (score 0.9) (score_group 1) (predicate mum) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200010)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 12 {1}  {0}&[slot=0, word=father, lang=english] -->
+		(regex (id per_family_ere_37) (score 0.9) (score_group 1) (re (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200011)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "father"))))))))
+
+		<!-- 12 {1}  {0}&[slot=0, word=dad, lang=english] -->
+		(regex (id per_family_ere_36) (score 0.9) (score_group 1) (re (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200012)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "dad"))))))))
+
+		<!-- 12 noun:father[<ref> = 0][of = 1] -->
+		(nprop (id per_family_ere_35) (score 0.9) (score_group 1) (predicate father) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200013)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 11 noun:husband[<poss> = 0][<ref> = 1] -->
+		(nprop (id per_family_ere_39) (score 0.9) (score_group 1) (predicate husband) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200014)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 11 noun:dad[<poss> = 1][<ref> = 0] -->
+		(nprop (id per_family_ere_41) (score 0.9) (score_group 1) (predicate dad) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200015)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 11 noun:family[<poss> = pronoun:my[<ref> = 1]][<ref> = 0] -->
+		(nprop (id per_family_ere_44) (score 0.9) (score_group 1) (predicate family) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200016)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 10 noun:dad[<poss> = pronoun:my[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_family_ere_50) (score 0.9) (score_group 1) (predicate dad) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200017)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 10 noun:mother[<poss> = 1][<ref> = 0] -->
+		(nprop (id per_family_ere_51) (score 0.9) (score_group 1) (predicate mother) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200018)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 9 noun:family[<poss> = pronoun:my[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_family_ere_61) (score 0.9) (score_group 1) (predicate family) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200019)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 9 {1}  {0}&[slot=0, word=father, lang=english]&[slot=1, word=his, lang=english] -->
+		(regex (id per_family_ere_60) (score 0.9) (score_group 1) (re (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "his")))))) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200020)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "father"))))))))
+
+		<!-- 9 {0}  {1}&[slot=1, word=mother, lang=english] -->
+		(regex (id per_family_ere_63) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200021)) (entitylabel AGENT1) (acetype PER)) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "mother"))))))))
+
+		<!-- 9 {1}  {0}&[slot=0, word=husband, lang=english] -->
+		(regex (id per_family_ere_58) (score 0.9) (score_group 1) (re (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200022)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "husband"))))))))
+
+		<!-- 8 noun:brother[<poss> = 1][<ref> = 0] -->
+		(nprop (id per_family_ere_65) (score 0.9) (score_group 1) (predicate brother) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200023)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 8 {0}  {1}&[slot=1, word=husband, lang=english] -->
+		(regex (id per_family_ere_73) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200024)) (entitylabel AGENT1) (acetype PER)) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "husband"))))))))
+
+		<!-- 8 {0}  {1}&[slot=0, word=my, lang=english]&[slot=1, word=family, lang=english] -->
+		(regex (id per_family_ere_72) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200025)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "my")))))) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "family"))))))))
+
+		<!-- 8 {1}  {0}&[slot=0, word=husband, lang=english]&[slot=1, word=my, lang=english] -->
+		(regex (id per_family_ere_69) (score 0.9) (score_group 1) (re (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "my")))))) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200026)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "husband"))))))))
+
+		<!-- 8 noun:husband[<poss> = pronoun:my[<ref> = 1]][<ref> = 0] -->
+		(nprop (id per_family_ere_74) (score 0.9) (score_group 1) (predicate husband) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200027)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 8 {0}  {1}&[slot=1, word=child, lang=english] -->
+		(regex (id per_family_ere_71) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200028)) (entitylabel AGENT1) (acetype PER)) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "child"))))))))
+
+		<!-- 8 noun:parents[<poss> = pronoun:my[<ref> = 1]][<ref> = 0] -->
+		(nprop (id per_family_ere_75) (score 0.9) (score_group 1) (predicate parents) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200029)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 7 noun:children[<poss> = 0][<ref> = 1] -->
+		(nprop (id per_family_ere_76) (score 0.9) (score_group 1) (predicate children) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200030)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 6 noun:husband[<poss> = pronoun:her[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_family_ere_106) (score 0.9) (score_group 1) (predicate husband) (args (argument (role <poss>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200031)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 6 set:[<member> = noun:children[<ref> = 0][of = noun:dictator[<ref> = 1]]] -->
+		(sprop (id per_family_ere_113) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate children) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200032)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (nprop (predicate dictator) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))))))))
+
+		<!-- 6 noun:sister[<poss> = 1][<ref> = 0] -->
+		(nprop (id per_family_ere_91) (score 0.9) (score_group 1) (predicate sister) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200033)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 6 noun:children[<ref> = 0][of = noun:dictator[<ref> = 1]] -->
+		(nprop (id per_family_ere_105) (score 0.9) (score_group 1) (predicate children) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200034)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (nprop (predicate dictator) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 6 noun:children[<ref> = 0][of = 1] -->
+		(nprop (id per_family_ere_111) (score 0.9) (score_group 1) (predicate children) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200035)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 6 set:[<member> = noun:wife[<poss> = pronoun:his[<ref> = 0]][<ref> = 1]] -->
+		(sprop (id per_family_ere_89) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate wife) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200036)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 6 {1}  {0}&[slot=0, word=sister, lang=english] -->
+		(regex (id per_family_ere_96) (score 0.9) (score_group 1) (re (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200037)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "sister"))))))))
+
+		<!-- 6 noun:father[<ref> = 0][of = noun:leader[<ref> = 1]] -->
+		(nprop (id per_family_ere_94) (score 0.9) (score_group 1) (predicate father) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200038)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (nprop (predicate leader) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 6 {0}  {1}&[slot=0, word=your, lang=english]&[slot=1, word=daughter, lang=english] -->
+		(regex (id per_family_ere_100) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200039)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "your")))))) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "daughter"))))))))
+
+		<!-- 6 set:[<member> = noun:wife[<poss> = 0][<ref> = 1]] -->
+		(sprop (id per_family_ere_98) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate wife) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200040)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 6 noun:daughter[<poss> = 1][<ref> = 0] -->
+		(nprop (id per_family_ere_114) (score 0.9) (score_group 1) (predicate daughter) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200041)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 6 set:[<member> = noun:children[<ref> = 0][of = 1]] -->
+		(sprop (id per_family_ere_88) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate children) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200042)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 6 noun:son[<ref> = 0][of = 1] -->
+		(nprop (id per_family_ere_95) (score 0.9) (score_group 1) (predicate son) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200043)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 6 noun:brother[<poss> = pronoun:my[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_family_ere_110) (score 0.9) (score_group 1) (predicate brother) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200044)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 5 noun:parents[<poss> = pronoun:your[<ref> = 1]][<ref> = 0] -->
+		(nprop (id per_family_ere_125) (score 0.9) (score_group 1) (predicate parents) (args (argument (role <poss>) (anyprop (predicate your) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200045)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 5 noun:father[<poss> = pronoun:his[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_family_ere_124) (score 0.9) (score_group 1) (predicate father) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200046)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 5 noun:stepmum[<poss> = pronoun:my[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_family_ere_138) (score 0.9) (score_group 1) (predicate stepmum) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200047)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 5 noun:grandfather[<poss> = 0][<ref> = 1] -->
+		(nprop (id per_family_ere_123) (score 0.9) (score_group 1) (predicate grandfather) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200048)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 5 {0}  {1}&[slot=0, word=my, lang=english]&[slot=1, word=kids, lang=english] -->
+		(regex (id per_family_ere_121) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200049)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "my")))))) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "kids"))))))))
+
+		<!-- 5 {0}  {1}&[slot=0, word=my, lang=english]&[slot=1, word=wife, lang=english] -->
+		(regex (id per_family_ere_120) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200050)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "my")))))) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "wife"))))))))
+
+		<!-- 5 noun:mother[<poss> = pronoun:my[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_family_ere_147) (score 0.9) (score_group 1) (predicate mother) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200051)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 5 {1}  {0}&[slot=0, word=sister, lang=english]&[slot=1, word=my, lang=english] -->
+		(regex (id per_family_ere_116) (score 0.9) (score_group 1) (re (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "my")))))) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200052)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "sister"))))))))
+
+		<!-- 5 noun:stepmum[<poss> = 0][<ref> = 1] -->
+		(nprop (id per_family_ere_152) (score 0.9) (score_group 1) (predicate stepmum) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200053)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 5 {0}  {1}&[slot=1, word=mom, lang=english] -->
+		(regex (id per_family_ere_143) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200054)) (entitylabel AGENT1) (acetype PER)) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "mom"))))))))
+
+		<!-- 4 noun:mom[<poss> = pronoun:my[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_family_ere_202) (score 0.9) (score_group 1) (predicate mom) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200055)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 4 copula:was[<sub> = noun:daughter[<poss> = 0][<ref> = 1]] -->
+		(anyprop (id per_family_ere_223) (score 0.9) (score_group 1) (predicate was) (args (argument (role <sub>) (nprop (predicate daughter) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200056)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 4 verb:happens[<obj> = copula:be[<obj> = noun:husband[<ref> = 0][of = 1]]] -->
+		(vprop (id per_family_ere_234) (score 0.9) (score_group 1) (predicate happens) (args (argument (role <obj>) (anyprop (predicate be) (args (argument (role <obj>) (nprop (predicate husband) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200057)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))))))))
+
+		<!-- 4 {0}  {1}&[slot=0, word=my, lang=english]&[slot=1, word=mom, lang=english] -->
+		(regex (id per_family_ere_204) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200058)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "my")))))) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "mom"))))))))
+
+		<!-- 4 copula:be[<obj> = noun:parent[<ref> = 0][of = noun:someone[<ref> = 1]]] -->
+		(anyprop (id per_family_ere_240) (score 0.9) (score_group 1) (predicate be) (args (argument (role <obj>) (nprop (predicate parent) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200059)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (nprop (predicate someone) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))))))))
+
+		<!-- 4 noun:daughter[<poss> = pronoun:his[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_family_ere_200) (score 0.9) (score_group 1) (predicate daughter) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200060)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 4 verb:enabled[<sub> = noun:wife[<poss> = pronoun:his[<ref> = 0]][<ref> = 1]] -->
+		(vprop (id per_family_ere_192) (score 0.9) (score_group 1) (predicate enabled) (args (argument (role <sub>) (nprop (predicate wife) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200061)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 4 modifier:by[by = noun:parents[<ref> = 0][of = noun:children[<ref> = 1]]] -->
+		(mprop (id per_family_ere_183) (score 0.9) (score_group 1) (predicate by) (args (argument (role by) (nprop (predicate parents) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200062)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (nprop (predicate children) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))))))))
+
+		<!-- 4 noun:mother[<poss> = pronoun:my[<ref> = 1]][<ref> = 0] -->
+		(nprop (id per_family_ere_215) (score 0.9) (score_group 1) (predicate mother) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200063)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 4 copula:are[<sub> = modifier:of[<ref> = 1][of = noun:brothers[<poss> = 0]]] -->
+		(anyprop (id per_family_ere_157) (score 0.9) (score_group 1) (predicate are) (args (argument (role <sub>) (mprop (predicate of) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role of) (nprop (predicate brothers) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200064)) (entitylabel AGENT1) (acetype PER)))))))))))
+
+		<!-- 4 verb:say[if = verb:born[<obj> = noun:someone[<ref> = 0]][into = noun:family[<ref> = 1]]] -->
+		(vprop (id per_family_ere_222) (score 0.9) (score_group 1) (predicate say) (args (argument (role if) (vprop (predicate born) (args (argument (role <obj>) (nprop (predicate someone) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200065)) (entitylabel AGENT1) (acetype PER)))))) (argument (role into) (nprop (predicate family) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))))))))
+
+		<!-- 4 verb:say[if = verb:born[<obj> = noun:someone[<ref> = 0]][into = 1]] -->
+		(vprop (id per_family_ere_224) (score 0.9) (score_group 1) (predicate say) (args (argument (role if) (vprop (predicate born) (args (argument (role <obj>) (nprop (predicate someone) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200066)) (entitylabel AGENT1) (acetype PER)))))) (argument (role into) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 4 verb:say[if = verb:born[<obj> = 0][into = noun:family[<ref> = 1]]] -->
+		(vprop (id per_family_ere_159) (score 0.9) (score_group 1) (predicate say) (args (argument (role if) (vprop (predicate born) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200067)) (entitylabel AGENT1) (acetype PER))) (argument (role into) (nprop (predicate family) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))))))))
+
+		<!-- 4 {0}  {1}&[slot=1, word=children, lang=english] -->
+		(regex (id per_family_ere_221) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200068)) (entitylabel AGENT1) (acetype PER)) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "children"))))))))
+
+		<!-- 4 {0}  {1}&[slot=0, word=your, lang=english]&[slot=1, word=family, lang=english] -->
+		(regex (id per_family_ere_179) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200069)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "your")))))) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "family"))))))))
+
+		<!-- 4 {0}  {1}&[slot=1, word=hubby, lang=english] -->
+		(regex (id per_family_ere_229) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200070)) (entitylabel AGENT1) (acetype PER)) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "hubby"))))))))
+
+		<!-- 4 {1}  {0}&[slot=0, word=grandfather, lang=english] -->
+		(regex (id per_family_ere_231) (score 0.9) (score_group 1) (re (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200071)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "grandfather"))))))))
+
+		<!-- 4 noun:family[<ref> = 0][of = noun:victim[<ref> = 1]] -->
+		(nprop (id per_family_ere_189) (score 0.9) (score_group 1) (predicate family) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200072)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (nprop (predicate victim) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 4 noun:father[<poss> = pronoun:my[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_family_ere_216) (score 0.9) (score_group 1) (predicate father) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200073)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 4 verb:enabled[<sub> = noun:wife[<poss> = 0][<ref> = 1]] -->
+		(vprop (id per_family_ere_219) (score 0.9) (score_group 1) (predicate enabled) (args (argument (role <sub>) (nprop (predicate wife) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200074)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 4 {0}  {1}&[slot=1, word=sons, lang=english] -->
+		(regex (id per_family_ere_241) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200075)) (entitylabel AGENT1) (acetype PER)) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "sons"))))))))
+
+		<!-- 4 {1}  {0}&[slot=0, word=grandfather, lang=english]&[slot=1, word=my, lang=english] -->
+		(regex (id per_family_ere_227) (score 0.9) (score_group 1) (re (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "my")))))) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200076)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "grandfather"))))))))
+
+		<!-- 4 noun:daughter[<poss> = pronoun:his[<ref> = 1]][<ref> = 0] -->
+		(nprop (id per_family_ere_213) (score 0.9) (score_group 1) (predicate daughter) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200077)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 4 verb:born[<obj> = 0][into = 1] -->
+		(vprop (id per_family_ere_156) (score 0.9) (score_group 1) (predicate born) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200078)) (entitylabel AGENT1) (acetype PER))) (argument (role into) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 4 verb:born[<obj> = 0][into = noun:family[<ref> = 1]] -->
+		(vprop (id per_family_ere_182) (score 0.9) (score_group 1) (predicate born) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200079)) (entitylabel AGENT1) (acetype PER))) (argument (role into) (nprop (predicate family) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 4 noun:hubby[<poss> = pronoun:my[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_family_ere_190) (score 0.9) (score_group 1) (predicate hubby) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200080)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 4 set:[<member> = noun:children[<poss> = 0][<ref> = 1]] -->
+		(sprop (id per_family_ere_163) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate children) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200081)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 4 copula:be[<obj> = noun:husband[<ref> = 0][of = 1]] -->
+		(anyprop (id per_family_ere_160) (score 0.9) (score_group 1) (predicate be) (args (argument (role <obj>) (nprop (predicate husband) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200082)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 4 noun:husband[<ref> = 0][of = 1] -->
+		(nprop (id per_family_ere_226) (score 0.9) (score_group 1) (predicate husband) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200083)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 4 set:[<member> = 1][<ref> = noun:hubby[<poss> = 0]] -->
+		(sprop (id per_family_ere_212) (score 0.9) (score_group 1) (args (argument (role <member>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (nprop (predicate hubby) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200084)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 4 noun:parent[<ref> = 0][of = noun:someone[<ref> = 1]] -->
+		(nprop (id per_family_ere_194) (score 0.9) (score_group 1) (predicate parent) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200085)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (nprop (predicate someone) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 4 noun:family[<poss> = pronoun:your[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_family_ere_178) (score 0.9) (score_group 1) (predicate family) (args (argument (role <poss>) (anyprop (predicate your) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200086)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 3 noun:son[<poss> = pronoun:his[<ref> = 1]][<ref> = 0] -->
+		(nprop (id per_family_ere_359) (score 0.9) (score_group 1) (predicate son) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200087)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 3 verb:have[<obj> = noun:brother[<ref> = 1]][<sub> = 0] -->
+		(vprop (id per_family_ere_449) (score 0.9) (score_group 1) (predicate have) (args (argument (role <obj>) (nprop (predicate brother) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200088)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 3 modifier:family[<ref> = noun:members[<poss> = 0][<ref> = 1]] -->
+		(mprop (id per_family_ere_261) (score 0.9) (score_group 1) (predicate family) (args (argument (role <ref>) (nprop (predicate members) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200089)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 3 {0} have a {1}&[slot=0, word=i, lang=english]&[slot=1, word=brother, lang=english] -->
+		(regex (id per_family_ere_390) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200090)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "i")))))) (text DONT_ADD_SPACES (string "have")) (text DONT_ADD_SPACES (string "a")) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "brother"))))))))
+
+		<!-- 3 verb:married[<obj> = noun:aviator[<ref> = 1]][<sub> = pronoun:i[<ref> = 0]] -->
+		(vprop (id per_family_ere_273) (score 0.9) (score_group 1) (predicate married) (args (argument (role <obj>) (nprop (predicate aviator) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <sub>) (anyprop (predicate i) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200091)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 3 noun:father[<poss> = pronoun:their[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_family_ere_439) (score 0.9) (score_group 1) (predicate father) (args (argument (role <poss>) (anyprop (predicate their) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200092)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 3 {1}  {0}&[slot=0, word=son, lang=english]&[slot=1, word=his, lang=english] -->
+		(regex (id per_family_ere_377) (score 0.9) (score_group 1) (re (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "his")))))) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200093)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "son"))))))))
+
+		<!-- 3 {0} of {1}&[slot=0, word=son, lang=english] -->
+		(regex (id per_family_ere_307) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200094)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "son")))))) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))
+
+		<!-- 3 {0} of {1}&{1} was never -->
+		(regex (id per_family_ere_413) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200095)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "never"))))
+
+		<!-- 3 {1}  {0}&[slot=0, word=kids, lang=english]&[slot=1, word=my, lang=english] -->
+		(regex (id per_family_ere_388) (score 0.9) (score_group 1) (re (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "my")))))) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200096)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "kids"))))))))
+
+		<!-- 3 noun:kids[<poss> = pronoun:my[<ref> = 1]][<ref> = 0] -->
+		(nprop (id per_family_ere_402) (score 0.9) (score_group 1) (predicate kids) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200097)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 3 verb:married[<obj> = 1][<sub> = pronoun:i[<ref> = 0]] -->
+		(vprop (id per_family_ere_292) (score 0.9) (score_group 1) (predicate married) (args (argument (role <obj>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <sub>) (anyprop (predicate i) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200098)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 3 verb:married[<obj> = 1][<sub> = 0] -->
+		(vprop (id per_family_ere_452) (score 0.9) (score_group 1) (predicate married) (args (argument (role <obj>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200099)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 3 verb:have[<obj> = 1][<sub> = pronoun:i[<ref> = 0]]&[slot=1, word=brother, lang=english] -->
+		(vprop (id per_family_ere_248) (score 0.9) (score_group 1) (predicate have) (args (argument (role <obj>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "brother"))))))) (argument (role <sub>) (anyprop (predicate i) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200100)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 3 verb:have[<obj> = 1][<sub> = 0]&[slot=1, word=children, lang=english] -->
+		(vprop (id per_family_ere_364) (score 0.9) (score_group 1) (predicate have) (args (argument (role <obj>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "children"))))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200101)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 3 {0} of {1}&[slot=0, word=family, lang=english] -->
+		(regex (id per_family_ere_313) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200102)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "family")))))) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))
+
+		<!-- 3 copula:is[<sub> = noun:son[<poss> = 1][<ref> = 0]] -->
+		(anyprop (id per_family_ere_315) (score 0.9) (score_group 1) (predicate is) (args (argument (role <sub>) (nprop (predicate son) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200103)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 3 {1}  {0}&[slot=0, word=brother, lang=english]&[slot=1, word=his, lang=english] -->
+		(regex (id per_family_ere_303) (score 0.9) (score_group 1) (re (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "his")))))) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200104)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "brother"))))))))
+
+		<!-- 3 {0}  {1}&[slot=0, word=his, lang=english]&[slot=1, word=child, lang=english] -->
+		(regex (id per_family_ere_435) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200105)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "his")))))) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "child"))))))))
+
+		<!-- 3 {0}  {1}&[slot=0, word=my, lang=english]&[slot=1, word=grandfather, lang=english] -->
+		(regex (id per_family_ere_293) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200106)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "my")))))) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "grandfather"))))))))
+
+		<!-- 3 noun:in-laws[<poss> = pronoun:her[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_family_ere_420) (score 0.9) (score_group 1) (predicate in-laws) (args (argument (role <poss>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200107)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 3 noun:dad[<poss> = pronoun:your[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_family_ere_268) (score 0.9) (score_group 1) (predicate dad) (args (argument (role <poss>) (anyprop (predicate your) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200108)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 3 set:[<member> = 1][<ref> = noun:wife[<poss> = 0]] -->
+		(sprop (id per_family_ere_448) (score 0.9) (score_group 1) (args (argument (role <member>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (nprop (predicate wife) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200109)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 3 verb:have[<obj> = 1][<sub> = pronoun:i[<ref> = 0]]&[slot=0, word=i, lang=english]&[slot=1, word=brother, lang=english] -->
+		(vprop (id per_family_ere_350) (score 0.9) (score_group 1) (predicate have) (args (argument (role <obj>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "brother"))))))) (argument (role <sub>) (anyprop (predicate i) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200110)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "i"))))))))))))
+
+		<!-- 3 noun:husband[<poss> = pronoun:my[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_family_ere_421) (score 0.9) (score_group 1) (predicate husband) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200111)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 3 noun:in-laws[<poss> = 0][<ref> = 1] -->
+		(nprop (id per_family_ere_258) (score 0.9) (score_group 1) (predicate in-laws) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200112)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 3 noun:brother[<poss> = pronoun:his[<ref> = 1]][<ref> = 0] -->
+		(nprop (id per_family_ere_334) (score 0.9) (score_group 1) (predicate brother) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200113)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 3 verb:have[<obj> = noun:children[<ref> = 1]][<sub> = 0] -->
+		(vprop (id per_family_ere_318) (score 0.9) (score_group 1) (predicate have) (args (argument (role <obj>) (nprop (predicate children) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200114)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 3 {1}  {0}&[slot=0, word=family, lang=english]&[slot=1, word=his, lang=english] -->
+		(regex (id per_family_ere_325) (score 0.9) (score_group 1) (re (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "his")))))) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200115)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "family"))))))))
+
+		<!-- 3 noun:family[<poss> = pronoun:his[<ref> = 1]][<ref> = 0] -->
+		(nprop (id per_family_ere_276) (score 0.9) (score_group 1) (predicate family) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200116)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 2 noun:spouse[<poss> = 0][<ref> = 1] -->
+		(nprop (id per_family_ere_901) (score 0.9) (score_group 1) (predicate spouse) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200117)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 2 verb:pulled[<sub> = noun:in-laws[<poss> = pronoun:her[<ref> = 0]][<ref> = 1]] -->
+		(vprop (id per_family_ere_1007) (score 0.9) (score_group 1) (predicate pulled) (args (argument (role <sub>) (nprop (predicate in-laws) (args (argument (role <poss>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200118)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 noun:mum[<poss> = pronoun:her[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_family_ere_807) (score 0.9) (score_group 1) (predicate mum) (args (argument (role <poss>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200119)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 2 noun:father[<poss> = pronoun:my[<ref> = 1]][<ref> = 0] -->
+		(nprop (id per_family_ere_623) (score 0.9) (score_group 1) (predicate father) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200120)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 2 noun:cousin[<poss> = pronoun:my[<ref> = 1]][<ref> = 0] -->
+		(nprop (id per_family_ere_806) (score 0.9) (score_group 1) (predicate cousin) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200121)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 2 noun:one[<ref> = 0][in = noun:family[<ref> = 1]] -->
+		(nprop (id per_family_ere_736) (score 0.9) (score_group 1) (predicate one) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200122)) (entitylabel AGENT1) (acetype PER))) (argument (role in) (nprop (predicate family) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 verb:have[as = modifier:to[to = noun:parents[<poss> = 0][<ref> = 1]]] -->
+		(vprop (id per_family_ere_573) (score 0.9) (score_group 1) (predicate have) (args (argument (role as) (mprop (predicate to) (args (argument (role to) (nprop (predicate parents) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200123)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))))))))
+
+		<!-- 2 {0} of the {1}&[slot=0, word=family, lang=english]&[slot=1, word=victim, lang=english] -->
+		(regex (id per_family_ere_1000) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200124)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "family")))))) (text DONT_ADD_SPACES (string "of")) (text DONT_ADD_SPACES (string "the")) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "victim"))))))))
+
+		<!-- 2 modifier:to[to = noun:parents[<poss> = 0][<ref> = 1]] -->
+		(mprop (id per_family_ere_824) (score 0.9) (score_group 1) (predicate to) (args (argument (role to) (nprop (predicate parents) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200125)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 verb:became[for = noun:son[<poss> = pronoun:my[<ref> = 1]][<ref> = 0]] -->
+		(vprop (id per_family_ere_638) (score 0.9) (score_group 1) (predicate became) (args (argument (role for) (nprop (predicate son) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200126)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 noun:member[<ref> = 0][of = noun:family[<poss> = pronoun:my[<ref> = 1]]] -->
+		(nprop (id per_family_ere_748) (score 0.9) (score_group 1) (predicate member) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200127)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (nprop (predicate family) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))))))))
+
+		<!-- 2 copula:is[for = 0][for = 1]&[slot=0, word=children, lang=english] -->
+		(anyprop (id per_family_ere_1005) (score 0.9) (score_group 1) (predicate is) (args (argument (role for) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200128)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "children"))))))) (argument (role for) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 2 verb:had[with = noun:wife[<poss> = pronoun:his[<ref> = 1]][<ref> = 0]] -->
+		(vprop (id per_family_ere_689) (score 0.9) (score_group 1) (predicate had) (args (argument (role with) (nprop (predicate wife) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200129)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 verb:burning[<obj> = noun:daughter[<poss> = 1][<ref> = 0]] -->
+		(vprop (id per_family_ere_478) (score 0.9) (score_group 1) (predicate burning) (args (argument (role <obj>) (nprop (predicate daughter) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200130)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 set:[<member> = noun:parents[<poss> = 0][<ref> = 1]] -->
+		(sprop (id per_family_ere_595) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate parents) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200131)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 verb:led[<obj> = noun:son[<poss> = 1][<ref> = 0]] -->
+		(vprop (id per_family_ere_642) (score 0.9) (score_group 1) (predicate led) (args (argument (role <obj>) (nprop (predicate son) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200132)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 noun:children[<poss> = pronoun:my[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_family_ere_717) (score 0.9) (score_group 1) (predicate children) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200133)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 2 {1}  {0}&[slot=0, word=parents, lang=english]&[slot=1, word=his, lang=english] -->
+		(regex (id per_family_ere_557) (score 0.9) (score_group 1) (re (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "his")))))) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200134)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "parents"))))))))
+
+		<!-- 2 verb:know[that = verb:give[<sub> = noun:mom[<poss> = 0][<ref> = 1]]] -->
+		(vprop (id per_family_ere_553) (score 0.9) (score_group 1) (predicate know) (args (argument (role that) (vprop (predicate give) (args (argument (role <sub>) (nprop (predicate mom) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200135)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))))))))
+
+		<!-- 2 verb:bought[from = noun:stepbrother[<poss> = pronoun:her[<ref> = 0]][<ref> = 1]] -->
+		(vprop (id per_family_ere_864) (score 0.9) (score_group 1) (predicate bought) (args (argument (role from) (nprop (predicate stepbrother) (args (argument (role <poss>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200136)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 noun:families[<ref> = 0][of = noun:victims[<ref> = 1]] -->
+		(nprop (id per_family_ere_560) (score 0.9) (score_group 1) (predicate families) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200137)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (nprop (predicate victims) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 verb:claim[<obj> = noun:father[<ref> = 0][of = noun:soldier[<ref> = 1]]] -->
+		(vprop (id per_family_ere_505) (score 0.9) (score_group 1) (predicate claim) (args (argument (role <obj>) (nprop (predicate father) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200138)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (nprop (predicate soldier) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))))))))
+
+		<!-- 2 noun:boy[<ref> = 0][on = noun:father[<ref> = 1]] -->
+		(nprop (id per_family_ere_970) (score 0.9) (score_group 1) (predicate boy) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200139)) (entitylabel AGENT1) (acetype PER))) (argument (role on) (nprop (predicate father) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 copula:is[for = 0][for = 1]&[slot=1, word=parents, lang=english] -->
+		(anyprop (id per_family_ere_732) (score 0.9) (score_group 1) (predicate is) (args (argument (role for) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200140)) (entitylabel AGENT1) (acetype PER))) (argument (role for) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "parents")))))))))
+
+		<!-- 2 verb:put[<obj> = noun:baby[<poss> = 0][<ref> = 1]] -->
+		(vprop (id per_family_ere_551) (score 0.9) (score_group 1) (predicate put) (args (argument (role <obj>) (nprop (predicate baby) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200141)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 {1}  {0}&[slot=0, word=children, lang=english] -->
+		(regex (id per_family_ere_851) (score 0.9) (score_group 1) (re (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200142)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "children"))))))))
+
+		<!-- 2 verb:went[<obj> = verb:feed[<obj> = noun:girl[<poss> = 1][<ref> = 0]]] -->
+		(vprop (id per_family_ere_947) (score 0.9) (score_group 1) (predicate went) (args (argument (role <obj>) (vprop (predicate feed) (args (argument (role <obj>) (nprop (predicate girl) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200143)) (entitylabel AGENT1) (acetype PER)))))))))))
+
+		<!-- 2 noun:sons[<poss> = 1][<ref> = 0] -->
+		(nprop (id per_family_ere_619) (score 0.9) (score_group 1) (predicate sons) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200144)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 2 modifier:only[<ref> = noun:child[<ref> = 0][of = 1]] -->
+		(mprop (id per_family_ere_890) (score 0.9) (score_group 1) (predicate only) (args (argument (role <ref>) (nprop (predicate child) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200145)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 noun:mums[<poss> = pronoun:my[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_family_ere_472) (score 0.9) (score_group 1) (predicate mums) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200146)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 2 noun:elder[<ref> = 0][of = noun:family[<ref> = 1]] -->
+		(nprop (id per_family_ere_755) (score 0.9) (score_group 1) (predicate elder) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200147)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (nprop (predicate family) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 verb:raped[<obj> = noun:cousin[<ref> = 0][of = noun:mine[<ref> = 1]]] -->
+		(vprop (id per_family_ere_489) (score 0.9) (score_group 1) (predicate raped) (args (argument (role <obj>) (nprop (predicate cousin) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200148)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (nprop (predicate mine) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))))))))
+
+		<!-- 2 noun:son[<poss> = pronoun:her[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_family_ere_790) (score 0.9) (score_group 1) (predicate son) (args (argument (role <poss>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200149)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 2 verb:passed[<sub> = noun:mum[<poss> = pronoun:my[<ref> = 1]][<ref> = 0]] -->
+		(vprop (id per_family_ere_877) (score 0.9) (score_group 1) (predicate passed) (args (argument (role <sub>) (nprop (predicate mum) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200150)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 modifier:family[<ref> = noun:members[<mod> = 1][<ref> = 0]] -->
+		(mprop (id per_family_ere_746) (score 0.9) (score_group 1) (predicate family) (args (argument (role <ref>) (nprop (predicate members) (args (argument (role <mod>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200151)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 noun:families[<ref> = 0][of = 1] -->
+		(nprop (id per_family_ere_794) (score 0.9) (score_group 1) (predicate families) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200152)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 2 copula:is[<obj> = noun:daughter[of = 1]][<sub> = noun:woman[<ref> = 0]] -->
+		(anyprop (id per_family_ere_802) (score 0.9) (score_group 1) (predicate is) (args (argument (role <obj>) (nprop (predicate daughter) (args (argument (role of) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <sub>) (nprop (predicate woman) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200153)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 modifier:own[<ref> = noun:grandmother[<poss> = pronoun:his[<ref> = 0]][<ref> = 1]] -->
+		(mprop (id per_family_ere_827) (score 0.9) (score_group 1) (predicate own) (args (argument (role <ref>) (nprop (predicate grandmother) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200154)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 modifier:young[<ref> = noun:children[<poss> = 0][<ref> = 1]] -->
+		(mprop (id per_family_ere_985) (score 0.9) (score_group 1) (predicate young) (args (argument (role <ref>) (nprop (predicate children) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200155)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 modifier:year[<ref> = noun:girl[<poss> = 1][<ref> = 0]] -->
+		(mprop (id per_family_ere_657) (score 0.9) (score_group 1) (predicate year) (args (argument (role <ref>) (nprop (predicate girl) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200156)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 verb:heard[<obj> = verb:get[from = noun:parents[<poss> = 1][<ref> = 0]]] -->
+		(vprop (id per_family_ere_860) (score 0.9) (score_group 1) (predicate heard) (args (argument (role <obj>) (vprop (predicate get) (args (argument (role from) (nprop (predicate parents) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200157)) (entitylabel AGENT1) (acetype PER)))))))))))
+
+		<!-- 2 {0}  {1}&[slot=0, word=their, lang=english]&[slot=1, word=baby, lang=english] -->
+		(regex (id per_family_ere_823) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200158)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "their")))))) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "baby"))))))))
+
+		<!-- 2 verb:give[<sub> = noun:mom[<poss> = pronoun:my[<ref> = 0]][<ref> = 1]] -->
+		(vprop (id per_family_ere_892) (score 0.9) (score_group 1) (predicate give) (args (argument (role <sub>) (nprop (predicate mom) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200159)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 verb:moving[<sub> = noun:mum[<poss> = pronoun:her[<ref> = 0]][<ref> = 1]] -->
+		(vprop (id per_family_ere_886) (score 0.9) (score_group 1) (predicate moving) (args (argument (role <sub>) (nprop (predicate mum) (args (argument (role <poss>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200160)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 noun:elder[<ref> = 0][of = 1] -->
+		(nprop (id per_family_ere_986) (score 0.9) (score_group 1) (predicate elder) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200161)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 2 noun:parents[<poss> = pronoun:his[<ref> = 1]][<ref> = 0] -->
+		(nprop (id per_family_ere_674) (score 0.9) (score_group 1) (predicate parents) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200162)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 2 noun:terms[with = noun:stepmum[<poss> = pronoun:my[<ref> = 1]][<ref> = 0]] -->
+		(nprop (id per_family_ere_720) (score 0.9) (score_group 1) (predicate terms) (args (argument (role with) (nprop (predicate stepmum) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200163)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 verb:do[<sub> = noun:brother[<poss> = 0][<ref> = 1]] -->
+		(vprop (id per_family_ere_961) (score 0.9) (score_group 1) (predicate do) (args (argument (role <sub>) (nprop (predicate brother) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200164)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 {0}  {1}&[slot=0, word=their, lang=english]&[slot=1, word=son, lang=english] -->
+		(regex (id per_family_ere_493) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200165)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "their")))))) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "son"))))))))
+
+		<!-- 2 verb:described[<obj> = noun:parents[<poss> = pronoun:my[<ref> = 1]][<ref> = 0]] -->
+		(vprop (id per_family_ere_655) (score 0.9) (score_group 1) (predicate described) (args (argument (role <obj>) (nprop (predicate parents) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200166)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 noun:terms[with = noun:stepmum[<poss> = pronoun:my[<ref> = 0]][<ref> = 1]] -->
+		(nprop (id per_family_ere_690) (score 0.9) (score_group 1) (predicate terms) (args (argument (role with) (nprop (predicate stepmum) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200167)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 noun:child[<poss> = pronoun:my[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_family_ere_942) (score 0.9) (score_group 1) (predicate child) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200168)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 2 verb:has[<obj> = noun:dad[<poss> = pronoun:my[<ref> = 1]][<ref> = 0]] -->
+		(vprop (id per_family_ere_539) (score 0.9) (score_group 1) (predicate has) (args (argument (role <obj>) (nprop (predicate dad) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200169)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 modifier:easy[<ref> = noun:mum[<poss> = pronoun:her[<ref> = 0]][<ref> = 1]] -->
+		(mprop (id per_family_ere_809) (score 0.9) (score_group 1) (predicate easy) (args (argument (role <ref>) (nprop (predicate mum) (args (argument (role <poss>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200170)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 copula:was[<sub> = noun:daughter[<mod> = 1][<poss> = 0]] -->
+		(anyprop (id per_family_ere_624) (score 0.9) (score_group 1) (predicate was) (args (argument (role <sub>) (nprop (predicate daughter) (args (argument (role <mod>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200171)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 set:[<member> = noun:dad[<ref> = 1]][<ref> = noun:mom[<poss> = 0]] -->
+		(sprop (id per_family_ere_617) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate dad) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (nprop (predicate mom) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200172)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 noun:terms[with = noun:stepmum[<poss> = 1][<ref> = 0]] -->
+		(nprop (id per_family_ere_589) (score 0.9) (score_group 1) (predicate terms) (args (argument (role with) (nprop (predicate stepmum) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200173)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 {1}  {0}&[slot=0, word=daddy, lang=english]&[slot=1, word=my, lang=english] -->
+		(regex (id per_family_ere_723) (score 0.9) (score_group 1) (re (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "my")))))) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200174)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "daddy"))))))))
+
+		<!-- 2 verb:get[<iobj> = noun:mom[<poss> = pronoun:my[<ref> = 1]][<ref> = 0]] -->
+		(vprop (id per_family_ere_995) (score 0.9) (score_group 1) (predicate get) (args (argument (role <iobj>) (nprop (predicate mom) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200175)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 verb:won[<obj> = noun:family[<poss> = 0][<ref> = 1]] -->
+		(vprop (id per_family_ere_906) (score 0.9) (score_group 1) (predicate won) (args (argument (role <obj>) (nprop (predicate family) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200176)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 modifier:young[<ref> = noun:children[<poss> = pronoun:my[<ref> = 0]][<ref> = 1]] -->
+		(mprop (id per_family_ere_648) (score 0.9) (score_group 1) (predicate young) (args (argument (role <ref>) (nprop (predicate children) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200177)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 noun:cousin[<ref> = 0][of = 1] -->
+		(nprop (id per_family_ere_471) (score 0.9) (score_group 1) (predicate cousin) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200178)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 2 {0}  {1}&[slot=0, word=your, lang=english]&[slot=1, word=parents, lang=english] -->
+		(regex (id per_family_ere_780) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200179)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "your")))))) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "parents"))))))))
+
+		<!-- 2 noun:member[<ref> = 0][of = noun:family[<ref> = 1]] -->
+		(nprop (id per_family_ere_734) (score 0.9) (score_group 1) (predicate member) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200180)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (nprop (predicate family) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 copula:was[<obj> = noun:last[<ref> = 1][of = 0]]&[slot=0, word=brothers, lang=english]&[slot=1, word=last, lang=english] -->
+		(anyprop (id per_family_ere_997) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (nprop (predicate last) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "last"))))))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200181)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "brothers"))))))))))))
+
+		<!-- 2 noun:expectations[<poss> = noun:mum[<poss> = pronoun:my[<ref> = 1]][<ref> = 0]] -->
+		(nprop (id per_family_ere_976) (score 0.9) (score_group 1) (predicate expectations) (args (argument (role <poss>) (nprop (predicate mum) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200182)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 comp:and[<member> = verb:bf[<obj> = noun:child[<poss> = 0][<ref> = 1]]] -->
+		(cprop (id per_family_ere_675) (score 0.9) (score_group 1) (predicate and) (args (argument (role <member>) (vprop (predicate bf) (args (argument (role <obj>) (nprop (predicate child) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200183)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))))))))
+
+		<!-- 2 modifier:little[<ref> = noun:girl[<poss> = pronoun:her[<ref> = 1]][<ref> = 0]] -->
+		(mprop (id per_family_ere_502) (score 0.9) (score_group 1) (predicate little) (args (argument (role <ref>) (nprop (predicate girl) (args (argument (role <poss>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200184)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 set:[<member> = noun:grandson[<poss> = 0][<ref> = 1]] -->
+		(sprop (id per_family_ere_680) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate grandson) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200185)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 copula:was[<obj> = noun:father[<ref> = 0][of = noun:leader[<ref> = 1]]] -->
+		(anyprop (id per_family_ere_563) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (nprop (predicate father) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200186)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (nprop (predicate leader) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))))))))
+
+		<!-- 2 verb:helped[<sub> = noun:brother[<poss> = pronoun:his[<ref> = 1]][<ref> = 0]] -->
+		(vprop (id per_family_ere_857) (score 0.9) (score_group 1) (predicate helped) (args (argument (role <sub>) (nprop (predicate brother) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200187)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 modifier:being[<ref> = noun:mum[<poss> = 1][<ref> = 0]] -->
+		(mprop (id per_family_ere_783) (score 0.9) (score_group 1) (predicate being) (args (argument (role <ref>) (nprop (predicate mum) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200188)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 {0}  {1}&[slot=0, word=her, lang=english]&[slot=1, word=father, lang=english] -->
+		(regex (id per_family_ere_934) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200189)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "her")))))) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "father"))))))))
+
+		<!-- 2 verb:see[<obj> = noun:daughter[<poss> = pronoun:his[<ref> = 1]][<ref> = 0]] -->
+		(vprop (id per_family_ere_937) (score 0.9) (score_group 1) (predicate see) (args (argument (role <obj>) (nprop (predicate daughter) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200190)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 verb:said[that = verb:have[<obj> = 0][<sub> = pronoun:you[<ref> = 1]]]&[slot=0, word=wife, lang=english] -->
+		(vprop (id per_family_ere_542) (score 0.9) (score_group 1) (predicate said) (args (argument (role that) (vprop (predicate have) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200191)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "wife"))))))) (argument (role <sub>) (anyprop (predicate you) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))))))))
+
+		<!-- 2 verb:passing[<sub> = noun:mums[<poss> = pronoun:my[<ref> = 0]][<ref> = 1]] -->
+		(vprop (id per_family_ere_894) (score 0.9) (score_group 1) (predicate passing) (args (argument (role <sub>) (nprop (predicate mums) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200192)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 set:[<loc> = pronoun:there[<ref> = 0]][<member> = noun:son[<ref> = 1]] -->
+		(sprop (id per_family_ere_529) (score 0.9) (score_group 1) (args (argument (role <loc>) (anyprop (predicate there) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200193)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <member>) (nprop (predicate son) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 verb:bf[<obj> = noun:child[<poss> = 0][<ref> = 1]] -->
+		(vprop (id per_family_ere_704) (score 0.9) (score_group 1) (predicate bf) (args (argument (role <obj>) (nprop (predicate child) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200194)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 noun:abuse[of = noun:boy[<ref> = 0][on = noun:father[<ref> = 1]]] -->
+		(nprop (id per_family_ere_1003) (score 0.9) (score_group 1) (predicate abuse) (args (argument (role of) (nprop (predicate boy) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200195)) (entitylabel AGENT1) (acetype PER))) (argument (role on) (nprop (predicate father) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))))))))
+
+		<!-- 2 {0} own {1}&[slot=0, word=his, lang=english]&[slot=1, word=grandmother, lang=english] -->
+		(regex (id per_family_ere_862) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200196)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "his")))))) (text DONT_ADD_SPACES (string "own")) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "grandmother"))))))))
+
+		<!-- 2 verb:described[<obj> = noun:parents[<mod> = noun:mom[<poss> = 1][<ref> = 0]]] -->
+		(vprop (id per_family_ere_727) (score 0.9) (score_group 1) (predicate described) (args (argument (role <obj>) (nprop (predicate parents) (args (argument (role <mod>) (nprop (predicate mom) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200197)) (entitylabel AGENT1) (acetype PER)))))))))))
+
+		<!-- 2 verb:have[<obj> = 0][<sub> = 1]&[slot=0, word=wife, lang=english]&[slot=1, word=you, lang=english] -->
+		(vprop (id per_family_ere_672) (score 0.9) (score_group 1) (predicate have) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200198)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "wife"))))))) (argument (role <sub>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "you")))))))))
+
+		<!-- 2 {0} was born into {1} -->
+		(regex (id per_family_ere_850) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200199)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "born")) (text DONT_ADD_SPACES (string "into")) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))
+
+		<!-- 2 verb:passed[<sub> = noun:mum[<poss> = 1][<ref> = 0]] -->
+		(vprop (id per_family_ere_644) (score 0.9) (score_group 1) (predicate passed) (args (argument (role <sub>) (nprop (predicate mum) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200200)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 noun:spouse[<poss> = pronoun:their[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_family_ere_777) (score 0.9) (score_group 1) (predicate spouse) (args (argument (role <poss>) (anyprop (predicate their) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200201)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 2 noun:fine[<poss> = noun:father[<poss> = pronoun:their[<ref> = 0]][<ref> = 1]] -->
+		(nprop (id per_family_ere_514) (score 0.9) (score_group 1) (predicate fine) (args (argument (role <poss>) (nprop (predicate father) (args (argument (role <poss>) (anyprop (predicate their) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200202)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 {0}  {1}&[slot=0, word=her, lang=english]&[slot=1, word=child, lang=english] -->
+		(regex (id per_family_ere_544) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200203)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "her")))))) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "child"))))))))
+
+		<!-- 2 {0}  {1}&[slot=0, word=her, lang=english]&[slot=1, word=sister, lang=english] -->
+		(regex (id per_family_ere_575) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200204)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "her")))))) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "sister"))))))))
+
+		<!-- 2 set:[<loc> = 0][<member> = noun:son[<ref> = 1]] -->
+		(sprop (id per_family_ere_801) (score 0.9) (score_group 1) (args (argument (role <loc>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200205)) (entitylabel AGENT1) (acetype PER))) (argument (role <member>) (nprop (predicate son) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 {1}  {0}&[slot=0, word=baby, lang=english] -->
+		(regex (id per_family_ere_610) (score 0.9) (score_group 1) (re (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200206)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "baby"))))))))
+
+		<!-- 2 verb:divorced[<obj> = noun:son[<poss> = 1][<ref> = 0]] -->
+		(vprop (id per_family_ere_854) (score 0.9) (score_group 1) (predicate divorced) (args (argument (role <obj>) (nprop (predicate son) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200207)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 {0}  {1}&[slot=0, word=their, lang=english]&[slot=1, word=mother, lang=english] -->
+		(regex (id per_family_ere_774) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200208)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "their")))))) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "mother"))))))))
+
+		<!-- 2 noun:compensation[to = noun:families[<ref> = 0][of = 1]] -->
+		(nprop (id per_family_ere_738) (score 0.9) (score_group 1) (predicate compensation) (args (argument (role to) (nprop (predicate families) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200209)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 noun:daughter[<ref> = 0][of = noun:pastor[<ref> = 1]] -->
+		(nprop (id per_family_ere_990) (score 0.9) (score_group 1) (predicate daughter) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200210)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (nprop (predicate pastor) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 verb:lost[<sub> = noun:mums[<poss> = pronoun:my[<ref> = 0]][<ref> = 1]] -->
+		(vprop (id per_family_ere_1009) (score 0.9) (score_group 1) (predicate lost) (args (argument (role <sub>) (nprop (predicate mums) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200211)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 verb:won[<obj> = noun:family[<poss> = pronoun:his[<ref> = 0]][<ref> = 1]] -->
+		(vprop (id per_family_ere_788) (score 0.9) (score_group 1) (predicate won) (args (argument (role <obj>) (nprop (predicate family) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200212)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 verb:have[<obj> = 0][<sub> = pronoun:i[<ref> = 1]]&[slot=0, word=brother, lang=english]&[slot=1, word=i, lang=english] -->
+		(vprop (id per_family_ere_910) (score 0.9) (score_group 1) (predicate have) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200213)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "brother"))))))) (argument (role <sub>) (anyprop (predicate i) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "i"))))))))))))
+
+		<!-- 2 verb:taken[<obj> = noun:father[<ref> = 0]][from = noun:family[<ref> = 1]] -->
+		(vprop (id per_family_ere_922) (score 0.9) (score_group 1) (predicate taken) (args (argument (role <obj>) (nprop (predicate father) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200214)) (entitylabel AGENT1) (acetype PER)))))) (argument (role from) (nprop (predicate family) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 {0}  {1}&[slot=0, word=your, lang=english]&[slot=1, word=sister, lang=english] -->
+		(regex (id per_family_ere_739) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200215)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "your")))))) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "sister"))))))))
+
+		<!-- 2 noun:anyone[in = noun:family[<poss> = pronoun:my[<ref> = 0]][<ref> = 1]] -->
+		(nprop (id per_family_ere_683) (score 0.9) (score_group 1) (predicate anyone) (args (argument (role in) (nprop (predicate family) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200216)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 noun:last[<ref> = 1][of = noun:brothers[<ref> = 0]] -->
+		(nprop (id per_family_ere_707) (score 0.9) (score_group 1) (predicate last) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role of) (nprop (predicate brothers) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200217)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 set:[<member> = pronoun:you[<ref> = 0]][<member> = 1]&[slot=0, word=you, lang=english] -->
+		(sprop (id per_family_ere_477) (score 0.9) (score_group 1) (args (argument (role <member>) (anyprop (predicate you) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200218)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "you")))))))))) (argument (role <member>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 2 set:[<member> = 0][<member> = 1]&[slot=1, word=grandchildren, lang=english] -->
+		(sprop (id per_family_ere_599) (score 0.9) (score_group 1) (args (argument (role <member>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200219)) (entitylabel AGENT1) (acetype PER))) (argument (role <member>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "grandchildren")))))))))
+
+		<!-- 2 noun:representation[of = noun:family[<ref> = 0][of = 1]] -->
+		(nprop (id per_family_ere_969) (score 0.9) (score_group 1) (predicate representation) (args (argument (role of) (nprop (predicate family) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200220)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 noun:girl[<poss> = pronoun:her[<ref> = 1]][<ref> = 0] -->
+		(nprop (id per_family_ere_616) (score 0.9) (score_group 1) (predicate girl) (args (argument (role <poss>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200221)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 2 verb:do[<sub> = noun:brother[<poss> = pronoun:my[<ref> = 0]][<ref> = 1]] -->
+		(vprop (id per_family_ere_515) (score 0.9) (score_group 1) (predicate do) (args (argument (role <sub>) (nprop (predicate brother) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200222)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 copula:is[<sub> = noun:son[<poss> = pronoun:my[<ref> = 1]][<ref> = 0]] -->
+		(anyprop (id per_family_ere_635) (score 0.9) (score_group 1) (predicate is) (args (argument (role <sub>) (nprop (predicate son) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200223)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 {0}  {1}&[slot=0, word=his, lang=english]&[slot=1, word=kids, lang=english] -->
+		(regex (id per_family_ere_936) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200224)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "his")))))) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "kids"))))))))
+
+		<!-- 2 noun:mother[<poss> = pronoun:their[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_family_ere_742) (score 0.9) (score_group 1) (predicate mother) (args (argument (role <poss>) (anyprop (predicate their) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200225)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 2 verb:do[<sub> = noun:parents[<poss> = 1][<ref> = 0]] -->
+		(vprop (id per_family_ere_681) (score 0.9) (score_group 1) (predicate do) (args (argument (role <sub>) (nprop (predicate parents) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200226)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 {0}  {1}&[slot=1, word=spouse, lang=english] -->
+		(regex (id per_family_ere_971) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200227)) (entitylabel AGENT1) (acetype PER)) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "spouse"))))))))
+
+		<!-- 2 noun:daddy[<poss> = 1][<ref> = 0] -->
+		(nprop (id per_family_ere_537) (score 0.9) (score_group 1) (predicate daddy) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200228)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 2 verb:remains[<sub> = noun:husband[<poss> = pronoun:her[<ref> = 0]][<ref> = 1]] -->
+		(vprop (id per_family_ere_585) (score 0.9) (score_group 1) (predicate remains) (args (argument (role <sub>) (nprop (predicate husband) (args (argument (role <poss>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200229)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 noun:anything[about = noun:son[<poss> = pronoun:your[<ref> = 0]][<ref> = 1]] -->
+		(nprop (id per_family_ere_1006) (score 0.9) (score_group 1) (predicate anything) (args (argument (role about) (nprop (predicate son) (args (argument (role <poss>) (anyprop (predicate your) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200230)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 {0}  {1}&[slot=0, word=his, lang=english]&[slot=1, word=daughters, lang=english] -->
+		(regex (id per_family_ere_718) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200231)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "his")))))) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "daughters"))))))))
+
+		<!-- 2 noun:stepmum[<poss> = 1][<ref> = 0] -->
+		(nprop (id per_family_ere_692) (score 0.9) (score_group 1) (predicate stepmum) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200232)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 2 verb:get[from = noun:parents[<poss> = 1][<ref> = 0]] -->
+		(vprop (id per_family_ere_881) (score 0.9) (score_group 1) (predicate get) (args (argument (role from) (nprop (predicate parents) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200233)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 noun:son[<poss> = pronoun:your[<ref> = 1]][<ref> = 0] -->
+		(nprop (id per_family_ere_779) (score 0.9) (score_group 1) (predicate son) (args (argument (role <poss>) (anyprop (predicate your) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200234)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 2 noun:terms[with = noun:stepmum[<poss> = 0][<ref> = 1]] -->
+		(nprop (id per_family_ere_956) (score 0.9) (score_group 1) (predicate terms) (args (argument (role with) (nprop (predicate stepmum) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200235)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 set:[<loc> = pronoun:there[<ref> = 0]][<member> = 1]&[slot=1, word=son, lang=english] -->
+		(sprop (id per_family_ere_641) (score 0.9) (score_group 1) (args (argument (role <loc>) (anyprop (predicate there) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200236)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <member>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "son")))))))))
+
+		<!-- 2 copula:is[<obj> = noun:daughter[of = noun:girl[<ref> = 1]]][<sub> = 0] -->
+		(anyprop (id per_family_ere_899) (score 0.9) (score_group 1) (predicate is) (args (argument (role <obj>) (nprop (predicate daughter) (args (argument (role of) (nprop (predicate girl) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200237)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 2 verb:have[<obj> = noun:kids[<poss> = pronoun:my[<ref> = 0]][<ref> = 1]] -->
+		(vprop (id per_family_ere_998) (score 0.9) (score_group 1) (predicate have) (args (argument (role <obj>) (nprop (predicate kids) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200238)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 {0} of the {1}&[slot=0, word=family, lang=english] -->
+		(regex (id per_family_ere_958) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200239)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "family")))))) (text DONT_ADD_SPACES (string "of")) (text DONT_ADD_SPACES (string "the")) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))
+
+		<!-- 2 noun:families[<ref> = 1][with = 0] -->
+		(nprop (id per_family_ere_479) (score 0.9) (score_group 1) (predicate families) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role with) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200240)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 2 verb:said[that = verb:have[<obj> = 0][<sub> = 1]]&[slot=1, word=you, lang=english] -->
+		(vprop (id per_family_ere_750) (score 0.9) (score_group 1) (predicate said) (args (argument (role that) (vprop (predicate have) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200241)) (entitylabel AGENT1) (acetype PER))) (argument (role <sub>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "you"))))))))))))
+
+		
+		
+		<!-- 2 verb:knew[<sub> = noun:daddy[<poss> = 1][<ref> = 0]] -->
+		(vprop (id per_family_ere_545) (score 0.9) (score_group 1) (predicate knew) (args (argument (role <sub>) (nprop (predicate daddy) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200242)) (entitylabel AGENT1) (acetype PER))))))))
+
+		
+		
+		<!-- 2 {0} I will exscuse {1} -->
+		(regex (id per_family_ere_853) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200243)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "I")) (text DONT_ADD_SPACES (string "will")) (text DONT_ADD_SPACES (string "exscuse")) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))
+
+
+
+		<!-- 2 verb:twisted[<sub> = noun:in-laws[<poss> = 0][<ref> = 1]] -->
+		(vprop (id per_family_ere_580) (score 0.9) (score_group 1) (predicate twisted) (args (argument (role <sub>) (nprop (predicate in-laws) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200244)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 verb:get[from = noun:parents[<poss> = pronoun:my[<ref> = 1]][<ref> = 0]] -->
+		(vprop (id per_family_ere_643) (score 0.9) (score_group 1) (predicate get) (args (argument (role from) (nprop (predicate parents) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200245)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 verb:locked[<obj> = noun:in-laws[<poss> = 0][<ref> = 1]] -->
+		(vprop (id per_family_ere_512) (score 0.9) (score_group 1) (predicate locked) (args (argument (role <obj>) (nprop (predicate in-laws) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200246)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 noun:anything[about = noun:son[<poss> = 0][<ref> = 1]] -->
+		(nprop (id per_family_ere_888) (score 0.9) (score_group 1) (predicate anything) (args (argument (role about) (nprop (predicate son) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200247)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 verb:has[<obj> = noun:dad[<poss> = 1][<ref> = 0]] -->
+		(vprop (id per_family_ere_626) (score 0.9) (score_group 1) (predicate has) (args (argument (role <obj>) (nprop (predicate dad) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200248)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 noun:son[<poss> = pronoun:their[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_family_ere_640) (score 0.9) (score_group 1) (predicate son) (args (argument (role <poss>) (anyprop (predicate their) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200249)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 2 verb:found[if = copula:was[<obj> = noun:daughter[<poss> = 0][<ref> = 1]]] -->
+		(vprop (id per_family_ere_668) (score 0.9) (score_group 1) (predicate found) (args (argument (role if) (anyprop (predicate was) (args (argument (role <obj>) (nprop (predicate daughter) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200250)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))))))))
+
+		<!-- 2 verb:lost[<sub> = noun:mums[<poss> = 0][<ref> = 1]] -->
+		(vprop (id per_family_ere_737) (score 0.9) (score_group 1) (predicate lost) (args (argument (role <sub>) (nprop (predicate mums) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200251)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 noun:kid[<poss> = 0][<ref> = 1] -->
+		(nprop (id per_family_ere_621) (score 0.9) (score_group 1) (predicate kid) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200252)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 2 verb:paying[<sub> = noun:parents[<poss> = 0][<ref> = 1]] -->
+		(vprop (id per_family_ere_625) (score 0.9) (score_group 1) (predicate paying) (args (argument (role <sub>) (nprop (predicate parents) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200253)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 {0} two {1}&[slot=0, word=his, lang=english] -->
+		(regex (id per_family_ere_586) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200254)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "his")))))) (text DONT_ADD_SPACES (string "two")) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))
+
+		<!-- 2 {1}  {0}&[slot=0, word=child, lang=english] -->
+		(regex (id per_family_ere_834) (score 0.9) (score_group 1) (re (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200255)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "child"))))))))
+		
+		<!-- 2 verb:prefer[<obj> = verb:have[<obj> = noun:kids[<poss> = 0][<ref> = 1]]] -->
+		(vprop (id per_family_ere_524) (score 0.9) (score_group 1) (predicate prefer) (args (argument (role <obj>) (vprop (predicate have) (args (argument (role <obj>) (nprop (predicate kids) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200256)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))))))))
+
+		<!-- 2 verb:pay[<obj> = noun:fine[<poss> = noun:father[<poss> = 0][<ref> = 1]]] -->
+		(vprop (id per_family_ere_858) (score 0.9) (score_group 1) (predicate pay) (args (argument (role <obj>) (nprop (predicate fine) (args (argument (role <poss>) (nprop (predicate father) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200257)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))))))))
+		
+		<!-- 2 modifier:little[<ref> = noun:girl[<poss> = pronoun:her[<ref> = 0]][<ref> = 1]] -->
+		(mprop (id per_family_ere_577) (score 0.9) (score_group 1) (predicate little) (args (argument (role <ref>) (nprop (predicate girl) (args (argument (role <poss>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200258)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+		
+		<!-- 2 {1}  {0}&[slot=1, word=wife, lang=english] -->
+		(regex (id per_family_ere_587) (score 0.9) (score_group 1) (re (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "wife")))))) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200259)) (entitylabel AGENT1) (acetype PER))))
+		
+		<!-- 2 copula:was[<obj> = noun:last[<ref> = 1][of = noun:brothers[<ref> = 0]]] -->
+		(anyprop (id per_family_ere_989) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (nprop (predicate last) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role of) (nprop (predicate brothers) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200260)) (entitylabel AGENT1) (acetype PER)))))))))))
+		
+		<!-- 2 modifier:little[<ref> = noun:girl[<poss> = 1][<ref> = 0]] -->
+		(mprop (id per_family_ere_633) (score 0.9) (score_group 1) (predicate little) (args (argument (role <ref>) (nprop (predicate girl) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200261)) (entitylabel AGENT1) (acetype PER))))))))
+		
+		<!-- 2 verb:think[<obj> = modifier:for[<ref> = noun:mum[<poss> = 0][<ref> = 1]]] -->
+		(vprop (id per_family_ere_763) (score 0.9) (score_group 1) (predicate think) (args (argument (role <obj>) (mprop (predicate for) (args (argument (role <ref>) (nprop (predicate mum) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200262)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))))))))
+
+		<!-- 2 modifier:own[<ref> = noun:mum[<poss> = pronoun:my[<ref> = 1]][<ref> = 0]] -->
+		(mprop (id per_family_ere_1002) (score 0.9) (score_group 1) (predicate own) (args (argument (role <ref>) (nprop (predicate mum) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200263)) (entitylabel AGENT1) (acetype PER))))))))
+		
+		<!-- 2 {0} with {1}&[slot=1, word=daughters, lang=english] -->
+		(regex (id per_family_ere_744) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200264)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "with")) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "daughters"))))))))
+		
+		<!-- 2 verb:bf[<obj> = noun:child[<poss> = pronoun:her[<ref> = 0]][<ref> = 1]] -->
+		(vprop (id per_family_ere_562) (score 0.9) (score_group 1) (predicate bf) (args (argument (role <obj>) (nprop (predicate child) (args (argument (role <poss>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200265)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+		
+		<!-- 2 noun:child[<ref> = 0][of = 1] -->
+		(nprop (id per_family_ere_749) (score 0.9) (score_group 1) (predicate child) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200266)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 2 set:[<member> = 1][<ref> = noun:mommy[<poss> = 0]] -->
+		(sprop (id per_family_ere_588) (score 0.9) (score_group 1) (args (argument (role <member>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (nprop (predicate mommy) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200267)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2 set:[<member> = noun:parents[<poss> = pronoun:their[<ref> = 0]][<ref> = 1]] -->
+		(sprop (id per_family_ere_466) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate parents) (args (argument (role <poss>) (anyprop (predicate their) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200268)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+		
+		<!-- 2 copula:is[for = 0][for = 1]&[slot=0, word=children, lang=english]&[slot=1, word=parents, lang=english] -->
+		(anyprop (id per_family_ere_974) (score 0.9) (score_group 1) (predicate is) (args (argument (role for) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200269)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "children"))))))) (argument (role for) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "parents")))))))))
+		
+		<!-- 2 {1}  {0}&[slot=0, word=son, lang=english]&[slot=1, word=your, lang=english] -->
+		(regex (id per_family_ere_700) (score 0.9) (score_group 1) (re (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "your")))))) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200270)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "son"))))))))
+
+		<!-- 2 {1} own {0}&[slot=0, word=mum, lang=english]&[slot=1, word=my, lang=english] -->
+		(regex (id per_family_ere_866) (score 0.9) (score_group 1) (re (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "my")))))) (text DONT_ADD_SPACES (string "own")) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200271)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "mum"))))))))
+				
+		<!-- 2 modifier:of[<ref> = 0][of = noun:brothers[<poss> = pronoun:my[<ref> = 1]]] -->
+		(mprop (id per_family_ere_842) (score 0.9) (score_group 1) (predicate of) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200272)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (nprop (predicate brothers) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))))))))
+		
+		<!-- 2 verb:moving[<sub> = noun:mum[<poss> = 0][<ref> = 1]] -->
+		(vprop (id per_family_ere_503) (score 0.9) (score_group 1) (predicate moving) (args (argument (role <sub>) (nprop (predicate mum) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200273)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 verb:arrested[<obj> = noun:brother-in-law[<poss> = 1][<ref> = 0]] -->
+		(vprop (id per_family_ere_953) (score 0.9) (score_group 1) (predicate arrested) (args (argument (role <obj>) (nprop (predicate brother-in-law) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200274)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 1 modifier:first[<ref> = noun:baby[<poss> = 0][<ref> = 1]] -->
+		(mprop (id per_family_ere_3275) (score 0.9) (score_group 1) (predicate first) (args (argument (role <ref>) (nprop (predicate baby) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200275)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+		
+		<!-- 1 verb:married[<sub> = noun:sister[<poss> = 1][<ref> = 0]] -->
+		(vprop (id per_family_ere_1233) (score 0.9) (score_group 1) (predicate married) (args (argument (role <sub>) (nprop (predicate sister) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200276)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 1 verb:go[<sub> = noun:sister[<poss> = pronoun:my[<ref> = 0]][<ref> = 1]] -->
+		(vprop (id per_family_ere_1239) (score 0.9) (score_group 1) (predicate go) (args (argument (role <sub>) (nprop (predicate sister) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200277)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 1 verb:happened[to = noun:kid[<poss> = pronoun:their[<ref> = 0]][<ref> = 1]] -->
+		(vprop (id per_family_ere_2181) (score 0.9) (score_group 1) (predicate happened) (args (argument (role to) (nprop (predicate kid) (args (argument (role <poss>) (anyprop (predicate their) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200278)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 1 verb:talked[barring = noun:husband[<poss> = 1][<ref> = 0]] -->
+		(vprop (id per_family_ere_2703) (score 0.9) (score_group 1) (predicate talked) (args (argument (role barring) (nprop (predicate husband) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200279)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 1 {1}  {0}&[slot=0, word=kid, lang=english]&[slot=1, word=my, lang=english] -->
+		(regex (id per_family_ere_2891) (score 0.9) (score_group 1) (re (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "my")))))) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200280)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "kid"))))))))
+
+		
+		<!-- 1 verb:sounded[like = noun:son[<poss> = 1][<ref> = 0]] -->
+		(vprop (id per_family_ere_3043) (score 0.9) (score_group 1) (predicate sounded) (args (argument (role like) (nprop (predicate son) (args (argument (role <poss>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200281)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 1 verb:start[<obj> = noun:family[<ref> = 1]][<sub> = 0] -->
+		(vprop (id per_family_ere_1152) (score 0.9) (score_group 1) (predicate start) (args (argument (role <obj>) (nprop (predicate family) (args (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200282)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 1 comp:[<member> = verb:had[<obj> = 0][with = 1]]&[slot=1, word=wife, lang=english] -->
+		(cprop (id per_family_ere_3097) (score 0.9) (score_group 1) (args (argument (role <member>) (vprop (predicate had) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200283)) (entitylabel AGENT1) (acetype PER))) (argument (role with) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "wife"))))))))))))
+
+		<!-- 1 verb:make[<sub> = noun:mother[<poss> = pronoun:your[<ref> = 0]][<ref> = 1]] -->
+		(vprop (id per_family_ere_3023) (score 0.9) (score_group 1) (predicate make) (args (argument (role <sub>) (nprop (predicate mother) (args (argument (role <poss>) (anyprop (predicate your) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200284)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 1 verb:living[<sub> = noun:brother[<poss> = 0][<ref> = 1]] -->
+		(vprop (id per_family_ere_1488) (score 0.9) (score_group 1) (predicate living) (args (argument (role <sub>) (nprop (predicate brother) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200285)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 1 {0} had married {1} -->
+		(regex (id per_family_ere_3491) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200286)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "had")) (text DONT_ADD_SPACES (string "married")) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))
+
+		<!-- 1 {1} first {0}&[slot=0, word=husband, lang=english] -->
+		(regex (id per_family_ere_1877) (score 0.9) (score_group 1) (re (mention (return (ff_role per_family)) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "first")) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200287)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "husband"))))))))
+
+		<!-- 1 verb:taken[<obj> = noun:son[<poss> = pronoun:their[<ref> = 0]][<ref> = 1]] -->
+		(vprop (id per_family_ere_2772) (score 0.9) (score_group 1) (predicate taken) (args (argument (role <obj>) (nprop (predicate son) (args (argument (role <poss>) (anyprop (predicate their) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200288)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 1 verb:take[<sub> = noun:mom[<poss> = 0][<ref> = 1]] -->
+		(vprop (id per_family_ere_2782) (score 0.9) (score_group 1) (predicate take) (args (argument (role <sub>) (nprop (predicate mom) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200289)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+		
+		<!-- 1 verb:spent[with = noun:parents[<poss> = pronoun:their[<ref> = 0]][<ref> = 1]] -->
+		(vprop (id per_family_ere_3098) (score 0.9) (score_group 1) (predicate spent) (args (argument (role with) (nprop (predicate parents) (args (argument (role <poss>) (anyprop (predicate their) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200290)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 1 noun:condition[<poss> = noun:son[<poss> = pronoun:his[<ref> = 0]][<ref> = 1]] -->
+		(nprop (id per_family_ere_1468) (score 0.9) (score_group 1) (predicate condition) (args (argument (role <poss>) (nprop (predicate son) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_family_ere_200291)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_family)) (block AGENT1) (acetype PER))))))))
+	)
+)

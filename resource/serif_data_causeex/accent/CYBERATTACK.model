@@ -1,0 +1,445 @@
+(entitylabels
+(INTERNET_CORP (nprop (adj COMPUTER_THING) (block_adj justice transport transportation) (args (argument (role <ref>) (mention FOCUS (acetype ORG FAC))))))
+(SITE_OF_CORP (nprop (propmod (role of <poss>) (nprop (predicate COMPUTER_THING) (block_adj justice transport transportation)))
+                     (args (argument (role <ref>) (mention FOCUS (acetype ORG FAC))))))
+)
+
+(wordsets
+(DATA data package* email*)
+(METHOD method* technique* tactic* way* tool* service* operation* platform*)
+(ASSET info information asset* propert* site* website* web-site* page* webpage* web-page* service* system* credential* password* passcode* username* login* account* network* form* data* keychain* address* code* number* infrastructure resource*)
+(COMPUTER_THING site sites website websites web-site web-sites page pages webpage webpages web-page web-pages service services system systems network networks ip ips isp isps internet web router routers server servers portal portals app apps application applications platform platforms online domain domains account accounts email emails url urls homepage homepages launchpad launchpads device devices firewall firewalls computer pc computers pcs grid* utilit* records revenue* pc pcs mac macs program* software daemon* database*)
+(INTERNET_THING microsite* micro-site* website websites web-site web-sites webpage webpages web-page web-pages ip ips isp isps internet web router routers server servers app apps application applications online domain domains account accounts email emails url urls homepage homepages launchpad launchpads device devices firewall firewalls grid* software daemon*) #site* page* RISKY
+(PASSWORD  password* passcode* username* user-name* login* keychain* birthdate* authentication confirmation firewall* database*)
+(PASSWORD_LOOSE  password* passcode* username* user-name* login* keychain* birthdate* authentication confirmation firewall* credential credentials account* info information number* address* privileges code* name* detail* date*)
+(EMAIL_N email emails e-mail e-mails sms)
+(LINK link attachment* page* webpage* web-page* website* web-site* site* javascript url*)
+(BITS bit bits byte bytes gigabyte gigabytes gigabits gigabit terabit terabits terabyte terabytes megabit megabits megabyte megabytes kilobyte kilobytes kilobit kilobits)
+(COMPANY compan* firm* industr* sector* business* corporation* establishment* agency* office* bureau* institution* organization* concern* enterpFrise* conglomerate* consortium*)
+
+(MALICIOUS criminal fake fradulent fraudulent spoofed hoax malicious malware-laced booby-trapped believeable convincing scam spam obfuscated suspicious phishy smishy vishy phony trojan trojanized dangerous looking appearing claiming garbage criminal illegal theiving illicit illegitimate deceiving decieving disguised inauthentic con rogue sketchy trick stolen infected legitimate-looking unauthorized)
+(MALWARE malware ransomware wannacry adware virus bug* worm* mole* doxware)
+(CYBERATTACK_N hack* cyberattack* cyber-attack* cyberextortion  cyber-extortion cyber-assault* hacking* trojan* cyberassault* exfiltration* doxware malware ransomware hacktivism cyberwar* cybersabotage* cyber-war* cyber-sabotage* cyberpiracy cyber-piracy cyberweapon* cyber-weapon* adware ransomworm ransom-worm comp-wiper* ) #risky breach* vulnerabilit*
+(ATTACK_N vulnerabilit* strike* sting* cyberattack* nasty cyber-attack* breach* hacking* trojan* assault* fraud hoax* scheme* scam* sham* cheat* raid* hijacking* plunder racket* siege* infiltration* cyberextortion cyberassault* compromise malware ransomware defac* hacktivism disaster* outbreak* rampage* comp-wiper* ransom-worm* ransom*)
+(CAMPAIGN attempt* damage* incident* intrusion* harassment confrontation* disruption* attack* activity campaign* penetration* takeover* take-over*)
+(ATTACK_J attack)
+(CYBER_J cyber cyberattack cyber-attack cybercriminal cyber-criminal cyber-extortion cyber-assault cyberextortion hack hacking hacker hacked cyberassault malware ransomware exploited compromised data-scrambling exploit-powered cyber-savvy comp-wiping)
+(ONLINE hijacking online computer internet point-of-sale pos)
+
+(VICTIM victim* target* mark*)
+(USER user* recipient*)
+(HACKER hacker hackers  cybercriminal cybercriminals cyber-criminal cyber-criminals bot-herder bot-herders hacktivist hacktivists cyberpirate* cyber-pirate* cyberarm* cyber-arm*)
+(CRIMINAL criminal* thief thieves scammer* hacker* perpetrator* attacker* cybercriminal* cyber-criminal* fraudster* gang* gangster* deviant* crook* lawbreaker* hacktivist* extortionists* mafia bot-herder* conspirator* co-conspirator* accomplice* suspect* defendant* convict* felon* mastermind* intruder* adversar* miscreant* blackmailer* culprit*)
+
+(BRING bring* brought take takes taking took)
+(REPLY reply* replie* respond* answer*)
+(CONCENTRATE concentrat* focus*)
+(FOLLOW_LINK activat* open opens opened opening click* follow* download* retriev*)
+(STEAL steal* stole* purloin* defraud* extort* scam* nab nabbed nabbing nabs fleec* con cons conned conning grab grabbed grabbing grabs hack* fake* faking bilk* rob robs robbing robbed swindl* cheat* swip* siphon* lock*)
+(FAKE_V fake faking faked fakes spoof* mimic* imitat*)
+(TRICK trick tricks tricked tricking dupe* duping fool fools fooling fooled scam* lure lured luring lures disguis* hide hid hiding hides entrap* trap* deciev* deceiv* trojan* trojaniz* bilk* seduc* bamboozl* beguil* hoax* sucker* suck* gammon* gull* hoodwink* misguid* mislead* gaff* fake* faking nip* cheat* mastermind* spoof*)
+(ATTACK_V damag* disabl* attack* strik* struck compromis* sting* stung hack* breach* abus* roil* scratch* assault* crippl* influenc* hijack* blast* cyber-bomb* break* broke harass* nip* assail* batter* punch* confront* ravag* beleaguer* overrun* loot loots looting looted plunder* commit* cost* siege* besiege* infiltrat* victimiz* seiz* siez* terrorism penetrat* rampag* commandeer*)
+(AFFECT affect* target* impact* )
+(FLOOD stream* spew* flood* aim* level* bombard* deliver* send* sent direct* forward* delug* lob* barrag*)
+
+(DDOS ddos dos mirai mirai-based leet botnet botnet-based ddos-based dos-based botnets denial-of-service distributed-denial-of-service distributed-dos ddos-for-hire ddos-attack ddos-attacks iot malware-as-a-service tdos pingback ping denial-of-service-attack denial-of-service-attacks dos-for-hire)
+(DDOS_ATTACK_V down* disrupt* crash* bombard* overwhelm* mass-spam*)
+
+(PHISH phish phishy phishes phishing phished phisher phishers smishy smish smishes smishing smished smisher smishers vish vishes vishing vished visher vishers vishy spearphishers spearphish spearphishes spearphishing spearphished spearphisher spear-phish spear-phished spear-phishing spear-phishes spear-phisher spear-phishers spear-fish spear-fished spear-fishing spear-fishes spear-fisher spear-fishers spearfishers spearfish spearfishes spearfishing spearfished spearfisher cyber-fraudster cyber-fraudsters cyberfraudster cyberfraudsters bec telefraud telefraudster telefraudsters credential-harvesting malvertising malvertizing malspam)
+
+)
+#TODO breach of systems
+#malware : destructive program hijacked program/update software nasty
+#computer bug/virus
+#operation of malware
+#     system
+(reference
+<!-- SOURCE/TARGET -->
+(argument (shortcut SOURCE_NOT_PLACE) (all-of (members SOURCE (mention (block_acetype GPE LOC)))))
+
+<!-- internet resources -->
+
+#(argument (shortcut COM_REGEX) (any-of (members (regex (re (text (string ".*com")))))))
+
+(all-of (shortcut SITE_OF_TARGET_MENTION) (members (mention (entitylabel INTERNET_CORP)) TARGET)) #COM_CORP
+
+(nprop (shortcut ONLINE_COMPANY) (adj ONLINE) (predicate service* presence* COMPANY) (opt_args TARGET_REF LOOSE_OF_TARGET))
+
+(any-of (shortcut SITE_OF_TARGET_STRICT_PROP) (members ONLINE_COMPANY
+        (nprop (predicate  ORDINAL_NUMBER COUNTING_NUMBER SERIES QUANTITY)
+               (args (argument (role of <poss> <unknown> <ref>) ONLINE_COMPANY)))
+        (anyprop (adj ONLINE) (block_adj hijacking) (opt_args TARGET_REF))
+        (anyprop (args (argument (role <ref>) SITE_OF_TARGET_MENTION)))
+        #(anyprop (args COM_REGEX) (opt_args TARGET_REF))
+        (nprop (predicate system*) (adj operating it computer pos INTERNET_THING)                
+               (opt_args TARGET_REF LOOSE_OF_TARGET
+                    (argument (allow_fall_through <obj> <iobj>) (role in at as across within throughout including like) TARGET)))
+        (nprop (predicate site* page*) (adj computer pos INTERNET_THING)                
+               (opt_args TARGET_REF LOOSE_OF_TARGET
+                    (argument (allow_fall_through <obj> <iobj>) (role in at as across within throughout including like) TARGET)))
+        (nprop (predicate INTERNET_THING) 
+               (block_adj justice transport transportation transport transportation eco eco- archaeological editorial)
+               (opt_args TARGET_REF LOOSE_OF_TARGET
+                    (argument (allow_fall_through <obj> <iobj>) (role in at as across within throughout including like) TARGET)))
+        (nprop MANY_TO_MANY (predicate address) (adj INTERNET_THING) (block_adj justice transport transportation eco eco- archaeological editorial) (args AT_TARGET))))
+
+(all-of (shortcut SITE_OF_TARGET_STRICT) (members (any-of (members SITE_OF_TARGET_STRICT_PROP
+        (nprop (predicate service communications)
+               (args (argument (role of at across in) SITE_OF_TARGET_STRICT_PROP)))
+        (nprop (predicate ORDINAL_NUMBER COUNTING_NUMBER SERIES QUANTITY confidentiality likes provider* brand*)
+               (args (any-of (members (argument (role of) SITE_OF_TARGET_STRICT_PROP)
+                                      (argument (role of) SITE_OF_TARGET_MENTION)))))))
+    (none-of (members (nprop (predicate service*) (args (argument (role of) (mention (acetype GPE)))))))))
+
+(any-of (shortcut SITE_OF_TARGET_STRICT_OBJ) (members (argument (role <obj> <iobj> over to) SITE_OF_TARGET_STRICT)
+                                (argument (role <obj> <iobj> over to) SITE_OF_TARGET_MENTION)))
+
+(any-of (shortcut SITE_OF_TARGET_PROP) (members ONLINE_COMPANY
+        (nprop (predicate  ORDINAL_NUMBER COUNTING_NUMBER SERIES QUANTITY)
+               (args (argument (role of <poss> <unknown> <ref>) ONLINE_COMPANY)))
+        (anyprop (adj ONLINE) (block_adj hijacking) (opt_args TARGET_REF))
+        (anyprop (args (argument (role <ref>) SITE_OF_TARGET_MENTION)))
+        #(anyprop (args COM_REGEX) (opt_args TARGET_REF))
+        (nprop (predicate COMPUTER_THING) 
+               (block_adj justice transport transportation transport transportation eco eco- archaeological editorial enforcement)
+               (opt_args TARGET_REF LOOSE_OF_TARGET
+                    (argument (allow_fall_through <obj> <iobj>) (role in at as across within throughout including like) TARGET)))
+        (nprop MANY_TO_MANY (predicate address) (adj COMPUTER_THING)  (args AT_TARGET)
+            (block_adj justice transport transportation eco eco- archaeological editorial))))
+
+(all-of (shortcut SITE_OF_TARGET) (members (any-of (members SITE_OF_TARGET_PROP SITE_OF_TARGET_STRICT
+        (nprop (predicate service communications)
+               (args (argument (role of at across in) SITE_OF_TARGET_PROP)))
+        (nprop (predicate ORDINAL_NUMBER COUNTING_NUMBER SERIES QUANTITY confidentiality likes provider* brand*)
+               (args (any-of (members (argument (role of) SITE_OF_TARGET_PROP)
+                                      (argument (role of) SITE_OF_TARGET_MENTION)))))))
+    (none-of (members (nprop (predicate service*) (args (argument (role of) (mention (acetype GPE)))))))))
+
+(any-of (shortcut SITE_OF_TARGET_OBJ) (members (argument (role <obj> <iobj> over to) SITE_OF_TARGET)
+                                (argument (role <obj> <iobj> over to) SITE_OF_TARGET_MENTION)))
+
+#Careful about blocking places here because otherwise we might match host country of hacker group
+(any-of (shortcut SITE_OF_SOURCE) (members
+        (anyprop (adj ONLINE) (block_adj hijacking) (opt_args SOURCE_REF))
+        #(nprop (args COM_REGEX) (opt_args SOURCE_REF))
+        #(nprop (predicate COMPUTER_THING) (block_adj justice transport transportation transport transportation eco eco- archaeological)
+               #(opt_args SOURCE_REF LOOSE_OF_SOURCE
+               #(argument (allow_fall_through <obj> <iobj>) (role <poss> <unknown> of in at as including like) SOURCE_NOT_PLACE)))
+        (nprop MANY_TO_MANY (predicate address) (adj COMPUTER_THING) (block_adj justice transport transportation) (args AT_SOURCE))
+        (nprop (predicate provider* brand* likes) (args (argument (role <unknown> of)
+                            (nprop MANY_TO_MANY (predicate COMPUTER_THING) (block_adj justice transport transportation) (args AT_SOURCE)))))))
+
+(argument (shortcut SITE_OF_SOURCE_SUB) (role <sub> by) SITE_OF_SOURCE)
+
+
+#capture hyphenated compounds, such as DDoS-attacks, botnet-based attacks, etc.
+(argument (shortcut EMAIL_REGEX) (role <ref> <unknown> <poss>) (any-of (members
+                                 (regex (re (text (string ".*mail")))))))
+
+(any-of (shortcut PERSONAL_INFO) (members
+        (anyprop (args EMAIL_REGEX) (opt_args OF_TARGET TO_SOURCE))
+        (nprop (predicate PASSWORD) (block_adj MONEY MONEY_J retirement)
+               (block_args (argument (role of) (mention (headword ethics honor)))) #code of ethics
+               (opt_args OF_TARGET TO_SOURCE))
+        (nprop (predicate PASSWORD_LOOSE COMPUTER_THING)
+               (adj keychain network account user login phone email id identification authentication personal licence credit card bank birth pass expiration debit identifying authenticating confirmation sensitive personal payroll administrator sudo identifiable personally personal EMAIL_N)
+               (opt_args LOOSE_OF_TARGET TO_SOURCE))
+        (nprop (predicate question*) (adj security) (opt_args OF_TARGET TO_SOURCE))
+        #date of birth
+        (nprop (predicate date dates) (args (argument (role of) (mention (headword birth)))))
+        # w-2's
+        (nprop (adj w w-2) (opt_args OF_TARGET TO_SOURCE))))
+
+(argument (shortcut PERSONAL_INFO_OBJ) (role <obj> <iobj>) PERSONAL_INFO)
+(argument (shortcut OF_PERSONAL_INFO) (role of) PERSONAL_INFO)
+
+<!-- Source/Target -->
+
+(argument (shortcut LOOSE_AT_TARGET_MENTION) (allow_fall_through <obj> <iobj>)
+          (role at of in <poss> <unknown> like including as) TARGET)
+
+(any-of (shortcut TARGET_PROP) (members SITE_OF_TARGET PERSONAL_INFO
+        (anyprop (args TARGET_REF))
+        (nprop (predicate access) (args TO_TARGET))
+        (nprop (predicate ATTACK_N) (block_adj political) (args (any-of (members
+               AGAINST_TARGET AT_TARGET TO_TARGET ON_TARGET))))))
+
+(any-of (shortcut TARGET_SUB_EXP) (members TARGET_SUB
+        (argument (role <sub> by) TARGET_PROP)))
+(any-of (shortcut TARGET_OBJ_EXP) (members TARGET_OBJ INCLUDING_TARGET
+        (argument (role <obj> <iobj> including) TARGET_PROP)))
+(any-of (shortcut WITH_TARGET_EXP) (members WITH_TARGET INCLUDING_TARGET
+        (argument (role with including) TARGET_PROP)))
+(any-of (shortcut FROM_TARGET_EXP) (members FROM_TARGET
+        (argument (role from) TARGET_PROP)))
+(any-of (shortcut TO_TARGET_EXP) (members TO_TARGET
+        (argument (role into to) TARGET_PROP)))
+(any-of (shortcut TARGET_REF_EXP) (members TARGET_REF
+        (argument (role <ref>) TARGET_PROP)))
+
+(any-of (shortcut LOOSE_AT_TARGET) (members
+        (argument (allow_fall_through <obj> <iobj>)
+                  (role at of in <poss> <unknown> like including as across)
+                  TARGET)
+        (argument (allow_fall_through <obj> <iobj>)
+                  (role at of in <poss> <unknown> like including as across)
+                  TARGET_PROP)))
+
+(any-of (shortcut LOOSE_AGAINST_TARGET) (members
+        (argument (allow_fall_through <obj> <iobj> to) (role on against) TARGET)
+        (argument (allow_fall_through <obj> <iobj> to) (role on against)
+                  (any-of (members TARGET_PROP SITE_OF_TARGET)))
+        (argument (role <iobj> to)
+                  (vprop (predicate launch*)
+                      (args (argument (role <obj>) (nprop (predicate ATTACK_N) (block_adj political)
+                              (opt_args (any-of (members AGAINST_TARGET ON_TARGET))))))))
+        (argument (role <iobj> to)
+                  (vprop (predicate launch*)
+                      (args (argument (role <obj>) (nprop (predicate ATTACK_N) (block_adj political)
+                              (opt_args (argument (role on against) (any-of (members
+                                                  TARGET_PROP SITE_OF_TARGET)))))))))))
+
+(all-of (shortcut SOURCE_SAFE) (members SOURCE (mention (block_headword trojan ddos service attack wannacry ddos dos mirai mirai-based leet botnet botnet-based ddos-based dos-based botnets denial-of-service distributed-denial-of-service distributed-dos ddos-for-hire ddos-attack ddos-attacks iot malware-as-a-service tdos pingback ping denial-of-service-attack denial-of-service-attacks dos-for-hire)))) #some cyberattacks that may be mistakenly identified as agents
+
+(any-of (shortcut SOURCE_PROP) (members SITE_OF_SOURCE
+      #has a history of
+      (nprop (predicate history) (propmod (role <obj>)
+                  (vprop (predicate have has had having)
+                          (args (argument (role <sub> by) SOURCE_SAFE)))))
+      #actor's methods to...
+      (nprop (predicate METHOD)
+          (propmod (role <obj> <iobj>) (vprop (predicate POS_VERB USE)
+                      (args (argument (role <sub> by) SOURCE_SAFE)))))
+      #get instructions to
+      (nprop (predicate instructions) (propmod (role <obj> <iobj>) (vprop (predicate GET)
+                                    (args (argument (role <sub> by) SOURCE_SAFE)))))
+      #accused of
+      (anyprop (propmod (role of) (vprop (predicate accused)
+                      (args (argument (role <obj> <iobj>) SOURCE_SAFE)))))))
+
+(any-of (shortcut SOURCE_SUB_EXP) (members (argument (role <sub> by) SOURCE_SAFE)
+        (argument (role <sub> by) SOURCE_PROP)))
+(any-of (shortcut SOURCE_OBJ_EXP) (members (argument (role <obj> <iobj>) SOURCE_SAFE)
+        (argument (role <obj> <iobj>) SOURCE_PROP)))
+(any-of (shortcut SOURCE_REF_EXP) (members (argument (role <ref>) SOURCE_SAFE)
+        (argument (role <ref>) SOURCE_PROP)))
+(any-of (shortcut LOOSE_OF_SOURCE_EXP) (members (argument (role <poss> <unknown> of) SOURCE_SAFE)
+        (argument (role <poss> <unknown> of) SOURCE_PROP)))
+(any-of (shortcut TO_SOURCE_EXP) (members (argument (role to into) SOURCE_SAFE)
+        (argument (role to into) SOURCE_PROP)))
+
+(any-of (shortcut FROM_SOURCE_EXP) (members
+        (argument (role from by) SOURCE_SAFE)
+        (argument (role from by) SOURCE_PROP)))
+
+(any-of (shortcut LOOSE_FROM_SOURCE) (members
+        (argument (role <unknown> <poss> from by) SOURCE_SAFE)
+        (argument (role <unknown> <poss> from by) SOURCE_PROP)))
+
+<!-- other assets -->
+(any-of (shortcut BITCOIN_NPROP) (members (nprop (predicate bitcoin)) (nprop (adj bitcoin))))
+
+(any-of (shortcut BITCOIN) (members BITCOIN_NPROP
+        (nprop (predicate COUNTING_NUMBER ORDINAL_NUMBER QUANTITY MONEY_J)
+               (args (argument (role of in <unknown>) BITCOIN_NPROP)))))
+
+(argument (shortcut IN_BITCOIN) (role <obj> <iobj> of with in <unknown>) (allow_fall_through in with <obj> <iobj>) BITCOIN)
+
+(any-of (shortcut MONEY_NPROP) (members
+        (nprop (adj $ ¢  £ € ¥ ₹ ₽ 元 rs eur) (opt_args OF_TARGET))
+        #1.1 million dollars, etc.
+        (nprop (predicate dollar* usd euro* pound* yen yuan franc* rupee* ruble* money monies income cash payment bitcoin)
+               (opt_args OF_TARGET))
+        (nprop (predicate ASSET) (block_adj justice transport transportation health care judicial) (opt_args OF_TARGET))))
+
+(any-of (shortcut ASSETS_OF) (members PERSONAL_INFO MONEY_NPROP
+        #number fronted by currency symbol
+        (nprop (predicate QUANTITY ORDINAL_NUMBER COUNTING_NUMBER SERIES BITS)
+               (args (argument (role of) MONEY_NPROP))
+               (opt_args OF_TARGET))))
+
+(argument (shortcut ASSETS_OBJ) (role <obj> <iobj>) ASSETS_OF)
+
+(any-of (shortcut ACCESS_TO_PERSONAL_INFO_STRICT) (members
+        (nprop (predicate access)
+              (opt_args (argument (role to of  ) PERSONAL_INFO)))
+        (nprop (predicate hands) (args (argument (role on) PERSONAL_INFO)))))
+
+(any-of (shortcut ACCESS_TO_PERSONAL_INFO) (members ACCESS_TO_PERSONAL_INFO_STRICT
+        (nprop (predicate access)
+              (opt_args TO_TARGET OF_TARGET (argument (role to) ASSETS_OF)))
+        (nprop (predicate hands) (args (argument (role on) ASSETS_OF)))))
+
+(argument (shortcut ACCESS_TO_PERSONAL_INFO_OBJ) (role <obj> <iobj>) ACCESS_TO_PERSONAL_INFO)
+(argument (shortcut ACCESS_TO_PERSONAL_INFO_STRICT_OBJ) (role <obj> <iobj>) ACCESS_TO_PERSONAL_INFO_STRICT)
+
+<!-- all attacks -->
+
+(any-of (shortcut ATTACK) (members
+        (nprop (predicate action*) (adj MALICIOUS hostile))
+        (nprop (predicate vector*) (adj threat attack hostile))
+        (nprop (predicate ATTACK_N CAMPAIGN attack*)
+               (block_adj political) (block_predicate compromis*)
+               (opt_args LOOSE_AGAINST_TARGET FROM_SOURCE BY_SOURCE))
+        (nprop (predicate crossfire ORDINAL_NUMBER COUNTING_NUMBER BITS SERIES QUANTITY COMPUTER_THING)
+                      (args (argument (role of including)
+                                (nprop (predicate ATTACK_N CAMPAIGN)
+                                       (block_predicate compromis*) (block_adj political)
+                                       (opt_args LOOSE_AGAINST_TARGET)))))))
+
+(argument (shortcut ATTACK_SUB) (role <sub> by) ATTACK)
+(argument (shortcut ATTACK_OBJ) (role <obj> <iobj>) ATTACK)
+
+(any-of (shortcut BY_ATTACK) (members
+        (argument (role at) (nprop (predicate peak)
+                  (args (argument (role of) ATTACK))))))
+
+(argument (shortcut WITH_ATTACK) (role with in by using through following) ATTACK)
+
+<!-- general cyberattack -->
+
+#capture hyphenated compounds, such as DDoS-attacks, botnet-based attacks, etc.
+(argument (shortcut REGEX_CYBERATTACK) (role <ref> <unknown> <poss>) (any-of (members
+                                 (regex (re (text (string ".*-malware.*"))))
+                                 (regex (re (text (string "malware.*"))))
+                                 (regex (re (text (string ".*-ransomware.*"))))
+                                 (regex (re (text (string "ransomware.*")))))))
+
+#avoid OF_SOURCE / OF_TARGET here: Russia's/ The Russian cyber-attack on ... vs The Bank of America cyberattack ... etc.
+(any-of (shortcut CYBERATTACK_SOURCE) (members (anyprop (args REGEX_CYBERATTACK) (block_predicate contest*) (opt_args LOOSE_AGAINST_TARGET))
+        (nprop (adj CYBER_J) (block_predicate contest*) #todo loose
+               (opt_args LOOSE_AGAINST_TARGET))
+        (nprop (predicate transaction) (adj MALICIOUS CYBER_J)
+               (opt_args LOOSE_AGAINST_TARGET FROM_SOURCE BY_SOURCE))
+        (nprop (predicate CYBERATTACK_N)
+               (opt_args LOOSE_AGAINST_TARGET FROM_SOURCE BY_SOURCE))
+        (nprop (predicate ATTACK_N CAMPAIGN protest* extremism SERIES) (adj CYBER_J) (block_adj political)
+               (opt_args LOOSE_AGAINST_TARGET FROM_SOURCE BY_SOURCE))
+        (nprop (predicate ATTACK_N) (block_adj political) (adj ONLINE)
+               (opt_args LOOSE_AGAINST_TARGET FROM_SOURCE BY_SOURCE))
+        (nprop (predicate attack*) (adj pos point-of-sale))
+        (nprop (predicate crossfire ORDINAL_NUMBER COUNTING_NUMBER BITS SERIES QUANTITY COMPUTER_THING) (block_adj justice transport transportation)
+                      (args (argument (role of including)
+                                (nprop (predicate CYBERATTACK_N)
+                                       (opt_args LOOSE_AGAINST_TARGET)))))
+        (nprop (predicate action* activit* incident*) (adj CYBER_J hacking)
+               (opt_args LOOSE_AGAINST_TARGET LOOSE_AT_TARGET))
+         #data breach following
+         (nprop (predicate breach* theft leak* spill* incident* ATTACK_N attack*)
+                (adj cyber data pos cybersecurity card CYBER_J)
+                (opt_args LOOSE_AGAINST_TARGET OF_TARGET))
+         (nprop (predicate disclosure) (adj unintentional)
+                (opt_args LOOSE_AGAINST_TARGET OF_TARGET AT_SOURCE))
+         (nprop (predicate credential*) (adj stolen) (opt_args LOOSE_OF_SOURCE_EXP))
+         (nprop (predicate nasty)  (adj COMPUTER_THING))
+         (nprop (predicate ATTACK_N) (block_adj political) #TODO loose
+                (args (argument (role on against to into) SITE_OF_TARGET_STRICT)))))
+
+(any-of (shortcut CYBERATTACK) (members (all-of (members CYBERATTACK_SOURCE (anyprop (opt_args (argument (role into) SITE_OF_TARGET))))) CYBERATTACK_SOURCE
+      (nprop (predicate ORDINAL_NUMBER COUNTING_NUMBER BITS SERIES QUANTITY COMPUTER_THING strain* type* sort* kind*) (block_adj justice transport transportation)
+                      (args (argument (role of including) CYBERATTACK_SOURCE)))
+      (nprop (predicate connection) (args (argument (role with) CYBERATTACK_SOURCE)))))
+
+(argument (shortcut CYBERATTACK_SUB) (role <sub> by) CYBERATTACK)
+(argument (shortcut CYBERATTACK_OBJ) (role <obj> <iobj>) CYBERATTACK)
+(argument (shortcut OF_CYBERATTACK) (role <poss> <unknown> of) CYBERATTACK)
+(argument (shortcut TO_CYBERATTACK) (role to) CYBERATTACK)
+(argument (shortcut FOR_CYBERATTACK) (role for) CYBERATTACK)
+(argument (shortcut IN_CYBERATTACK) (role in with using via through following) (allow_fall_through <obj> <iobj>) CYBERATTACK)
+
+<!-- Criminal source -->
+
+(any-of (shortcut HACKER_SOURCE) (members (nprop (predicate HACKER) (opt_args SOURCE_REF))
+        (nprop (args PER_REF) (block_predicate geek* nerd* AUTHORITIES) (adj HACKER CYBER_J MALWARE) (block_adj security))
+        (nprop (args PER_REF) (predicate breaker* cracker*) (adj code)) #code breaker
+        (nprop (opt_args SOURCE_REF) (propmod (role <sub>) (vprop (predicate BE)
+            (args (argument (role <obj> <iobj>) (mention (headword HACKER)))))))))
+
+(any-of (shortcut HACKER_NPROP) (members HACKER_SOURCE
+        (nprop MANY_TO_MANY (predicate QUANTITY GROUP ORDINAL_NUMBER SERIES COUNTING_NUMBER)
+               (opt_args SOURCE_REF INCLUDING_SOURCE)
+               (args (argument (role of) HACKER_SOURCE)))
+        (nprop MANY_TO_MANY (predicate QUANTITY GROUP ORDINAL_NUMBER SERIES COUNTING_NUMBER)
+               (opt_args SOURCE_REF INCLUDING_SOURCE)
+               (propmod (role <ref>) (mprop (predicate responsible)
+                                           (args FOR_CYBERATTACK))))
+        #hacker uses methods to attack target
+        (nprop (predicate METHOD) (propmod (role <obj> <iobj>)
+              (vprop (predicate USE POS_VERB) (args (argument (role <sub>) HACKER_SOURCE)))))
+        #is a hacker
+        (nprop (propmod (role <sub>) (vprop (predicate BE)
+                              (args (argument (role <obj> <iobj>) HACKER_SOURCE)))))))
+
+(any-of (shortcut HACKER_SUB) (members
+        (argument (role <sub> by) (allow_fall_through) HACKER_NPROP)))
+(any-of (shortcut HACKER_OBJ) (members
+        (argument (role to <obj> <iobj>) (allow_fall_through) HACKER_NPROP)))
+(argument (shortcut HACKER_REF) (role <ref>) HACKER_NPROP)
+(argument (shortcut FROM_HACKER) (role from) HACKER_NPROP)
+
+(any-of (shortcut CRIMINAL_SOURCE) (members HACKER_NPROP
+        (nprop (predicate CRIMINAL) (opt_args SOURCE_REF IN_SOURCE LOOSE_OF_SOURCE))
+        (nprop (args (argument (role <ref>) (mention (acetype PER ORG FAC))) SOURCE_REF) (adj MALICIOUS))
+        (nprop (predicate actor) (adj unknown)) #beware vague
+        (nprop (predicate artist artists actor actors guy guys)
+               (adj threat bad MALICIOUS CRIMINAL HACKER DDOS PHISH)
+               (block_adj news)
+               (opt_args SOURCE_REF IN_SOURCE LOOSE_OF_SOURCE))))
+
+(anyprop (shortcut IMPERSONATOR) (opt_args SOURCE_REF)
+         (propmod (role <sub>) (any-of (members
+                (vprop (predicate impersonat*))
+                (vprop (predicate represent*) (args
+                        (argument (role <obj> <iobj>) (mention (headword themselves himself herself)))))
+                (vprop (predicate pretend*) (args (argument (role <obj> <iobj>) (vprop (predicate BE POS_VERB)))))
+                (vprop (predicate pos*) (args (argument (role as) (mention (acetype PER)))))
+                (vprop (predicate pos*) (particle as))))))
+
+(any-of (shortcut CRIMINAL_NPROP) (members CRIMINAL_SOURCE IMPERSONATOR
+        (nprop (predicate QUANTITY GROUP ORDINAL_NUMBER SERIES)
+               (opt_args SOURCE_REF IN_SOURCE LOOSE_OF_SOURCE INCLUDING_SOURCE)
+               (args (argument (role of including) CRIMINAL_SOURCE)))
+        (nprop (predicate QUANTITY GROUP ORDINAL_NUMBER SERIES)
+               (opt_args SOURCE_REF IN_SOURCE LOOSE_OF_SOURCE INCLUDING_SOURCE)
+               (propmod (role <ref>) (mprop (predicate responsible)
+                      (args (argument (role for) (any-of (members CYBERATTACK
+                                                      (nprop (predicate ATTACK_N CAMPAIGN)))))))))
+        (nprop (predicate METHOD) (propmod (role <obj> <iobj>)
+              (vprop (predicate POS_VERB USE) (args (argument (role <sub>) CRIMINAL_SOURCE)))))))
+
+(any-of (shortcut CRIMINAL_SUB) (members (argument (role <sub> by) CRIMINAL_NPROP)))
+(any-of (shortcut CRIMINAL_OBJ) (members (argument (role <obj> <iobj> that to) CRIMINAL_NPROP)))
+(any-of (shortcut TO_CRIMINAL) (members (argument (role to) CRIMINAL_NPROP)))
+
+(any-of (shortcut INTERNET_USER) (members (nprop (predicate user*) (adj ONLINE) (opt_args TARGET_PER_REF))
+        (nprop (predicate user*) (args EMAIL_REGEX) (opt_args TARGET_REF_EXP))
+        (nprop (adj ONLINE) (args TARGET_PER_REF))
+        (nprop (args EMAIL_REGEX TARGET_PER_REF))))
+
+<!-- Emails and other messages -->
+(any-of (shortcut EMAIL_NPROP) (members (anyprop (args EMAIL_REGEX))
+        (nprop (predicate EMAIL_N) (opt_args FROM_SOURCE TO_TARGET))
+        (nprop (predicate MESSAGE) (adj text) (opt_args FROM_SOURCE TO_TARGET))
+        (vprop (args (argument (role <sub>) (mention (headword EMAIL_N))))
+                                (opt_args FROM_SOURCE TO_TARGET TARGET_OBJ_EXP))
+        (vprop (args (argument (role <sub>) (mention (headword EMAIL_N)))
+            (argument (role <obj>) (anyprop (opt_args FROM_SOURCE TARGET_REF_EXP)
+                          (propmod (role <sub>) (nprop (predicate REPLY FOLLOW_LINK)
+                                                       (opt_args FROM_SOURCE)))))))))
+
+(any-of (shortcut MESSAGE_NPROP) (members EMAIL_NPROP
+        (nprop (predicate MESSAGE LINK) (opt_args FROM_SOURCE TO_TARGET))
+        (vprop (args (argument (role <sub>) (mention (headword MESSAGE LINK))))
+                                (opt_args FROM_SOURCE TO_TARGET TARGET_OBJ_EXP))
+        (vprop (args (argument (role <sub>) (mention (headword MESSAGE LINK)))
+            (argument (role <obj>) (anyprop (opt_args FROM_SOURCE TARGET_REF_EXP)
+                          (propmod (role <sub>) (nprop (predicate REPLY FOLLOW_LINK)
+                                                       (opt_args FROM_SOURCE)))))))))
+
+(argument (shortcut MESSAGE_SUB) (role <sub> by) MESSAGE_NPROP)
+(argument (shortcut MESSAGE_OBJ) (role <obj> <iobj> that to) MESSAGE_NPROP)
+(argument (shortcut WITH_MESSAGE) (role by via with over) MESSAGE_NPROP)
+(argument (shortcut EMAIL_SUB) (role <sub> by) EMAIL_NPROP)
+(argument (shortcut EMAIL_OBJ) (role <obj> <iobj> that to) EMAIL_NPROP)
+(argument (shortcut WITH_EMAIL) (role by via with over) EMAIL_NPROP)
+)

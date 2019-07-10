@@ -1,0 +1,431 @@
+(org_date_founded
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 2: 303 {0} was founded in {1} -->
+		(regex (id org_date_founded_ds_3) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_3)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "founded")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+		<!-- 6: 92 {0} was established in {1} -->
+		(regex (id org_date_founded_ds_7) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_7)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "established")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 8: 60 {0} founding in {1} -->
+		(regex (id org_date_founded_ds_9) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_9)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "founding")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 9: 58 {0} founded in {1} -->
+		(regex (id org_date_founded_ds_10) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_10)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "founded")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 12: 47 CombinationPattern[{1} , {0}][in Established {1}] -->
+		(regex (id org_date_founded_ds_13) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "in")) (text DONT_ADD_SPACES (string "Established")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_13)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 13: 46 {0} was formed in {1} -->
+		(regex (id org_date_founded_ds_14) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_14)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "formed")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 15: 45 {0} was created in {1} -->
+		(regex (id org_date_founded_ds_16) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_16)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "created")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+		<!-- 20: 36 {0} , founded in {1} -->
+		(regex (id org_date_founded_ds_21) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_21)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "founded")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+		<!-- 23: 29 {0} was founded {1} -->
+		(regex (id org_date_founded_ds_24) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_24)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "founded")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+		<!-- 26: 26 {0} opened in {1} -->
+		(regex (id org_date_founded_ds_27) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_27)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "opened")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+
+		<!-- 30: 22 {0} was started in {1} -->
+		(regex (id org_date_founded_ds_31) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_31)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "started")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 31: 22 {0} was launched in {1} -->
+		(regex (id org_date_founded_ds_32) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_32)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "launched")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+
+		<!-- 35: 21 {0} inception in {1} -->
+		(regex (id org_date_founded_ds_36) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_36)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "inception")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+
+
+		<!-- 40: 20 {0} began in {1} -->
+		(regex (id org_date_founded_ds_41) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_41)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "began")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+		<!-- 42: 19 {0} started in {1} -->
+		(regex (id org_date_founded_ds_43) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_43)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "started")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+		<!-- 48: 14 {1} to form {0} -->
+		(regex (id org_date_founded_ds_49) (score 0.9) (score_group 1) (re (value (return (ff_role org_date_founded)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "to")) (text DONT_ADD_SPACES (string "form")) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_49)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+
+		<!-- 50: 14 {0} creation in {1} -->
+		(regex (id org_date_founded_ds_51) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_51)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "creation")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+
+		<!-- 56: 13 verb: [founded]   <obj> = 0    in = 1 -->
+		(vprop (id org_date_founded_ds_57) (score 0.9) (score_group 1) (predicate founded) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_57)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role in) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME)))))
+
+
+		<!-- 60: 12 {0} 's founding in {1} -->
+		(regex (id org_date_founded_ds_61) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_61)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "founding")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 67: 11 {0} start in {1} -->
+		(regex (id org_date_founded_ds_68) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_68)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "start")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+		<!-- 74: 9 {1} to start {0} -->
+		(regex (id org_date_founded_ds_75) (score 0.9) (score_group 1) (re (value (return (ff_role org_date_founded)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "to")) (text DONT_ADD_SPACES (string "start")) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_75)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 76: 9 {0} was founded on {1} -->
+		(regex (id org_date_founded_ds_77) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_77)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "founded")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 77: 9 {0} launched in {1} -->
+		(regex (id org_date_founded_ds_78) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_78)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "launched")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+		<!-- 85: 8 noun: [inception]   <ref> = 1    <poss> = 0 -->
+		(nprop (id org_date_founded_ds_86) (score 0.9) (score_group 1) (predicate inception) (args (argument (role <ref>) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_86)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 94: 7 {0} was set up {1} -->
+		(regex (id org_date_founded_ds_95) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_95)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "set")) (text DONT_ADD_SPACES (string "up")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 95: 7 {0} was formed {1} -->
+		(regex (id org_date_founded_ds_96) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_96)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "formed")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 96: 7 {0} was created {1} -->
+		(regex (id org_date_founded_ds_97) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_97)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "created")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 97: 7 {0} launch in {1} -->
+		(regex (id org_date_founded_ds_98) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_98)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "launch")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 98: 7 {0} began operations in {1} -->
+		(regex (id org_date_founded_ds_99) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_99)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "began")) (text DONT_ADD_SPACES (string "operations")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 99: 7 {0} [PER] founded in {1} -->
+		(regex (id org_date_founded_ds_100) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_100)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (mention (acetype PER)) (text DONT_ADD_SPACES (string "founded")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+
+
+
+		<!-- 113: 6 {1} , [PER] founded {0} -->
+		(regex (id org_date_founded_ds_114) (score 0.9) (score_group 1) (re (value (return (ff_role org_date_founded)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string ",")) (mention (acetype PER)) (text DONT_ADD_SPACES (string "founded")) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_114)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 114: 6 {0} was launched {1} -->
+		(regex (id org_date_founded_ds_115) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_115)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "launched")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 115: 6 {0} formation in {1} -->
+		(regex (id org_date_founded_ds_116) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_116)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "formation")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 131: 5 {1} to found {0} -->
+		(regex (id org_date_founded_ds_132) (score 0.9) (score_group 1) (re (value (return (ff_role org_date_founded)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "to")) (text DONT_ADD_SPACES (string "found")) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_132)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 135: 5 {0} was established {1} -->
+		(regex (id org_date_founded_ds_136) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_136)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "established")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 136: 5 {0} was established on {1} -->
+		(regex (id org_date_founded_ds_137) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_137)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "established")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 137: 5 {0} was born in {1} -->
+		(regex (id org_date_founded_ds_138) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_138)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "born")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 138: 5 {0} founded {1} -->
+		(regex (id org_date_founded_ds_139) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_139)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "founded")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 139: 5 {0} formed in {1} -->
+		(regex (id org_date_founded_ds_140) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_140)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "formed")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 140: 5 {0} establishment in {1} -->
+		(regex (id org_date_founded_ds_141) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_141)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "establishment")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+
+
+		<!-- 168: 4 {0} establishment {1} -->
+		(regex (id org_date_founded_ds_169) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_169)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "establishment")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 170: 4 {0} birth in {1} -->
+		(regex (id org_date_founded_ds_171) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_171)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "birth")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 171: 4 {0} beginnings in {1} -->
+		(regex (id org_date_founded_ds_172) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_172)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "beginnings")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 172: 4 {0} began operating in {1} -->
+		(regex (id org_date_founded_ds_173) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_173)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "began")) (text DONT_ADD_SPACES (string "operating")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 173: 4 {0} began flying in {1} -->
+		(regex (id org_date_founded_ds_174) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_174)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "began")) (text DONT_ADD_SPACES (string "flying")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+		<!-- 175: 4 {0} 's inception in {1} -->
+		(regex (id org_date_founded_ds_176) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_176)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "inception")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 176: 4 {0} 's creation in {1} -->
+		(regex (id org_date_founded_ds_177) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_177)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "creation")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 177: 4 verb: [founded]   <obj> = 0    <iobj> = 1 -->
+		(vprop (id org_date_founded_ds_178) (score 0.9) (score_group 1) (predicate founded) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_178)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role <iobj>) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME)))))
+
+		<!-- 178: 4 noun: [founding]   <ref> = 1    <poss> = 0 -->
+		(nprop (id org_date_founded_ds_179) (score 0.9) (score_group 1) (predicate founding) (args (argument (role <ref>) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_179)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 179: 4 modifier: [when]   <ref> = 1    when = verb: [founded]      <obj> = 0 -->
+		(mprop (id org_date_founded_ds_180) (score 0.9) (score_group 1) (predicate when) (args (argument (role <ref>) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))) (argument (role when) (vprop (predicate founded) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_180)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))))))
+
+
+
+
+
+
+		<!-- 230: 3 {0} was incorporated in {1} -->
+		(regex (id org_date_founded_ds_231) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_231)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "incorporated")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 231: 3 {0} was created on {1} -->
+		(regex (id org_date_founded_ds_232) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_232)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "created")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+		<!-- 233: 3 {0} started out in {1} -->
+		(regex (id org_date_founded_ds_234) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_234)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "started")) (text DONT_ADD_SPACES (string "out")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 234: 3 {0} started flying in {1} -->
+		(regex (id org_date_founded_ds_235) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_235)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "started")) (text DONT_ADD_SPACES (string "flying")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 235: 3 {0} start {1} -->
+		(regex (id org_date_founded_ds_236) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_236)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "start")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 236: 3 {0} set up in {1} -->
+		(regex (id org_date_founded_ds_237) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_237)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "set")) (text DONT_ADD_SPACES (string "up")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+
+
+		<!-- 240: 3 {0} founding {1} -->
+		(regex (id org_date_founded_ds_241) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_241)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "founding")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 241: 3 {0} debut in {1} -->
+		(regex (id org_date_founded_ds_242) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_242)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "debut")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+
+
+
+		<!-- 246: 3 {0} began {1} -->
+		(regex (id org_date_founded_ds_247) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_247)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "began")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 247: 3 {0} began operations {1} -->
+		(regex (id org_date_founded_ds_248) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_248)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "began")) (text DONT_ADD_SPACES (string "operations")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 248: 3 {0} began operating {1} -->
+		(regex (id org_date_founded_ds_249) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_249)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "began")) (text DONT_ADD_SPACES (string "operating")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 249: 3 {0} Founded in {1} -->
+		(regex (id org_date_founded_ds_250) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_250)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "Founded")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 250: 3 {0} , established on {1} -->
+		(regex (id org_date_founded_ds_251) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_251)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "established")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+
+
+
+
+		<!-- 309: 2 {1} when he founded {0} -->
+		(regex (id org_date_founded_ds_310) (score 0.9) (score_group 1) (re (value (return (ff_role org_date_founded)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "when")) (text DONT_ADD_SPACES (string "he")) (text DONT_ADD_SPACES (string "founded")) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_310)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+
+		<!-- 315: 2 {1} he co-founded {0} -->
+		(regex (id org_date_founded_ds_316) (score 0.9) (score_group 1) (re (value (return (ff_role org_date_founded)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "he")) (text DONT_ADD_SPACES (string "co-founded")) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_316)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+
+		<!-- 317: 2 {1} founding of {0} -->
+		(regex (id org_date_founded_ds_318) (score 0.9) (score_group 1) (re (value (return (ff_role org_date_founded)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "founding")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_318)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 318: 2 {1} established {0} -->
+		(regex (id org_date_founded_ds_319) (score 0.9) (score_group 1) (re (value (return (ff_role org_date_founded)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "established")) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_319)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 319: 2 {1} co-founded {0} -->
+		(regex (id org_date_founded_ds_320) (score 0.9) (score_group 1) (re (value (return (ff_role org_date_founded)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "co-founded")) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_320)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+
+		<!-- 327: 2 {1} : Founding of {0} -->
+		(regex (id org_date_founded_ds_328) (score 0.9) (score_group 1) (re (value (return (ff_role org_date_founded)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string ":")) (text DONT_ADD_SPACES (string "Founding")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_328)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 336: 2 {1} , founded {0} -->
+		(regex (id org_date_founded_ds_337) (score 0.9) (score_group 1) (re (value (return (ff_role org_date_founded)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "founded")) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_337)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 337: 2 {1} , establishing {0} -->
+		(regex (id org_date_founded_ds_338) (score 0.9) (score_group 1) (re (value (return (ff_role org_date_founded)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "establishing")) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_338)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+
+		<!-- 339: 2 {1} , [PER] started {0} -->
+		(regex (id org_date_founded_ds_340) (score 0.9) (score_group 1) (re (value (return (ff_role org_date_founded)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string ",")) (mention (acetype PER)) (text DONT_ADD_SPACES (string "started")) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_340)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 340: 2 {1} , [PER] established {0} -->
+		(regex (id org_date_founded_ds_341) (score 0.9) (score_group 1) (re (value (return (ff_role org_date_founded)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string ",")) (mention (acetype PER)) (text DONT_ADD_SPACES (string "established")) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_341)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 341: 2 {1} , [PER] created {0} -->
+		(regex (id org_date_founded_ds_342) (score 0.9) (score_group 1) (re (value (return (ff_role org_date_founded)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string ",")) (mention (acetype PER)) (text DONT_ADD_SPACES (string "created")) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_342)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 342: 2 {1} , [PER] co-founded {0} -->
+		(regex (id org_date_founded_ds_343) (score 0.9) (score_group 1) (re (value (return (ff_role org_date_founded)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string ",")) (mention (acetype PER)) (text DONT_ADD_SPACES (string "co-founded")) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_343)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 343: 2 {0} which opened in {1} -->
+		(regex (id org_date_founded_ds_344) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_344)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "which")) (text DONT_ADD_SPACES (string "opened")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+
+
+
+		<!-- 345: 2 {0} were established in {1} -->
+		(regex (id org_date_founded_ds_346) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_346)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "were")) (text DONT_ADD_SPACES (string "established")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+
+		<!-- 348: 2 {0} was opened in {1} -->
+		(regex (id org_date_founded_ds_349) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_349)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "opened")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+
+		<!-- 351: 2 {0} was formed on {1} -->
+		(regex (id org_date_founded_ds_352) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_352)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "formed")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 352: 2 {0} was conceived in {1} -->
+		(regex (id org_date_founded_ds_353) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_353)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "conceived")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 353: 2 {0} was co-founded in {1} -->
+		(regex (id org_date_founded_ds_354) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_354)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "co-founded")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+		<!-- 355: 2 {0} they founded {1} -->
+		(regex (id org_date_founded_ds_356) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_356)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "they")) (text DONT_ADD_SPACES (string "founded")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 356: 2 {0} started operations in {1} -->
+		(regex (id org_date_founded_ds_357) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_357)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "started")) (text DONT_ADD_SPACES (string "operations")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+		<!-- 361: 2 {0} origins in {1} -->
+		(regex (id org_date_founded_ds_362) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_362)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "origins")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+
+
+
+		<!-- 368: 2 {0} launched {1} -->
+		(regex (id org_date_founded_ds_369) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_369)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "launched")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 369: 2 {0} he co-founded in {1} -->
+		(regex (id org_date_founded_ds_370) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_370)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "he")) (text DONT_ADD_SPACES (string "co-founded")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+
+		<!-- 372: 2 {0} foundation in {1} -->
+		(regex (id org_date_founded_ds_373) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_373)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "foundation")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+		<!-- 374: 2 {0} first opened in {1} -->
+		(regex (id org_date_founded_ds_375) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_375)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "first")) (text DONT_ADD_SPACES (string "opened")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+
+
+
+
+
+		<!-- 378: 2 {0} beginning in {1} -->
+		(regex (id org_date_founded_ds_379) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_379)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "beginning")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 379: 2 {0} began service in {1} -->
+		(regex (id org_date_founded_ds_380) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_380)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "began")) (text DONT_ADD_SPACES (string "service")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 380: 2 {0} began life in {1} -->
+		(regex (id org_date_founded_ds_381) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_381)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "began")) (text DONT_ADD_SPACES (string "life")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 381: 2 {0} began broadcasting in {1} -->
+		(regex (id org_date_founded_ds_382) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_382)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "began")) (text DONT_ADD_SPACES (string "broadcasting")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+
+
+
+		<!-- 388: 2 {0} , started in {1} -->
+		(regex (id org_date_founded_ds_389) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_389)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "started")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+		<!-- 390: 2 {0} , launched in {1} -->
+		(regex (id org_date_founded_ds_391) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_391)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "launched")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+		<!-- 392: 2 {0} , created in {1} -->
+		(regex (id org_date_founded_ds_393) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_393)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "created")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 393: 2 {0} , co-founded in {1} -->
+		(regex (id org_date_founded_ds_394) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_394)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "co-founded")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+		<!-- 395: 2 {0} 's foundation in {1} -->
+		(regex (id org_date_founded_ds_396) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_396)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "foundation")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 396: 2 {0} 's formation in {1} -->
+		(regex (id org_date_founded_ds_397) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_397)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "formation")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+		<!-- 397: 2 {0} 's establishment in {1} -->
+		(regex (id org_date_founded_ds_398) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_398)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "establishment")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))))
+
+
+
+		<!-- 400: 2 verb: [founded]   <obj> = 0    <temp> = 1 -->
+		(vprop (id org_date_founded_ds_401) (score 0.9) (score_group 1) (predicate founded) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_401)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role <temp>) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME)))))
+
+		<!-- 401: 2 verb: [formed]   <obj> = 0    <temp> = 1 -->
+		(vprop (id org_date_founded_ds_402) (score 0.9) (score_group 1) (predicate formed) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_402)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role <temp>) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME)))))
+
+
+		<!-- 403: 2 verb: [created]   <obj> = 0    in = 1 -->
+		(vprop (id org_date_founded_ds_404) (score 0.9) (score_group 1) (predicate created) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_404)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role in) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME)))))
+
+		<!-- 404: 2 verb: [created]   <obj> = 0    after = 1 -->
+		(vprop (id org_date_founded_ds_405) (score 0.9) (score_group 1) (predicate created) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_405)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role after) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME)))))
+
+		<!-- 405: 2 noun: [start]   <ref> = 1    <poss> = 0 -->
+		(nprop (id org_date_founded_ds_406) (score 0.9) (score_group 1) (predicate start) (args (argument (role <ref>) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_406)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+
+		<!-- 407: 2 noun: [creation]   <ref> = 1    <poss> = 0 -->
+		(nprop (id org_date_founded_ds_408) (score 0.9) (score_group 1) (predicate creation) (args (argument (role <ref>) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_408)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 408: 2 modifier: [when]   <ref> = 1    when = verb: [formed]      <obj> = 0 -->
+		(mprop (id org_date_founded_ds_409) (score 0.9) (score_group 1) (predicate when) (args (argument (role <ref>) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))) (argument (role when) (vprop (predicate formed) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_409)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 409: 2 modifier: [when]   <ref> = 1    when = verb: [established]      <obj> = 0 -->
+		(mprop (id org_date_founded_ds_410) (score 0.9) (score_group 1) (predicate when) (args (argument (role <ref>) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))) (argument (role when) (vprop (predicate established) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_410)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 410: 2 modifier: [when]   <ref> = 1    when = verb: [created]      <obj> = 0 -->
+		(mprop (id org_date_founded_ds_411) (score 0.9) (score_group 1) (predicate when) (args (argument (role <ref>) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))) (argument (role when) (vprop (predicate created) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_411)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))))))
+
+
+
+		<!-- 414: 2 modifier: [founding]   <ref> = 1    <mod> = noun: [founding]      of = 0 -->
+		(mprop (id org_date_founded_ds_415) (score 0.9) (score_group 1) (predicate founding) (args (argument (role <ref>) (value (return (ff_role org_date_founded)) (type TIMEX2.TIME))) (argument (role <mod>) (nprop (predicate founding) (args (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_415)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))))))
+
+
+
+
+		<!-- 646: 1 {1} when he opened {0} -->
+		(regex (id org_date_founded_ds_647) (score 0.9) (score_group 1) (re (value (return (ff_role org_date_founded)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "when")) (text DONT_ADD_SPACES (string "he")) (text DONT_ADD_SPACES (string "opened")) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_647)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 648: 1 {1} when he co-founded {0} -->
+		(regex (id org_date_founded_ds_649) (score 0.9) (score_group 1) (re (value (return (ff_role org_date_founded)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "when")) (text DONT_ADD_SPACES (string "he")) (text DONT_ADD_SPACES (string "co-founded")) (mention (return (ff_role AGENT1) (ff_fact_type org_date_founded_ds_649)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+	)
+)

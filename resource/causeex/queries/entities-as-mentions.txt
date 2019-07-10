@@ -1,0 +1,57 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix meas: <http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#>
+prefix event: <http://ontology.causeex.com/ontology/odps/Event#>
+prefix cameocc: <http://ontology.causeex.com/cameo/CountryCodeOntology/>
+prefix eh: <http://ontology.causeex.com/ontology/odps/Event#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix bbnta1: <http://graph.causeex.com/bbn#>
+prefix actor: <http://ontology.causeex.com/ontology/odps/Actor#>
+prefix dataprov: <http://ontology.causeex.com/ontology/odps/DataProvenance#>
+prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/>
+prefix cx: <http://ontology.causeex.com/ontology/odps/CauseEffect#>
+prefix oeo: <http://www.ontologylibrary.mil/OperationalEnvironment/Mid/OEOrganizationOntology#>
+prefix doco: <http://purl.org/spar/doco/>
+prefix gconcept: <http://ontology.causeex.com/ontology/odps/GeneralConcepts#>
+prefix var: <http://www.bbn.com/2017/TA1locals/>
+prefix cr: <http://ontology.causeex.com/CausalExplorationOntology/ClassRelationships#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix ro: <http://www.obofoundry.org/ro/ro.owl#>
+prefix event: <http://ontology.causeex.com/ontology/odps/Event#>
+prefix oee: <http://www.ontologylibrary.mil/OperationalEnvironment/Mid/OEEventOntology#>
+
+select distinct
+?entity ("BBN" as ?performer) ?document_id ?type ?label ?canonical_label ?entity_mention_span_text ?entity_mention_span_offset ?entity_span_text ?entity_span_offset ?entity_sentence_text ?entity_sentence_offset
+
+from <http://graph.causeex.com>
+from <http://ontology.causeex.com>
+WHERE {
+  ?entity rdf:type ?type .
+  {
+    { ?type rdfs:subClassOf* event:Actor . } UNION
+    { ?type rdfs:subClassOf* gconcept:Location . } UNION
+    { ?type rdfs:subClassOf* cco:Artifact . }
+  }
+
+  OPTIONAL { ?entity rdfs:label ?label . }
+  OPTIONAL { ?entity gconcept:canonical_label ?canonical_label . }
+
+  ?entity dataprov:sourced_from ?entity_mention_span .
+  ?entity_mention_span rdf:type dataprov:MentionSpan .
+  ?entity_mention_span dataprov:char_offset ?entity_mention_span_offset .
+  ?entity_mention_span dataprov:text_value ?entity_mention_span_text .
+
+  ?entity dataprov:sourced_from ?entity_span .
+  ?entity_span rdf:type dataprov:Span .
+  MINUS { ?entity_span rdf:type doco:Sentence . }
+  ?entity_span dataprov:char_offset ?entity_span_offset .
+  ?entity_span dataprov:text_value ?entity_span_text .
+  ?entity_span dataprov:contains ?entity_mention_span .
+
+  ?entity_sentence rdf:type doco:Sentence .
+  ?entity_sentence dataprov:text_value ?entity_sentence_text .
+  ?entity_sentence dataprov:char_offset ?entity_sentence_offset .
+  ?entity_sentence dataprov:contains ?entity_span .
+
+  ?entity_document dataprov:contains ?entity_sentence .
+  ?entity_document dataprov:original_source ?document_id .
+}

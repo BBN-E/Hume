@@ -1,0 +1,95 @@
+{
+  "http://ontology.causeex.com/ontology/odps/Actor#has_affiliation": {
+    "domain": ["http://ontology.causeex.com/ontology/odps/Event#Actor"],
+    "range": [
+      "http://ontology.causeex.com/ontology/odps/Event#Actor",
+      "http://ontology.causeex.com/ontology/odps/GeneralConcepts#Location",
+      "http://www.ontologylibrary.mil/OperationalEnvironment/Mid/OEReligionOntology#Religion",
+      "http://ontology.causeex.com/ontology/odps/Actor#AffiliationDetails",
+      "http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"
+    ]
+  },
+
+  "http://ontology.causeex.com/ontology/odps/Event#communicated_by": {
+    "range": ["http://ontology.causeex.com/ontology/odps/Event#Actor"],
+    "domain": ["http://ontology.causeex.com/ontology/odps/Event#Event"]
+  },
+
+  "http://ontology.causeex.com/ontology/odps/Event#has_affected_actor": {
+    "range": [
+      "http://ontology.causeex.com/ontology/odps/Event#Actor",
+      "http://ontology.causeex.com/ontology/odps/Event#ActorDetails"],
+    "domain": ["http://ontology.causeex.com/ontology/odps/Event#Event"]
+  },
+
+  "http://ontology.causeex.com/ontology/odps/Event#has_active_actor": {
+    "range": [
+      "http://ontology.causeex.com/ontology/odps/Event#Actor",
+      "http://ontology.causeex.com/ontology/odps/Event#ActorDetails"],
+    "domain": ["http://ontology.causeex.com/ontology/odps/Event#Event"]
+  },
+
+  "http://ontology.causeex.com/ontology/odps/Event#has_provider": {
+    "range": [
+      "http://ontology.causeex.com/ontology/odps/Event#Actor",
+      "http://ontology.causeex.com/ontology/odps/Event#ActorDetails"],
+    "domain": ["http://ontology.causeex.com/ontology/odps/Event#Event"]
+  },
+
+  "http://ontology.causeex.com/ontology/odps/Event#has_recipient": {
+    "range": [
+      "http://ontology.causeex.com/ontology/odps/Event#Actor",
+      "http://ontology.causeex.com/ontology/odps/Event#ActorDetails"],
+    "domain": ["http://ontology.causeex.com/ontology/odps/Event#Event"]
+  },
+
+  "http://ontology.causeex.com/ontology/odps/Event#has_topic": {
+    "range": ["http://ontology.causeex.com/ontology/odps/Event#Event"],
+    "domain": ["http://ontology.causeex.com/ontology/odps/Event#Event"]
+  },
+
+  "http://ontology.causeex.com/ontology/odps/Event#has_actor": {
+    "range": [
+      "http://ontology.causeex.com/ontology/odps/Event#Actor",
+      "http://ontology.causeex.com/ontology/odps/Event#ActorDetails"],
+    "domain": ["http://ontology.causeex.com/ontology/odps/Event#Event"]
+  },
+
+  "http://ontology.causeex.com/ontology/odps/Event#has_destination": {
+    "range": [
+      "http://ontology.causeex.com/ontology/odps/Event#Location",
+      "http://ontology.causeex.com/ontology/odps/Event#LocationDetails"],
+    "domain": ["http://ontology.causeex.com/ontology/odps/Event#Event"]
+  },
+
+  "http://ontology.causeex.com/ontology/odps/Event#has_origin": {
+    "range": [
+      "http://ontology.causeex.com/ontology/odps/Event#Location",
+      "http://ontology.causeex.com/ontology/odps/Event#LocationDetails"],
+    "domain": ["http://ontology.causeex.com/ontology/odps/Event#Event"]
+  },
+
+  "http://ontology.causeex.com/ontology/odps/Event#has_instrument": {
+    "range": ["http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"],
+    "domain": ["http://ontology.causeex.com/ontology/odps/Event#Event"]
+  },
+
+  "http://ontology.causeex.com/ontology/odps/Event#is_about_artifact": {
+    "range": ["http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"],
+    "domain": ["http://ontology.causeex.com/ontology/odps/Event#Event"]
+  },
+
+  "http://ontology.causeex.com/ontology/odps/GeneralConcepts#involves_goods_or_property": {
+    "range": [
+      "http://ontology.causeex.com/ontology/odps/GeneralConcepts#PhysicalLocation",
+      "http://www.ontologyrepository.com/CommonCoreOntologies/Artifact"
+    ]
+  },
+
+  "http://ontology.causeex.com/ontology/odps/GeneralConcepts#located_at": {
+    "range": [
+      "http://ontology.causeex.com/ontology/odps/GeneralConcepts#Location",
+      "http://ontology.causeex.com/ontology/odps/GeneralConcepts#LocationDetails"
+    ]
+  }
+}

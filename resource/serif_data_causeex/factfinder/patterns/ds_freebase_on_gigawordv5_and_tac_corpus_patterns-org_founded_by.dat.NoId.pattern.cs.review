@@ -1,0 +1,425 @@
+(org_founded_by
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 3: 256 noun: [founder]   <ref> = 1    of = 0 -->
+		(nprop (id org_founded_by_ds_4) (score 0.9) (score_group 1) (predicate founder) (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_4)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 4: 233 verb: [founded]   <sub> = 1    <obj> = 0 -->
+		(vprop (id org_founded_by_ds_5) (score 0.9) (score_group 1) (predicate founded) (args (argument (role <sub>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_5)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 8: 165 {1} founded {0} -->
+		(regex (id org_founded_by_ds_9) (score 0.9) (score_group 1) (re (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string "founded")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_9)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 12: 138 noun: [founder]   <ref> = 1    <mod> = 0 -->
+		(nprop (id org_founded_by_ds_13) (score 0.9) (score_group 1) (predicate founder) (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_13)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 13: 135 {1} , founder of {0} -->
+		(regex (id org_founded_by_ds_14) (score 0.9) (score_group 1) (re (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "founder")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_14)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 15: 126 noun: [co-founder]   <ref> = 1    of = 0 -->
+		(nprop (id org_founded_by_ds_16) (score 0.9) (score_group 1) (predicate co-founder) (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_16)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+
+		<!-- 20: 96 noun: [founder]   <ref> = 1    <poss> = 0 -->
+		(nprop (id org_founded_by_ds_21) (score 0.9) (score_group 1) (predicate founder) (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_21)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 21: 89 noun: [co-founder]   <ref> = 1    <mod> = 0 -->
+		(nprop (id org_founded_by_ds_22) (score 0.9) (score_group 1) (predicate co-founder) (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_22)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 23: 81 {1} , co-founder of {0} -->
+		(regex (id org_founded_by_ds_24) (score 0.9) (score_group 1) (re (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "co-founder")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_24)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 25: 73 modifier: [of]   <ref> = noun: [founder]      <ref> = 1    of = 0 -->
+		(mprop (id org_founded_by_ds_26) (score 0.9) (score_group 1) (predicate of) (args (argument (role <ref>) (nprop (predicate founder) (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)))))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_26)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 40: 58 verb: [co-founded]   <sub> = 1    <obj> = 0 -->
+		(vprop (id org_founded_by_ds_41) (score 0.9) (score_group 1) (predicate co-founded) (args (argument (role <sub>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_41)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 42: 57 verb: [started]   <sub> = 1    <obj> = 0 -->
+		(vprop (id org_founded_by_ds_43) (score 0.9) (score_group 1) (predicate started) (args (argument (role <sub>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_43)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 47: 50 {1} started {0} -->
+		(regex (id org_founded_by_ds_48) (score 0.9) (score_group 1) (re (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string "started")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_48)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 49: 49 {1} co-founded {0} -->
+		(regex (id org_founded_by_ds_50) (score 0.9) (score_group 1) (re (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string "co-founded")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_50)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 53: 45 set: []   <ref> = noun: [founder]      <mod> = 0    <member> = 1 -->
+		(sprop (id org_founded_by_ds_54) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate founder) (args (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_54)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))) (argument (role <member>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)))))
+
+		<!-- 54: 45 noun: [founder]   <ref> = 1    of = name: []      <ref> = 0 -->
+		(nprop (id org_founded_by_ds_55) (score 0.9) (score_group 1) (predicate founder) (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_55)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))))))
+
+
+		<!-- 58: 43 set: []   <ref> = noun: [founder]      <poss> = 0    <member> = 1 -->
+		(sprop (id org_founded_by_ds_59) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate founder) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_59)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))) (argument (role <member>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)))))
+
+
+		<!-- 60: 41 set: []   <ref> = noun: [founder]      of = 0    <member> = 1 -->
+		(sprop (id org_founded_by_ds_61) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate founder) (args (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_61)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))) (argument (role <member>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)))))
+
+
+
+		<!-- 65: 40 {0} founder , {1} -->
+		(regex (id org_founded_by_ds_66) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_66)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "founder")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))))
+
+		<!-- 66: 39 noun: [co-founder]   <ref> = 1    <poss> = 0 -->
+		(nprop (id org_founded_by_ds_67) (score 0.9) (score_group 1) (predicate co-founder) (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_67)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 77: 36 {0} was founded by {1} -->
+		(regex (id org_founded_by_ds_78) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_78)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "founded")) (text DONT_ADD_SPACES (string "by")) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))))
+
+
+		<!-- 81: 35 {0} 's founder , {1} -->
+		(regex (id org_founded_by_ds_82) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_82)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "founder")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))))
+
+		<!-- 82: 35 verb: [founded]   <sub> = name: []      <ref> = 1    <obj> = 0 -->
+		(vprop (id org_founded_by_ds_83) (score 0.9) (score_group 1) (predicate founded) (args (argument (role <sub>) (anyprop (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)))))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_83)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 83: 35 verb: [created]   <sub> = 1    <obj> = 0 -->
+		(vprop (id org_founded_by_ds_84) (score 0.9) (score_group 1) (predicate created) (args (argument (role <sub>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_84)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+
+
+
+
+
+
+
+
+		<!-- 98: 30 {0} co-founder {1} -->
+		(regex (id org_founded_by_ds_99) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_99)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "co-founder")) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))))
+
+		<!-- 100: 30 verb: [launched]   <sub> = 1    <obj> = 0 -->
+		(vprop (id org_founded_by_ds_101) (score 0.9) (score_group 1) (predicate launched) (args (argument (role <sub>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_101)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+
+		<!-- 102: 30 CombinationPattern[{0} , {1}][the founder of {0}] -->
+		(regex (id org_founded_by_ds_103) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "the")) (text DONT_ADD_SPACES (string "founder")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_103)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))))
+
+
+
+		<!-- 105: 29 verb: [found]   <sub> = 1    <obj> = 0 -->
+		(vprop (id org_founded_by_ds_106) (score 0.9) (score_group 1) (predicate found) (args (argument (role <sub>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_106)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+
+		<!-- 107: 28 modifier: [of]   <ref> = noun: [co-founder]      <ref> = 1    of = 0 -->
+		(mprop (id org_founded_by_ds_108) (score 0.9) (score_group 1) (predicate of) (args (argument (role <ref>) (nprop (predicate co-founder) (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)))))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_108)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+
+		<!-- 112: 27 verb: [built]   <sub> = 1    <obj> = 0 -->
+		(vprop (id org_founded_by_ds_113) (score 0.9) (score_group 1) (predicate built) (args (argument (role <sub>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_113)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+
+
+
+		<!-- 116: 26 noun: [co-founder]   <ref> = 1    of = name: []      <ref> = 0 -->
+		(nprop (id org_founded_by_ds_117) (score 0.9) (score_group 1) (predicate co-founder) (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_117)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 117: 26 CombinationPattern[{1} , founder of {0}][, '' said {1}] -->
+		(regex (id org_founded_by_ds_118) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "''")) (text DONT_ADD_SPACES (string "said")) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "founder")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_118)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+
+
+		<!-- 122: 25 {0} founder {1} -->
+		(regex (id org_founded_by_ds_123) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_123)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "founder")) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))))
+
+
+
+
+
+
+
+		<!-- 129: 25 CombinationPattern[{1} , co-founder of {0}][, '' said {1}] -->
+		(regex (id org_founded_by_ds_130) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "''")) (text DONT_ADD_SPACES (string "said")) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "co-founder")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_130)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+
+		<!-- 131: 24 {1} , who founded {0} -->
+		(regex (id org_founded_by_ds_132) (score 0.9) (score_group 1) (re (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "who")) (text DONT_ADD_SPACES (string "founded")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_132)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+
+
+
+		<!-- 137: 23 {1} launched {0} -->
+		(regex (id org_founded_by_ds_138) (score 0.9) (score_group 1) (re (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string "launched")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_138)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+
+
+		<!-- 147: 22 {1} created {0} -->
+		(regex (id org_founded_by_ds_148) (score 0.9) (score_group 1) (re (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string "created")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_148)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 148: 22 {1} built {0} -->
+		(regex (id org_founded_by_ds_149) (score 0.9) (score_group 1) (re (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string "built")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_149)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 151: 22 verb: [start]   <sub> = 1    <obj> = 0 -->
+		(vprop (id org_founded_by_ds_152) (score 0.9) (score_group 1) (predicate start) (args (argument (role <sub>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_152)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+
+
+		<!-- 155: 22 CombinationPattern[{1} , {0}][{0} 's founder and] -->
+		(regex (id org_founded_by_ds_156) (score 0.9) (score_group 1) (re (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_156)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "founder")) (text DONT_ADD_SPACES (string "and"))))
+
+		<!-- 156: 22 CombinationPattern[{1} , {0}][{0} 's founder ,] -->
+		(regex (id org_founded_by_ds_157) (score 0.9) (score_group 1) (re (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_157)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "founder")) (text DONT_ADD_SPACES (string ","))))
+
+		<!-- 161: 21 verb: [formed]   <sub> = 1    <obj> = 0 -->
+		(vprop (id org_founded_by_ds_162) (score 0.9) (score_group 1) (predicate formed) (args (argument (role <sub>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_162)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+
+		<!-- 164: 20 set: []   <ref> = noun: [co-founder]      <mod> = 0    <member> = 1 -->
+		(sprop (id org_founded_by_ds_165) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate co-founder) (args (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_165)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))) (argument (role <member>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)))))
+
+		<!-- 165: 20 copula: [is]   <sub> = 1    <obj> = noun: [founder]      of = 0 -->
+		(anyprop (id org_founded_by_ds_166) (score 0.9) (score_group 1) (predicate is) (args (argument (role <sub>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <obj>) (nprop (predicate founder) (args (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_166)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 166: 20 CombinationPattern[{1} , founder of {0}][ {1}] -->
+		(regex (id org_founded_by_ds_167) (score 0.9) (score_group 1) (re (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "founder")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_167)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 167: 19 {1} set up {0} -->
+		(regex (id org_founded_by_ds_168) (score 0.9) (score_group 1) (re (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string "set")) (text DONT_ADD_SPACES (string "up")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_168)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 168: 19 {1} formed {0} -->
+		(regex (id org_founded_by_ds_169) (score 0.9) (score_group 1) (re (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string "formed")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_169)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+
+		<!-- 177: 18 {0} co-founder , {1} -->
+		(regex (id org_founded_by_ds_178) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_178)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "co-founder")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))))
+
+		<!-- 181: 18 verb: [started]   <sub> = name: []      <ref> = 1    <obj> = 0 -->
+		(vprop (id org_founded_by_ds_182) (score 0.9) (score_group 1) (predicate started) (args (argument (role <sub>) (anyprop (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)))))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_182)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 184: 18 modifier: [of]   <ref> = noun: [founder]      <ref> = 1    of = name: []      <ref> = 0 -->
+		(mprop (id org_founded_by_ds_185) (score 0.9) (score_group 1) (predicate of) (args (argument (role <ref>) (nprop (predicate founder) (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)))))) (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_185)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 193: 17 CombinationPattern[{1} , {0}][{0} 's co-founder and] -->
+		(regex (id org_founded_by_ds_194) (score 0.9) (score_group 1) (re (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_194)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "co-founder")) (text DONT_ADD_SPACES (string "and"))))
+
+
+
+
+
+
+
+
+		<!-- 201: 16 verb: [founded]   <sub> = 1    <obj> = name: []      <ref> = 0 -->
+		(vprop (id org_founded_by_ds_202) (score 0.9) (score_group 1) (predicate founded) (args (argument (role <sub>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <obj>) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_202)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 202: 16 set: []   <ref> = noun: [co-founder]      <poss> = 0    <member> = 1 -->
+		(sprop (id org_founded_by_ds_203) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate co-founder) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_203)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))) (argument (role <member>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)))))
+
+
+
+
+
+
+
+
+
+		<!-- 213: 15 {1} founded the {0} -->
+		(regex (id org_founded_by_ds_214) (score 0.9) (score_group 1) (re (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string "founded")) (text DONT_ADD_SPACES (string "the")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_214)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+
+
+
+
+
+
+		<!-- 224: 15 noun: [cofounder]   <ref> = 1    of = 0 -->
+		(nprop (id org_founded_by_ds_225) (score 0.9) (score_group 1) (predicate cofounder) (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_225)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 225: 15 noun: [cofounder]   <ref> = 1    <mod> = 0 -->
+		(nprop (id org_founded_by_ds_226) (score 0.9) (score_group 1) (predicate cofounder) (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_226)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+
+
+
+		<!-- 236: 14 {0} founded by {1} -->
+		(regex (id org_founded_by_ds_237) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_237)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "founded")) (text DONT_ADD_SPACES (string "by")) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))))
+
+		<!-- 237: 14 verb: [established]   <sub> = 1    <obj> = 0 -->
+		(vprop (id org_founded_by_ds_238) (score 0.9) (score_group 1) (predicate established) (args (argument (role <sub>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_238)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+
+
+
+
+
+		<!-- 243: 14 CombinationPattern[{0} , {1}][The founder of {0}] -->
+		(regex (id org_founded_by_ds_244) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "The")) (text DONT_ADD_SPACES (string "founder")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_244)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))))
+
+		<!-- 248: 13 {1} , founded {0} -->
+		(regex (id org_founded_by_ds_249) (score 0.9) (score_group 1) (re (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "founded")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_249)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+
+
+
+		<!-- 252: 13 {0} 's co-founder , {1} -->
+		(regex (id org_founded_by_ds_253) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_253)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "co-founder")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))))
+
+
+		<!-- 254: 13 set: []   <ref> = noun: [co-founder]      of = 0    <member> = 1 -->
+		(sprop (id org_founded_by_ds_255) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate co-founder) (args (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_255)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))) (argument (role <member>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)))))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- 268: 12 {0} co-founders {1} -->
+		(regex (id org_founded_by_ds_269) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_269)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "co-founders")) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))))
+
+
+
+
+
+
+		<!-- 274: 12 {0} , founded by {1} -->
+		(regex (id org_founded_by_ds_275) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_275)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "founded")) (text DONT_ADD_SPACES (string "by")) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))))
+
+
+		<!-- 276: 12 verb: [founding]   <sub> = 1    <obj> = 0 -->
+		(vprop (id org_founded_by_ds_277) (score 0.9) (score_group 1) (predicate founding) (args (argument (role <sub>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_277)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 277: 12 verb: [founded]   <obj> = 0    with = 1 -->
+		(vprop (id org_founded_by_ds_278) (score 0.9) (score_group 1) (predicate founded) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_278)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role with) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)))))
+
+		<!-- 278: 12 verb: [co-founded]   <obj> = 0    with = 1 -->
+		(vprop (id org_founded_by_ds_279) (score 0.9) (score_group 1) (predicate co-founded) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_279)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role with) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)))))
+
+
+
+		<!-- 281: 12 copula: [was]   <sub> = 1    <obj> = noun: [co-founder]      of = 0 -->
+		(anyprop (id org_founded_by_ds_282) (score 0.9) (score_group 1) (predicate was) (args (argument (role <sub>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <obj>) (nprop (predicate co-founder) (args (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_282)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))))))
+
+
+
+
+
+
+
+
+		<!-- 289: 12 CombinationPattern[{0} , {1}][, founder of {0}] -->
+		(regex (id org_founded_by_ds_290) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "founder")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_290)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))))
+
+
+
+		<!-- 292: 11 {1} opened {0} -->
+		(regex (id org_founded_by_ds_293) (score 0.9) (score_group 1) (re (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string "opened")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_293)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+
+		<!-- 294: 11 {1} established {0} -->
+		(regex (id org_founded_by_ds_295) (score 0.9) (score_group 1) (re (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string "established")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_295)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- 324: 10 {0} founders {1} -->
+		(regex (id org_founded_by_ds_325) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_325)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "founders")) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))))
+
+		<!-- 330: 10 verb: [founded]   <sub> = 1    <iobj> = 0 -->
+		(vprop (id org_founded_by_ds_331) (score 0.9) (score_group 1) (predicate founded) (args (argument (role <sub>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <iobj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_331)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 331: 10 set: []   <member> = 1    <member> = noun: [founder]      of = 0 -->
+		(sprop (id org_founded_by_ds_332) (score 0.9) (score_group 1) (args (argument (role <member>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <member>) (nprop (predicate founder) (args (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_332)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))))))
+
+
+		<!-- 346: 9 {1} also founded {0} -->
+		(regex (id org_founded_by_ds_347) (score 0.9) (score_group 1) (re (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string "also")) (text DONT_ADD_SPACES (string "founded")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_347)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 352: 9 {0} founders , {1} -->
+		(regex (id org_founded_by_ds_353) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_353)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "founders")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))))
+
+
+		<!-- 356: 9 {0} 's founders , {1} -->
+		(regex (id org_founded_by_ds_357) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_357)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "founders")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))))
+
+		<!-- 359: 9 verb: [cofounded]   <sub> = 1    <obj> = 0 -->
+		(vprop (id org_founded_by_ds_360) (score 0.9) (score_group 1) (predicate cofounded) (args (argument (role <sub>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_360)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 360: 9 verb: [build]   <sub> = 1    <obj> = 0 -->
+		(vprop (id org_founded_by_ds_361) (score 0.9) (score_group 1) (predicate build) (args (argument (role <sub>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_361)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 364: 9 poss: ['s]   <ref> = noun: [founder]      <ref> = 1    <poss> = 0 -->
+		(anyprop (id org_founded_by_ds_365) (score 0.9) (score_group 1) (predicate 's) (args (argument (role <ref>) (nprop (predicate founder) (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)))))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_365)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+
+		<!-- 367: 9 noun: [founders]   <ref> = 1    <mod> = 0 -->
+		(nprop (id org_founded_by_ds_368) (score 0.9) (score_group 1) (predicate founders) (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_368)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 370: 9 noun: [co-founders]   <ref> = 1    of = 0 -->
+		(nprop (id org_founded_by_ds_371) (score 0.9) (score_group 1) (predicate co-founders) (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_371)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+
+		<!-- 381: 8 {1} cofounded {0} -->
+		(regex (id org_founded_by_ds_382) (score 0.9) (score_group 1) (re (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string "cofounded")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_382)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 384: 8 {1} , cofounder of {0} -->
+		(regex (id org_founded_by_ds_385) (score 0.9) (score_group 1) (re (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "cofounder")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_385)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 400: 8 verb: [starting]   <sub> = 1    <obj> = 0 -->
+		(vprop (id org_founded_by_ds_401) (score 0.9) (score_group 1) (predicate starting) (args (argument (role <sub>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_401)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 405: 8 set: []   <member> = noun: [founder]      <ref> = 1       of = 0 -->
+		(sprop (id org_founded_by_ds_406) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate founder) (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_406)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 416: 8 noun: [co-founders]   <ref> = 1    <mod> = 0 -->
+		(nprop (id org_founded_by_ds_417) (score 0.9) (score_group 1) (predicate co-founders) (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_417)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 418: 8 modifier: [co-founded]   <ref> = 0    by = 1 -->
+		(mprop (id org_founded_by_ds_419) (score 0.9) (score_group 1) (predicate co-founded) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_419)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role by) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)))))
+
+		<!-- 420: 8 copula: [is]   <sub> = 1    <obj> = noun: [co-founder]      of = 0 -->
+		(anyprop (id org_founded_by_ds_421) (score 0.9) (score_group 1) (predicate is) (args (argument (role <sub>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <obj>) (nprop (predicate co-founder) (args (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_421)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))))))
+
+
+
+		<!-- 430: 8 CombinationPattern[{0} , {1}][a co-founder of {0}] -->
+		(regex (id org_founded_by_ds_431) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "a")) (text DONT_ADD_SPACES (string "co-founder")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_431)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))))
+
+		<!-- 431: 8 CombinationPattern[{0} , {1}][, co-founder of {0}] -->
+		(regex (id org_founded_by_ds_432) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "co-founder")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_432)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))))
+
+		<!-- 447: 7 {1} [PER] started {0} -->
+		(regex (id org_founded_by_ds_448) (score 0.9) (score_group 1) (re (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)) (mention (acetype PER)) (text DONT_ADD_SPACES (string "started")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_448)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 461: 7 verb: [opened]   <sub> = 1    <obj> = 0 -->
+		(vprop (id org_founded_by_ds_462) (score 0.9) (score_group 1) (predicate opened) (args (argument (role <sub>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_462)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 464: 7 verb: [launching]   <sub> = 1    <obj> = 0 -->
+		(vprop (id org_founded_by_ds_465) (score 0.9) (score_group 1) (predicate launching) (args (argument (role <sub>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_465)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 466: 7 verb: [form]   <sub> = 1    <obj> = 0 -->
+		(vprop (id org_founded_by_ds_467) (score 0.9) (score_group 1) (predicate form) (args (argument (role <sub>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_467)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+
+		<!-- 479: 7 copula: [was]   <sub> = 1    <obj> = noun: [founder]      of = 0 -->
+		(anyprop (id org_founded_by_ds_480) (score 0.9) (score_group 1) (predicate was) (args (argument (role <sub>) (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))) (argument (role <obj>) (nprop (predicate founder) (args (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_ds_480)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))))))
+	)
+)

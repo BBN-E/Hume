@@ -1,0 +1,476 @@
+- Event:
+  - _source: ['HUME: /event', 'WM: /wm/concept/causal_factor']
+  - {_description: NA}
+  - _examples: [NA]
+  - Environment:
+    - _source: [NN, 'WM: /wm/concept/causal_factor/environment/environment', 'HUME: /event/environment']
+    - {_description: 'Environment-related factors.'}
+    - _examples: [NA]
+  - Factor:
+    - _source: [NN, 'HUME: /event/factor', 'WM: /wm/concept/causal_factor']
+    - {_description: NA}
+    - _examples: [NA]
+  - Weather:
+    - _source: [NN, 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/weather', 'HUME: /event/weather', 'WM: /wm/concept/causal_factor/weather']
+    - {_description: 'Any environmental condition related to atmospheric conditions in an area. Weather includes temperature, wind, clouds/precipitation, etc. and their effects.'}
+    - _examples: [NA]
+    - Precipitation:
+      - _source: [NN, 'HUME_INDICATOR: /indicator/Rainfall', 'WM: /wm/concept/causal_factor/weather/precipitation', 'HUME: /event/weather/precipitation', 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/weather/rainfall']
+      - {_description: 'Rain, snow, sleet, or hail that falls to the ground.'}
+      - _examples: [NA]
+    - Flooding:
+      - _source: [NN, 'HUME: /event/weather/flooding', 'HUME_INDICATOR: /indicator/Rainfall', 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/weather/rainfall', 'WM: /wm/concept/causal_factor/weather/precipitation/flooding']
+      - {_description: 'The covering or submerging of normally dry land with a large amount of water. Cover or submerge (a place or area) with water.'}
+      - _examples: [NA]
+    - Drought:
+      - _source: [NN, 'HUME: /event/weather/drought', 'HUME_INDICATOR: /indicator/Rainfall', 'WM: /wm/concept/causal_factor/weather/precipitation/drought', 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/weather/rainfall']
+      - {_description: 'A prolonged period of abnormally low rainfall, leading to a shortage of water.'}
+      - _examples: [NA]
+    - Storm:
+      - _source: [NN, 'WM: /wm/concept/causal_factor/weather/precipitation/storm', 'HUME: /event/weather/storm', 'HUME_INDICATOR: /indicator/Rainfall', 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/weather/rainfall']
+      - {_description: 'A violent disturbance of the atmosphere with strong winds and usually rain, thunder, lightning, or snow.'}
+      - _examples: [NA]
+  - Conflict:
+    - _source: [NN, 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/conflict/population displacement', 'HUME_INDICATOR: /indicator/Conflict/Population Displacement', 'HUME: /event/conflict']
+    - {_description: 'A serious disagreement or argument, typically a protracted one. For example, a prolonged armed struggle, or a condition in which a person experiences a clash of opposing wishes or needs.'}
+    - _examples: [NA]
+    - Hostility:
+      - _source: [NN, 'HUME: /event/conflict/hostility', 'WM: /wm/concept/causal_factor/social_and_political/conflict/hostility']
+      - {_description: 'Hostile behavior; unfriendliness or opposition.'}
+      - _examples: [NA]
+    - Demonstrate:
+      - _source: [NN, 'WM: /wm/concept/causal_factor/social_and_political/conflict/demostrate', 'HUME: /event/conflict/demostrate']
+      - {_description: 'A public meeting or march protesting against something or expressing views on a political issue.'}
+      - _examples: [NA]
+    - War:
+      - _source: [NN, 'HUME: /event/conflict/war', 'WM: /wm/concept/causal_factor/social_and_political/conflict/war']
+      - {_description: 'A state of armed conflict between different nations or states or different groups within a nation or state.'}
+      - _examples: [NA]
+    - Attack:
+      - _source: [NN, 'HUME_INDICATOR: /indicator/Conflict/Population Displacement', 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/conflict/population displacement', 'HUME: /event/conflict/attack', 'WM: /wm/concept/causal_factor/social_and_political/conflict/attack']
+      - {_description: 'Take aggressive action against (a place or enemy forces) with weapons or armed force, typically in a battle or war. An aggressive and violent action against a person or place.'}
+      - _examples: [NA]
+      - PsychologicalAttack:
+        - _source: [NN, 'WM: /wm/concept/causal_factor/social_and_political/conflict/attack', 'HUME: /event/conflict/attack/psychological attack']
+        - {_description: NA}
+        - _examples: [NA]
+    - Repression:
+      - _source: [NN, 'WM: /wm/concept/causal_factor/social_and_political/conflict', 'HUME: /event/conflict/repression']
+      - {_description: NA}
+      - _examples: [NA]
+    - Collision:
+      - _source: [NN, 'HUME: /event/conflict/collision', 'WM: /wm/concept/causal_factor/social_and_political/conflict']
+      - {_description: NA}
+      - _examples: [NA]
+    - Terrorism:
+      - _source: [NN, 'WM: /wm/concept/causal_factor/social_and_political/conflict/terrorism', 'HUME: /event/conflict/terrorism']
+      - {_description: NA}
+      - _examples: [NA]
+    - Sabotage:
+      - _source: [NN, 'HUME: /event/conflict/sabotage', 'WM: /wm/concept/causal_factor/social_and_political/conflict']
+      - {_description: NA}
+      - _examples: [NA]
+    - Strike:
+      - _source: [NN, 'WM: /wm/concept/causal_factor/social_and_political/conflict/strike', 'HUME: /event/conflict/strike']
+      - {_description: NA}
+      - _examples: [NA]
+  - Death:
+    - _source: [NN, 'WM: /wm/concept/causal_factor/health_and_life/death', 'HUME: /event/death']
+    - {_description: NA}
+    - _examples: [NA]
+  - Offense:
+    - _source: [NN, 'HUME: /event/offense', 'WM: /wm/concept/causal_factor/social_and_political']
+    - {_description: NA}
+    - _examples: [NA]
+    - Crime:
+      - _source: [NN, 'HUME: /event/offense/crime', 'WM: /wm/concept/causal_factor/social_and_political/crime']
+      - {_description: 'An action or omission that constitutes an offense that may be prosecuted by the state and is punishable by law.'}
+      - _examples: [NA]
+    - Exploitation:
+      - _source: [NN, 'WM: /wm/concept/causal_factor/social_and_political/threat/exploitation', 'HUME: /event/offense/exploitation']
+      - {_description: NA}
+      - _examples: [NA]
+  - Healthcare:
+    - _source: [NN, 'WM: /wm/concept/causal_factor/health_and_life', 'HUME: /event/healthcare']
+    - {_description: NA}
+    - _examples: [NA]
+    - Famine:
+      - _source: [NN, 'HUME_INDICATOR: /indicator/Health/Global Acute Malnutrition (GAM) rate', 'WM: /wm/concept/causal_factor/condition/famine', 'HUME: /event/healthcare/famine']
+      - {_description: 'Extreme scarcity of food.'}
+      - _examples: [NA]
+    - HumanDisease:
+      - _source: [NN, 'WM: /wm/concept/causal_factor/health_and_life/disease/human disease', 'HUME: /event/healthcare/human disease']
+      - {_description: 'Human disease.'}
+      - _examples: [NA]
+    - PlantDisease:
+      - _source: [NN, 'HUME: /event/healthcare/plant disease', 'WM: /wm/concept/causal_factor/health_and_life/disease/plant disease']
+      - {_description: 'Plant disease.'}
+      - _examples: [NA]
+      - PestInfestation:
+        - _source: [NN, 'WM: /wm/concept/causal_factor/health_and_life/disease/plant disease/pest infestation', 'HUME: /event/healthcare/pest infestation']
+        - {_description: 'Pest infestation.'}
+        - _examples: [NA]
+    - AnimalDisease:
+      - _source: [NN, 'HUME: /event/healthcare/animal disease', 'WM: /wm/concept/causal_factor/health_and_life/disease/animal disease']
+      - {_description: 'Animal disease.'}
+      - _examples: [NA]
+    - Treatment:
+      - _source: [NN, 'HUME: /event/healthcare/treatment', 'WM: /wm/concept/causal_factor/health_and_life/treatment/treatment']
+      - {_description: 'Medical care given to a patient for an illness or injury.'}
+      - _examples: [NA]
+  - Movement:
+    - _source: [NN, 'WM: /wm/concept/causal_factor/movement/movement', 'HUME: /event/movement']
+    - {_description: 'An act of changing physical location or position or of having this changed.'}
+    - _examples: [NA]
+    - Transport:
+      - _source: [NN, 'HUME: /event/movement/transport', 'WM: /wm/concept/causal_factor/movement/movement/transport']
+      - {_description: 'Take or carry (people or goods) from one place to another by means of a vehicle, aircraft, or ship.'}
+      - _examples: [NA]
+    - HumanDisplacement:
+      - _source: [NN, 'HUME: /event/movement/human displacement', 'HUME_INDICATOR: /indicator/Conflict/Population Displacement', 'WM: /wm/concept/causal_factor/movement/movement/human displacement', 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/conflict/population displacement']
+      - {_description: 'The forced movement of people from their home, or country of origin.'}
+      - _examples: [NA]
+    - EvacuateHumanitarianWorkers:
+      - _source: [NN, 'WM: /wm/concept/causal_factor/movement/movement/evacuate humanitarian workers', 'HUME: /event/movement/evacuate humanitarian workers']
+      - {_description: NA}
+      - _examples: [NA]
+  - EconomicActivity:
+    - _source: [NN, 'WM: /wm/concept/causal_factor/economic_and_commerce/economic activity', 'HUME: /event/economic activity']
+    - {_description: 'Economic activities.'}
+    - _examples: [NA]
+    - CrossBorderTrade:
+      - _source: [NN, 'HUME: /event/economic activity/cross border trade', 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/commerce/Cross Border Trade', 'HUME_INDICATOR: /indicator/Commerce/Cross Border Trade', 'WM: /wm/concept/causal_factor/economic_and_commerce/economic activity/cross_boarder_trade']
+      - {_description: 'Cross-border trade.'}
+      - _examples: [NA]
+      - Import:
+        - _source: [NN, 'HUME: /event/economic activity/cross border trade/import', 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/commerce/Cross Border Trade', 'HUME_INDICATOR: /indicator/Commerce/Cross Border Trade', 'WM: /wm/concept/causal_factor/economic_and_commerce/economic activity/cross_boarder_trade/import']
+        - {_description: 'Bring (goods or services) into a country from abroad for sale.'}
+        - _examples: [NA]
+        - FoodImport:
+          - _source: [NN, 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/commerce/Cross Border Trade', 'HUME_INDICATOR: /indicator/Commerce/Cross Border Trade', 'HUME: /event/economic activity/cross border trade/import/food import', 'WM: /wm/concept/causal_factor/economic_and_commerce/economic activity/cross_boarder_trade/import']
+          - {_description: 'Import of food.'}
+          - _examples: [NA]
+      - Export:
+        - _source: [NN, 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/commerce/Cross Border Trade', 'WM: /wm/concept/causal_factor/economic_and_commerce/economic activity/cross_boarder_trade/export', 'HUME: /event/economic activity/cross border trade/export', 'HUME_INDICATOR: /indicator/Commerce/Cross Border Trade']
+        - {_description: 'Send (goods or services) to another country for sale.'}
+        - _examples: [NA]
+        - FoodExport:
+          - _source: [NN, 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/commerce/Cross Border Trade', 'WM: /wm/concept/causal_factor/economic_and_commerce/economic activity/cross_boarder_trade/export', 'HUME: /event/economic activity/cross border trade/export/food export', 'HUME_INDICATOR: /indicator/Commerce/Cross Border Trade']
+          - {_description: 'Export of food.'}
+          - _examples: [NA]
+    - Production:
+      - _source: [NN, 'WM: /wm/concept/causal_factor/economic_and_commerce/economic activity', 'HUME: /event/economic activity/production']
+      - {_description: NA}
+      - _examples: [NA]
+      - AgricultureProduction:
+        - _source: [NN, 'WM: /wm/concept/causal_factor/agriculture/agricultural production', 'HUME: /event/economic activity/production/agriculture production']
+        - {_description: 'Agriculture production.'}
+        - _examples: [NA]
+        - Irrigation:
+          - _source: [NN, 'HUME: /event/economic activity/production/agriculture production/irrigation', 'WM: /wm/concept/causal_factor/agriculture/irrigation']
+          - {_description: 'The supply of water to land or crops to help growth, typically by means of channels.'}
+          - _examples: [NA]
+        - Fertilization:
+          - _source: [NN, 'WM: /wm/concept/causal_factor/agriculture/fertilization', 'HUME: /event/economic activity/production/agriculture production/fertilization']
+          - {_description: 'The action or process of applying a fertilizer to soil or land.'}
+          - _examples: [NA]
+        - CropProduction:
+          - _source: [NN, 'WM: /wm/concept/causal_factor/agriculture/agricultural production', 'HUME_INDICATOR: /indicator/Agriculture/Crop Production', 'HUME: /event/economic activity/production/agriculture production/crop production', 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/agriculture/Crop Production']
+          - {_description: 'Crop production.'}
+          - _examples: [NA]
+        - LivestockProduction:
+          - _source: [NN, 'HUME_INDICATOR: /indicator/Agriculture/Livestock Production', 'WM: /wm/concept/causal_factor/agriculture/livestock production', 'HUME: /event/economic activity/production/agriculture production/livestock production']
+          - {_description: 'Livestock production.'}
+          - _examples: [NA]
+      - OilProduction:
+        - _source: [NN, 'WM: /wm/concept/causal_factor/economic_and_commerce/economic activity', 'HUME: /event/economic activity/production/oil production']
+        - {_description: 'Oil production.'}
+        - _examples: [NA]
+    - Market:
+      - _source: [NN, 'WM: /wm/concept/causal_factor/economic_and_commerce/economic activity/market', 'HUME: /event/economic activity/market']
+      - {_description: NA}
+      - _examples: [NA]
+      - Supply:
+        - _source: [NN, 'HUME: /event/economic activity/market/supply', 'WM: /wm/concept/causal_factor/economic_and_commerce/economic activity/market/supply']
+        - {_description: NA}
+        - _examples: [NA]
+        - FoodSupply:
+          - _source: [NN, 'WM: /wm/concept/causal_factor/economic_and_commerce/economic activity/market/supply/food supply', 'HUME: /event/economic activity/market/supply/food supply']
+          - {_description: 'Food supply.'}
+          - _examples: [NA]
+      - Transaction:
+        - _source: [NN, 'HUME: /event/economic activity/market/transaction', 'WM: /wm/concept/causal_factor/economic_and_commerce/economic activity/market/transaction']
+        - {_description: 'An instance of buying or selling something; a business deal.'}
+        - _examples: [NA]
+        - OilTransaction:
+          - _source: [NN, 'WM: /wm/concept/causal_factor/economic_and_commerce/economic activity/market/transaction/oil transaction', 'HUME: /event/economic activity/market/transaction/oil transaction']
+          - {_description: NA}
+          - _examples: [NA]
+      - Inflation:
+        - _source: [NN, 'WM: /wm/concept/causal_factor/economic_and_commerce/economic activity/market/inflation', 'HUME: /event/economic activity/market/inflation']
+        - {_description: 'A general increase in prices and fall in the purchasing value of money.'}
+        - _examples: [NA]
+      - CurrencyDevaluation:
+        - _source: [NN, 'HUME: /event/economic activity/market/currency devaluation', 'WM: /wm/concept/causal_factor/economic_and_commerce/economic activity/market/currency devaluation']
+        - {_description: 'A deliberate downward adjustment of the value of a country currency against another currency.'}
+        - _examples: [NA]
+      - Price:
+        - _source: [NN, 'WM: /wm/concept/causal_factor/economic_and_commerce/economic activity/market/price', 'HUME: /event/economic activity/market/price']
+        - {_description: NA}
+        - _examples: [NA]
+        - FoodPrice:
+          - _source: [NN, 'HUME: /event/economic activity/market/price/food price', 'WM: /wm/concept/causal_factor/economic_and_commerce/economic activity/market/price/food_price']
+          - {_description: 'Food price.'}
+          - _examples: [NA]
+        - OilPrice:
+          - _source: [NN, 'WM: /wm/concept/causal_factor/economic_and_commerce/economic activity/market/price/oil price', 'HUME: /event/economic activity/market/price/oil price']
+          - {_description: "Oil price."}
+          - _examples: [NA]
+    - Consumption:
+      - _source: [NN, 'WM: /wm/concept/causal_factor/economic_and_commerce/economic activity/consumption', 'HUME: /event/economic activity/consumption']
+      - {_description: NA}
+      - _examples: [NA]
+      - FoodConsumption:
+        - _source: [NN, 'WM: /wm/concept/causal_factor/economic_and_commerce/economic activity/consumption/food consumption', 'HUME: /event/economic activity/consumption/food consumption']
+        - {_description: NA}
+        - _examples: [NA]
+    - Competition:
+      - _source: [NN, 'HUME: /event/economic activity/competition', 'WM: /wm/concept/causal_factor/economic_and_commerce/economic activity/competition']
+      - {_description: NA}
+      - _examples: [NA]
+    - Development:
+      - _source: [NN, 'HUME: /event/economic activity/development', 'WM: /wm/concept/causal_factor/economic_and_commerce/economic activity/development']
+      - {_description: NA}
+      - _examples: [NA]
+    - Demand:
+      - _source: [NN, 'WM: /wm/concept/causal_factor/economic_and_commerce/economic activity/market/demand', 'HUME: /event/economic activity/demand']
+      - {_description: NA}
+      - _examples: [NA]
+      - FoodDemand:
+        - _source: [NN, 'WM: /wm/concept/causal_factor/economic_and_commerce/economic activity/market/demand/food demand', 'HUME: /event/economic activity/demand/food demand']
+        - {_description: NA}
+        - _examples: [NA]
+    - Business:
+      - _source: [NN, 'HUME: /event/economic activity/business', 'WM: /wm/concept/causal_factor/economic_and_commerce']
+      - {_description: NA}
+      - _examples: [NA]
+  - Personnel:
+    - _source: [NN, 'HUME: /event/personnel', 'WM: /wm/concept/causal_factor']
+    - {_description: NA}
+    - _examples: [NA]
+  - Access:
+    - _source: [NN, 'HUME: /event/access', 'WM: /wm/concept/causal_factor/access']
+    - {_description: NA}
+    - _examples: [NA]
+    - Shortage:
+      - _source: [NN, 'HUME: /event/access/shortage', 'WM: /wm/concept/causal_factor/access']
+      - {_description: 'A state or situation in which something needed cannot be obtained in sufficient amounts.'}
+      - _examples: [NA]
+      - FoodShortage:
+        - _source: [NN, 'WM: /wm/concept/causal_factor/access/food_shortage', 'HUME: /event/access/shortage/food shortage']
+        - {_description: 'Shortage of food.'}
+        - _examples: [NA]
+      - WaterShortage:
+        - _source: [NN, 'WM: /wm/concept/causal_factor/access/water_shortage', 'HUME: /event/access/shortage/water shortage']
+        - {_description: 'Shortage of water.'}
+        - _examples: [NA]
+  - Intervention:
+    - _source: [NN, 'WM: /wm/concept/causal_factor/intervention', 'HUME: /event/intervention']
+    - {_description: NA}
+    - _examples: [NA]
+    - AntiRetroviralTreatment:
+      - _source: [NN, 'HUME: /event/intervention/anti-retroviral treatment', 'WM: /wm/concept/causal_factor/intervention/provision of goods and services/health/anti-retroviral treatment']
+      - {_description: NA}
+      - _examples: [NA]
+    - SexualViolenceManagement:
+      - _source: [NN, 'WM: /wm/concept/causal_factor/intervention/provision of goods and services/health/sexual violence management', 'HUME: /event/intervention/sexual violence management']
+      - {_description: NA}
+      - _examples: [NA]
+    - VectorControl:
+      - _source: [NN, 'WM: /wm/concept/causal_factor/intervention/provision of goods and services/health/vector control', 'HUME: /event/intervention/vector control']
+      - {_description: NA}
+      - _examples: [NA]
+    - CapacityBuildingHumanRights:
+      - _source: [NN, 'WM: /wm/concept/causal_factor/intervention/institutional support/protection/capacity building human right', 'HUME: /event/intervention/capacity building human rights']
+      - {_description: NA}
+      - _examples: [NA]
+    - TherapeuticFeedingOrTreating:
+      - _source: [NN, 'WM: /wm/concept/causal_factor/intervention/provision of goods and services/nutrition/therapeutic feeding or treating', 'HUME: /event/intervention/therapeutic feeding or treating']
+      - {_description: NA}
+      - _examples: [NA]
+    - ChildFriendlyLearningSpaces:
+      - _source: [NN, 'HUME: /event/intervention/child friendly learning spaces', 'WM: /wm/concept/causal_factor/intervention/provision of goods and services/education/child friendly learning spaces']
+      - {_description: NA}
+      - _examples: [NA]
+    - ProvideHumanitarianResources:
+      - _source: [NN, 'WM: /wm/concept/causal_factor/intervention/provision of goods and services', 'HUME: /event/intervention/provide humanitarian resources']
+      - {_description: NA}
+      - _examples: [NA]
+      - ProvideHygieneTool:
+        - _source: [NN, 'WM: /wm/concept/causal_factor/intervention/provision of goods and services/provide hygiene tool', 'HUME: /event/intervention/provide humanitarian resources/provide hygiene tool']
+        - {_description: NA}
+        - _examples: [NA]
+      - ProvideDeliveryKit:
+        - _source: [NN, 'HUME: /event/intervention/provide humanitarian resources/provide delivery kit', 'WM: /wm/concept/causal_factor/intervention/provision of goods and services/provide delivery kit']
+        - {_description: NA}
+        - _examples: [NA]
+      - ProvideFarmingTool:
+        - _source: [NN, 'HUME: /event/intervention/provide humanitarian resources/provide farming tool', 'WM: /wm/concept/causal_factor/intervention/provision of goods and services/provide farming tool']
+        - {_description: NA}
+        - _examples: [NA]
+      - ProvideSeed:
+        - _source: [NN, 'HUME: /event/intervention/provide humanitarian resources/provide seed', 'WM: /wm/concept/causal_factor/intervention/provision of goods and services/provide seed']
+        - {_description: NA}
+        - _examples: [NA]
+      - ProvideLivestockFeed:
+        - _source: [NN, 'HUME: /event/intervention/provide humanitarian resources/provide livestock feed', 'WM: /wm/concept/causal_factor/intervention/provision of goods and services/provide livestock feed']
+        - {_description: NA}
+        - _examples: [NA]
+      - ProvideVeterinaryService:
+        - _source: [NN, 'WM: /wm/concept/causal_factor/intervention/provision of goods and services/provide veterinary service', 'HUME: /event/intervention/provide humanitarian resources/provide veterinary service']
+        - {_description: NA}
+        - _examples: [NA]
+      - ProvideStationary:
+        - _source: [NN, 'HUME: /event/intervention/provide humanitarian resources/provide stationary', 'WM: /wm/concept/causal_factor/intervention/provision of goods and services/provide stationary']
+        - {_description: NA}
+        - _examples: [NA]
+      - ProvideFishingTool:
+        - _source: [NN, 'HUME: /event/intervention/provide humanitarian resources/provide fishing tool', 'WM: /wm/concept/causal_factor/intervention/provision of goods and services/provide fishing tool']
+        - {_description: NA}
+        - _examples: [NA]
+      - ProvideCash:
+        - _source: [NN, 'HUME: /event/intervention/provide humanitarian resources/provide cash', 'WM: /wm/concept/causal_factor/intervention/provision of goods and services/provide cash']
+        - {_description: NA}
+        - _examples: [NA]
+      - ProvideFood:
+        - _source: [NN, 'HUME: /event/intervention/provide humanitarian resources/provide food', 'WM: /wm/concept/causal_factor/intervention/provision of goods and services/provide food']
+        - {_description: NA}
+        - _examples: [NA]
+      - ProvideVeterinaryDrugsVaccines:
+        - _source: [NN, 'WM: /wm/concept/causal_factor/intervention/provision of goods and services/provide veterinary drugs vaccines', 'HUME: /event/intervention/provide humanitarian resources/provide veterinary drugs vaccines']
+        - {_description: NA}
+        - _examples: [NA]
+    - ProvideMovingOfHouseHolds:
+      - _source: [NN, 'WM: /wm/concept/causal_factor/intervention/provision of goods and services/provide moving of houseHolds', 'HUME: /event/intervention/provide moving of houseHolds']
+      - {_description: NA}
+      - _examples: [NA]
+    - Tax:
+      - _source: [NN, 'HUME: /event/intervention/tax', 'WM: /wm/concept/causal_factor/social_and_political/government/tax_duty']
+      - {_description: NA}
+      - _examples: [NA]
+    - Education:
+      - _source: [NN, 'HUME: /event/intervention/education', 'WM: /wm/concept/causal_factor/social_and_political/education']
+      - {_description: NA}
+      - _examples: [NA]
+    - Assistance:
+      - _source: [NN, 'WM: /wm/concept/causal_factor/intervention/humanitarian assistance', 'HUME: /event/intervention/assistance']
+      - {_description: NA}
+      - _examples: [NA]
+    - Command:
+      - _source: [NN, 'HUME: /event/intervention/command', 'WM: /wm/concept/causal_factor/intervention']
+      - {_description: NA}
+      - _examples: [NA]
+    - Sanction:
+      - _source: [NN, 'WM: /wm/concept/causal_factor/social_and_political/sanction', 'HUME: /event/intervention/sanction']
+      - {_description: NA}
+      - _examples: [NA]
+    - MilitaryOperation:
+      - _source: [NN, 'WM: /wm/concept/causal_factor/intervention', 'HUME: /event/intervention/military operation']
+      - {_description: NA}
+      - _examples: [NA]
+      - CounterTerrorismOperation:
+        - _source: [NN, 'HUME: /event/intervention/military operation/counter terrorism operation', 'WM: /wm/concept/causal_factor/intervention']
+        - {_description: NA}
+        - _examples: [NA]
+  - Crisis:
+    - _source: [NN, 'WM: /wm/concept/causal_factor/crisis_and_disaster/crisis/crisis', 'HUME: /event/crisis']
+    - {_description: NA}
+    - _examples: [NA]
+    - Disaster:
+      - _source: [NN, 'WM: /wm/concept/causal_factor/crisis_and_disaster/crisis/natural_disaster', 'HUME: /event/crisis/disaster']
+      - {_description: 'A sudden event, such as an accident or a natural catastrophe, that causes great damage or loss of life.'}
+      - _examples: [NA]
+      - Earthquake:
+        - _source: [NN, 'WM: /wm/concept/causal_factor/crisis_and_disaster/crisis/natural_disaster/earthquake', 'HUME: /event/crisis/disaster/earthquake']
+        - {_description: NA}
+        - _examples: [NA]
+    - Fire:
+      - _source: [NN, 'WM: /wm/concept/causal_factor/crisis_and_disaster/fire', 'HUME: /event/crisis/fire']
+      - {_description: NA}
+      - _examples: [NA]
+  - Trend:
+    - _source: [NN, 'WM: /wm/concept/causal_factor/condition/trend', 'HUME: /event/trend']
+    - {_description: NA}
+    - _examples: [NA]
+  - Forecast:
+    - _source: [NN, 'HUME: /event/forecast', 'WM: /wm/concept/causal_factor']
+    - {_description: NA}
+    - _examples: [NA]
+    - Risk:
+      - _source: [NN, 'HUME: /event/forecast/risk', 'WM: /wm/concept/causal_factor']
+      - {_description: NA}
+      - _examples: [NA]
+    - Likelihood:
+      - _source: [NN, 'HUME: /event/forecast/likelihood', 'WM: /wm/concept/causal_factor']
+      - {_description: NA}
+      - _examples: [NA]
+  - Tension:
+    - _source: [NN, 'WM: /wm/concept/causal_factor/condition/tension', 'HUME: /event/tension']
+    - {_description: NA}
+    - _examples: [NA]
+  - Emotion:
+    - _source: [NN, 'WM: /wm/concept/causal_factor', 'HUME: /event/emotion']
+    - {_description: NA}
+    - _examples: [NA]
+  - CognitiveProcess:
+    - _source: [NN, 'WM: /wm/concept/causal_factor', 'HUME: /event/cognitive process']
+    - {_description: NA}
+    - _examples: [NA]
+  - Communication:
+    - _source: [NN, 'HUME: /event/communication', 'WM: /wm/concept/causal_factor']
+    - {_description: NA}
+    - _examples: [NA]
+  - Personal:
+    - _source: [NN, 'WM: /wm/concept/causal_factor', 'HUME: /event/personal']
+    - {_description: NA}
+    - _examples: [NA]
+    - MarriageOrDivorce:
+      - _source: [NN, 'HUME: /event/personal/marriage or divorce', 'WM: /wm/concept/causal_factor']
+      - {_description: NA}
+      - _examples: [NA]
+  - Employment:
+    - _source: [NN, 'HUME: /event/employment', 'WM: /wm/concept/causal_factor']
+    - {_description: NA}
+    - _examples: [NA]
+  - Legal:
+    - _source: [NN, 'HUME: /event/legal', 'WM: /wm/concept/causal_factor']
+    - {_description: NA}
+    - _examples: [NA]
+  - Defensive:
+    - _source: [NN, 'HUME: /event/defensive', 'WM: /wm/concept/causal_factor']
+    - {_description: NA}
+    - _examples: [NA]
+  - Condition:
+    - _source: [NN, 'WM: /wm/concept/causal_factor/condition', 'HUME: /event/condition']
+    - {_description: NA}
+    - _examples: [NA]
+    - Poverty:
+      - _source: [NN, 'HUME: /event/condition/poverty', 'WM: /wm/concept/causal_factor/condition/poverty']
+      - {_description: NA}
+      - _examples: [NA]
+  - RefugeePopulation:
+    - _source: [NN, 'HUME: /event/refugee population', 'WM: /wm/concept/causal_factor']
+    - {_description: NA}
+    - _examples: [NA]
+  - LeanSeason:
+    - _source: [NN, 'WM: /wm/concept/time/temporal/season', 'HUME: /event/lean season']
+    - {_description: NA}
+    - _examples: [NA]
+  - PeaceTreaty:
+    - _source: [NN, 'HUME: /event/peace treaty', 'WM: /wm/concept/causal_factor']
+    - {_description: NA}
+    - _examples: [NA]
+  - DestroyCrops:
+    - _source: [NN, 'WM: /wm/concept/causal_factor', 'HUME: /event/destroy crops']
+    - {_description: NA}
+    - _examples: [NA]

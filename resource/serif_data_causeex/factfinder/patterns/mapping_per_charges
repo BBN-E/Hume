@@ -1,0 +1,18 @@
+(per_charges_serif
+
+(wordsets)
+
+(entitylabels (AGENT1))
+
+(reference)
+
+(toplevel
+
+(event (fulltype Justice.Charge-Indict) (id mapping_1) (score 1.0) (score_group 1)
+        (args
+                (argument (role Defendant) (mention (return (ff_role AGENT1) (ff_fact_type per_charges_serif)) (entitylabel AGENT1)))
+		(argument (role Crime) (value (return (ff_role per_charges_serif)) (type Crime)))
+        )
+)
+)
+)

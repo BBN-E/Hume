@@ -1,0 +1,71 @@
+# Run on sample set of 10 World Modelers month 6 docs
+
+# begin optional parameters
+
+# relevant branch name for various repos; default value for any repo is master
+# convention for param name is is ${repo_name}_branch
+jserif_branch: 364-add-event-from-json
+learnit_branch: wm_hackathon
+
+# end optional parameters
+
+job_name: hackathon_flooding_para_v1
+
+stages_to_run: serif,kbp,nn-events,pdtb,nn-entity-typing,learnit,serialization
+
+########
+# Serif
+########
+serif_input_sgm_list: /nfs/raid87/u15/users/msrivast/hackathon_flooding_para.sgm.list
+serif_input_awake_db: /nfs/raid87/u15/users/azamania/runjobs/expts/run_awake_pipeline/causeex-m5-final-corpus-1/causeex_dbpedia_20170308_m5_final_corpus.sqlite
+
+######
+# KBP 
+######
+kbp_input_serifxml_list: GENERATED
+
+#####################
+## NN event extraction
+######################
+nn_events_input_serifxml_list: GENERATED
+nn_events_model_list: DEFAULT
+nn_events_arg_model_path: /nfs/raid87/u13/nn_events_arg_models/run2_w3_s30_e10_m200
+
+##############
+# PDTB parser
+##############
+pdtb_input_serifxml_list: GENERATED
+
+#################################
+## NN Entity Typing And Linking
+#################################
+nn_edl_input_serifxml_list: GENERATED
+# maping file from type to dictionary
+types_map_file: /nfs/raid87/u13/hume_namelists/lists.txt
+# following param is used to look up trained models for entity-typing in a fixed location (/home/hqiu/NFGEC_files/)
+# wm_m6 is for models trained on wm_m6 corpus; other values will depend on which sub-dir under /home/hqiu/NFGEC_files/ 
+# has the pre-generated model files
+nn_typing_model_prefix: wm_m6_plus_isi
+################
+## LearnIt
+#################
+learnit_input_serifxml_list: GENERATED
+learnit_input_serif_cause_effect_relations_dir: GENERATED
+# strFileTripleRelationEventPairs: /nfs/raid87/u15/users/msrivast/CauseEx/relation_and_event_pairs_freq_0601.txt
+MIN_FREQ_EVENT_PAIRS: 0
+# extractor_target determines the set of constraints to apply to the extracted learnit slot pairs
+# for event-event pairs only, use all_event_event_pairs; for everything (e.g. mentions coming from a list), use everything_no_constraints
+extractor_target: all_event_event_pairs
+pattern_type_for_learnit_preprocess:props
+halt_for_manual_annotations: true
+use_manual_annotations_for_decoding: true
+################
+# Serialization
+################
+serialization_mode: WorldModelers
+serialization_input_serifxml_list: GENERATED
+serialization_input_metadata_file: /nfs/raid87/u14/hackathon-flooding-paragraph-corpus-metadata.txt
+serialization_input_trigger_finder_file: NA
+serialization_input_pdtb_json_file: GENERATED
+serialization_input_serif_cause_effect_relations_dir: GENERATED
+serialization_input_learnit_cause_effect_relations_file: GENERATED

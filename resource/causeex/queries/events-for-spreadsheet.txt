@@ -1,0 +1,149 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix meas: <http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#>
+prefix event: <http://ontology.causeex.com/ontology/odps/Event#>
+prefix cameocc: <http://ontology.causeex.com/cameo/CountryCodeOntology/>
+prefix eh: <http://ontology.causeex.com/ontology/odps/Event#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix bbnta1: <http://graph.causeex.com/bbn#>
+prefix actor: <http://ontology.causeex.com/ontology/odps/Actor#>
+prefix dataprov: <http://ontology.causeex.com/ontology/odps/DataProvenance#>
+prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/>
+prefix cx: <http://ontology.causeex.com/ontology/odps/CauseEffect#>
+prefix oeo: <http://www.ontologylibrary.mil/OperationalEnvironment/Mid/OEOrganizationOntology#>
+prefix doco: <http://purl.org/spar/doco/>
+prefix gconcept: <http://ontology.causeex.com/ontology/odps/GeneralConcepts#>
+prefix var: <http://www.bbn.com/2017/TA1locals/>
+prefix cr: <http://ontology.causeex.com/CausalExplorationOntology/ClassRelationships#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix ro: <http://www.obofoundry.org/ro/ro.owl#>
+prefix event: <http://ontology.causeex.com/ontology/odps/Event#>
+prefix oee: <http://www.ontologylibrary.mil/OperationalEnvironment/Mid/OEEventOntology#>
+
+select distinct
+?event
+("BBN" as ?performer) ?document_id
+(strafter(str(?event_class), "#") AS ?event_class_label)
+?event_text_offset ?event_text
+?event_start_time
+(group_concat (?event_location_canonical_label;separator=" | ") as ?event_location_canonical_label)
+(group_concat (?event_location_text;separator=" | ") as ?event_location_text)
+(group_concat (?event_location_latitude;separator=" | ") as ?event_location_latitude)
+(group_concat (?event_location_longitude;separator=" | ") as ?event_location_longitude)
+
+(group_concat(distinct ?has_active_actor_canonical_label;separator=" | ") as ?active_actors)
+(group_concat(distinct ?active_actor_text;separator=" | ") as ?active_actor_texts)
+(group_concat(distinct ?has_affected_actor_canonical_label;separator=" | ") as ?affected_actors)
+(group_concat(distinct ?affected_actor_text;separator=" | ") as ?affected_actor_texts)
+(group_concat(distinct ?has_provider_canonical_label;separator=" | ") as ?provider_actors)
+(group_concat(distinct ?provider_text;separator=" | ") as ?provider_texts)
+(group_concat(distinct ?has_recipient_canonical_label;separator=" | ") as ?recipient_actors)
+(group_concat(distinct ?recipient_text;separator=" | ") as ?recipient_texts)
+(group_concat(distinct ?has_actor_canonical_label;separator=" | ") as ?other_actors)
+(group_concat(distinct ?actor_text;separator=" | ") as ?actor_texts)
+
+(?event_sentence_text as ?extracted_from_text)
+
+from <http://graph.causeex.com>
+from <http://ontology.causeex.com>
+
+WHERE {
+  ?event rdf:type ?event_class .
+  ?event_class rdfs:subClassOf* event:Event .
+
+  ?event dataprov:sourced_from ?event_span .
+  ?event_span rdf:type dataprov:Span .
+  MINUS { ?event_span rdf:type doco:Sentence . }
+  ?event_span dataprov:text_value ?event_text .
+  ?event_span dataprov:char_offset ?event_text_offset .
+
+  ?event dataprov:sourced_from ?event_sentence .
+  ?event_sentence rdf:type doco:Sentence .
+  ?event_sentence dataprov:text_value ?event_sentence_text .
+  ?event_sentence dataprov:char_offset ?event_sentence_text_offset .
+  ?event_sentence dataprov:contains ?event_span .
+
+  ?document dataprov:contains ?event_sentence .
+  ?document dataprov:original_source ?document_id .
+
+  OPTIONAL { ?event gconcept:earliest_possible_start_time ?event_start_time . }
+
+  OPTIONAL {
+    ?event gconcept:located_at ?event_location .
+    ?event_location dataprov:sourced_from ?event_location_mentionspan .
+    ?event_location_mentionspan rdf:type dataprov:MentionSpan .
+    ?event_location_mentionspan dataprov:text_value ?event_location_text .
+  }
+  OPTIONAL {
+    ?event gconcept:located_at ?event_location .
+    ?event_location dataprov:sourced_from ?event_location_mentionspan .
+    ?event_location_mentionspan rdf:type dataprov:MentionSpan .
+    ?event_location gconcept:canonical_label ?event_location_canonical_label .
+  }
+  OPTIONAL {
+    ?event gconcept:located_at ?event_location .
+    ?event_location dataprov:sourced_from ?event_location_mentionspan .
+    ?event_location_mentionspan rdf:type dataprov:MentionSpan .
+    ?event_location gconcept:latitude ?event_location_latitude .
+    ?event_location gconcept:longitude ?event_location_longitude .
+  }
+
+  OPTIONAL {
+    ?event event:has_active_actor ?active_actor .
+    ?active_actor gconcept:canonical_label ?has_active_actor_canonical_label .
+  }
+  OPTIONAL {
+    ?event event:has_active_actor ?active_actor .
+    ?active_actor dataprov:sourced_from ?active_actor_mentionspan .
+    ?active_actor_mentionspan rdf:type dataprov:MentionSpan .
+    ?event_sentence dataprov:contains ?active_actor_mentionspan .
+    ?active_actor_mentionspan dataprov:text_value ?active_actor_text .
+  }
+
+  OPTIONAL {
+    ?event event:has_affected_actor ?affected_actor .
+    ?affected_actor gconcept:canonical_label ?has_affected_actor_canonical_label .
+  }
+  OPTIONAL {
+    ?event event:has_affected_actor ?affected_actor .
+    ?affected_actor dataprov:sourced_from ?affected_actor_mentionspan .
+    ?affected_actor_mentionspan rdf:type dataprov:MentionSpan .
+    ?event_sentence dataprov:contains ?affected_actor_mentionspan .
+    ?affected_actor_mentionspan dataprov:text_value ?affected_actor_text .
+  }
+
+  OPTIONAL {
+    ?event event:has_provider ?provider .
+    ?provider gconcept:canonical_label ?has_provider_canonical_label .
+  }
+  OPTIONAL {
+    ?event event:has_provider ?provider .
+    ?provider dataprov:sourced_from ?provider_mentionspan .
+    ?provider_mentionspan rdf:type dataprov:MentionSpan .
+    ?event_sentence dataprov:contains ?provider_mentionspan .
+    ?provider_mentionspan dataprov:text_value ?provider_text .
+  }
+
+  OPTIONAL {
+    ?event event:has_recipient ?recipient .
+    ?recipient gconcept:canonical_label ?has_recipient_canonical_label .
+  }
+  OPTIONAL {
+    ?event event:has_recipient ?recipient .
+    ?recipient dataprov:sourced_from ?recipient_mentionspan .
+    ?recipient_mentionspan rdf:type dataprov:MentionSpan .
+    ?event_sentence dataprov:contains ?recipient_mentionspan .
+    ?recipient_mentionspan dataprov:text_value ?recipient_text .
+  }
+
+  OPTIONAL {
+    ?event event:has_actor ?actor .
+    ?actor gconcept:canonical_label ?has_actor_canonical_label .
+  }
+  OPTIONAL {
+    ?event event:has_actor ?actor .
+    ?actor dataprov:sourced_from ?actor_mentionspan .
+    ?actor_mentionspan rdf:type dataprov:MentionSpan .
+    ?event_sentence dataprov:contains ?actor_mentionspan .
+    ?actor_mentionspan dataprov:text_value ?actor_text .
+  }
+}

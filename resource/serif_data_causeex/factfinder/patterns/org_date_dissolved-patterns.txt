@@ -1,0 +1,46 @@
+(org_date_dissolved
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- {0} stopped flying in {1} -->
+		(regex (id org_date_dissolved_0) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_dissolved)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "stopped")) (text DONT_ADD_SPACES (string "flying")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_dissolved)) (type TIMEX2.TIME))))
+
+		<!-- {0} collapsed in {1} -->
+		(regex (id org_date_dissolved_1) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_dissolved)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "collapsed")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_dissolved)) (type TIMEX2.TIME))))
+
+		<!-- verb:collapsed[<sub> = 0][in = 1] -->
+		(vprop (id org_date_dissolved_2) (score 0.9) (score_group 1) (predicate collapsed) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type org_date_dissolved)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))) (argument (role in) (value (return (ff_role org_date_dissolved)) (type TIMEX2.TIME)))))
+
+		<!-- {0} ' collapse in {1} -->
+		(regex (id org_date_dissolved_3) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_dissolved)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "'")) (text DONT_ADD_SPACES (string "collapse")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_dissolved)) (type TIMEX2.TIME))))
+
+		<!-- {0} merged in {1} -->
+		(regex (id org_date_dissolved_4) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_dissolved)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "merged")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_dissolved)) (type TIMEX2.TIME))))
+
+		<!-- {0} was disbanded {1} -->
+		(regex (id org_date_dissolved_5) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_dissolved)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "disbanded")) (value (return (ff_role org_date_dissolved)) (type TIMEX2.TIME))))
+
+		<!-- {0} 's collapse in {1} -->
+		(regex (id org_date_dissolved_6) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_dissolved)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "collapse")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_dissolved)) (type TIMEX2.TIME))))
+
+		<!-- noun:collapse[<ref> = 1][of = 0] -->
+		(nprop (id org_date_dissolved_7) (score 0.9) (score_group 1) (predicate collapse) (args (argument (role <ref>) (value (return (ff_role org_date_dissolved)) (type TIMEX2.TIME))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_date_dissolved)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- {0} was dissolved in {1} -->
+		(regex (id org_date_dissolved_8) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_dissolved)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "dissolved")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_dissolved)) (type TIMEX2.TIME))))
+
+		<!-- {0} ceased operations in {1} -->
+		(regex (id org_date_dissolved_9) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_date_dissolved)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "ceased")) (text DONT_ADD_SPACES (string "operations")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role org_date_dissolved)) (type TIMEX2.TIME))))
+
+		<!-- {1} collapse of {0} -->
+		(regex (id org_date_dissolved_10) (score 0.9) (score_group 1) (re (value (return (ff_role org_date_dissolved)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "collapse")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_date_dissolved)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- {1} 's collapse of {0} -->
+		(regex (id org_date_dissolved_11) (score 0.9) (score_group 1) (re (value (return (ff_role org_date_dissolved)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "collapse")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_date_dissolved)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))
+
+	)
+)

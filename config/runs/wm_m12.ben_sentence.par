@@ -1,0 +1,59 @@
+# Run on full CauseEx month 15 docs (Kaliningrad)
+
+############
+## Pipeline
+############
+job_name: wm_m12.ben_sentence_1211a
+stages_to_run: serif,generic-events,nn-events,event-consolidation,event-event-relations,serialization,probabilistic-grounding
+jserif_branch: 364-add-event-from-json
+mode: WorldModelers
+
+########
+# Serif
+########
+serif_input_sgm_list: /nfs/ld100/u10/bmin/repo_clean_for_exp_wm_m12_hackathon/CauseEx/experiments/causeex_pipeline/ben_sentence.list
+serif_input_awake_db: /nfs/raid87/u14/CauseEx/Kaliningrad-Dataset/TwoSix-Extracted-M15-Assessment/awake_dbs/causeex_dbpedia_20170308_m15a_kaliningrad_fix.sqlite
+
+##################
+## Generic events
+##################
+generic_events_input_serifxml_list: GENERATED
+
+#######################
+## NN event extraction
+#######################
+nn_events_input_serifxml_list: GENERATED
+nn_events_model_list: /nfs/raid87/u10/shared/Hume/wm/nlplingo/wm_models/052119/model.list
+nn_events_batch_size: 30
+
+##########################
+# Probabilistic grounding
+##########################
+grounding_input: GENERATED
+
+######################
+# Event consolidation
+######################
+event_consolidation_input_serifxml_list: GENERATED
+event_consolidation_input_metadata_file: /nfs/ld100/u10/bmin/repo_clean_for_exp_wm_m12_hackathon/CauseEx/experiments/causeex_pipeline/ben_sentence.metadata.txt
+copyArgumentSentenceWindow: 1
+
+
+########################
+# Event-Event relations
+########################
+eer_input_serifxml_list: GENERATED
+eer_input_serif_cause_effect_relations_dir: GENERATED
+learnit_pattern_dir: DEFAULT
+learnit_min_freq_event_pairs: 1
+
+################
+# Serialization
+################
+serialization_input_serifxml_list: GENERATED
+serialization_input_metadata_file: /nfs/ld100/u10/bmin/repo_clean_for_exp_wm_m12_hackathon/CauseEx/experiments/causeex_pipeline/ben_sentence.metadata.txt
+serialization_input_trigger_finder_file: NA
+serialization_input_factfinder_json_file: /nfs/mercury-04/u42/bmin/projects/WM/m12/empty.json
+serialization_input_learnit_triple_file: GENERATED
+serialization_input_learnit_event_count_file: GENERATED
+serialization_do_event_uploading: False

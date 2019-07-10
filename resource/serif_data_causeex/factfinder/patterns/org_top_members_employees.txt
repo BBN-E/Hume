@@ -1,0 +1,87 @@
+(org_top_members_employees
+
+        (wordsets)
+
+        (entitylabels (AGENT1))
+
+        (toplevel
+
+		  (nprop (id org_top_members_employees_100020) (score 0.9) (score_group 1) 
+   (predicate ceo chancellor president-print mayor vice-president vp chairman chairwoman president-elect leader director head chief lieutenant-governor governor) 
+   (args 
+    (argument (role <ref>) (mention (return (ff_role org_top_members_employees)) (block AGENT1) (min-entitylevel DESC) (acetype PER))) 
+    (argument (role in at of for <poss> <unknown> <mod> with) (mention (return (ff_role AGENT1) (ff_fact_type org_top_members_employees_100020)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG GPE)))
+   )
+  )
+		<!-- version with set -->
+		(vprop (id org_top_members_employees_100000) (score 0.9) (score_group 1) (predicate chair* lead* led head* direct* oversee* oversaw command*) 
+		(args 
+		(argument (role <sub>) (mention (return (ff_role org_top_members_employees)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) 
+		(argument (role <obj>) 
+		(sprop 
+		(args 
+		(argument (role <member>) (mention (return (ff_role AGENT1) (ff_fact_type org_top_members_employees_100000)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG GPE)))
+		)
+		)
+		)
+)
+)
+
+		<!-- version without set -->
+		(vprop (id org_top_members_employees_100000) (score 0.9) (score_group 1) (predicate chair* lead* led head* direct* oversee* oversaw command*) 
+		(args 
+		(argument (role <sub>) (mention (return (ff_role org_top_members_employees)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) 
+		(argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_top_members_employees_100000)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG GPE)))
+		)
+		)
+		
+		<!-- is president of -->
+  (anyprop (id org_top_members_employees_100025) (score 0.9) (score_group 1) (predicate was 's is) 
+  (args 
+  (argument (role <sub>) (mention (return (ff_role org_top_members_employees)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) 
+  (argument (role <obj>) 
+  (nprop (predicate president director ceo head) 
+  (args 
+  (argument (role <unknown> of for at in) (mention (return (ff_role AGENT1) (ff_fact_type org_top_members_employees_100025)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG GPE)))
+  )
+  )
+  )
+  )
+  )
+
+  (regex (id org_top_members_employees_100021) (score 0.9) (score_group 1) 
+ (re 
+ (mention (return (ff_role org_top_members_employees)) (min-entitylevel DESC) (block AGENT1) (acetype PER)) 
+ (text DONT_ADD_SPACES (string "(\S+\s+){0,3}(chief|head|president) (\S+\s+){0,3} (at|for|of|)")) 
+ (mention (return (ff_role AGENT1) (ff_fact_type org_top_members_employees_100021)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG GPE))
+ )
+ )
+ 
+  (regex (id org_top_members_employees_100022) (score 0.9) (score_group 1) 
+ (re 
+ (mention (return (ff_role org_top_members_employees)) (min-entitylevel DESC) (block AGENT1) (acetype PER)) 
+ (text DONT_ADD_SPACES (string ",")) 
+ (mention (return (ff_role AGENT1) (ff_fact_type org_top_members_employees_100022)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG GPE))
+ (text DONT_ADD_SPACES (string "(\S+\s+){0,3}(chief|head)"))
+ )
+ )
+  
+ (regex (id org_top_members_employees_100023) (score 0.9) (score_group 1) 
+ (re 
+ (mention (return (ff_role AGENT1) (ff_fact_type org_top_members_employees_100023)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG GPE))
+ (text DONT_ADD_SPACES (string "lieutenant-governor")) 
+ (mention (return (ff_role org_top_members_employees)) (min-entitylevel DESC) (block AGENT1)  (acetype PER)) 
+ )
+ )
+
+  (regex (id org_top_members_employees_100024) (score 0.9) (score_group 1) 
+  (re 
+  (text DONT_ADD_SPACES (string "(\S+\s+){0,1}leader of"))
+  (mention (return (ff_role AGENT1) (ff_fact_type org_top_members_employees_100024)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) 
+  (text DONT_ADD_SPACES (string ","))
+  (mention (return (ff_role org_top_members_employees)) (min-entitylevel DESC) (block AGENT1) (acetype PER))
+  )
+  )
+  
+        )
+)

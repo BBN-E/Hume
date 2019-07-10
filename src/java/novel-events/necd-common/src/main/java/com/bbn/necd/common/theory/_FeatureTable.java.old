@@ -1,0 +1,403 @@
+package com.bbn.necd.common.theory;
+
+import com.bbn.bue.common.parameters.Parameters;
+import com.bbn.bue.common.symbols.Symbol;
+import com.bbn.necd.common.PredictVectorManager;
+import com.bbn.necd.common.sampler.SymbolPair;
+
+import com.google.common.base.Charsets;
+import com.google.common.base.Optional;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableMultiset;
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.ImmutableTable;
+import com.google.common.collect.Maps;
+import com.google.common.io.Files;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Map;
+
+public final class FeatureTable {
+
+  private final ImmutableTable<Symbol, Integer, Double> featureWeights;
+  private final ImmutableTable<SymbolPair, Integer, Double> pairwiseFeatureWeights;
+  private final PredictVectorManager predictVectorManager;
+  private final ImmutableMap<Integer, String> featureIndices;
+  private final ImmutableMap<String, Integer> featureStringToIndex;
+  private final int numberOfFeatures;
+  //private final ImmutableMap<Symbol, int[]> factorIndices;
+
+  private FeatureTable(final ImmutableTable<Symbol, Integer, Double> featureWeights,
+      final ImmutableTable<SymbolPair, Integer, Double> pairwiseFeatureWeights,
+      final PredictVectorManager predictVectorManager,
+      final ImmutableMap<Integer, String> featureIndices,
+      final ImmutableMap<String, Integer> featureStringToIndex,
+      final int numberOfFeatures) {
+      //final ImmutableMap<Symbol, int[]> factorIndices) {
+    this.featureWeights = featureWeights;
+    this.pairwiseFeatureWeights = pairwiseFeatureWeights;
+    this.predictVectorManager = predictVectorManager;
+    this.featureIndices = featureIndices;
+    this.featureStringToIndex = featureStringToIndex;
+    this.numberOfFeatures = numberOfFeatures;
+    //this.factorIndices = factorIndices;
+  }
+
+  public ImmutableMap<Symbol, RealVector> toRealVectors(final Optional<Integer> dimThreshold) {
+    final ImmutableMap.Builder<Symbol, RealVector> ret = ImmutableMap.builder();
+
+    for (final Symbol item : featureWeights.rowKeySet()) {
+      final ImmutableMap<Integer, Double> features = ImmutableMap.copyOf(featureWeights.row(item));
+      if ((dimThreshold.isPresent() && features.size() >= dimThreshold.get()) || !dimThreshold
+          .isPresent()) {
+        ret.put(item, RealVector.builder(false).withElements(features).build());
+      }
+    }
+
+    return ret.build();
+  }
+
+  public ImmutableTable<Symbol, Integer, Double> getFeatureWeights() {
+    return featureWeights;
+  }
+
+  public ImmutableTable<SymbolPair, Integer, Double> getPairwiseFeatureWeights() {
+    return pairwiseFeatureWeights;
+  }
+
+  public PredictVectorManager getPredictVectorManager() {
+    return predictVectorManager;
+  }
+
+  public int getNumberOfFeatures() {
+    return numberOfFeatures;
+  }
+
+  public ImmutableMap<Integer, String> getFeatureIndices() {
+    return featureIndices;
+  }
+
+  public ImmutableMap<String, Integer> getFeatureStringToIndex() {
+    return featureStringToIndex;
+  }
+
+  /*
+  public ImmutableMap<Symbol, int[]> getFactorIndices() {
+    return factorIndices;
+  }
+  */
+
+  public static Builder fromParams(final Parameters params) {
+    return new Builder(params);
+  }
+
+  public static final class Builder {
+
+    //private final Optional<File> featureFile;
+    //private final Optional<File> pairwiseFeatureFile;
+    private final File eventFeatureFile;
+    private Optional<ImmutableSet<Symbol>> targetMembers;
+    private final ImmutableMap.Builder<Integer, String> featureIndices;
+    private final ImmutableMap.Builder<String, Integer> featureStringToIndex;
+    private int featureIndex;
+    // we will only accept features with associated scores above this value, usually 0
+    private double minValue;
+    private final boolean removeSingletonFeature;
+    private Optional<ImmutableMap<String, Integer>> predefinedFeatureIndices;
+
+    private final ImmutableTable.Builder<Symbol, Integer, Double> featureTable;
+    private final ImmutableTable.Builder<SymbolPair, Integer, Double> pairwiseFeatureTable;
+
+    private PredictVectorManager predictVectorManager;
+    //private final ImmutableMap.Builder<Symbol, int[]> factorIndices = ImmutableMap.builder();
+
+    private Builder(final Parameters params) {
+      //this.featureFile = params.getOptionalExistingFile("feature.featureTable");
+      //this.pairwiseFeatureFile = params.getOptionalExistingFile("feature.pairwise.featureTable");
+      this.eventFeatureFile = params.getExistingFile("feature.eventFeaturesFile");
+
+      this.minValue = params.getDouble("feature.minValue");
+      this.removeSingletonFeature = params.getBoolean("feature.removeSingletonFeature");
+
+      this.targetMembers = Optional.absent();
+      this.featureIndices = ImmutableMap.builder();
+      this.featureStringToIndex = ImmutableMap.builder();
+      this.featureIndex = 1;
+      this.predefinedFeatureIndices = Optional.<ImmutableMap<String, Integer>>absent();
+
+      this.featureTable = ImmutableTable.builder();
+      this.pairwiseFeatureTable = ImmutableTable.builder();
+
+
+    }
+
+    public Builder withPredictVectorManager(final PredictVectorManager predictVectorManager) {
+      this.predictVectorManager = predictVectorManager;
+      return this;
+    }
+
+    public Builder withPredefinedFeatureIndices(
+        final Optional<ImmutableMap<String, Integer>> featureIndices) {
+      this.predefinedFeatureIndices = featureIndices;
+      return this;
+    }
+
+    public Builder withTargetMembers(final ImmutableSet<Symbol> ids) {
+      this.targetMembers = Optional.of(ids);
+      return this;
+    }
+
+    public FeatureTable build() throws IOException {
+
+      if (predefinedFeatureIndices.isPresent()) {
+        readFeatureTable(featureFile, pairwiseFeatureFile, predefinedFeatureIndices.get());
+        featureStringToIndex.putAll(predefinedFeatureIndices.get());
+        return new FeatureTable(featureTable.build(), pairwiseFeatureTable.build(),
+            predictVectorManager, featureIndices.build(), featureStringToIndex.build(),
+            featureIndex - 1);
+      } else {
+        readFeatureTable(featureFile, pairwiseFeatureFile);
+        return new FeatureTable(featureTable.build(), pairwiseFeatureTable.build(),
+            predictVectorManager, featureIndices.build(), featureStringToIndex.build(),
+            featureIndex - 1);
+      }
+    }
+
+
+    private static ImmutableMap<Symbol, EventFeatures> readEventFeatures(final File infile) throws IOException {
+      final ImmutableMap.Builder<Symbol, EventFeatures> ret = ImmutableMap.builder();
+
+      final ImmutableList<EventFeatures> eventFeatures =
+          CompressedFileUtils.readAsJsonList(infile, EventFeatures.class);
+
+      for(final EventFeatures eg : eventFeatures) {
+        ret.put(eg.id(), eg);
+      }
+
+      return ret.build();
+    }
+
+    private Builder readFeatureTable(final Optional<File> featureFile,
+        final Optional<File> pairwiseFeatureFile, final ImmutableMap<String, Integer> indices)
+        throws IOException {
+
+      if(featureFile.isPresent()) {
+        final ImmutableList<String> lines =
+            Files.asCharSource(featureFile.get(), Charsets.UTF_8).readLines();
+
+        for (final String line : lines) {
+          final String[] tokens = line.split("\t");
+
+          final Symbol item = Symbol.from(tokens[0]);
+          final String featureString = tokens[1];
+          final double weight = Double.parseDouble(tokens[2]);
+
+          if ((targetMembers.isPresent() && targetMembers.get().contains(item)) || !targetMembers
+              .isPresent()) {
+            if (weight >= minValue) {
+              if (indices.containsKey(featureString)) {
+                featureTable.put(item, indices.get(featureString), weight);
+              }
+            }
+          }
+        }
+      }
+
+      if(pairwiseFeatureFile.isPresent()) {
+        final ImmutableList<String> pairwiseLines =
+            Files.asCharSource(pairwiseFeatureFile.get(), Charsets.UTF_8).readLines();
+
+        for (final String line : pairwiseLines) {
+          final String[] tokens = line.split("\t");
+
+          final Symbol item1 = Symbol.from(tokens[0]);
+          final Symbol item2 = Symbol.from(tokens[1]);
+          final String featureString = tokens[2];
+          final double weight = Double.parseDouble(tokens[3]);
+
+          if ((targetMembers.isPresent() && targetMembers.get().contains(item1) && targetMembers.get().contains(item2)) || !targetMembers
+              .isPresent()) {
+            if (weight >= minValue) {
+              if (indices.containsKey(featureString)) {
+                pairwiseFeatureTable.put(SymbolPair.from(item1, item2), indices.get(featureString), weight);
+              }
+            }
+          }
+        }
+      }
+
+      final ImmutableMap<Integer, String> featureIndexToString = reverse(indices);
+      featureIndex = featureIndexToString.size() + 1;
+
+
+      this.featureIndices.putAll(featureIndexToString);
+      return this;
+    }
+
+    private ImmutableTable<Symbol, String, Double> readFeatureTable(final File featureFile) throws IOException {
+      final ImmutableTable.Builder<Symbol, String, Double> ret = ImmutableTable.builder();
+
+      final ImmutableList<String> lines =
+          Files.asCharSource(featureFile, Charsets.UTF_8).readLines();
+
+      for (final String line : lines) {
+        final String[] tokens = line.split("\t");
+        final Symbol item = Symbol.from(tokens[0]);
+        final String featureString = tokens[1];
+        final double weight = Double.parseDouble(tokens[2]);
+
+        if ((targetMembers.isPresent() && targetMembers.get().contains(item)) || !targetMembers
+            .isPresent()) {
+          if (weight >= minValue) {
+            ret.put(item, featureString, weight);
+          }
+        }
+      }
+
+      return ret.build();
+    }
+
+
+
+    private Builder readFeatureTable(final Optional<File> featureFile,
+        final Optional<File> pairwiseFeatureFile) throws IOException {
+
+      Map<String, Integer> featureStringToIndex = Maps.newHashMap();
+
+      //final ImmutableList.Builder<Integer> predictIndicesBuilder = ImmutableList.builder();
+      final ImmutableList<Symbol> predictVectorFeatureTypes = predictVectorManager.getFeatureType();
+      for(final Symbol type : predictVectorFeatureTypes) {
+        featureStringToIndex.put(type.asString(), featureIndex);
+
+        //predictIndicesBuilder.add(featureIndex);
+        featureIndex++;
+      }
+
+      //final ImmutableList.Builder<Integer> singleFeatureIndicesBuilder = ImmutableList.builder();
+      if(featureFile.isPresent()) {
+        final ImmutableTable<Symbol, String, Double> featureStringTable =
+            readFeatureTable(featureFile.get());
+        final ImmutableSet<String> singletonFeatures =
+            removeSingletonFeature ? getSingletonFeatures(featureStringTable)
+                                   : ImmutableSet.<String>of();
+
+        for (final Symbol item : featureStringTable.rowKeySet()) {
+          for (final Map.Entry<String, Double> feature : featureStringTable.row(item).entrySet()) {
+            final String featureValue = feature.getKey();
+            final double weight = feature.getValue();
+
+            if (!singletonFeatures.contains(featureValue)) {
+              if (featureStringToIndex.containsKey(featureValue)) {
+                featureTable.put(item, featureStringToIndex.get(featureValue), weight);
+              } else {
+                featureStringToIndex.put(featureValue, featureIndex);
+                featureTable.put(item, featureIndex, weight);
+
+                //singleFeatureIndicesBuilder.add(featureIndex);
+                featureIndex++;
+              }
+            }
+          }
+        }
+      }
+
+      //final ImmutableList.Builder<Integer> pairFeatureIndicesBuilder = ImmutableList.builder();
+      if(pairwiseFeatureFile.isPresent()) {
+        final ImmutableList<String> pairwiseLines =
+            Files.asCharSource(pairwiseFeatureFile.get(), Charsets.UTF_8).readLines();
+
+        for (final String line : pairwiseLines) {
+          final String[] tokens = line.split("\t");
+          final Symbol item1 = Symbol.from(tokens[0]);
+          final Symbol item2 = Symbol.from(tokens[1]);
+          final String featureString = tokens[2];
+          final double weight = Double.parseDouble(tokens[3]);
+
+          if ((targetMembers.isPresent() && targetMembers.get().contains(item1) && targetMembers.get().contains(item2)) || !targetMembers
+              .isPresent()) {
+            if (weight >= minValue) {
+              if (featureStringToIndex.containsKey(featureString)) {
+                pairwiseFeatureTable.put(SymbolPair.from(item1, item2), featureStringToIndex.get(featureString), weight);
+              } else {
+                featureStringToIndex.put(featureString, featureIndex);
+                pairwiseFeatureTable.put(SymbolPair.from(item1, item2), featureIndex, weight);
+
+                //pairFeatureIndicesBuilder.add(featureIndex);
+                featureIndex++;
+              }
+            }
+          }
+        }
+      }
+
+
+
+      this.featureStringToIndex.putAll(featureStringToIndex);
+      this.featureIndices.putAll(reverse(featureStringToIndex));
+      return this;
+    }
+
+    private ImmutableSet<String> getSingletonFeatures(final ImmutableTable<Symbol, String, Double> ft) {
+      final ImmutableSet.Builder<String> ret = ImmutableSet.builder();
+
+      final ImmutableMultiset.Builder<String> countsBuilder = ImmutableMultiset.builder();
+      for (final Symbol item : ft.rowKeySet()) {
+        final ImmutableMap<String, Double> features = ft.row(item);
+        for (final String index : features.keySet()) {
+          countsBuilder.add(index);
+        }
+      }
+      final ImmutableMultiset<String> counts = countsBuilder.build();
+
+      for (final String index : counts.elementSet()) {
+        if (counts.count(index) <= 1) {
+          ret.add(index);
+        }
+      }
+
+      return ret.build();
+    }
+
+
+    /*
+    private ImmutableSet<Integer> getSingletonFeatureIndices(
+        final ImmutableTable<Symbol, Integer, Double> ft) {
+      final ImmutableSet.Builder<Integer> ret = ImmutableSet.builder();
+
+      final ImmutableMultiset.Builder<Integer> countsBuilder = ImmutableMultiset.builder();
+      for (final Symbol item : ft.rowKeySet()) {
+        final ImmutableMap<Integer, Double> features = ft.row(item);
+        for (final Integer index : features.keySet()) {
+          countsBuilder.add(index);
+        }
+      }
+      final ImmutableMultiset<Integer> counts = countsBuilder.build();
+
+      for (final Integer index : counts.elementSet()) {
+        if (counts.count(index) <= 1) {
+          ret.add(index);
+        }
+      }
+
+      return ret.build();
+    }
+    */
+
+    private ImmutableMap<Integer, String> reverse(final Map<String, Integer> map) {
+      final ImmutableMap.Builder<Integer, String> ret = ImmutableMap.builder();
+
+      for (final Map.Entry<String, Integer> entry : map.entrySet()) {
+        ret.put(entry.getValue(), entry.getKey());
+      }
+
+      return ret.build();
+    }
+  }
+
+  public static Symbol BIAS = Symbol.from("BIAS");
+  public static Symbol SINGLE = Symbol.from("SINGLE");
+  public static Symbol PAIR = Symbol.from("PAIR");
+  public static Symbol MAXSIMWORD = Symbol.from("MAXSIMWORD");
+}

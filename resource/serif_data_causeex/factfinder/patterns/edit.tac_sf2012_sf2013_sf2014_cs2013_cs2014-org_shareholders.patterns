@@ -1,0 +1,16 @@
+(org_shareholders
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+		
+		<!-- 1 verb:acquired[<obj> = noun:lender[<ref> = 0]][<sub> = 1] -->
+		(vprop (id org_shareholders_tac_1) (score 0.9) (score_group 1) (predicate acquired) (args (argument (role <obj>) (nprop (predicate lender) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders_tac_400000)) (entitylabel AGENT1) (acetype ORG)))))) (argument (role <sub>) (mention (return (ff_role org_shareholders)) (block AGENT1) (acetype PER ORG GPE)))))
+
+		<!-- 1 {0}  {1}&in {0}&{1} owns a controlling -->
+		(regex (id org_shareholders_tac_12) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders_tac_400001)) (entitylabel AGENT1) (acetype ORG)) (mention (return (ff_role org_shareholders)) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string "owns")) (text DONT_ADD_SPACES (string "a")) (text DONT_ADD_SPACES (string "controlling"))))
+
+	)
+)

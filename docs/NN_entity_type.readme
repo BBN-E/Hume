@@ -1,0 +1,14 @@
+1. Train models with 
+/nfs/ld100/u10/bmin/repositories/EDL/end-to-end-seq.kaliningrad.sh
+
+2. name lists in causeex par file has to match par file in 
+/nfs/ld100/u10/bmin/repositories/EDL/end-to-end-seq.kaliningrad.sh
+
+3. 
+change
+    training_dicts_file=/nfs/raid87/u14/WM/resources/NFGEC_models/wm_m6_plus_isi//dicts_figer.pkl
+in
+    /nfs/ld100/u10/bmin/repo_clean_for_exp/CauseEx/experiments/causeex_pipeline/templates/prepare_nn_type_decoding_input.sh
+
+
+

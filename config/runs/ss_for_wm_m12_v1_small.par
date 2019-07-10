@@ -1,0 +1,85 @@
+# Run on full CauseEx month 15 docs (Kaliningrad)
+
+job_name: ss_for_wm_m12.v1.small
+
+stages_to_run: serif,kbp,nn-entity-typing,generic-events,nn-events,pdtb,event-consolidation
+jserif_branch: wm_m12_hackathon
+learnit_branch: wm_m12_hackathon
+
+batch_size: 20
+
+################
+## Quickrun mode
+#################
+serif_server_mode_endpoint: None
+nn_event_server_mode_endpoint: None
+
+########
+# Serif
+########
+serif_input_sgm_list: /home/hqiu/Public/sgm_list/tmp/ss_for_wm_m12_v1_small.list
+serif_input_awake_db: /nfs/raid87/u14/CauseEx/Kaliningrad-Dataset/TwoSix-Extracted-M15-Assessment/awake_dbs/causeex_dbpedia_20170308_m15a_kaliningrad_fix.sqlite
+
+######
+# KBP 
+######
+kbp_input_serifxml_list: GENERATED
+
+################################
+## NN Entity Typing And Linking
+################################
+nn_entity_input_serifxml_list: GENERATED
+types_map_file: /nfs/raid87/u13/hume_namelists/lists.txt
+nn_typing_model_prefix: wm_m6_plus_isi
+nn_entity_to_event_type: MILITARY_EXERCISES:MilitaryExercise
+
+##################
+## Generic events
+##################
+generic_events_input_serifxml_list: GENERATED
+
+#######################
+## NN event extraction
+#######################
+nn_events_input_serifxml_list: GENERATED
+nn_events_model_list: /nfs/raid87/u12/hqiu/tmp/m12_model.list
+nn_events_arg_model_path: None
+
+##############
+# PDTB parser
+##############
+pdtb_input_serifxml_list: GENERATED
+
+######################
+# Event consolidation
+######################
+event_consolidation_input_serifxml_list: GENERATED
+event_consolidation_input_metadata_file: /home/hqiu/Public/M3S_20181116/metadata.txt
+compatibleEventFile: /home/hqiu/ld100/CauseEx-pipeline-WM/CauseEx/ontology/internal_ontology/hume/compatible_events.txt
+ontologyFile: /home/hqiu/ld100/CauseEx-pipeline-WM/CauseEx/ontology/internal_ontology/hume/ontology.hierarchy
+argumentRoleEntityTypeFile: /home/hqiu/ld100/CauseEx-pipeline-WM/CauseEx/CauseEx/ontology/internal_ontology/hume/event_role.entity_type.constraints
+
+################
+# LearnIt
+################
+learnit_input_serifxml_list: GENERATED
+learnit_input_serif_cause_effect_relations_dir: /nfs/raid87/u14/users/bmin/Runjobs/expts/causeex_pipeline/wm_m12.v6.full.v1/serif_cause_effect_json/
+learnit_input_pattern_dir: DEFAULT
+learnit_min_freq_event_pairs: 1
+
+################
+# Serialization
+################
+serialization_mode: WorldModelers
+internal_ontology_dir: /nfs/ld100/u10/bmin/repo_clean_for_exp/CauseEx/ontology/internal_ontology/hume/
+serialization_input_serifxml_list: GENERATED
+serialization_input_metadata_file: /home/hqiu/Public/wm_m12_v1_5/metadata.txt
+serialization_input_trigger_finder_file: NA
+serialization_input_pdtb_json_file: /nfs/mercury-04/u42/bmin/projects/WM/m12/empty.json
+serialization_input_serif_cause_effect_relations_dir: GENERATED
+serialization_input_learnit_cause_effect_relations_file: GENERATED
+serialization_input_factfinder_json_file: /nfs/mercury-04/u42/bmin/projects/WM/m12/empty.json
+serialization_input_learnit_triple_file: GENERATED
+serialization_input_learnit_event_count_file: GENERATED
+serialization_input_extra_causal_relations: /nfs/mercury-04/u42/bmin/projects/WM/m12/empty.json 
+serialization_do_event_uploading: False

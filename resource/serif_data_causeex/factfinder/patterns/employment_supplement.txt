@@ -1,0 +1,193 @@
+(employment_supplement
+
+(wordsets
+
+  (NON_EMPLOY_WORDS citizen resident immigrant opponent challenger advocate rival critic)
+  
+  <!-- Non-exhaustive, but should have decent coverage with high precision -->
+  (GPE_EMPLOY_WORDS administrator ambassador chief commissioner congressman congresswoman delegate director general gen. leader minister officer president representative rep. ruler secretary senator sen. spokesman)  
+
+)
+
+(reference
+
+<!-- [ORG] ... [PER] -->
+(regex (shortcut PARSE_NODE_RE) (re 
+  (mention (min-entitylevel NAME) (acetype ORG))
+  (text (string "\S+(\s+\S+){0,2}"))
+  (mention (min-entitylevel NAME) (acetype PER))
+))
+
+<!-- [PER], a/an/the ... at/for/of [ORG] -->
+<!-- (regex (shortcut PARSE_NODE_RE_2) (re 
+  (mention (min-entitylevel NAME) (acetype PER))
+  (text (string ",\s(a|an|the)"))
+  (text (string "\S+(\s+\S+){0,2}"))
+  (text (string "(at|for|of)"))
+  (mention (min-entitylevel NAME) (acetype GPE ORG))
+)) -->
+
+<!-- [ORG] ..., [PER] -->
+(regex (shortcut PARSE_NODE_RE_3) (re 
+  (mention (min-entitylevel NAME) (acetype ORG))
+  (text (string "\S+(\s+\S+){0,2}\s+,"))
+  (mention (min-entitylevel NAME) (acetype PER))
+))
+
+)
+
+(entitylabels (AGENT1))
+
+(toplevel
+ 
+  <!-- "Raytheon scientist John Doe" -->
+  (parse-node (id per_employee_or_member_of_parse_1) (score 0.9) (score_group 1) (tag NPA)
+    (regex PARSE_NODE_RE)
+    (premod
+      (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype ORG))
+      (parse-node (tag NNP NN) (block_headword NON_EMPLOY_WORDS))
+    )
+    (head
+      (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))
+    )
+  )
+  
+  <!-- GPE version -->
+  (parse-node (id per_employee_or_member_of_gpe_parse_1) (score 0.9) (score_group 1) (tag NPA)
+    (regex PARSE_NODE_RE)
+    (premod
+      (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE))
+      (parse-node (tag NNP NN) (block_headword NON_EMPLOY_WORDS) (headword GPE_EMPLOY_WORDS))
+    )
+    (head
+      (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))
+    )
+  )
+  
+  
+  <!-- "John Doe, a scientist at Raytheon" (also works for GPEs) -->
+  (parse-node (id per_employee_or_member_of_parse_2) (score 0.9) (score_group 1) (tag NP)
+    (node_mention (mention (mentiontype appo)))
+    (head
+      (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))
+    )
+    (postmod
+      (parse-node (tag NP) (block_headword NON_EMPLOY_WORDS)
+        (postmod
+          (parse-node (tag PP) (headword at for of)
+            (postmod
+              (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype ORG GPE))
+            )
+          )
+        )
+      )
+    )
+  )
+  
+  <!-- "(A) Raytheon scientist, John Doe" --> 
+  (parse-node (id per_employee_or_member_of_parse_3) (score 0.9) (score_group 1) (tag NP)
+    (regex PARSE_NODE_RE_3)
+    (node_mention (mention (mentiontype appo)))
+    (head
+      (parse-node (tag NP NPA)
+        (premod
+          (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype ORG))
+        )
+      )
+    )
+    (postmod
+      (parse-node (tag NP NPA NPP)
+        (head
+          (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))
+        )
+      )
+    )
+  )
+  
+  <!-- GPE version --> 
+  (parse-node (id per_employee_or_member_of_gpe_parse_3) (score 0.9) (score_group 1) (tag NP)
+    (regex PARSE_NODE_RE_3)
+    (node_mention (mention (mentiontype appo)))
+    (head
+      (parse-node (tag NP NPA) (headword GPE_EMPLOY_WORDS)
+        (premod
+          (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE))
+        )
+      )
+    )
+    (postmod
+      (parse-node (tag NP NPA NPP)
+        (head
+          (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))
+        )
+      )
+    )
+  )
+  
+  <!-- "Joe Doe, a Raytheon scientist" -->
+  (parse-node (id per_employee_or_member_of_parse_4) (score 0.9) (score_group 1) (tag NP)
+    (node_mention (mention (mentiontype appo)))
+    (head
+      (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))
+    )
+    (postmod
+      (parse-node (tag NPA)
+        (premod
+          (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype ORG))
+        )
+        (head
+          (parse-node (tag NNP NN) (block_headword NON_EMPLOY_WORDS))
+        )
+      )
+    )
+  )
+  
+  <!-- GPE version -->
+  (parse-node (id per_employee_or_member_of_parse_4) (score 0.9) (score_group 1) (tag NP)
+    (node_mention (mention (mentiontype appo)))
+    (head
+      (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))
+    )
+    (postmod
+      (parse-node (tag NPA)
+        (premod
+          (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype ORG))
+        )
+        (head
+          (parse-node (tag NNP NN) (block_headword NON_EMPLOY_WORDS) (headword GPE_EMPLOY_WORDS))
+        )
+      )
+    )
+  )
+  
+  <!-- "Joe Doe, a Raytheon scientist who..." -->
+  (parse-node (id per_employee_or_member_of_parse_5) (score 0.9) (score_group 1) (tag NP)
+    (node_mention (mention (mentiontype appo)))
+    (head
+      (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))
+    )
+    (postmod
+      (parse-node (tag NP)
+        (head
+          (parse-node (tag NPA)
+            (premod
+              (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype ORG))
+            )
+            (head
+              (parse-node (tag NNP NN) (block_headword NON_EMPLOY_WORDS))
+            )
+          )
+        )
+      )
+    )
+  )
+  
+  <!-- [PER], D/R-[State] ... -->
+  (regex (id per_employee_or_member_of_parse_d-r) (score 0.9) (score_group 1) (re 
+    (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))
+    (text (string ", [DRI] -"))
+    (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE))
+  ))
+  
+)
+)

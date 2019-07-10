@@ -1,0 +1,1965 @@
+{
+  "namespace": {
+    "ACTOR": "http://ontology.causeex.com/ontology/odps/Actor#",
+    "CCO": "http://www.ontologyrepository.com/CommonCoreOntologies/",
+    "CAMEOCC": "http://ontology.causeex.com/cameo/CountryCodeOntology/",
+    "CR": "http://ontology.causeex.com/CausalExplorationOntology/ClassRelationships#",
+    "CX": "http://ontology.causeex.com/ontology/odps/CauseEffect#",
+    "DOCO": "http://purl.org/spar/doco/",
+    "EH": "http://ontology.causeex.com/ontology/odps/Event#",
+    "EVENT": "http://ontology.causeex.com/ontology/odps/Event#",
+    "EVENTARTIFACT": "http://ontology.causeex.com/ontology/odps/Event#",
+    "GCONCEPT": "http://ontology.causeex.com/ontology/odps/GeneralConcepts#",
+    "MEAS": "http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#",
+    "OEE": "http://www.ontologylibrary.mil/OperationalEnvironment/Mid/OEEventOntology#",
+    "OEO": "http://www.ontologylibrary.mil/OperationalEnvironment/Mid/OEOrganizationOntology#",
+    "OWL": "http://www.w3.org/2002/07/owl#",
+    "BBNTA1": "http://graph.causeex.com/bbn#",
+    "VAR": "http://www.bbn.com/2017/TA1locals/",
+    "RO": "http://www.obofoundry.org/ro/ro.owl#",
+    "DATAPROV": "http://ontology.causeex.com/ontology/odps/DataProvenance#",
+    "RDF": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "RDFS": "http://www.w3.org/2000/01/rdf-schema#",
+    "DOCSOURCE": "http://graph.causeex.com/documents/sources#"
+  },
+  "template": {
+    "structured_inference":{
+      "default": [
+        {
+          "s": "VAR:instance",
+          "p": "RDF:type",
+          "o": "DATAPROV:InferenceActivity"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "DATAPROV:time_completed",
+          "o": "VAR:time_completed"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "DATAPROV:performed_by",
+          "o": "DATAPROV:BBN"
+        }
+      ]
+    },
+    "structured_input":{
+      "default": [
+        {
+          "s": "VAR:instance",
+          "p": "RDF:type",
+          "o": "DATAPROV:Document"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "DATAPROV:has_document_type",
+          "o": "DATAPROV:Structured"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "RDF:type",
+          "o": "CCO:Spreadsheet"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "RDFS:label",
+          "o": "VAR:input_label"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "DATAPROV:original_source",
+          "o": "VAR:file_id"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "GCONCEPT:numeric_credibility",
+          "o": "VAR:credibility_value"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "DATAPROV:time_retrieved",
+          "o": "VAR:time_retrieved_value"
+        }
+      ]
+    },
+    "structured_frame":{
+      "default": [
+        {
+          "s": "VAR:instance",
+          "p": "RDF:type",
+          "o": "DATAPROV:Worksheet"
+        },
+        {
+          "s": "VAR:parent_doc",
+          "p": "DATAPROV:contains",
+          "o": "VAR:instance"
+        }
+      ]
+    },
+    "structured_column":{
+      "default": [
+        {
+          "s": "VAR:factor_subject_instance",
+          "p": "RDF:type",
+          "o": "EVENT:MeasurementFactor"
+        },
+        {
+          "s": "VAR:factor_subject_instance",
+          "p": "RDFS:label",
+          "o": "VAR:factor_label"
+        },
+        {
+          "s": "VAR:factor_subject_instance",
+          "p": "DATAPROV:sourced_from",
+          "o": "VAR:provenance_instance"
+        },
+        {
+          "s": "VAR:factor_subject_instance",
+          "p": "EVENT:involves_reported_property",
+          "o": "VAR:col_property"
+        },
+        {
+          "s": "VAR:col_property",
+          "p": "DATAPROV:sourced_from",
+          "o": "VAR:provenance_instance"
+        }
+      ],
+      "optional": {
+        "location": [
+            {
+              "s": "VAR:factor_subject_instance",
+              "p": "GCONCEPT:located_at",
+              "o": "VAR:location"
+            },
+            {
+              "s": "VAR:location",
+              "p": "DATAPROV:sourced_from",
+              "o": "VAR:provenance_instance"
+            }
+          ]
+      }
+    },
+    "tabular_reference":{
+        "default": [
+          {
+            "s": "VAR:provenance_instance",
+            "p": "RDF:type",
+            "o": "DATAPROV:TabularReference"
+          },
+          {
+            "s": "VAR:doc_instance",
+            "p": "DATAPROV:contains",
+            "o": "VAR:provenance_instance"
+          }
+        ],
+        "optional": {
+          "spreadsheet_row": [
+            {
+              "s": "VAR:provenance_instance",
+              "p": "DATAPROV:line_number",
+              "o": "VAR:spreadsheet_row"
+            }
+          ],
+          "spreadsheet_col": [
+            {
+              "s": "VAR:provenance_instance",
+              "p": "DATAPROV:column_ref",
+              "o": "VAR:spreadsheet_col"
+            }
+          ]
+      }
+    },
+    "reported_property":{
+      "default": [
+        {
+          "s": "VAR:instance",
+          "p": "RDF:type",
+          "o": "MEAS:ReportedProperty"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "RDFS:label",
+          "o": "VAR:property_label"
+        }
+      ]
+    },
+    "time_series":{
+      "default": [
+        {
+          "s": "VAR:instance",
+          "p": "RDF:type",
+          "o": "MEAS:TimeSeries"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "MEAS:defined_by",
+          "o": "VAR:property"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "DATAPROV:sourced_from",
+          "o": "VAR:prov_instance"
+        },
+        {
+          "s": "VAR:property",
+          "p": "DATAPROV:sourced_from",
+          "o": "VAR:prov_instance"
+        }
+       ],
+        "optional": {
+          "measurement_unit": [
+            {
+              "s": "VAR:instance",
+              "p": "MEAS:has_measurement_unit",
+              "o": "VAR:measurement_unit"
+            }
+          ],
+          "multiplier": [
+            {
+              "s": "VAR:instance",
+              "p": "MEAS:multiplier",
+              "o": "VAR:multiplier"
+            }
+          ],
+          "location": [
+            {
+              "s": "VAR:location",
+              "p": "MEAS:has_time_series",
+              "o": "VAR:instance"
+            },
+            {
+              "s": "VAR:location",
+              "p": "DATAPROV:sourced_from",
+              "o": "VAR:prov_instance"
+            }
+          ]
+      }
+    },
+    "reported_value":{
+      "default": [
+        {
+          "s": "VAR:instance",
+          "p": "RDF:type",
+          "o": "MEAS:ReportedValue"
+        },
+        {
+          "s": "VAR:time_series",
+          "p": "MEAS:has_reported_value",
+          "o": "VAR:instance"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "GCONCEPT:earliest_possible_start_time",
+          "o": "VAR:time"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "GCONCEPT:latest_possible_end_time",
+          "o": "VAR:time"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "MEAS:numeric_value",
+          "o": "VAR:value"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "DATAPROV:sourced_from",
+          "o": "VAR:tab_ref"
+        }
+      ]
+    },
+    "structured_relationship": {
+      "default": [
+        {
+          "s": "VAR:instance",
+          "p": "RDF:type",
+          "o": "CX:CausalAssertion"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "RDFS:label",
+          "o": "VAR:relationship_type"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "CX:has_cause",
+          "o": "VAR:cause_instance"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "CX:has_effect",
+          "o": "VAR:effect_instance"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "GCONCEPT:numeric_confidence",
+          "o": "VAR:credibility"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "DATAPROV:generated_by",
+          "o": "VAR:generator_instance"
+        }
+      ]
+    },
+    "structured_event": {
+      "default": [
+        {
+          "s": "VAR:event_instance",
+          "p": "RDF:type",
+          "o": "VAR:event_type"
+        },
+        {
+          "s": "VAR:event_instance",
+          "p": "RDFS:label",
+          "o": "VAR:event_label"
+        },
+        {
+          "s": "VAR:event_instance",
+          "p": "EVENT:has_active_actor",
+          "o": "VAR:event_actor1"
+        },
+        {
+          "s": "VAR:event_instance",
+          "p": "EVENT:has_affected_actor",
+          "o": "VAR:event_actor2"
+        },
+        {
+          "s": "VAR:event_instance",
+          "p": "GCONCEPT:earliest_possible_start_time",
+          "o": "VAR:event_time"
+        },
+        {
+          "s": "VAR:event_instance",
+          "p": "DATAPROV:sourced_from",
+          "o": "VAR:event_tab_ref"
+        },
+        {
+          "s": "VAR:event_actor1",
+          "p": "DATAPROV:sourced_from",
+          "o": "VAR:event_tab_ref"
+        },
+        {
+          "s": "VAR:event_actor2",
+          "p": "DATAPROV:sourced_from",
+          "o": "VAR:event_tab_ref"
+        },
+        {
+          "s": "VAR:event_actor1",
+          "p": "RDF:type",
+          "o": "EVENT:Actor"
+        },
+        {
+          "s": "VAR:event_actor2",
+          "p": "RDF:type",
+          "o": "EVENT:Actor"
+        }
+      ],
+      "optional": {
+          "location": [
+           {
+            "s": "VAR:event_instance",
+            "p": "GCONCEPT:located_at",
+            "o": "VAR:event_location"
+           },
+           {
+            "s": "VAR:event_location",
+            "p": "DATAPROV:sourced_from",
+            "o": "VAR:event_tab_ref"
+            }
+           ]
+        }
+     },
+     "entity_value":{
+      "default": [
+        {
+          "s": "VAR:instance",
+          "p": "RDF:type",
+          "o": "MEAS:ReportedValue"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "MEAS:numeric_value",
+          "o": "VAR:value"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "DATAPROV:sourced_from",
+          "o": "VAR:tab_ref"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "MEAS:defined_by",
+          "o": "VAR:property"
+        },
+        {
+          "s": "VAR:property",
+          "p": "DATAPROV:sourced_from",
+          "o": "VAR:tab_ref"
+        }
+      ],
+        "optional": {
+          "measurement_unit": [
+            {
+              "s": "VAR:instance",
+              "p": "MEAS:has_measurement_unit",
+              "o": "VAR:measurement_unit"
+            }
+          ],
+          "multiplier": [
+            {
+              "s": "VAR:instance",
+              "p": "MEAS:multiplier",
+              "o": "VAR:multiplier"
+            }
+          ],
+          "currency": [
+            {
+              "s": "VAR:instance",
+              "p": "GCONCEPT:has_currency",
+              "o": "VAR:currency"
+            }
+          ],
+          "location": [
+            {
+              "s": "VAR:location",
+              "p": "MEAS:has_reported_value",
+              "o": "VAR:instance"
+            },
+            {
+              "s": "VAR:location",
+              "p": "DATAPROV:sourced_from",
+              "o": "VAR:tab_ref"
+            }
+          ]
+        }
+    },
+    "extracted_location": {
+      "default": [
+        {
+          "s": "VAR:instance",
+          "p": "RDF:type",
+          "o": "GCONCEPT:PhysicalLocation"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "RDFS:label",
+          "o": "VAR:label"
+        }
+      ]
+    },
+    "extracted_MAR_location": {
+      "default": [
+        {
+          "s": "VAR:instance",
+          "p": "RDF:type",
+          "o": "VAR:location_type"
+        }
+      ]
+    },
+    "seed": {
+      "default": [
+        {
+          "s": "VAR:instance",
+          "p": "RDF:type",
+          "o": "DATAPROV:Seed"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "DATAPROV:seed_milestone",
+          "o": "VAR:seed_milestone"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "DATAPROV:seed_type",
+          "o": "VAR:seed_type"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "DATAPROV:seed_version",
+          "o": "VAR:seed_version"
+        }
+      ]
+    },
+    "documents": {
+      "default": [
+        {
+          "s": "VAR:instance",
+          "p": "RDF:type",
+          "o": "DATAPROV:Document"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "GCONCEPT:numeric_credibility",
+          "o": "VAR:credibility"
+        },
+	{
+          "s": "VAR:instance",
+          "p": "DATAPROV:has_document_type",
+          "o": "DATAPROV:Unstructured"
+        }
+      ],
+      "optional": { 
+      }   
+    },
+    "document-sentence": {
+      "default": [
+        {
+          "s": "VAR:docInstance",
+          "p": "DATAPROV:contains",
+          "o": "VAR:sentenceInstance"
+        },
+        {
+          "s": "VAR:sentenceInstance",
+          "p": "RDF:type",
+          "o": "DATAPROV:Span"
+        },
+        {
+          "s": "VAR:sentenceInstance",
+          "p": "RDF:type",
+          "o": "DOCO:Sentence"
+        },
+        {
+          "s": "VAR:sentenceInstance",
+          "p": "DATAPROV:char_offset",
+          "o": "VAR:sentenceCharOffset"
+        },
+        {
+          "s": "VAR:sentenceInstance",
+          "p": "DATAPROV:char_length",
+          "o": "VAR:sentenceCharLength"
+        },
+        {
+          "s": "VAR:sentenceInstance",
+          "p": "DATAPROV:text_value",
+          "o": "VAR:sentenceTextValue"
+        }
+      ]
+    },
+    "span": {
+      "default": [
+        {
+          "s": "VAR:spanInstance",
+          "p": "RDF:type",
+          "o": "DATAPROV:Span"
+        },
+        {
+          "s": "VAR:spanInstance",
+          "p": "DATAPROV:char_offset",
+          "o": "VAR:startOffset"
+        },
+        {
+          "s": "VAR:spanInstance",
+          "p": "DATAPROV:char_length",
+          "o": "VAR:textLength"
+        },
+        {
+          "s": "VAR:spanInstance",
+          "p": "DATAPROV:text_value",
+          "o": "VAR:text"
+        },
+        {
+          "s": "VAR:docInstance",
+          "p": "DATAPROV:contains",
+          "o": "VAR:spanInstance"
+        },
+        {
+          "s": "VAR:sentenceInstance",
+          "p": "DATAPROV:contains",
+          "o": "VAR:spanInstance"
+        }
+      ], 
+      "optional": {
+         "instance": [
+           {
+             "s": "VAR:instance",
+             "p": "DATAPROV:sourced_from",
+             "o": "VAR:spanInstance"
+           }
+         ],
+	 "trigger_words": [
+	   {
+	     "s": "VAR:spanInstance",
+             "p": "DATAPROV:trigger_words",
+             "o": "VAR:triggerWords"
+           }
+	 ],
+	 "pattern_id": [
+ 	   {
+             "s": "VAR:spanInstance",
+             "p": "BBNTA1:extended_trigger",
+             "o": "VAR:pattern_id"
+            }
+	 ]
+      }
+    },
+    "entity-mention-span": {
+      "default": [
+        {
+          "s": "VAR:mentionSpanInstance",
+          "p": "RDF:type",
+          "o": "DATAPROV:MentionSpan"
+        },
+        {
+          "s": "VAR:mentionSpanInstance",
+          "p": "DATAPROV:char_offset",
+          "o": "VAR:startOffset"
+        },
+        {
+          "s": "VAR:mentionSpanInstance",
+          "p": "DATAPROV:char_length",
+          "o": "VAR:textLength"
+        },
+        {
+          "s": "VAR:mentionSpanInstance",
+          "p": "DATAPROV:text_value",
+          "o": "VAR:mention_text"
+        },
+        {
+          "s": "VAR:mentionSpanInstance",
+          "p": "DATAPROV:has_mention_type",
+          "o": "VAR:mention_type"
+        },
+        {
+          "s": "VAR:docInstance",
+          "p": "DATAPROV:contains",
+          "o": "VAR:mentionSpanInstance"
+        },
+        {
+          "s": "VAR:sentenceInstance",
+          "p": "DATAPROV:contains",
+          "o": "VAR:mentionSpanInstance"
+        },
+        {
+          "s": "VAR:spanInstance",
+          "p": "DATAPROV:contains",
+          "o": "VAR:mentionSpanInstance"
+        },
+        {
+          "s": "VAR:entityInstance",
+          "p": "DATAPROV:sourced_from",
+          "o": "VAR:mentionSpanInstance"
+        }
+      ]
+    },
+    "entity_group": {
+      "default": [
+      ],
+      "optional": {
+        "canonical_name": [
+          {
+            "s": "VAR:instance",
+            "p": "GCONCEPT:canonical_label",
+            "o": "VAR:canonical_name"
+          }
+        ]
+      }
+    },
+    "entity_group-unification": {
+      "default": [
+        {
+          "s": "VAR:instance",
+          "p": "GCONCEPT:unifies",
+          "o": "VAR:member"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "RDF:type",
+          "o": "VAR:ontology_class"
+        }
+      ],
+      "optional": {
+      }
+    },
+    "entity": {
+      "default": [
+      ],
+      "optional": {
+        "canonical_name": [
+          {
+            "s": "VAR:instance",
+            "p": "GCONCEPT:canonical_label",
+            "o": "VAR:canonical_name"
+          }
+        ],
+        "entity_type_location": [
+          {
+            "s": "VAR:instance",
+            "p": "RDF:type",
+            "o": "GCONCEPT:PhysicalLocation"
+          }
+        ],
+        "entity_type": [
+          {
+            "s": "VAR:instance",
+            "p": "RDF:type",
+            "o": "VAR:ontology_class"
+          }
+        ],
+        "latitude": [
+          {
+            "s": "VAR:instance",
+            "p": "GCONCEPT:latitude",
+            "o": "VAR:latitude"
+          }
+        ],
+        "longitude": [
+          {
+            "s": "VAR:instance",
+            "p": "GCONCEPT:longitude",
+            "o": "VAR:longitude"
+          }
+        ],
+	"additional_entity_type": [
+          {
+            "s": "VAR:instance",
+            "p": "RDF:type",
+            "o": "VAR:secondary_ontology_class"
+          }
+        ],
+        "citizenship": [
+          {
+            "s": "VAR:citizenship_details_instance",
+            "p": "RDF:type",
+            "o": "ACTOR:CitizenshipDetails"
+          },
+          {
+            "s": "VAR:instance",
+            "p": "ACTOR:has_citizenship",
+            "o": "VAR:citizenship_details_instance"
+          },
+          {
+            "s": "VAR:citizenship_details_instance",
+            "p": "ACTOR:related_country_code",
+            "o": "VAR:cameo_country_code"
+          }
+        ],
+	"ethnicity": [
+          {
+            "s": "VAR:ethnicity_details_instance",
+            "p": "RDF:type",
+            "o": "ACTOR:EthnicityDetails"
+          },
+          {
+            "s": "VAR:instance",
+            "p": "ACTOR:has_ethnicity",
+            "o": "VAR:ethnicity_details_instance"
+          },
+          {
+            "s": "VAR:ethnicity_details_instance",
+            "p": "ACTOR:related_ethnicity",
+            "o": "VAR:ethnicity"
+          }
+        ]
+      }
+    },
+    "event_group-unification": {
+      "default": [
+        {
+          "s": "VAR:instance",
+          "p": "GCONCEPT:unifies",
+          "o": "VAR:member"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "RDF:type",
+          "o": "VAR:ontology_class"
+        }
+      ],
+      "optional": {
+      }
+    },
+    "event": {
+      "default": [
+        {
+          "s": "VAR:instance",
+          "p": "RDF:type",
+          "o": "VAR:ontology_class"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "RDFS:label",
+          "o": "VAR:label"
+        },
+        {
+            "s": "VAR:instance",
+            "p": "GCONCEPT:numeric_confidence",
+            "o": "VAR:confidence"
+        }
+      ],
+      "optional": {
+        "modality": [
+          {
+            "s": "VAR:instance",
+            "p": "EVENT:has_modality",
+            "o": "VAR:modality"
+          }
+        ],
+        "tense": [
+          {
+            "s": "VAR:instance",
+            "p": "EVENT:has_tense",
+            "o": "VAR:tense"
+          }
+        ],
+        "genericity": [
+          {
+            "s": "VAR:instance",
+            "p": "EVENT:has_genericity",
+            "o": "VAR:genericity"
+          }
+        ],
+        "polarity": [
+          {
+            "s": "VAR:instance",
+            "p": "EVENT:has_polarity",
+            "o": "VAR:polarity"
+          }
+        ],
+        "extra_event_type" : [
+          {
+            "s": "VAR:instance",
+            "p": "RDF:type",
+            "o": "VAR:extra_ontology_class"
+          }
+        ],
+        "event_topic" : [
+          {
+            "s": "VAR:instance",
+            "p": "EVENT:has_topic",
+            "o": "VAR:topic_event_instance"
+          }
+        ],
+        "event_shortage_artifact": [
+          {
+            "s": "VAR:instance",
+            "p": "GCONCEPT:involves_goods_or_property",
+            "o": "VAR:generic_artifact_instance"
+          },
+          {
+            "s": "VAR:generic_artifact_instance",
+            "p": "RDF:type",
+            "o": "VAR:artifact_type"
+          }
+        ],
+        "event_adequate_supply_artifact": [
+          {
+            "s": "VAR:instance",
+            "p": "GCONCEPT:involves_goods_or_property",
+            "o": "VAR:generic_artifact_instance"
+          },
+          {
+            "s": "VAR:generic_artifact_instance",
+            "p": "RDF:type",
+            "o": "VAR:artifact_type"
+          }
+        ]
+      }
+    },
+    "event-arg": {
+      "default": [
+      ],
+      "optional": {
+        "time_text": [
+          {
+            "s": "VAR:instance",
+            "p": "GCONCEPT:time",
+            "o": "VAR:time_text"
+          }
+        ],
+        "time_quadriple": [
+          {
+            "s": "VAR:instance",
+            "p": "GCONCEPT:earliest_possible_start_time",
+            "o": "VAR:earliest_possible_start_time"
+          },
+          {
+            "s": "VAR:instance",
+            "p": "GCONCEPT:earliest_possible_end_time",
+            "o": "VAR:earliest_possible_end_time"
+          },
+          {
+            "s": "VAR:instance",
+            "p": "GCONCEPT:latest_possible_start_time",
+            "o": "VAR:latest_possible_start_time"
+          },
+          {
+            "s": "VAR:instance",
+            "p": "GCONCEPT:latest_possible_end_time",
+            "o": "VAR:latest_possible_end_time"
+          }
+        ],
+        "time_tuple": [
+          {
+            "s": "VAR:instance",
+            "p": "GCONCEPT:earliest_possible_start_time",
+            "o": "VAR:earliest_possible_start_time"
+          },
+          {
+            "s": "VAR:instance",
+            "p": "GCONCEPT:latest_possible_end_time",
+            "o": "VAR:latest_possible_end_time"
+          }
+        ],
+        "value-mention": [
+          {
+            "s": "VAR:instance",
+            "p": "VAR:pred",
+            "o": "VAR:mention_text"
+          }
+        ]
+      }
+    },
+    "event-arg-instance": {
+      "default": [
+        {
+          "s": "VAR:instance",
+          "p": "VAR:pred",
+          "o": "VAR:arg_instance"
+        }
+      ]
+    },
+    "value-money": {
+      "default": [
+        {
+          "s": "VAR:moninstance",
+          "p": "RDF:type",
+          "o": "GCONCEPT:MonetaryAmount"
+        },
+        {
+          "s": "VAR:moninstance",
+          "p": "GCONCEPT:amount_text",
+          "o": "VAR:amount_text"
+        }
+      ],
+      "optional": {
+        "money-numeric-amount": [
+          {
+            "s": "VAR:moninstance",
+            "p": "GCONCEPT:amount",
+            "o": "VAR:money_amount"
+          }
+        ],
+        "money-numeric-currency-type": [
+          {
+            "s": "VAR:moninstance",
+            "p": "GCONCEPT:has_currency",
+            "o": "VAR:currency_type"
+          }
+        ],
+        "money-numeric-smallest-possible-amount": [
+          {
+            "s": "VAR:moninstance",
+            "p": "GCONCEPT:smallest_possible_amount",
+            "o": "VAR:smallest_possible_amount"
+          }
+        ],
+        "money-numeric-largest-possible-amount": [
+          {
+            "s": "VAR:moninstance",
+            "p": "GCONCEPT:largest_possible_amount",
+            "o": "VAR:largest_possible_amount"
+          }
+        ]
+      }
+    },
+    "value-crime": {
+      "default": [
+        {
+          "s": "VAR:crimeinstance",
+          "p": "RDF:type",
+          "o": "EH:CriminalAct"
+        },
+        {
+          "s": "VAR:crimeinstance",
+          "p": "DATAPROV:text_value",
+          "o": "VAR:crime_text"
+        }
+      ],
+      "optional": {
+      }
+    },
+    "relation_group-unification": {
+      "default": [
+        {
+          "s": "VAR:instance",
+          "p": "GCONCEPT:unifies",
+          "o": "VAR:member"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "RDF:type",
+          "o": "VAR:relationship"
+        }
+      ],
+      "optional": {
+      }
+    },
+    "entity-relation": {
+      "default": [
+        {
+          "s": "VAR:left_arg",
+          "p": "VAR:relationship",
+          "o": "VAR:right_arg"
+        }
+      ],
+      "optional": {
+      }
+    },
+    "entity-relation-arg-details": {
+      "default": [
+        {
+          "s": "VAR:left_arg",
+          "p": "VAR:relationship",
+          "o": "VAR:arg_instance"
+        },
+        {
+          "s": "VAR:arg_instance",
+          "p": "RDF:type",
+          "o": "VAR:arg_details_concept"
+        }
+      ],
+      "optional": {
+        "arg_instance_predicate": [
+          {
+            "s": "VAR:arg_instance",
+            "p": "VAR:pred",
+            "o": "VAR:arg_entity_instance"
+          }
+        ],
+        "arg_instance_position_or_role": [
+          {
+            "s": "VAR:arg_instance",
+            "p": "GCONCEPT:position_or_role",
+            "o": "VAR:position_or_role"
+          }
+        ],
+        "arg_instance_time": [
+          {
+            "s": "VAR:arg_instance",
+            "p": "GCONCEPT:time",
+            "o": "VAR:time"
+          }
+        ],
+        "left-sentence": [
+          {
+            "s": "VAR:arg_instance",
+            "p": "DATAPROV:sourced_from",
+            "o": "VAR:left_sentence_id"
+          }
+        ],
+        "right-sentence": [
+          {
+            "s": "VAR:arg_instance",
+            "p": "DATAPROV:sourced_from",
+            "o": "VAR:right_sentence_id"
+          }
+        ]
+      }
+    },
+    "event-relation": {
+      "default": [
+        {
+          "s": "VAR:left_arg",
+          "p": "VAR:relationship",
+          "o": "VAR:right_arg"
+        }
+      ],
+      "optional": {
+      }
+    },
+    "event-causal-relation": {
+      "default": [
+        {
+          "s": "VAR:instance",
+          "p": "RDF:type",
+          "o": "VAR:ontology_class"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "VAR:left_pred",
+          "o": "VAR:left_arg"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "VAR:right_pred",
+          "o": "VAR:right_arg"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "GCONCEPT:numeric_confidence",
+          "o": "VAR:confidence"
+        }
+      ],
+      "optional": {
+      }
+    },
+    "source-sentence": {
+      "default": [
+        {
+          "s": "VAR:instance",
+          "p": "DATAPROV:sourced_from",
+          "o": "VAR:sentenceSpanInstance"
+        }
+      ],
+      "optional": {
+      }
+    }
+  },
+  "mappings": {
+    "entity": {
+      "OTH": {
+        "default_type": "OWL:Thing",
+        "sub_types": {}
+      },
+      "PER": {
+        "default_type": "ACTOR:Person",
+        "sub_types": {
+          "Individual": "ACTOR:Person",
+          "Group": "ACTOR:GroupOfPersons",
+          "Indeterminate": "ACTOR:Person",
+          "DisplacedPersons": "ACTOR:DisplacedPersons",
+          "Refugees": "ACTOR:Refugees",
+          "InternallyDisplacedPersons": "ACTOR:InternallyDisplacedPersons",
+          "AsylumSeekers": "ACTOR:AsylumSeekers"
+        }
+      },
+      "ORG": {
+        "default_type": "ACTOR:Organization",
+        "sub_types": {
+	  "General": "ACTOR:Organization",
+          "Commercial": "ACTOR:CommercialOrganization",
+          "Educational": "ACTOR:EducationalOrganization",
+          "Entertainment": "ACTOR:EntertainmentOrganization",
+          "Government": "ACTOR:GovernmentAgency",
+          "Media": "ACTOR:MediaOrganization",
+          "Medical-Science": "ACTOR:HealthcareOrganization",
+          "Non-Governmental": "ACTOR:NonGovernmentalOrganization",
+          "Religious": "ACTOR:ReligiousOrganization",
+          "Sports": "ACTOR:EntertainmentOrganization",
+          "Military": "ACTOR:MilitaryForce",
+          "Jihadist": "ACTOR:JihadistOrganization"
+        }
+      },
+      "LOC": {
+        "default_type": "GCONCEPT:PhysicalLocation",
+        "sub_types": {
+          "Address": "GCONCEPT:PhysicalLocation",
+          "Boundary": "GCONCEPT:Border",
+          "Celestial": "GCONCEPT:PhysicalLocation",
+          "Land-Region-Natural": "CCO:GeographicFeature",
+          "Region-General": "GCONCEPT:PhysicalLocation",
+          "Region-International": "GCONCEPT:PhysicalLocation",
+          "Water-Body": "CCO:HydrographicFeature"
+        }
+      },
+      "FAC": {
+        "default_type": "CCO:Facility",
+        "sub_types": {
+          "Airport": "CCO:Airport",
+          "Building-Grounds": "CCO:Facility",
+          "Path": "CCO:Facility",
+          "Plant": "CCO:Facility",
+          "Subarea-Facility": "CCO:Facility",
+	  "Pipeline": "BBNTA1:Pipeline"
+        }
+      },
+      "GPE": {
+        "default_type": "ACTOR:GeopoliticalEntity",
+        "sub_types": {
+          "Continent": "CCO:Continent",
+          "County-or-District": "CCO:SecondOrderAdministrativeRegion",
+          "GPE-Cluster": "ACTOR:GeopoliticalEntity",
+          "Nation": "CCO:Country",
+          "Population-Center": "ACTOR:GeopoliticalEntity",
+          "Special": "ACTOR:GeopoliticalEntity",
+          "State-or-Province": "CCO:FirstOrderAdministrativeRegion"
+        }
+      },
+      "VEH": {
+        "default_type": "CCO:Vehicle",
+        "sub_types": {
+          "Air": "CCO:Aircraft",
+          "Land": "CCO:GroundVehicle",
+          "Subarea-Vehicle": "CCO:Vehicle",
+          "Underspecified": "CCO:Vehicle",
+          "Water": "CCO:Watercraft"
+        }
+      },
+      "WEA": {
+        "default_type": "CCO:Weapon",
+        "sub_types": {
+          "Blunt": "CCO:Weapon",
+          "Chemical": "CCO:ChemicalWeapon",
+          "Exploding": "CCO:ExplosiveWeapon",
+          "Nuclear": "CCO:NuclearWeapon",
+          "Projectile": "CCO:ProjectileLauncher",
+          "Sharp": "CCO:CuttingWeapon",
+          "Shooting": "CCO:Firearm",
+          "Biological": "CCO:BiologicalWeapon",
+	  "Missile": "CCO:PrecisionGuidedMissile",
+          "Underspecified": "CCO:Weapon"
+        }
+      },
+      "ART": {
+        "default_type": "CCO:Artifact",
+	"sub_types": {
+          "Artifact": "CCO:Artifact",
+	  "Oil": "EVENT:Oil",
+          "Natural-Gas": "EVENT:NaturalGas"
+       }
+     }
+    },
+    "entity_secondary_type": {
+       "GPE": {
+          "County-or-District": "ACTOR:GeopoliticalEntity",
+          "State-or-Province": "ACTOR:GeopoliticalEntity"
+        }
+    },
+    "event": {
+      "default": "EVENT:Event",
+      "Anti" : "EH:Anti",
+      "Attempt" : "EH:Attempt",
+      "InitiationOrStart" : "EH:InitiationOrStart",
+      "Pro" : "EH:Pro",
+      "StrongOrIntense" : "EH:StrongOrIntense",
+      "TerminationOrEnd" : "EH:TerminationOrEnd",
+      "UnintentionalAct" : "EH:UnintentionalAct",
+      "WeakOrLimited" : "EH:WeakOrLimited",
+      "AbductionHostageTakingOrHijacking" : "EH:AbductionHostageTakingOrHijacking",
+      "Accusation" : "EH:AccusationOrAssigningOfResponsibility",
+      "AccusationOrAssigningOfResponsibility" : "EH:AccusationOrAssigningOfResponsibility",
+      "AdministrativeSanctions" : "EH:AdministrativeSanctions",
+      "Advising" : "EH:Advising",
+      "Affiliation" : "EH:Affiliation",
+      "Aggression" : "EH:Aggression",
+      "AgreementOrPromise" : "EH:AgreementOrPromise",
+      "AlertStatus" : "EH:AlertStatus",
+      "AmassingAndStockpiling" : "EH:AmassingAndStockpiling",
+      "Ambush" : "EH:Ambush",
+      "Amusement" : "EH:Amusement",
+      "Anger" : "EH:Anger",
+      "AnimalIllnessOrDeath" : "EH:AnimalIllnessOrDeath",
+      "Announcement" : "EH:Announcement",
+      "Annoyance" : "EH:Annoyance",
+      "Apology" : "EH:Apology",
+      "AppointmentOrNomination" : "EH:AppointmentOrNomination",
+      "ApprehensionAnxietyOrWorry" : "EH:ApprehensionAnxietyOrWorry",
+      "ArmedConflict" : "EH:ArmedConflict",
+      "ArrestOrDetention" : "EH:ArrestOrDetention",
+      "Arrival" : "EH:Arrival",
+      "Assassination" : "EH:Assassination",
+      "Attack" : "EH:Attack",
+      "BanOrProhibition" : "EH:BanOrProhibition",
+      "Bankruptcy" : "EH:Bankruptcy",
+      "Battle" : "EH:Battle",
+      "Birth" : "EH:Birth",
+      "BlockadeOrRestrictionOfMovement" : "EH:BlockadeOrRestrictionOfMovement",
+      "Bombing" : "EH:Bombing",
+      "BoycottEmbargoSanctionsOrStrike" : "EH:BoycottEmbargoSanctionsOrStrike",
+      "BoycottOrEmbargo" : "EH:BoycottOrEmbargo",
+      "BusinessCeremony" : "EH:BusinessCeremony",
+      "CargoTransportation" : "EH:CargoTransportation",
+      "CeasefireOrTruce" : "EH:CeasefireOrTruce",
+      "Ceremony" : "EH:Ceremony",
+      "Change" : "EH:Change",
+      "ChangeOfResidence" : "EH:ChangeOfResidence",
+      "CivilCampaign" : "EH:CivilCampaign",
+      "ClaimingOfResponsibility" : "EH:ClaimingOfResponsibility",
+      "ColdTemperature" : "EH:ColdTemperature",
+      "CollapsedStructure" : "EH:CollapsedStructure",
+      "CollectingOrRallying" : "EH:AmassingAndStockpiling",
+      "Collision" : "EH:Collision",
+      "Commanding" : "EH:Commanding",
+      "Commemoration" : "EH:Commemoration",
+      "CommercialOperation" : "EH:CommercialOperation",
+      "CommissiveCommunication" : "EH:CommissiveCommunication",
+      "CommunicationConveyingEmotion" : "EH:CommunicationConveyingEmotion",
+      "CommunicationConveyingEmpathy" : "EH:CommunicationConveyingEmpathy",
+      "CommunicationConveyingOptimism" : "EH:CommunicationConveyingOptimism",
+      "CommunicationConveyingPessimism" : "EH:CommunicationConveyingPessimism",
+      "CommunicationViaInstantOrTextMessage" : "EH:CommunicationViaInstantOrTextMessage",
+      "CommunicationViaLetterOrPersonalMail" : "EH:CommunicationViaLetterOrPersonalMail",
+      "CommunicationViaPhone" : "EH:CommunicationViaPhone",
+      "Communication" : "EH:Communication",
+      "Compassion" : "EH:Compassion",
+      "Complaint" : "EH:DisapprovalOrDenunciation",
+      "ConcentrationOfDisplacedPersons" : "EH:ConcentrationOfDisplacedPersons",
+      "Confiscation" : "EH:Confiscation",
+      "ConfiscationDamageOrDestruction" : "EH:ConfiscationDamageOrDestruction",
+      "Congratulation" : "EH:Congratulation",
+      "ConsiderationOrExploration" : "EH:ConsiderationOrExploration",
+      "Consumption" : "EH:Consumption",
+      "ContaminatedWater" : "EH:ContaminatedWater",
+      "Contempt" : "EH:Contempt",
+      "Contentment" : "EH:Contentment",
+      "ContractRelatedEvent" : "EH:ContractRelatedEvent",
+      "Cooperation" : "EH:Cooperation",
+      "Corruption" : "EH:Corruption",
+      "CounterOperation" : "EH:CounterOperation",
+      "CounterTerrorismOperation" : "EH:CounterTerrorismOperation",
+      "CriminalAct" : "EH:CriminalAct",
+      "CriminalActOrCorruption" : "EH:CriminalActOrCorruption",
+      "Curfew" : "EH:Curfew",
+      "CyberAttack" : "EH:CyberAttack",
+      "CyberDefense" : "EH:CyberDefense",
+      "DamageOrDestruction" : "EH:DamageOrDestruction",
+      "Death" : "EH:Death",
+      "Debt" : "EH:Debt",
+      "DeceptiveCommunication" : "EH:DeceptiveCommunication",
+      "DecisionOrRecommendation" : "EH:DecisionOrRecommendation",
+      "DeclarativeCommunication" : "EH:DeclarativeCommunication",
+      "DeclineToComment" : "EH:DeclineToComment",
+      "Decrease" : "EH:Decrease",
+      "Deescalation" : "EH:Deescalation",
+      "DefenseOrSupport" : "EH:DefenseOrSupport",
+      "DefensiveManeuver" : "EH:DefensiveManeuver",
+      "DefyingLawsNormsDirectives" : "EH:DefyingLawsNormsDirectives",
+      "Demand" : "EH:Demand",
+      "Demobilization" : "EH:Demobilization",
+      "DemonstrationOrProtest" : "EH:DemonstrationOrProtest",
+      "Denial" : "EH:Denial",
+      "DenialOfResponsibility" : "EH:DenialOfResponsibility",
+      "Departure" : "EH:Departure",
+      "Deportation" : "EH:Deportation",
+      "Desperation" : "EH:Desperation",
+      "DiplomaticCooperation" : "EH:DiplomaticCooperation",
+      "DiplomaticRecognition" : "EH:DiplomaticRecognition",
+      "DiplomaticSanctions" : "EH:DiplomaticSanctions",
+      "DirectiveCommunication" : "EH:DirectiveCommunication",
+      "DisagreementOrDispute" : "EH:DisagreementOrDispute",
+      "DisapprovalOrDenunciation" : "EH:DisapprovalOrDenunciation",
+      "Disgust" : "EH:Disgust",
+      "Donation" : "EH:Donation",
+      "EarthquakeAndAftershock" : "EH:EarthquakeAndAftershock",
+      "EconomicCondition" : "EH:EconomicCondition",
+      "EconomicCooperation" : "EH:EconomicCooperation",
+      "EconomicDepression" : "EH:EconomicDepression",
+      "EconomicInflation" : "EH:EconomicInflation",
+      "EconomicRecession" : "EH:EconomicRecession",
+      "EconomicSanctions" : "EH:EconomicSanctions",
+      "Election" : "EH:Election",
+      "ElectionCampaign" : "EH:ElectionCampaign",
+      "EmploymentRelatedEvent" : "EH:EmploymentRelatedEvent",
+      "EntertainmentEvent" : "EH:EntertainmentEvent",
+      "EnvironmentalDegradation" : "EH:EnvironmentalDegradation",
+      "EnvironmentalHazard" : "EH:EnvironmentalHazard",
+      "Escape" : "EH:Escape",
+      "EspionageOperation" : "EH:EspionageOperation",
+      "EspionageOrTreason" : "EH:EspionageOrTreason",
+      "EthnicCleansing" : "EH:EthnicCleansing",
+      "Evacuation" : "EH:Evacuation",
+      "EvaluationOrAppraisal" : "EH:EvaluationOrAppraisal",
+      "Excess" : "EH:Excess",
+      "Execution" : "EH:Execution",
+      "ExtraJudicialExecution" : "EH:ExtraJudicialExecution",
+      "ExhibitionOfPower" : "EH:ExhibitionOfPower",
+      "ExploratoryCommunication" : "EH:ExploratoryCommunication",
+      "ExpressionOfCondolenceOrSympathy" : "EH:ExpressionOfCondolenceOrSympathy",
+      "ExpressionOfIntent" : "EH:ExpressionOfIntent",
+      "Expulsion" : "EH:Expulsion",
+      "ExpulsionDeportationOrWithdrawal" : "EH:ExpulsionDeportationOrWithdrawal",
+      "Extradition" : "EH:Extradition",
+      "Famine" : "EH:Famine",
+      "Fear" : "EH:Fear",
+      "FilingOfLawsuit" : "EH:FilingOfLawsuit",
+      "FinancialDeposit" : "EH:FinancialDeposit",
+      "FinancialEvent" : "EH:FinancialEvent",
+      "FinancialWithdrawal" : "EH:FinancialWithdrawal",
+      "FindingOfGuilty" : "EH:FindingOfGuilty",
+      "FindingOfInnocent" : "EH:FindingOfInnocent",
+      "Fire" : "EH:Fire",
+      "Flood" : "EH:Flood",
+      "FoodInsecurity" : "EH:FoodInsecurity",
+      "FoodSecurity" : "EH:FoodSecurity",
+      "ForcedMove" : "EH:ForcedMove",
+      "Forgiving" : "EH:Forgiving",
+      "FormalAgreement" : "EH:FormalAgreement",
+      "Frustration" : "EH:Frustration",
+      "Funeral" : "EH:Funeral",
+      "Goodwill" : "EH:Goodwill",
+      "GovernmentCeremony" : "EH:GovernmentCeremony",
+      "Graduation" : "EH:Graduation",
+      "GrantingOfAsylum" : "EH:GrantingOfAsylum",
+      "Grief" : "EH:Grief",
+      "GuardingOrPatrolling" : "EH:GuardingOrPatrolling",
+      "Happiness" : "EH:Happiness",
+      "Hatred" : "EH:Hatred",
+      "HighUnemployment" : "EH:HighUnemployment",
+      "Hope" : "EH:Hope",
+      "HighTemperature" : "EH:HighTemperature",
+      "HighWind" : "EH:HighWind",
+      "HumanRightsAbuse" : "EH:HumanRightsAbuse",
+      "HungerStrike" : "EH:HungerStrike",
+      "Hurricane" : "EH:HurricanOrTyphoon",
+      "HurricanOrTyphoon" : "EH:HurricanOrTyphoon",
+      "Identification" : "EH:Identification",
+      "IllnessOrWounding" : "EH:IllnessOrInjury",
+      "Incompetency" : "EH:Incompetency",
+      "Increase" : "EH:Increase",
+      "Indictment" : "EH:Indictment",
+      "InfectiousHumanDisease" : "EH:InfectiousHumanDisease",
+      "InspectionOrObservation" : "EH:InspectionOrObservation",
+      "Inspiration" : "EH:Inspiration",
+      "IntelligenceGathering" : "EH:IntelligenceGathering",
+      "IntelligenceOperation" : "EH:IntelligenceOperation",
+      "Interview" : "EH:Interview",
+      "IntimidationAndCoercion" : "EH:IntimidationAndCoercion",
+      "Investigation" : "EH:Investigation",
+      "Invitation" : "EH:Invitation",
+      "IssuingPublishingOrReleasing" : "EH:IssuingPublishingOrReleasing",
+      "Jealousy" : "EH:Jealousy",
+      "JointOperation" : "EH:JointOperation",
+      "JudicialCooperation" : "EH:JudicialCooperation",
+      "JuryDeliberation" : "EH:JuryDeliberation",
+      "LandslideOrMudslide" : "EH:LandslideOrMudslide",
+      "Lawlessness" : "EH:Lawlessness",
+      "LegalEvent" : "EH:LegalEvent",
+      "LegalFinding" : "EH:LegalFinding",
+      "LegalFine" : "EH:LegalFine",
+      "LegalProceedingsOrTrial" : "EH:LegalProceedingsOrTrial",
+      "LegalSentence" : "EH:LegalSentence",
+      "Legislation" : "EH:GoverningDirective",
+      "Loan" : "EH:Loan",
+      "LocationChange" : "EH:LocationChange",
+      "Looting" : "EH:Looting",
+      "LowUnemployment" : "EH:LowUnemployment",
+      "Malnutrition" : "EH:Malnutrition",
+      "ManufacturingOrBuilding" : "EH:ManufacturingOrBuilding",
+      "Marriage" : "EH:Marriage",
+      "MassKilling" : "EH:MassKilling",
+      "MeasurementFactor" : "EH:MeasurementFactor",
+      "Mediation" : "EH:Mediation",
+      "MedicalEmergency" : "EH:MedicalEmergency",
+      "MeetingEncounterOrNegotiation" : "EH:MeetingEncounterOrNegotiation",
+      "MeetingOrEncounter" : "EH:MeetingOrEncounter",
+      "Merger" : "EH:Merger",
+      "MilitaryAction" : "EH:MilitaryAction",
+      "MilitaryCampaignOrOperation" : "EH:MilitaryCampaignOrOperation",
+      "MilitaryCooperation" : "EH:MilitaryCooperation",
+      "MilitaryDeescalation" : "EH:MilitaryDeescalation",
+      "MissingPersons" : "EH:MissingPersons",
+      "Mobilization" : "EH:Mobilization",
+      "MurderOrHomicide" : "EH:MurderOrHomicide",
+      "Negotiation" : "EH:Negotiation",
+      "OathTaking" : "EH:OathTaking",
+      "OccupationOfTerritory" : "EH:OccupationOfTerritory",
+      "Operation" : "EH:Operation",
+      "Ownership" : "EH:Ownership",
+      "Pardon" : "EH:Pardon",
+      "Parole" : "EH:Parole",
+      "PaymentOrRepayment" : "EH:PaymentOrRepayment",
+      "Peacekeeping" : "EH:Peacekeeping",
+      "PeacekeepingOperation" : "EH:PeacekeepingOperation",
+      "Performance" : "EH:Performance",
+      "Permission" : "EH:Permission",
+      "PersonalCommunication" : "EH:PersonalCommunication",
+      "PersonalLifeEvent" : "EH:PersonalLifeEvent",
+      "PersonalTransportation" : "EH:PersonalOrPassengerTransportation",
+      "PersonalOrPassengerTransportation" : "EH:PersonalOrPassengerTransportation",
+      "Pilgrimage" : "EH:Pilgrimage",
+      "PlacementAsHumanShield" : "EH:PlacementAsHumanShield",
+      "PhysicalAssault" : "EH:PhysicalAssault",
+      "Planning" : "EH:Planning",
+      "PolicyChange" : "EH:PolicyChange",
+      "PoliticalCorruption" : "EH:Corruption",
+      "PoliticalDissent" : "EH:PoliticalDissent",
+      "PoliticalInstability" : "EH:PoliticalInstability",
+      "PoliticalReform" : "EH:PoliticalReform",
+      "PoliticalRevolution" : "EH:PoliticalRevolution",
+      "Pollution" : "EH:Pollution",
+      "Possession" : "EH:Possession",
+      "Poverty" : "EH:Poverty",
+      "PraisingOrEndorsing" : "EH:PraisingOrEndorsing",
+      "PriceGouging" : "EH:PriceGouging",
+      "Pride" : "EH:Pride",
+      "PromotionOfWaterSanitationAndHygiene" : "EH:PromotionOfWaterSanitationAndHygiene",
+      "ProvisionOfAid" : "EH:ProvisionOfAid",
+      "ProvisionOfEconomicAid" : "EH:ProvisionOfEconomicAid",
+      "ProvisionOfHumanitarianAid" : "EH:ProvisionOfHumanitarianAid",
+      "ProvisionOfInspectorsOrObservers" : "EH:ProvisionOfInspectorsOrObservers",
+      "ProvisionOfMilitaryAid" : "EH:ProvisionOfMilitaryAid",
+      "ProvisionOfMilitaryTrainingSchooling" : "EH:ProvisionOfMilitaryTrainingSchooling",
+      "ProvisionOfProtectionOrPeacekeepers" : "EH:ProvisionOfProtectionOrPeacekeepers",
+      "ProvisionOfReligiousTrainingSchooling" : "EH:ProvisionOfReligiousTrainingSchooling",
+      "ProvisionOfTerroristTrainingSchooling" : "EH:ProvisionOfTerroristTrainingSchooling",
+      "ProvisionOfTrainingSchooling" : "EH:ProvisionOfTrainingSchooling",
+      "ProvisionOfVocationalTrainingSchooling" : "EH:ProvisionOfVocationalTrainingSchooling",
+      "PsychologicalAttack" : "EH:PsychologicalAttack",
+      "Purchasing" : "EH:Purchasing",
+      "Quote" : "EH:Event",
+      "Raid" : "EH:Raid",
+      "Receipt" : "EH:Receipt",
+      "Reconnaissance" : "EH:Reconnaissance",
+      "ReconnaissanceOperation" : "EH:ReconnaissanceOperation",
+      "RecoveryOrRescue" : "EH:RecoveryOrRescue",
+      "ReductionRestrictionOrRemoval" : "EH:ReductionRestrictionOrRemoval",
+      "RefusalOrRejection" : "EH:RefusalOrRejection",
+      "ReleaseOfPropaganda" : "EH:ReleaseOfPropaganda",
+      "ReleaseOrParole" : "EH:ReleaseOrParole",
+      "ReligiousCeremonyOrWorship" : "EH:ReligiousCeremonyOrWorship",
+      "ReportAsMissing" : "EH:ReportAsMissing",
+      "Reporting" : "EH:Reporting",
+      "RepresentativeCommunication" : "EH:RepresentativeCommunication",
+      "Repression" : "EH:Repression",
+      "RequestAppealOrDemand" : "EH:RequestAppealOrDemand",
+      "RequestOrAppeal" : "EH:RequestOrAppeal",
+      "RequestOrAppealForAsylum" : "EH:RequestOrAppealForAsylum",
+      "ResistanceRebellionOrUprising" : "EH:ResistanceRebellionOrUprising",
+      "RespectForRightsFreedoms" : "EH:RespectForRightsFreedoms",
+      "Restoration" : "EH:Restoration",
+      "Retreat" : "EH:Retreat",
+      "RetreatSurrenderOrYielding" : "EH:RetreatSurrenderOrYielding",
+      "ReturnOrRelease" : "EH:ReturnOrRelease",
+      "Riot" : "EH:Riot",
+      "RoadBlocked" : "EH:RoadBlocked",
+      "RoadsideBombing" : "EH:RoadsideBombing",
+      "Sabotage" : "EH:Sabotage",
+      "Sadness" : "EH:Sadness",
+      "SafetyOrSecurity" : "EH:FeelingSafeOrSecure",
+      "Sanctions" : "EH:Sanctions",
+      "SanitaryConditions" : "EH:SanitaryConditions",
+      "SearchAndRescue" : "EH:SearchAndRescue",
+      "SeparationOrDivorce" : "EH:SeparationOrDivorce",
+      "SettlementOfDisagreementOrDispute" : "EH:SettlementOfDisagreementOrDispute",
+      "SexualAssault" : "EH:SexualAssault",
+      "Shame" : "EH:Shame",
+      "SharingOfInformation" : "EH:SharingOfInformation",
+      "Shortage" : "EH:Shortage",
+      "ElectricPowerAvailable" : "EH:AdequateSupply",
+      "ElectricPowerNotAvailable" : "EH:Shortage",
+      "CommunicationServicesAvailable": "EH:AdequateSupply",
+      "CommunicationServicesNotAvailable": "EH:Shortage",
+      "Human.Healthcare" : "EH:AdequateSupply",
+      "HospitalAvailable": "EH:AdequateSupply",
+      "HospitalNotAvailable": "EH:Shortage",
+      "ShelterAvailable": "EH:AdequateSupply",
+      "ShelterNotAvailable": "EH:Shortage",
+      "SchoolsOrTrainingAvailable" : "EH:AdequateSupply",
+      "SchoolsOrTrainingNotAvailable" : "EH:Shortage",
+      "ServicesAvailable" : "EH:AdequateSupply",
+      "ServicesNotAvailable" : "EH:Shortage",
+      "WaterShortage": "EH:Shortage",
+      "FoodShortage": "EH:Shortage",
+      "FuelShortage": "EH:Shortage",
+      "ShowOrExhibit" : "EH:ShowOrExhibit",
+      "SocialCondition" : "EH:SocialCondition",
+      "SolarFlare" : "EH:SolarFlare",
+      "SponsorOrHost" : "EH:SponsorOrHost",
+      "Stasis" : "EH:Stasis",
+      "StateOfEmergencyOrMartialLaw" : "EH:StateOfEmergencyOrMartialLaw",
+      "Stoning" : "EH:Stoning",
+      "Storm" : "EH:Storm",
+      "Strike" : "EH:Strike",
+      "StructuralDamage" : "EH:StructuralDamage",
+      "Subversion" : "EH:Subversion",
+      "Suicide" : "EH:Suicide",
+      "SuicideBombing" : "EH:SuicideBombing",
+      "SurrenderOrYielding" : "EH:SurrenderOrYielding",
+      "SymbolicAct" : "EH:SymbolicAct",
+      "SystemicDiscrimination" : "EH:SystemicDiscrimination",
+      "SystemicExploitation" : "EH:SystemicExploitation",
+      "TariffOrTradeSanctions" : "EH:TariffOrTradeSanctions",
+      "TensionOrStress" : "EH:TensionOrStress",
+      "Terrorism" : "EH:Terrorism",
+      "Testifying" : "EH:Testifying",
+      "Thanking" : "EH:Thanking",
+      "TheftOrRobbery" : "EH:TheftOrRobbery",
+      "TheftOfAid" : "EH:TheftOfAid",
+      "Threatening" : "EH:Threatening",
+      "ThreateningNonForce" : "EH:ThreateningNonForce",
+      "Tornado" : "EH:Tornado",
+      "Torture" : "EH:Torture",
+      "Transaction" : "EH:Transaction",
+      "TransferOfFunds" : "EH:TransferOfFunds",
+      "TransferOfLeadership" : "EH:TransferOfLeadership",
+      "TransferOfLeadershipOrPolicyChange" : "EH:TransferOfLeadershipOrPolicyChange",
+      "TransferOfOwnership" : "EH:TransferOfOwnership",
+      "TropicalStorm" : "EH:TropicalStorm",
+      "Ultimatum" : "EH:Ultimatum",
+      "UnsanitaryConditions" : "EH:UnsanitaryConditions",
+      "UnstableStructure" : "EH:UnstableStructure",
+      "Veto" : "EH:Veto",
+      "Visit" : "EH:Visit",
+      "ViolationOfAgreement" : "EH:ViolationOfAgreement",
+      "ViolationOfCeasefire" : "EH:ViolationOfCeasefire",
+      "ViolationOfTruce" : "EH:ViolationOfTruce",
+      "Violence" : "EH:Violence",
+      "Volunteering" : "EH:Volunteering",
+      "Voting" : "EH:Voting",
+      "Warning" : "EH:Warning",
+      "War" : "EH:War",
+      "WarCrime" : "EH:WarCrime",
+      "WaterInsecurity" : "EH:WaterInsecurity",
+      "WaterSecurity" : "EH:WaterSecurity",
+      "WeatherIssue" : "EH:WeatherIssue",
+      "Wedding" : "EH:Wedding",
+      "Withdrawal" : "EH:Withdrawal",
+      "factor" : "EVENT:Factor",
+      "Business.Declare-Bankruptcy" : "EH:Bankruptcy",
+      "Business.Merge-Org" : "EH:Merger",
+      "Conflict.Attack" : "EH:Attack",
+      "Conflict.Demonstrate" : "EH:DemonstrationOrProtest",
+      "Contact.Broadcast" : "EH:IssuingPublishingOrReleasing",
+      "Contact.Contact" : "EVENT:Communication",
+      "Contact.Correspondence" : "EH:CommunicationViaLetterOrPersonalMail",
+      "Contact.Meet" : "EH:MeetingOrEncounter",
+      "Contact.Phone-Write" : "EVENT:CommunicationViaPhone",
+      "Justice.Appeal" : "EH:RequestOrAppeal",
+      "Justice.Acquit" : "EH:FindingOfInnocent",
+      "Justice.Arrest-Jail" : "EH:ArrestOrDetention",
+      "Justice.Charge-Indict" : "EH:Indictment",
+      "Justice.Convict" : "EH:FindingOfGuilt",
+      "Justice.Execute" : "EH:Execution",
+      "Justice.Extradite" : "EH:Extradition",
+      "Justice.Fine" : "EH:LegalFine",
+      "Justice.Pardon" : "EH:Pardon",
+      "Justice.Release-Parole" : "EH:ReturnOrRelease",
+      "Justice.Sentence" : "EH:LegalSentence",
+      "Justice.Sue" : "EH:FilingOfLawsuit",
+      "Justice.Trial-Hearing" : "EH:LegalProceedingsOrTrial",
+      "Life.Be-Born" : "EH:Birth",
+      "Life.Die" : "EH:Death",
+      "Life.Divorce" : "EH:SeparationOrDivorce",
+      "Life.Injure" : "EH:Injury",
+      "Life.Marry" : "EH:Marriage",
+      "Manufacture.Artifact" : "EH:ManufacturingOrBuilding",
+      "Movement.Transport" : "EH:LocationChange",
+      "Movement.Transport-Artifact" : "EH:CargoTransportation",
+      "Movement.Transport-Person" : "EH:PersonalOrPassengerTransportation",
+      "Personnel.Elect" : "EH:Election",
+      "Personnel.Nominate" : "EH:Nomination",
+      "Quotation.Definite" : "BBNTA1:Quotation",
+      "Quotation.Possible" : "BBNTA1:Quotation",
+      "Transaction.Transaction" : "EH:TransferOfFunds",
+      "Transaction.Transfer-Money" : "EH:TransferOfFunds",
+      "Transaction.Transfer-Ownership" : "EH:TransferOfOwnership",
+      "Class-reduce" : "EH:Change",
+      "Class-castigate" : "EH:DisapprovalOrDenunciation",
+      "Class-downturn" : "EH:Decrease",
+      "Class-depose" : "EH:AgreementOrPromise",
+      "Class-terrorise" : "EH:Terrorism",
+      "Class-jail" : "EH:ArrestOrDetention",
+      "Class-conflict" : "EH:War",
+      "Class-borrower" : "EH:Loan",
+      "Class-quell" : "EH:Repression",
+      "Class-extort" : "EH:Threatening",
+      "Class-hegemony" : "EH:IntimidationAndCoercion",
+      "Class-derogate" : "EH:IntimidationAndCoercion",
+      "Class-relinquish" : "EH:AgreementOrPromise",
+      "Class-felony" : "EH:CriminalAct",
+      "Class-cease-fire" : "EH:Deescalation",
+      "Class-terrorist" : "EH:Terrorism",
+      "Class-counter-insurgency" : "EH:CounterTerrorismOperation",
+      "Class-election" : "EH:Election",
+      "Class-break-up" : "EH:PoliticalInstability",
+      "Class-adhere" : "EH:IntimidationAndCoercion",
+      "Class-constipation" : "EH:Illness",
+      "Class-murderer" : "EH:MurderOrHomicide",
+      "Class-paucity" : "EH:Shortage",
+      "Class-provide" : "EH:ManufacturingOrBuilding",
+      "Class-shot" : "EH:Violence",
+      "Class-fled" : "EH:Evacuation",
+      "Class-seminar" : "EH:MeetingOrEncounter",
+      "Class-breach" : "EH:DefyingLawsNormsDirectives",
+      "Class-re-evaluation" : "EH:ConsiderationOrExploration",
+      "Class-crime" : "EH:CriminalAct",
+      "Class-infidelity" : "EH:EspionageOrTreason",
+      "Class-advise" : "EH:Advising",
+      "Class-starvation" : "EH:Death",
+      "Class-bankrupt" : "EH:Bankruptcy",
+      "Class-anti-government" : "EH:DemonstrationOrProtest",
+      "Class-ban" : "EH:BanOrProhibition",
+      "Class-face-off" : "EH:Attack",
+      "Class-battle" : "EH:Battle",
+      "Class-disaster" : "EH:Flood",
+      "Class-epidemic" : "EH:InfectiousHumanDisease",
+      "Class-sworn" : "EH:CommissiveCommunication",
+      "Class-conversation" : "EVENT:Communication",
+      "Class-showcase" : "EH:ShowOrExhibit",
+      "Class-illness" : "EH:Illness",
+      "agriculture" : "EH:AgriculturalEvent",
+      "Agriculture" : "EH:AgriculturalEvent",
+      "Condition" : "EVENT:Factor",
+      "conflict" : "EH:DisagreementOrDispute",
+      "ConflictOrCrime" : "EH:Attack",
+      "crisis" : "EH:HumanitarianCrisis",
+      "Crisis" : "EH:HumanitarianCrisis",
+      "Displacement" : "EH:ForcedMove",
+      "economy" : "EH:EconomicFactor",
+      "Economy" : "EH:EconomicFactor",
+      "Education" : "EH:ProvisionOfTrainingSchooling",
+      "Factor" : "EVENT:Factor",
+      "Government" : "EH:PolicyChange",
+      "health" : "EH:MedicalEmergency",
+      "Healthcare" : "EH:MedicalEmergency",
+      "intervention" : "EH:ProvisionOfHumanitarianAid",
+      "Intervention" : "EH:ProvisionOfHumanitarianAid",
+      "migration" : "EH:LocationChange",
+      "NaturalResource" : "EH:ExploitationOfNaturalResources",
+      "political" : "BBNTA1:PoliticalEvent",
+      "ReportOrAnalysis" : "EH:Reporting",
+      "transport" : "EH:CargoTransportation",
+      "Transport" : "EH:CargoTransportation",
+      "trend" : "EVENT:Factor",
+      "Trend" : "EVENT:Factor",
+      "weather" : "EH:WeatherIssue",
+      "Weather" : "EH:WeatherIssue",
+      "Nomination": "EH:AppointmentOrNomination",
+      "Confession": "EH:Confession",
+      "DistributionOfFoodWater": "EH:ProvisionOfHumanitarianAid",
+      "PlacementOfCiviliansAsHumanShield" : "EH:PlacementAsHumanShield",
+      "EconomicSanction" : "EH:EconomicSanctions",
+      "Condition.Attention" : "EH:ConsiderationOrExploration",
+      "Condition.Competition.Resource" : "EH:Competition",
+      "Condition.Corruption" : "EH:Corruption",
+      "Condition.Crisis" : "EH:HumanitarianCrisis",
+      "Condition.CurrencyDevaluation" : "EH:EconomicInflation",
+      "Condition.Demand" : "EH:Demand",
+      "Condition.Democracy" : "EH:Democracy",
+      "Condition.Development" : "EH:ExpansionOrDevelopment",
+      "Condition.EconomicOpportunity" : "EH:EconomicOpportunity",
+      "Condition.Freedom" : "EH:RespectForRightsFreedoms",
+      "Condition.Inequality" : "EH:SystemicDiscrimination",
+      "Condition.Rights" : "EH:RespectForRightsFreedoms",
+      "Condition.Security" : "EH:FeelingSafeOrSecure",
+      "Condition.Transparency" : "EVENT:Transparency",
+      "Disease.Animal" : "EH:AnimalIllnessOrDeath",
+      "Disease.Human" : "EH:Illness",
+      "Factor.Business.Mismanagement" : "EH:Incompetency",
+      "Factor.Economy" : "EH:EconomicCondition",
+      "Factor.Income" : "EH:PaymentOrRepayment",
+      "Human.Death" : "EH:Death",
+      "Human.Famine" : "EH:Famine",
+      "Human.Injury" : "EH:Injury",
+      "Pregnancy" : "EH:Birth",
+      "Human.Violence" : "EH:Violence",
+      "Human.Religious" : "EH:ReligiousOrPoliticalBeliefs",
+      "Condition.Pollution" : "EH:Pollution",
+      "Conflict.WithinGroup" : "EH:DisagreementOrDispute",
+      "Condition.Shortage" : "EH:Shortage",
+      "Process.DiamondProduction" : "EH:ExploitationOfNaturalResources",
+      "Process.OilProduction" : "EH:ExploitationOfNaturalResources",
+      "Condition.Promise" : "EH:AgreementOrPromise",
+      "Process.AgricultureProduction" : "EH:AgriculturalEvent",
+      "entity.Resource.Agriculturalland" : "EH:AgriculturalEvent",
+      "Factor.Trade" : "EH:EconomicCooperation"
+    },
+    "event-role": {
+      "default": {
+        "Source": { "default": "EVENT:has_active_actor", "VEH": "GCONCEPT:involves_goods_or_property", "WEA": "GCONCEPT:involves_goods_or_property", "FAC": "GCONCEPT:involves_goods_or_property", "LOC": "GCONCEPT:involves_goods_or_property", "GPE.Continent": "GCONCEPT:involves_goods_or_property" },
+        "Target": { "default": "EVENT:has_affected_actor", "VEH": "GCONCEPT:involves_goods_or_property", "WEA": "GCONCEPT:involves_goods_or_property", "FAC": "GCONCEPT:involves_goods_or_property", "LOC": "GCONCEPT:involves_goods_or_property", "GPE.Continent": "GCONCEPT:involves_goods_or_property" },
+        "active": { "default": "EVENT:has_active_actor", "VEH": "GCONCEPT:involves_goods_or_property", "WEA": "GCONCEPT:involves_goods_or_property", "FAC": "GCONCEPT:involves_goods_or_property", "LOC": "GCONCEPT:involves_goods_or_property", "GPE.Continent": "GCONCEPT:involves_goods_or_property" },
+        "affected": { "default": "EVENT:has_affected_actor", "VEH": "GCONCEPT:involves_goods_or_property", "WEA": "GCONCEPT:involves_goods_or_property", "FAC": "GCONCEPT:involves_goods_or_property", "LOC": "GCONCEPT:involves_goods_or_property", "GPE.Continent": "GCONCEPT:involves_goods_or_property" },
+        "provider": { "default": "EVENT:has_provider", "VEH": "EVENT:has_instrument", "WEA": "EVENT:has_instrument", "FAC": "GCONCEPT:involves_goods_or_property", "LOC": "GCONCEPT:involves_goods_or_property", "GPE.Continent": "GCONCEPT:involves_goods_or_property" },
+        "recipient": { "default": "EVENT:has_recipient", "VEH": "GCONCEPT:involves_goods_or_property", "WEA": "GCONCEPT:involves_goods_or_property", "FAC": "GCONCEPT:involves_goods_or_property", "LOC": "GCONCEPT:involves_goods_or_property", "GPE.Continent": "GCONCEPT:involves_goods_or_property" },
+        "Place": { "default": "GCONCEPT:located_at" },
+        "Actor": { "default": "EVENT:has_actor", "VEH": "GCONCEPT:involves_goods_or_property", "WEA": "GCONCEPT:involves_goods_or_property", "FAC": "GCONCEPT:involves_goods_or_property", "LOC": "GCONCEPT:involves_goods_or_property", "GPE.Continent": "GCONCEPT:involves_goods_or_property" },
+	"Artifact": { "default": "GCONCEPT:involves_goods_or_property", "ORG": "EVENT:has_actor" },
+	"Speaker": { "default": "EVENT:has_active_actor" },
+	"Position": { "default": "GCONCEPT:position_or_role" },
+	"Person": { "default": "EVENT:has_affected_actor", "VEH": "GCONCEPT:involves_goods_or_property", "WEA": "GCONCEPT:involves_goods_or_property", "FAC": "GCONCEPT:involves_goods_or_property", "LOC": "GCONCEPT:involves_goods_or_property", "GPE.Continent": "GCONCEPT:involves_goods_or_property" },
+	"Attacker": { "default": "EVENT:has_active_actor", "VEH": "EVENT:has_instrument", "WEA": "EVENT:has_instrument", "FAC": "GCONCEPT:involves_goods_or_property", "LOC": "GCONCEPT:involves_goods_or_property", "GPE.Continent": "GCONCEPT:involves_goods_or_property" },
+	"Entity": { "default": "EVENT:has_active_actor", "VEH": "EVENT:has_instrument", "WEA": "EVENT:has_instrument", "FAC": "GCONCEPT:involves_goods_or_property", "LOC": "GCONCEPT:involves_goods_or_property", "GPE.Continent": "GCONCEPT:involves_goods_or_property" },
+	"Audience": { "default": "EVENT:has_recipient", "VEH": "GCONCEPT:involves_goods_or_property", "WEA": "GCONCEPT:involves_goods_or_property", "FAC": "GCONCEPT:involves_goods_or_property", "LOC": "GCONCEPT:involves_goods_or_property", "GPE.Continent": "GCONCEPT:involves_goods_or_property" },
+	"Instrument": { "default": "EVENT:has_instrument" },
+	"Crime": { "default": "EVENT:has_topic" },
+	"Destination": { "default": "EVENT:has_destination" },
+	"Agent": { "default": "EVENT:has_active_actor", "VEH": "EVENT:has_instrument", "WEA": "EVENT:has_instrument", "FAC": "GCONCEPT:involves_goods_or_property", "LOC": "GCONCEPT:involves_goods_or_property", "GPE.Continent": "GCONCEPT:involves_goods_or_property" },
+	"Victim": { "default": "EVENT:has_affected_actor", "VEH": "GCONCEPT:involves_goods_or_property", "WEA": "GCONCEPT:involves_goods_or_property", "FAC": "GCONCEPT:involves_goods_or_property", "LOC": "GCONCEPT:involves_goods_or_property", "GPE.Continent": "GCONCEPT:involves_goods_or_property" },
+	"Origin": { "default": "EVENT:has_origin" },
+	"Beneficiary": { "default": "EVENT:has_affected_actor", "VEH": "GCONCEPT:involves_goods_or_property", "WEA": "GCONCEPT:involves_goods_or_property", "FAC": "GCONCEPT:involves_goods_or_property", "LOC": "GCONCEPT:involves_goods_or_property", "GPE.Continent": "GCONCEPT:involves_goods_or_property" },
+	"Giver": { "default": "EVENT:has_provider", "VEH": "EVENT:has_instrument", "WEA": "EVENT:has_instrument", "FAC": "GCONCEPT:involves_goods_or_property", "LOC": "GCONCEPT:involves_goods_or_property", "GPE.Continent": "GCONCEPT:involves_goods_or_property" },
+	"Recipient": { "default": "EVENT:has_recipient", "VEH": "GCONCEPT:involves_goods_or_property", "WEA": "GCONCEPT:involves_goods_or_property", "FAC": "GCONCEPT:involves_goods_or_property", "LOC": "GCONCEPT:involves_goods_or_property", "GPE.Continent": "GCONCEPT:involves_goods_or_property" },
+	"Thing": { "default": "GCONCEPT:involves_goods_or_property", "ORG": "EVENT:has_actor" },
+	"Money": { "default": "GCONCEPT:associated_monetary_amount" },
+	"has_origin": { "default": "EVENT:has_origin" },
+	"has_active_actor": { "default": "EVENT:has_active_actor" },
+	"has_affected_actor": { "default": "EVENT:has_affected_actor" },
+	"has_instrument": { "default": "EVENT:has_instrument" },
+	"has_location": { "default": "GCONCEPT:located_at" },
+	"has_destination": { "default": "EVENT:has_destination" },
+	"located_at": { "default": "GCONCEPT:located_at" },
+	"has_recipient": { "default": "EVENT:has_recipient" },
+	"involves_goods_or_property": { "default": "GCONCEPT:involves_goods_or_property" },
+	"has_artifact": { "default": "GCONCEPT:involves_goods_or_property", "WEA": "EVENT:has_instrument" },
+	"has_provider": { "default": "EVENT:has_provider" },
+	"has_actor": { "default": "EVENT:has_actor" }
+      },
+      "byEventType": {
+	"Quote": 
+	{ 
+	    "Speaker": { "default": "EVENT:communicated_by" }
+        }
+      }
+    },
+    "event-property": {
+      "Asserted": "EVENT:Asserted",
+      "Other": "EVENT:Other",
+      "Future": "EVENT:Future",
+      "Past": "EVENT:Past",
+      "Present": "EVENT:Present",
+      "Generic": "EVENT:Generic",
+      "Specific": "EVENT:Specific",
+      "Negative": "EVENT:Negative",
+      "Positive": "EVENT:Positive",
+      "neutral": "EVENT:Present",
+      "historical": "EVENT:Past",
+      "current": "EVENT:Past",
+      "ongoing": "EVENT:Present"
+    },
+    "entity-relation": {
+      "ART.User-Owner-Inventor-Manufacturer": {
+        "type": "ACTOR:has_affiliation",
+        "reverse": false
+      },
+      "GEN-AFF.Citizen-Resident-Religion-Ethnicity": {
+        "type": "ACTOR:has_affiliation",
+        "reverse": false
+      },
+      "GEN-AFF.Org-Location": {
+        "type": "GCONCEPT:located_at",
+        "reverse": false
+      },
+      "ORG-AFF.Employment": {
+        "type": "ACTOR:has_affiliation",
+        "reverse": false
+      },
+      "ORG-AFF.Founder": {
+        "type": "ACTOR:has_affiliation",
+        "reverse": false
+      },
+      "ORG-AFF.Investor-Shareholder": {
+        "type": "ACTOR:has_affiliation",
+        "reverse": false
+      },
+      "ORG-AFF.Membership": {
+        "type": "ACTOR:has_affiliation",
+        "reverse": false
+      },
+      "ORG-AFF.Ownership": {
+        "type": "ACTOR:has_affiliation",
+        "reverse": false
+      },
+      "ORG-AFF.Sports-Affiliation": {
+        "type": "ACTOR:has_affiliation",
+        "reverse": false
+      },
+      "ORG-AFF.Student-Alum": {
+        "type": "ACTOR:has_affiliation",
+        "reverse": false
+      },
+      "PART-WHOLE.Artifact": {
+        "type": "GCONCEPT:has_component",
+        "reverse": true
+      },
+      "PART-WHOLE.Subsidiary": {
+        "type": "GCONCEPT:has_component",
+        "reverse": true
+      },
+      "PART-WHOLE.Geographical": {
+        "type": "GCONCEPT:has_component",
+        "reverse": true
+      },
+      "PER-SOC.Business": {
+        "type": "ACTOR:has_affiliation",
+        "reverse": false
+      },
+      "PER-SOC.Family": {
+        "type": "ACTOR:has_familial_relationship",
+        "reverse": false
+      },
+      "PER-SOC.Lasting-Personal": {
+        "type": "ACTOR:has_affiliation",
+        "reverse": false
+      },
+      "PHYS.Located": {
+        "type": "GCONCEPT:located_at",
+        "reverse": false
+      },
+      "PHYS.Near": {
+        "type": "GCONCEPT:located_near",
+        "reverse": false
+      }
+    },
+    "entity-relation-arg-details": {
+      "has_affiliation": {
+        "concept_details": "ACTOR:AffiliationDetails",
+        "predicate": "ACTOR:related_affiliation"
+      }
+    },
+    "event-causal-relation": {
+      "causes": {
+        "default_type": "CX:CausalAssertion",
+        "left_predicate": "CX:has_cause",
+        "right_predicate": "CX:has_effect"
+      },
+      "cause_effect": {
+        "default_type": "CX:CausalAssertion",
+        "left_predicate": "CX:has_cause",
+        "right_predicate": "CX:has_effect"
+      },
+      "Cause-Effect": {
+        "default_type": "CX:CausalAssertion",
+        "left_predicate": "CX:has_cause",
+        "right_predicate": "CX:has_effect"
+      },
+      "catalyst_effect": {
+        "default_type": "CX:CausalAssertion",
+        "left_predicate": "CX:has_catalyst",
+        "right_predicate": "CX:has_effect"
+      },
+      "Catalyst-Effect": {
+        "default_type": "CX:CausalAssertion",
+        "left_predicate": "CX:has_catalyst",
+        "right_predicate": "CX:has_effect"
+      },
+      "mitigating_factor_effect": {
+        "default_type": "CX:CausalAssertion",
+        "left_predicate": "CX:has_mitigating_factor",
+        "right_predicate": "CX:has_effect"
+      },
+      "MitigatingFactor-Effect": {
+        "default_type": "CX:CausalAssertion",
+        "left_predicate": "CX:has_mitigating_factor",
+        "right_predicate": "CX:has_effect"
+      },
+      "precondition_of": {
+        "default_type": "CX:CausalAssertion",
+        "left_predicate": "CX:has_precondition",
+        "right_predicate": "CX:has_effect"
+      },
+      "precondition_effect": {
+        "default_type": "CX:CausalAssertion",
+        "left_predicate": "CX:has_precondition",
+        "right_predicate": "CX:has_effect"
+      },
+      "Precondition-Effect": {
+        "default_type": "CX:CausalAssertion",
+        "left_predicate": "CX:has_precondition",
+        "right_predicate": "CX:has_effect"
+      },
+      "preventative_effect": {
+        "default_type": "CX:CausalAssertion",
+        "left_predicate": "CX:has_preventative",
+        "right_predicate": "CX:has_effect"
+      },
+      "Preventative-Effect": {
+        "default_type": "CX:CausalAssertion",
+        "left_predicate": "CX:has_preventative",
+        "right_predicate": "CX:has_effect"
+      },
+      "impacts": {
+        "default_type": "CX:CausalAssertion",
+        "left_predicate": "CX:has_precondition",
+        "right_predicate": "CX:has_effect"
+      },
+      "occurs_before": {
+        "default_relationship": "EVENT:preceded_by"
+      },
+      "Before-After": {
+        "default_relationship": "EVENT:preceded_by"
+      }
+    }
+  }
+}

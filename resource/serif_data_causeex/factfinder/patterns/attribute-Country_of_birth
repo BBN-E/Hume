@@ -1,0 +1,56 @@
+(Country_of_birth
+
+(wordsets
+
+(WS_COUNTRY afghanistan africa albania algeria andorra angola anguilla antarctica antilles arabia argentina armenia aruba australia austria azerbaijan bahamas bahrain bangladesh barbados barbuda belarus belgium belize benin bermuda bhutan bissau bolivia botswana brazil brazzaville brunei bulgaria burundi caledonia cambodia cameroon canada chad chile china coast colombia comoros croatia cuba cyprus denmark djibouti dominica ecuador egypt emirates eritrea estonia ethiopia faso fiji finland france futuna gabon gambia georgia germany ghana gibraltar greece greenland grenada grenadines guadeloupe guam guatemala guernsey guiana guinea guyana haiti helena herzegovina honduras hungary iceland india indonesia iran iraq ireland island islands israel italy jamaica japan jersey jordan kazakhstan kenya kingdom kinshasa kiribati korea kuwait kyrgyzstan lanka laos latvia lebanon leone lesotho liberia libya liechtenstein lithuania lucia luxembourg macedonia madagascar malawi malaysia maldives mali malta man marino martinique mauritania mauritius mayen mayotte mexico micronesia miquelon moldova monaco mongolia montenegro montserrat morocco mozambique myanmar namibia nauru nepal netherlands nevis nicaragua niger nigeria niue norway oman pakistan palau panama paraguay peru philippines pitcairn poland polynesia portugal principe qatar reunion rica rico romania russia rwanda sahara salvador samoa senegal serbia seychelles singapore slovakia slovenia somalia spain states sudan suriname swaziland sweden switzerland syria taiwan tajikistan tanzania territories territory thailand timor tobago togo tokelau tonga tunisia turkey turkmenistan tuvalu uganda ukraine uruguay us uzbekistan vanuatu vatican venezuela verde vietnam yemen zambia zealand zimbabwe)
+
+<!-- not currently used -->
+(WS_COUNTRYCODE US U.S. GL DJ JM PG AT KI SZ YT BN ZM CD BW AO ZW VC PR JP NA SH TJ LC MA VU SV MT MN MP IT RE WS FR EG UZ PW TK LR RW UM TN BE EE CK BY SA NO LS KR ZA PT BF CA AM CM SR MG NP BT PL TM GA CF BA AE TH KY LA PH CC NI TF NC GU KZ SJ MM NR NE DM TO MR AD SE AZ AF NG GS KE BJ ME OM AX VN VG YE CI DZ LK ID FM GE GM CX LV RU LB FK FI DE MV LU VE PN BH GI WF RO VI TV IN GP AR SN MX FO AW CS MC HN BR IL GG SB PS NZ HU DO UG KH TG GB BB JE HT DK PA QA CV GD MO GF KM HR KW TC MQ CZ MZ ES BO ST AU AL IR CG TR MD BI GN GW MK GR AG SI CO AI AQ AN JO SM UA CL CU EH ML KN SC ET IS NL MS EC HK MY CR VA IO SD RS CN MH BG UY PY BS TL MU CH LI GH KG NU PE SL BZ CY FJ IM IE TW KP PF ER IQ AS TZ MW LY GT GY BM PK GQ BV LT SG PM TT NF TD SO SY SK BD HM)
+
+(WS_NATIONALITY afghan african albanian algerian american andorran angolan anguillan antiguan arab argentine armenian aruban asian australian austrian azerbaijani bahamian bahraini barbadian barbudan basotho belarusian belgian belizean beninese bermudian bhutanese bolivian bosnian brazilian british bruneian bulgarian burmese burundi cambodian cameroonian canadian caymanian chadian chechen chilean chinese colombian comoran congolese croatian cuban cypriot czech danish djiboutian dominican dutch ecuadorian egyptian emirian equa-toguinean eritrean estonian ethiopian european faroese fijian finnish french gabonese gambian georgian german ghanaian greek greenlandic grenadian guamanian guatemalan guinean-bissauan guyanese haitian herzegovinian honduran hungarian i-kiribati icelandic indian indonesian iranian iraqi irish israeli italian ivorian jamaican japanese jordanian kazakhstani kenyan kittsian korean kuwaiti laotian latvian lebanese liberian libyan lithuanian mahoran malawian malaysian maldivian malian maltese marshallese martiniquais mauritanian mauritian mexican micronesian moldovan monacan mongolian montenegran montserratian moroccan mosotho mozambican namibian nauruan nepalese nevisian ni-vanuatu nicaraguan nigerian nigerien nivean norwegian omani pakistani palauan palestinian panamanian paraguayan peruvian philippine polish portuguese qatari reunionese romanian russian rwandan sahrauoian sahrawian salvadoran sammarinese saudi scottish senegalese serbian seychelles siberian slovak slovenian somali soviet spanish sudanese surinamese swazi swedish swiss syrian taiwanese tajik tanzanian thai tobagonian togolese tokelauan tongan trinidadian tunisian turkish turkmen tuvaluan ugandan ukrainian uruguayan uzbek venezuelan vietnamese vincentian yemeni zairian zambian zimbabwean)  
+
+)
+
+(entitylabels
+
+(AGENT1)
+
+)
+
+(reference
+
+<!-- generic AGENT1 reference -->
+(mention	(shortcut 	AGENT1_REF)
+	  	(return		(ff_role AGENT1) (ff_fact_type Country_of_birth1))
+        	(entitylabel    AGENT1)
+)
+
+<!-- nationalities are slightly better than country names -->
+(mention  (shortcut NAMED_NATIONALITY)
+	  (acetype GPE)
+	  (score 1.0)
+	  (headword WS_NATIONALITY)
+	  (return (ff_role Country_of_birth)))
+
+(mention  (shortcut NAMED_COUNTRY)
+	  (acetype GPE)
+	  (score 0.99)
+	  (headword WS_COUNTRY)
+	  (return (ff_role Country_of_birth)))
+
+(any-of	  (shortcut RELIABLE_PLACE_MENT)
+	  GREEDY
+	  (score-fn max)
+	  (members NAMED_NATIONALITY NAMED_COUNTRY))
+
+)
+
+(toplevel
+
+<!-- U.S.-born Barack Obama -->
+(mprop (id mprop_unknown) (score 0.9) (score_group 1)
+       (predicate -born)
+       (args (argument (role <ref>) AGENT1_REF) (argument (role <unknown>) RELIABLE_PLACE_MENT)))
+
+)
+)

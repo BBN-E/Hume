@@ -1,0 +1,138 @@
+<!-- The PatternFeatureSets returned by these patterns get split up
+     into Employee sets and Employer sets in the FF code. -->
+
+(Employer
+
+(@INCLUDE "date-patterns")
+
+(wordsets
+
+(TITLE_WS sen. rep. official professor Professor dean president)
+
+)
+
+(entitylabels
+
+(AGENT1)
+
+(REL_EMPLOYER
+	(relation (fulltype ORG-AFF.Employment ORG-AFF.Membership)
+	  (args (argument (role ARG1) (mention (entitylabel AGENT1)))
+	  	(argument (role ARG2) (mention FOCUS (acetype ORG GPE)))))
+)
+
+)
+
+(reference
+
+<!-- generic AGENT1 reference -->
+(mention	(shortcut		AGENT1_REF)
+	  	(return			(ff_role AGENT1) (ff_fact_type Employer))
+        	(entitylabel    	AGENT1))
+
+(mention	(shortcut 		NAMED_AGENT1_REF)
+		(mentiontype    	name)
+	  	(return			(ff_role AGENT1) (ff_fact_type Employer))
+        	(entitylabel    	AGENT1))
+
+(all-of (shortcut SECRETARY) (members AGENT1_REF (mention (headword secretary))))
+
+(mention  (shortcut REL_EMPLOYER_REF)
+	  (entitylabel REL_EMPLOYER)
+	  (return (ff_role Employer)))
+
+(all-of  (shortcut REL_ORG_EMPLOYER_REF) 
+	 (members REL_EMPLOYER_REF 
+	 	  (mention (block_headword twitter facebook) (acetype ORG))))
+
+(all-of (shortcut NON_PARTY_REL_ORG_EMPLOYER_REF)
+	 (members REL_EMPLOYER_REF 
+	 	  (mention (block_headword twitter facebook party) (acetype ORG))))
+	
+(nprop (shortcut NPROP1A)
+       (args (argument (role <ref>) AGENT1_REF) (argument (role <unknown> <poss> of) REL_EMPLOYER_REF))
+       (opt_args HOLD_DATE_A))
+
+(nprop (shortcut NPROP1B)
+       (args (argument (role <ref>) AGENT1_REF) (argument (role at) REL_ORG_EMPLOYER_REF))
+       (opt_args HOLD_DATE_A))
+
+(mprop (shortcut MPROP1)
+       (args (argument (role <ref>) AGENT1_REF) (argument (role <poss> of) REL_ORG_EMPLOYER_REF))
+       (opt_args HOLD_DATE_A))
+
+(nprop (shortcut NPROP2)
+       (args (argument (role <ref>) NON_PARTY_REL_ORG_EMPLOYER_REF) (argument (role <unknown> <poss> of) AGENT1_REF))
+       (opt_args HOLD_DATE_A))
+
+(mprop (shortcut MPROP2)
+       (args (argument (role <ref>) NON_PARTY_REL_ORG_EMPLOYER_REF) (argument (role <poss> of) AGENT1_REF))
+       (opt_args HOLD_DATE_A))
+
+)
+
+(toplevel
+
+<!-- allow GPEs for this one only -->
+(union GREEDY
+       (id nprop1) (score 0.9)
+       (members (mprop (args (argument (role <ref>) NPROP1A) HOLD_DATE_A))
+                (vprop (args (argument NPROP1A) RECENT_HOLD_DATE_A))
+       		NPROP1A))
+
+<!-- ORGs only for these -->
+(union GREEDY
+       (id nprop1) (score 0.9)
+       (members (mprop (args (argument (role <ref>) NPROP1B) HOLD_DATE_A))
+                (vprop (args (argument NPROP1B) RECENT_HOLD_DATE_A))
+	 	NPROP1B))
+(union GREEDY
+       (id mprop1) (score 0.9)
+       (members (mprop (args (argument (role <ref>) MPROP1) HOLD_DATE_A))
+                (vprop (args (argument MPROP1) RECENT_HOLD_DATE_A))
+                MPROP1))
+
+<!-- We don't really want "his/her party" for these two, so block that too -->
+(union GREEDY
+       (id nprop2) (score 0.9)
+       (members (mprop (args (argument (role <ref>) NPROP2) HOLD_DATE_A))
+                (vprop (args (argument NPROP2) RECENT_HOLD_DATE_A))
+                NPROP2))
+(union GREEDY
+       (id mprop2) (score 0.9)
+       (members (mprop (args (argument (role <ref>) MPROP2) HOLD_DATE_A))
+                (vprop (args (argument MPROP2) RECENT_HOLD_DATE_A))
+                MPROP2))
+
+<!-- verb propositions -->
+(vprop (id sub_obj) (score 0.9)
+       (predicate employ*)
+       (args (argument (role <sub>) REL_ORG_EMPLOYER_REF) (argument (role <obj>) AGENT1_REF))
+       (opt_args HOLD_DATE_A))
+(vprop (id sub_obj) (score 0.9)
+       (predicate hir*)
+       (args (argument (role <sub>) REL_ORG_EMPLOYER_REF) (argument (role <obj>) AGENT1_REF))
+       (opt_args START_DATE_A))
+(vprop (id sub_obj) (score 0.9)
+       (predicate fir*)
+       (args (argument (role <sub>) REL_ORG_EMPLOYER_REF) (argument (role <obj>) AGENT1_REF))
+       (opt_args END_DATE_A))
+
+(vprop (id sub_for) (score 0.9)
+       (predicate work*)
+       (args (argument (role <sub>) AGENT1_REF) (argument (role for at) REL_ORG_EMPLOYER_REF))
+       (opt_args HOLD_DATE_A))
+
+(vprop (id obj_as) (score 0.9)
+       (predicate join*)
+       (args (argument (role <obj>) REL_ORG_EMPLOYER_REF) (argument (role as) AGENT1_REF))
+       (opt_args START_DATE_A))
+
+<!-- special case -->
+(regex (id secretary) (score 0.8) (re (text (string "secretary of")) REL_ORG_EMPLOYER_REF NAMED_AGENT1_REF))
+
+(regex (id one_word_separate) (score 0.8) (re REL_EMPLOYER_REF (text (string TITLE_WS)) NAMED_AGENT1_REF))
+
+
+)
+)

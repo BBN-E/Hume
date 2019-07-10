@@ -1,0 +1,72 @@
+# Run on full CauseEx month 15 docs (Kaliningrad)
+
+############
+## Pipeline
+############
+job_name: wm_m12.ben_sentence.v1
+stages_to_run: serif,generic-events,nn-events,event-consolidation,event-event-relations,serialization,probabilistic-grounding
+jserif_branch: 364-add-event-from-json
+mode: WorldModelers
+
+########
+# Serif
+########
+#serif_server_mode_endpoint: http://127.0.0.1:5001
+serif_input_sgm_list: /extra/tmp/ben_sentence.list
+serif_input_awake_db: /nfs/raid87/u10/shared/Hume/common/serif/wm_eval_before_060119.sqlite
+use_basic_cipher_stream: true
+track_serif_files_read: false
+
+######
+# KBP
+######
+kbp_input_serifxml_list: GENERATED
+
+##################
+## Generic events
+##################
+generic_events_input_serifxml_list: GENERATED
+
+#######################
+## NN event extraction
+#######################
+#nn_event_server_mode_endpoint: http://127.0.0.1:5002/event_and_argument_decode
+nn_events_use_pre_installed_anaconda_path: /usr/local/
+nn_events_input_serifxml_list: GENERATED
+nn_events_model_list: /nfs/raid87/u10/shared/Hume/wm/nlplingo/wm_models_virtual/060619/model.list
+nn_events_arg_model_path: None
+nn_events_batch_size: 30
+
+
+######################
+# Event consolidation
+######################
+event_consolidation_input_serifxml_list: GENERATED
+event_consolidation_input_metadata_file: /extra/tmp/ben_sentence.metadata.txt
+copyArgumentSentenceWindow: 1
+
+##########################
+# Probabilistic grounding
+##########################
+grounding_input: GENERATED
+
+################
+# Event-Event-Relation/LearnIt
+################
+eer_input_serifxml_list: GENERATED
+#eer_input_serif_cause_effect_relations_dir: /empty_folder
+eer_input_serif_cause_effect_relations_dir: GENERATED
+learnit_pattern_dir: DEFAULT
+learnit_min_freq_event_pairs: 1
+
+################
+# Serialization
+################
+serialization_input_awake_db: /nfs/raid87/u10/shared/Hume/common/serif/wm_eval_before_060119.sqlite
+serialization_input_serifxml_list: GENERATED
+serialization_input_metadata_file: /extra/tmp/ben_sentence.metadata.txt
+serialization_input_trigger_finder_file: NA
+serialization_input_factfinder_json_file: /empty_array.json
+serialization_input_learnit_triple_file: GENERATED
+serialization_input_learnit_event_count_file: GENERATED
+serialization_do_event_uploading: False

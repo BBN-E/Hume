@@ -1,0 +1,715 @@
+(Event313_Patterns
+
+(@INCLUDE "%icews_lib_dir%/event_models/icews_required.model")
+(@INCLUDE "%icews_lib_dir%/event_models/source-target.model")
+(@INCLUDE "%project_specific_serif_data_root%/accent/CYBERATTACK.model")
+
+(entitylabels
+)
+
+(wordsets
+(SCHEME  cyberattack* cyber-attack* breach* hacking* fraud hoax* scheme* scam* sham* theft)
+(REDIRECT direct* redirect* re-direct* forward* divert* lead* led)
+(INPUT reveal* input* provid* expos* insert* gav* giv* hand* provid* send* sent enter entered enters entering re-enter* reenter* wire* wiring download*)
+(STRICT_SAY say* said tell* told declar* announc* confirm* state stated states stating)
+)
+#check reference patterns to see if all used
+(reference
+<!-- Source / Target -->
+#capture hyphenated compounds, such as DDoS-attacks, botnet-based attacks, etc.
+(argument (shortcut REGEX_PHISH) (role <ref> <unknown> <poss>) (any-of (members
+                                 (regex (re (text (string ".*phish.*")))))))
+
+(any-of (shortcut EMAIL_SOURCE_TARGET) (members FROM_SOURCE_EXP BY_SOURCE TO_TARGET AT_TARGET AGAINST_TARGET))
+
+(argument (shortcut TARGET_PER_OBJ) (role <obj> <iobj>) TARGET_PER)
+
+(all-of (shortcut TARGET_WORK) (members TARGET (mention (headword EMPLOYEE))))
+
+<!-- Attacks -->
+(any-of (shortcut SOCIAL_ENGINEERING) (members
+        (all-of (members (nprop (predicate ATTACK_N CAMPAIGN METHOD) (adj social))
+                         (nprop (adj engineering))))
+        (nprop (predicate ATTACK_N CAMPAIGN METHOD)
+               (args (argument (role <unknown>) (nprop (predicate engineering) (adj social)))))
+        (nprop (predicate engineering) (adj social))))
+
+(nprop (shortcut EMAIL_CONTAINING_MALWARE)
+       (predicate MESSAGE)
+       (opt_args EMAIL_SOURCE_TARGET)
+       (propmod (role <sub>)
+            (vprop (predicate contain*)
+                   (args (argument (role <obj>) (any-of (members
+                        (nprop (predicate LINK) (adj MALICIOUS compromised)
+                               (block_adj news) (opt_args LOOSE_AGAINST_TARGET TO_TARGET))
+                        (nprop (predicate MALWARE)))))))))
+
+(nprop (shortcut EMAIL_WITH_MALICIOUS_LINK)
+       (predicate MESSAGE)
+       (opt_args EMAIL_SOURCE_TARGET)
+       (args (argument (role with) (vprop (predicate alert*)
+                                         (args (argument (role <sub>)
+                                               (mention (headword LINK))))
+                                                   (opt_args TARGET_OBJ_EXP)))))
+
+(nprop (shortcut SCAM_OVER_EMAIL) (predicate PHISH) (opt_args EMAIL_SOURCE_TARGET ON_TARGET)
+       (propmod (role <ref>) (mprop (predicate by via with over) (args WITH_EMAIL))))
+
+(nprop (shortcut URL_PADDING) (predicate padding) (adj url LINK))
+
+(nprop (shortcut TROJAN_HORSE) (predicate horse*) (adj trojan))
+
+(any-of (shortcut EMAIL_THAT_TRICKS) (members
+        (nprop (predicate MESSAGE LINK)
+           (opt_args EMAIL_SOURCE_TARGET)
+           (args (argument (role that <obj>)
+                 (vprop (predicate TRICK impersonat*)
+                        (opt_args TARGET_OBJ_EXP FROM_SOURCE_EXP)))))
+        (nprop (opt_args EMAIL_SOURCE_TARGET)
+           (args EMAIL_REGEX (argument (role that <obj>)
+                 (vprop (predicate TRICK)
+                        (opt_args TARGET_OBJ_EXP FROM_SOURCE_EXP)))))))
+
+(any-of (shortcut EMAIL_FRAUD_SPECIFIC) (members EMAIL_THAT_TRICKS
+       EMAIL_CONTAINING_MALWARE SCAM_OVER_EMAIL EMAIL_WITH_MALICIOUS_LINK
+       (nprop (block_predicate VICTIM) (adj PHISH))
+       (nprop (predicate PHISH) (opt_args EMAIL_SOURCE_TARGET ON_TARGET))
+       (nprop (predicate MESSAGE) (adj PHISH) (opt_args EMAIL_SOURCE_TARGET))
+       (anyprop (args REGEX_PHISH) (block_predicate test*) (opt_args EMAIL_SOURCE_TARGET ON_TARGET))
+       (nprop (args EMAIL_REGEX) (adj PHISH MALICIOUS) (opt_args EMAIL_SOURCE_TARGET))
+       (nprop (args EMAIL_REGEX) (adj compromised) (opt_args LOOSE_AGAINST_TARGET TO_TARGET))
+       (nprop (predicate EMAIL_N) (adj PHISH MALICIOUS) (block_adj news)
+              (opt_args EMAIL_SOURCE_TARGET))
+       (nprop (predicate EMAIL_N) (adj compromised) (opt_args LOOSE_AGAINST_TARGET TO_TARGET))
+       (all-of (members (nprop (predicate MESSAGE) (adj text) (opt_args EMAIL_SOURCE_TARGET))
+                        (nprop (adj MALICIOUS)))) #"malicious text message"
+       #romance or tech support scam
+       (nprop (predicate SCHEME)
+              (adj ceo impersonation support romance tech sweetheart confidence friendship grandfather grandparent grandmother irs crs loan student grandchild grandson granddaughter sheriff publishers publisher 419 401k MESSAGE COMPUTER_THING LINK PHISH)
+              (block_adj justice mail mails)
+              (opt_args EMAIL_SOURCE_TARGET AGAINST_TARGET))
+       (nprop (predicate SCHEME) (args OF_PERSONAL_INFO))
+       #business email compromise
+       (nprop (predicate compromise) (adj EMAIL_N))
+       (nprop (predicate compromise) (args EMAIL_REGEX))
+       #file injection or template injection
+       (all-of (members (nprop (adj injection)) (nprop (adj template macro file))))
+       (nprop (predicate injection*) (adj file template macro))))
+
+(all-of (shortcut MALICIOUS_ONLINE_RELATIONSHIP) (members
+        (nprop (predicate relationship* friendship* romance*) (adj online))
+        (nprop (adj MALICIOUS))))
+
+(any-of (shortcut MALICIOUS_WEBSITE) (members
+        (nprop (predicate COMPUTER_THING LINK) (adj MALICIOUS PHISH compromised) (block_adj justice news))
+        (nprop (predicate MALWARE)
+               (args (argument (role on of <poss> <unknown>)
+                            (nprop (predicate COMPUTER_THING) (block_adj justice)))))))
+
+(argument (shortcut TO_MALICIOUS_WEBSITE) (allow_fall_through <obj>)
+          (role on in into to) MALICIOUS_WEBSITE)
+(argument (shortcut MALICIOUS_WEBSITE_SUB) (role <sub> by) MALICIOUS_WEBSITE)
+
+(any-of (shortcut BAD_LINKS) (members URL_PADDING
+       (nprop MANY_TO_MANY (predicate LINK)
+              (args (any-of (members (argument (role in) EMAIL_FRAUD_SPECIFIC)))
+                                     TO_MALICIOUS_WEBSITE))
+       (nprop (predicate LINK)
+              (adj MALICIOUS PHISH compromised) (block_adj news))))
+
+(any-of (shortcut EMAIL_FRAUD) (members EMAIL_FRAUD_SPECIFIC BAD_LINKS
+        (nprop (predicate SERIES) (args (argument (role of) EMAIL_FRAUD_SPECIFIC)))))
+
+(anyprop (shortcut KNOWN_AS_PHISHING) (propmod (role <obj>) (any-of (members
+          (vprop (predicate called) (args (argument (role <obj>) EMAIL_FRAUD)))
+          (vprop (predicate know* knew) (args (argument (role as) EMAIL_FRAUD)))))))
+
+(nprop (shortcut PHISHING_ATTACKS) (predicate ATTACK_N CAMPAIGN) (adj PHISH))
+(nprop (shortcut PHISHING_TECHNIQUES) (predicate METHOD bait*) (adj PHISH))
+
+(any-of (shortcut MANY_ATTACKS) (members EMAIL_FRAUD TROJAN_HORSE PHISHING_ATTACKS
+              SOCIAL_ENGINEERING BAD_LINKS KNOWN_AS_PHISHING PHISHING_TECHNIQUES))
+
+(argument (shortcut MANY_ATTACKS_OBJ) (role <obj> <iobj> to that) MANY_ATTACKS)
+(argument (shortcut OF_MANY_ATTACKS) (role of including with in of <poss> <unknown>) MANY_ATTACKS)
+(argument (shortcut FOR_MANY_ATTACKS) (role for) MANY_ATTACKS)
+(argument (shortcut FOR_USE_IN_PHISHING) (role for)
+          (nprop (predicate use) (args (argument (role in) MANY_ATTACKS))))
+
+(any-of (shortcut WITH_PHISHING) (members FOR_USE_IN_PHISHING
+        (argument (role in with using following through) (all-of (members (nprop (adj compromised)) PERSONAL_INFO)))
+        (argument (role in) (nprop (predicate connection) (args (argument (role with) MANY_ATTACKS))))
+        (argument (allow_fall_through <obj> <iobj>) (role <sub> in with via through by on following) MANY_ATTACKS)
+        (argument (role by) (vprop (predicate USE)
+                              (args (argument (role <obj> <iobj>) MANY_ATTACKS))))
+        (argument (role as) (nprop (predicate result part effect cause) (args OF_MANY_ATTACKS)))))
+
+<!-- Criminal agents -->
+(any-of (shortcut PHISH_SOURCE) (members
+        (nprop (predicate QUANTITY GROUP ORDINAL_NUMBER SERIES COUNTING_NUMBER)
+               (adj PHISH) (opt_args SOURCE_REF_EXP IN_SOURCE LOOSE_OF_SOURCE INCLUDING_SOURCE))
+        (nprop (predicate PHISH) (opt_args SOURCE_REF_EXP IN_SOURCE LOOSE_OF_SOURCE))
+        #people carrying out phishing
+        (anyprop (propmod (role <sub>) (vprop MANY_TO_MANY (predicate USE CARRY_OUT)
+               (args (any-of (members MANY_ATTACKS_OBJ WITH_PHISHING)))
+               (opt_args (argument (role <obj>) (vprop (predicate STEAL GET) (opt_args FROM_TARGET_EXP)))))))
+        # Phishing scammers, etc.
+        (nprop (predicate CRIMINAL) (adj PHISH) (args PER_REF))))
+
+(any-of (shortcut PHISHER) (members PHISH_SOURCE
+        (anyprop (args REGEX_PHISH TARGET_PER_REF))
+        (nprop MANY_TO_MANY (predicate QUANTITY GROUP ORDINAL_NUMBER SERIES COUNTING_NUMBER)
+               (opt_args SOURCE_REF_EXP IN_SOURCE LOOSE_OF_SOURCE INCLUDING_SOURCE)
+               (args (argument (role of <unknown>) PHISH_SOURCE)))
+        (nprop MANY_TO_MANY (predicate QUANTITY GROUP ORDINAL_NUMBER SERIES COUNTING_NUMBER)
+               (opt_args SOURCE_REF_EXP IN_SOURCE LOOSE_OF_SOURCE INCLUDING_SOURCE)
+               (propmod (role <ref>) (mprop (predicate responsible)
+                                           (args FOR_MANY_ATTACKS))))
+        (nprop (predicate METHOD) (propmod (role <obj> <iobj>)
+              (vprop (predicate USE POS_VERB) (args (argument (role <sub>) PHISH_SOURCE)))))
+        (anyprop (propmod (role <sub>) (any-of (members
+                  (vprop (predicate called) (args (argument (role <obj>) PHISH_SOURCE)))
+                  (vprop (predicate know* knew) (args (argument (role as) PHISH_SOURCE)))))))
+        #creators of phishing webistes, for example
+        (nprop (predicate creator*) (args OF_MANY_ATTACKS))
+        #is a phisher
+        (nprop (propmod (role <sub>) (vprop (predicate BE)
+                              (args (argument (role <obj> <iobj>) PHISH_SOURCE)))))))
+
+(argument (shortcut PHISHER_SUB) (role <sub> by) PHISHER)
+(argument (shortcut PHISHER_OBJ) (role <obj> <iobj>) PHISHER)
+(argument (shortcut TO_PHISHER) (role to) PHISHER)
+(argument (shortcut PHISHER_REF) (role <ref>) PHISHER)
+(argument (shortcut OF_PHISHER) (role of) PHISHER)
+
+<!-- Victims of attacks -->
+(vprop (shortcut SEARCH_TARGET)
+       (predicate SEARCH)
+       (opt_args TARGET_OBJ_EXP))
+
+(any-of (shortcut PHISHING_TARGET) (members
+        (nprop (predicate QUANTITY GROUP SERIES ORDINAL_NUMBER) (args (any-of (members OF_MANY_ATTACKS
+               (argument (role in) (nprop (predicate order) (args OF_MANY_ATTACKS)))))))
+        (nprop (predicate VICTIM USER) (adj PHISH))
+        (nprop (predicate VICTIM) (args (any-of (members OF_MANY_ATTACKS OF_PHISHER
+                          (argument (role for) (any-of (members MANY_ATTACKS PHISHER)))))))))
+
+(any-of (shortcut TARGET_VICTIM) (members
+    (nprop (predicate VICTIM) (opt_args TARGET_REF_EXP))
+    (nprop (adj victimized targeted guillible trusting) (args TARGET_REF_EXP))
+    (vprop (predicate ATTACK_V)
+           (opt_args SOURCE_SUB_EXP TARGET_OBJ_EXP))))
+(argument (shortcut VICTIM_SUB) (role <sub> by) TARGET_VICTIM)
+(argument (shortcut VICTIM_OBJ) (role <obj> <iobj>) TARGET_VICTIM)
+
+<!-- VPROPS -->
+#reply to an email
+(vprop (shortcut REPLY_EMAIL)
+       (predicate REPLY FOLLOW_LINK engag*)
+       (args MESSAGE_OBJ (argument (role on) MESSAGE_NPROP))
+       (opt_args TARGET_SUB_EXP))
+
+#reply to fraudulent email
+(vprop (shortcut REPLY_BAD_EMAIL)
+       (predicate REPLY FOLLOW_LINK engag*)
+       (args (any-of (members OF_MANY_ATTACKS MANY_ATTACKS_OBJ)))
+       (opt_args TARGET_SUB_EXP))
+
+(vprop (shortcut SEND_EMAIL)
+       (predicate SEND)
+       (args EMAIL_OBJ)
+       (opt_args SOURCE_SUB_EXP TO_TARGET))
+
+(any-of (shortcut HAND_OVER_ASSET) (members
+    (vprop MANY_TO_MANY (predicate hand hands handing handed)
+       (args (argument (role over)) (any-of (members TO_MALICIOUS_WEBSITE TO_CRIMINAL
+                                      (argument (role <obj> <iobj> over) ASSETS_OF))))
+       (opt_args TARGET_SUB_EXP))
+    # alternate parse of hand over
+    (vprop MANY_TO_MANY (predicate hand hands handing handed)
+       (particle over)
+       (args (any-of (members TO_MALICIOUS_WEBSITE TO_CRIMINAL
+                                (argument (role <obj> <iobj> over) ASSETS_OF))))
+       (opt_args TARGET_SUB_EXP))
+     (vprop MANY_TO_MANY (predicate give gives giving gave) (particle up) (args ASSETS_OBJ))))
+
+<!-- Attacks -->
+(any-of (shortcut SEND_BAD_EMAIL_1) (members
+        (vprop MANY_TO_MANY
+               (predicate SEND)
+               (args EMAIL_OBJ (any-of (members CRIMINAL_SUB WITH_PHISHING)))
+               (opt_args SOURCE_SUB_EXP TO_TARGET))
+        (vprop (predicate SEND)
+               (args (argument (role <obj>) EMAIL_FRAUD))
+               (opt_args SOURCE_SUB_EXP FROM_SOURCE_EXP TO_TARGET))))
+
+(any-of (shortcut SEND_BAD_EMAIL_2) (members
+        (vprop MANY_TO_MANY
+               (predicate SEND)
+               (args EMAIL_OBJ (any-of (members WITH_PHISHING CRIMINAL_OBJ)))
+               (opt_args TARGET_SUB_EXP TO_SOURCE FROM_TARGET_EXP))
+        (vprop (predicate SEND)
+               (args (argument (role <obj>) EMAIL_FRAUD))
+               (opt_args TARGET_SUB_EXP TO_SOURCE FROM_TARGET_EXP))))
+
+(vprop MANY_TO_MANY (shortcut STEAL_VIA_PHISHING)
+       (predicate STEAL)
+       (args WITH_PHISHING)
+       (opt_args SOURCE_SUB_EXP FROM_TARGET_EXP))
+
+(vprop (shortcut PHISH_GET_ACCESS_TO)
+       (predicate yield* gain* GET)
+       (args (any-of (members
+          (all-of (members
+             (argument (role <sub>) (any-of (members PHISHER MANY_ATTACKS)))
+             (argument (role <obj>) (nprop (predicate access)
+                          (opt_args (argument (role to) PERSONAL_INFO) TO_TARGET TARGET_OBJ_EXP)))))
+          (argument (role <obj>) (nprop (predicate access) (args (any-of (members
+                              (argument (role to) ASSETS_OF)
+                              (argument (role by) (vprop (predicate TRICK)
+                                (args (argument (role <obj> <iobj>) TARGET_WORK)))))))))))))
+
+(vprop (shortcut STEAL_PERSONAL_INFO)
+       (predicate STEAL)
+       (args (argument (role <obj> out_of from) PERSONAL_INFO))
+       (opt_args SOURCE_SUB_EXP FROM_TARGET_EXP LOOSE_OF_TARGET_WITH_FT
+                 (argument (role out_of from) TARGET)))
+
+(nprop (shortcut TO_STEAL_PERSONAL_INFO)
+       (propmod (role <sub>) STEAL_PERSONAL_INFO))
+
+<!-- Any attack summary patterns -->
+(any-of (shortcut PHISHING_ATTACK_NPROP) (members
+        TO_STEAL_PERSONAL_INFO MANY_ATTACKS (nprop (predicate QUANTITY SERIES) (args OF_MANY_ATTACKS))
+        (nprop (predicate DATA COMPUTER_THING MESSAGE) (block_adj justice) (args FOR_USE_IN_PHISHING))
+        (anyprop (propmod (role <sub>) (vprop (predicate commit) (args MANY_ATTACKS_OBJ) (opt_args AGAINST_TARGET))))))
+
+(any-of (shortcut PHISHING_ATTACK) (members
+        STEAL_PERSONAL_INFO PHISH_GET_ACCESS_TO STEAL_VIA_PHISHING PHISHING_ATTACK_NPROP))
+
+(any-of (shortcut PHISHING_ATTACK_OBJ) (members (argument (role <obj> <iobj> that) PHISHING_ATTACK)))
+(any-of (shortcut PHISHING_ATTACK_SUB) (members (argument (role <sub> by) PHISHING_ATTACK)))
+(any-of (shortcut IN_PHISHING_ATTACK) (members (argument (role in) PHISHING_ATTACK)))
+(any-of (shortcut OF_PHISHING_ATTACK) (members (argument (role <poss> of <unknown>) PHISHING_ATTACK)))
+(any-of (shortcut TO_PHISHING_ATTACK) (members (argument (role to) PHISHING_ATTACK)))
+(any-of (shortcut FOR_PHISHING_ATTACK) (members (argument (role for) PHISHING_ATTACK)))
+(any-of (shortcut TO_OF_PHISHING_ATTACK) (members OF_PHISHING_ATTACK TO_PHISHING_ATTACK))
+
+(any-of (shortcut VICTIM_OF_ATTACK) (members
+        (nprop (predicate VICTIM USER) (args TO_OF_PHISHING_ATTACK))
+        (nprop (predicate VICTIM USER) (args
+              (argument (role of to) (anyprop (propmod (role <sub>) (any-of (members
+                            PHISHING_ATTACK (vprop (predicate PHISH)))))))))))
+
+(any-of (shortcut INTO_REVEALING_PERSONAL_INFO_STRICT) (members
+      (argument (role by) (vprop (predicate creat* POS_VERB) (args PHISHING_ATTACK_OBJ)))
+      (argument (role into) (any-of (members SEND_BAD_EMAIL_2 REPLY_BAD_EMAIL HAND_OVER_ASSET
+         (vprop MANY_TO_MANY (predicate INPUT)
+              (args (any-of (members TO_MALICIOUS_WEBSITE ASSETS_OBJ)))
+              (opt_args TARGET_SUB_EXP))
+         (vprop (predicate CONTACT_V) (args (any-of (members CRIMINAL_OBJ ASSETS_OBJ)))
+              (opt_args TARGET_SUB_EXP))
+         (vprop (predicate FOLLOW_LINK) (args (any-of (members EMAIL_OBJ WITH_EMAIL
+                     (argument (role <obj> <iobj>) (nprop (predicate COMPUTER_THING) (block_adj justice)))))))
+         #following instructions in the malicious text
+         (vprop (predicate follow*) (args (argument (role <obj> <iobj>)
+                   (nprop (predicate instructions)
+                          (args (argument (role of <poss> <unknown> in) PHISHING_ATTACK)))))
+                          (opt_args TARGET_SUB_EXP)))))))
+
+(any-of (shortcut INTO_REVEALING_PERSONAL_INFO) (members INTO_REVEALING_PERSONAL_INFO_STRICT
+      (argument (role out_of) ASSETS_OF)))
+
+(anyprop (shortcut BEHIND_PHISHING)
+       (predicate responsible guilty suspected accused behind bfmed)
+       (args (any-of (members PHISHER_SUB PHISHER_REF
+            (argument (role of for behind) PHISHING_ATTACK)
+            (argument (role of for) (mprop (predicate behind)
+                                      (args (argument (role behind) PHISHING_ATTACK)))))))
+       (opt_args SOURCE_SUB_EXP LOOSE_AGAINST_TARGET SOURCE_REF_EXP
+          (argument (role of for behind) (anyprop (opt_args LOOSE_AGAINST_TARGET)))))
+)
+
+(toplevel
+<!-- Subject attacker -->
+
+(vprop MANY_TO_MANY (id 313-0-hit-with-phishing)
+       (return (event-code 313))
+       (predicate hit hits hitting)
+       (args (any-of (members PHISHER_SUB PHISHING_ATTACK_SUB PHISHING_ATTACK_OBJ WITH_PHISHING)))
+       (opt_args SOURCE_SUB_EXP TARGET_OBJ_EXP FROM_SOURCE_EXP))
+
+#subject to phishing, ie. 102,100 internet users are subjected to these phishing attacks every day.
+(anyprop (id 313-1-subject-to-phishing)
+       (return (event-code 313))
+       (predicate subject*)
+       (args TO_PHISHING_ATTACK)
+       (opt_args SOURCE_SUB_EXP TARGET_REF_EXP TARGET_OBJ_EXP))
+
+(vprop MANY_TO_MANY (id 313-2-use-phishing)
+       (return (event-code 313))
+       (predicate USE CARRY_OUT)
+       (args (any-of (members PHISHING_ATTACK_OBJ WITH_PHISHING
+                          (argument (role <obj> <iobj> that) SEND_BAD_EMAIL_1))))
+       (opt_args SOURCE_SUB_EXP (argument (role <obj> <iobj>) TO_STEAL_PERSONAL_INFO)
+              LOOSE_AGAINST_TARGET WITH_ATTACK (argument (role <obj>) SEARCH_TARGET)
+              (argument (role <obj>) (vprop (predicate STEAL GET) (opt_args FROM_TARGET_EXP)))))
+
+#obtain access to
+(vprop MANY_TO_MANY (id 313-3-get-access)
+       (return (event-code 313))
+       (predicate yield* gain* GET)
+       (args (any-of (members (argument (role <sub>) (any-of (members PHISHER PHISHING_ATTACK)))
+                (all-of (members ACCESS_TO_PERSONAL_INFO_OBJ
+                               (any-of (members WITH_PHISHING PHISHER_SUB PHISHING_ATTACK_SUB
+                                    (argument (allow_fall_through <obj> <iobj>) (role by through)
+                                          (vprop (predicate TRICK) (args TARGET_PER_OBJ)))))))
+                (all-of (members CRIMINAL_SUB ACCESS_TO_PERSONAL_INFO_STRICT_OBJ))
+                (argument (role <obj>) (nprop (predicate access) (args (any-of (members
+                                  (argument (role by) (vprop (predicate TRICK)
+                                      (args (argument (role <obj> <iobj>) TARGET_WORK))))))))))))
+       (opt_args SOURCE_SUB_EXP TARGET_OBJ_EXP FROM_TARGET_EXP TO_TARGET TARGET_OBJ_EXP
+                ACCESS_TO_PERSONAL_INFO_OBJ))
+
+#scammers email
+(vprop (id 313-4-scammers-email)
+       (return (event-code 313))
+       (predicate CONTACT_V)
+       (args CRIMINAL_SUB)
+       (opt_args TO_TARGET TARGET_OBJ_EXP))
+
+#scammers send email
+(vprop MANY_TO_MANY (id 313-5-scammers-send-email)
+       (return (event-code 313))
+       (predicate SEND)
+       (args CRIMINAL_SUB (any-of (members PHISHING_ATTACK_OBJ EMAIL_OBJ)))
+       (opt_args TO_TARGET SOURCE_SUB_EXP))
+
+#malicious ask for password
+(vprop MANY_TO_MANY (id 313-6-ask-for-password)
+       (return (event-code 313))
+       (predicate ask* prompt* demand* request*)
+       (args (any-of (members CRIMINAL_SUB PHISHING_ATTACK_SUB MALICIOUS_WEBSITE_SUB))
+             (argument (role <obj> <iobj> for) PERSONAL_INFO))
+       (opt_args TARGET_OBJ_EXP SOURCE_SUB_EXP)) 
+
+#send fradulent email
+(vprop (id 313-7-send-email-fraud)
+       (return (event-code 313))
+       (predicate SEND run ran operat*)
+       (args PHISHING_ATTACK_OBJ)
+       (opt_args SOURCE_SUB_EXP TO_TARGET (argument (role <sub>)
+                                (anyprop (propmod (role <sub>) TARGET_VICTIM)))))
+
+#harvest credentials
+(vprop MANY_TO_MANY (id 313-8-harvest-credentials)
+       (return (event-code 313))
+       (predicate harvest*)
+       (args (argument (role <obj> <iobj>) (any-of (members PERSONAL_INFO
+            (nprop (predicate credentials) (opt_args OF_TARGET FROM_TARGET_EXP))))))
+       (opt_args SOURCE_SUB_EXP FROM_TARGET_EXP LOOSE_OF_TARGET_WITH_FT
+                 (argument (role out_of from) TARGET)))
+
+(vprop MANY_TO_MANY (id 313-9-take-credit-for-phishing)
+       (return (event-code 313))
+       (predicate BRING)
+       (args (argument (role <obj>) (nprop (predicate credit responsibility)))
+             (argument (allow_fall_through) (role for) PHISHING_ATTACK))
+       (opt_args SOURCE_SUB_EXP LOOSE_AGAINST_TARGET))
+
+#to be behind phishing
+(intersection (id 313-10-behind-phishing) (return (event-code 313)) (members BEHIND_PHISHING))
+
+(vprop MANY_TO_MANY (id 313-11-phishing-email-advises)
+       (return (event-code 313))
+       (predicate advis* warn* alert* REDIRECT  persuad* convinc* lead* led)
+       (args (any-of (members PHISHING_ATTACK_SUB TO_MALICIOUS_WEBSITE PHISHER_SUB
+                              (all-of (members CRIMINAL_SUB VICTIM_OBJ))
+                              (all-of (members CRIMINAL_SUB INTO_REVEALING_PERSONAL_INFO)))))
+       (opt_args BY_SOURCE TARGET_OBJ_EXP TO_TARGET ON_TARGET AGAINST_TARGET
+                 (argument (role <obj> <iobj> into) REPLY_EMAIL) INTO_REVEALING_PERSONAL_INFO))
+
+#attack with phishing, e.g. The company was stung in a phishing attack.
+(vprop MANY_TO_MANY (id 313-12-attack-via-email-fraud)
+       (return (event-code 313))
+       (predicate ATTACK_V STEAL TRICK tell* told instruct* CARRY_OUT)
+       (args (any-of (members PHISHER_SUB PHISHING_ATTACK_SUB PHISHING_ATTACK_OBJ
+              MALICIOUS_WEBSITE_SUB WITH_PHISHING (argument (role out_of) PERSONAL_INFO)
+              (argument (role <sub> by with) MALICIOUS_ONLINE_RELATIONSHIP))))
+       (opt_args SOURCE_SUB_EXP TARGET_OBJ_EXP LOOSE_AGAINST_TARGET LOOSE_FROM_TARGET  LOOSE_AGAINST_TARGET AT_TARGET
+                (argument (role into) TARGET)))
+
+#create emails for use in phishing
+(vprop MANY_TO_MANY (id 313-13-create-for-phishing)
+       (return (event-code 313))
+       (predicate creat* spoof* make makes made making had have having happen* prepar* begin* begun commenc* continu* design* craft*)
+       (args (any-of (members PHISHING_ATTACK_OBJ PHISHER_SUB 
+          (argument (role from) PHISHING_ATTACK) (all-of (members CRIMINAL_SUB EMAIL_OBJ)))))
+       (opt_args SOURCE_SUB_EXP LOOSE_AGAINST_TARGET TO_TARGET))
+
+#set up phishing websites
+(vprop MANY_TO_MANY (id 313-14-set-up-for-phishing)
+       (return (event-code 313))
+       (predicate set sets setting)
+       (particle up)
+       (args (any-of (members PHISHING_ATTACK_OBJ PHISHER_SUB
+                 (argument (role <obj> <iobj>) (nprop (predicate COMPUTER_THING) (adj MALICIOUS)))
+                 (all-of (members CRIMINAL_SUB EMAIL_OBJ)))))
+       (opt_args SOURCE_SUB_EXP LOOSE_AGAINST_TARGET TO_TARGET))
+
+#faking an email
+(vprop (id 313-15-fake-email)
+       (return (event-code 313))
+       (predicate FAKE_V)
+       (args (any-of (members EMAIL_OBJ (all-of (members (argument (role <sub> by) MALICIOUS_WEBSITE))))))
+       (opt_args SOURCE_SUB_EXP FROM_SOURCE_EXP TARGET_OBJ_EXP TO_TARGET))
+
+(vprop MANY_TO_MANY (id 313-16-found-guilty-of-phishing)
+       (return (event-code 313))
+       (predicate find* found)
+       (opt_args LOOSE_AGAINST_TARGET (argument (role <obj>) (anyprop (opt_args SOURCE_REF_EXP))))
+       (args (any-of (members
+            (argument (role <obj>) (nprop (predicate PHISH) (args SOURCE_REF_EXP) (adj guilty)))
+            (argument (role <obj> <iobj>) (anyprop MANY_TO_MANY (predicate guilty)
+                         (args (any-of (members WITH_PHISHING OF_PHISHING_ATTACK PHISHER_REF)))))
+            (all-of (members (argument (role <iobj>) (mprop (predicate guilty)))
+                             (argument (role of) (allow_fall_through <obj> <iobj>) PHISHING_ATTACK)))))))
+
+(vprop MANY_TO_MANY (id 313-17-focus-on-phishing)
+       (return (event-code 313))
+       (predicate CONCENTRATE)
+       (args (any-of (members PHISHER_SUB PHISHING_ATTACK_SUB WITH_PHISHING)))
+       (opt_args LOOSE_AGAINST_TARGET SOURCE_SUB_EXP))
+
+(vprop MANY_TO_MANY (id 313-18-phishers-convicted)
+       (return (event-code 313))
+       (predicate ARREST BLAME OBSERVER_V)
+       (args (any-of (members PHISHER_OBJ WITH_PHISHING PHISHER_SUB
+            (argument (role with of for) (allow_fall_through <obj> <iobj>) PHISHING_ATTACK))))
+       (opt_args (argument (role <obj> <iobj>) (all-of (members SOURCE (mention (acetype PER)))))))
+
+(vprop MANY_TO_MANY (id 313-19-phishers-confess)
+       (return (event-code 313))
+       (predicate confess* admit*)
+       (args (any-of (members PHISHER_SUB
+            (argument (role to) (allow_fall_through <obj> <iobj>) PHISHING_ATTACK))))
+       (opt_args (argument (role <sub> by) (all-of (members SOURCE (mention (acetype PER)))))))
+
+# Threaten with phishing
+(vprop MANY_TO_MANY (id 313-20-threaten-with-phishing)
+        (return (event-code 313))
+        (predicate JEAPORDIZE)
+        (args (any-of (members PHISHING_ATTACK_SUB PHISHER_SUB WITH_PHISHING)))
+        (opt_args TARGET_OBJ_EXP SOURCE_SUB_EXP))
+
+(vprop MANY_TO_MANY (id 313-21-phishers-go-after)
+       (return (event-code 313))
+       (predicate go goes going went)
+       (args (any-of (members WITH_PHISHING PHISHER_SUB)))
+       (opt_args (argument (role after) TARGET)))
+
+(vprop MANY_TO_MANY (id 313-22-plant-malware)
+       (return (event-code 310))
+       (predicate plant* distribut*)
+       (args (any-of (members PHISHER_SUB PHISHING_ATTACK_SUB 
+                (all-of (members HACKER_SUB (argument (allow_fall_through) 
+                                    (role in on inside with through using) 
+                                    (nprop (predicate MESSAGE post* media))))))))
+       (opt_args SOURCE_SUB_EXP SITE_OF_TARGET_OBJ 
+                (argument (allow_fall_through) (role at on inside_of) SITE_OF_TARGET) 
+                (argument (allow_fall_through) (role at on inside_of) TARGET)))
+
+(vprop (id 313-23-email-tricks)
+       (return (event-code 313))
+       (predicate TRICK)
+       (args (any-of (members EMAIL_SUB EMAIL_OBJ 
+          (argument (role <sub> by) (mention (headword COMPUTER_THING)))))) #TODO broad
+       (block_args (argument (role <sub> by) (mention (headword service* network* platform*))) (argument (role on)))
+       (opt_args TO_TARGET TARGET_OBJ_EXP SOURCE_SUB_EXP FROM_SOURCE_EXP))
+
+(vprop (id 313-24-trick-into)
+       (return (event-code 313))
+       (predicate TRICK)
+       (args INTO_REVEALING_PERSONAL_INFO_STRICT)
+       (opt_args SOURCE_SUB_EXP TARGET_OBJ_EXP TO_SOURCE))
+
+(vprop MANY_TO_MANY (id 313-25-victim-reveals-password)
+       (return (event-code 313))
+       (predicate INPUT)
+       (args PERSONAL_INFO_OBJ (any-of (members TO_MALICIOUS_WEBSITE TO_CRIMINAL VICTIM_SUB)))
+       (opt_args TARGET_SUB_EXP))
+
+(vprop MANY_TO_MANY (id 313-26-victim-pass-on-password)
+       (return (event-code 313))
+       (predicate pass)
+       (args ASSETS_OBJ (any-of (members TO_MALICIOUS_WEBSITE CRIMINAL_OBJ VICTIM_SUB
+             (argument (role on) (anyprop (args CRIMINAL_OBJ))))))
+       (opt_args TARGET_SUB_EXP))
+
+#fall victim to
+(vprop (id 313-27-fall-victim-to)
+       (return (event-code 313))
+       (predicate is was were are be been being becom* became fall* fell)
+       (args (any-of (members (argument (role <obj>) VICTIM_OF_ATTACK) TO_OF_PHISHING_ATTACK)))
+       (opt_args TARGET_SUB_EXP LOOSE_AGAINST_TARGET
+                        (argument (allow_fall_through to) (role by) SOURCE)))
+
+#fall for, ie Google employees fell for a phishing attack
+(vprop (id 313-28-fall-for)
+       (return (event-code 313))
+       (predicate fall* fell)
+       (args (any-of (members FOR_PHISHING_ATTACK TO_PHISHING_ATTACK)))
+       (opt_args TARGET_SUB_EXP (argument (allow_fall_through to for) (role on) TARGET)
+                        (argument (allow_fall_through to for) (role by) SOURCE)))
+
+#reply to fraudulent email
+(vprop MANY_TO_MANY (id 313-29-reply-email-fraud)
+       (return (event-code 313))
+       (predicate REPLY FOLLOW_LINK engag* report*)
+       (args (any-of (members PHISHING_ATTACK_OBJ WITH_PHISHING (argument (role <sub> by) VICTIM_OF_ATTACK) (argument (role to on) PHISHING_ATTACK))))
+       (opt_args TARGET_SUB_EXP))
+
+#The Nigerian hacker sent an email to the county's employees and 108 employees opened the malicious email.
+(intersection (id 313-30-send-reply-bad-email)
+       (return (event-code 313))
+       (members SEND_EMAIL REPLY_BAD_EMAIL))
+
+#The Nigerian hacker sent a malicious email to the county's employees and 108 employees opened the email.
+(intersection (id 313-31-send-bad-email-reply)
+       (return (event-code 313))
+       (members SEND_BAD_EMAIL_1 REPLY_EMAIL))
+
+(vprop MANY_TO_MANY (id 310-32-pay-phishers) #watch out
+       (return (event-code 310))
+       (predicate pay* paid shell*)
+       (args (any-of (members PHISHER_OBJ
+          (argument (role to) (allow_fall_through in <obj> <iobj>) PHISHER))))
+       (opt_args TARGET_SUB_EXP FROM_TARGET_EXP LOOSE_AGAINST_TARGET AT_TARGET))
+
+#experience phishing
+(vprop (id 313-33-notice-phishing)
+       (return (event-code 313))
+       (predicate EXPERIENCE_V)
+       (args PHISHING_ATTACK_OBJ)
+       (opt_args TARGET_SUB_EXP))
+
+#visit phishing site
+(vprop MANY_TO_MANY (id 313-34-visit-phishing-site)
+       (return (event-code 313))
+       (predicate visit* land* go went going gone)
+       (args PHISHING_ATTACK_OBJ TO_MALICIOUS_WEBSITE)
+       (opt_args TARGET_SUB_EXP))
+
+#fight/see phishing
+(vprop (id 313-35-fight-phishing)
+       (return (event-code 313))
+       (predicate OBSERVER_V protect*)
+       (args (any-of (members PHISHING_ATTACK_OBJ TO_PHISHER
+                          (argument (role against) PHISHING_ATTACK))))
+       (opt_args LOOSE_AGAINST_TARGET BY_SOURCE TARGET_OBJ_EXP))
+
+# Someone gets or recieves a bad email or victims get/recieve email
+(vprop (id 313-36-recieve-bad-email)
+       (return (event-code 313))
+       (predicate GET REPLY) #found/find too risky here
+       (args (any-of (members PHISHING_ATTACK_OBJ (all-of (members EMAIL_OBJ VICTIM_SUB)))))
+       (opt_args TARGET_SUB_EXP FROM_SOURCE_EXP))
+
+#In February, for example, security researchers published details of a spear phishing attack aimed at US military and national security officials.
+(vprop (id 313-37-aim-attack-at)
+       (return (event-code 313))
+       (predicate aim*)
+       (args PHISHING_ATTACK_OBJ)
+       (opt_args SOURCE_SUB_EXP AT_TARGET))
+
+#Company says phishing
+(vprop (id 313-38-admit-phishing)
+       (return (event-code 313))
+       (predicate STRICT_SAY admit* confess*)
+       (args (any-of (members PHISHING_ATTACK_OBJ (argument (role <obj> that) STEAL_VIA_PHISHING))))
+       (opt_args AT_TARGET AGAINST_TARGET ON_TARGET BY_SOURCE FROM_SOURCE_EXP TARGET_SUB_EXP))
+
+#They phished her for $1,000
+(vprop MANY_TO_MANY (id 313-39-phishing)
+       (return (event-code 313))
+       (predicate PHISH)
+       (opt_args ON_TARGET CRIMINAL_SUB TARGET_OBJ_EXP ATTACK_OBJ
+                 (argument (role <sub> <obj> <iobj>) (all-of (members TARGET
+                      (any-of (members (mention (headword EMPLOYEE VICTIM USER))
+                                       (mention (acetype ORG)))))))))
+
+(vprop (id 313-40-phishing-redirects)
+       (return (event-code 313))
+       (predicate REDIRECT)
+       (args PHISHING_ATTACK_SUB CRIMINAL_SUB)
+       (opt_args TO_TARGET TARGET_OBJ_EXP))
+
+(vprop MANY_TO_MANY (id 313-41-be-a-target)
+       (return (event-code 313))
+       (predicate BE)
+       (args (argument (role <obj> <sub>) PHISHING_TARGET))
+       (opt_args OF_SOURCE TARGET_SUB_EXP TARGET_OBJ_EXP))
+
+(vprop MANY_TO_MANY (id 313-42-be-a-scam)
+       (return (event-code 313))
+       (predicate BE)
+       (block_predicate ma*)
+       (args (argument (role <sub> <obj>) PHISHING_ATTACK_NPROP))
+       (opt_args LOOSE_AGAINST_TARGET
+            (argument (allow_fall_through <sub> <obj>)
+                      (role by from <unknown> <poss>) SOURCE)))
+
+(vprop MANY_TO_MANY (id 313-43-be-a-phisher)
+       (return (event-code 313))
+       (predicate BE)
+       (args (any-of (members (argument (role <obj> <sub>) PHISHER) (argument (role <obj> <iobj> behind) BEHIND_PHISHING))))
+       (opt_args LOOSE_AGAINST_TARGET SOURCE_SUB_EXP SOURCE_OBJ_EXP))
+
+(vprop MANY_TO_MANY (id 313-44-harmed-in-attack)
+       (return (event-code 313))
+       (predicate harm* compromis* expos* take taking taken took TRICK)
+       (args (any-of (members IN_PHISHING_ATTACK TO_PHISHING_ATTACK CRIMINAL_SUB))
+             (any-of (members PERSONAL_INFO_OBJ (argument (role over) PERSONAL_INFO)
+                  (argument (role <obj>) (nprop (predicate user* recipient* VICTIM))))))
+       (opt_args OF_SOURCE SOURCE_SUB_EXP TARGET_OBJ_EXP))
+
+(vprop MANY_TO_MANY (id 313-45-lose-to-phishing)
+       (return (event-code 313))
+       (predicate lose* losing lost)
+       (args (any-of (members TO_PHISHING_ATTACK TO_PHISHER PERSONAL_INFO_OBJ
+            (argument (role to) (nprop (args PER_REF SOURCE_REF_EXP)
+                (propmod (role <sub>) (vprop (args (argument (role <obj> <iobj>)
+                                              (nprop (predicate LINK COMPUTER_THING) (block_adj justice)))))))))))
+       (opt_args LOOSE_OF_SOURCE TARGET_SUB_EXP TARGET_OBJ_EXP))
+
+(union (id 313-46-hand-over-to-phishers) (return (event-code 313)) (members
+    (vprop MANY_TO_MANY (predicate hand hands handing handed)
+       (args (argument (role over)) (any-of (members TO_MALICIOUS_WEBSITE TO_PHISHER)))
+       (opt_args TARGET_SUB_EXP (argument (role <obj> <iobj> over) ASSETS_OF)))
+    # alternate parse of hand over
+    (vprop MANY_TO_MANY (predicate hand hands handing handed)
+       (particle over)
+       (args (any-of (members TO_MALICIOUS_WEBSITE TO_PHISHER)))
+       (opt_args TARGET_SUB_EXP (argument (role <obj> <iobj> over) ASSETS_OF)))))
+
+(nprop (id 313-47-phishing-victim)  (predicate VICTIM USER) (adj PHISH)
+      (args (argument (role <ref>) (all-of (members TARGET (mention (acetype PER)))))))
+
+(vprop MANY_TO_MANY (id 313-48-phishing-happens)
+       (return (event-code 313))
+       (predicate POS_VERB)
+       (args (any-of (members PHISHING_ATTACK_SUB PHISHING_ATTACK_OBJ)))
+       (opt_args LOOSE_AGAINST_TARGET))
+
+(vprop MANY_TO_MANY (id 310-49-hackers-interfere)
+       (return (event-code 310))
+       (predicate interfer* access* replac*)
+       (args (any-of (members PHISHER_SUB PHISHING_ATTACK_SUB)))
+       (opt_args SOURCE_SUB_EXP WITH_TARGET_EXP SITE_OF_TARGET_OBJ))
+
+(vprop (id 313-50-phishing)
+       (return (event-code 313))
+       (predicate PHISH)
+       (opt_args CRIMINAL_SUB PHISHER_SUB TARGET_OBJ_EXP FROM_TARGET_EXP BY_SOURCE))
+)
+)

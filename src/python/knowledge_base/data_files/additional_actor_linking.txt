@@ -1,0 +1,6 @@
+# Specify ID, then CANONICAL_NAME (for the KBEntityGroup that we'll create), then a list of names to merge
+# This is supplimental to the AWAKE cross-document entity merging
+ID: CRIMEA
+CANONICAL_NAME: Crimea
+Crimea
+Crimean

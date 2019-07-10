@@ -1,0 +1,51 @@
+(catalyst-effect
+
+(options
+
+(blocked_proposition_types Unreliable)
+
+)
+
+(reference
+
+(nprop (shortcut NOUN_CAUSE) (return CAUSE))
+(vprop (shortcut VERB_CAUSE) (return CAUSE))
+(mprop (shortcut MOD_CAUSE) (block_predicate because since as) (return CAUSE))
+(any-of (shortcut CAUSE) (members VERB_CAUSE NOUN_CAUSE MOD_CAUSE))
+
+(nprop (shortcut NOUN_EFFECT) (return EFFECT))
+(vprop (shortcut VERB_EFFECT) (return EFFECT))
+(mprop (shortcut MOD_EFFECT) (block_predicate because since as) (return EFFECT))
+(any-of (shortcut EFFECT) (members VERB_EFFECT NOUN_EFFECT MOD_EFFECT))
+
+)
+
+(toplevel
+
+(vprop (id worsen)
+       (predicate worse* exacerbat* driv* destabaliz* destabalis*)
+       (args (argument (role <sub>) CAUSE)
+             (argument (role <obj>) EFFECT)))
+
+
+<!-- Given low food production there remains a risk ... -->
+(vprop (id remains-given)
+       (predicate remain*)
+       (args (argument (role given) CAUSE)
+             (argument (role <obj> <iobj>) EFFECT)))
+
+<!-- X contributing to the increase of Y -->
+(vprop (id contributing-increase)
+       (predicate contribut*)
+       (args (argument (role <sub>) NOUN_CAUSE)
+             (argument (role in of) (all-of (members NOUN_EFFECT (nprop (predicate increas*)))))))
+
+<!-- X using CAUSE to do EFFECT -->
+(vprop (id using-to-do)
+       (predicate use using used utiliz*)
+       (args (argument (role <obj>) NOUN_CAUSE)
+             (argument (role to) VERB_EFFECT)))
+
+)
+
+)

@@ -1,0 +1,33 @@
+# If you see entities with the following canonical names 
+# (from AWAKE) in the same document, hook them up with 
+# with NATO in a Subsidiary relation
+
+Kingdom of Belgium
+Canada
+Kingdom of Denmark
+Republic of France
+Republic of Iceland
+Repubblica Italiana
+Grand Duchy of Luxembourg
+Kingdom of the Netherlands
+Kingdom of Norway
+Portuguese Republic
+United Kingdom of Great Britain and Northern Ireland
+United States
+Hellenic Republic
+Republic of Turkey
+Federal Republic of Germany
+Kingdom of Spain
+Czech Republic
+Hungary
+Republic of Poland
+Republic of Bulgaria
+Republic of Estonia
+Republic of Latvia
+Republic of Lithuania
+România
+Slovak Republic
+Republic of Slovenia
+Republic of Albania
+Republic of Croatia
+Montenegro

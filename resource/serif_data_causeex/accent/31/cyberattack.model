@@ -1,0 +1,367 @@
+(Event310_Patterns
+
+(@INCLUDE "%icews_lib_dir%/event_models/icews_required.model")
+(@INCLUDE "%icews_lib_dir%/event_models/source-target.model")
+(@INCLUDE "%project_specific_serif_data_root%/accent/CYBERATTACK.model")
+
+(entitylabels
+)
+
+(wordsets
+)
+
+(reference
+(any-of (shortcut STOLEN_PASSWORD) (members (nprop (predicate PASSWORD) (adj stolen))))
+(any-of (shortcut CYBERATTACK_VICTIM) (members
+        (nprop (predicate VICTIM) (adj CYBER_J) (opt_args TARGET_REF_EXP))
+        (nprop (predicate VICTIM) (args (any-of (members OF_CYBERATTACK FOR_CYBERATTACK))) (opt_args TARGET_REF_EXP))))
+
+(any-of (shortcut RELEASE_FILES) (members (vprop (predicate releas*) (args (argument (any-of (members
+                                 (regex (re (text (string "encrypt.*")))))))))))
+
+(any-of (shortcut BEHIND_CYBERATTACK) (members
+    (anyprop
+       (predicate responsible guilty suspected accused behind blamed)
+       (args (any-of (members HACKER_REF HACKER_SUB
+            (argument (role of for behind involved) CYBERATTACK)
+            (argument (role of for) (mprop (predicate involved behind)
+                                      (args (argument (role involved behind) CYBERATTACK)))))))
+       (opt_args SOURCE_SUB_EXP LOOSE_AGAINST_TARGET SOURCE_REF_EXP
+          (argument (role of for behind involved) (anyprop (opt_args LOOSE_AGAINST_TARGET)))))
+    (anyprop
+       (args (any-of (members 
+            (argument (role behind involved) CYBERATTACK)
+            (argument (role of for) (mprop (predicate involved behind)
+                                      (args (argument (role involved behind) CYBERATTACK)))))))
+       (opt_args SOURCE_SUB_EXP LOOSE_AGAINST_TARGET SOURCE_REF_EXP HACKER_REF HACKER_SUB
+          (argument (role of for behind involved) (anyprop (opt_args LOOSE_AGAINST_TARGET)))))))
+
+)
+#Machine availability ransom
+#destructive program
+#recover from cyberattack
+#struggle with effects of cyberattack
+#link to hack
+#discovered in
+#admit/disclose
+(toplevel
+
+(vprop MANY_TO_MANY (id 310-0-cyber-attack)
+       (return (event-code 310))
+       (predicate ATTACK_V AFFECT hit hitting hits)
+       (args (any-of (members HACKER_SUB CYBERATTACK_SUB IN_CYBERATTACK (all-of (members CRIMINAL_SUB SITE_OF_TARGET_STRICT_OBJ)))))
+       (opt_args SOURCE_SUB_EXP TARGET_OBJ_EXP LOOSE_AGAINST_TARGET AT_TARGET TO_TARGET_EXP))
+
+(vprop MANY_TO_MANY (id 310-1-compromise-website)
+       (return (event-code 310))
+       (predicate compromis* hijack* infiltrat*)
+       (args (any-of (members HACKER_SUB CYBERATTACK_SUB IN_CYBERATTACK SITE_OF_TARGET_STRICT_OBJ)))
+       (opt_args SOURCE_SUB_EXP TARGET_OBJ_EXP LOOSE_AGAINST_TARGET AT_TARGET TO_TARGET_EXP))
+
+(vprop MANY_TO_MANY (id 310-2-cyberattack-originates)
+       (return (event-code 310))
+       (predicate begin* began originat* start* locat* trac* spread* link*)
+       (args (any-of (members HACKER_SUB CYBERATTACK_SUB HACKER_OBJ CYBERATTACK_OBJ TO_CYBERATTACK)))
+       (opt_args TARGET_OBJ_EXP (argument (role in from into towards to across) TARGET)))
+
+(vprop MANY_TO_MANY (id 310-3-cyber-attack-directed-at)
+       (return (event-code 310))
+       (predicate direct*)
+       (args (any-of (members HACKER_SUB CYBERATTACK_SUB CYBERATTACK_OBJ)))
+       (opt_args SOURCE_SUB_EXP LOOSE_AGAINST_TARGET AT_TARGET))
+
+(vprop MANY_TO_MANY (id 310-4-hackers-demand-ransom)
+       (return (event-code 310))
+       (predicate demand*)
+       (args (any-of (members HACKER_SUB CYBERATTACK_SUB)))
+       (opt_args SOURCE_SUB_EXP FROM_TARGET_EXP LOOSE_AGAINST_TARGET AT_TARGET))
+
+(vprop MANY_TO_MANY (id 310-5-hackers-ask-for-ransom)
+       (return (event-code 310))
+       (predicate ask*)
+       (args (argument (role for)) (any-of (members HACKER_SUB CYBERATTACK_SUB)))
+       (opt_args SOURCE_SUB_EXP FROM_TARGET_EXP LOOSE_AGAINST_TARGET AT_TARGET))
+
+(vprop MANY_TO_MANY (id 310-6-pay-hackers) #watch out
+       (return (event-code 310))
+       (predicate pay* paid shell*)
+       (args (any-of (members HACKER_OBJ 
+          (argument (role to) (allow_fall_through in <obj> <iobj>) HACKER_NPROP)
+          (all-of (members IN_BITCOIN (argument (role <sub> by) (any-of (members (nprop (predicate VICTIM)) CYBERATTACK_VICTIM))))))))
+       (opt_args TARGET_SUB_EXP FROM_TARGET_EXP LOOSE_AGAINST_TARGET AT_TARGET))
+
+(vprop MANY_TO_MANY (id 310-7-hackers-interfere)
+       (return (event-code 310))
+       (predicate interfer* access* replac* fill fills filled filling)
+       (args (any-of (members HACKER_SUB CYBERATTACK_SUB)))
+       (opt_args SOURCE_SUB_EXP WITH_TARGET_EXP SITE_OF_TARGET_OBJ))
+
+(vprop (id 310-8-hackers-shut-down)
+    (return (event-code 310))
+    (predicate BRING knock* shut* clos*)
+    (particle down out)
+    (args (any-of (members HACKER_SUB (argument (role with) CYBERATTACK) CYBERATTACK_SUB
+                  (all-of (members CRIMINAL_SUB SITE_OF_TARGET_OBJ)))))
+    (opt_args SOURCE_SUB_EXP TARGET_OBJ_EXP SITE_OF_TARGET_OBJ))
+
+(vprop MANY_TO_MANY (id 310-9-involve-in-cyberattack)
+       (return (event-code 310))
+       (predicate involv* swept sweep*)
+       (args (any-of (members HACKER_SUB IN_CYBERATTACK)))
+       (opt_args TARGET_OBJ_EXP))
+
+(vprop MANY_TO_MANY (id 310-10-install-malware)
+       (return (event-code 310))
+       (predicate install* download*) 
+       (block_predicate rec*)
+       (args (any-of (members CYBERATTACK_OBJ CYBERATTACK_SUB (argument (role <obj> <iobj> <sub>) (nprop (predicate MALWARE))))))
+       (opt_args TARGET_SUB_EXP FROM_SOURCE_EXP LOOSE_AGAINST_TARGET))
+
+#TODO merge with above?
+(vprop MANY_TO_MANY (id 310-11-plant-malware)
+       (return (event-code 310))
+       (predicate plant* distribut* host*)
+       (args (any-of (members HACKER_SUB CYBERATTACK_SUB CYBERATTACK_OBJ)))
+       (opt_args SOURCE_SUB_EXP SITE_OF_TARGET_OBJ 
+                (argument (allow_fall_through) (role at on inside_of) SITE_OF_TARGET) 
+                (argument (allow_fall_through) (role at on inside_of) TARGET)))
+
+(vprop MANY_TO_MANY (id 310-12-infect-computer)
+       (return (event-code 310))
+       (predicate infect*)
+       (args (any-of (members HACKER_SUB CYBERATTACK_SUB SITE_OF_TARGET_STRICT_OBJ)))
+       (opt_args SOURCE_SUB_EXP TARGET_OBJ_EXP))
+
+(vprop MANY_TO_MANY (id 310-13-recruit-systems)
+       (return (event-code 310))
+       (predicate recruit* infect* creat* support* CARRY_OUT pay* paid* buy* bought sell* sold purchas* hawk* barter* trade* trading traffic*)
+       (args (any-of (members HACKER_SUB CYBERATTACK_OBJ
+            (all-of (members SITE_OF_TARGET_STRICT_OBJ CRIMINAL_SUB)))))
+       (opt_args SOURCE_SUB_EXP TARGET_OBJ_EXP LOOSE_AGAINST_TARGET LOOSE_AT_TARGET FROM_SOURCE_EXP))
+
+(vprop MANY_TO_MANY (id 310-14-malware-gets-into-system)
+       (return (event-code 310))
+       (predicate break* GET)
+       (args (any-of (members HACKER_SUB CYBERATTACK_SUB
+            (all-of (members (argument (role into) SITE_OF_TARGET) CRIMINAL_SUB)))))
+       (opt_args SOURCE_SUB_EXP TARGET_OBJ_EXP (argument (role into) (any-of (members SITE_OF_TARGET TARGET_PROP))) LOOSE_AT_TARGET FROM_SOURCE_EXP))
+
+(vprop MANY_TO_MANY (id 310-15-break-into-system)
+       (return (event-code 310))
+       (predicate break*)
+       (args (any-of (members HACKER_SUB CYBERATTACK_SUB
+            (all-of (members (argument (role into) SITE_OF_TARGET_STRICT) CRIMINAL_SUB)))))
+       (opt_args SOURCE_SUB_EXP TARGET_OBJ_EXP (argument (role into) (any-of (members SITE_OF_TARGET TARGET_PROP))) LOOSE_AT_TARGET FROM_SOURCE_EXP))
+
+(vprop MANY_TO_MANY (id 310-16-malware-locks-out-of-system)
+       (return (event-code 310))
+       (predicate lock*  crypto-lock*)
+       (args (any-of (members HACKER_SUB CYBERATTACK_SUB
+            (all-of (members (argument (role out_of) SITE_OF_TARGET) CRIMINAL_SUB)))))
+       (opt_args SOURCE_SUB_EXP TARGET_OBJ_EXP (argument (role into) (any-of (members SITE_OF_TARGET TARGET_PROP))) LOOSE_AT_TARGET FROM_SOURCE_EXP))
+
+(vprop MANY_TO_MANY (id 310-17-encrypt-files)
+       (return (event-code 310))
+       (predicate encrypt* decrypt*)
+       (args (any-of (members CRIMINAL_SUB CYBERATTACK_SUB)))
+       (opt_args SOURCE_SUB_EXP TARGET_OBJ_EXP (argument (role into) (any-of (members SITE_OF_TARGET TARGET_PROP))) LOOSE_AT_TARGET FROM_SOURCE_EXP))
+
+(vprop MANY_TO_MANY (id 310-18-wipe-files)
+       (return (event-code 310))
+       (predicate encrypt* destroy* wip* decrypt*)
+       (args (any-of (members HACKER_SUB CYBERATTACK_SUB
+            (all-of (members (argument (role out_of) SITE_OF_TARGET) CRIMINAL_SUB)))))
+       (opt_args SOURCE_SUB_EXP TARGET_OBJ_EXP (argument (role into) (any-of (members SITE_OF_TARGET TARGET_PROP))) LOOSE_AT_TARGET FROM_SOURCE_EXP))
+
+(intersection (id 310-responsible) (return (event-code 310)) (members BEHIND_CYBERATTACK))
+
+(vprop (id 310-19-hackers-get-info)
+       (return (event-code 310))
+       (predicate yield* gain* GET)
+       (args (any-of (members HACKER_SUB CYBERATTACK_SUB
+          (all-of (members CRIMINAL_SUB (any-of (members PERSONAL_INFO_OBJ 
+                       ACCESS_TO_PERSONAL_INFO_STRICT_OBJ)))))))
+       (opt_args FROM_TARGET_EXP TO_TARGET TARGET_OBJ_EXP
+                 ACCESS_TO_PERSONAL_INFO_OBJ))
+
+(vprop (id 310-20-criminals-target-internet-users)
+       (return (event-code 310))
+       (predicate ATTACK_V TRICK)
+       (args (any-of (members HACKER_SUB (all-of (members CRIMINAL_SUB (argument (role <obj> <iobj>) INTERNET_USER)))))))
+
+#ie "hackers aim cyberattacks at five different orgs"
+(vprop MANY_TO_MANY (id 312-21-aim-at)
+       (return (event-code 312))
+       (predicate FLOOD)
+       (args (any-of (members HACKER_SUB CYBERATTACK_SUB CYBERATTACK_OBJ)))
+       (opt_args LOOSE_AT_TARGET LOOSE_AGAINST_TARGET SOURCE_SUB_EXP TARGET_OBJ_EXP))
+
+(vprop MANY_TO_MANY (id 310-22-steal-data) 
+       (return (event-code 310))
+       (predicate STEAL)
+       (args (any-of (members HACKER_SUB CYBERATTACK_SUB IN_CYBERATTACK  
+          EMAIL_SUB ACCESS_TO_PERSONAL_INFO_STRICT_OBJ
+          (argument (role <obj> out_of from) PERSONAL_INFO)
+          (argument (role from <obj> <iobj>) SITE_OF_TARGET_STRICT))))
+       (block_args (argument (role out_of) (allow_fall_through) (nprop (predicate book*)))) #steal pages out of book
+       (opt_args SOURCE_SUB_EXP FROM_TARGET_EXP FROM_TARGET_WITH_FT LOOSE_OF_TARGET_WITH_FT
+                 (argument (role out_of from) TARGET) TARGET_OBJ_EXP))
+
+<!-- RISKY on general datasets due to matching sentences like "local men had hacked away at the mud with shovels" may be useful for computer-only datasets
+(vprop MANY_TO_MANY (id 310-23-hack)
+       (return (event-code 310))
+       (predicate hack*) #RISKY breach*
+       (opt_args SOURCE_SUB_EXP (argument (role into) SITE_OF_TARGET_STRICT) TARGET_OBJ_EXP INTO_TARGET))
+-->
+
+(vprop MANY_TO_MANY (id 310-24-hack-or-breach)
+       (return (event-code 310))
+       (predicate hack* breach*)
+       (args (any-of (members HACKER_SUB CYBERATTACK_SUB IN_CYBERATTACK SITE_OF_TARGET_STRICT_OBJ 
+                (argument (role <obj> <iobj>) (nprop (predicate PASSWORD_LOOSE) 
+                                                  (block_predicate code*) (opt_args LOOSE_OF_TARGET)))
+                (argument (role <obj> <iobj>) (vprop (predicate STEAL) (opt_args TARGET_OBJ_EXP))))))
+       (opt_args SOURCE_SUB_EXP TARGET_OBJ_EXP LOOSE_AGAINST_TARGET AT_TARGET TO_TARGET_EXP))
+
+(vprop MANY_TO_MANY (id 310-25-use-cyberattack)
+       (return (event-code 310))
+       (predicate USE CARRY_OUT wag*)
+       (args (any-of (members CYBERATTACK_OBJ IN_CYBERATTACK)))
+       (opt_args SOURCE_SUB_EXP LOOSE_AGAINST_TARGET
+              (argument (role <obj>) (vprop (predicate STEAL GET) (opt_args FROM_TARGET)))))
+
+(vprop MANY_TO_MANY (id 310-26-hackers-divulge)
+       (return (event-code 310))
+       (predicate divulg* reveal* SAY claim*)
+       (args (any-of (members              
+             (argument (role <obj> <iobj>) (nprop (predicate responsibility) (args FOR_CYBERATTACK))))))
+       (opt_args SOURCE_SUB_EXP TARGET_OBJ_EXP
+            (argument (role <obj> <iobj>)
+              (nprop (predicate responsibility)
+                  (opt_args FOR_CYBERATTACK LOOSE_AGAINST_TARGET)))))
+
+# Threaten with cyberattack
+(vprop MANY_TO_MANY (id 310-27-threaten-with-cyberattack)
+        (return (event-code 310))
+        (predicate JEAPORDIZE)
+        (args (any-of (members IN_CYBERATTACK CYBERATTACK_SUB HACKER_SUB)))
+        (opt_args TARGET_OBJ_EXP SOURCE_SUB_EXP))
+
+# Recieve threat from hackers
+(vprop MANY_TO_MANY (id 310-28-be-threatened)
+        (return (event-code 310))
+        (predicate GET)
+        (args (any-of (members FROM_HACKER OF_CYBERATTACK)) 
+              (argument (role <obj> <iobj>) (mention (headword ultimatum* threat* warning* intimidation*))))
+        (opt_args TARGET_OBJ_EXP FROM_SOURCE_EXP))
+
+(vprop MANY_TO_MANY (id 310-29-cause-cyberattack)
+       (return (event-code 310))
+       (predicate CAUSE) 
+       (args (any-of (members CYBERATTACK_SUB HACKER_SUB CYBERATTACK_OBJ FOR_CYBERATTACK)))
+       (opt_args ATTACK_OBJ))
+
+(vprop MANY_TO_MANY (id 310-30-found-guilty-of-cyberattack)
+       (return (event-code 310))
+       (predicate find* found)
+       (opt_args LOOSE_AGAINST_TARGET (argument (role <obj>) (anyprop (opt_args SOURCE_REF_EXP))))
+       (args (any-of (members
+            (argument (role <obj>) (nprop (predicate CYBERATTACK_N) (args SOURCE_REF_EXP) (adj guilty)))
+            (argument (role <obj> <iobj>) (anyprop MANY_TO_MANY (predicate guilty)
+                            (args (any-of (members HACKER_REF
+                                (argument (role of with in) (allow_fall_through) CYBERATTACK))))))
+            (all-of (members (argument (role <iobj>) (mprop (predicate guilty)))
+                             (argument (role of) (allow_fall_through <obj> <iobj>) CYBERATTACK)))))))
+
+(vprop MANY_TO_MANY (id 310-31-hackers-arrested)
+       (return (event-code 310))
+       (predicate ARREST BLAME OBSERVER_V)
+       (args (any-of (members CYBERATTACK_OBJ IN_CYBERATTACK HACKER_OBJ
+            (argument (role with of for over) (allow_fall_through <obj> <iobj>) (any-of (members (anyprop (predicate hack*)) CYBERATTACK))))))
+       (opt_args SOURCE_OBJ_EXP TO_SOURCE_EXP))
+
+#subject to cyberattack, often misparsed as mprop
+(anyprop (id 310-33-subject-to-cyberattack)
+       (return (event-code 310))
+       (predicate subject*)
+       (args TO_CYBERATTACK)
+       (opt_args SOURCE_SUB_EXP TARGET_REF_EXP TARGET_OBJ_EXP))
+
+(vprop MANY_TO_MANY (id 310-34-see-cyberattack)
+       (return (event-code 310))
+       (predicate OBSERVER_V)
+       (args CYBERATTACK_OBJ)
+       (opt_args LOOSE_AGAINST_TARGET AT_TARGET))
+
+(vprop MANY_TO_MANY (id 310-35-be-a-hacker)
+       (return (event-code 310))
+       (predicate BE)
+       (args (any-of (members HACKER_SUB HACKER_OBJ (argument BEHIND_CYBERATTACK))))
+       (opt_args SOURCE_SUB_EXP SOURCE_OBJ_EXP OF_TARGET LOOSE_AGAINST_TARGET))
+
+(vprop MANY_TO_MANY (id 310-36-be-a-cyberattack)
+       (return (event-code 310))
+       (predicate BE)
+       (args (any-of (members CYBERATTACK_SUB CYBERATTACK_OBJ)))
+       (opt_args LOOSE_AGAINST_TARGET
+            (argument (allow_fall_through <sub> <obj>)
+                      (role by from) SOURCE)))
+
+(vprop MANY_TO_MANY (id 310-37-be-a-victim)
+       (return (event-code 310))
+       (predicate BE)
+       (args (argument (role <obj> <sub>) CYBERATTACK_VICTIM))
+       (opt_args TARGET_SUB_EXP TARGET_OBJ_EXP))
+
+(vprop MANY_TO_MANY (id 310-38-cyberattack-happen)
+       (return (event-code 310))
+       (predicate POS_VERB)
+       (args (any-of (members CYBERATTACK_SUB CYBERATTACK_OBJ))))
+
+(vprop (id 310-39-fall-victim-to)
+       (return (event-code 310))
+       (predicate is was were are been be being becom* became fall* fell come comes came coming)
+       (args (any-of (members (argument (role to for under) CYBERATTACK)
+                      (argument (role <obj> <sub> <ref>) CYBERATTACK_VICTIM)
+                      (all-of (members (argument (role to for under) ATTACK)
+                                   (any-of (members (argument (allow_fall_through) (role by) HACKER_NPROP) (argument (role <sub> <ref>) SITE_OF_TARGET_STRICT))))))))
+       (opt_args TARGET_SUB_EXP LOOSE_AGAINST_TARGET
+                        (argument (allow_fall_through to) (role by) SOURCE)))
+
+(vprop MANY_TO_MANY (id 310-40-suffer-cyberattack)
+       (return (event-code 310))
+       (predicate EXPERIENCE_V install* download*) 
+       (block_predicate rec*)
+       (args (any-of (members CYBERATTACK_OBJ FOR_CYBERATTACK)))
+       (opt_args TARGET_SUB_EXP FROM_SOURCE_EXP LOOSE_AGAINST_TARGET))
+
+(mprop MANY_TO_MANY (id 310-41-under-cyberattack)
+       (return (event-code 310))
+       (predicate under came come coming comes)
+       (args (any-of (members (argument (role under) CYBERATTACK)
+                (all-of (members (argument (role to for under) ATTACK)
+                             (any-of (members (argument (allow_fall_through) (role by) HACKER_NPROP) 
+                                              (argument (role <sub> <ref>) SITE_OF_TARGET))))))))
+       (opt_args FROM_SOURCE_EXP TARGET_REF_EXP LOOSE_AGAINST_TARGET))
+
+(vprop MANY_TO_MANY (id 310-42-harmed-in-cyberattack)
+       (return (event-code 310))
+       (predicate harm* compromis* expos* take taking taken took GET gain* TRICK)
+       (args (any-of (members HACKER_SUB (argument (role <obj> <iobj>) (nprop (predicate control) (args (argument (role of <poss> <unknown> over) (any-of (members PERSONAL_INFO SITE_OF_TARGET))))))
+                  (argument (role in to <sub> by through with) (allow_fall_through <obj> <iobj>) CYBERATTACK)
+                  (all-of (members CRIMINAL_SUB SITE_OF_TARGET_OBJ)))))
+       (opt_args OF_SOURCE SOURCE_SUB_EXP TARGET_OBJ_EXP))
+
+#TODO strike out as untested
+(vprop MANY_TO_MANY (id 310-43-victims-divulge)
+       (return (event-code 310))
+       (predicate divulg* reveal* disclos* admit*)
+       (args (any-of (members CYBERATTACK_OBJ)))
+       (opt_args SOURCE_SUB_EXP TARGET_OBJ_EXP
+            (argument (role <obj> <iobj>)
+              (nprop (predicate responsibility)
+                  (opt_args FOR_CYBERATTACK LOOSE_AGAINST_TARGET)))))
+
+
+)
+)

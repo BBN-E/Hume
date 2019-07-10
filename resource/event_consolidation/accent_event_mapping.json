@@ -1,0 +1,6803 @@
+{
+    "CAMEO": {
+        "Make statement, not specified elsewhere": {
+            "event1": {
+                "type": "IssuingPublishingOrReleasing",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Decline comment": {
+            "event1": {
+                "type": "DeclineToComment",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Make pessimistic comment": {
+            "event1": {
+                "type": "CommunicationConveyingPessimism",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Make optimistic comment": {
+            "event1": {
+                "type": "CommunicationConveyingOptimism",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Consider policy option": {
+            "event1": {
+                "type": "ConsiderationOrExploration",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "PolicyChange",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Acknowledge or claim responsibility": {
+            "event1": {
+                "type": "ClaimingOfResponsibility",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Deny responsibility": {
+            "event1": {
+                "type": "DenialOfResponsibility",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Engage in symbolic act": {
+            "event1": {
+                "type": "SymbolicAct",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Make empathetic comment": {
+            "event1": {
+                "type": "CommunicationConveyingEmpathy",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express accord": {
+            "event1": {
+                "type": "AgreementOrPromise",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Make an appeal or request, not specified elsewhere": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal for material cooperation, not specified elsewhere": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Cooperation",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal for economic cooperation": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "EconomicCooperation",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal for military cooperation": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "MilitaryCooperation",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal for judicial cooperation": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "JudicialCooperation",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal for intelligence": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "SharingOfInformation",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal for diplomatic cooperation (such as policy support)": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "DiplomaticCooperation",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal for aid, not specified elsewhere": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ProvisionOfAid",
+                "args": {
+                    "actor2": [
+                        "provider"
+                    ],
+                    "actor3": [
+                        "recipient"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal for economic aid": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ProvisionOfEconomicAid",
+                "args": {
+                    "actor2": [
+                        "provider"
+                    ],
+                    "actor3": [
+                        "recipient"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal for military aid": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ProvisionOfMilitaryAid",
+                "args": {
+                    "actor2": [
+                        "provider"
+                    ],
+                    "actor3": [
+                        "recipient"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal for humanitarian aid": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ProvisionOfHumanitarianAid",
+                "args": {
+                    "actor2": [
+                        "provider"
+                    ],
+                    "actor3": [
+                        "recipient"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal for military protection or peacekeeping": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ProvisionOfProtectionOrPeacekeepers",
+                "args": {
+                    "actor2": [
+                        "provider"
+                    ],
+                    "actor4": [
+                        "affected"
+                    ],
+                    "actor3": [
+                        "recipient"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal for political reform, not specified elsewhere": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "PoliticalReform",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal for change in leadership": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "TransferOfLeadership",
+                "args": {
+                    "actor3": [
+                        "recipient"
+                    ],
+                    "actor4": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal for policy change": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "PolicyChange",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal for rights": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "RespectForRightsFreedoms",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal for change in institutions, regime": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "TransferOfLeadership",
+                "args": {
+                    "actor3": [
+                        "recipient"
+                    ],
+                    "actor4": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal to yield, not specified elsewhere": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "SurrenderOrYielding",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "refers_to"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal for easing of administrative sanctions": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "AdministrativeSanctions",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal for easing of political dissent": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            },
+            "event3": {
+                "type": "PoliticalDissent",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal for release of persons or property": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ReturnOrRelease",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ],
+                    "artifact1": [
+                        "refers_to"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal for easing of economic sanctions, boycott, or embargo": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            },
+            "event3": {
+                "type": "EconomicSanctions",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal for target to allow international involvement (non-mediation)": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Permission",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "InspectionOrObservation",
+                "args": {
+                    "actor3": [
+                        "active"
+                    ],
+                    "actor4": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal for de-escalation of military engagement": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Deescalation",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "Attack",
+                "args": {
+                    "actor3": [
+                        "active"
+                    ],
+                    "actor4": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal to others to meet or negotiate": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "MeetingOrEncounter",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal to others to settle dispute": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "AgreementOrPromise",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Appeal to engage in or accept mediation": {
+            "event1": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Mediation",
+                "args": {
+                    "actor2": [
+                        "affected"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to cooperate, not specified elsewhere": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Cooperation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to engage in material cooperation, not specified elsewhere": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Cooperation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to cooperate economically": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "EconomicCooperation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to cooperate militarily": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "MilitaryCooperation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to cooperate on judicial matters": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "JudicialCooperation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to cooperate on intelligence": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "SharingOfInformation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to engage in diplomatic cooperation (such as policy support)": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "DiplomaticCooperation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to provide material aid, not specified elsewhere": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ProvisionOfAid",
+                "args": {
+                    "actor1": [
+                        "provider"
+                    ],
+                    "actor2": [
+                        "recipient"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to provide economic aid": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ProvisionOfEconomicAid",
+                "args": {
+                    "actor1": [
+                        "provider"
+                    ],
+                    "actor2": [
+                        "recipient"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to provide military aid": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ProvisionOfMilitaryAid",
+                "args": {
+                    "actor1": [
+                        "provider"
+                    ],
+                    "actor2": [
+                        "recipient"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to provide humanitarian aid": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ProvisionOfHumanitarianAid",
+                "args": {
+                    "actor1": [
+                        "provider"
+                    ],
+                    "actor2": [
+                        "recipient"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to provide military protection or peacekeeping": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ProvisionOfProtectionOrPeacekeepers",
+                "args": {
+                    "actor1": [
+                        "provider"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ],
+                    "actor2": [
+                        "recipient"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to institute political reform, not specified elsewhere": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "PoliticalReform",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to change leadership": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "TransferOfLeadership",
+                "args": {
+                    "actor2": [
+                        "recipient"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to change policy": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "PolicyChange",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to provide rights": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "RespectForRightsFreedoms",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to change institutions, regime": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "TransferOfLeadership",
+                "args": {
+                    "actor2": [
+                        "recipient"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to yield, not specified elsewhere": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "SurrenderOrYielding",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "refers_to"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to ease administrative sanctions": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "AdministrativeSanctions",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to ease popular dissent": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {},
+                "topic": null
+            }
+        },
+        "Express intent to release persons or property": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ReturnOrRelease",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "artifact1": [
+                        "refers_to"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to ease economic sanctions, boycott, or embargo": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "EconomicSanctions",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to allow international involvement (non-mediation)": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Permission",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "InspectionOrObservation",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to de-escalate military engagement": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Deescalation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "Attack",
+                "args": {
+                    "actor3": [
+                        "active"
+                    ],
+                    "actor4": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to meet or negotiate": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "MeetingOrEncounter",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to settle dispute": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "AgreementOrPromise",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to accept mediation": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Mediation",
+                "args": {
+                    "actor1": [
+                        "affected"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Express intent to mediate": {
+            "event1": {
+                "type": "ExpressionOfIntent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Mediation",
+                "args": {
+                    "actor1": [
+                        "affected"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Consult, not specified elsewhere": {
+            "event1": {
+                "type": "Advising",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Discuss by telephone": {
+            "event1": {
+                "type": "CommunicationViaPhone",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Make a visit": {
+            "event1": {
+                "type": "Visit",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Host a visit": {
+            "event1": {
+                "type": "SponsorOrHost",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Meet at a 'third' location": {
+            "event1": {
+                "type": "MeetingOrEncounter",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "active"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Mediate": {
+            "event1": {
+                "type": "Mediation",
+                "args": {
+                    "actor1": [
+                        "affected"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Engage in negotiation": {
+            "event1": {
+                "type": "Negotiation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Engage in diplomatic cooperation, not specified elsewhere": {
+            "event1": {
+                "type": "DiplomaticCooperation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Praise or endorse": {
+            "event1": {
+                "type": "PraisingOrEndorsing",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Defend verbally": {
+            "event1": {
+                "type": "DefenseOrSupport",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Rally support on behalf of": {
+            "event1": {
+                "type": "CollectingOrRallying",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "DefenseOrSupport",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Grant diplomatic recognition": {
+            "event1": {
+                "type": "DiplomaticRecognition",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Apologize": {
+            "event1": {
+                "type": "Apology",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Forgive": {
+            "event1": {
+                "type": "Forgiving",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Sign formal agreement": {
+            "event1": {
+                "type": "FormalAgreement",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Engage in material cooperation, not specified elsewhere": {
+            "event1": {
+                "type": "Cooperation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Cooperate economically": {
+            "event1": {
+                "type": "EconomicCooperation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Cooperate militarily": {
+            "event1": {
+                "type": "MilitaryCooperation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Engage in judicial cooperation": {
+            "event1": {
+                "type": "JudicialCooperation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Share intelligence or information": {
+            "event1": {
+                "type": "SharingOfInformation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Provide aid, not specified elsewhere": {
+            "event1": {
+                "type": "ProvisionOfAid",
+                "args": {
+                    "actor1": [
+                        "provider"
+                    ],
+                    "actor2": [
+                        "recipient"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Provide economic aid": {
+            "event1": {
+                "type": "ProvisionOfEconomicAid",
+                "args": {
+                    "actor1": [
+                        "provider"
+                    ],
+                    "actor2": [
+                        "recipient"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Provide military aid": {
+            "event1": {
+                "type": "ProvisionOfMilitaryAid",
+                "args": {
+                    "actor1": [
+                        "provider"
+                    ],
+                    "actor2": [
+                        "recipient"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Provide humanitarian aid": {
+            "event1": {
+                "type": "ProvisionOfHumanitarianAid",
+                "args": {
+                    "actor1": [
+                        "provider"
+                    ],
+                    "actor2": [
+                        "recipient"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Provide military protection or peacekeeping": {
+            "event1": {
+                "type": "ProvisionOfProtectionOrPeacekeepers",
+                "args": {
+                    "actor1": [
+                        "provider"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ],
+                    "actor2": [
+                        "recipient"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Grant asylum": {
+            "event1": {
+                "type": "GrantingOfAsylum",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Yield, not specified elsewhere": {
+            "event1": {
+                "type": "SurrenderOrYielding",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "refers_to"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Ease administrative sanctions, not specified elsewhere": {
+            "event1": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "AdministrativeSanctions",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Ease restrictions on political freedoms": {
+            "event1": {
+                "type": "Increase",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "RespectForRightsFreedoms",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Ease ban on political parties or politicians": {
+            "event1": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "BanOrProhibition",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Ease curfew": {
+            "event1": {
+                "type": "Decrease",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Curfew",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Ease state of emergency or martial law": {
+            "event1": {
+                "type": "Decrease",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "StateOfEmergencyOrMartialLaw",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Ease political dissent": {
+            "event1": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "PoliticalDissent",
+                "args": {},
+                "topic": null
+            }
+        },
+        "Accede to requests or demands for political reform, not specified elsewhere": {
+            "event1": {
+                "type": "AgreementOrPromise",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor1": [
+                        "affected"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "PoliticalReform",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Accede to demands for change in leadership": {
+            "event1": {
+                "type": "AgreementOrPromise",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Demand",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor1": [
+                        "affected"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "TransferOfLeadership",
+                "args": {
+                    "actor3": [
+                        "recipient"
+                    ],
+                    "actor4": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Accede to demands for change in policy": {
+            "event1": {
+                "type": "AgreementOrPromise",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Demand",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor1": [
+                        "affected"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "PolicyChange",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Accede to demands for rights": {
+            "event1": {
+                "type": "AgreementOrPromise",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Demand",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor1": [
+                        "affected"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "RespectForRightsFreedoms",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor4": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Accede to demands for change in institutions, regime": {
+            "event1": {
+                "type": "AgreementOrPromise",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Demand",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor1": [
+                        "affected"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "TransferOfLeadership",
+                "args": {
+                    "actor3": [
+                        "recipient"
+                    ],
+                    "actor4": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Return, release, not specified elsewhere": {
+            "event1": {
+                "type": "ReturnOrRelease",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "artifact1": [
+                        "refers_to"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Return, release person(s)": {
+            "event1": {
+                "type": "ReturnOrRelease",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Return, release property": {
+            "event1": {
+                "type": "ReturnOrRelease",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Ease economic sanctions, boycott, embargo": {
+            "event1": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "EconomicSanctions",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Allow international involvement, not specified elsewhere": {
+            "event1": {
+                "type": "Permission",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "InspectionOrObservation",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Receive deployment of peacekeepers": {
+            "event1": {
+                "type": "ProvisionOfProtectionOrPeacekeepers",
+                "args": {
+                    "actor1": [
+                        "recipient"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "actor3": [
+                        "provider"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Receive inspectors": {
+            "event1": {
+                "type": "ProvisionOfInspectorsOrObservers",
+                "args": {
+                    "actor1": [
+                        "recipient"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "actor3": [
+                        "provider"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Allow humanitarian access": {
+            "event1": {
+                "type": "Permission",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ProvisionOfHumanitarianAid",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "De-escalate military engagement": {
+            "event1": {
+                "type": "Deescalation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Attack",
+                "args": {
+                    "actor3": [
+                        "active"
+                    ],
+                    "actor4": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Declare truce, ceasefire": {
+            "event1": {
+                "type": "CeasefireOrTruce",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Ease military blockade": {
+            "event1": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "BlockadeOrRestrictionOfMovement",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demobilize armed forces": {
+            "event1": {
+                "type": "Demobilization",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Retreat or surrender militarily": {
+            "event1": {
+                "type": "Retreat",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "loc1": [
+                        "origin"
+                    ]
+                },
+                "topic": null
+            },
+            "event2": {
+                "type": "SurrenderOrYielding",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "refers_to"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Investigate, not specified elsewhere": {
+            "event1": {
+                "type": "Investigation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Investigate crime, corruption": {
+            "event1": {
+                "type": "Investigation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "CriminalActOrCorruption",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Investigate human rights abuses": {
+            "event1": {
+                "type": "Investigation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "HumanRightsAbuse",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Investigate military action": {
+            "event1": {
+                "type": "Investigation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Attack",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Investigate war crimes": {
+            "event1": {
+                "type": "Investigation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "WarCrime",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand, not specified elsewhere": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand material cooperation, not specified elsewhere": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Cooperation",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand economic cooperation": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "EconomicCooperation",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand military cooperation": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "MilitaryCooperation",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand judicial cooperation": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "JudicialCooperation",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand intelligence cooperation": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "SharingOfInformation",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand diplomatic cooperation (such as policy support)": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "DiplomaticCooperation",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand material aid, not specified elsewhere": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ProvisionOfAid",
+                "args": {
+                    "actor2": [
+                        "provider"
+                    ],
+                    "actor3": [
+                        "recipient"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand economic aid": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ProvisionOfEconomicAid",
+                "args": {
+                    "actor2": [
+                        "provider"
+                    ],
+                    "actor3": [
+                        "recipient"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand military aid": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ProvisionOfMilitaryAid",
+                "args": {
+                    "actor2": [
+                        "provider"
+                    ],
+                    "actor3": [
+                        "recipient"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand humanitarian aid": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ProvisionOfHumanitarianAid",
+                "args": {
+                    "actor2": [
+                        "provider"
+                    ],
+                    "actor3": [
+                        "recipient"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand military protection or peacekeeping": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ProvisionOfProtectionOrPeacekeepers",
+                "args": {
+                    "actor2": [
+                        "provider"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ],
+                    "actor4": [
+                        "recipient"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand political reform, not specified elsewhere": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "PoliticalReform",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand change in leadership": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "TransferOfLeadership",
+                "args": {
+                    "actor3": [
+                        "recipient"
+                    ],
+                    "actor4": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand policy change": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "PolicyChange",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand rights": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "RespectForRightsFreedoms",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand change in institutions, regime": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "TransferOfLeadership",
+                "args": {
+                    "actor3": [
+                        "recipient"
+                    ],
+                    "actor4": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand that target yields, not specified elsewhere": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "SurrenderOrYielding",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "refers_to"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand easing of administrative sanctions": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "AdministrativeSanctions",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand easing of political dissent": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "PoliticalDissent",
+                "args": {},
+                "topic": null
+            }
+        },
+        "Demand release of persons or property": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ReturnOrRelease",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ],
+                    "artifact1": [
+                        "refers_to"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand easing of economic sanctions, boycott, or embargo": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor1": [
+                        "affected"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "EconomicSanctions",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand that target allows international involvement (non-mediation)": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Permission",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "InspectionOrObservation",
+                "args": {
+                    "actor3": [
+                        "active"
+                    ],
+                    "actor4": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand de-escalation of military engagement": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Deescalation",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "Attack",
+                "args": {
+                    "actor3": [
+                        "active"
+                    ],
+                    "actor4": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand meeting, negotiation": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "MeetingOrEncounter",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand settling of dispute": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "AgreementOrPromise",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demand mediation": {
+            "event1": {
+                "type": "Demand",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Mediation",
+                "args": {
+                    "actor2": [
+                        "affected"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Disapprove, not specified elsewhere": {
+            "event1": {
+                "type": "DisapprovalOrDenunciation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Criticize or denounce": {
+            "event1": {
+                "type": "DisapprovalOrDenunciation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Accuse, not specified elsewhere": {
+            "event1": {
+                "type": "Accusation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Accuse of crime, corruption": {
+            "event1": {
+                "type": "Accusation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "CriminalActOrCorruption",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Accuse of human rights abuses": {
+            "event1": {
+                "type": "Accusation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "HumanRightsAbuse",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Accuse of aggression": {
+            "event1": {
+                "type": "Accusation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Aggression",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Accuse of war crimes": {
+            "event1": {
+                "type": "Accusation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "WarCrime",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Accuse of espionage, treason": {
+            "event1": {
+                "type": "Accusation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "EspionageOrTreason",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Rally opposition against": {
+            "event1": {
+                "type": "CollectingOrRallying",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "DisapprovalOrDenunciation",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Complain officially": {
+            "event1": {
+                "type": "Complaint",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Bring lawsuit against": {
+            "event1": {
+                "type": "FilingOfLawsuit",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "find guilty or liable (legally)": {
+            "event1": {
+                "type": "FindingOfGuilty",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Reject, not specified elsewhere": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Reject material cooperation": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Cooperation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Reject economic cooperation": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "EconomicCooperation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Reject military cooperation": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "MilitaryCooperation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Reject judicial cooperation": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "JudicialCooperation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Reject intelligence cooperation": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "SharingOfInformation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Reject request or demand for material aid, not specified elsewhere": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor1": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            },
+            "event3": {
+                "type": "ProvisionOfAid",
+                "args": {
+                    "actor1": [
+                        "provider"
+                    ],
+                    "actor3": [
+                        "recipient"
+                    ],
+                    "loc1": [
+                        "refers_to"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Reject request for economic aid": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor1": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            },
+            "event3": {
+                "type": "ProvisionOfEconomicAid",
+                "args": {
+                    "actor1": [
+                        "provider"
+                    ],
+                    "actor3": [
+                        "recipient"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Reject request for military aid": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor1": [
+                        "affected"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "ProvisionOfMilitaryAid",
+                "args": {
+                    "actor1": [
+                        "provider"
+                    ],
+                    "actor3": [
+                        "recipient"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Reject request for humanitarian aid": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor1": [
+                        "affected"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "ProvisionOfHumanitarianAid",
+                "args": {
+                    "actor1": [
+                        "provider"
+                    ],
+                    "actor3": [
+                        "recipient"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Reject request for military protection or peacekeeping": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor1": [
+                        "affected"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "ProvisionOfProtectionOrPeacekeepers",
+                "args": {
+                    "actor1": [
+                        "provider"
+                    ],
+                    "actor4": [
+                        "affected"
+                    ],
+                    "actor3": [
+                        "recipient"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Reject request or demand for political reform, not specified elsewhere": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor1": [
+                        "affected"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "PoliticalReform",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Reject request for change in leadership": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor1": [
+                        "affected"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "TransferOfLeadership",
+                "args": {
+                    "actor3": [
+                        "recipient"
+                    ],
+                    "actor4": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Reject request for policy change": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor1": [
+                        "affected"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "PolicyChange",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Reject request for rights": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor1": [
+                        "affected"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "RespectForRightsFreedoms",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Reject request for change in institutions, regime": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "RequestOrAppeal",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor1": [
+                        "affected"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "TransferOfLeadership",
+                "args": {
+                    "actor3": [
+                        "recipient"
+                    ],
+                    "actor4": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Refuse to yield, not specified elsewhere": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "SurrenderOrYielding",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "refers_to"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Refuse to ease administrative sanctions": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "AdministrativeSanctions",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Refuse to ease popular dissent": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "PoliticalDissent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Refuse to release persons or property": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ReturnOrRelease",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "artifact1": [
+                        "refers_to"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Refuse to ease economic sanctions, boycott, or embargo": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "EconomicSanctions",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Refuse to allow international involvement (non mediation)": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Permission",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "InspectionOrObservation",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Refuse to de-escalate military engagement": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Deescalation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "Attack",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Reject proposal to meet, discuss, or negotiate": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "MeetingOrEncounter",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Reject mediation": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Mediation",
+                "args": {
+                    "actor1": [
+                        "affected"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "actor3": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Reject plan, agreement to settle dispute": {
+            "event1": {
+                "type": "RefusalOrRejection",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "AgreementOrPromise",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Defy norms, law": {
+            "event1": {
+                "type": "DefyingLawsNormsDirectives",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Veto": {
+            "event1": {
+                "type": "Veto",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "DecisionOrRecommendation",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Threaten, not specified elsewhere": {
+            "event1": {
+                "type": "Threatening",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Threaten non-force, not specified elsewhere": {
+            "event1": {
+                "type": "Threatening",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Threaten to reduce or stop aid": {
+            "event1": {
+                "type": "Threatening",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "ProvisionOfAid",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Threaten with sanctions, boycott, embargo": {
+            "event1": {
+                "type": "Threatening",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "BoycottOrEmbargo",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Threaten to reduce or break relations": {
+            "event1": {
+                "type": "Threatening",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "Cooperation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Threaten with administrative sanctions, not specified elsewhere": {
+            "event1": {
+                "type": "Threatening",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "AdministrativeSanctions",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Threaten with restrictions on political freedoms": {
+            "event1": {
+                "type": "Threatening",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "RespectForRightsFreedoms",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Threaten to ban political parties or politicians": {
+            "event1": {
+                "type": "Threatening",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "BanOrProhibition",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Threaten to impose curfew": {
+            "event1": {
+                "type": "Threatening",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Curfew",
+                "args": {
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Threaten to impose state of emergency or martial law": {
+            "event1": {
+                "type": "Threatening",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "StateOfEmergencyOrMartialLaw",
+                "args": {
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Threaten with political dissent, protest": {
+            "event1": {
+                "type": "Threatening",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "PoliticalDissent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Threaten to halt negotiations": {
+            "event1": {
+                "type": "Threatening",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "Negotiation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Threaten to halt mediation": {
+            "event1": {
+                "type": "Threatening",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "Mediation",
+                "args": {
+                    "actor1": [
+                        "affected"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Threaten to halt international involvement (non-mediation)": {
+            "event1": {
+                "type": "Threatening",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "InspectionOrObservation",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Threaten with repression": {
+            "event1": {
+                "type": "Threatening",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Repression",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Threaten with military force, not specified elsewhere": {
+            "event1": {
+                "type": "Threatening",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ExhibitionOfPower",
+                "args": {
+                    "actor3": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Threaten blockade": {
+            "event1": {
+                "type": "Threatening",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "BlockadeOrRestrictionOfMovement",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Threaten occupation": {
+            "event1": {
+                "type": "Threatening",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "OccupationOfTerritory",
+                "args": {
+                    "actor1": [
+                        "activw"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Threaten conventional attack": {
+            "event1": {
+                "type": "Threatening",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Attack",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Threaten unconventional violence": {
+            "event1": {
+                "type": "Threatening",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Violence",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": "event3"
+            },
+            "event3": {
+                "type": "StrongOrIntense",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Give ultimatum": {
+            "event1": {
+                "type": "Ultimatum",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Engage in political dissent, not specified elsewhere": {
+            "event1": {
+                "type": "PoliticalDissent",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demonstrate or rally, not specified elsewhere": {
+            "event1": {
+                "type": "DemonstrationOrProtest",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demonstrate for leadership change": {
+            "event1": {
+                "type": "DemonstrationOrProtest",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "TransferOfLeadership",
+                "args": {
+                    "actor2": [
+                        "recipient"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demonstrate for policy change": {
+            "event1": {
+                "type": "DemonstrationOrProtest",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "PolicyChange",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demonstrate for rights": {
+            "event1": {
+                "type": "DemonstrationOrProtest",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "RespectForRightsFreedoms",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Demonstrate for change in institutions, regime": {
+            "event1": {
+                "type": "DemonstrationOrProtest",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "TransferOfLeadership",
+                "args": {
+                    "actor2": [
+                        "recipient"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Conduct hunger strike, not specified elsewhere": {
+            "event1": {
+                "type": "HungerStrike",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Conduct hunger strike for leadership change": {
+            "event1": {
+                "type": "HungerStrike",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "TransferOfLeadership",
+                "args": {
+                    "actor2": [
+                        "recipient"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Conduct hunger strike for policy change": {
+            "event1": {
+                "type": "HungerStrike",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "PolicyChange",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Conduct hunger strike for rights": {
+            "event1": {
+                "type": "HungerStrike",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "RespectForRightsFreedoms",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Conduct hunger strike for change in institutions, regime": {
+            "event1": {
+                "type": "HungerStrike",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "TransferOfLeadership",
+                "args": {
+                    "actor2": [
+                        "recipient"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Conduct strike or boycott, not specified elsewhere": {
+            "event1": {
+                "type": "Strike",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Conduct strike or boycott for leadership change": {
+            "event1": {
+                "type": "Strike",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "TransferOfLeadership",
+                "args": {
+                    "actor2": [
+                        "recipient"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Conduct strike or boycott for policy change": {
+            "event1": {
+                "type": "Strike",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "PolicyChange",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Conduct strike or boycott for rights": {
+            "event1": {
+                "type": "Strike",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "RespectForRightsFreedoms",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Conduct strike or boycott for change in institutions, regime": {
+            "event1": {
+                "type": "Strike",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "TransferOfLeadership",
+                "args": {
+                    "actor2": [
+                        "recipient"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Obstruct passage, block, not specified elsewhere": {
+            "event1": {
+                "type": "BlockadeOrRestrictionOfMovement",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Obstruct passage to demand leadership change": {
+            "event1": {
+                "type": "BlockadeOrRestrictionOfMovement",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "TransferOfLeadership",
+                "args": {
+                    "actor3": [
+                        "recipient"
+                    ],
+                    "actor4": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Obstruct passage to demand policy change": {
+            "event1": {
+                "type": "BlockadeOrRestrictionOfMovement",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "PolicyChange",
+                "args": {
+                    "actor3": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Obstruct passage to demand rights": {
+            "event1": {
+                "type": "BlockadeOrRestrictionOfMovement",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "RespectForRightsFreedoms",
+                "args": {
+                    "actor3": [
+                        "active"
+                    ],
+                    "actor4": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Obstruct passage to demand change in institutions, regime": {
+            "event1": {
+                "type": "BlockadeOrRestrictionOfMovement",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "TransferOfLeadership",
+                "args": {
+                    "actor3": [
+                        "recipient"
+                    ],
+                    "actor4": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Protest violently, riot, not specified elsewhere": {
+            "event1": {
+                "type": "DemonstrationOrProtest",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            },
+            "event2": {
+                "type": "StrongOrIntense",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Engage in violent protest for leadership change": {
+            "event1": {
+                "type": "DemonstrationOrProtest",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "TransferOfLeadership",
+                "args": {
+                    "actor2": [
+                        "recipient"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            },
+            "event3": {
+                "type": "StrongOrIntense",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            }
+        },
+        "Engage in violent protest for policy change": {
+            "event1": {
+                "type": "DemonstrationOrProtest",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "PolicyChange",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            },
+            "event3": {
+                "type": "StrongOrIntense",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            }
+        },
+        "Engage in violent protest for rights": {
+            "event1": {
+                "type": "DemonstrationOrProtest",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "RespectForRightsFreedoms",
+                "args": {
+                    "actor2": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            },
+            "event3": {
+                "type": "StrongOrIntense",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            }
+        },
+        "Engage in violent protest for change in institutions, regime": {
+            "event1": {
+                "type": "DemonstrationOrProtest",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "TransferOfLeadership",
+                "args": {
+                    "actor2": [
+                        "recipient"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            },
+            "event3": {
+                "type": "StrongOrIntense",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            }
+        },
+        "Demonstrate military or police power, not specified elsewhere": {
+            "event1": {
+                "type": "ExhibitionOfPower",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Increase police alert status": {
+	    "event1": {
+                "type": "Increase",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "AlertStatus",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+            
+        },
+        "Increase military alert status": {
+	    "event1": {
+                "type": "Increase",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor3": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "AlertStatus",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+            
+        },
+        "Mobilize or increase police power": {
+            "event1": {
+                "type": "Mobilization",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Mobilize or increase armed forces": {
+            "event1": {
+                "type": "Mobilization",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Mobilize or increase cyber-forces": {
+            "event1": {
+                "type": "Mobilization",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Reduce relations, not specified elsewhere": {
+            "event1": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Cooperation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Reduce or break diplomatic relations": {
+            "event1": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "DiplomaticCooperation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Reduce or stop material aid, not specified elsewhere": {
+            "event1": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ProvisionOfAid",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Reduce or stop economic assistance": {
+            "event1": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ProvisionOfEconomicAid",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Reduce or stop military assistance": {
+            "event1": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ProvisionOfMilitaryAid",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Reduce or stop humanitarian assistance": {
+            "event1": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "ProvisionOfHumanitarianAid",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "destination"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Impose embargo, boycott, or sanctions": {
+            "event1": {
+                "type": "BoycottOrEmbargo",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Halt negotiations": {
+            "event1": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Negotiation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Halt mediation": {
+            "event1": {
+                "type": "ReductionRestrictionOrRemoval",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "Mediation",
+                "args": {
+                    "actor1": [
+                        "affected"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Expel or withdraw, not specified elsewhere": {
+            "event1": {
+                "type": "Expulsion",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Expel or withdraw peacekeepers": {
+            "event1": {
+                "type": "Expulsion",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Expel or withdraw inspectors, observers": {
+            "event1": {
+                "type": "Expulsion",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Expel or withdraw aid agencies": {
+            "event1": {
+                "type": "Expulsion",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Coerce, not specified elsewhere": {
+            "event1": {
+                "type": "IntimidationAndCoercion",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Seize or damage property, not specified elsewhere": {
+            "event1": {
+                "type": "Confiscation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "artifact1": [
+                        "refers_to"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Confiscate property": {
+            "event1": {
+                "type": "Confiscation",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "artifact1": [
+                        "refers_to"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Destroy property": {
+            "event1": {
+                "type": "DamageOrDestruction",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "artifact1": [
+                        "refers_to"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Impose administrative sanctions, not specified elsewhere": {
+	     "event1": {
+                "type": "InitiationOrStart",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "AdministrativeSanctions",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+
+        },
+        "Impose restrictions on political freedoms": {
+            "event1": {
+                "type": "Decrease",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "RespectForRightsFreedoms",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Ban political parties or politicians": {
+            "event1": {
+                "type": "BanOrProhibition",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Impose curfew": {
+            "event1": {
+                "type": "InitiationOrStart",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": "event2"
+            },
+	    "event2": {
+                "type": "Curfew",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Impose state of emergency or martial law": {
+            "event1": {
+                "type": "InitiationOrStart",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "StateOfEmergencyOrMartialLaw",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Arrest, detain, or charge with legal action": {
+            "event1": {
+                "type": "ArrestOrDetention",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Expel or deport individuals": {
+            "event1": {
+                "type": "Expulsion",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Use tactics of violent repression": {
+            "event1": {
+                "type": "Repression",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            },
+            "event2": {
+                "type": "Violence",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Attack cybernetically": {
+            "event1": {
+                "type": "CyberAttack",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Abduct, hijack, or take hostage": {
+            "event1": {
+                "type": "AbductionHostageTakingOrHijacking",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Physically assault, not specified elsewhere": {
+            "event1": {
+                "type": "PhysicalAssault",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Sexually assault": {
+            "event1": {
+                "type": "SexualAssault",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Torture": {
+            "event1": {
+                "type": "Torture",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Kill by physical assault": {
+            "event1": {
+                "type": "MurderOrHomicide",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            },
+            "event2": {
+                "type": "PhysicalAssault",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Conduct suicide, car, or other non-military bombing, not specified elsewhere": {
+            "event1": {
+                "type": "Bombing",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Carry out suicide bombing": {
+            "event1": {
+                "type": "SuicideBombing",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Carry out car bombing": {
+            "event1": {
+                "type": "Bombing",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            },
+            "event2": {
+                "type": "Bombing",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Carry out roadside bombing": {
+            "event1": {
+                "type": "RoadsideBombing",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Carry out location bombing": {
+            "event1": {
+                "type": "Bombing",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Use as human shield": {
+            "event1": {
+                "type": "PlacementAsHumanShield",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Attempt to assassinate": {
+            "event1": {
+                "type": "Attempt",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            },
+            "event2": {
+                "type": "Assassination",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Assassinate": {
+            "event1": {
+                "type": "Assassination",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Use conventional military force, not specified elsewhere": {
+            "event1": {
+                "type": "ExhibitionOfPower",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Impose blockade, restrict movement": {
+            "event1": {
+                "type": "InitiationOrStart",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": "event2"
+            },
+            "event2": {
+                "type": "BlockadeOrRestrictionOfMovement",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Occupy territory": {
+            "event1": {
+                "type": "OccupationOfTerritory",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "fight with small arms and light weapons": {
+            "event1": {
+                "type": "Attack",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "SmallArmsAndLightWeapons": [
+                        "instrument"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "fight with artillery and tanks": {
+            "event1": {
+                "type": "Attack",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Employ aerial weapons": {
+            "event1": {
+                "type": "Bombing",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Employ precision-guided aerial munitions": {
+            "event1": {
+                "type": "Bombing",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Employ remotely piloted aerial munitions": {
+            "event1": {
+                "type": "Bombing",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Violate ceasefire": {
+            "event1": {
+                "type": "ViolationOfCeasefire",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "CeasefireOrTruce": [
+                        "preceded_by"
+                    ]
+                },
+                "topic": null
+            },
+            "event2": {
+                "type": "CeasefireOrTruce",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "active"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Use unconventional violence, not specified elsewhere": {
+            "event1": {
+                "type": "Attack",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            },
+            "event2": {
+                "type": "StrongOrIntense",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            },
+            "event3": {
+                "type": "Violence",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Engage in mass expulsion": {
+            "event1": {
+                "type": "Expulsion",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Engage in mass killings": {
+            "event1": {
+                "type": "MassKilling",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Engage in ethnic cleansing": {
+            "event1": {
+                "type": "EthnicCleansing",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Use weapons of mass destruction, not specified elsewhere": {
+            "event1": {
+                "type": "Attack",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "WeaponOfMassDestruction": [
+                        "event"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Use chemical, biological, or radiological weapons": {
+            "event1": {
+                "type": "Attack",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ]
+                },
+                "topic": null
+            }
+        },
+        "Detonate nuclear weapons": {
+            "event1": {
+                "type": "Bombing",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+	"Cyberattack, not specified below": {
+            "event1": {
+                "type": "CyberAttack",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+	"Cyberattack via DDos": {
+            "event1": {
+                "type": "CyberAttack",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        },
+	"Cyberattack via phishing": {
+            "event1": {
+                "type": "CyberAttack",
+                "args": {
+                    "actor1": [
+                        "active"
+                    ],
+                    "actor2": [
+                        "affected"
+                    ],
+                    "loc1": [
+                        "located_at"
+                    ]
+                },
+                "topic": null
+            }
+        }
+    }
+}

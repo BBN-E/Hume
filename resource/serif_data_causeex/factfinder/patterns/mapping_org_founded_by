@@ -1,0 +1,32 @@
+(org_founded_by_serif
+
+(entitylabels
+(AGENT1)
+)
+
+(toplevel
+
+(relation	(id mapping_1)
+		(score_group 1) (score 0.9)
+		(fulltype ORG-AFF.Founder)
+		(args 
+			 (argument
+				(mention
+					(return (ff_role AGENT1) (ff_fact_type org_founded_by_serif))
+					(entitylabel AGENT1)
+				)
+				(role ARG2)
+			 )
+			 (argument 
+				(mention
+				          (acetype PER ORG GPE)
+				          (min-entitylevel NAME)
+				          (return (ff_role org_founded_by_serif))
+				)
+				(role ARG1)
+			)
+		)
+)
+
+)
+)

@@ -1,0 +1,30 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix causal: <http://ontology.causeex.com/ontology/odps/CauseEffect#>
+prefix event: <http://ontology.causeex.com/ontology/odps/Event#>
+PREFIX prov: <http://ontology.causeex.com/ontology/odps/DataProvenance#>
+PREFIX general: <http://ontology.causeex.com/ontology/odps/GeneralConcepts#>
+PREFIX bbnta1: <http://graph.causeex.com/bbn#>
+PREFIX actor: <http://ontology.causeex.com/ontology/odps/Actor#>
+PREFIX cco: <http://ontology.causeex.com/cameo/CountryCodeOntology/>
+SELECT distinct ?act1 ?rel ?type2 ?act2 ?act3
+WHERE {
+
+  {
+    bind(actor:has_affiliation as ?rel)
+    ?act2 ?rel ?aff .
+    ?aff actor:related_affiliation ?act1 .
+  } UNION {
+    bind(general:has_component as ?rel)
+    ?act1 ?rel ?act2 .
+  }
+  filter(strstarts(str(?act1), 'http://ontology.causeex.com/cameo/CountryCodeOntology/CAMEO'))
+  ?act2 a ?type2 .
+  ?act2 general:located_at ?act3 .
+
+  filter(?act1 != ?act3 )
+  MINUS {
+    ?act1 general:has_component ?act3 .
+  }
+}
+Limit 100

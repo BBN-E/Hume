@@ -1,0 +1,13 @@
+(org_shareholders
+
+
+ (wordsets)
+
+ (entitylabels (AGENT1))
+
+ (toplevel
+		<!-- 32   org_shareholders ==> set:[<member> = 1][<member> = noun:shareholders[<poss> = 0]] -->
+		(sprop (id cs2015_org_shareholders_20001) (score 0.9) (score_group 1) (args (argument (role <member>) (mention (return (ff_role org_shareholders)) (block AGENT1) (acetype PER ORG GPE))) (argument (role <member>) (nprop (predicate shareholders) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_shareholders_20001)) (entitylabel AGENT1) (acetype ORG))))))))
+
+	)
+)

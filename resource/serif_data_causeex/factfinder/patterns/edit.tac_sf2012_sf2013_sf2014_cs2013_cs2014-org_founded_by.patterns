@@ -1,0 +1,79 @@
+(org_founded_by
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 21 verb:founded[<obj> = noun:company[<ref> = 0]][<sub> = 1] -->
+		(vprop (id org_founded_by_tac_2) (score 0.9) (score_group 1) (predicate founded) (args (argument (role <obj>) (nprop (predicate company) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_tac_400000)) (entitylabel AGENT1) (acetype ORG)))))) (argument (role <sub>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER ORG GPE)))))
+
+		<!-- 4 verb:founded[<obj> = noun:company[<ref> = 0]][<sub> = 1] -->
+		(vprop (id org_founded_by_tac_3) (score 0.9) (score_group 1) (predicate founded) (args (argument (role <obj>) (nprop (predicate company) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_tac_400001)) (entitylabel AGENT1) (acetype ORG)))))) (argument (role <sub>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER ORG GPE)))))
+
+		<!-- 4 verb:co-founded[<obj> = 0][with = 1] -->
+		(vprop (id org_founded_by_tac_19) (score 0.9) (score_group 1) (predicate co-founded) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_tac_400002)) (entitylabel AGENT1) (acetype ORG))) (argument (role with) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER ORG GPE)))))
+
+		<!-- 4 noun:founder[<ref> = 1][of = name:[<ref> = 0]] -->
+		(nprop (id org_founded_by_tac_5) (score 0.9) (score_group 1) (predicate founder) (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER ORG GPE))) (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_tac_400003)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 4 verb:founded[<obj> = 0][<sub> = pronoun:who[<ref> = 1]] -->
+		(vprop (id org_founded_by_tac_16) (score 0.9) (score_group 1) (predicate founded) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_tac_400004)) (entitylabel AGENT1) (acetype ORG))) (argument (role <sub>) (anyprop (predicate who) (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER ORG GPE))))))))
+
+		<!-- 2 {0} and president of {1}&[slot=0, word=founder, lang=english]&[slot=1, word=designs, lang=english] -->
+		(regex (id org_founded_by_tac_64) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_tac_400005)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "founder")))))) (text DONT_ADD_SPACES (string "and")) (text DONT_ADD_SPACES (string "president")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "designs"))))))))
+
+		<!-- 2 {0} this year with {1}&, who founded {0}&{1} and -->
+		(regex (id org_founded_by_tac_54) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "who")) (text DONT_ADD_SPACES (string "founded")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_tac_400006)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "this")) (text DONT_ADD_SPACES (string "year")) (text DONT_ADD_SPACES (string "with")) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string "and"))))
+
+		<!-- 2 {0} founder , {1} -->
+		(regex (id org_founded_by_tac_14) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_tac_400007)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "founder")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER ORG GPE))))
+
+		<!-- 2 verb:founded[<obj> = 0][<sub> = 1] -->
+		(vprop (id org_founded_by_tac_5) (score 0.9) (score_group 1) (predicate founded) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_tac_400008)) (entitylabel AGENT1) (acetype ORG))) (argument (role <sub>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER ORG GPE)))))
+
+		<!-- 2 verb:used[<obj> = 1][when = verb:founded[<obj> = 0]] -->
+		(vprop (id org_founded_by_tac_23) (score 0.9) (score_group 1) (predicate used) (args (argument (role <obj>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER ORG GPE))) (argument (role when) (vprop (predicate founded) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_tac_400009)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 2 {0} of {1}&founder and {0}&{1} has died -->
+		(regex (id org_founded_by_tac_60) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "founder")) (text DONT_ADD_SPACES (string "and")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_tac_400010)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string "has")) (text DONT_ADD_SPACES (string "died"))))
+
+		<!-- 2 {0} this year with {1}&who founded {0} -->
+		(regex (id org_founded_by_tac_38) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "who")) (text DONT_ADD_SPACES (string "founded")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_tac_400011)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "this")) (text DONT_ADD_SPACES (string "year")) (text DONT_ADD_SPACES (string "with")) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER ORG GPE))))
+
+		<!-- 2 {0} this year with {1}&who founded {0}&{1} and -->
+		(regex (id org_founded_by_tac_34) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "who")) (text DONT_ADD_SPACES (string "founded")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_tac_400012)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "this")) (text DONT_ADD_SPACES (string "year")) (text DONT_ADD_SPACES (string "with")) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string "and"))))
+
+		<!-- 2 verb:founded[<obj> = noun:company[<ref> = 0]][<sub> = name:[<ref> = 1]] -->
+		(vprop (id org_founded_by_tac_11) (score 0.9) (score_group 1) (predicate founded) (args (argument (role <obj>) (nprop (predicate company) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_tac_400013)) (entitylabel AGENT1) (acetype ORG)))))) (argument (role <sub>) (anyprop (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER ORG GPE))))))))
+
+		<!-- 1 verb:started[<obj> = 0][<sub> = pronoun:he[<ref> = 1]] -->
+		(vprop (id org_founded_by_tac_52) (score 0.9) (score_group 1) (predicate started) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_tac_400014)) (entitylabel AGENT1) (acetype ORG))) (argument (role <sub>) (anyprop (predicate he) (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER ORG GPE))))))))
+
+		<!-- 1 verb:co-founded[<obj> = 0][with = 1] -->
+		(vprop (id org_founded_by_tac_116) (score 0.9) (score_group 1) (predicate co-founded) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_tac_400015)) (entitylabel AGENT1) (acetype ORG))) (argument (role with) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER ORG GPE)))))
+
+		<!-- 1 verb:co-founded[<obj> = 0][with = name:[<ref> = 1]] -->
+		(vprop (id org_founded_by_tac_106) (score 0.9) (score_group 1) (predicate co-founded) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_tac_400016)) (entitylabel AGENT1) (acetype ORG))) (argument (role with) (anyprop (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER ORG GPE))))))))
+
+		<!-- 1 verb:established[<obj> = 1][<sub> = pronoun:he[<ref> = 0]] -->
+		(vprop (id org_founded_by_tac_44) (score 0.9) (score_group 1) (predicate established) (args (argument (role <obj>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER ORG GPE))) (argument (role <sub>) (anyprop (predicate he) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_tac_400017)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 1 {1} , founder of {0} -->
+		(regex (id org_founded_by_tac_51) (score 0.9) (score_group 1) (re (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "founder")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_tac_400018)) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 1 comp:and[<member> = verb:established[<obj> = 0][at = noun:residence[<poss> = 1]]] -->
+		(cprop (id org_founded_by_tac_47) (score 0.9) (score_group 1) (predicate and) (args (argument (role <member>) (vprop (predicate established) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_tac_400019)) (entitylabel AGENT1) (acetype ORG))) (argument (role at) (nprop (predicate residence) (args (argument (role <poss>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER ORG GPE)))))))))))
+
+		<!-- 1 verb:founded[<obj> = 0][<sub> = pronoun:who[<ref> = 1]] -->
+		(vprop (id org_founded_by_tac_82) (score 0.9) (score_group 1) (predicate founded) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_tac_400020)) (entitylabel AGENT1) (acetype ORG))) (argument (role <sub>) (anyprop (predicate who) (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER ORG GPE))))))))
+
+		<!-- 1 {1} founded {0} -->
+		(regex (id org_founded_by_tac_101) (score 0.9) (score_group 1) (re (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER ORG GPE)) (text DONT_ADD_SPACES (string "founded")) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_tac_400021)) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 1 {0} was founded by {1} -->
+		(regex (id org_founded_by_tac_27) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_tac_400022)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "founded")) (text DONT_ADD_SPACES (string "by")) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER ORG GPE))))
+
+	)
+)

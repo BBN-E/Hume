@@ -1,0 +1,29 @@
+# space separated, case insensitive
+# headword old-entity-type new-entity-type-and-subtype entity-type-confidence premods
+#
+# old-entity-type can be just an entity type like PER which will
+# compared against the entity type of the KBMention. Or it can be
+# type.subtype combo like PER.Individual which will be compared
+# against the best entity type of the KBMention's KBEntity.
+#
+# If you add a new entity type here, you must add it to config_ontology.json
+# so the RDFSerializer knows what to do with it.
+#
+
+# IDPs
+person PER.Individual PER.InternallyDisplacedPersons 0.80 internally displaced
+persons PER.Group PER.InternallyDisplacedPersons 0.80 internally displaced
+people PER.Group PER.InternallyDisplacedPersons 0.80 internally displaced
+
+# Diplaced persons -- should not override PER.InternallDisplacedPerson
+# since this comes later in this file
+person PER.Individual PER.DisplacedPersons 0.80 displaced
+persons PER.Group PER.DisplacedPersons 0.80 displaced
+people PER.Group PER.DisplacedPersons 0.80 displaced
+person PER.Individual PER.DisplacedPersons 0.80 resettled
+persons PER.Group PER.DisplacedPersons 0.80 resettled
+people PER.Group PER.DisplacedPersons 0.80 resettled
+
+# Asylum seekers
+seeker PER.Individual PER.AsylumSeekers 0.80 asylum
+seekers PER.Group PER.AsylumSeekers 0.80 asylum

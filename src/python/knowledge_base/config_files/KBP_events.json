@@ -1,0 +1,228 @@
+{
+  "mappings": {
+    "event": {
+      "Business.Declare-Bankruptcy" : "Bankruptcy",
+      "Business.Merge-Org" : "Merger",
+      "Conflict.Attack" : "Attack",
+      "Conflict.Demonstrate" : "DemonstrationOrProtest",
+      "Contact.Broadcast" : "IssuingPublishingOrReleasing",
+      "Contact.Contact" : "Communication",
+      "Contact.Correspondence" : "CommunicationViaLetterOrPersonalMail",
+      "Contact.Meet" : "MeetingOrEncounter",
+      "Contact.Phone-Write" : "CommunicationViaPhone",
+      "Justice.Appeal" : "RequestOrAppeal",
+      "Justice.Acquit" : "FindingOfInnocent",
+      "Justice.Arrest-Jail" : "ArrestOrDetention",
+      "Justice.Charge-Indict" : "Indictment",
+      "Justice.Convict" : "FindingOfGuilt",
+      "Justice.Execute" : "Execution",
+      "Justice.Extradite" : "Extradition",
+      "Justice.Fine" : "LegalFine",
+      "Justice.Pardon" : "Pardon",
+      "Justice.Release-Parole" : "ReturnOrRelease",
+      "Justice.Sentence" : "LegalSentence",
+      "Justice.Sue" : "FilingOfLawsuit",
+      "Justice.Trial-Hearing" : "LegalProceedingsOrTrial",
+      "Life.Be-Born" : "Birth",
+      "Life.Die" : "Death",
+      "Life.Divorce" : "SeparationOrDivorce",
+      "Life.Injure" : "Injury",
+      "Life.Marry" : "Marriage",
+      "Manufacture.Artifact" : "ManufacturingOrBuilding",
+      "Movement.Transport" : "LocationChange",
+      "Movement.Transport-Artifact" : "CargoTransportation",
+      "Movement.Transport-Person" : "PersonalTransportation",
+      "Personnel.Elect" : "Election",
+      "Personnel.Nominate" : "Nomination",
+      "Transaction.Transaction" : "TransferOfFunds",
+      "Transaction.Transfer-Money" : "TransferOfFunds",
+      "Transaction.Transfer-Ownership" : "TransferOfOwnership"
+    },
+    "event-role": {
+      "default": {
+        "Source": { "default": "has_active_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+        "Target": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+        "active": { "default": "has_active_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+        "affected": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+        "provider": { "default": "has_provider", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+        "recipient": { "default": "has_recipient", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+        "Place": { "default": "located_at" },
+        "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+	"Speaker" : { "default": "has_active_actor" }
+      },
+      "byEventType": {
+        "Business.Start-Org": {},
+        "Business.Declare-Bankruptcy": {},
+        "Business.End-Org": {},
+        "Business.Merge-Org": {},
+        "Conflict.Attack": {
+          "Attacker": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+          "Instrument": { "default": "has_instrument" },
+          "Target": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+          "Place": { "default": "located_at" },
+          "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+        },
+        "Conflict.Demonstrate":
+        {
+            "Entity": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Place": { "default": "located_at" },
+            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+        },
+        "Contact.Broadcast":
+        {
+            "Audience": { "default": "has_recipient", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Entity": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Place": { "default": "located_at" },
+            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+        },
+        "Contact.Contact":
+        {
+            "Entity": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Place": { "default": "located_at" },
+            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+        },
+        "Contact.Correspondence":
+        {
+            "Entity": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Place": { "default": "located_at" },
+            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+        },
+        "Contact.Meet":
+        {
+            "Entity": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Place": { "default": "located_at" },
+            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+        },
+        "Contact.Phone-Write": {},
+        "Justice.Appeal": {},
+        "Justice.Acquit": {},
+        "Justice.Arrest-Jail":
+        {
+            "Agent": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Crime": { "default": "has_topic" },
+            "Person": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Place": { "default": "located_at" },
+            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+        },
+        "Justice.Charge-Indict": {},
+        "Justice.Convict": {},
+        "Justice.Execute": {},
+        "Justice.Extradite": {},
+        "Justice.Fine": {},
+        "Justice.Pardon": {},
+        "Justice.Release-Parole": {},
+        "Justice.Sentence": {},
+        "Justice.Sue": {},
+        "Justice.Trial-Hearing": {},
+        "Life.Be-Born": {},
+        "Life.Die":
+        {
+            "Agent": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Instrument": { "default": "has_instrument" },
+            "Victim": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Place": { "default": "located_at" },
+            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+        },
+        "Life.Divorce": {},
+        "Life.Injure":
+        {
+            "Agent": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Instrument": { "default": "has_instrument" },
+            "Victim": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Place": { "default": "located_at" },
+            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+        },
+        "Life.Marry": {},
+        "Manufacture.Artifact":
+        {
+            "Agent": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Artifact": { "default": "involves_goods_or_property", "ORG": "has_actor" },
+            "Instrument": { "default": "has_instrument" },
+            "Place": { "default": "located_at" },
+            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+        },
+        "Movement.Transport":
+        {
+            "Agent": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Artifact": { "default": "involves_goods_or_property", "ORG": "has_actor" },
+            "Destination": { "default": "has_destination" },
+            "Instrument": { "default": "has_instrument" },
+            "Origin": { "default": "has_origin" },
+            "Place": { "default": "located_at" },
+            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+        },
+        "Movement.Transport-Artifact":
+        {
+            "Agent": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Artifact": { "default": "involves_goods_or_property", "ORG": "has_actor" },
+            "Destination": { "default": "has_destination" },
+            "Instrument": { "default": "has_instrument" },
+            "Origin": { "default": "has_origin" },
+            "Place": { "default": "located_at" },
+            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+        },
+        "Movement.Transport-Person":
+        {
+            "Agent": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Destination": { "default": "has_destination" },
+            "Instrument": { "default": "has_instrument" },
+            "Origin": { "default": "has_origin" },
+            "Person": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Place": { "default": "located_at" },
+            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+        },
+        "Personnel.Elect":
+        {
+            "Agent": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Person": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Position": { "default": "position_or_role" },
+            "Place": { "default": "located_at" },
+            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+        },
+        "Personnel.End-Position":
+        {
+            "Entity": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Person": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Position": { "default": "position_or_role" },
+            "Place": { "default": "located_at" },
+            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+        },
+        "Personnel.Nominate": {},
+        "Personnel.Start-Position":
+        {
+            "Entity": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Person": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Position": { "default": "position_or_role" },
+            "Place": { "default": "located_at" },
+            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+        },
+        "Transaction.Transaction":
+        {
+            "Beneficiary": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Giver": { "default": "has_provider", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Recipient": { "default": "has_recipient", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Place": { "default": "located_at" },
+            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+        },
+        "Transaction.Transfer-Money":
+        {
+            "Beneficiary": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Giver": { "default": "has_provider", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Money": { "default": "associated_monetary_amount" },
+            "Recipient": { "default": "has_recipient", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Place": { "default": "located_at" },
+            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+        },
+        "Transaction.Transfer-Ownership":
+        {
+            "Beneficiary": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Giver": { "default": "has_provider", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Recipient": { "default": "has_recipient", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+            "Thing": { "default": "involves_goods_or_property", "ORG": "has_actor" },
+            "Place": { "default": "located_at" },
+            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+        }
+      }
+    }
+  }
+}

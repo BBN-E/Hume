@@ -1,0 +1,66 @@
+# Run on full CauseEx month 15 docs (Kaliningrad)
+
+job_name: causeex_m17.serialization_jsonld.v1
+
+###########
+# Pipeline
+###########
+stages_to_run: serialization
+jserif_branch: 364-add-event-from-json
+mode: CauseEx
+
+########
+# Serif
+########
+serif_input_sgm_list: /nfs/raid87/u14/CauseEx/Kaliningrad-Dataset/TwoSix-Extracted-M15-Assessment/batch_files/all_files_012519.list
+serif_input_awake_db: /nfs/raid87/u14/CauseEx/Kaliningrad-Dataset/TwoSix-Extracted-M15-Assessment/awake_dbs/causeex_dbpedia_20170308_m15a_kaliningrad_fix.sqlite
+
+######
+# KBP 
+######
+kbp_input_serifxml_list: GENERATED
+
+##################
+## Generic events
+##################
+generic_events_input_serifxml_list: GENERATED
+file_whitelist: /nfs/ld100/u10/bmin/repo_clean_for_exp/CauseEx/lib/generic_events/m15.trigger.whitelist.v3.h5084
+file_blacklist: NA
+
+#######################
+## NN event extraction
+#######################
+nn_events_input_serifxml_list: /nfs/raid87/u12/ychan/repos/repo_clean_for_exp_wm_m12_hackathon/CauseEx/experiments/causeex_pipeline/expts/causeex_m17.ys/generic_events_serifxml_out.list
+nn_events_model_list: /nfs/raid66/u14/users/jfaschin/runjobs/expts/training/cx_0507019_final/w5s50e30f300/fold_0/nn_models.list
+
+
+######################
+# Event consolidation
+######################
+event_consolidation_input_serifxml_list: /nfs/raid87/u12/hqiu/runjob/expts/causeex_pipeline/causeex_m17.with_020619_models/nn_events_serifxml.list
+event_consolidation_input_metadata_file: /nfs/raid87/u14/CauseEx/Kaliningrad-Dataset/TwoSix-Extracted-M15-Assessment/metadata_files/metadata_190125.txt
+#compatibleEventFile: /nfs/raid87/u10/CauseEx/eventConsolidation/compatible_events.txt
+#argumentRoleEntityTypeFile: /nfs/raid87/u10/CauseEx/eventConsolidation/event_role.entity_type.constraints
+#keywordFile: /nfs/raid87/u10/CauseEx/eventConsolidation/event_type.keywords
+#lemmaFile: /nfs/raid87/u12/ychan/resources/lemma.nv
+copyArgumentSentenceWindow: 1
+
+########################
+# Event-Event relations
+########################
+eer_input_serifxml_list: GENERATED
+eer_input_serif_cause_effect_relations_dir: GENERATED
+eer_input_extra_causal_relations: /nfs/raid87/u14/CauseEx/Kaliningrad-Dataset/TwoSix-Extracted-M15-Assessment/extra_causal_json/m15_causal_json6pm.json
+learnit_pattern_dir: DEFAULT
+learnit_min_freq_event_pairs: 1
+
+################
+# Serialization
+################
+serialization_input_serifxml_list: /nfs/ld100/u10/bmin/temp/causeex_m17.serifxml.all_with_Russia.list
+serialization_input_metadata_file: /nfs/raid87/u14/CauseEx/Kaliningrad-Dataset/TwoSix-Extracted-M15-Assessment/metadata_files/metadata_190125.txt
+serialization_input_factfinder_json_file: GENERATED
+serialization_input_learnit_triple_file: GENERATED
+serialization_input_learnit_event_count_file: GENERATED
+serialization_do_event_uploading: False
+serialization_also_output_jsonld: False

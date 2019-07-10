@@ -1,0 +1,25 @@
+(per_place_of_death
+
+
+ (wordsets)
+
+ (entitylabels (AGENT1))
+
+ (toplevel
+		<!-- 38   per_place_of_death ==> modifier:dead[<ref> = 0][in = noun:woods[<mod> = 1]] -->
+		(mprop (id cs2015_per_place_of_death_20002) (score 0.9) (score_group 1) (predicate dead) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_place_of_death_20002)) (entitylabel AGENT1) (acetype PER))) (argument (role in) (nprop (predicate woods) (args (argument (role <mod>) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE))))))))
+
+		<!-- 36   per_place_of_death ==> modifier:dead[<ref> = noun:quarterback[<ref> = 0]][in = noun:woods[<mod> = 1]] -->
+		(mprop (id cs2015_per_place_of_death_20003) (score 0.9) (score_group 1) (predicate dead) (args (argument (role <ref>) (nprop (predicate quarterback) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_place_of_death_20003)) (entitylabel AGENT1) (acetype PER)))))) (argument (role in) (nprop (predicate woods) (args (argument (role <mod>) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE))))))))
+
+		<!-- 2   per_place_of_death ==> modifier:dead[<ref> = name:[<ref> = 0]][in = noun:woods[<mod> = 1]] -->
+		(mprop (id cs2015_per_place_of_death_20015) (score 0.9) (score_group 1) (predicate dead) (args (argument (role <ref>) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_place_of_death_20015)) (entitylabel AGENT1) (acetype PER)))))) (argument (role in) (nprop (predicate woods) (args (argument (role <mod>) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE))))))))
+
+		<!-- 1   per_place_of_death ==> verb:died[<sub> = name:[<ref> = 0]][at = noun:hospital[in = 1]] -->
+		(vprop (id cs2015_per_place_of_death_20017) (score 0.9) (score_group 1) (predicate died) (args (argument (role <sub>) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_place_of_death_20017)) (entitylabel AGENT1) (acetype PER)))))) (argument (role at) (nprop (predicate hospital) (args (argument (role in) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE))))))))
+
+		<!-- 1   per_place_of_death ==> verb:died[<sub> = 0][at = noun:hospital[in = 1]] -->
+		(vprop (id cs2015_per_place_of_death_20019) (score 0.9) (score_group 1) (predicate died) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_place_of_death_20019)) (entitylabel AGENT1) (acetype PER))) (argument (role at) (nprop (predicate hospital) (args (argument (role in) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE))))))))
+
+	)
+)

@@ -1,0 +1,18 @@
+(org_shareholders_serif
+
+(wordsets)
+
+(entitylabels (AGENT1))
+
+(reference)
+
+(toplevel
+
+(relation (fulltype ORG-AFF.Investor-Shareholder) (id mapping_1) (score 1.0) (score_group 1)
+        (args
+                (argument (mention (return (ff_role org_shareholders_serif)) (min-entitylevel NAME) (acetype PER ORG GPE)) (role ARG1))
+                (argument (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders_serif)) (entitylabel AGENT1)) (role ARG2))
+        )
+)
+)
+)

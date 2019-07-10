@@ -1,0 +1,267 @@
+# trigger _  new event type
+
+measures Event
+questions Event
+brain cancer Illness
+cancer Illness
+New program ExpansionOrDevelopment
+The project ExpansionOrDevelopment
+the project ExpansionOrDevelopment
+steps Event
+fact Event
+ways Event
+violence Violence
+others Event
+inflation EconomicInflation
+awareness Event
+discrimination SystemicDiscrimination
+democracy Democracy
+the time Event
+action Event
+something Event
+migration LocationChange
+actions Event
+torture Torture
+broke Event
+the transition Event
+the situation Event
+transparency Transparency
+the same time Event
+the process Event
+The goal Event
+issues Event
+announced Announcement
+the system Event
+changes Change
+solutions Event
+charged Accusation
+the creation ExpansionOrDevelopment
+the first time Event
+turn Event
+problems Event
+factors Event
+anything Event
+programs Event
+activities Event
+the quality of life Event
+terrorism Terrorism
+care Event
+competitiveness Competition
+flee LocationChange
+tools Event
+a situation Event
+threat Threatening
+threats Threatening
+fact Event
+Others Event
+towards Event
+sentenced LegalSentence
+standards Event
+war games MilitaryExercise
+use Event
+the use Event
+the results Event
+know Event
+established ExpansionOrDevelopment
+a sell-off FinancialEvent
+question Event
+progress Event
+access Event
+the spread Event
+some cases Event
+sanctions Sanctions
+the future Event
+the tools Event
+knowledge Event
+efficiency Event
+events Event
+consider EvaluationOrAppraisal
+became Event
+this approach Event
+a result Event
+the interests Event
+civilian harm Violence
+a system Event
+a position Event
+work Event
+power Event
+delays Event
+come LocationChange
+risk Risk
+advocates Communication
+these issues Event
+the other hand Event
+health Event
+the measures Event
+outcomes Event
+turned Event
+change Change
+recieving Event
+success Event
+These developments ExpansionOrDevelopment
+public health Event
+These actions Event
+the events Event
+the event Event
+refugees ForcedMove
+fall of TransferOfLeadershipOrPolicyChange
+took Event
+sent Event
+get Event
+waged Event
+its mission Operation
+get Event
+sent Event
+capacity Event
+access Event
+the factors Factor
+participants Event
+their voices Communication
+collaboration Cooperation
+social inclusion Cooperation
+the network Event
+solutions Event
+the sea Event
+change Change
+fled Escape
+waged Event
+spread of diseases MedicalEmergency
+customers Event
+the establishment Event
+greater economic growth EconomicCondition
+the event Event
+the work Event
+the extent Event
+harm Violence
+came LocationChange
+wars War
+a wave Event
+calls Communication
+tensions TensionOrStress
+corrupution Corruption
+one step Event
+these events Event
+platforms Event
+this system Event
+the level Event
+the efficiency Event
+confidence Sentiment
+campaigns Operation
+cyber attacks CyberAttack
+employment oppourtunities EconomicOpportunity
+a time Event
+the ways Event
+their actions Event
+the circumstances Event
+awareness of issues Event
+our goal Event
+cybersecurity CyberDefense
+these activities Event
+no steps Event
+every two steps Event
+works Event
+this event Event
+effectiveness EvaluationOrAppraisal
+the chance Event
+use Event
+methods Event
+the work Event
+readiness MilitaryCapability
+sanctions Sanctions
+exodus LocationChange
+annexation OccupationOfTerritory
+change Change
+social change PoliticalReform
+duplication Event
+granted ProvisionOfAid
+mission Operation
+The charges Accusation
+this time Event
+some time Event
+the manner Event
+the site Event
+the authority Event
+the majority Event
+effective action Event
+the provision ProvisionOfAid
+the one hand Event
+A coalition Cooperation
+the next step Event
+the flow Event
+the competitiveness Competition
+the centre Event
+the center Event
+traffic Event
+the activity Event
+analysts Event
+a fair and equitable system RespectForRightsFreedoms
+the main aim Event
+social media platforms Event
+media concentration Event
+become Event
+an event Event
+Russian narratives DisinformationCampaign
+this moment Event
+race Event
+the use Event
+networks Event
+claims Event
+things Event
+attitudes Sentiment
+safety Event
+migration Migration
+migrations Migration
+refugee Escape
+refugees Escape
+conflict Conflict
+conflicts Conflict
+media Reporting
+diversity SocialCondition
+argue Communication
+arguing Communication
+argues Communication
+argued Communication
+responsibility Event
+responsibilities Event
+require NeedOrRequirement
+requires NeedOrRequirement
+required NeedOrRequirement
+requiring NeedOrRequirement
+agree AgreementOrPromise
+agrees AgreementOrPromise
+agreed AgreementOrPromise
+agreeing AgreementOrPromise
+refuse RefusalOrRejection
+refused RefusalOrRejection
+refuses RefusalOrRejection
+refusing RefusalOrRejection
+available Event
+recognize Event
+recognized Event
+recognizes Event
+recognizing Event
+leave Departure
+leaves Departure
+left Departure
+leaving Departure
+discuss ExploratoryCommunication
+discusses ExploratoryCommunication
+discussed ExploratoryCommunication
+discussing ExploratoryCommunication
+discussions ExploratoryCommunication
+arrival Arrival
+arrive Arrival
+arrived Arrival
+arriving Arrival
+arrives Arrival
+call Communication
+calls Communication
+called Communication
+calling Communication
+urge RequestOrAppeal
+urged RequestOrAppeal
+urging RequestOrAppeal
+urges RequestOrAppeal
+national security NationalSecurity
+international security InternationalSecurity
+economic crisis EconomicCrisis

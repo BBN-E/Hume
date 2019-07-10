@@ -1,0 +1,136 @@
+(per_place_of_death
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 44 verb:dies[at = noun:home[<poss> = 0]][in = 1] -->
+		(vprop (id per_place_of_death_tac_22) (score 0.9) (score_group 1) (predicate dies) (args (argument (role at) (nprop (predicate home) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400000)) (entitylabel AGENT1) (acetype PER)))))) (argument (role in) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 44 verb:dies[at = noun:home[<poss> = pronoun:his[<ref> = 0]]][in = 1] -->
+		(vprop (id per_place_of_death_tac_23) (score 0.9) (score_group 1) (predicate dies) (args (argument (role at) (nprop (predicate home) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400001)) (entitylabel AGENT1) (acetype PER))))))))) (argument (role in) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 39 {0} died in {1} -->
+		(regex (id per_place_of_death_tac_30) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400002)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE))))
+
+		<!-- 38 {0} home in {1}&died at {0}&{1} , -->
+		(regex (id per_place_of_death_tac_32) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "at")) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400003)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "home")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string ","))))
+
+		<!-- 32 verb:died[at = noun:home[<poss> = 0]][in = 1] -->
+		(vprop (id per_place_of_death_tac_38) (score 0.9) (score_group 1) (predicate died) (args (argument (role at) (nprop (predicate home) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400004)) (entitylabel AGENT1) (acetype PER)))))) (argument (role in) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 29 {0} home in {1}&and died at {0} -->
+		(regex (id per_place_of_death_tac_45) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "and")) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "at")) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400005)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "home")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE))))
+
+		<!-- 17 verb:died[at = noun:home[<poss> = pronoun:his[<ref> = 0]]][in = 1] -->
+		(vprop (id per_place_of_death_tac_87) (score 0.9) (score_group 1) (predicate died) (args (argument (role at) (nprop (predicate home) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400006)) (entitylabel AGENT1) (acetype PER))))))))) (argument (role in) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 15 verb:died[<sub> = 0][in = 1] -->
+		(vprop (id per_place_of_death_tac_2) (score 0.9) (score_group 1) (predicate died) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400007)) (entitylabel AGENT1) (acetype PER))) (argument (role in) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 15 verb:died[at = noun:home[<poss> = pronoun:her[<ref> = 0]]][in = 1] -->
+		(vprop (id per_place_of_death_tac_102) (score 0.9) (score_group 1) (predicate died) (args (argument (role at) (nprop (predicate home) (args (argument (role <poss>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400008)) (entitylabel AGENT1) (acetype PER))))))))) (argument (role in) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 12 verb:died[<sub> = pronoun:who[<ref> = 0]][in = 1] -->
+		(vprop (id per_place_of_death_tac_137) (score 0.9) (score_group 1) (predicate died) (args (argument (role <sub>) (anyprop (predicate who) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400009)) (entitylabel AGENT1) (acetype PER)))))) (argument (role in) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 12 {0}  {1}&dead in {0}&{1} home -->
+		(regex (id per_place_of_death_tac_141) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "dead")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400010)) (entitylabel AGENT1) (acetype PER)) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "home"))))
+
+		<!-- 11 {0}  {1}&dead in {0}&{1} apartment on Tuesday -->
+		(regex (id per_place_of_death_tac_169) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "dead")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400011)) (entitylabel AGENT1) (acetype PER)) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "apartment")) (text DONT_ADD_SPACES (string "on")) (text DONT_ADD_SPACES (string "Tuesday"))))
+
+		<!-- 10 {0} home in {1}&, died at {0} -->
+		(regex (id per_place_of_death_tac_197) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "at")) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400012)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "home")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE))))
+
+		<!-- 10 {0} home in {1}&died at {0}&{1} , on Sunday -->
+		(regex (id per_place_of_death_tac_193) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "at")) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400013)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "home")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "on")) (text DONT_ADD_SPACES (string "Sunday"))))
+
+		<!-- 10 {0} home in {1}&, died at {0}&{1} , on -->
+		(regex (id per_place_of_death_tac_175) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "at")) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400014)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "home")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "on"))))
+
+		<!-- 10 {0}  {1}&dead in {0}&{1} home Sunday -->
+		(regex (id per_place_of_death_tac_192) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "dead")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400015)) (entitylabel AGENT1) (acetype PER)) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "home")) (text DONT_ADD_SPACES (string "Sunday"))))
+
+		<!-- 10 {0} home in {1}&, died at {0}&{1} , -->
+		(regex (id per_place_of_death_tac_183) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "at")) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400016)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "home")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string ","))))
+
+		<!-- 10 {0}  {1}&found dead in {0}&{1} home Sunday after -->
+		(regex (id per_place_of_death_tac_185) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "found")) (text DONT_ADD_SPACES (string "dead")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400017)) (entitylabel AGENT1) (acetype PER)) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "home")) (text DONT_ADD_SPACES (string "Sunday")) (text DONT_ADD_SPACES (string "after"))))
+
+		<!-- 10 {0}  {1}&dead in {0}&{1} home Sunday after -->
+		(regex (id per_place_of_death_tac_195) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "dead")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400018)) (entitylabel AGENT1) (acetype PER)) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "home")) (text DONT_ADD_SPACES (string "Sunday")) (text DONT_ADD_SPACES (string "after"))))
+
+		<!-- 8 verb:died[<sub> = name:[<ref> = 0]][in = 1] -->
+		(vprop (id per_place_of_death_tac_20) (score 0.9) (score_group 1) (predicate died) (args (argument (role <sub>) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400019)) (entitylabel AGENT1) (acetype PER)))))) (argument (role in) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 8 verb:said[<obj> = verb:died[<sub> = 0][in = noun:city[of = 1]]] -->
+		(vprop (id per_place_of_death_tac_212) (score 0.9) (score_group 1) (predicate said) (args (argument (role <obj>) (vprop (predicate died) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400020)) (entitylabel AGENT1) (acetype PER))) (argument (role in) (nprop (predicate city) (args (argument (role of) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)))))))))))
+
+		<!-- 8 verb:says[<obj> = verb:dies[<sub> = 0][in = 1]] -->
+		(vprop (id per_place_of_death_tac_208) (score 0.9) (score_group 1) (predicate says) (args (argument (role <obj>) (vprop (predicate dies) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400021)) (entitylabel AGENT1) (acetype PER))) (argument (role in) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE))))))))
+
+		<!-- 8 {0} dies in {1} -->
+		(regex (id per_place_of_death_tac_207) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400022)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "dies")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE))))
+
+		<!-- 7 verb:died[at = noun:home[<poss> = pronoun:her[<ref> = 0]]][in = 1] -->
+		(vprop (id per_place_of_death_tac_15) (score 0.9) (score_group 1) (predicate died) (args (argument (role at) (nprop (predicate home) (args (argument (role <poss>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400023)) (entitylabel AGENT1) (acetype PER))))))))) (argument (role in) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 6 verb:died[<sub> = 1][in = 0] -->
+		(vprop (id per_place_of_death_tac_1) (score 0.9) (score_group 1) (predicate died) (args (argument (role <sub>) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400024)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 6 verb:died[<sub> = pronoun:who[<ref> = 0]][in = 1] -->
+		(vprop (id per_place_of_death_tac_38) (score 0.9) (score_group 1) (predicate died) (args (argument (role <sub>) (anyprop (predicate who) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400025)) (entitylabel AGENT1) (acetype PER)))))) (argument (role in) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 4 verb:died[at = noun:home[<poss> = pronoun:his[<ref> = 0]]][in = 1] -->
+		(vprop (id per_place_of_death_tac_44) (score 0.9) (score_group 1) (predicate died) (args (argument (role at) (nprop (predicate home) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400026)) (entitylabel AGENT1) (acetype PER))))))))) (argument (role in) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 3 {0}  {1}&found dead at {0}&{1} home and the -->
+		(regex (id per_place_of_death_tac_346) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "found")) (text DONT_ADD_SPACES (string "dead")) (text DONT_ADD_SPACES (string "at")) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400027)) (entitylabel AGENT1) (acetype PER)) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "home")) (text DONT_ADD_SPACES (string "and")) (text DONT_ADD_SPACES (string "the"))))
+
+		<!-- 3 modifier:dead[<ref> = 0][at = noun:home[<mod> = 1]] -->
+		(mprop (id per_place_of_death_tac_322) (score 0.9) (score_group 1) (predicate dead) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400028)) (entitylabel AGENT1) (acetype PER))) (argument (role at) (nprop (predicate home) (args (argument (role <mod>) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE))))))))
+
+		<!-- 3 verb:died[as = 0][in = 1] -->
+		(vprop (id per_place_of_death_tac_107) (score 0.9) (score_group 1) (predicate died) (args (argument (role as) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400029)) (entitylabel AGENT1) (acetype PER))) (argument (role in) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 3 verb:found[<iobj> = modifier:dead[at = noun:home[<mod> = 1][<poss> = 0]]] -->
+		(vprop (id per_place_of_death_tac_315) (score 0.9) (score_group 1) (predicate found) (args (argument (role <iobj>) (mprop (predicate dead) (args (argument (role at) (nprop (predicate home) (args (argument (role <mod>) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400030)) (entitylabel AGENT1) (acetype PER)))))))))))
+
+		<!-- 3 verb:executed[<obj> = 0][<sub> = 1] -->
+		(vprop (id per_place_of_death_tac_62) (score 0.9) (score_group 1) (predicate executed) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400031)) (entitylabel AGENT1) (acetype PER))) (argument (role <sub>) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 3 modifier:dead[at = noun:home[<mod> = 1][<poss> = 0]] -->
+		(mprop (id per_place_of_death_tac_334) (score 0.9) (score_group 1) (predicate dead) (args (argument (role at) (nprop (predicate home) (args (argument (role <mod>) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400032)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 3 verb:died[as = noun:director[<ref> = 0]][in = 1] -->
+		(vprop (id per_place_of_death_tac_52) (score 0.9) (score_group 1) (predicate died) (args (argument (role as) (nprop (predicate director) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400033)) (entitylabel AGENT1) (acetype PER)))))) (argument (role in) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 2 verb:said[<obj> = verb:died[<sub> = 0][in = noun:city[<ref> = 1]]] -->
+		(vprop (id per_place_of_death_tac_368) (score 0.9) (score_group 1) (predicate said) (args (argument (role <obj>) (vprop (predicate died) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400034)) (entitylabel AGENT1) (acetype PER))) (argument (role in) (nprop (predicate city) (args (argument (role <ref>) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)))))))))))
+
+		<!-- 2 verb:died[<sub> = noun:ex-wife[<ref> = 0]][in = noun:city[of = 1]] -->
+		(vprop (id per_place_of_death_tac_1) (score 0.9) (score_group 1) (predicate died) (args (argument (role <sub>) (nprop (predicate ex-wife) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400035)) (entitylabel AGENT1) (acetype PER)))))) (argument (role in) (nprop (predicate city) (args (argument (role of) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE))))))))
+
+		<!-- 2 verb:died[<sub> = 0][in = noun:room[<mod> = 1]] -->
+		(vprop (id per_place_of_death_tac_366) (score 0.9) (score_group 1) (predicate died) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400036)) (entitylabel AGENT1) (acetype PER))) (argument (role in) (nprop (predicate room) (args (argument (role <mod>) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE))))))))
+
+		<!-- 2 verb:died[<sub> = name:[<ref> = 0]][in = 1] -->
+		(vprop (id per_place_of_death_tac_6) (score 0.9) (score_group 1) (predicate died) (args (argument (role <sub>) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400037)) (entitylabel AGENT1) (acetype PER)))))) (argument (role in) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 2 verb:died[<obj> = copula:was[<sub> = pronoun:he[<ref> = 0]]][in = 1] -->
+		(vprop (id per_place_of_death_tac_118) (score 0.9) (score_group 1) (predicate died) (args (argument (role <obj>) (anyprop (predicate was) (args (argument (role <sub>) (anyprop (predicate he) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400038)) (entitylabel AGENT1) (acetype PER))))))))) (argument (role in) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 2 verb:die[<sub> = pronoun:her[<ref> = 0]][on = noun:reservation[in = 1]] -->
+		(vprop (id per_place_of_death_tac_73) (score 0.9) (score_group 1) (predicate die) (args (argument (role <sub>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400039)) (entitylabel AGENT1) (acetype PER)))))) (argument (role on) (nprop (predicate reservation) (args (argument (role in) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE))))))))
+
+		<!-- 2 verb:die[<sub> = 0][on = noun:reservation[in = 1]] -->
+		(vprop (id per_place_of_death_tac_71) (score 0.9) (score_group 1) (predicate die) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400040)) (entitylabel AGENT1) (acetype PER))) (argument (role on) (nprop (predicate reservation) (args (argument (role in) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE))))))))
+
+		<!-- 2 verb:died[<sub> = 0][in = noun:city[of = 1]] -->
+		(vprop (id per_place_of_death_tac_2) (score 0.9) (score_group 1) (predicate died) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_death_tac_400041)) (entitylabel AGENT1) (acetype PER))) (argument (role in) (nprop (predicate city) (args (argument (role of) (mention (return (ff_role per_place_of_death)) (block AGENT1) (acetype LOC GPE))))))))
+
+	)
+)

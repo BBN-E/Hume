@@ -1,0 +1,49 @@
+(org_founded_by
+
+ (wordsets)
+
+ (entitylabels (AGENT1))
+
+ (toplevel
+ 
+ <!-- , who is now the co-founder and chief executive of Square, -->
+  (mprop (id org_founded_by_100000) (score 0.9) (score_group 1) (predicate of)
+   (args 
+    (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_100000)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) 
+    (argument (role of) (mention (return  (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE) (headword co-founder founder)))
+   )
+  )
+
+  (regex (id org_founded_by_100001) (score 0.9) (score_group 1) 
+  (re 
+  (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))
+  (text DONT_ADD_SPACES (string ", (the|a|) (co-founder|founder) of")) 
+  (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_100001)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))
+  )
+  )
+
+  (regex (id org_founded_by_100002) (score 0.9) (score_group 1) 
+  (re 
+  (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))
+  (text DONT_ADD_SPACES (string "(founded|found)")) 
+  (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_100002)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))
+  )
+  )
+
+  (regex (id org_founded_by_100003) (score 0.9) (score_group 1) 
+  (re 
+  (mention (return (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))
+  (text DONT_ADD_SPACES (string "(founded|found)")) 
+  (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_100003)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))
+  )
+  )
+
+  <!-- Debgupta, a former senior director at the Corporate Executive Board in Arlington, Va., is launching a Web site called WiserTogether. -->
+  (vprop (id org_founded_by_100004) (score 0.9) (score_group 1) (predicate launch* found* establish* create*)
+   (args
+    (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_founded_by_100004)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))
+    (argument (role <sub>) (mention (return  (ff_role org_founded_by)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)))
+   )
+  )
+ )
+ )

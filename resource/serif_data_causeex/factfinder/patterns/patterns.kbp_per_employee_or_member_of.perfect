@@ -1,0 +1,123 @@
+(per_employee_or_member_of
+
+ (wordsets)
+
+ (entitylabels (AGENT1))
+
+ (toplevel
+
+		<!-- 2400   per_employee_or_member_of ==> noun:secretary[<mod> = 1][<ref> = 0] -->
+		(nprop (id cs2015_per_employee_or_member_of_20000) (score 0.9) (score_group 1) (predicate secretary) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20000)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 1200   per_employee_or_member_of ==> modifier:former[<ref> = noun:secretary[<mod> = 1][<ref> = 0]] -->
+		(mprop (id cs2015_per_employee_or_member_of_20001) (score 0.9) (score_group 1) (predicate former) (args (argument (role <ref>) (nprop (predicate secretary) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20001)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 74   per_employee_or_member_of ==> verb:said[<sub> = 0][that = verb:resigned[<sub> = 1]] -->
+		(vprop (id cs2015_per_employee_or_member_of_20005) (score 0.9) (score_group 1) (predicate said) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20005)) (entitylabel AGENT1) (acetype PER))) (argument (role that) (vprop (predicate resigned) (args (argument (role <sub>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 64   per_employee_or_member_of ==> noun:professor[<mod> = 1][<ref> = 0] -->
+		(nprop (id cs2015_per_employee_or_member_of_20006) (score 0.9) (score_group 1) (predicate professor) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20006)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 45   per_employee_or_member_of ==> verb:join[<obj> = 1][as = noun:president[<ref> = 0]] -->
+		(vprop (id cs2015_per_employee_or_member_of_20018) (score 0.9) (score_group 1) (predicate join) (args (argument (role <obj>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role as) (nprop (predicate president) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20018)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 45   per_employee_or_member_of ==> verb:join[<obj> = 1][as = 0] -->
+		(vprop (id cs2015_per_employee_or_member_of_20024) (score 0.9) (score_group 1) (predicate join) (args (argument (role <obj>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role as) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20024)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 32   per_employee_or_member_of ==> verb:ruled[<obj> = 0][before = name:[<ref> = 1]] -->
+		(vprop (id cs2015_per_employee_or_member_of_20031) (score 0.9) (score_group 1) (predicate ruled) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20031)) (entitylabel AGENT1) (acetype PER))) (argument (role before) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 30   per_employee_or_member_of ==> copula:is[<obj> = noun:foray[<poss> = 0]][after = verb:serving[in = 1]] -->
+		(anyprop (id cs2015_per_employee_or_member_of_20036) (score 0.9) (score_group 1) (predicate is) (args (argument (role <obj>) (nprop (predicate foray) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20036)) (entitylabel AGENT1) (acetype PER)))))) (argument (role after) (vprop (predicate serving) (args (argument (role in) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 30   per_employee_or_member_of ==> copula:is[<obj> = noun:foray[<poss> = 0]][after = verb:serving[in = name:[<ref> = 1]]] -->
+		(anyprop (id cs2015_per_employee_or_member_of_20037) (score 0.9) (score_group 1) (predicate is) (args (argument (role <obj>) (nprop (predicate foray) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20037)) (entitylabel AGENT1) (acetype PER)))))) (argument (role after) (vprop (predicate serving) (args (argument (role in) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))))))))
+
+		<!-- 20   per_employee_or_member_of ==> verb:taken[<obj> = noun:fellowship[at = 1]][<sub> = 0] -->
+		(vprop (id cs2015_per_employee_or_member_of_20049) (score 0.9) (score_group 1) (predicate taken) (args (argument (role <obj>) (nprop (predicate fellowship) (args (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20049)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 20   per_employee_or_member_of ==> set:[<member> = noun:professor[<mod> = 1][<ref> = 0]] -->
+		(sprop (id cs2015_per_employee_or_member_of_20052) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate professor) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20052)) (entitylabel AGENT1) (acetype PER))))))))
+
+
+		<!-- 10   per_employee_or_member_of ==> verb:plays[<sub> = 0][for = 1] -->
+		(vprop (id cs2015_per_employee_or_member_of_20078) (score 0.9) (score_group 1) (predicate plays) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20078)) (entitylabel AGENT1) (acetype PER))) (argument (role for) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 10   per_employee_or_member_of ==> verb:plays[<sub> = pronoun:who[<ref> = 0]][for = 1] -->
+		(vprop (id cs2015_per_employee_or_member_of_20080) (score 0.9) (score_group 1) (predicate plays) (args (argument (role <sub>) (anyprop (predicate who) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20080)) (entitylabel AGENT1) (acetype PER)))))) (argument (role for) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 10   per_employee_or_member_of ==> verb:joining[<obj> = 1][<sub> = 0] -->
+		(vprop (id cs2015_per_employee_or_member_of_20082) (score 0.9) (score_group 1) (predicate joining) (args (argument (role <obj>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20082)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 8   per_employee_or_member_of ==> noun:coach[<ref> = 0][of = 1] -->
+		(nprop (id cs2015_per_employee_or_member_of_20086) (score 0.9) (score_group 1) (predicate coach) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20086)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG)))))
+
+		<!-- 8   per_employee_or_member_of ==> noun:coach[<ref> = 0][of = name:[<ref> = 1]] -->
+		(nprop (id cs2015_per_employee_or_member_of_20087) (score 0.9) (score_group 1) (predicate coach) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20087)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+
+		<!-- 6   per_employee_or_member_of ==> noun:secretary[<poss> = 1][<ref> = 0] -->
+		(nprop (id cs2015_per_employee_or_member_of_20092) (score 0.9) (score_group 1) (predicate secretary) (args (argument (role <poss>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20092)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 5   per_employee_or_member_of ==> set:[<member> = 0][<ref> = noun:secretary[<mod> = 1]] -->
+		(sprop (id cs2015_per_employee_or_member_of_20095) (score 0.9) (score_group 1) (args (argument (role <member>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20095)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (nprop (predicate secretary) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 5   per_employee_or_member_of ==> set:[<member> = noun:confidante[<ref> = 0]][<ref> = noun:secretary[<mod> = 1]] -->
+		(sprop (id cs2015_per_employee_or_member_of_20100) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate confidante) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20100)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (nprop (predicate secretary) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 2   per_employee_or_member_of ==> verb:joined[<obj> = noun:faculty[<mod> = 1]][<sub> = 0] -->
+		(vprop (id cs2015_per_employee_or_member_of_20114) (score 0.9) (score_group 1) (predicate joined) (args (argument (role <obj>) (nprop (predicate faculty) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20114)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 2   per_employee_or_member_of ==> verb:joined[<obj> = noun:faculty[<mod> = 1]][<sub> = pronoun:he[<ref> = 0]] -->
+		(vprop (id cs2015_per_employee_or_member_of_20120) (score 0.9) (score_group 1) (predicate joined) (args (argument (role <obj>) (nprop (predicate faculty) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))) (argument (role <sub>) (anyprop (predicate he) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20120)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 1   per_employee_or_member_of ==> copula:is[<obj> = noun:leader[of = 1]][<sub> = 0] -->
+		(anyprop (id cs2015_per_employee_or_member_of_20123) (score 0.9) (score_group 1) (predicate is) (args (argument (role <obj>) (nprop (predicate leader) (args (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20123)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 1   per_employee_or_member_of ==> set:[<member> = noun:head[of = noun:division[<poss> = 1]]][<member> = 0] -->
+		(sprop (id cs2015_per_employee_or_member_of_20127) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate head) (args (argument (role of) (nprop (predicate division) (args (argument (role <poss>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))) (argument (role <member>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20127)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 1   per_employee_or_member_of ==> verb:run[<obj> = 1][<sub> = 0] -->
+		(vprop (id cs2015_per_employee_or_member_of_20129) (score 0.9) (score_group 1) (predicate run) (args (argument (role <obj>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20129)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 1   per_employee_or_member_of ==> verb:play[<sub> = 0][for = noun:fc[<mod> = 1]] -->
+		(vprop (id cs2015_per_employee_or_member_of_20131) (score 0.9) (score_group 1) (predicate play) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20131)) (entitylabel AGENT1) (acetype PER))) (argument (role for) (nprop (predicate fc) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 1   per_employee_or_member_of ==> copula:is[<obj> = noun:leader[of = 0]][<sub> = 1] -->
+		(anyprop (id cs2015_per_employee_or_member_of_20132) (score 0.9) (score_group 1) (predicate is) (args (argument (role <obj>) (nprop (predicate leader) (args (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20132)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <sub>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 1   per_employee_or_member_of ==> copula:is[<obj> = noun:leader[of = 0]][<sub> = pronoun:who[<ref> = 1]] -->
+		(anyprop (id cs2015_per_employee_or_member_of_20133) (score 0.9) (score_group 1) (predicate is) (args (argument (role <obj>) (nprop (predicate leader) (args (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20133)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <sub>) (anyprop (predicate who) (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 1   per_employee_or_member_of ==> verb:run[<obj> = noun:fund[<ref> = 1]][<sub> = 0] -->
+		(vprop (id cs2015_per_employee_or_member_of_20139) (score 0.9) (score_group 1) (predicate run) (args (argument (role <obj>) (nprop (predicate fund) (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20139)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 1   per_employee_or_member_of ==> noun:executive[<poss> = 1][<ref> = 0] -->
+		(nprop (id cs2015_per_employee_or_member_of_20142) (score 0.9) (score_group 1) (predicate executive) (args (argument (role <poss>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20142)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 1   per_employee_or_member_of ==> {1} Mayor {0} -->
+		(regex (id cs2015_per_employee_or_member_of_20149) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "Mayor")) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20149)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 1   per_employee_or_member_of ==> modifier:chief[<ref> = noun:executive[<poss> = 1][<ref> = 0]] -->
+		(mprop (id cs2015_per_employee_or_member_of_20150) (score 0.9) (score_group 1) (predicate chief) (args (argument (role <ref>) (nprop (predicate executive) (args (argument (role <poss>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20150)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 1   per_employee_or_member_of ==> verb:run[<obj> = noun:fund[<ref> = 1]][<sub> = name:[<ref> = 0]] -->
+		(vprop (id cs2015_per_employee_or_member_of_20151) (score 0.9) (score_group 1) (predicate run) (args (argument (role <obj>) (nprop (predicate fund) (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))) (argument (role <sub>) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20151)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 1   per_employee_or_member_of ==> verb:run[<obj> = 1][<sub> = name:[<ref> = 0]] -->
+		(vprop (id cs2015_per_employee_or_member_of_20156) (score 0.9) (score_group 1) (predicate run) (args (argument (role <obj>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <sub>) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20156)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 1   per_employee_or_member_of ==> noun:emissaries[from = set:[<member> = noun:president[of = 1]][<ref> = 0]] -->
+		(nprop (id cs2015_per_employee_or_member_of_20160) (score 0.9) (score_group 1) (predicate emissaries) (args (argument (role from) (sprop (args (argument (role <member>) (nprop (predicate president) (args (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20160)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 1   per_employee_or_member_of ==> copula:is[<obj> = noun:leader[of = 1]][<sub> = pronoun:who[<ref> = 0]] -->
+		(anyprop (id cs2015_per_employee_or_member_of_20164) (score 0.9) (score_group 1) (predicate is) (args (argument (role <obj>) (nprop (predicate leader) (args (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))) (argument (role <sub>) (anyprop (predicate who) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20164)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 1   per_employee_or_member_of ==> verb:leaving[<obj> = noun:government[<ref> = 1]][<sub> = name:[<ref> = 0]] -->
+		(vprop (id cs2015_per_employee_or_member_of_20166) (score 0.9) (score_group 1) (predicate leaving) (args (argument (role <obj>) (nprop (predicate government) (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))) (argument (role <sub>) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20166)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 1   per_employee_or_member_of ==> verb:replace[<obj> = 0][at = 1] -->
+		(vprop (id cs2015_per_employee_or_member_of_20171) (score 0.9) (score_group 1) (predicate replace) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_employee_or_member_of_20171)) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))
+
+	)
+)

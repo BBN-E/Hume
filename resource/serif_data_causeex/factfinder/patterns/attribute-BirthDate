@@ -1,0 +1,58 @@
+(BirthDate
+
+(wordsets
+
+)
+
+(entitylabels
+
+(AGENT1)
+
+)
+
+(reference
+
+<!-- generic AGENT1 reference -->
+(mention	(shortcut 	AGENT1_REF)
+		(return 	(ff_role AGENT1) (ff_fact_type BirthDate))
+        	(entitylabel    AGENT1)
+)
+
+(value (shortcut DATE) SPECIFIC-DATE (return (ff_role BirthDate)))
+
+)
+
+(toplevel
+
+<!-- These patterns were derived from a LearnIt database in April 2011; 18/19 are slightly modified -->
+
+(vprop (score_group 1) (score 0.9) (id born_object)   (predicate born) (args (argument (role <obj>) AGENT1_REF) (argument (role <iobj> <temp>) DATE)))
+(vprop (score_group 1) (score 0.9) (id born_in_mprop) (predicate born) (args (argument (role <obj>) AGENT1_REF) (argument (role in) (mprop (predicate in) (args (argument (role <temp>) DATE))))))
+(vprop (score_group 1) (score 0.9) (id born_subject)  (predicate born) (args (argument (role <sub>) AGENT1_REF) (argument (role <obj> <temp>) DATE) ))
+
+(mprop (score_group 1) (score 0.9) (id born_mprop) (predicate b. born) (args (argument (role <ref>) AGENT1_REF) (argument (role <temp>) DATE)))
+
+(regex (score_group 1) (score 0.9) (id learnit_regex_born_1) (re AGENT1_REF (text RAW_TEXT (string ", -lrb- b.")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_born_2) (re AGENT1_REF (text RAW_TEXT (string ", -lrb- born")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_born_3) (re AGENT1_REF (text RAW_TEXT (string ", b.")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_born_4) (re AGENT1_REF (text RAW_TEXT (string ", born in")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_born_5) (re AGENT1_REF (text RAW_TEXT (string ", born")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_born_6) (re AGENT1_REF (text RAW_TEXT (string ", was born in")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_born_7) (re AGENT1_REF (text RAW_TEXT (string ", who was born in")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_born_8) (re AGENT1_REF (text RAW_TEXT (string "- -lrb- born")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_born_9) (re AGENT1_REF (text RAW_TEXT (string "-lrb- b.")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_born_10) (re AGENT1_REF (text RAW_TEXT (string "-lrb- born in")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_born_11) (re AGENT1_REF (text RAW_TEXT (string "-lrb- born")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_born_12) (re AGENT1_REF (text RAW_TEXT (string "-rrb- -lrb- born")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_born_13) (re AGENT1_REF (text RAW_TEXT (string "; born")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_born_14) (re AGENT1_REF (text RAW_TEXT (string "born in")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_born_15) (re AGENT1_REF (text RAW_TEXT (string "born")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_born_16) (re AGENT1_REF (text RAW_TEXT (string "was born in")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_born_17) (re AGENT1_REF (text RAW_TEXT (string "was born on")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_born_18) (re AGENT1_REF (text RAW_TEXT (string "was born in")) (text (string "\S+ in")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_born_19) (re AGENT1_REF (text RAW_TEXT (string "was born in")) (text (string "\S+ on")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_born_20) (re AGENT1_REF (text RAW_TEXT (string "was born")) DATE))
+
+
+)
+)

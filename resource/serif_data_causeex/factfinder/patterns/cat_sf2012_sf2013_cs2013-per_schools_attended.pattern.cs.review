@@ -1,0 +1,131 @@
+(per_schools_attended
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 1: 3 verb: [graduated]   <sub> = 0    from = 1 -->
+		(vprop (id per_schools_attended_2) (score 0.9) (score_group 1) (predicate graduated) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_2)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role from) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG)))))
+
+		<!-- 2: 3 verb: [attended]   <sub> = 0    <obj> = 1 -->
+		(vprop (id per_schools_attended_3) (score 0.9) (score_group 1) (predicate attended) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_3)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG)))))
+
+
+		<!-- 4: 2 {0} graduated from {1} -->
+		(regex (id per_schools_attended_5) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_5)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "graduated")) (text DONT_ADD_SPACES (string "from")) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG))))
+
+		<!-- 5: 2 {0} attended {1} -->
+		(regex (id per_schools_attended_6) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_6)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "attended")) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG))))
+
+		<!-- 7: 2 noun: [student]   <ref> = 0    at = 1 -->
+		(nprop (id per_schools_attended_8) (score 0.9) (score_group 1) (predicate student) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_8)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG)))))
+
+		<!-- 8: 2 noun: [graduate]   <ref> = 0    of = name: []      <ref> = 1 -->
+		(nprop (id per_schools_attended_9) (score 0.9) (score_group 1) (predicate graduate) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_9)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG))))))))
+
+		<!-- 9: 2 noun: [graduate]   <ref> = 0    of = 1 -->
+		(nprop (id per_schools_attended_10) (score 0.9) (score_group 1) (predicate graduate) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_10)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG)))))
+
+		<!-- 10: 2 noun: [graduate]   <ref> = 0    <mod> = 1 -->
+		(nprop (id per_schools_attended_11) (score 0.9) (score_group 1) (predicate graduate) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_11)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG)))))
+
+
+		<!-- 14: 1 {1} senior {0} -->
+		(regex (id per_schools_attended_15) (score 0.9) (score_group 1) (re (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "senior")) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_15)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 25: 1 {0} undergraduate degree from {1} -->
+		(regex (id per_schools_attended_26) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_26)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "undergraduate")) (text DONT_ADD_SPACES (string "degree")) (text DONT_ADD_SPACES (string "from")) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG))))
+
+
+		<!-- 27: 1 {0} studied law at {1} -->
+		(regex (id per_schools_attended_28) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_28)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "studied")) (text DONT_ADD_SPACES (string "law")) (text DONT_ADD_SPACES (string "at")) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG))))
+
+
+		<!-- 31: 1 {0} enrolled at {1} -->
+		(regex (id per_schools_attended_32) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_32)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "enrolled")) (text DONT_ADD_SPACES (string "at")) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG))))
+
+		<!-- 32: 1 {0} dropped out of {1} -->
+		(regex (id per_schools_attended_33) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_33)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "dropped")) (text DONT_ADD_SPACES (string "out")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG))))
+
+
+		<!-- 38: 1 {0} , graduate of {1} -->
+		(regex (id per_schools_attended_39) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_39)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "graduate")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG))))
+
+
+		<!-- 40: 1 verb: [transfer]   from = 1    during = noun: [education]      <poss> = 0 -->
+		(vprop (id per_schools_attended_41) (score 0.9) (score_group 1) (predicate transfer) (args (argument (role from) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG))) (argument (role during) (nprop (predicate education) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_41)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 44: 1 verb: [studying]   <sub> = 0    at = 1 -->
+		(vprop (id per_schools_attended_45) (score 0.9) (score_group 1) (predicate studying) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_45)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG)))))
+
+		<!-- 45: 1 verb: [study]   <sub> = 0    at = 1 -->
+		(vprop (id per_schools_attended_46) (score 0.9) (score_group 1) (predicate study) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_46)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG)))))
+
+		<!-- 46: 1 verb: [studied]   <sub> = 0    at = 1 -->
+		(vprop (id per_schools_attended_47) (score 0.9) (score_group 1) (predicate studied) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_47)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG)))))
+
+
+		<!-- 55: 1 verb: [graduating]   <sub> = 0    from = 1 -->
+		(vprop (id per_schools_attended_56) (score 0.9) (score_group 1) (predicate graduating) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_56)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role from) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG)))))
+
+		<!-- 56: 1 verb: [graduated]   with = 0    from = 1 -->
+		(vprop (id per_schools_attended_57) (score 0.9) (score_group 1) (predicate graduated) (args (argument (role with) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_57)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role from) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG)))))
+
+		<!-- 57: 1 verb: [graduate]   <sub> = 0    from = 1 -->
+		(vprop (id per_schools_attended_58) (score 0.9) (score_group 1) (predicate graduate) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_58)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role from) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG)))))
+
+
+		<!-- 59: 1 verb: [got]   <poss> = noun: [master]      <poss> = 0    at = 1 -->
+		(vprop (id per_schools_attended_60) (score 0.9) (score_group 1) (predicate got) (args (argument (role <poss>) (nprop (predicate master) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_60)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))) (argument (role at) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG)))))
+
+		<!-- 65: 1 verb: [enrolled]   after = noun: [return]      <poss> = 0    at = 1 -->
+		(vprop (id per_schools_attended_66) (score 0.9) (score_group 1) (predicate enrolled) (args (argument (role after) (nprop (predicate return) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_66)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))) (argument (role at) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG)))))
+
+		<!-- 66: 1 verb: [enrolled]   <sub> = 0    at = 1 -->
+		(vprop (id per_schools_attended_67) (score 0.9) (score_group 1) (predicate enrolled) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_67)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG)))))
+
+		<!-- 70: 1 verb: [earned]   <sub> = 0    <obj> = noun: [degree]      from = 1 -->
+		(vprop (id per_schools_attended_71) (score 0.9) (score_group 1) (predicate earned) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_71)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (nprop (predicate degree) (args (argument (role from) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG))))))))
+
+		<!-- 71: 1 verb: [earned]   <obj> = noun: [doctorate]      <poss> = 0    from = 1 -->
+		(vprop (id per_schools_attended_72) (score 0.9) (score_group 1) (predicate earned) (args (argument (role <obj>) (nprop (predicate doctorate) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_72)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))) (argument (role from) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG)))))
+
+		<!-- 72: 1 verb: [earned]   <obj> = noun: [degree]      <poss> = 0    from = name: []      <ref> = 1 -->
+		(vprop (id per_schools_attended_73) (score 0.9) (score_group 1) (predicate earned) (args (argument (role <obj>) (nprop (predicate degree) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_73)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))) (argument (role from) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG))))))))
+
+		<!-- 73: 1 verb: [earned]   <obj> = noun: [degree]      <poss> = 0    from = 1 -->
+		(vprop (id per_schools_attended_74) (score 0.9) (score_group 1) (predicate earned) (args (argument (role <obj>) (nprop (predicate degree) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_74)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))) (argument (role from) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG)))))
+
+
+		<!-- 77: 1 verb: [dropped]   <sub> = 0    out_of = 1 -->
+		(vprop (id per_schools_attended_78) (score 0.9) (score_group 1) (predicate dropped) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_78)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role out_of) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG)))))
+
+
+		<!-- 79: 1 verb: [classmates]   <sub> = 0    at = 1 -->
+		(vprop (id per_schools_attended_80) (score 0.9) (score_group 1) (predicate classmates) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_80)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG)))))
+
+		<!-- 80: 1 verb: [classmates]   <obj> = name: []      <ref> = 0    at = 1 -->
+		(vprop (id per_schools_attended_81) (score 0.9) (score_group 1) (predicate classmates) (args (argument (role <obj>) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_81)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))) (argument (role at) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG)))))
+
+
+		<!-- 84: 1 verb: [attending]   <sub> = 0    <obj> = 1 -->
+		(vprop (id per_schools_attended_85) (score 0.9) (score_group 1) (predicate attending) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_85)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG)))))
+
+
+		<!-- 86: 1 set: []   <ref> = noun: [graduate]      <mod> = 1    <member> = 0 -->
+		(sprop (id per_schools_attended_87) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate graduate) (args (argument (role <mod>) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG)))))) (argument (role <member>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_87)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 87: 1 noun: [student]   <ref> = 0    at = name: []      <ref> = 1 -->
+		(nprop (id per_schools_attended_88) (score 0.9) (score_group 1) (predicate student) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_88)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role at) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG))))))))
+
+
+		<!-- 91: 1 noun: [alumna]   <ref> = 0    of = 1 -->
+		(nprop (id per_schools_attended_92) (score 0.9) (score_group 1) (predicate alumna) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_92)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG)))))
+
+		<!-- 98: 1 copula: [is]   <sub> = 0    <obj> = noun: [graduate]      of = 1 -->
+		(anyprop (id per_schools_attended_99) (score 0.9) (score_group 1) (predicate is) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_99)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (nprop (predicate graduate) (args (argument (role of) (mention (return (ff_role per_schools_attended)) (min-entitylevel DESC) (block AGENT1) (acetype ORG))))))))
+
+	)
+)

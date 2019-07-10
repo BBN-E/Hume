@@ -1,0 +1,6 @@
+# If two location names are identical except for a 
+# prefix on this list, we will block coreference. 
+# We don't want "Lake Chad" to link with "Chad" for 
+# instance. 
+
+lake

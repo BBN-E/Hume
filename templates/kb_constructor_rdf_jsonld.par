@@ -1,0 +1,64 @@
+READER SerifXMLReader
++serifxml_dir+
++metadata_file+
++mode+
++serif_accent_event_type+
+
+READER FactReader
++factfinder_json_file+
+
+RESOLVER CountryCodePropertyResolver
+
+RESOLVER FactorEventGenericGenericityResolver
+
+RESOLVER BadRelationResolver
+
+RESOLVER RedundantEventResolver
+
+RESOLVER RedundantRelationResolver
+
+RESOLVER PrecisionResolver
+
+RESOLVER RemovalByTypeResolver
+
+RESOLVER AdditionalEntityTypeResolver
+
+RESOLVER ConfidenceResolver
++learnit_relation_triple_file+
++learnit_event_head_count_file+
+
+RESOLVER EventDirectionResolver
+
+RESOLVER EventTypeChangeResolver
+
+RESOLVER EventMappingResolver
+
++event_uploader+
+
+RESOLVER EventCacheLookupGrounder
++grounding_cache_dir+
+
+RESOLVER EntityGroupEntityTypeResolver
+
+SERIALIZER RelationTSVSerializer
++relation_tsv_file+
+
+SERIALIZER JSONSerializer
++json_output_file+
+
+SERIALIZER JSONLDSerializer
++jsonld_output_file+
++metadata_file+
++mode+
+
+SERIALIZER KBPickleSerializer
++pickle_output_file+
+
+SERIALIZER RDFSerializer
+UNSTRUCTURED
++ontology_turtle_folder+
++seed_milestone+
++seed_type+
++seed_version+
++ttl_output_file+
++nt_output_file+

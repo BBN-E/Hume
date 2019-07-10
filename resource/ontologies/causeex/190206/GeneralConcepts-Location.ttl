@@ -1,0 +1,329 @@
+@prefix : <http://ontology.causeex.com/ontology/odps/GeneralConcepts#> .
+@prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix general: <http://ontology.causeex.com/ontology/odps/GeneralConcepts#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ontology.causeex.com/ontology/odps/GeneralConcepts-Location> rdf:type owl:Ontology ;
+    dcterms:description "Ontology defining location-related general concepts used in the Causal Exploration program."@en ;
+    dcterms:created "February 5, 2019"^^xsd:string ;
+    rdfs:comment """February 5th 2019 revision:
+                      Changed rdfs:comment from xsd:string to @en.
+                    January 29th 2019 revisions:
+                      Corrected typo in imports statement for GeneralConcepts.
+                      Added classes from the NATO Geospatial Feature Concept List and other concepts derived from that list.
+                      Changed the superclassing of PathRoadOrRoute and Territory.
+                      Added that cco:Road and cco:Trail subclass from PathRoadOrRoute, and that cco:RailwayCrossing and cco:RoadJunction 
+                        subclass from Crossing.
+                      All changes prior to January 22nd 2019 are documented in the GeneralConcepts ontology."""@en ;
+    owl:imports <http://www.ontologyrepository.com/CommonCoreOntologies/Mid/GeospatialOntology> ;
+    owl:imports <http://ontology.causeex.com/ontology/odps/GeneralConcepts> ;
+    owl:imports <http://purl.org/dc/terms> ;
+    owl:versionInfo "Version 1.2"^^xsd:string .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+:has_bounding_coordinate a owl:ObjectProperty ;
+    rdfs:label "has bounding coordinate"@en ;
+    rdfs:comment "Indicates that a BoundingBox is delimited by all of the referenced PhysicalLocations (which in turn have properties, latitude and longitude)."@en ;
+    rdfs:domain :BoundingBox ;
+    rdfs:range :PhysicalLocation ;
+    rdfs:subPropertyOf :has_component .
+
+:involves_goods_or_property a owl:ObjectProperty ;
+    rdfs:label "involves goods or property"@en ;
+    rdfs:comment "Indicates that the referenced entity involves or is involved with (e.g., transfers, destroys, purchases, manufactures, distributes, ...) some goods or property. The type of goods or property are defined by the CCO Artifact ontology or by sub-classes of PhysicalLocation."@en ;
+    rdfs:comment "As another example, a surrender of territory by one general to another would be defined as a SurrenderOrYielding event, by the 'active' surrendering general to the 'affected' general, using 'involves_goods_or_property' to indicate the territory that was surrendered and using 'located_at' to define where the surrender Event occurred. As another example, if there was a protest to denounce firearms, then that could be modeled as a 'DemonstrationOrProtest' Event whose 'topic' was a 'DisapprovalOrDenunciation' Event where the latter used 'involves_goods_or_property' to reference a cco:Firearm artifact with a general:generic property of 'true'."@en; 
+    rdfs:range [ a owl:Class ;
+                 owl:unionOf ( :PhysicalLocation cco:Artifact ) ] .
+
+:located_at a owl:ObjectProperty, owl:IrreflexiveProperty, owl:TransitiveProperty ;
+    rdfs:label "located at"@en ;
+    rdfs:comment "Indicates that an individual (such as a geopolitical entity or Event) is at a particular place/geospatial position, or is inferred to be at a Location identified by the related_location property of a LocationDetails individual."@en ; 
+    rdfs:range [ a owl:Class ;
+                 owl:unionOf ( :Location :LocationDetails ) ] .
+
+:located_near a owl:ObjectProperty, owl:IrreflexiveProperty ;
+    rdfs:label "located near"@en ;
+    rdfs:comment "Indicates that an individual (such as a geopolitical entity or Event) is positioned near a particular place/geospatial position, or is inferred to be near a Location identified by the related_location property of a LocationDetails individual."@en ; 
+    rdfs:range [ a owl:Class ;
+                 owl:unionOf ( :Location :LocationDetails ) ] .
+
+:related_location a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "related location"@en ;
+    rdfs:comment "Identifies the specific location (defined by individuals whose type is a sub-class of :Location) of a LocationDetails individual."@en ;
+    rdfs:domain :LocationDetails ;
+    rdfs:range :Location .
+
+
+#################################################################
+#    Data Properties
+#################################################################
+
+:altitude_lower_bound_meters a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "lower bound of an altitude range (in meters)"@en ;
+    rdfs:comment "An xsd:decimal defining the lower bound of an altitude range in meters."@en ;
+    rdfs:domain :PhysicalLocation ;
+    rdfs:range xsd:decimal .
+
+:altitude_meters a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "altitude (in meters)"@en ;
+    rdfs:comment "An xsd:decimal defining an altitude in meters."@en ;
+    rdfs:domain :PhysicalLocation ;
+    rdfs:range xsd:decimal .
+
+:altitude_upper_bound_meters a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "upper bound of an altitude range (in meters)"@en ;
+    rdfs:comment "An xsd:decimal defining the upper bound of an altitude range in meters."@en ;
+    rdfs:domain :PhysicalLocation ;
+    rdfs:range xsd:decimal .
+
+:genc_character_code a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "geopolitical entities, names and codes (GENC) character code"@en ;
+    rdfs:comment "Reference to a GENC (Geopolitical Entities, Names and Codes) character code which uniquely identifies a geopolitical region (as a 3 character code) or subdivision (as a 6 character code). The codes are defined by the NGA, accessible from https://nsgreg.nga.mil/doc/view?i=2507. In addition, a Python distribution is also available at https://github.com/hannosch/genc. A GENC character code identifies a PhysicalLocation or a geopolitical entity/Actor."@en ;
+    rdfs:domain :PhysicalLocation ;
+    rdfs:range xsd:string .
+
+:geoname_id a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "geoname id"@en ;
+    rdfs:comment "Reference to a geoname id which uniquely identifies a location/locality in the Geonames database. Using a GET request and substituting the geoname id and your username in the following request, http://api.geonames.org/get?geonameId=geoname_id&username=username&style=SHORT, returns a great deal of information on the location/locality. A geoname identifies a PhysicalLocation or a geopolitical entity/Actor."@en ;
+    rdfs:domain :PhysicalLocation ;
+    rdfs:range xsd:string .
+
+:ipV4Address a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "IPV4 address"@en ;
+    rdfs:comment "A string defining an IPV4 address in dotted decimal format (e.g., 169.23.24.00)."@en ;
+    rdfs:domain :NetworkLocation ;
+    rdfs:range [ a rdfs:Datatype ;
+                 owl:onDatatype xsd:string ;
+                 owl:withRestrictions ( [ xsd:pattern "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$" ] ) ] .
+
+:ipV6Address a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "IPV6 address"@en ;
+    rdfs:comment "A string defining an IPV6 address using hexadecimals (e.g., ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff)."@en ;
+    rdfs:domain :NetworkLocation ;
+    rdfs:range [ a rdfs:Datatype ;
+                 owl:onDatatype xsd:string ;
+                 owl:withRestrictions ( [ xsd:pattern "^([A-Fa-f0-9]{4}:|0:|:){7}([A-Fa-f0-9]{4}|0)$" ] ) ] .
+
+:latitude a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "latitude"@en ;
+    rdfs:comment "An xsd:decimal defining a latitude in decimal degrees."@en ;
+    rdfs:domain :PhysicalLocation ;
+    rdfs:range xsd:decimal .
+
+:location a owl:DatatypeProperty ;
+    rdfs:label "location"@en ;
+    rdfs:comment "A string giving a description of a Location individual. This is a different technique for defining the location than specifying a geoname, latitude/longitude, etc. When parsing text, it may be necessary to simply capture the text related to the location(s), without defining more specific details. Additional properties can be added to the Location individual at a later time."@en ;
+    rdfs:range xsd:string .
+
+:longitude a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "longitude"@en ;
+    rdfs:comment "An xsd:decimal defining a longitude in decimal degrees."@en ;
+    rdfs:domain :PhysicalLocation ;
+    rdfs:range xsd:decimal .
+
+:url a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "URL (Uniform Resource Locator)"@en ;
+    rdfs:comment "A string defining a web address that uses the HTTP or HTTPS protocol."@en ;
+    rdfs:domain :NetworkLocation ;
+    rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+:Airspace a owl:Class ;
+    rdfs:label "Airspace"@en ;
+    rdfs:comment "A defined three dimensional region of space relevant to air traffic."@en ;
+    rdfs:subClassOf cco:GeographicFeature .
+
+:Beach a owl:Class ;
+    rdfs:label "Beach"@en ;
+    rdfs:comment "On a shore, the area on which the waves break and over which shore debris (for example: sand, shingle, and/or pebbles) accumulate."@en ;
+    rdfs:subClassOf cco:GeographicFeature .
+
+:Border a owl:Class ;
+    rdfs:label "Border"@en ;
+    rdfs:comment "Identifies a boundary between two geopolitical entities. Some borders correspond with physical features, and others are legal constructs mandated or established by agreement. Borders are sub-classes of VirtualLocations."@en ;
+    rdfs:subClassOf :VirtualLocation .
+
+:BoundingBox a owl:Class ;
+    rdfs:label "Bounding Box"@en ;
+    rdfs:comment "A polygonal region enclosed by the latitude/longitude coordinates/PhysicalLocations specified using the has_bounding_coordinate property. The use of latitude and longitude is specified by the Content Standard for Digital Geospatial Metadata, from the Federal Geographic Data Committee (FGDC), FGDC-STD-001-1998."@en ; 
+    rdfs:subClassOf :PhysicalLocation .
+#   owl:equivalentClass cco:GeospatialRegionBoundingBox .
+
+:BurialLocation a owl:Class ;
+    rdfs:label "Burial location"@en ;
+    rdfs:subClassOf cco:AnthropogenicFeature ;
+    rdfs:comment "Location where one or more corpses are placed/interred."@en .
+
+:Cave a owl:Class ;
+    rdfs:label "Bounding Box"@en ;
+    rdfs:comment "An interconnected series of naturally occurring subterranean chambers."@en ; 
+    rdfs:subClassOf cco:GeographicFeature .
+
+:Cemetery a owl:Class ;
+    rdfs:label "Cemetery"@en ;
+    rdfs:comment "A site and associated structures devoted to the burial of the dead."@en ;
+    rdfs:subClassOf :BurialLocation .
+
+:ConservationArea a owl:Class ;
+    rdfs:label "Conservation area or protected area"@en ;
+    rdfs:comment "An area of land and/or sea especially dedicated to the protection and maintenance of biological diversity, and of natural and associated cultural resources, and managed through legal or other effective means."@en ;
+    rdfs:subClassOf cco:AnthropogenicFeature .
+
+:Crater a owl:Class ;
+    rdfs:label "Crater"@en ;
+    rdfs:comment "A bowl-shaped depression in the terrain, usually round and with steep sides."@en ;
+    rdfs:subClassOf cco:GeographicFeature .
+
+:Desert a owl:Class ;
+    rdfs:label "Desert"@en ;
+    rdfs:comment "An arid and treeless uncultivated sparsely populated tract of land."@en ;
+    rdfs:subClassOf cco:GeographicFeature .
+
+:Forest a owl:Class ;
+    rdfs:label "Forest"@en ;
+    rdfs:comment "A tract of land primarily covered by trees and undergrowth."@en ;
+    rdfs:subClassOf cco:GeographicFeature .
+
+:GeologicFault a owl:Class ;
+    rdfs:label "Forest"@en ;
+    rdfs:comment "A fracture or zone of fractures in a rock formation, marked by the relative displacement on either side of the plane of the fracture."@en ;
+    rdfs:subClassOf cco:GeographicFeature .
+
+:Glacier a owl:Class ;
+    rdfs:label "Glacier"@en ;
+    rdfs:comment "A large mass or river of ice formed by accumulation and compaction of snow on higher ground that is moving slowly down a slope or valley from above the snowline."@en ;
+    rdfs:subClassOf cco:GeographicFeature .
+
+:Grave a owl:Class ;
+    rdfs:label "Grave"@en ;
+    rdfs:subClassOf :BurialLocation .
+
+:Harbor a owl:Class ;
+    rdfs:label "Harbor or harbour"@en ;
+    rdfs:comment "A natural or artificial improved body of water providing protection for vessels and generally anchorage and docking facilities."@en ;
+    rdfs:subClassOf cco:AnthropogenicFeature .
+
+:InlandWaterBody a owl:Class ;
+    rdfs:label "Inland water body such as a lake, pond, peservoir or water hole"@en ;;
+    rdfs:comment "A body of water that is entirely surrounded by land."@en ;
+    rdfs:subClassOf cco:HydrographicFeature .
+
+:Island a owl:Class ;
+    rdfs:label "Island"@en ;;
+    rdfs:comment "A land mass, other than a continent, surrounded by water."@en ;
+    rdfs:subClassOf cco:GeographicFeature .
+
+:Location a owl:Class ;
+    rdfs:label "Location"@en ;
+    rdfs:comment "Identifies a point or area on the Earth’s surface, or in a virtual/network space. Location is a general concept with sub-classes defining more specific types of locations as localities (for example, physical locations using geonames or latitude-longitude definitions), or network locations."@en .
+
+:LocationDetails a owl:Class ;
+    rdfs:label "Location Details"@en ;
+    rdfs:comment "Identifies that something is inferred to have a specific Location, with some probability/confidence. Individuals of this class reify placing something at/near a Location. The reification is needed in order to add the general:numeric_confidence property. The confidence in the Location is defined by associating located_at/near with a LocationDetails instance (instead of directly associating it with the Location). The LocationDetails individual in turn references the Location (using the related_location property) and includes a value for the general:numeric_confidence property."@en .
+
+:MassGrave a owl:Class ;
+    rdfs:label "Mass grave"@en ;
+    rdfs:comment "A grave containing multiple, usually unidentified, human corpses."@en ;
+    rdfs:subClassOf :Grave .
+
+:Minefield a owl:Class ;
+    rdfs:label "Minefield"@en ;
+    rdfs:comment "A site laid with explosive mines."@en ;
+    rdfs:subClassOf cco:AnthropogenicFeature .
+
+:MountainPass a owl:Class ;
+    rdfs:label "Mountain pass"@en ;
+    rdfs:comment "A narrow route through a mountainous region or over a mountain range."@en ;
+    rdfs:subClassOf :PathRoadOrRoute .
+
+:MountainousRegion a owl:Class ;
+    rdfs:label "Mountain region or mountain range"@en ;
+    rdfs:subClassOf cco:GeographicFeature .
+
+:NetworkLocation a owl:Class ;
+    rdfs:label "Network Location"@en ;
+    rdfs:comment "Identifies a network location either as an IPV4 or IPV6 address or as an URI."@en ;
+    rdfs:subClassOf :VirtualLocation .
+
+:PathRoadOrRoute a owl:Class ;
+    rdfs:label "Path, Road or Route"@en ;
+    rdfs:comment "Identifies a thoroughfare, road, way, ... for vehicles, persons, animals, cargo transportation, etc."@en ;
+    rdfs:subClassOf cco:TransportationInfrastructure, cco:AnthropogenicFeature .
+cco:Road rdfs:subClassOf :PathRoadOrRoute .
+cco:Trail rdfs:subClassOf :PathRoadOrRoute .
+
+:PhysicalLocation a owl:Class ;
+    rdfs:label "Physical Location"@en ;
+    rdfs:comment "Identifies a point or area on or near the Earth’s surface. PhysicalLocation is a general concept with properties defining geoname and GENC locations, and/or altitude-latitude-longitude settings. In addition, a PhysicalLocation is defined as equivalent to CCO's GeospatialRegion and EnvironmentalFeature, as well as the CCO Artifact Ontology' Infrastructure and Facility classes. Sub-classes of these CCO types can be used to further classify a PhysicalLocation individual, which then adds that semantic to the individual."@en ;
+    rdfs:comment "Note that the CCO Artifact Ontology's ArtifactLocation is also defined as equivalent to PhysicalLocation. This is done for completeness since the definition of ArtifactLocation is simply 'the location of some Artifact'. That is what is impled by subtyping cco:Infrastructure and cco:Facility from PhysicalLocation."@en;
+    rdfs:subClassOf :Location ;
+    owl:equivalentClass [ a owl:Class ;
+                          owl:unionOf ( cco:GeospatialRegion cco:EnvironmentalFeature cco:Facility cco:Infrastructure ) ] .
+cco:Continent rdfs:subClassOf :PhysicalLocation .
+cco:GeopoliticalEntity rdfs:subClassOf :PhysicalLocation .
+cco:GeopoliticalEntityPart rdfs:subClassOf :PhysicalLocation .
+cco:EnvironmentalFeature rdfs:subClassOf :PhysicalLocation .
+cco:SeaLevel rdfs:subClassOf :PhysicalLocation .
+cco:Subcontinent rdfs:subClassOf :PhysicalLocation .
+cco:Facility rdfs:subClassOf :PhysicalLocation .
+cco:Infrastructure rdfs:subClassOf :PhysicalLocation .
+# cco:ArtifactLocation rdfs:subClassOf :PhysicalLocation .
+
+:PublicSquare a owl:Class ;
+    rdfs:label "Public square"@en ;
+    rdfs:comment "An open site that serves as a public meeting location in a built-up area."@en ;
+    rdfs:subClassOf cco:AnthropogenicFeature .
+
+:Rapids a owl:Class ;
+    rdfs:label "Rapids"@en ;
+    rdfs:comment "A disturbance of water caused by obstructions."@en ;
+    rdfs:subClassOf cco:HydrographicFeature .
+
+:ShortenedHierarchy a owl:Class ;
+    rdfs:label "Shortened Location hierarchy"@en ;
+    rdfs:comment "Class created to artifically shorten the number of subclasses from :Location. For example, the cco:ControlledAccessHighway class is 6 levels deep in the Location hierarchy (ControlledAccessHighway -> Highway -> Road -> TransportationInfrastructure -> Infrastructure -> PhysicalLocation -> Location). When this is sub-classed from ShortenedHierarchy, the number of levels is reduced to 2 (ControlledAccessHighway -> ShortenedHierarchy -> Location). This is done to allow the workarounds for rdfs:subClassOf* errors in Virtuoso."@en ;
+    rdfs:subClassOf :Location .
+cco:CellularTelecommunicationNetwork rdfs:subClassOf :ShortenedHierarchy .
+cco:ControlledAccessHighway rdfs:subClassOf :ShortenedHierarchy .
+
+:Territory a owl:Class ;
+    rdfs:label "Territory, municipality or dependency"@en ;
+    rdfs:comment "Identifies an 'overseas' administrative part of a country."@en ;
+    rdfs:subClassOf cco:GeopoliticalEntity .
+
+:VirtualLocation a owl:Class ;
+    rdfs:label "Virtual Location"@en ;
+    rdfs:comment "Identifies a virtual/network location. VirtualLocation is a general concept with properties defining IP V4 or V6 locations and URLs."@en ;
+    rdfs:subClassOf :Location .
+
+:Volcano a owl:Class ;
+    rdfs:label "Volcano"@en ;
+    rdfs:comment "A hill or mountain situated over an opening or openings in the Earth's crust through which lava, cinders, steam, and/or gases, are or have been expelled."@en ;
+    rdfs:subClassOf cco:GeographicFeature .
+
+:WaterCourse a owl:Class ;
+    rdfs:label "Water course or channel"@en ;
+    rdfs:comment "A brook, stream, strait or artifically constructed water channel."@en ;
+    rdfs:subClassOf cco:HydrographicFeature .
+
+:Waterfall a owl:Class ;
+    rdfs:label "Waterfall"@en ;
+    rdfs:comment "A vertically descending part of a watercourse where it falls from a height (for example: over a rock or a precipice)."@en ;
+    rdfs:subClassOf :WaterCourse .
+
+:Wetland a owl:Class ;
+    rdfs:label "Wetland, marsh or swamp"@en ;
+    rdfs:comment "A marsh, swamp, or other stretch of land that is usually saturated with water."@en ;
+    rdfs:subClassOf cco:HydrographicFeature .

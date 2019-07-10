@@ -1,0 +1,62 @@
+# This corpus is regarding Andrea's email close to 03/01/19
+
+job_name: causeex_mar_19_pi_andrea_5_sentences
+
+###########
+# Pipeline
+###########
+stages_to_run: serif,kbp,generic-events,nn-events,event-consolidation,event-event-relations,serialization,probabilistic-grounding
+jserif_branch: 364-add-event-from-json
+mode: CauseEx
+
+########
+# Serif
+########
+serif_input_sgm_list: /nfs/raid87/u12/hqiu/Public/causeex_mar_19_pi_meeting_andrea_5_sentences/sgms.list
+serif_input_awake_db: /nfs/raid87/u14/CauseEx/Kaliningrad-Dataset/TwoSix-Extracted-M15-Assessment/awake_dbs/causeex_dbpedia_20170308_m15a_kaliningrad_fix.sqlite
+
+######
+# KBP 
+######
+kbp_input_serifxml_list: GENERATED
+
+##################
+## Generic events
+##################
+generic_events_input_serifxml_list: GENERATED
+
+#######################
+## NN event extraction
+#######################
+nn_events_input_serifxml_list: GENERATED
+nn_events_model_list: /nfs/raid87/u14/CauseEx/nn_event_models/trigger_models/050142019_AMT_20k_positive/nn_models.list
+
+######################
+# Event consolidation
+######################
+event_consolidation_input_serifxml_list: GENERATED
+event_consolidation_input_metadata_file: /nfs/raid87/u12/hqiu/Public/causeex_mar_19_pi_meeting_andrea_5_sentences/metadata.txt
+copyArgumentSentenceWindow: 1
+
+##########################
+# Probabilistic grounding
+##########################
+grounding_input: GENERATED
+
+##########
+# LearnIt
+##########
+eer_input_serifxml_list: GENERATED
+eer_input_serif_cause_effect_relations_dir: GENERATED
+learnit_pattern_dir: DEFAULT
+learnit_min_freq_event_pairs: 1
+
+################
+# Serialization
+################
+serialization_input_serifxml_list: GENERATED
+serialization_input_metadata_file: /nfs/raid87/u12/hqiu/Public/causeex_mar_19_pi_meeting_andrea_5_sentences/metadata.txt
+serialization_input_factfinder_json_file: GENERATED
+serialization_input_learnit_triple_file: GENERATED
+serialization_input_learnit_event_count_file: GENERATED
+serialization_do_event_uploading: False

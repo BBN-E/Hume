@@ -1,0 +1,460 @@
+(per_employee_or_member_of
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- noun:officer[<ref> = 0][<unknown> = 1] -->
+		(nprop (id per_employee_or_member_of_0) (score 0.9) (score_group 1) (predicate officer) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- {0} , head of {1} -->
+		(regex (id per_employee_or_member_of_1) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "head")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))
+
+		<!-- verb:remain[<sub> = 0][<obj> = noun:ceo[of = 1]] -->
+		(vprop (id per_employee_or_member_of_2) (score 0.9) (score_group 1) (predicate remain) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (nprop (predicate ceo) (args (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- noun:job[<poss> = 0][on = 1] -->
+		(nprop (id per_employee_or_member_of_3) (score 0.9) (score_group 1) (predicate job) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role on) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- copula:was[<sub> = 0][<obj> = noun:member[of = 1]] -->
+		(anyprop (id per_employee_or_member_of_4) (score 0.9) (score_group 1) (predicate was) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (nprop (predicate member) (args (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- verb:works[<sub> = 0][at = name:[<ref> = 1]] -->
+		(vprop (id per_employee_or_member_of_5) (score 0.9) (score_group 1) (predicate works) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- noun:sheikh[<ref> = 0][of = 1] -->
+		(nprop (id per_employee_or_member_of_6) (score 0.9) (score_group 1) (predicate sheikh) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- copula:is[<sub> = 0][<obj> = noun:executive[of = 1]] -->
+		(anyprop (id per_employee_or_member_of_7) (score 0.9) (score_group 1) (predicate is) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (nprop (predicate executive) (args (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- noun:strategist[<ref> = 0][of = 1] -->
+		(nprop (id per_employee_or_member_of_8) (score 0.9) (score_group 1) (predicate strategist) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:director[<ref> = 0][with = 1] -->
+		(nprop (id per_employee_or_member_of_9) (score 0.9) (score_group 1) (predicate director) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role with) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- {0} job as {1} -->
+		(regex (id per_employee_or_member_of_10) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "job")) (text DONT_ADD_SPACES (string "as")) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))
+
+		<!-- noun:ceo[<ref> = 0][of = 1] -->
+		(nprop (id per_employee_or_member_of_11) (score 0.9) (score_group 1) (predicate ceo) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:analyst[<ref> = 0][<poss> = 1] -->
+		(nprop (id per_employee_or_member_of_12) (score 0.9) (score_group 1) (predicate analyst) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:director[<ref> = 0][at = 1] -->
+		(nprop (id per_employee_or_member_of_13) (score 0.9) (score_group 1) (predicate director) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:analyst[<ref> = 0][of = 1] -->
+		(nprop (id per_employee_or_member_of_14) (score 0.9) (score_group 1) (predicate analyst) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- verb:became[<sub> = 0][<obj> = noun:executive[<poss> = 1]] -->
+		(vprop (id per_employee_or_member_of_15) (score 0.9) (score_group 1) (predicate became) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (nprop (predicate executive) (args (argument (role <poss>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- noun:scholar[<ref> = 0][at = 1] -->
+		(nprop (id per_employee_or_member_of_16) (score 0.9) (score_group 1) (predicate scholar) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:job[<poss> = 0][at = 1] -->
+		(nprop (id per_employee_or_member_of_17) (score 0.9) (score_group 1) (predicate job) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:dealer[<ref> = 0][at = 1] -->
+		(nprop (id per_employee_or_member_of_18) (score 0.9) (score_group 1) (predicate dealer) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- modifier:where[<ref> = 1][where = verb:worked[<sub> = 0]] -->
+		(mprop (id per_employee_or_member_of_19) (score 0.9) (score_group 1) (predicate where) (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))) (argument (role where) (vprop (predicate worked) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- noun:economist[<ref> = 0][at = 1] -->
+		(nprop (id per_employee_or_member_of_20) (score 0.9) (score_group 1) (predicate economist) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:director[<ref> = 0][at = name:[<ref> = 1]] -->
+		(nprop (id per_employee_or_member_of_21) (score 0.9) (score_group 1) (predicate director) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- noun:analyst[<ref> = 0][with = name:[<ref> = 1]] -->
+		(nprop (id per_employee_or_member_of_22) (score 0.9) (score_group 1) (predicate analyst) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role with) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- noun:manager[<ref> = 0][at = 1] -->
+		(nprop (id per_employee_or_member_of_23) (score 0.9) (score_group 1) (predicate manager) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- {1} senior [GPE] {0} -->
+		(regex (id per_employee_or_member_of_24) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)) (text DONT_ADD_SPACES (string "senior")) (mention (acetype GPE)) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- noun:employee[<ref> = 0][of = 1] -->
+		(nprop (id per_employee_or_member_of_25) (score 0.9) (score_group 1) (predicate employee) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- verb:replaced[<sub> = 0][in = 1] -->
+		(vprop (id per_employee_or_member_of_26) (score 0.9) (score_group 1) (predicate replaced) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role in) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- {0} , strategist at {1} -->
+		(regex (id per_employee_or_member_of_27) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "strategist")) (text DONT_ADD_SPACES (string "at")) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))
+
+		<!-- verb:works[<sub> = 0][for = 1] -->
+		(vprop (id per_employee_or_member_of_28) (score 0.9) (score_group 1) (predicate works) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role for) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:economist[<ref> = 0][with = 1] -->
+		(nprop (id per_employee_or_member_of_29) (score 0.9) (score_group 1) (predicate economist) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role with) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- {0} teaches at {1} -->
+		(regex (id per_employee_or_member_of_30) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "teaches")) (text DONT_ADD_SPACES (string "at")) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))
+
+		<!-- {0} who led {1} -->
+		(regex (id per_employee_or_member_of_31) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "who")) (text DONT_ADD_SPACES (string "led")) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))
+
+		<!-- {0} actually works for {1} -->
+		(regex (id per_employee_or_member_of_32) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "actually")) (text DONT_ADD_SPACES (string "works")) (text DONT_ADD_SPACES (string "for")) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))
+
+		<!-- noun:employee[<ref> = 0][at = 1] -->
+		(nprop (id per_employee_or_member_of_33) (score 0.9) (score_group 1) (predicate employee) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:trader[<ref> = 0][at = 1] -->
+		(nprop (id per_employee_or_member_of_34) (score 0.9) (score_group 1) (predicate trader) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:officer[<ref> = 0][<poss> = 1] -->
+		(nprop (id per_employee_or_member_of_35) (score 0.9) (score_group 1) (predicate officer) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- set:[<ref> = noun:president[<unknown> = 1]][<member> = 0] -->
+		(sprop (id per_employee_or_member_of_36) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate president) (args (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))) (argument (role <member>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- verb:joined[<sub> = 0][<obj> = 1] -->
+		(vprop (id per_employee_or_member_of_37) (score 0.9) (score_group 1) (predicate joined) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- {0} , chief of {1} -->
+		(regex (id per_employee_or_member_of_38) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "chief")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))
+
+		<!-- verb:join[<sub> = 0][<obj> = 1] -->
+		(vprop (id per_employee_or_member_of_39) (score 0.9) (score_group 1) (predicate join) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:strategist[<ref> = 0][<unknown> = 1] -->
+		(nprop (id per_employee_or_member_of_40) (score 0.9) (score_group 1) (predicate strategist) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:analyst[<ref> = 0][<unknown> = 1] -->
+		(nprop (id per_employee_or_member_of_41) (score 0.9) (score_group 1) (predicate analyst) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- verb:created[<sub> = 0][<obj> = 1] -->
+		(vprop (id per_employee_or_member_of_42) (score 0.9) (score_group 1) (predicate created) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:analyst[<ref> = 0][at = 1] -->
+		(nprop (id per_employee_or_member_of_43) (score 0.9) (score_group 1) (predicate analyst) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:colleague[<ref> = 0][at = 1] -->
+		(nprop (id per_employee_or_member_of_44) (score 0.9) (score_group 1) (predicate colleague) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- {0} , economist with {1} -->
+		(regex (id per_employee_or_member_of_45) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "economist")) (text DONT_ADD_SPACES (string "with")) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))
+
+		<!-- noun:part[<ref> = noun:job[<poss> = 0][on = 1]] -->
+		(nprop (id per_employee_or_member_of_46) (score 0.9) (score_group 1) (predicate part) (args (argument (role <ref>) (nprop (predicate job) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role on) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- noun:executive[<ref> = 0][of = name:[<ref> = 1]] -->
+		(nprop (id per_employee_or_member_of_47) (score 0.9) (score_group 1) (predicate executive) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- noun:analyst[<ref> = 0][at = name:[<ref> = 1]] -->
+		(nprop (id per_employee_or_member_of_48) (score 0.9) (score_group 1) (predicate analyst) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- verb:replaced[<sub> = 1][with = 0] -->
+		(vprop (id per_employee_or_member_of_49) (score 0.9) (score_group 1) (predicate replaced) (args (argument (role <sub>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))) (argument (role with) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- {0} , chief {1} -->
+		(regex (id per_employee_or_member_of_50) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "chief")) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))
+
+		<!-- noun:head[<ref> = 0][of = 1] -->
+		(nprop (id per_employee_or_member_of_51) (score 0.9) (score_group 1) (predicate head) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:economist[<ref> = 0][<poss> = 1] -->
+		(nprop (id per_employee_or_member_of_52) (score 0.9) (score_group 1) (predicate economist) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:economist[<ref> = 0][for = 1] -->
+		(nprop (id per_employee_or_member_of_53) (score 0.9) (score_group 1) (predicate economist) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role for) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:head[<ref> = 0][<poss> = 1] -->
+		(nprop (id per_employee_or_member_of_54) (score 0.9) (score_group 1) (predicate head) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:head[<ref> = 0][at = 1] -->
+		(nprop (id per_employee_or_member_of_55) (score 0.9) (score_group 1) (predicate head) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- verb:remain[<sub> = 0][as = noun:employee[of = 1]] -->
+		(vprop (id per_employee_or_member_of_56) (score 0.9) (score_group 1) (predicate remain) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role as) (nprop (predicate employee) (args (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- noun:scientist[<ref> = 0][<unknown> = 1] -->
+		(nprop (id per_employee_or_member_of_57) (score 0.9) (score_group 1) (predicate scientist) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- {0} joined {1} -->
+		(regex (id per_employee_or_member_of_58) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "joined")) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))
+
+		<!-- {0} , CEO of {1} -->
+		(regex (id per_employee_or_member_of_59) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "CEO")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))
+
+		<!-- noun:fellow[<ref> = 0][at = 1] -->
+		(nprop (id per_employee_or_member_of_60) (score 0.9) (score_group 1) (predicate fellow) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:mayor[<ref> = 0][<unknown> = 1] -->
+		(nprop (id per_employee_or_member_of_61) (score 0.9) (score_group 1) (predicate mayor) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:imam[<ref> = 0][of = name:[<ref> = 1]] -->
+		(nprop (id per_employee_or_member_of_62) (score 0.9) (score_group 1) (predicate imam) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- {1} CEO , {0} -->
+		(regex (id per_employee_or_member_of_63) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)) (text DONT_ADD_SPACES (string "CEO")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- {1} managing director {0} -->
+		(regex (id per_employee_or_member_of_64) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)) (text DONT_ADD_SPACES (string "managing")) (text DONT_ADD_SPACES (string "director")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- modifier:of[<ref> = 0][of = noun:firm[<unknown> = 1]] -->
+		(mprop (id per_employee_or_member_of_65) (score 0.9) (score_group 1) (predicate of) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role of) (nprop (predicate firm) (args (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- noun:members[<ref> = 0][of = 1] -->
+		(nprop (id per_employee_or_member_of_66) (score 0.9) (score_group 1) (predicate members) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- modifier:at[<ref> = 0][at = noun:brokerage[<unknown> = 1]] -->
+		(mprop (id per_employee_or_member_of_67) (score 0.9) (score_group 1) (predicate at) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (nprop (predicate brokerage) (args (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- verb:works[<sub> = 0][at = 1] -->
+		(vprop (id per_employee_or_member_of_68) (score 0.9) (score_group 1) (predicate works) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- verb:worked[<sub> = 0][at = 1] -->
+		(vprop (id per_employee_or_member_of_69) (score 0.9) (score_group 1) (predicate worked) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:lecturer[<ref> = 0][at = 1] -->
+		(nprop (id per_employee_or_member_of_70) (score 0.9) (score_group 1) (predicate lecturer) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- {1} CEO {0} -->
+		(regex (id per_employee_or_member_of_71) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)) (text DONT_ADD_SPACES (string "CEO")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- {0} also heads {1} -->
+		(regex (id per_employee_or_member_of_72) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "also")) (text DONT_ADD_SPACES (string "heads")) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))
+
+		<!-- {1} President and {0} -->
+		(regex (id per_employee_or_member_of_73) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)) (text DONT_ADD_SPACES (string "President")) (text DONT_ADD_SPACES (string "and")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- noun:ceo[<ref> = 0][of = name:[<ref> = 1]] -->
+		(nprop (id per_employee_or_member_of_74) (score 0.9) (score_group 1) (predicate ceo) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- noun:analyst[<ref> = 0][for = 1] -->
+		(nprop (id per_employee_or_member_of_75) (score 0.9) (score_group 1) (predicate analyst) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role for) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- modifier:chief[<ref> = noun:economist[<unknown> = 1][<unknown> = 0]] -->
+		(mprop (id per_employee_or_member_of_76) (score 0.9) (score_group 1) (predicate chief) (args (argument (role <ref>) (nprop (predicate economist) (args (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))) (argument (role <unknown>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- verb:oversee[<sub> = 0][as = noun:strategist[at = 1]] -->
+		(vprop (id per_employee_or_member_of_77) (score 0.9) (score_group 1) (predicate oversee) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role as) (nprop (predicate strategist) (args (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- copula:was[<sub> = 0][<obj> = noun:president[<unknown> = 1]] -->
+		(anyprop (id per_employee_or_member_of_78) (score 0.9) (score_group 1) (predicate was) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (nprop (predicate president) (args (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- noun:economist[<ref> = 0][at = name:[<ref> = 1]] -->
+		(nprop (id per_employee_or_member_of_79) (score 0.9) (score_group 1) (predicate economist) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- verb:began[<obj> = noun:career[<poss> = 0]][with = 1] -->
+		(vprop (id per_employee_or_member_of_80) (score 0.9) (score_group 1) (predicate began) (args (argument (role <obj>) (nprop (predicate career) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)))))) (argument (role with) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- verb:worked[<sub> = 0][as = noun:analyst[<unknown> = 1]] -->
+		(vprop (id per_employee_or_member_of_81) (score 0.9) (score_group 1) (predicate worked) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role as) (nprop (predicate analyst) (args (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- {1} hired {0} -->
+		(regex (id per_employee_or_member_of_82) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)) (text DONT_ADD_SPACES (string "hired")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- verb:teaches[<sub> = 0][at = 1] -->
+		(vprop (id per_employee_or_member_of_83) (score 0.9) (score_group 1) (predicate teaches) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:professor[<ref> = 0][at = 1] -->
+		(nprop (id per_employee_or_member_of_84) (score 0.9) (score_group 1) (predicate professor) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- {1} hired [PER] as {0} -->
+		(regex (id per_employee_or_member_of_85) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)) (text DONT_ADD_SPACES (string "hired")) (mention (acetype PER)) (text DONT_ADD_SPACES (string "as")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- noun:scientist[<ref> = 0][at = 1] -->
+		(nprop (id per_employee_or_member_of_86) (score 0.9) (score_group 1) (predicate scientist) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- set:[<member> = noun:ceo[<poss> = 1]][<member> = 0] -->
+		(sprop (id per_employee_or_member_of_87) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate ceo) (args (argument (role <poss>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))) (argument (role <member>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- noun:ceo[<ref> = 0][<unknown> = 1] -->
+		(nprop (id per_employee_or_member_of_88) (score 0.9) (score_group 1) (predicate ceo) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- copula:is[<sub> = 0][<obj> = noun:leader[of = 1]] -->
+		(anyprop (id per_employee_or_member_of_89) (score 0.9) (score_group 1) (predicate is) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (nprop (predicate leader) (args (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- {1} Chief {0} -->
+		(regex (id per_employee_or_member_of_90) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)) (text DONT_ADD_SPACES (string "Chief")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- verb:lead[<sub> = 0][<obj> = 1] -->
+		(vprop (id per_employee_or_member_of_91) (score 0.9) (score_group 1) (predicate lead) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- verb:said[<sub> = 0][<obj> = verb:felt[<sub> = 1]] -->
+		(vprop (id per_employee_or_member_of_92) (score 0.9) (score_group 1) (predicate said) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (vprop (predicate felt) (args (argument (role <sub>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- copula:is[<sub> = 0][<obj> = noun:professor[at = 1]] -->
+		(anyprop (id per_employee_or_member_of_93) (score 0.9) (score_group 1) (predicate is) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (nprop (predicate professor) (args (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- {0} worked for {1} -->
+		(regex (id per_employee_or_member_of_94) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "worked")) (text DONT_ADD_SPACES (string "for")) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))
+
+		<!-- noun:president[<ref> = 0][<unknown> = 1] -->
+		(nprop (id per_employee_or_member_of_95) (score 0.9) (score_group 1) (predicate president) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:expert[<ref> = 0][at = 1] -->
+		(nprop (id per_employee_or_member_of_96) (score 0.9) (score_group 1) (predicate expert) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- {1} executives including {0} -->
+		(regex (id per_employee_or_member_of_97) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)) (text DONT_ADD_SPACES (string "executives")) (text DONT_ADD_SPACES (string "including")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- noun:professor[<ref> = 0][<unknown> = 1] -->
+		(nprop (id per_employee_or_member_of_98) (score 0.9) (score_group 1) (predicate professor) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:midfielder[<ref> = 0][<unknown> = 1] -->
+		(nprop (id per_employee_or_member_of_99) (score 0.9) (score_group 1) (predicate midfielder) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- {0} , analyst with {1} -->
+		(regex (id per_employee_or_member_of_100) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "analyst")) (text DONT_ADD_SPACES (string "with")) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))
+
+		<!-- verb:joining[<sub> = 0][<obj> = 1] -->
+		(vprop (id per_employee_or_member_of_101) (score 0.9) (score_group 1) (predicate joining) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:economist[<unknown> = 1][<unknown> = 0] -->
+		(nprop (id per_employee_or_member_of_102) (score 0.9) (score_group 1) (predicate economist) (args (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))) (argument (role <unknown>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- {0} works at {1} -->
+		(regex (id per_employee_or_member_of_103) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "works")) (text DONT_ADD_SPACES (string "at")) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))
+
+		<!-- noun:head[<ref> = 0][<unknown> = 1] -->
+		(nprop (id per_employee_or_member_of_104) (score 0.9) (score_group 1) (predicate head) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- verb:including[<sub> = noun:executives[<unknown> = 1]][<obj> = 0] -->
+		(vprop (id per_employee_or_member_of_105) (score 0.9) (score_group 1) (predicate including) (args (argument (role <sub>) (nprop (predicate executives) (args (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- verb:become[<sub> = 0][<obj> = noun:ceo[<poss> = 1]] -->
+		(vprop (id per_employee_or_member_of_106) (score 0.9) (score_group 1) (predicate become) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (nprop (predicate ceo) (args (argument (role <poss>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- noun:secretary[<ref> = 0][of = 1] -->
+		(nprop (id per_employee_or_member_of_107) (score 0.9) (score_group 1) (predicate secretary) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:executive[<ref> = 0][of = 1] -->
+		(nprop (id per_employee_or_member_of_108) (score 0.9) (score_group 1) (predicate executive) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:economist[<ref> = 0][<unknown> = 1] -->
+		(nprop (id per_employee_or_member_of_109) (score 0.9) (score_group 1) (predicate economist) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:analyst[<ref> = 0][at = noun:group[<unknown> = 1]] -->
+		(nprop (id per_employee_or_member_of_110) (score 0.9) (score_group 1) (predicate analyst) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (nprop (predicate group) (args (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- verb:hired[<sub> = 1][<obj> = 0] -->
+		(vprop (id per_employee_or_member_of_111) (score 0.9) (score_group 1) (predicate hired) (args (argument (role <sub>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- {1} analyst , {0} -->
+		(regex (id per_employee_or_member_of_112) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)) (text DONT_ADD_SPACES (string "analyst")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- noun:anlayst[<ref> = 0][<unknown> = 1] -->
+		(nprop (id per_employee_or_member_of_113) (score 0.9) (score_group 1) (predicate anlayst) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- {0} works for {1} -->
+		(regex (id per_employee_or_member_of_114) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "works")) (text DONT_ADD_SPACES (string "for")) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))
+
+		<!-- copula:is[<sub> = 0][<obj> = noun:director[at = 1]] -->
+		(anyprop (id per_employee_or_member_of_115) (score 0.9) (score_group 1) (predicate is) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (nprop (predicate director) (args (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- copula:was[<sub> = 0][<obj> = noun:president[of = 1]] -->
+		(anyprop (id per_employee_or_member_of_116) (score 0.9) (score_group 1) (predicate was) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (nprop (predicate president) (args (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- {1} chief executive {0} -->
+		(regex (id per_employee_or_member_of_117) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)) (text DONT_ADD_SPACES (string "chief")) (text DONT_ADD_SPACES (string "executive")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- verb:heads[<sub> = 0][<obj> = 1] -->
+		(vprop (id per_employee_or_member_of_118) (score 0.9) (score_group 1) (predicate heads) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:strategist[<ref> = 0][for = 1] -->
+		(nprop (id per_employee_or_member_of_119) (score 0.9) (score_group 1) (predicate strategist) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role for) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- {0} , economist at {1} -->
+		(regex (id per_employee_or_member_of_120) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "economist")) (text DONT_ADD_SPACES (string "at")) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))
+
+		<!-- noun:ceo[<ref> = 0][<poss> = 1] -->
+		(nprop (id per_employee_or_member_of_121) (score 0.9) (score_group 1) (predicate ceo) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- {1} Chief Executive {0} -->
+		(regex (id per_employee_or_member_of_122) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)) (text DONT_ADD_SPACES (string "Chief")) (text DONT_ADD_SPACES (string "Executive")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- noun:analyst[<ref> = 0][with = 1] -->
+		(nprop (id per_employee_or_member_of_123) (score 0.9) (score_group 1) (predicate analyst) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role with) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:analysts[<ref> = 0][<unknown> = 1] -->
+		(nprop (id per_employee_or_member_of_124) (score 0.9) (score_group 1) (predicate analysts) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:executive[<ref> = 0][<poss> = 1] -->
+		(nprop (id per_employee_or_member_of_125) (score 0.9) (score_group 1) (predicate executive) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- {1} economist at {0} -->
+		(regex (id per_employee_or_member_of_126) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)) (text DONT_ADD_SPACES (string "economist")) (text DONT_ADD_SPACES (string "at")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- {1} senior strategist {0} -->
+		(regex (id per_employee_or_member_of_127) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)) (text DONT_ADD_SPACES (string "senior")) (text DONT_ADD_SPACES (string "strategist")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- noun:professor[<unknown> = 1][<unknown> = 0] -->
+		(nprop (id per_employee_or_member_of_128) (score 0.9) (score_group 1) (predicate professor) (args (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))) (argument (role <unknown>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- noun:employee[<ref> = 0][<unknown> = 1] -->
+		(nprop (id per_employee_or_member_of_129) (score 0.9) (score_group 1) (predicate employee) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- {0} , analyst at {1} -->
+		(regex (id per_employee_or_member_of_130) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "analyst")) (text DONT_ADD_SPACES (string "at")) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))
+
+		<!-- {1} chief executive officer {0} -->
+		(regex (id per_employee_or_member_of_131) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)) (text DONT_ADD_SPACES (string "chief")) (text DONT_ADD_SPACES (string "executive")) (text DONT_ADD_SPACES (string "officer")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- {1} 's chief {0} -->
+		(regex (id per_employee_or_member_of_132) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "chief")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- noun:strategist[<ref> = 0][with = 1] -->
+		(nprop (id per_employee_or_member_of_133) (score 0.9) (score_group 1) (predicate strategist) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role with) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:director[<ref> = 0][for = 1] -->
+		(nprop (id per_employee_or_member_of_134) (score 0.9) (score_group 1) (predicate director) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role for) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- verb:ran[<sub> = 0][<obj> = 1] -->
+		(vprop (id per_employee_or_member_of_135) (score 0.9) (score_group 1) (predicate ran) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- {1} chief economist {0} -->
+		(regex (id per_employee_or_member_of_136) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)) (text DONT_ADD_SPACES (string "chief")) (text DONT_ADD_SPACES (string "economist")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- {1} chief executive , {0} -->
+		(regex (id per_employee_or_member_of_137) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)) (text DONT_ADD_SPACES (string "chief")) (text DONT_ADD_SPACES (string "executive")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- noun:strategist[<ref> = 0][at = 1] -->
+		(nprop (id per_employee_or_member_of_138) (score 0.9) (score_group 1) (predicate strategist) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:economist[<ref> = 0][of = 1] -->
+		(nprop (id per_employee_or_member_of_139) (score 0.9) (score_group 1) (predicate economist) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- noun:professor[<ref> = 0][at = name:[<ref> = 1]] -->
+		(nprop (id per_employee_or_member_of_140) (score 0.9) (score_group 1) (predicate professor) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- noun:head[<ref> = 0][of = name:[<ref> = 1]] -->
+		(nprop (id per_employee_or_member_of_141) (score 0.9) (score_group 1) (predicate head) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+		<!-- noun:executive[<ref> = 0][<unknown> = 1] -->
+		(nprop (id per_employee_or_member_of_142) (score 0.9) (score_group 1) (predicate executive) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)))))
+
+		<!-- {0} job on {1} -->
+		(regex (id per_employee_or_member_of_143) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "job")) (text DONT_ADD_SPACES (string "on")) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))
+
+		<!-- {1} 's Chief Executive {0} -->
+		(regex (id per_employee_or_member_of_144) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "Chief")) (text DONT_ADD_SPACES (string "Executive")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- {0} [PER] works at {1} -->
+		(regex (id per_employee_or_member_of_145) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (mention (acetype PER)) (text DONT_ADD_SPACES (string "works")) (text DONT_ADD_SPACES (string "at")) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))
+
+		<!-- noun:team[<ref> = 1][<poss> = 0] -->
+		(nprop (id per_employee_or_member_of_146) (score 0.9) (score_group 1) (predicate team) (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- {0} job at {1} -->
+		(regex (id per_employee_or_member_of_147) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "job")) (text DONT_ADD_SPACES (string "at")) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))
+
+		<!-- {1} judge {0} -->
+		(regex (id per_employee_or_member_of_148) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG)) (text DONT_ADD_SPACES (string "judge")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- modifier:at[<ref> = 0][at = noun:firm[<unknown> = 1]] -->
+		(mprop (id per_employee_or_member_of_149) (score 0.9) (score_group 1) (predicate at) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role at) (nprop (predicate firm) (args (argument (role <unknown>) (mention (return (ff_role per_employee_or_member_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE ORG))))))))
+
+	)
+)

@@ -1,0 +1,72 @@
+
+
+############
+## Pipeline
+############
+job_name: wm_intervention_ben.v1
+#stages_to_run: kbp,generic-events,nn-events,event-consolidation,learnit,serialization
+stages_to_run: serif,generic-events,nn-events,event-consolidation,event-event-relations,serialization,probabilistic-grounding
+jserif_branch: 364-add-event-from-json
+mode: WorldModelers
+
+########
+# Serif
+########
+serif_input_sgm_list: /home/hqiu/Public/intervention_dataset/batch_files/all_files.list
+serif_input_awake_db: /nfs/raid87/u10/shared/Hume/common/serif/wm_eval_before_060119.sqlite
+
+######
+# KBP 
+######
+kbp_input_serifxml_list: GENERATED
+
+##################
+## Generic events
+##################
+generic_events_input_serifxml_list: GENERATED
+file_whitelist: /nfs/ld100/u10/bmin/repo_clean_for_exp/CauseEx/lib/generic_events/wm-m12.trigger.whitelist.v1
+file_blacklist: NA
+
+#######################
+## NN event extraction
+#######################
+nn_events_input_serifxml_list: GENERATED
+nn_events_model_list: /nfs/raid87/u12/hqiu/wm_m12_adj_nlplingo_011619_nlplingo_out/model.list
+nn_events_arg_model_path: None
+nn_events_batch_size: 30
+
+######################
+# Event consolidation
+######################
+event_consolidation_input_serifxml_list: GENERATED
+event_consolidation_input_metadata_file: /home/hqiu/Public/intervention_dataset/metadata_files/metadata_20181011.txt
+copyArgumentSentenceWindow: 1
+
+##########################
+# Probabilistic grounding
+##########################
+grounding_input: GENERATED
+
+################
+# Event-Event relations
+################
+eer_input_serifxml_list: GENERATED
+eer_input_serif_cause_effect_relations_dir: GENERATED
+learnit_pattern_dir: DEFAULT
+learnit_min_freq_event_pairs: 1
+
+################
+# Serialization
+################
+serialization_input_awake_db: /nfs/raid87/u10/shared/Hume/common/serif/wm_eval_before_060119.sqlite
+serialization_input_serifxml_list: GENERATED
+serialization_input_metadata_file: /home/hqiu/Public/intervention_dataset/metadata_files/metadata_20181011.txt
+serialization_input_trigger_finder_file: NA
+serialization_input_pdtb_json_file: /nfs/mercury-04/u42/bmin/projects/WM/m12/empty.json
+serialization_input_serif_cause_effect_relations_dir: /nfs/mercury-04/u42/bmin/projects/WM/m12/empty.json
+serialization_input_learnit_cause_effect_relations_file: GENERATED
+serialization_input_factfinder_json_file: /nfs/mercury-04/u42/bmin/projects/WM/m12/empty.json
+serialization_input_learnit_triple_file: GENERATED
+serialization_input_learnit_event_count_file: GENERATED
+serialization_input_extra_causal_relations: /nfs/mercury-04/u42/bmin/projects/WM/m12/empty.json
+serialization_do_event_uploading: False

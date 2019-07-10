@@ -1,0 +1,124 @@
+(org_place_of_headquarters
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 4: 16 verb: [based]   <obj> = 0    in = 1 -->
+		(vprop (id org_place_of_headquarters_5) (score 0.9) (score_group 1) (predicate based) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_5)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role in) (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 6: 14 poss: ['s]   <ref> = 0    <poss> = 1 -->
+		(anyprop (id org_place_of_headquarters_7) (score 0.9) (score_group 1) (predicate 's) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_7)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role <poss>) (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 8: 10 noun: [company]   <ref> = 0    <mod> = 1 -->
+		(nprop (id org_place_of_headquarters_9) (score 0.9) (score_group 1) (predicate company) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_9)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role <mod>) (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 9: 10 modifier: [-based]   <ref> = 0    <mod> = 1 -->
+		(mprop (id org_place_of_headquarters_10) (score 0.9) (score_group 1) (predicate -based) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_10)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role <mod>) (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+
+
+
+
+		<!-- 11: 7 noun: [-based]   <ref> = 0    <mod> = 1 -->
+		(nprop (id org_place_of_headquarters_12) (score 0.9) (score_group 1) (predicate -based) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_12)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role <mod>) (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 12: 6 {1} -based {0} -->
+		(regex (id org_place_of_headquarters_13) (score 0.9) (score_group 1) (re (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "-based")) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_13)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 14: 4 {1} company {0} -->
+		(regex (id org_place_of_headquarters_15) (score 0.9) (score_group 1) (re (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "company")) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_15)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 15: 4 {1} 's {0} -->
+		(regex (id org_place_of_headquarters_16) (score 0.9) (score_group 1) (re (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "'s")) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_16)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+
+
+		<!-- TODO: general pattern with headword constrains	 16: 4 {0}  {1} -->
+
+
+		<!-- 17: 4 noun: [firm]   <ref> = 0    <mod> = 1 -->
+		(nprop (id org_place_of_headquarters_18) (score 0.9) (score_group 1) (predicate firm) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_18)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role <mod>) (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 18: 4 modifier: [of]   <ref> = 0    of = 1 -->
+		(mprop (id org_place_of_headquarters_19) (score 0.9) (score_group 1) (predicate of) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_19)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role of) (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 19: 3 {1} -based [ORG] , {0} -->
+		(regex (id org_place_of_headquarters_20) (score 0.9) (score_group 1) (re (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "-based")) (mention (acetype ORG)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_20)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 20: 3 {1} , [GPE] -based {0} -->
+		(regex (id org_place_of_headquarters_21) (score 0.9) (score_group 1) (re (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string ",")) (mention (acetype GPE)) (text DONT_ADD_SPACES (string "-based")) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_21)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 21: 3 {0} is based in {1} -->
+		(regex (id org_place_of_headquarters_22) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_22)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "is")) (text DONT_ADD_SPACES (string "based")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE))))
+
+		<!-- 26: 3 noun: [group]   <ref> = 0    in = 1 -->
+		(nprop (id org_place_of_headquarters_27) (score 0.9) (score_group 1) (predicate group) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_27)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role in) (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 27: 3 noun: [group]   <ref> = 0    <mod> = 1 -->
+		(nprop (id org_place_of_headquarters_28) (score 0.9) (score_group 1) (predicate group) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_28)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role <mod>) (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 28: 3 noun: [giant]   <ref> = 0    <mod> = 1 -->
+		(nprop (id org_place_of_headquarters_29) (score 0.9) (score_group 1) (predicate giant) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_29)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role <mod>) (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+
+		<!-- 44: 2 verb: [headquartered]   <obj> = 0    in = 1 -->
+		(vprop (id org_place_of_headquarters_45) (score 0.9) (score_group 1) (predicate headquartered) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_45)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role in) (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+
+		<!-- 50: 2 noun: [maker]   <ref> = 0    <mod> = 1 -->
+		(nprop (id org_place_of_headquarters_51) (score 0.9) (score_group 1) (predicate maker) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_51)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role <mod>) (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 51: 2 noun: [headquarters]   <poss> = 0    <mod> = 1 -->
+		(nprop (id org_place_of_headquarters_52) (score 0.9) (score_group 1) (predicate headquarters) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_52)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role <mod>) (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 52: 2 noun: [group]   <ref> = 0    <poss> = 1 -->
+		(nprop (id org_place_of_headquarters_53) (score 0.9) (score_group 1) (predicate group) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_53)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role <poss>) (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 53: 2 noun: [fund]   <ref> = 0    <mod> = 1 -->
+		(nprop (id org_place_of_headquarters_54) (score 0.9) (score_group 1) (predicate fund) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_54)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role <mod>) (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 54: 2 noun: [corporation]   <ref> = 0    <mod> = 1 -->
+		(nprop (id org_place_of_headquarters_55) (score 0.9) (score_group 1) (predicate corporation) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_55)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role <mod>) (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 55: 2 noun: [bank]   <ref> = 0    <poss> = 1 -->
+		(nprop (id org_place_of_headquarters_56) (score 0.9) (score_group 1) (predicate bank) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_56)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role <poss>) (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 56: 2 noun: [bank]   <ref> = 0    <mod> = 1 -->
+		(nprop (id org_place_of_headquarters_57) (score 0.9) (score_group 1) (predicate bank) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_57)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role <mod>) (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 57: 2 noun: [association]   <ref> = 0    <mod> = 1 -->
+		(nprop (id org_place_of_headquarters_58) (score 0.9) (score_group 1) (predicate association) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_58)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role <mod>) (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 82: 1 {1} state-owned military- industrial {0} -->
+		(regex (id org_place_of_headquarters_83) (score 0.9) (score_group 1) (re (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "state-owned")) (text DONT_ADD_SPACES (string "military-")) (text DONT_ADD_SPACES (string "industrial")) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_83)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 83: 1 {1} state-owned arms {0} -->
+		(regex (id org_place_of_headquarters_84) (score 0.9) (score_group 1) (re (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "state-owned")) (text DONT_ADD_SPACES (string "arms")) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_84)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 85: 1 {1} state firm , {0} -->
+		(regex (id org_place_of_headquarters_86) (score 0.9) (score_group 1) (re (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "state")) (text DONT_ADD_SPACES (string "firm")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_86)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 86: 1 {1} state arms {0} -->
+		(regex (id org_place_of_headquarters_87) (score 0.9) (score_group 1) (re (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "state")) (text DONT_ADD_SPACES (string "arms")) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_87)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 151: 1 {1} -owned arms {0} -->
+		(regex (id org_place_of_headquarters_152) (score 0.9) (score_group 1) (re (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "-owned")) (text DONT_ADD_SPACES (string "arms")) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_152)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 158: 1 {1} -based company , {0} -->
+		(regex (id org_place_of_headquarters_159) (score 0.9) (score_group 1) (re (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "-based")) (text DONT_ADD_SPACES (string "company")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_159)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 170: 1 {1} , [GPE] based {0} -->
+		(regex (id org_place_of_headquarters_171) (score 0.9) (score_group 1) (re (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string ",")) (mention (acetype GPE)) (text DONT_ADD_SPACES (string "based")) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_171)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 172: 1 {1} 's state-run arms {0} -->
+		(regex (id org_place_of_headquarters_173) (score 0.9) (score_group 1) (re (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "state-run")) (text DONT_ADD_SPACES (string "arms")) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_173)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 173: 1 {1} 's state-owned arms {0} -->
+		(regex (id org_place_of_headquarters_174) (score 0.9) (score_group 1) (re (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "state-owned")) (text DONT_ADD_SPACES (string "arms")) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_174)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+
+	)
+)

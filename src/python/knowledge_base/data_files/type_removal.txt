@@ -1,0 +1,74 @@
+# space separated
+# relation-type/event-type role entity-type [role entity-type]...
+# for relation roles, use left_argument and right_argument
+
+# Relations
+
+ART.User-Owner-Inventor-Manufacturer left_argument LOC
+ART.User-Owner-Inventor-Manufacturer left_argument GPE.Continent
+ART.User-Owner-Inventor-Manufacturer left_argument GPE.Population-Center
+
+GEN-AFF.Citizen-Resident-Religion-Ethnicity left_argument LOC
+GEN-AFF.Citizen-Resident-Religion-Ethnicity left_argument GPE.Continent
+GEN-AFF.Citizen-Resident-Religion-Ethnicity left_argument GPE.Population-Center
+
+ORG-AFF.Employment left_argument LOC
+ORG-AFF.Employment left_argument GPE.Continent
+ORG-AFF.Employment left_argument GPE.Population-Center
+
+ORG-AFF.Founder left_argument LOC
+ORG-AFF.Founder left_argument GPE.Continent
+ORG-AFF.Founder left_argument GPE.Population-Center
+
+ORG-AFF.Investor-Shareholder left_argument LOC
+ORG-AFF.Investor-Shareholder left_argument GPE.Continent
+ORG-AFF.Investor-Shareholder left_argument GPE.Population-Center
+
+ORG-AFF.Membership left_argument LOC
+ORG-AFF.Membership left_argument GPE.Continent
+ORG-AFF.Membership left_argument GPE.Population-Center
+
+ORG-AFF.Ownership left_argument LOC
+ORG-AFF.Ownership left_argument GPE.Continent
+ORG-AFF.Ownership left_argument GPE.Population-Center
+
+ORG-AFF.Student-Alum left_argument LOC
+ORG-AFF.Student-Alum left_argument GPE.Continent
+ORG-AFF.Student-Alum left_argument GPE.Population-Center
+
+ORG-AFF.Sports-Affiliation left_argument LOC
+ORG-AFF.Sports-Affiliation left_argument GPE.Continent
+ORG-AFF.Sports-Affiliation left_argument GPE.Population-Center
+
+PER-SOC.Business left_argument LOC
+PER-SOC.Business left_argument GPE.Continent
+PER-SOC.Business left_argument GPE.Population-Center
+
+PER-SOC.Lasting-Personal left_argument LOC
+PER-SOC.Lasting-Personal left_argument GPE.Continent
+PER-SOC.Lasting-Personal left_argument GPE.Population-Center
+
+PHYS.Near right_argument PER
+
+# Note that for PART-WHOLE.Artifact/PART-WHOLE.Subsidiary/PART-WHOLE.Geographical
+#  the right_argument is the thing which contains the component and
+#  the left_argument is the contained component. These are later swapped
+#  during serialization to comply with the definition of general:has_component.
+
+PART-WHOLE.Artifact left_argument GPE.Nation right_argument GPE.Nation
+PART-WHOLE.Subsidiary left_argument GPE.Nation right_argument GPE.Nation
+PART-WHOLE.Geographical left_argument GPE.Nation right_argument GPE.Nation
+
+PART-WHOLE.Artifact left_argument GPE.Continent
+PART-WHOLE.Subsidiary left_argument GPE.Continent
+PART-WHOLE.Geographical left_argument GPE.Continent
+
+PART-WHOLE.Artifact left_argument GPE.Nation right_argument FAC
+PART-WHOLE.Subsidiary left_argument GPE.Nation right_argument FAC
+PART-WHOLE.Geographical left_argument GPE.Nation right_argument FAC
+
+# Events
+
+Affiliation Person LOC
+Affiliation Person GPE.Continent
+Affiliation Person GPE.Population-Center

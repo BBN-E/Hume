@@ -1,0 +1,49 @@
+# Run on full CauseEx month 5 docs
+
+job_name: full_m5_1
+
+stages_to_run: serif,kbp,nn-events,pdtb,learnit,serialization
+jserif_branch: 364-add-event-from-json
+
+########
+# Serif
+########
+serif_input_sgm_list: /nfs/raid87/u14/CauseEx/Delivery/180207/file_lists/final_corpus_sgm_minus_problematic_files.list
+serif_input_awake_db: /nfs/raid87/u15/users/azamania/runjobs/expts/run_awake_pipeline/causeex-m5-final-corpus-1/causeex_dbpedia_20170308_m5_final_corpus.sqlite
+
+######
+# KBP 
+######
+kbp_input_serifxml_list: GENERATED
+
+#####################
+## NN event extraction
+######################
+nn_events_input_serifxml_list: GENERATED
+
+##############
+# PDTB parser
+##############
+pdtb_input_serifxml_list: GENERATED
+
+################
+# LearnIt
+################
+learnit_input_serifxml_list: GENERATED
+learnit_input_serif_cause_effect_relations_dir: GENERATED
+learnit_input_pattern_dir: DEFAULT
+learnit_min_freq_event_pairs: 2
+
+################
+# Serialization
+################
+serialization_mode: CauseEx
+serialization_input_serifxml_list: GENERATED
+serialization_input_metadata_file: /nfs/raid87/u14/CauseEx/Delivery/180207/file_lists/final_corpus_metadata_ext.txt
+serialization_input_trigger_finder_file: /nfs/raid87/u15/users/ychan/expts/causeex-m5/triggerfinder.filelist.txt
+serialization_input_pdtb_json_file: GENERATED
+serialization_input_serif_cause_effect_relations_dir: GENERATED
+serialization_input_learnit_cause_effect_relations_file: GENERATED
+serialization_input_factfinder_json_file: GENERATED
+serialization_input_learnit_triple_file: GENERATED
+serialization_input_learnit_event_count_file: GENERATED

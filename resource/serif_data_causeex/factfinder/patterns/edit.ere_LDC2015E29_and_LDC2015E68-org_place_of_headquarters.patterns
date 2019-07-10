@@ -1,0 +1,31 @@
+(org_place_of_headquarters
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 2 verb:owns[<obj> = noun:daycare[<mod> = noun:home[<ref> = 1]][<ref> = 0]] -->
+		(vprop (id org_place_of_headquarters_ere_44) (score 0.9) (score_group 1) (predicate owns) (args (argument (role <obj>) (nprop (predicate daycare) (args (argument (role <mod>) (nprop (predicate home) (args (argument (role <ref>) (mention (return (ff_role org_place_of_headquarters)) (block AGENT1) (acetype LOC GPE)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_ere_200000)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 2 modifier:-based[<mod> = 1][<ref> = noun:company[<ref> = 0]] -->
+		(mprop (id org_place_of_headquarters_ere_32) (score 0.9) (score_group 1) (predicate -based) (args (argument (role <mod>) (mention (return (ff_role org_place_of_headquarters)) (block AGENT1) (acetype LOC GPE))) (argument (role <ref>) (nprop (predicate company) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_ere_200001)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 1 modifier:-based[<mod> = 1][<ref> = noun:group[<ref> = 0]] -->
+		(mprop (id org_place_of_headquarters_ere_70) (score 0.9) (score_group 1) (predicate -based) (args (argument (role <mod>) (mention (return (ff_role org_place_of_headquarters)) (block AGENT1) (acetype LOC GPE))) (argument (role <ref>) (nprop (predicate group) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_ere_200002)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 1 {1}  {0}&the {1}&{0} headquarters -->
+		(regex (id org_place_of_headquarters_ere_139) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "the")) (mention (return (ff_role org_place_of_headquarters)) (block AGENT1) (acetype LOC GPE)) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_ere_200003)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "headquarters"))))
+
+		<!-- 1 {0} in {1}&the headquarters of {0}&{1} this coming -->
+		(regex (id org_place_of_headquarters_ere_194) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "the")) (text DONT_ADD_SPACES (string "headquarters")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_ere_200004)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role org_place_of_headquarters)) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "this")) (text DONT_ADD_SPACES (string "coming"))))
+
+		<!-- 1 {0} HQ in {1} -->
+		(regex (id org_place_of_headquarters_ere_156) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_ere_200005)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "HQ")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role org_place_of_headquarters)) (block AGENT1) (acetype LOC GPE))))
+
+		<!-- 1 modifier:-based[<mod> = 1][<ref> = noun:business[<ref> = 0]] -->
+		(mprop (id org_place_of_headquarters_ere_136) (score 0.9) (score_group 1) (predicate -based) (args (argument (role <mod>) (mention (return (ff_role org_place_of_headquarters)) (block AGENT1) (acetype LOC GPE))) (argument (role <ref>) (nprop (predicate business) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_ere_200006)) (entitylabel AGENT1) (acetype ORG))))))))
+
+	)
+)

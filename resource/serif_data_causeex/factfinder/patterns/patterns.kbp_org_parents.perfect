@@ -1,0 +1,16 @@
+(org_parents
+
+
+ (wordsets)
+
+ (entitylabels (AGENT1))
+
+ (toplevel
+
+		<!-- 1   org_parents ==> verb:owns[<obj> = noun:brands[as = name:[<ref> = 0]]][<sub> = 1] -->
+		(vprop (id cs2015_org_parents_20015) (score 0.9) (score_group 1) (predicate owns) (args (argument (role <obj>) (nprop (predicate brands) (args (argument (role as) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_parents_20015)) (entitylabel AGENT1) (acetype ORG))))))))) (argument (role <sub>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 1   org_parents ==> verb:owns[<obj> = noun:brands[as = 0]][<sub> = 1] -->
+		(vprop (id cs2015_org_parents_20019) (score 0.9) (score_group 1) (predicate owns) (args (argument (role <obj>) (nprop (predicate brands) (args (argument (role as) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_parents_20019)) (entitylabel AGENT1) (acetype ORG)))))) (argument (role <sub>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)))))
+	)
+)

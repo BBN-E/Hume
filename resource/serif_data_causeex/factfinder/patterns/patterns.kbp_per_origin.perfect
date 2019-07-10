@@ -1,0 +1,27 @@
+(per_origin
+
+
+ (wordsets)
+
+ (entitylabels (AGENT1))
+
+ (toplevel
+		<!-- 20   per_origin ==> noun:painter[<mod> = 1][<ref> = 0] -->
+		(nprop (id cs2015_per_origin_20000) (score 0.9) (score_group 1) (predicate painter) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_origin_20000)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 16   per_origin ==> modifier:african[<mod> = 1][<ref> = 0] -->
+		(mprop (id cs2015_per_origin_20001) (score 0.9) (score_group 1) (predicate african) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_origin_20001)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 15   per_origin ==> noun:artist[<mod> = 1][<ref> = 0] -->
+		(nprop (id cs2015_per_origin_20002) (score 0.9) (score_group 1) (predicate artist) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_origin_20002)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 15   per_origin ==> copula:is[<obj> = noun:artist[<mod> = 1][<ref> = 0]] -->
+		(anyprop (id cs2015_per_origin_20003) (score 0.9) (score_group 1) (predicate is) (args (argument (role <obj>) (nprop (predicate artist) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_origin_20003)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 15   per_origin ==> copula:is[<obj> = noun:artist[<mod> = 1]][<sub> = 0] -->
+		(anyprop (id cs2015_per_origin_20004) (score 0.9) (score_group 1) (predicate is) (args (argument (role <obj>) (nprop (predicate artist) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE)))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_origin_20004)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 8   per_origin ==> modifier:african[<mod> = 1][<ref> = name:[<ref> = 0]] -->
+		(mprop (id cs2015_per_origin_20006) (score 0.9) (score_group 1) (predicate african) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE))) (argument (role <ref>) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_origin_20006)) (entitylabel AGENT1) (acetype PER))))))))
+	)
+)

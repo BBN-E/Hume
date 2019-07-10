@@ -1,0 +1,44 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix causal: <http://ontology.causeex.com/ontology/odps/CauseEffect#>
+prefix event: <http://ontology.causeex.com/ontology/odps/Event#>
+PREFIX prov: <http://ontology.causeex.com/ontology/odps/DataProvenance#>
+PREFIX general: <http://ontology.causeex.com/ontology/odps/GeneralConcepts#>
+PREFIX bbnta1: <http://graph.causeex.com/bbn#>
+PREFIX actor: <http://ontology.causeex.com/ontology/odps/Actor#>
+PREFIX cco: <http://ontology.causeex.com/cameo/CountryCodeOntology/>
+SELECT distinct ?who ?cause ?causeClass ?ct ?string1 ?causal_type ?effect ?effectClass ?et ?string2
+WHERE {
+
+   Bind(cco:CAMEOrus as ?country)
+
+   ?ca a causal:CausalAssertion .
+   ?ca ?causal_type ?cause .
+   Values ?causal_type { causal:has_cause causal:has_catalyst causal:has_preventative causal:has_precondition causal:has_mitigating_factor }
+   ?ca  causal:has_effect ?effect .
+   ?cause a ?causeClass ; prov:sourced_from ?cSpan . ?cSpan a prov:Span ; prov:text_value ?string1 .
+   ?effect a ?effectClass ; prov:sourced_from ?eSpan . ?eSpan a prov:Span ; prov:text_value ?string2 .
+
+  OPTIONAL { ?cause bbnta1:extended_trigger ?ct }
+  OPTIONAL { ?effect bbnta1:extended_trigger ?et }
+
+   {
+     ?cause ?role ?country .
+     ?country general:canonical_label ?cLabel .
+     bind(?cLabel as ?who)
+   }
+   union
+   {
+     ?cause ?role ?someActor .
+     {
+       ?someActor actor:has_affiliation ?Aff .
+       ?Aff actor:related_affiliation ?country .
+     } UNION {
+       ?someActor general:located_at ?country .
+     } UNION {
+       ?someActor actor:has_citizenship ?cit .
+       ?cit actor:related_country_code ?country .     }
+     bind(?someActor as ?who)
+   }
+}
+Limit 100

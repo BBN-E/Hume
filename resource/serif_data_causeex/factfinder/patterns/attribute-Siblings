@@ -1,0 +1,67 @@
+(Siblings
+
+(wordsets
+
+(WS_FAMILY sister brother sibling stepsister stepbrother stepsibling step-sister step-brother step-sibling)
+
+)
+
+(entitylabels
+
+(AGENT1)
+
+)
+
+(reference
+
+<!-- generic AGENT1 reference -->
+(mention	(shortcut 	AGENT1_REF_NAME)
+		(mentiontype 	name)
+		(return		(ff_role AGENT1) (ff_fact_type Siblings))
+        	(entitylabel    AGENT1))
+
+<!-- reference to a person with a name somewhere in the document, with a family-like headword -->
+(mention  (shortcut OTHER_NAMED_PERSON_WITH_HW) 
+	  (block AGENT1) 
+	  (acetype PER) 
+	  (min-entitylevel NAME) 
+	  (headword WS_FAMILY)
+	  (return (ff_role Siblings)))
+
+(mention  (shortcut OTHER_NAMED_PERSON) 
+	  (block AGENT1) 
+	  (acetype PER) 
+	  (mentiontype name) 
+	  (return (ff_role Siblings)))
+
+
+(mention  (shortcut AGENT1_WITH_HW) 
+	  (entitylabel AGENT1) 
+	  (headword WS_FAMILY)
+	  (return (ff_role AGENT1) (ff_fact_type Siblings)))
+
+
+)
+
+(toplevel
+
+<!-- the SERIF family relationship is apparently a pile of junk and we can't use it... 
+     tried relying on headwords within relationships, but honestly these simple
+     patterns are better, especially over MT -->
+
+<!-- this one is derivable as inverse of relative_hw and is tighter on mention
+(nprop	(id agent1_hw) (score_group 1) (score 0.9)
+	(args (argument (role <ref>) AGENT1_WITH_HW)
+	      (argument (role of <poss>) OTHER_NAMED_PERSON)))
+-->
+
+<!-- this one allows ref role to use forms looser than just name  -->
+(nprop	(id relative_hw) (score_group 1) (score 0.9)
+	(args (argument (role <ref>) OTHER_NAMED_PERSON_WITH_HW)
+	      (argument (role of <poss>) AGENT1_REF_NAME)))
+
+
+
+)
+
+)

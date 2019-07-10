@@ -1,0 +1,56 @@
+PER.Individual DEFAULT
+PER.Group
+PER.Indeterminate
+PER.Refugees
+PER.DisplacedPersons
+PER.InternallyDisplacedPersons
+PER.AsylumSeekers
+ORG.General DEFAULT
+ORG.Government
+ORG.Non-Governmental
+ORG.Commercial
+ORG.Educational
+ORG.Media
+ORG.Religious
+ORG.Sports
+ORG.Medical-Science
+ORG.Entertainment
+ORG.Jihadist
+LOC.Address
+LOC.Boundary
+LOC.Water-Body
+LOC.Celestial
+LOC.Land-Region-Natural
+LOC.Region-General DEFAULT
+LOC.Region-International
+GPE.Continent
+GPE.Nation
+GPE.State-or-Province
+GPE.County-or-District
+GPE.Population-Center DEFAULT
+GPE.GPE-Cluster
+GPE.Special
+FAC.Building-Grounds DEFAULT
+FAC.Subarea-Facility
+FAC.Path
+FAC.Airport
+FAC.Plant
+FAC.Pipeline
+VEH.Land DEFAULT
+VEH.Air
+VEH.Water
+VEH.Subarea-Vehicle
+VEH.Underspecified
+WEA.Blunt
+WEA.Exploding
+WEA.Sharp
+WEA.Chemical
+WEA.Biological
+WEA.Shooting DEFAULT
+WEA.Projectile
+WEA.Nuclear
+WEA.Missile
+WEA.Underspecified
+ART.Artifact DEFAULT
+ART.Natural-Gas
+ART.Oil

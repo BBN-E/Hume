@@ -1,0 +1,5 @@
+#serifxml.filelist: /nfs/mercury-05/u34/CauseEx/ychan/expts/serifXMLCorpora/master.icews.english.par/eng/causeex-month3.nw/withAwake/fileList.txt
+serifxml.filelist: /nfs/raid87/u15/users/ychan/repos/CauseEx/java/causeex/temp/fileList.txt
+freqThreshold: 5
+counts.output: /nfs/raid87/u15/users/ychan/repos/CauseEx/experiments/generic_trigger_finding_and_filtering/genericTriggerCounter.output
+

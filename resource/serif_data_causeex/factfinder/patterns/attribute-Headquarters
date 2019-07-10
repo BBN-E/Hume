@@ -1,0 +1,151 @@
+<!--
+
+Taken from Distillation Query #17
+
+-->
+
+(Headquarters
+
+(@INCLUDE "date-patterns")
+
+(wordsets
+
+)
+
+(entitylabels
+
+(AGENT1)
+
+)
+
+(reference
+
+<!-- generic AGENT1 reference -->
+(mention        (shortcut       AGENT1_MENT_1)
+                (return         (ff_role AGENT1) (ff_fact_type Headquarters_1))
+                (entitylabel    AGENT1)
+)
+
+(mention        (shortcut       AGENT1_MENT_2)
+                (return         (ff_role AGENT1) (ff_fact_type Headquarters_2))
+                (entitylabel    AGENT1)
+)
+
+(mention        (shortcut       AGENT1_MENT_3)
+                (return         (ff_role AGENT1) (ff_fact_type Headquarters_3))
+                (entitylabel    AGENT1)
+)
+
+(mention        (shortcut       AGENT1_MENT_4)
+                (return         (ff_role AGENT1) (ff_fact_type Headquarters_4))
+                (entitylabel    AGENT1)
+)
+
+(mention        (shortcut       AGENT1_MENT_5)
+                (return         (ff_role AGENT1) (ff_fact_type Headquarters_5))
+                (entitylabel    AGENT1)
+)
+
+(mention        (shortcut       AGENT1_MENT_6)
+                (return         (ff_role AGENT1) (ff_fact_type Headquarters_6))
+                (entitylabel    AGENT1)
+)
+
+(mention        (shortcut       AGENT1_MENT_7)
+                (return         (ff_role AGENT1) (ff_fact_type Headquarters_7))
+                (entitylabel    AGENT1)
+)
+
+(mention        (shortcut       AGENT1_MENT_8)
+                (return         (ff_role AGENT1) (ff_fact_type Headquarters_8))
+                (entitylabel    AGENT1)
+)
+
+(mention        (shortcut       AGENT1_MENT_9)
+                (return         (ff_role AGENT1) (ff_fact_type Headquarters_9))
+                (entitylabel    AGENT1)
+)
+
+(mention        (shortcut       AGENT1_MENT_10)
+                (return         (ff_role AGENT1) (ff_fact_type Headquarters_10))
+                (entitylabel    AGENT1)
+)
+
+
+<!-- generic PLACE reference -->
+(mention	(return		(ff_role Headquarters))
+		(block_headword government)
+		(shortcut 	SOME_PLACE)
+        	(acetype	GPE LOC)
+)
+
+(argument (shortcut IN_SOME_PLACE) (role in at) SOME_PLACE)
+
+(any-of (shortcut HQ) (members
+	(nprop (predicate headquarters))
+	(nprop (predicate office*) (adj main principal chief head))
+))
+
+(nprop (shortcut NPROP_HQ)
+       (args (argument (role <ref>) HQ) (argument (role <poss> <unknown> of) AGENT1_MENT_1) IN_SOME_PLACE)
+       (opt_args HOLD_DATE_A))
+
+)
+
+(toplevel
+
+(union GREEDY
+       (id nprop_hq) (score 1.0)
+       (members (mprop (args (argument (role <ref>) NPROP_HQ) HOLD_DATE_A))
+                (vprop (args (argument NPROP_HQ) RECENT_HOLD_DATE_A))
+		NPROP_HQ))
+
+(vprop (id vprop_hq1) (score 1.0)
+       (predicate establish* bas*)
+       (args (argument (role <sub>) AGENT1_MENT_2) (argument (role <obj>) HQ) IN_SOME_PLACE)
+       (opt_args START_DATE_A))
+
+(vprop (id vprop_hq2) (score 1.0)
+       (predicate establish* bas*)
+       (args (argument (role <sub>) AGENT1_MENT_3) 
+       	     (argument (role <obj>) (all-of (members HQ (nprop (args IN_SOME_PLACE))))))
+       (opt_args START_DATE_A))
+
+(vprop (id vprop_based) (score 1.0)
+       (predicate based)
+       (args (argument (role <obj>) AGENT1_MENT_4) IN_SOME_PLACE)
+       (opt_args START_DATE_A))
+
+(mprop (id mprop_based) (score 1.0)
+       (predicate based)
+       (args (argument (role <ref>) AGENT1_MENT_5) (argument (role <unknown>) SOME_PLACE))
+       (opt_args HOLD_DATE_A))
+
+(regex (id regex_based) (score 1.0)
+       (re SOME_PLACE (text RAW_TEXT (string "-based")) AGENT1_MENT_6))
+
+(nprop (id nprop_hq1) (score 1.0)
+        (predicate company)
+        (args
+                (argument (role <ref>) AGENT1_MENT_7)
+                (argument (role <unknown>) SOME_PLACE)
+        )
+)
+
+(anyprop (id anyprop_based_of) (score 1.0)
+        (args
+                (argument (role <ref>) AGENT1_MENT_8)
+                (argument (role <poss> of) SOME_PLACE)
+        )
+)
+
+(relation (fulltype GEN-AFF.Org-Location) (id mapping_1) (score 1.0) (score_group 1)
+        (args
+                (argument (role ARG1) AGENT1_MENT_10)
+                (argument (role ARG2) SOME_PLACE)
+        )
+)
+
+)
+
+)

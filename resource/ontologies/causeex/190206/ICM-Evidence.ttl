@@ -1,0 +1,175 @@
+@prefix : <http://ontology.causeex.com/ontology/odps/ICM#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix general: <http://ontology.causeex.com/ontology/odps/GeneralConcepts#> .
+@prefix icm: <http://ontology.causeex.com/ontology/odps/ICM#> .
+@prefix meas: <http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ontology.causeex.com/ontology/odps/ICM-Evidence> rdf:type owl:Ontology ;
+    dcterms:description "Ontology defining the concept of a CausalVariable and mechanisms to define the characteristics of underlying evidence for/against it."@en ;
+    dcterms:created "May 3, 2018"^^xsd:string ;
+    dcterms:modified "February 5, 2019"^^xsd:string ;
+    rdfs:comment """February 5th 2019 revisions:
+                    Updated the description of CausalVariable to remove reference to unused properties.
+                    Updated the descriptions/comments for strength_of_evidence and for all the object properties. 
+                    Added the CollectionOfEvidence class.
+                  January 22nd 2019 revisions:
+                    Removed the rdfs:domain predicate for has_evidence.
+                    Renamed has_evidence_entity to is_evidence.
+                    Moved the details of CausalVariable and Evidence-related entities to this ontology/file since
+                      they define where/how the TA1 and TA2 semantics overlap. Other aspects of the ICM API are
+                      no longer maintained.
+                    Corrrected several labels and comments/descriptions (to use the correct ontology names)."""@en ;
+    owl:imports <http://purl.org/dc/terms> ;
+    owl:imports <http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements> ;
+    owl:versionInfo "Version 1.0"^^xsd:string .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+:has_active_actor_class_ref a owl:ObjectProperty ;
+    rdfs:label "has active Actor class reference"@en ;
+    rdfs:comment "An IRI referencing a sub-class of event:Actor (defined in the Actor-Hierarchy ontology) and any of its sub-classes. This property is used in a CausalVariableEvidence definition and determines which Event individuals are relevant as evidence for a particular CausalVariable. It adds details on what types of Actors must participate in the Events."@en ;
+    rdfs:comment "CausalVariableEvidence relates a sub-class of CausalVariable (for example, icm:MilitaryActivities) with classes in the Event ontology's hierarchy. It defines which Events may be relevant to determining/substantiating/refuting a CausalVariable instance. The Event class(es) are associated with an instance of CausalVariableEvidence using the has_positive/negative_event_class_ref properties. But, other requirements for inclusion may also be needed, such as whether the classes are only relevant when a specific type of event:Actor is related to the Event using the has_active_actor property."@en ;
+    rdfs:comment "Note that if multiple classes are defined using the has_active_actor_class_ref, then any Event individual which has an active actor classified as ANY of the referenced types (or a sub-class of one of the referenced types) will be noted as evidence."@en;
+    rdfs:comment "Actor sub-class IRIs are provided using this property, and OWL puning is assumed (meaning that the class IRI is treated as a individual of the 'metaconcept' of Actor sub-classes)."@en ;
+    rdfs:domain :CausalVariableEvidence .
+
+:has_actor_class_ref a owl:ObjectProperty ;
+    rdfs:label "has Actor class reference"@en ;
+    rdfs:comment "An IRI referencing a sub-class of event:Actor (defined in the Actor-Hierarchy ontology) and any of its sub-classes. This property is used in a CausalVariableEvidence definition and determines which Event individuals are relevant as evidence for a particular CausalVariable. It adds details on what types of Actors must participate in the Events."@en ;
+    rdfs:comment "CausalVariableEvidence relates a sub-class of CausalVariable (for example, icm:MilitaryActivities) with classes in the Event ontology's hierarchy. It defines which Events may be relevant to determining/substantiating/refuting a CausalVariable instance. The Event class(es) are associated with an instance of CausalVariableEvidence using the has_positive/negative_event_class_ref properties. But, other requirements for inclusion may also be needed, such as whether the classes are only relevant when a specific type of event:Actor is related to the Event using the has_actor, has_active/affected_actor or has_provider/recipient properties."@en ;
+    rdfs:comment "Note that if multiple classes are defined using the has_actor_class_ref, then any Event individual which involves an actor classified as ANY of the referenced types (or a sub-class of one of the referenced types) will be noted as evidence."@en;
+    rdfs:comment "Actor sub-class IRIs are provided using this property, and OWL puning is assumed (meaning that the class IRI is treated as a individual of the 'metaconcept' of event:Actor sub-classes)."@en ;
+    rdfs:domain :CausalVariableEvidence .
+
+:has_affected_actor_class_ref a owl:ObjectProperty ;
+    rdfs:label "has affected Actor class reference"@en ;
+    rdfs:comment "An IRI referencing a sub-class of event:Actor (defined in the Actor-Hierarchy ontology) and any of its sub-classes. This property is used in a CausalVariableEvidence definition and determines which Event individuals are relevant as evidence for a particular CausalVariable. It adds details on what types of Actors must participate in the Events."@en ;
+    rdfs:comment "CausalVariableEvidence relates a sub-class of CausalVariable (for example, icm:MilitaryActivities) with classes in the Event ontology's hierarchy. It defines which Events may be relevant to determining/substantiating/refuting a CausalVariable instance. The Event class(es) are associated with an instance of CausalVariableEvidence using the has_positive/negative_event_class_ref properties. But, other requirements for inclusion may also be needed, such as whether the classes are only relevant when a specific type of event:Actor is related to the Event using the has_affected_actor property."@en ;
+    rdfs:comment "Note that if multiple classes are defined using the has_affected_actor_class_ref, then any Event individual which has an affected actor classified as ANY of the referenced types (or a sub-class of one of the referenced types) will be noted as evidence."@en;
+    rdfs:comment "Actor sub-class IRIs are provided using this property, and OWL puning is assumed (meaning that the class IRI is treated as a individual of the 'metaconcept' of Actor sub-classes)."@en ;
+    rdfs:domain :CausalVariableEvidence .
+
+:has_artifact_class_ref a owl:ObjectProperty ;
+    rdfs:label "has Artifact class reference"@en ;
+    rdfs:comment "An IRI referencing a sub-class of cco:Artifact (defined in the ccoArtifact and Artifact-Hierarchy ontologies) and any of its sub-classes. This property is used in a CausalVariableEvidence definition and determines which Event individuals are relevant as evidence for a particular CausalVariable. It adds details on what types of Artifacts must be referenced in the Events."@en ;
+    rdfs:comment "CausalVariableEvidence relates a sub-class of CausalVariable (for example, icm:MilitaryActivities) with classes in the Event ontology's hierarchy. It defines which Events may be relevant to determining/substantiating/refuting a CausalVariable instance. The Event class(es) are associated with an instance of CausalVariableEvidence using the has_positive/negative_event_class_ref properties. But, other requirements for inclusion may also be needed, such as whether the classes are only relevant when a specific type of cco:Artifact is related to the Event using the has_instrument or is_about_artifact properties."@en ;
+    rdfs:comment "Note that if multiple classes are defined using the has_artifact_class_ref, then any Event individual which involves an artifact classified as ANY of the referenced types (or a sub-class of one of the referenced types) will be noted as evidence."@en;
+    rdfs:comment "Artifact sub-class IRIs are provided using this property, and OWL puning is assumed (meaning that the class IRI is treated as a individual of the 'metaconcept' of cco:Artifact sub-classes)."@en ;
+    rdfs:domain :CausalVariableEvidence .
+
+:has_causal_var_class_ref a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "has Causal Variable class reference"@en ;
+    rdfs:comment "An IRI referencing a sub-class of icm:CausalVariable (defined in the ICM-CausalVariableHierarchy ontology). This property is used in a CausalVariableEvidence definition and specifies the CausalVariable class whose evidence details are being defined."@en ;
+    rdfs:comment "CausalVariableEvidence relates a sub-class of CausalVariable (for example, icm:MilitaryActivities) with classes in the Event ontology's hierarchy. It defines which Events may be relevant to determining/substantiating/refuting instances of the specified CausalVariable. The CausalVariable type is defined using the has_causal_var_class_ref property, and the relevant Event types are defined using the has_positive/negative_event_class_ref properties."@en ;
+    rdfs:comment "Note that has_causal_var_class_ref is a functional property. If a CausalVariable is an intersection of classes, this can be specified by defining a new class (as a sub-class of the multiple types) and referencing that new class in the has_causal_var_class_ref triple. For example, a new CausalVariable OffensiveCyberOperations could be defined as an rdfs:subClassOf icm:CyberOperations and icm:Offensive. The evidence for this new variable could then be defined."@en ;
+    rdfs:comment "CausalVariable sub-class IRIs are provided using this property, and OWL puning is assumed (meaning that the class IRI is treated as a individual of the 'metaconcept' of icm:CausalVariable sub-classes)."@en ;
+    rdfs:domain :CausalVariableEvidence .
+
+:has_evidence a owl:ObjectProperty ;
+    rdfs:label "has evidence"@en ;
+    rdfs:comment "An association from an entity in the ICM environment (such as a CausalVariable) to an Evidence individual, indicating that the IRI specified by the Evidence's is_evidence property should be queried to obtain information substantiating the ICM entity. Evidence is a reification of the is_evidence IRI. It is needed in order to also define 'description' and 'rank' properties (where the latter indicates the significance of the IRI, relative to other IRIs/Evidence, for the ICM entity)."@en ;
+    rdfs:comment "Note that the Evidence can also be a CollectionOfEvidence, if a hierarchical composition is needed."@en ;
+    rdfs:range :Evidence .
+
+:has_negative_event_class_ref a owl:ObjectProperty ;
+    rdfs:label "has negative Event class reference"@en ;
+    rdfs:comment "An IRI referencing a sub-class of event:Event (defined in the Event and Event-Hierarchy ontologies) and any of its sub-classes. This property is used to indicate that instances of the Event class(es) likely detract as Evidence for a CausalVariable (i.e., events whose classification match the specified IRIs would be counter-examples of the CausalVariable)."@en ;
+    rdfs:comment "An Event class can be related to a CausalVariableEvidence individual using the has_positive/negative_event_class_ref properties. For 'negative' event classes, any Event individual classified as the specified type (or one of its sub-classes) detracts from/refutes a CausalVariable instance with a type defined by the has_causal_var_class_ref property. For example, consider the use case of finding evidence for the level of a military force's conflicts. In this case, the has_causal_var_class_ref would reference icmn:MilitaryConflicts. Two different types of 'negative evidence' Event types could be defined, event:MilitaryDeescalation and event:Peacekeeping. Event instances of either type provide refuting evidence for MilitaryConflicts."@en ;
+    rdfs:comment "Note that the default assumption is that instances of the specified Event class provide refuting evidence. However, if the Event individual is also classified using the types, icm:Decrease, icm:TerminationOrEnd or icm:WeakOrLimited, then the individual is assumed to provide the reverse/provide supporting evidence. Also note that if multiple Event classes are defined using the has_negative_event_class_ref, then any Event individual which is classified as ANY of the referenced types (or a sub-class of one of the referenced types) will be noted as evidence."@en ;
+    rdfs:comment "Event sub-class IRIs are provided using this property, and OWL puning is assumed (meaning that the class IRI is treated as a individual of the 'metaconcept' of event:Event sub-classes)."@en ;
+    rdfs:domain :CausalVariableEvidence .
+
+:has_positive_event_class_ref a owl:ObjectProperty ;
+    rdfs:label "has positive Event class reference"@en ;
+    rdfs:comment "An IRI referencing a sub-class of event:Event (defined in the Event and Event-Hierarchy ontologies) and any of its sub-classes. This property is used to indicate that instances of the Event class(es) may be relevant as Evidence supporting a CausalVariable (i.e., events whose classification match the specified IRIs could be relevant as evidence for the CausalVariable)."@en ;
+    rdfs:comment "An Event class can be related to a CausalVariableEvidence individual using the has_positive/negative_event_class_ref property. For 'positive' event classes, any Event individual classified as the specified type (or one of its sub-classes) supports a CausalVariable instance with a type defined by the has_causal_var_class_ref property. For example, consider the use case of finding evidence for the level of a military force's conflicts. In this case, the has_causal_var_class_ref would reference icm:MilitaryConflicts. One type of 'positive evidence' would be instances of event:Attack, where the active actor is defined (via has_active_actor_class_ref) to be of type, actor:MilitaryForce. Event instances with the specified type of active actor would provide supporting evidence for MilitaryConflicts."@en ;
+    rdfs:comment "Note that the default assumption is that instances of the specified class provide supporting evidence. However, if the Event individual is also classified using the types, icm:Decrease, icm:TerminationOrEnd or icm:WeakOrLimited, then the individual is assumed to provide the reverse/provide refuting evidence. Also note that if multiple Event classes are defined using the has_positive_event_class_ref, then any Event individual which is classified as ANY of the referenced types (or a sub-class of one of the referenced types) will be noted as evidence."@en ;
+    rdfs:comment "Event sub-class IRIs are provided using this property, and OWL puning is assumed (meaning that the class IRI is treated as a individual of the 'metaconcept' of event:Event sub-classes)."@en ;
+    rdfs:domain :CausalVariableEvidence .
+
+:has_provider_class_ref a owl:ObjectProperty ;
+    rdfs:label "has provider (Actor) class reference"@en ;
+    rdfs:comment "An IRI referencing a sub-class of event:Actor (defined in the Actor-Hierarchy ontology) and any of its sub-classes. This property is used in a CausalVariableEvidence definition and determines which Event individuals are relevant as evidence for a particular CausalVariable. It adds details on what types of Actors must participate in the Events."@en ;
+    rdfs:comment "CausalVariableEvidence relates a sub-class of CausalVariable (for example, icm:MilitaryActivities) with classes in the Event ontology's hierarchy. It defines which Events may be relevant to determining/substantiating/refuting a CausalVariable instance. The Event class(es) are associated with an instance of CausalVariableEvidence using the has_positive/negative_event_class_ref properties. But, other requirements for inclusion may also be needed, such as whether the classes are only relevant when a specific type of event:Actor is related to the Event using the has_provider property."@en ;
+    rdfs:comment "Note that if multiple classes are defined using the has_provider_class_ref, then any Event individual which involves a 'provider' actor classified as ANY of the referenced types (or a sub-class of one of the referenced types) will be noted as evidence."@en;
+    rdfs:comment "Actor sub-class IRIs are provided using this property, and OWL puning is assumed (meaning that the class IRI is treated as a individual of the 'metaconcept' of event:Actor sub-classes)."@en ;
+    rdfs:domain :CausalVariableEvidence .
+
+:has_recipient_class_ref a owl:ObjectProperty ;
+    rdfs:label "has recipient (Actor) class reference"@en ;
+    rdfs:comment "An IRI referencing a sub-class of event:Actor (defined in the Actor-Hierarchy ontology) and any of its sub-classes. This property is used in a CausalVariableEvidence definition and determines which Event individuals are relevant as evidence for a particular CausalVariable. It adds details on what types of Actors must participate in the Events."@en ;
+    rdfs:comment "CausalVariableEvidence relates a sub-class of CausalVariable (for example, icm:MilitaryActivities) with classes in the Event ontology's hierarchy. It defines which Events may be relevant to determining/substantiating/refuting a CausalVariable instance. The Event class(es) are associated with an instance of CausalVariableEvidence using the has_positive/negative_event_class_ref properties. But, other requirements for inclusion may also be needed, such as whether the classes are only relevant when a specific type of event:Actor is related to the Event using the has_recipient property."@en ;
+    rdfs:comment "Note that if multiple classes are defined using the has_recipient_class_ref, then any Event individual which involves a 'recipient' actor classified as ANY of the referenced types (or a sub-class of one of the referenced types) will be noted as evidence."@en;
+    rdfs:comment "Actor sub-class IRIs are provided using this property, and OWL puning is assumed (meaning that the class IRI is treated as a individual of the 'metaconcept' of event:Actor sub-classes)."@en ;
+    rdfs:domain :CausalVariableEvidence .
+
+:has_topic_class_ref a owl:ObjectProperty ;
+    rdfs:label "has topic Event class reference"@en ;
+    rdfs:comment "An IRI referencing a sub-class of event:Event (defined in the Event and Event-Hierarchy ontologies) and any of its sub-classes. This property is used in a CausalVariableEvidence definition and determines which Event individuals are relevant as evidence for a particular CausalVariable. It adds details on what types of Events must also be referenced as 'topics' (via the has_topic property) in the Event individuals."@en ;
+    rdfs:comment "CausalVariableEvidence relates a sub-class of CausalVariable (for example, icm:Propaganda) with classes in the Event ontology's hierarchy. It defines which Events may be relevant to determining/substantiating/refuting a CausalVariable instance. The Event class(es) are associated with an instance of CausalVariableEvidence using the has_positive/negative_event_class_ref properties. But, other requirements for inclusion may also be needed, such as whether the classes are only relevant when another type of Event is related using the has_topic property. For example, an Accusation Event may be relevant to support evidence of Propaganda but only if it also has a has_topic reference to a Corruption Event, and an active actor of a PoliticalOrganization. The type of Event (which must be related by the has_topic property) is specified using has_topic_class_ref."@en ;
+    rdfs:comment "Note that if multiple classes are defined using the has_topic_class_ref, then any Event individual which involves a topic classified as ANY of the referenced types (or a sub-class of one of the referenced types) will be noted as evidence."@en;
+    rdfs:comment "Event sub-class IRIs are provided using this property, and OWL puning is assumed (meaning that the class IRI is treated as a individual of the 'metaconcept' of event:Event sub-classes)."@en ;
+    rdfs:domain :CausalVariableEvidence .
+
+:is_evidence a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "is evidence"@en ;
+    rdfs:comment "An association from an Evidence individual to an individual in the backing knowledge base. It indicates that the individual should be queried to obtain information substantiating the ICM entity that is related to the Evidence using the has_evidence property. Evidence is a reification of the reference to the knowledge base individual. It is needed in order to also define 'description' and 'rank' properties."@en ;
+    rdfs:domain :Evidence .
+
+
+#################################################################
+#    Data Properties
+#################################################################
+
+:rank a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "rank"@en ;
+    rdfs:comment "An integer value between 0 and 10 indicating the significance of the evidence, where 0 is totally insignificant/irrelevant and 10 is extremely significant/relevant."@en ;
+    rdfs:domain :Evidence ;
+    rdfs:range [ a rdfs:Datatype ;
+                 owl:onDatatype xsd:integer ;
+                 owl:withRestrictions ( [ owl:minInclusive "0"^^xsd:integer ]
+                                        [ owl:maxInclusive "10"^^xsd:integer ] ) ] .
+
+:strength_of_evidence a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "strength"@en ;
+    rdfs:comment "A decimal value between 0 and 1 indicating the strength of the relationship of the Event classes to the CausalVariable, for a CausalVariableEvidence individual. For the CausalVariableEvidence, the Events are related using the has_positive/negative_class_ref properties and the CausalVariable(s) are identified using the has_causal_var_class_ref property. A value of 0 indicates that instances of the Event class do NOT act as evidence for the CausalVariable, while a value of 1 indicates that instances of the Event class supply very strong evidence."@en ;
+    rdfs:comment "Note that multiple CausalVariableEvidence instances may be needed for the same CausalVariable classes if the strengths/contributions of the different Events vary. This is the simplest way to reify that information."@en ;
+    rdfs:domain :CausalVariableEvidence ;
+    rdfs:range [ a rdfs:Datatype ;
+                 owl:onDatatype xsd:decimal ;
+                 owl:withRestrictions ( [ owl:minInclusive "0.00"^^xsd:decimal ]
+                                        [ owl:maxInclusive "1.00"^^xsd:decimal ] ) ] .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+:CausalVariable a owl:Class ;
+    rdfs:label "Causal Variable" ;
+    rdfs:comment "CausalVariables are key semantics/concepts extracted from the backing knowledge base that are correlated with each other and whose values are reported/projected over time (creating a time series). For example, increases in the price of diesel fuel may be correlated with increases in the cost of public transportation. Both of these concepts (price of diesel fuel and price of public transportation) may be defined as CausalVariables, and the specific values (price and cost) can be reported at various time steps using instances of the VariableValue class."@en ;
+    rdfs:comment "CausalVariable is sub-classed in the ICMHierarchy.ttl ontology file. Since a CausalVariable is sub-classed from meas:TimeSeries (which is a sub-class of event:Event), one might ask why a separate sub-classing tree is defined. Certainly, the Event sub-classes could be used. The answer is that the Event hierarchy is too fine-grained. So, the ICM hierarchy is defined in order to summarize CausalVariable semantics. Also, the hierarchy is useful to associate different icons with the various Variables (for example, having one icon for Violence, another for Corruption, a third for DisinformationActivities, etc.)."@en ;
+    rdfs:comment "The properties of a CausalVariable individual (related to its Evidence) are general:description, has_evidence and the TimeSeriesAndMeasurements ontology's has_measurement_unit and has_relative_unit properties. Also, the GeneralConcepts ontology's canonical_name property is used to define the Variable's label and the GeneralConcepts ontology's numeric_confidence property defines the trust/confidence in the Variable's concept."@en ;
+    rdfs:subClassOf meas:TimeSeries .
+
+:CausalVariableEvidence a owl:Class ;
+    rdfs:label "Causal Variable Evidence" ;
+    rdfs:comment "It is difficult to determine exactly which Events are relevant as evidence for a CausalVariable. For this reason, the CausalVariableEvidence class is defined. Its properties relate a specific sub-class of CausalVariable (for example, icm:MilitaryActivities) with classes in the Event ontology's hierarchy. It is used to define which Events may be relevant to determining/substantiating/refuting a CausalVariable instance which is a type of that class."@en ;
+    rdfs:comment "The properties of CausalVariableEvidence identify the CausalVariable sub-class (has_causal_var_class_ref), and one or more sub-classes of event:Event, along with whether those classes have a positive or negative effect on the CausalVariable (has_positive/negative_event_class_ref). In addition, other requirements for inclusion can be specified, such as whether the classes are only relevant when a specific type of event:Actor or cco:Artifact is also involved (other has_xxx_class_ref properties). If multiple Event sub-classes are defined (by using multiple has_positive/negative_event_class_refs or by defining multiple Evidence individuals for the same CausalVariable), the resulting evidence is assumed to be a union of all Event individuals that have a type of at least one of the specified IRIs, along with matching any specified, related Actor and/or Artifact class types."@en ;
+    rdfs:comment "Note that an Event individual must satisfy all actor, artifact and topic class_refs in order to be returned as Evidence."@en .
+
+:CollectionOfEvidence a owl:Class ;
+    rdfs:label "Collection of Evidence"@en ;
+    rdfs:comment "Evidence for a CausalVariable may be collected in a hierarchy. This class is defined to represent that semantic."@en ;
+    rdfs:subClassOf :Evidence, general:Collection .
+
+:Evidence a owl:Class ;
+    rdfs:label "Evidence"@en ;
+    rdfs:comment "A CausalVariable may be substantiated by information/entities in the backing knowledge base. These entities are identified by their IRIs. The Evidence class is defined in order to reify the reference to the IRI - and therefore allow more data to be associated with it. The entity/IRI is referenced using the has_evidence_entity property, and the additional information is the 'description' and 'rank' properties. The latter defines the significance of the entity, relative to other IRIs/entities."@en .

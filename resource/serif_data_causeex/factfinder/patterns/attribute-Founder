@@ -1,0 +1,59 @@
+(Founder
+
+(@INCLUDE "date-patterns")
+
+(wordsets
+
+)
+
+(entitylabels
+
+(AGENT1)
+
+)
+
+(reference
+
+<!-- generic AGENT1 reference -->
+(mention	(shortcut 	AGENT1_MENT_1)
+		(return	        (ff_role AGENT1) (ff_fact_type Founder_1))
+        	(entitylabel    AGENT1))
+
+(mention        (shortcut       AGENT1_MENT_2)
+                (return         (ff_role AGENT1) (ff_fact_type Founder_2))
+                (entitylabel    AGENT1))
+
+<!-- generic PLACE reference -->
+(mention	(return		(ff_role Founder))
+		(shortcut 	FOUNDER)
+        	(acetype	PER))
+
+(nprop (shortcut NPROP)
+       (predicate founder co-founder)
+       (args (argument (role <ref>) FOUNDER) (argument (role <poss> <unknown> of) AGENT1_MENT_1))
+       (opt_args ACTIVITY_DATE_A))
+
+)
+
+(toplevel
+
+(union GREEDY
+       (id nprop) (score 1.0)
+       (members (mprop (args (argument (role <ref>) NPROP) HOLD_DATE_A))
+                (vprop (args (argument NPROP) RECENT_HOLD_DATE_A))
+       		NPROP)) 
+
+<!-- TODO: test whether set fall through can be triggered: The company was founded in 2010 by 23-year-olds Chad and Alison Paris. -->
+(vprop (id vprop) (score 1.0)
+       (predicate establish* found* start* co-found* create*)
+       (args 
+		(argument (role <sub>) FOUNDER)
+		(argument (role <obj>) AGENT1_MENT_2)
+	)
+       (opt_args ACTIVITY_DATE_A))
+
+)
+
+<!-- TODO: PER is a founding member of ORG -->
+
+)

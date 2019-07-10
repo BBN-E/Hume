@@ -1,0 +1,47 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix causal: <http://ontology.causeex.com/ontology/odps/CauseEffect#>
+prefix event: <http://ontology.causeex.com/ontology/odps/Event#>
+PREFIX prov: <http://ontology.causeex.com/ontology/odps/DataProvenance#>
+PREFIX general: <http://ontology.causeex.com/ontology/odps/GeneralConcepts#>
+PREFIX bbnta1: <http://graph.causeex.com/bbn#>
+PREFIX actor: <http://ontology.causeex.com/ontology/odps/Actor#>
+PREFIX cco: <http://ontology.causeex.com/cameo/CountryCodeOntology/>
+PREFIX doco: <http://purl.org/spar/doco/>
+
+SELECT DISTINCT
+?sent2 ?precipitating_event ?event_type ?place2 ?exhibition ?place1
+WHERE {
+  {?exhibition a event:ExhibitionOfPower } union {?exhibition a event:Attack}
+  {
+    ?ca a causal:CausalAssertion ;
+      ?causal_type ?precipitating_event ;
+      causal:has_effect ?exhibition .
+    Values ?causal_type {
+      causal:has_cause causal:has_catalyst causal:has_preventative
+      causal:has_precondition causal:has_mitigating_factor }
+    ?precipitating_event a ?event_type .
+  } union {
+    ?exhibition event:preceded_by ?precipitating_event .
+    ?precipitating_event a ?event_type .
+  }
+
+  ?precipitating_event prov:sourced_from ?s2 .
+  ?s2 a doco:Sentence ; prov:text_value ?sent2 .
+
+  optional {
+    {
+      ?precipitating_event general:located_at ?place1 .
+    } union {
+      ?precipitating_event general:located_near ?place1 .
+    }
+  }
+  optional {
+    {
+      ?exhibition general:located_at ?place2 .
+    } union {
+      ?exhibition general:located_near ?place2 .
+    }
+  }
+}
+Limit 100

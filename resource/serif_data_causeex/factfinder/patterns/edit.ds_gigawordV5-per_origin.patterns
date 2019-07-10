@@ -1,0 +1,19 @@
+(per_origin
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 20093 noun:president[<mod> = 1][<ref> = 0]&[slot=0, word=PRESIDENT, lang=english] -->
+		(nprop (id ds_11) (score 0.9) (score_group 1) (predicate president) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_200000)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "PRESIDENT")))))))))
+
+		<!-- 14395 {1} Prime {0} -->
+		(regex (id ds_27) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "Prime")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_200001)) (entitylabel AGENT1) (acetype PER))))
+		
+		<!-- 12079 noun:minister[<mod> = 1][<ref> = 0]&[slot=0, word=MINISTER, lang=english] -->
+		(nprop (id ds_35) (score 0.9) (score_group 1) (predicate minister) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_200002)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "MINISTER")))))))))
+
+	)
+)

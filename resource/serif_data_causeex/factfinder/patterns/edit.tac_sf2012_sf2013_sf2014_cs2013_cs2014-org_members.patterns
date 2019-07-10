@@ -1,0 +1,37 @@
+(org_members
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 6 verb:withdraw[<sub> = 1][from = 0] -->
+		(vprop (id org_members_tac_2) (score 0.9) (score_group 1) (predicate withdraw) (args (argument (role <sub>) (mention (return (ff_role org_members)) (block AGENT1) (acetype ORG GPE))) (argument (role from) (mention (return (ff_role AGENT1) (ff_fact_type org_members_tac_400000)) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 3 verb:withdraws[<sub> = 1][from = 0] -->
+		(vprop (id org_members_tac_8) (score 0.9) (score_group 1) (predicate withdraws) (args (argument (role <sub>) (mention (return (ff_role org_members)) (block AGENT1) (acetype ORG GPE))) (argument (role from) (mention (return (ff_role AGENT1) (ff_fact_type org_members_tac_400001)) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 2 verb:became[<obj> = noun:member[of = 0]][<sub> = 1] -->
+		(vprop (id org_members_tac_13) (score 0.9) (score_group 1) (predicate became) (args (argument (role <obj>) (nprop (predicate member) (args (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_members_tac_400002)) (entitylabel AGENT1) (acetype ORG)))))) (argument (role <sub>) (mention (return (ff_role org_members)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 1 modifier:of[<ref> = 1][of = name:[<ref> = 0]]&[slot=0, word=association, lang=english] -->
+		(mprop (id org_members_tac_49) (score 0.9) (score_group 1) (predicate of) (args (argument (role <ref>) (mention (return (ff_role org_members)) (block AGENT1) (acetype ORG GPE))) (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_members_tac_400003)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "association"))))))))))))
+
+		<!-- 1 {1} joined the {0} -->
+		(regex (id org_members_tac_15) (score 0.9) (score_group 1) (re (mention (return (ff_role org_members)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "joined")) (text DONT_ADD_SPACES (string "the")) (mention (return (ff_role AGENT1) (ff_fact_type org_members_tac_400004)) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 1 verb:become[<obj> = noun:member[of = 0]][<sub> = 1] -->
+		(vprop (id org_members_tac_17) (score 0.9) (score_group 1) (predicate become) (args (argument (role <obj>) (nprop (predicate member) (args (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_members_tac_400005)) (entitylabel AGENT1) (acetype ORG)))))) (argument (role <sub>) (mention (return (ff_role org_members)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 1 modifier:in[<ref> = 1][in = 0]&[slot=0, word=association, lang=english] -->
+		(mprop (id org_members_tac_40) (score 0.9) (score_group 1) (predicate in) (args (argument (role <ref>) (mention (return (ff_role org_members)) (block AGENT1) (acetype ORG GPE))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_members_tac_400006)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "association")))))))))
+
+		<!-- 1 verb:joined[<obj> = 0][<sub> = pronoun:which[<ref> = 1]] -->
+		(vprop (id org_members_tac_21) (score 0.9) (score_group 1) (predicate joined) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_members_tac_400007)) (entitylabel AGENT1) (acetype ORG))) (argument (role <sub>) (anyprop (predicate which) (args (argument (role <ref>) (mention (return (ff_role org_members)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 1 poss:'s[<poss> = 0][<ref> = 1]&[slot=0, word=association, lang=english] -->
+		(anyprop (id org_members_tac_27) (score 0.9) (score_group 1) (predicate 's) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type org_members_tac_400008)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "association"))))))) (argument (role <ref>) (mention (return (ff_role org_members)) (block AGENT1) (acetype ORG GPE)))))
+
+	)
+)

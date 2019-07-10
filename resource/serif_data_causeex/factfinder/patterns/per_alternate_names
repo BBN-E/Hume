@@ -1,0 +1,27 @@
+(per_alternate_names
+
+(wordsets)
+
+(entitylabels (AGENT1))
+
+(reference)
+
+(toplevel
+
+(regex (score_group 1) (score 0.9) (id regex_1)
+	(re  
+		(mention (return (ff_role AGENT1) (ff_fact_type per_alternate_names1)) (entitylabel AGENT1))
+		(text (string "(|,|-LRB-|) also known as"))
+		(mention (return (ff_role per_alternate_names))(acetype PER) (min-entitylevel NAME))
+	)
+)
+
+(regex (score_group 1) (score 0.9) (id regex_2)
+        (re
+                (mention (return (ff_role AGENT1) (ff_fact_type per_alternate_names2)) (entitylabel AGENT1))
+                (text (string "(|,|-LRB-|) a.k.a."))
+                (mention (return (ff_role per_alternate_names))(acetype PER) (min-entitylevel NAME))
+        )
+)
+)
+)

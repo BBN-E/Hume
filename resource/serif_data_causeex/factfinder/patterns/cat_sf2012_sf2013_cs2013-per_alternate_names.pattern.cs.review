@@ -1,0 +1,40 @@
+(per_alternate_names
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 0: 2 {0} was born {1} -->
+		(regex (id per_alternate_names_1) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_alternate_names_1)) (acetype PER) (mentiontype name)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "born")) (mention (return (ff_role per_alternate_names)) (acetype PER) (mentiontype name))))
+
+		<!-- 1: 2 verb: [born]   <obj> = 0    <iobj> = 1 -->
+		(vprop (id per_alternate_names_2) (score 0.9) (score_group 1) (predicate born) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_alternate_names_2)) (acetype PER) (mentiontype name))) (argument (role <iobj>) (mention (return (ff_role per_alternate_names)) (acetype PER) (mentiontype name)))))
+
+		<!-- 4: 1 {0} , born {1} -->
+		(regex (id per_alternate_names_5) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_alternate_names_5)) (acetype PER) (mentiontype name)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "born")) (mention (return (ff_role per_alternate_names)) (acetype PER) (mentiontype name))))
+
+		<!-- 5: 1 {0} , alias {1} -->
+		(regex (id per_alternate_names_6) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_alternate_names_6)) (acetype PER) (mentiontype name)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "alias")) (mention (return (ff_role per_alternate_names)) (acetype PER) (mentiontype name))))
+
+		<!-- 6: 1 verb: [return]   <sub> = 0    as = 1 -->
+		(vprop (id per_alternate_names_7) (score 0.9) (score_group 1) (predicate return) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_alternate_names_7)) (acetype PER) (mentiontype name))) (argument (role as) (mention (return (ff_role per_alternate_names)) (acetype PER) (mentiontype name)))))
+
+		<!-- 7: 1 verb: [known]   <sub> = 1    <obj> = 0 -->
+		(vprop (id per_alternate_names_8) (score 0.9) (score_group 1) (predicate known) (args (argument (role <sub>) (mention (return (ff_role per_alternate_names)) (acetype PER) (mentiontype name))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_alternate_names_8)) (acetype PER) (mentiontype name)))))
+
+		<!-- 8: 1 verb: [known]   <sub> = 0    as = 1 -->
+		(vprop (id per_alternate_names_9) (score 0.9) (score_group 1) (predicate known) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_alternate_names_9)) (acetype PER) (mentiontype name))) (argument (role as) (mention (return (ff_role per_alternate_names)) (acetype PER) (mentiontype name)))))
+
+		<!-- 9: 1 verb: [known]   <obj> = 0    as = 1 -->
+		(vprop (id per_alternate_names_10) (score 0.9) (score_group 1) (predicate known) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_alternate_names_10)) (acetype PER) (mentiontype name))) (argument (role as) (mention (return (ff_role per_alternate_names)) (acetype PER) (mentiontype name)))))
+
+		<!-- 10: 1 copula: [was]   <sub> = 1    <obj> = 0 -->
+		(anyprop (id per_alternate_names_11) (score 0.9) (score_group 1) (predicate was) (args (argument (role <sub>) (mention (return (ff_role per_alternate_names)) (acetype PER) (mentiontype name))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_alternate_names_11)) (acetype PER) (mentiontype name)))))
+
+		<!-- 12: 1 CombinationPattern[{1} , {0}][already known as {1}] -->
+		(regex (id per_alternate_names_13) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "already")) (text DONT_ADD_SPACES (string "known")) (text DONT_ADD_SPACES (string "as")) (mention (return (ff_role per_alternate_names)) (acetype PER) (mentiontype name)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_alternate_names_13)) (acetype PER) (mentiontype name))))
+
+	)
+)

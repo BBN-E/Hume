@@ -1,0 +1,104 @@
+(per_origin
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 53 {1}  {0}&[slot=1, word=american, lang=english] -->
+		(regex (id per_origin_tac_21) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE) (regex (regex (re (text DONT_ADD_SPACES (string "american")))))) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400000)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 52 {1}  {0}&[slot=0, word=citizen, lang=english]&[slot=1, word=canadian, lang=english] -->
+		(regex (id per_origin_tac_1) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE) (regex (regex (re (text DONT_ADD_SPACES (string "canadian")))))) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400001)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "citizen"))))))))
+
+		<!-- 52 {1}  {0}&[slot=0, word=citizen, lang=english] -->
+		(regex (id per_origin_tac_4) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE)) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400002)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "citizen"))))))))
+
+		<!-- 36 noun:worker[<mod> = 1][<ref> = 0] -->
+		(nprop (id per_origin_tac_29) (score 0.9) (score_group 1) (predicate worker) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400003)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 36 noun:filmmaker[<mod> = 1][<ref> = 0] -->
+		(nprop (id per_origin_tac_6) (score 0.9) (score_group 1) (predicate filmmaker) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400004)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 24 modifier:tennis[<ref> = noun:player[<mod> = 1][<ref> = 0]] -->
+		(mprop (id per_origin_tac_18) (score 0.9) (score_group 1) (predicate tennis) (args (argument (role <ref>) (nprop (predicate player) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400005)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 23 {1}  {0}&[slot=1, word=american, lang=english] -->
+		(regex (id per_origin_tac_20) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE) (regex (regex (re (text DONT_ADD_SPACES (string "american")))))) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400006)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 16 modifier:tv[<ref> = noun:star[<mod> = 1][<ref> = 0]] -->
+		(mprop (id per_origin_tac_32) (score 0.9) (score_group 1) (predicate tv) (args (argument (role <ref>) (nprop (predicate star) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400007)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 15 {0} , a {1}&{1} citizen -->
+		(regex (id per_origin_tac_37) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400008)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "citizen"))))
+
+		<!-- 12 {0} , the {1}&{1} choreographer who was -->
+		(regex (id per_origin_tac_48) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400009)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "the")) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "choreographer")) (text DONT_ADD_SPACES (string "who")) (text DONT_ADD_SPACES (string "was"))))
+
+		<!-- 10 verb:defeating[<obj> = 0][from = 1] -->
+		(vprop (id per_origin_tac_80) (score 0.9) (score_group 1) (predicate defeating) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400010)) (entitylabel AGENT1) (acetype PER))) (argument (role from) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE)))))
+
+		<!-- 10 modifier:nobel[<ref> = noun:physicist[<mod> = 1][<ref> = 0]] -->
+		(mprop (id per_origin_tac_60) (score 0.9) (score_group 1) (predicate nobel) (args (argument (role <ref>) (nprop (predicate physicist) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400011)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 10 modifier:italian[<mod> = 1][<ref> = name:[<ref> = 0]] -->
+		(mprop (id per_origin_tac_99) (score 0.9) (score_group 1) (predicate italian) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE))) (argument (role <ref>) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400012)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 10 {0} from {1}&[slot=1, word=pakistan, lang=english] -->
+		(regex (id per_origin_tac_59) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400013)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "from")) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE) (regex (regex (re (text DONT_ADD_SPACES (string "pakistan"))))))))
+
+		<!-- 10 verb:took[by = verb:defeating[<obj> = 0][from = 1]] -->
+		(vprop (id per_origin_tac_68) (score 0.9) (score_group 1) (predicate took) (args (argument (role by) (vprop (predicate defeating) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400014)) (entitylabel AGENT1) (acetype PER))) (argument (role from) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE))))))))
+
+		<!-- 10 {1}  {0}&[slot=0, word=journalist, lang=english] -->
+		(regex (id per_origin_tac_100) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE)) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400015)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "journalist"))))))))
+
+		<!-- 9 poss:'s[<poss> = 1][<ref> = 0]&[slot=1, word=france, lang=english] -->
+		(anyprop (id per_origin_tac_86) (score 0.9) (score_group 1) (predicate 's) (args (argument (role <poss>) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE) (regex (regex (re (text DONT_ADD_SPACES (string "france"))))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400016)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 9 {1}  {0}&[slot=0, word=boy, lang=english]&[slot=1, word=dutch, lang=english] -->
+		(regex (id per_origin_tac_131) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE) (regex (regex (re (text DONT_ADD_SPACES (string "dutch")))))) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400017)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "boy"))))))))
+
+		<!-- 9 {1} citizen {0} -->
+		(regex (id per_origin_tac_90) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "citizen")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400018)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 8 {0} is a {1}&{1} citizen -->
+		(regex (id per_origin_tac_100) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400019)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "is")) (text DONT_ADD_SPACES (string "a")) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "citizen"))))
+
+		<!-- 7 noun:choreographer[<mod> = 1][<ref> = 0] -->
+		(nprop (id per_origin_tac_102) (score 0.9) (score_group 1) (predicate choreographer) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400020)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 7 modifier:prime[<ref> = noun:minister[<mod> = 1][<ref> = 0]] -->
+		(mprop (id per_origin_tac_16) (score 0.9) (score_group 1) (predicate prime) (args (argument (role <ref>) (nprop (predicate minister) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400021)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 6 {1} [ORG] {0}&[slot=0, word=worker, lang=english]&[slot=1, word=italian, lang=english] -->
+		(regex (id per_origin_tac_170) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE) (regex (regex (re (text DONT_ADD_SPACES (string "italian")))))) (mention (acetype ORG)) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400022)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "worker"))))))))
+
+		<!-- 6 {1} choreographer {0} -->
+		(regex (id per_origin_tac_135) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "choreographer")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400023)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 6 {1} media executives {0} -->
+		(regex (id per_origin_tac_133) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "media")) (text DONT_ADD_SPACES (string "executives")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400024)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 5 {0} , a {1}&, {0}&{1} citizen , was -->
+		(regex (id per_origin_tac_155) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400025)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "citizen")) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "was"))))
+
+		<!-- 5 {0} , {1}&[slot=1, word=frenchman, lang=english] -->
+		(regex (id per_origin_tac_168) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400026)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE) (regex (regex (re (text DONT_ADD_SPACES (string "frenchman"))))))))
+
+		<!-- 4 copula:is[<obj> = noun:citizen[<mod> = 1]][<sub> = pronoun:who[<ref> = 0]] -->
+		(anyprop (id per_origin_tac_268) (score 0.9) (score_group 1) (predicate is) (args (argument (role <obj>) (nprop (predicate citizen) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE)))))) (argument (role <sub>) (anyprop (predicate who) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400027)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 4 verb:jazz[<obj> = 0][<sub> = noun:leaders[<mod> = 1]] -->
+		(vprop (id per_origin_tac_19) (score 0.9) (score_group 1) (predicate jazz) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400028)) (entitylabel AGENT1) (acetype PER))) (argument (role <sub>) (nprop (predicate leaders) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE))))))))
+
+
+		<!-- 2 modifier:-born[<mod> = 1][<ref> = noun:spokesman[<ref> = 0]] -->
+		(mprop (id per_origin_tac_324) (score 0.9) (score_group 1) (predicate -born) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE))) (argument (role <ref>) (nprop (predicate spokesman) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400029)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 1 verb:born[<sub> = noun:runner[<ref> = 0]][in = 1] -->
+		(vprop (id per_origin_tac_81) (score 0.9) (score_group 1) (predicate born) (args (argument (role <sub>) (nprop (predicate runner) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_tac_400030)) (entitylabel AGENT1) (acetype PER)))))) (argument (role in) (mention (return (ff_role per_origin)) (block AGENT1) (acetype GPE)))))
+
+	)
+)

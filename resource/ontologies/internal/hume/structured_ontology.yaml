@@ -1,0 +1,40 @@
+- Indicator:
+  - {_id: Indicator_001}
+  - _source: ['HUME: /indicator']
+  - {_description: NA}
+  - _examples: [NA]
+  - CropProduction:
+    - {_id: CropProduction_001}
+    - _source: ['HUME: /indicator/Agriculture/Crop Production']
+    - {_description: NA}
+    - _examples: [NA]
+  - LivestockProduction:
+    - {_id: LivestockProduction_001}
+    - _source: ['HUME: /indicator/Agriculture/Livestock Production']
+    - {_description: NA}
+    - _examples: [NA]
+  - GlobalAcuteMalnutritionRate:
+    - {_id: GlobalAcuteMalnutritionRate_001}
+    - _source: ['HUME: /indicator/Health/Global Acute Malnutrition (GAM) rate']
+    - {_description: NA}
+    - _examples: [NA]
+  - PopulationDisplacement:
+    - {_id: PopulationDisplacement_001}
+    - _source: ['HUME: /indicator/Conflict/Population Displacement']
+    - {_description: NA}
+    - _examples: [NA]
+  - Rainfall:
+    - {_id: Rainfall_001}
+    - _source: ['HUME: /indicator/Rainfall']
+    - {_description: NA}
+    - _examples: [NA]
+  - CrossBorderTrade:
+    - {_id: CrossBorderTrade_001}
+    - _source: ['HUME: /indicator/Commerce/Cross Border Trade']
+    - {_description: NA}
+    - _examples: [NA]
+  - InflationRate:
+    - {_id: InflationRate_001}
+    - _source: ['HUME: /indicator/Wealth/Inflation Rate']
+    - {_description: NA}
+    - _examples: [NA]

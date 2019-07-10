@@ -1,0 +1,201 @@
+(org_parents
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 15 noun:government[<poss> = 1][<ref> = 0]&[slot=0, word=government, lang=english] -->
+		(nprop (id org_parents_ere_4) (score 0.9) (score_group 1) (predicate government) (args (argument (role <poss>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200000)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "government")))))))))
+
+		<!-- 13 noun:government[<poss> = pronoun:our[<ref> = 1]][<ref> = 0]&[slot=1, word=our, lang=english] -->
+		(nprop (id org_parents_ere_8) (score 0.9) (score_group 1) (predicate government) (args (argument (role <poss>) (anyprop (predicate our) (args (argument (role <ref>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "our")))))))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200001)) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 10 {1}  {0}&[slot=0, word=army, lang=english] -->
+		(regex (id org_parents_ere_12) (score 0.9) (score_group 1) (re (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200002)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "army"))))))))
+
+		<!-- 10 noun:military[<poss> = 1][<ref> = 0]&[slot=0, word=military, lang=english] -->
+		(nprop (id org_parents_ere_11) (score 0.9) (score_group 1) (predicate military) (args (argument (role <poss>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200003)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "military")))))))))
+
+		<!-- 6 noun:military[<poss> = pronoun:our[<ref> = 1]][<ref> = 0]&[slot=1, word=our, lang=english] -->
+		(nprop (id org_parents_ere_33) (score 0.9) (score_group 1) (predicate military) (args (argument (role <poss>) (anyprop (predicate our) (args (argument (role <ref>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "our")))))))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200004)) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 6 noun:military[<poss> = pronoun:our[<ref> = 1]][<ref> = 0]&[slot=0, word=military, lang=english]&[slot=1, word=our, lang=english] -->
+		(nprop (id org_parents_ere_34) (score 0.9) (score_group 1) (predicate military) (args (argument (role <poss>) (anyprop (predicate our) (args (argument (role <ref>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "our")))))))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200005)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "military")))))))))
+
+		<!-- 5 noun:council[<mod> = 1][<ref> = 0] -->
+		(nprop (id org_parents_ere_45) (score 0.9) (score_group 1) (predicate council) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200006)) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 4 {1}  {0}&[slot=0, word=navy, lang=english] -->
+		(regex (id org_parents_ere_50) (score 0.9) (score_group 1) (re (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200007)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "navy"))))))))
+
+		<!-- 4 {1}  {0}&[slot=0, word=military, lang=english]&[slot=1, word=our, lang=english] -->
+		(regex (id org_parents_ere_63) (score 0.9) (score_group 1) (re (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "our")))))) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200008)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "military"))))))))
+
+		<!-- 4 noun:police[<mod> = 1][<ref> = 0]&[slot=0, word=police, lang=english] -->
+		(nprop (id org_parents_ere_49) (score 0.9) (score_group 1) (predicate police) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200009)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "police")))))))))
+
+		<!-- 3 noun:government[<mod> = 1][<ref> = 0]&[slot=1, word=american, lang=english] -->
+		(nprop (id org_parents_ere_140) (score 0.9) (score_group 1) (predicate government) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "american"))))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200010)) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 3 noun:department[<mod> = 1][<ref> = 0] -->
+		(nprop (id org_parents_ere_123) (score 0.9) (score_group 1) (predicate department) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200011)) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 3 {1}  {0}&[slot=0, word=seals, lang=english]&[slot=1, word=navy, lang=english] -->
+		(regex (id org_parents_ere_113) (score 0.9) (score_group 1) (re (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "navy")))))) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200012)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "seals"))))))))
+
+		<!-- 3 set:[<member> = noun:army[<mod> = 1][<ref> = 0]] -->
+		(sprop (id org_parents_ere_131) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate army) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200013)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 3 noun:gov't[<mod> = 1][<ref> = 0] -->
+		(nprop (id org_parents_ere_114) (score 0.9) (score_group 1) (predicate gov't) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200014)) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 3 {1}  {0}&[slot=1, word=navy, lang=english] -->
+		(regex (id org_parents_ere_77) (score 0.9) (score_group 1) (re (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "navy")))))) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200015)) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 3 modifier:of[of = noun:court[<mod> = 1][<ref> = 0]] -->
+		(mprop (id org_parents_ere_79) (score 0.9) (score_group 1) (predicate of) (args (argument (role of) (nprop (predicate court) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200016)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 3 noun:courts[<mod> = 1][<ref> = 0] -->
+		(nprop (id org_parents_ere_127) (score 0.9) (score_group 1) (predicate courts) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200017)) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 3 {1}  {0}&[slot=0, word=government, lang=english]&[slot=1, word=canadian, lang=english] -->
+		(regex (id org_parents_ere_153) (score 0.9) (score_group 1) (re (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "canadian")))))) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200018)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "government"))))))))
+
+		<!-- 2 copula:was[<obj> = noun:government[<ref> = 0][of = 1]]&[slot=0, word=government, lang=english] -->
+		(anyprop (id org_parents_ere_270) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (nprop (predicate government) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200019)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "government"))))))) (argument (role of) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 2 modifier:public[<ref> = noun:agency[<ref> = 0][of = 1]] -->
+		(mprop (id org_parents_ere_355) (score 0.9) (score_group 1) (predicate public) (args (argument (role <ref>) (nprop (predicate agency) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200020)) (entitylabel AGENT1) (acetype ORG))) (argument (role of) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 2 modifier:owned[<ref> = noun:subsidiary[<ref> = 0][of = 1]] -->
+		(mprop (id org_parents_ere_207) (score 0.9) (score_group 1) (predicate owned) (args (argument (role <ref>) (nprop (predicate subsidiary) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200021)) (entitylabel AGENT1) (acetype ORG))) (argument (role of) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 2 noun:unit[<mod> = 1][<ref> = 0] -->
+		(nprop (id org_parents_ere_184) (score 0.9) (score_group 1) (predicate unit) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200022)) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 2 {1}  {0}&[slot=0, word=government, lang=english]&[slot=1, word=chinese, lang=english] -->
+		(regex (id org_parents_ere_320) (score 0.9) (score_group 1) (re (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "chinese")))))) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200023)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "government"))))))))
+
+		<!-- 2 verb:owned[<sub> = 0][by = 1] -->
+		(vprop (id org_parents_ere_346) (score 0.9) (score_group 1) (predicate owned) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200024)) (entitylabel AGENT1) (acetype ORG))) (argument (role by) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 2 verb:have[<obj> = 0][<sub> = 1]&[slot=0, word=military, lang=english] -->
+		(vprop (id org_parents_ere_216) (score 0.9) (score_group 1) (predicate have) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200025)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "military"))))))) (argument (role <sub>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 2 verb:went[to = noun:court[<mod> = 1][<ref> = 0]] -->
+		(vprop (id org_parents_ere_308) (score 0.9) (score_group 1) (predicate went) (args (argument (role to) (nprop (predicate court) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200026)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 2 {1}  {0}&[slot=0, word=treasury, lang=english] -->
+		(regex (id org_parents_ere_266) (score 0.9) (score_group 1) (re (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200027)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "treasury"))))))))
+
+		<!-- 2 copula:was[<obj> = noun:government[<ref> = 0][of = 1]]&[slot=1, word=vietnam, lang=english] -->
+		(anyprop (id org_parents_ere_195) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (nprop (predicate government) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200028)) (entitylabel AGENT1) (acetype ORG))) (argument (role of) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "vietnam"))))))))))))
+
+		<!-- 2 verb:face[<obj> = noun:jail[<temp> = noun:dictatorship[<poss> = 1][<ref> = 0]]] -->
+		(vprop (id org_parents_ere_329) (score 0.9) (score_group 1) (predicate face) (args (argument (role <obj>) (nprop (predicate jail) (args (argument (role <temp>) (nprop (predicate dictatorship) (args (argument (role <poss>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200029)) (entitylabel AGENT1) (acetype ORG)))))))))))
+
+		<!-- 2 {1}  {0}&[slot=0, word=council, lang=english] -->
+		(regex (id org_parents_ere_338) (score 0.9) (score_group 1) (re (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200030)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "council"))))))))
+
+		<!-- 2 verb:have[<obj> = 0][<sub> = noun:countries[<ref> = 1]]&[slot=0, word=military, lang=english] -->
+		(vprop (id org_parents_ere_177) (score 0.9) (score_group 1) (predicate have) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200031)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "military"))))))) (argument (role <sub>) (nprop (predicate countries) (args (argument (role <ref>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 2 {1}  {0}&[slot=0, word=government, lang=english]&[slot=1, word=us, lang=english] -->
+		(regex (id org_parents_ere_341) (score 0.9) (score_group 1) (re (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "us")))))) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200032)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "government"))))))))
+
+		<!-- 2 copula:is[<obj> = noun:subsidiary[<ref> = 0][of = 1]] -->
+		(anyprop (id org_parents_ere_339) (score 0.9) (score_group 1) (predicate is) (args (argument (role <obj>) (nprop (predicate subsidiary) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200033)) (entitylabel AGENT1) (acetype ORG))) (argument (role of) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 2 {1}  {0}&[slot=0, word=army, lang=english]&[slot=1, word=japanese, lang=english] -->
+		(regex (id org_parents_ere_323) (score 0.9) (score_group 1) (re (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "japanese")))))) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200034)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "army"))))))))
+
+		<!-- 2 set:[<member> = noun:council[<mod> = 1][<ref> = 0]] -->
+		(sprop (id org_parents_ere_186) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate council) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200035)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 2 verb:ended[<sub> = noun:dictatorship[<poss> = 1][<ref> = 0]] -->
+		(vprop (id org_parents_ere_350) (score 0.9) (score_group 1) (predicate ended) (args (argument (role <sub>) (nprop (predicate dictatorship) (args (argument (role <poss>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200036)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 2 noun:deal[with = noun:authorities[<ref> = 0][in = 1]] -->
+		(nprop (id org_parents_ere_301) (score 0.9) (score_group 1) (predicate deal) (args (argument (role with) (nprop (predicate authorities) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200037)) (entitylabel AGENT1) (acetype ORG))) (argument (role in) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 2 noun:goverment[<mod> = 1][<ref> = 0] -->
+		(nprop (id org_parents_ere_268) (score 0.9) (score_group 1) (predicate goverment) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200038)) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 2 noun:years[in = noun:military[<mod> = 1][<ref> = 0]]&[slot=0, word=military, lang=english] -->
+		(nprop (id org_parents_ere_209) (score 0.9) (score_group 1) (predicate years) (args (argument (role in) (nprop (predicate military) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200039)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "military"))))))))))))
+
+		<!-- 2 set:[<member> = noun:de-facto-dictatorship[<ref> = 0][of = 1]] -->
+		(sprop (id org_parents_ere_319) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate de-facto-dictatorship) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200040)) (entitylabel AGENT1) (acetype ORG))) (argument (role of) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 2 modifier:us[<mod> = 1][<ref> = 0]&[slot=0, word=dod, lang=english] -->
+		(mprop (id org_parents_ere_220) (score 0.9) (score_group 1) (predicate us) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200041)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "dod")))))))))
+
+		<!-- 2 verb:have[<obj> = noun:military[<ref> = 0]][<sub> = 1]&[slot=0, word=military, lang=english]&[slot=1, word=countries, lang=english] -->
+		(vprop (id org_parents_ere_218) (score 0.9) (score_group 1) (predicate have) (args (argument (role <obj>) (nprop (predicate military) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200042)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "military")))))))))) (argument (role <sub>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "countries")))))))))
+
+		<!-- 2 modifier:justified[<ref> = noun:government[<poss> = pronoun:our[<ref> = 1]][<ref> = 0]] -->
+		(mprop (id org_parents_ere_215) (score 0.9) (score_group 1) (predicate justified) (args (argument (role <ref>) (nprop (predicate government) (args (argument (role <poss>) (anyprop (predicate our) (args (argument (role <ref>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200043)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 2 noun:government[<mod> = 1][<ref> = 0]&[slot=0, word=government, lang=english]&[slot=1, word=colombian, lang=english] -->
+		(nprop (id org_parents_ere_200) (score 0.9) (score_group 1) (predicate government) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "colombian"))))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200044)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "government")))))))))
+
+		<!-- 2 noun:de-facto-dictatorship[<ref> = 0][of = 1] -->
+		(nprop (id org_parents_ere_194) (score 0.9) (score_group 1) (predicate de-facto-dictatorship) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200045)) (entitylabel AGENT1) (acetype ORG))) (argument (role of) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 2 modifier:communist[<ref> = noun:government[<ref> = 0][of = 1]] -->
+		(mprop (id org_parents_ere_223) (score 0.9) (score_group 1) (predicate communist) (args (argument (role <ref>) (nprop (predicate government) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200046)) (entitylabel AGENT1) (acetype ORG))) (argument (role of) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 2 noun:bureau[<ref> = 0][of = 1] -->
+		(nprop (id org_parents_ere_273) (score 0.9) (score_group 1) (predicate bureau) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200047)) (entitylabel AGENT1) (acetype ORG))) (argument (role of) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 2 noun:government[<mod> = 1][<ref> = 0]&[slot=0, word=government, lang=english]&[slot=1, word=us, lang=english] -->
+		(nprop (id org_parents_ere_322) (score 0.9) (score_group 1) (predicate government) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "us"))))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200048)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "government")))))))))
+
+		<!-- 2 verb:have[<obj> = noun:military[<ref> = 0]][<sub> = noun:countries[<ref> = 1]]&[slot=0, word=military, lang=english] -->
+		(vprop (id org_parents_ere_198) (score 0.9) (score_group 1) (predicate have) (args (argument (role <obj>) (nprop (predicate military) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200049)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "military")))))))))) (argument (role <sub>) (nprop (predicate countries) (args (argument (role <ref>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 2 noun:part[<ref> = 0][of = 1]&[slot=1, word=nasa, lang=english] -->
+		(nprop (id org_parents_ere_276) (score 0.9) (score_group 1) (predicate part) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200050)) (entitylabel AGENT1) (acetype ORG))) (argument (role of) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "nasa")))))))))
+
+		<!-- 2 noun:part[<ref> = 0][of = 1]&[slot=0, word=part, lang=english] -->
+		(nprop (id org_parents_ere_166) (score 0.9) (score_group 1) (predicate part) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200051)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "part"))))))) (argument (role of) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 2 noun:government[<ref> = 0][of = 1]&[slot=1, word=vietnam, lang=english] -->
+		(nprop (id org_parents_ere_344) (score 0.9) (score_group 1) (predicate government) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200052)) (entitylabel AGENT1) (acetype ORG))) (argument (role of) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "vietnam")))))))))
+
+		<!-- 1 noun:accreditation[<poss> = noun:district[<mod> = 1][<ref> = 0]] -->
+		(nprop (id org_parents_ere_480) (score 0.9) (score_group 1) (predicate accreditation) (args (argument (role <poss>) (nprop (predicate district) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200053)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 1 noun:fact[that = verb:think[<sub> = noun:government[<mod> = 1][<ref> = 0]]] -->
+		(nprop (id org_parents_ere_828) (score 0.9) (score_group 1) (predicate fact) (args (argument (role that) (vprop (predicate think) (args (argument (role <sub>) (nprop (predicate government) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200054)) (entitylabel AGENT1) (acetype ORG)))))))))))
+
+		<!-- 1 verb:open[<sub> = noun:government[<mod> = 1][<ref> = 0]] -->
+		(vprop (id org_parents_ere_1296) (score 0.9) (score_group 1) (predicate open) (args (argument (role <sub>) (nprop (predicate government) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200055)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 1 verb:got[from = noun:navy[<mod> = 1][<ref> = 0]] -->
+		(vprop (id org_parents_ere_1258) (score 0.9) (score_group 1) (predicate got) (args (argument (role from) (nprop (predicate navy) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200056)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 1 verb:revoked[<obj> = noun:accreditation[<poss> = noun:district[<mod> = 1][<ref> = 0]]] -->
+		(vprop (id org_parents_ere_1337) (score 0.9) (score_group 1) (predicate revoked) (args (argument (role <obj>) (nprop (predicate accreditation) (args (argument (role <poss>) (nprop (predicate district) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200057)) (entitylabel AGENT1) (acetype ORG)))))))))))
+
+		<!-- 1 {1} security {0}&[slot=0, word=force, lang=english]&[slot=1, word=afghan, lang=english] -->
+		(regex (id org_parents_ere_1465) (score 0.9) (score_group 1) (re (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "afghan")))))) (text DONT_ADD_SPACES (string "security")) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200058)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "force"))))))))
+
+		<!-- 1 {1}  {0}&[slot=0, word=marshalls, lang=english] -->
+		(regex (id org_parents_ere_1392) (score 0.9) (score_group 1) (re (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200059)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "marshalls"))))))))
+
+		<!-- 1 verb:impressed[by = noun:administration[<mod> = 1][<ref> = 0]] -->
+		(vprop (id org_parents_ere_838) (score 0.9) (score_group 1) (predicate impressed) (args (argument (role by) (nprop (predicate administration) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200060)) (entitylabel AGENT1) (acetype ORG))))))))
+		
+		<!-- 1 modifier:statewide[<ref> = noun:arm[<poss> = 1][<ref> = 0]] -->
+		(mprop (id org_parents_ere_923) (score 0.9) (score_group 1) (predicate statewide) (args (argument (role <ref>) (nprop (predicate arm) (args (argument (role <poss>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200061)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 1 noun:military[<poss> = 1][<ref> = 0]&[slot=0, word=military, lang=english]&[slot=1, word=their, lang=english] -->
+		(nprop (id org_parents_ere_514) (score 0.9) (score_group 1) (predicate military) (args (argument (role <poss>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "their"))))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200062)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "military")))))))))
+
+		<!-- 1 verb:declared[<sub> = noun:government[<mod> = 1][<ref> = 0]] -->
+		(vprop (id org_parents_ere_428) (score 0.9) (score_group 1) (predicate declared) (args (argument (role <sub>) (nprop (predicate government) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ere_200063)) (entitylabel AGENT1) (acetype ORG))))))))
+	)
+)

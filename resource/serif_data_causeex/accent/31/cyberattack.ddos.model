@@ -1,0 +1,432 @@
+(Event312_Patterns
+
+(@INCLUDE "%icews_lib_dir%/event_models/icews_required.model")
+(@INCLUDE "%icews_lib_dir%/event_models/source-target.model")
+(@INCLUDE "%project_specific_serif_data_root%/accent/CYBERATTACK.model")
+
+(entitylabels
+)
+
+(wordsets
+(TRAFFIC requests traffic data package* query queries spam packet*)
+)
+
+(reference
+
+#capture hyphenated compounds, such as DDoS-attacks, botnet-based attacks, etc.
+(argument (shortcut REGEX_DDOS) (role <ref> <unknown> <poss>) (any-of (members
+                                 (regex (re (text (string ".*-iot.*"))))
+                                 (regex (re (text (string "iot-.*" ))))
+                                 (regex (re (text (string ".*-mirai.*"))))
+                                 (regex (re (text (string "mirai.*"))))
+                                 (regex (re (text (string ".*botnet.*"))))
+                                 (regex (re (text (string ".*-(d|t)dos.*"))))
+                                 (regex (re (text (string "(d|t)dos.*"))))
+                                 (regex (re (text (string ".*dos-.*"))))
+                                 (regex (re (text (string "dos-.*"))))
+                                 (regex (re (text (string ".*denial-of-service.*")))))))
+
+#capture compounds with bits per second, i.e. a 100-Gbps attack, a 100-gigabit-per-second-attack
+(argument (shortcut REGEX_BIT) (any-of (members (regex (re (text (string ".{0,20}-.{3,4}bit"))))
+                                 (regex (re (text (string "(giga|tera|mega|kilo)bit.*"))))
+                                 (regex (re (text (string ".*-(g|t|k|m)b.*"))))
+                                 (regex (re (text (string "(g|t|k|m)b.*"))))
+                                 (regex (re (text (string ".*(giga|tera|mega|kilo)bit.*")))) #this is the important part
+                                 (regex (re (text (string ".{3,4}bit"))))
+                                 (regex (re (text (string ".{0,20}-.{0,1}b(p|/)s"))))
+                                 (regex (re (text (string ".{0,1}b(p|/)s")))))))
+
+#"DDoS" or other definitive headword
+(any-of (shortcut DDOS_PROP) (members 
+        (anyprop (args REGEX_DDOS) 
+                  (block_predicate response* counter* defen*))
+        (anyprop (adj DDOS) (block_predicate response* counter* defen*))
+        (nprop (predicate DDOS) (opt_args LOOSE_FROM_SOURCE SOURCE_REF_EXP LOOSE_AGAINST_TARGET))
+        #DDoS attributed to source
+        (nprop (predicate DDOS) (opt_args LOOSE_FROM_SOURCE SOURCE_REF_EXP LOOSE_AGAINST_TARGET)
+               (propmod (role <obj>) (vprop (predicate attributed) (opt_args TO_SOURCE))))))
+
+(nprop (shortcut COMPROMISED_SITE) (predicate COMPUTER_THING ASSET) (adj compromised exploited)
+       (opt_args FROM_SOURCE_EXP SOURCE_REF_EXP LOOSE_AGAINST_TARGET))
+
+#Phrase that means "DDoS"; ie "DDoS attack", "attack traffic", etc.
+(any-of (shortcut DDOS_ATTACK_HEADWORD) (members #TODO--watchout adj patterns!!
+        (nprop (predicate attack* ATTACK_N activit* CAMPAIGN) (adj distributed) (adj denial)
+               (opt_args LOOSE_FROM_SOURCE LOOSE_AGAINST_TARGET))
+        (nprop (predicate denial) (adj distributed)
+               (opt_args LOOSE_FROM_SOURCE LOOSE_AGAINST_TARGET))
+        (nprop (predicate denial) (adj telephony)
+               (opt_args LOOSE_FROM_SOURCE LOOSE_AGAINST_TARGET))
+        (nprop (predicate ATTACK_N attack* activit*) (adj denial) (adj service)
+               (opt_args LOOSE_FROM_SOURCE LOOSE_AGAINST_TARGET))
+       (nprop (predicate ATTACK_N CAMPAIGN COMPUTER_THING service* METHOD activit*) (adj DDOS)
+             (opt_args LOOSE_FROM_SOURCE SOURCE_REF_EXP LOOSE_AGAINST_TARGET))
+       (nprop (predicate ATTACK_N CAMPAIGN COMPUTER_THING service* METHOD activit*) (args (argument (role <ref> <unknown>) (nprop (predicate DDOS))))
+             (opt_args LOOSE_FROM_SOURCE SOURCE_REF_EXP LOOSE_AGAINST_TARGET))
+       (nprop (predicate COMPUTER_THING ATTACK_N CAMPAIGN service* METHOD activit*) (adj DDOS)
+            (propmod (role <obj>) (vprop (predicate attributed) (opt_args TO_SOURCE))))
+        #misparse
+        (nprop (predicate denial) (opt_args LOOSE_FROM_SOURCE) (args (argument (role of)
+                          (any-of (members (nprop (predicate service))
+                                           (nprop (predicate attack) (adj service)))))))
+        (nprop (predicate COMPUTER_THING ATTACK_N CAMPAIGN METHOD activit*) (propmod (role <ref>)
+                      (mprop (predicate denial) (args (argument (role of)
+                                                  (nprop (predicate service)))))))
+        (nprop (predicate ATTACK_N CAMPAIGN activit*) (args (argument (role <unknown> <ref> through of by with from)
+                                                    (mention (headword DDOS)))))
+        (nprop (predicate ATTACK_N attack*) (args (argument (role through of by)
+                                                (mention (headword TRAFFIC http*)))))
+        #spam bots
+        (nprop (predicate bot*) (adj spam) (opt_args FROM_SOURCE_EXP SOURCE_REF_EXP LOOSE_AGAINST_TARGET))
+        #attack with DDoS
+        (nprop (predicate ATTACK_N CAMPAIGN activit*) (propmod (role <obj> <iobj>)
+               (vprop (predicate CAUSE) (args (argument (role by through with) DDOS_PROP)))))))
+
+(nprop (shortcut GIGABIT_ATTACK)
+       (predicate ATTACK_N CAMPAIGN TRAFFIC activit*)
+       (args REGEX_BIT))
+
+(any-of (shortcut MALICIOUS_TRAFFIC_NPROP) (members
+        (nprop (predicate TRAFFIC) (adj ATTACK_J MALICIOUS)
+               (opt_args LOOSE_FROM_SOURCE LOOSE_AGAINST_TARGET SOURCE_REF_EXP))))
+
+(any-of (shortcut MALICIOUS_TRAFFIC) (members MALICIOUS_TRAFFIC_NPROP
+        (nprop (predicate FLOOD QUANTITY ORDINAL_NUMBER COUNTING_NUMBER SERIES)
+               (args (argument (role of) MALICIOUS_TRAFFIC_NPROP))
+               (opt_args LOOSE_FROM_SOURCE LOOSE_AGAINST_TARGET SOURCE_REF_EXP))))
+
+(nprop (shortcut BOTNET_OF) (propmod (role of) (any-of (members DDOS_PROP DDOS_ATTACK_HEADWORD))))
+
+(anyprop (shortcut KNOWN_AS_DDOS) (opt_args LOOSE_FROM_SOURCE SOURCE_REF_EXP) (propmod (role <obj>)
+    (vprop (predicate known) (args (argument (role as) DDOS_PROP)))))
+
+(vprop (shortcut TAKE_DOWN) (predicate BRING knock* clos*) (particle down out)
+       (opt_args TARGET_OBJ_EXP SOURCE_SUB_EXP))
+
+(anyprop (shortcut ATTACK_TAKE_DOWN) (predicate ATTACK_N attack*) (propmod (role <sub>) TAKE_DOWN))
+
+(any-of (shortcut DDOS_IDIOMS) (members
+        #zombie computers
+        (nprop (predicate COMPUTER_THING ASSET) (adj zombie slave) (opt_args LOOSE_FROM_SOURCE SOURCE_REF_EXP))
+        #data cannon
+        (nprop (predicate cannon* torrent* deluge* barrage* volley* stream* flood* inundation*) (adj data) (opt_args LOOSE_AGAINST_TARGET))))
+
+(any-of (shortcut DDOS_ATTACK_PROPS) (members DDOS_PROP DDOS_ATTACK_HEADWORD
+        ATTACK_TAKE_DOWN BOTNET_OF GIGABIT_ATTACK DDOS_IDIOMS MALICIOUS_TRAFFIC
+        COMPROMISED_SITE KNOWN_AS_DDOS))
+
+(vprop (shortcut DDOS_ATTACKS_V) (args (argument (role <sub> by <obj> <iobj>) DDOS_ATTACK_PROPS)))
+
+(any-of (shortcut DDOS_ATTACK) (members DDOS_ATTACK_PROPS DDOS_ATTACKS_V
+        (nprop (predicate ORDINAL_NUMBER COUNTING_NUMBER QUANTITY SERIES COMPUTER_THING army armies)
+               (args (argument (role of including) DDOS_ATTACK_PROPS)))
+        (nprop (predicate increase decrease) (args (argument (role in) DDOS_ATTACK_PROPS)))
+        (nprop (predicate instructions) (propmod (role <obj> <iobj>) (vprop (predicate GET)
+                                    (args (argument (role <sub> by) DDOS_ATTACK_PROPS)))))
+        (nprop (args (argument (role <poss> <unknown>) DDOS_ATTACK_PROPS)))))
+
+(argument (shortcut DDOS_SUB) (role <sub> by) DDOS_ATTACK)
+(argument (shortcut DDOS_OBJ) (role <obj> <iobj> from) DDOS_ATTACK)
+(argument (shortcut OF_DDOS) (role from of <unknown> <poss>) (allow_fall_through <obj> <iobj>) DDOS_ATTACK)
+(argument (shortcut WITH_DDOS) (role with through using by) DDOS_ATTACK)
+
+(any-of (shortcut DDOS_TARGET) (members
+        (nprop (predicate VICTIM) (adj DDOS) (opt_args TARGET_REF_EXP))
+        (nprop MANY_TO_MANY (predicate VICTIM) (args OF_DDOS) (opt_args TARGET_REF_EXP))))
+
+(argument (shortcut DDOS_TARGET_OBJ) (role <obj> <iobj>) DDOS_TARGET)
+(argument (shortcut AGAINST_DDOS_TARGET) (role on against) DDOS_TARGET)
+
+(any-of (shortcut TRAFFIC) (members
+          (nprop (predicate TRAFFIC) (opt_args LOOSE_AT_TARGET))
+          (nprop (predicate ORDINAL_NUMBER COUNTING_NUMBER BITS SERIES QUANTITY COMPUTER_THING)
+                 (args (argument (role of including) (nprop (predicate TRAFFIC)
+                                                  (opt_args LOOSE_AT_TARGET)))))))
+
+(any-of (shortcut WITH_TRAFFIC) (members
+        (argument (allow_fall_through <obj> <iobj>) (role by) (vprop (predicate FLOOD ATTACK_V) (args
+                                  (argument (role with) (any-of (members TRAFFIC DDOS_ATTACK))))))
+        (argument (allow_fall_through <obj> <iobj>) (role with at)
+                                        (any-of (members DDOS_ATTACK TRAFFIC)))))
+
+(argument (shortcut BY_FLOODING_WITH_TRAFFIC) (role by) (allow_fall_through)
+          (vprop MANY_TO_MANY (predicate FLOOD ATTACK_V) (args WITH_TRAFFIC)))
+
+(any-of (shortcut ANONYMOUS) (members
+        (nprop (predicate author) (adj DDOS))
+        (nprop (predicate anonymous hacktivist*) (opt_args SOURCE_REF_EXP))
+        (nprop (adj hacktivist))
+        (nprop (predicate member*)
+               (args (argument (role of) (nprop (predicate anonymous))))
+               (opt_args SOURCE_REF_EXP))
+        (nprop (predicate COMPUTER_THING METHOD QUANTITY GROUP) (adj DDOS)
+              (propmod (role <obj> <iobj>) (vprop (predicate USE) (args SOURCE_SUB_EXP))))
+        (nprop (args PER_REF SOURCE_REF_EXP) (adj DDOS))
+        (nprop (predicate QUANTITY GROUP ORDINAL_NUMBER SERIES)
+               (opt_args SOURCE_REF_EXP IN_SOURCE LOOSE_OF_SOURCE INCLUDING_SOURCE)
+               (propmod (role <ref>) (mprop (predicate responsible)
+                                           (args (argument (role for) DDOS_ATTACK)))))))
+
+(argument (shortcut ANONYMOUS_SUB) (role <sub> by) ANONYMOUS)
+(any-of (shortcut DDOS_OR_ANONYMOUS_SUB) (members ANONYMOUS_SUB DDOS_SUB))
+
+(anyprop (shortcut BEHIND_DDOS)
+       (predicate responsible guilty suspected accused behind blamed)
+       (args (any-of (members ANONYMOUS_SUB DDOS_SUB
+            (argument (role of for behind) DDOS_ATTACK)
+            (argument (role of for) (mprop (predicate behind)
+                                      (args (argument (role behind) DDOS_ATTACK)))))))
+       (opt_args SOURCE_SUB_EXP LOOSE_AGAINST_TARGET SOURCE_REF_EXP
+          (argument (role of for behind) (anyprop (opt_args LOOSE_AGAINST_TARGET)))))
+)
+
+(toplevel
+(intersection (id 312-responsible) (return (event-code 312)) (members BEHIND_DDOS))
+
+(vprop (id 312-0-take-offline)
+    (return (event-code 312))
+    (predicate BRING knock*)
+    (args (any-of (members DDOS_SUB ANONYMOUS_SUB HACKER_SUB
+                          (all-of (members (argument (role over)) SITE_OF_TARGET_OBJ))
+                          (argument (role <iobj> <obj>) (mention (headword offline))))))
+    (opt_args TARGET_OBJ_EXP SOURCE_SUB_EXP))
+
+(vprop MANY_TO_MANY (id 312-1-cause-outage)
+       (return (event-code 312))
+       (predicate CAUSE)
+       (args (any-of (members DDOS_SUB ANONYMOUS_SUB HACKER_SUB CYBERATTACK_SUB))
+             (argument (role <obj> <iobj>) (nprop (predicate outage shutdown)
+                        (opt_args LOOSE_AT_TARGET
+                          (argument (allow_fall_through <obj> <iobj>)
+                                    (role for at of <poss>) TARGET)))))
+       (opt_args LOOSE_AGAINST_TARGET FOR_TARGET AT_TARGET_WITH_FT))
+
+(vprop MANY_TO_MANY (id 312-2-make-unreachable)
+    (return (event-code 312))
+    (predicate POS_VERB leav* left)
+    (args (any-of (members HACKER_SUB DDOS_OR_ANONYMOUS_SUB SITE_OF_TARGET_OBJ))
+        (argument (role <iobj> <obj>) (mention (headword unreachable unavailable))))
+    (opt_args SOURCE_SUB_EXP TARGET_OBJ_EXP))
+
+(vprop MANY_TO_MANY (id 312-3-make-unreachable-propmod)
+    (return (event-code 312))
+    (predicate POS_VERB leav* left)
+    (args (any-of (members HACKER_SUB DDOS_OR_ANONYMOUS_SUB SITE_OF_TARGET_OBJ))
+        (argument (role <iobj> <obj>) (anyprop (propmod (role <ref>) (anyprop (predicate unreachable unavailable))))))
+    (opt_args SOURCE_SUB_EXP TARGET_OBJ_EXP))
+
+(vprop (id 312-4-shut-down-internet)
+    (return (event-code 312))
+    (predicate BRING knock* shut* clos*)
+    (particle down out)
+    (args (any-of (members DDOS_OR_ANONYMOUS_SUB (argument (role with) DDOS_ATTACK)
+              (all-of (members (any-of (members CRIMINAL_SUB ATTACK_SUB)) SITE_OF_TARGET_OBJ)))))
+    (opt_args SOURCE_SUB_EXP TARGET_OBJ_EXP SITE_OF_TARGET_OBJ))
+
+(vprop (id 312-5-shutter-internet)
+    (return (event-code 312))
+    (predicate DDOS_ATTACK_V)
+    (args (any-of (members DDOS_OR_ANONYMOUS_SUB
+            (argument (role with) DDOS_ATTACK) (all-of (members ATTACK_SUB SITE_OF_TARGET_OBJ)))))
+    (opt_args SOURCE_SUB_EXP TARGET_OBJ_EXP))
+
+(vprop MANY_TO_MANY (id 312-6-take-control-of)
+       (return (event-code 312))
+       (predicate take* took taking)
+       (args (any-of (members DDOS_OR_ANONYMOUS_SUB AGAINST_DDOS_TARGET HACKER_SUB
+                (all-of (members CRIMINAL_SUB (argument (role <obj> <iobj>)
+                      (nprop (predicate control) (args (argument (role of) SITE_OF_TARGET))))))
+                (argument (allow_fall_through) (role in through with) DDOS_ATTACK))))
+       (opt_args LOOSE_AGAINST_TARGET AT_TARGET_WITH_FT SOURCE_SUB_EXP LOOSE_OF_TARGET))
+
+(vprop MANY_TO_MANY (id 312-7-use-ddos)
+       (return (event-code 312))
+       (predicate USE CARRY_OUT)
+       (args DDOS_OBJ WITH_DDOS)
+       (opt_args SOURCE_SUB_EXP LOOSE_AGAINST_TARGET))
+
+(intersection (id 312-8-use-ddos-and-attack) (return (event-code 312)) (members
+      (vprop MANY_TO_MANY
+             (predicate USE CARRY_OUT)
+             (args DDOS_OBJ WITH_DDOS)
+             (opt_args SOURCE_SUB_EXP LOOSE_AGAINST_TARGET))
+      (vprop (predicate ATTACK_V AFFECT) (opt_args TARGET_OBJ_EXP))))
+
+# Threaten with DDoS
+(vprop MANY_TO_MANY (id 312-9-threaten-with-ddos)
+        (return (event-code 312))
+        (predicate JEAPORDIZE)
+        (args (argument (role <sub> by with) DDOS_ATTACK))
+        (opt_args TARGET_OBJ_EXP SOURCE_SUB_EXP))
+
+(vprop MANY_TO_MANY (id 312-10-take-credit-for-ddos)
+       (return (event-code 312))
+       (predicate BRING)
+       (args (argument (role <obj>) (nprop (predicate credit responsibility)))
+             (argument (allow_fall_through) (role for) DDOS_ATTACK))
+       (opt_args SOURCE_SUB_EXP LOOSE_AGAINST_TARGET))
+
+(vprop MANY_TO_MANY (id 312-11-stream-at)
+       (return (event-code 312))
+       (predicate FLOOD)
+       (args (any-of (members DDOS_OR_ANONYMOUS_SUB DDOS_OBJ WITH_DDOS AGAINST_DDOS_TARGET
+                (argument (role until) (vprop (predicate crash*)))
+                (argument (role until) (vprop (predicate crash*) (propmod (role <sub>) TARGET))))))
+       (opt_args LOOSE_AT_TARGET LOOSE_AGAINST_TARGET SOURCE_SUB_EXP TARGET_OBJ_EXP))
+
+(vprop MANY_TO_MANY (id 312-12-stream-data-at)
+       (return (event-code 312))
+       (predicate FLOOD)
+       (args ATTACK_SUB (argument (role <obj> <iobj> with) TRAFFIC))
+       (opt_args LOOSE_AT_TARGET LOOSE_AGAINST_TARGET))
+
+(vprop MANY_TO_MANY (id 312-13-focus-on)
+       (return (event-code 312))
+       (predicate CONCENTRATE)
+       (args (any-of (members DDOS_SUB (all-of (members ATTACK_SUB AGAINST_DDOS_TARGET)))))
+       (opt_args LOOSE_AGAINST_TARGET SOURCE_SUB_EXP))
+
+(vprop MANY_TO_MANY (id 312-14-participate-in-ddos)
+       (return (event-code 312))
+       (predicate participat* join*)
+       (args (any-of (members DDOS_OR_ANONYMOUS_SUB AGAINST_DDOS_TARGET
+            (argument (allow_fall_through) (role in) DDOS_ATTACK))))
+       (opt_args LOOSE_AGAINST_TARGET SOURCE_SUB_EXP))
+
+(vprop MANY_TO_MANY (id 312-15-take-part-in-ddos)
+       (return (event-code 312))
+       (predicate take* took taking had have has having)
+       (args (argument (role <obj> <iobj>) (mention (headword part role)))
+             (any-of (members DDOS_OR_ANONYMOUS_SUB AGAINST_DDOS_TARGET
+                    (argument (allow_fall_through) (role in) DDOS_ATTACK))))
+       (opt_args LOOSE_AGAINST_TARGET SOURCE_SUB_EXP))
+
+(vprop MANY_TO_MANY (id 312-16-attack-with-ddos)
+       (return (event-code 312))
+       (predicate FLOOD ATTACK_V AFFECT)
+       (args (any-of (members DDOS_OR_ANONYMOUS_SUB DDOS_TARGET_OBJ BY_FLOODING_WITH_TRAFFIC
+                  (all-of (members SITE_OF_TARGET_OBJ WITH_TRAFFIC)))))
+       (opt_args SOURCE_SUB_EXP TARGET_OBJ_EXP LOOSE_AGAINST_TARGET LOOSE_AT_TARGET))
+
+(vprop MANY_TO_MANY (id 312-17-recruit-systems)
+       (return (event-code 312))
+       (predicate recruit* infect* creat* support* CARRY_OUT pay* paid* buy* bought sell* sold purchas* hawk* barter* trade* trading traffic*)
+       (args (any-of (members DDOS_OR_ANONYMOUS_SUB DDOS_TARGET_OBJ (all-of (members SITE_OF_TARGET_OBJ WITH_TRAFFIC)) DDOS_OBJ WITH_DDOS BY_FLOODING_WITH_TRAFFIC
+              (argument (allow_fall_through <obj> <iobj>) (role for in) DDOS_ATTACK))))
+       (opt_args SOURCE_SUB_EXP LOOSE_AGAINST_TARGET LOOSE_AT_TARGET FROM_SOURCE_EXP))
+
+(vprop MANY_TO_MANY (id 312-18-block-access-by-flooding-with-data)
+       (return (event-code 312))
+       (predicate block*)
+       (args (any-of (members DDOS_SUB ANONYMOUS_SUB
+                  (all-of (members BY_FLOODING_WITH_TRAFFIC
+                          (argument (role <obj> <iobj>) ACCESS_TO_PERSONAL_INFO))))))
+       (opt_args LOOSE_AGAINST_TARGET FOR_TARGET))
+
+(mprop MANY_TO_MANY (id 312-19-force-to-send-traffic)
+       (return (event-code 312))
+       (predicate forc* oblig*)
+       (args (argument (role <obj> <iobj>) (vprop (predicate SEND FLOOD)
+                                                  (opt_args TO_TARGET TARGET_OBJ_EXP)
+                                                  (args (argument (role <obj>) TRAFFIC)))))
+       (opt_args SOURCE_SUB_EXP TARGET_REF_EXP LOOSE_AGAINST_TARGET))
+
+#subject to DDoS
+(vprop (id 312-20-subject-to-DDoS)
+       (return (event-code 312))
+       (predicate subject*)
+       (args (argument (role to) DDOS_ATTACK))
+       (opt_args SOURCE_SUB_EXP TARGET_REF_EXP TARGET_OBJ_EXP))
+
+(vprop MANY_TO_MANY (id 312-21-steal-info)
+       (return (event-code 312))
+       (predicate STEAL TRICK)
+       (args DDOS_OR_ANONYMOUS_SUB PERSONAL_INFO_OBJ)
+       (opt_args LOOSE_AGAINST_TARGET))
+
+(vprop MANY_TO_MANY (id 312-22-start-ddos-attack)
+       (return (event-code 312))
+       (predicate CAUSE)
+       (args (any-of (members (all-of (members ATTACK_OBJ ANONYMOUS_SUB)) DDOS_SUB DDOS_OBJ WITH_DDOS)))
+       (opt_args SOURCE_SUB_EXP LOOSE_AGAINST_TARGET))
+
+(vprop MANY_TO_MANY (id 312-23-hit-with-ddos)
+       (return (event-code 312))
+       (predicate hit hits hitting struck* slow* crash*)
+       (args (any-of (members ANONYMOUS_SUB DDOS_SUB DDOS_OBJ WITH_DDOS WITH_TRAFFIC)))
+       (opt_args SOURCE_SUB_EXP TARGET_OBJ_EXP FROM_SOURCE_EXP LOOSE_AT_TARGET))
+
+(vprop MANY_TO_MANY (id 312-24-ddos-attack-come-from)
+       (return (event-code 312))
+       (predicate come came comes coming)
+       (args (any-of (members DDOS_OR_ANONYMOUS_SUB (argument (role under) DDOS_ATTACK) 
+                (all-of (members (argument (role from) DDOS_ATTACK) (argument (role under))))
+                (all-of (members (argument (role from) HACKER_NPROP) (argument (role <sub>) TRAFFIC))))))
+       (opt_args FROM_SOURCE_EXP LOOSE_AGAINST_TARGET TARGET_SUB_EXP))
+
+(vprop MANY_TO_MANY (id 312-25-see-ddos)
+       (return (event-code 312))
+       (predicate OBSERVER_V)
+       (args DDOS_OBJ WITH_DDOS)
+       (opt_args LOOSE_AGAINST_TARGET LOOSE_AT_TARGET LOOSE_FROM_SOURCE))
+
+(vprop MANY_TO_MANY (id 312-26-suffer-ddos)
+       (return (event-code 312))
+       (predicate EXPERIENCE_V)
+       (block_predicate rec*)
+       (args DDOS_OBJ WITH_DDOS (argument (role for) DDOS_ATTACK))
+       (opt_args TARGET_SUB_EXP FROM_SOURCE_EXP LOOSE_AGAINST_TARGET))
+
+(vprop MANY_TO_MANY (id 312-27-be-a-target)
+       (return (event-code 312))
+       (predicate BE)
+       (args (any-of (members (argument (role <obj> <sub>) DDOS_TARGET)
+                                                  (argument (role under) DDOS_ATTACK))))
+       (opt_args OF_SOURCE TARGET_SUB_EXP TARGET_OBJ_EXP))
+
+(vprop MANY_TO_MANY (id 310-28-be-a-ddos-attack)
+       (return (event-code 310))
+       (predicate BE)
+       (args (any-of (members DDOS_SUB DDOS_OBJ)))
+       (opt_args LOOSE_AGAINST_TARGET
+            (argument (allow_fall_through <sub> <obj>)
+                      (role by from) SOURCE)))
+
+(mprop MANY_TO_MANY (id 312-29-under-ddos)
+       (return (event-code 312))
+       (predicate under on)
+       (args (argument (role under) DDOS_ATTACK) (argument (role on) (nprop MANY_TO_MANY (predicate end) (args OF_DDOS))))
+       (opt_args FROM_SOURCE_EXP TARGET_REF_EXP LOOSE_AGAINST_TARGET))
+
+#fall victim TODO broad
+(intersection (id 312-30-fall-victim) (return (event-code 312)) (members
+       (nprop
+           (predicate is was were are be been being becom* became fall* fell)
+           (args (argument (role <sub>) SITE_OF_TARGET)
+                 (argument (role <obj>) (mention (headword VICTIM))))
+           (opt_args TARGET_SUB_EXP LOOSE_AGAINST_TARGET
+                            (argument (allow_fall_through to) (role by) SOURCE)))
+       DDOS_ATTACK))
+
+#fall victim TODO broad
+(nprop (id 312-31-fall-victim) (return (event-code 312))
+           (predicate is was were are be been being becom* became fall* fell)
+           (args (argument (role <obj> <iobj> to) DDOS_ATTACK))
+           (opt_args TARGET_SUB_EXP LOOSE_AGAINST_TARGET
+                            (argument (allow_fall_through to) (role by) SOURCE)))
+
+(vprop MANY_TO_MANY (id 312-32-harmed-in-ddos)
+       (return (event-code 312))
+       (predicate harm* compromis* expos* take taking taken took TRICK)
+       (args (argument (role in to <sub> by through with)
+                                                    (allow_fall_through) DDOS_ATTACK))
+       (opt_args SOURCE_SUB_EXP TARGET_OBJ_EXP))
+
+(vprop MANY_TO_MANY (id 312-33-ddos-happens)
+       (return (event-code 312))
+       (predicate POS_VERB)
+       (args (any-of (members DDOS_SUB DDOS_OBJ)))
+       (opt_args LOOSE_AGAINST_TARGET))
+
+)
+)

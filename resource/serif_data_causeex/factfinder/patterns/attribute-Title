@@ -1,0 +1,139 @@
+(PerTitle
+
+(wordsets
+	<!-- originally WS_GPE_TITLES -->
+        (WS_TITLES ambassador chancellor congressman congresswoman emir emperor empress judge justice president president president-elect
+        representative secretary-general sen. senator solicitor spokesman vice-president queen king lord duke prince minister governor
+        secretray official mayor councilman councilwoman duchess general dictator vice-premier premier head monarch soldier lawmaker leader
+        clerk registrar prosecutors diplomat magistrate deputy policeman policewoman warden operative sheriff attorney envoy gov. commissioner
+
+	<!-- originally WS_TITLES -->
+        accountant actor adm. admiral adviser agent aide airman ambassador analyst anchor archbishop architect army assailant assemblyman assistant attendant attorney authority ayatollah
+        back backfield banker baseman batsman battalion bishop board bomber bowler brig. brigadier cameraman candidate capt. captain cardinal caretaker casualty catcher celebrity center
+        ceo cfo chair chairman chairwoman challenger cheerleader chef chemist chief cio circle coach co-chairman co-director co-founder col. colleague colonel columnist commandant commander
+        commando commissioner committee comptroller conductor conferee congressman congresswoman constable consultant coordinator cornerback coroner corporal correspond correspondent councilman
+        councilor counselor counterpart cpl. crew curator czar dealer dean defense defenseman delaware delegate delegation democrat deputy detective dictator diplomat director director-general
+        dispatcher dj doctor dr duke editor editor-in-chief elder emir emperor empress engineer envoy executive explorer-in-residence fighter first forward fullback fund-raiser gen gen. general
+        gm goalie goalkeeper goaltender gov gov. governor guard guerrilla gunner hack head hooker imam inspector intern investigator investigator journalist judge justice keeper kicker king
+        knight lama laureate lawmaker lawyer leader legislator lieutenant linebacker lineman linesman lobbyist lord lt. magistrate maj. major maker management manager marine marshal mascot
+        mate mayor mechanic midfielder militant minister monitor monsignor mp mullah negotiator news nurse officer official ombudsman operative opponent outfielder overseer panel paramilitary
+        paratrooper pastor peacekeeper personnel pfc. photographer pilot pitcher player police policeman policy-maker politician pollster pontiff pope premier president president-elect prince
+        principal private producer professor programmer prosecutor prosecutor-general pvt. qb quarterback queen rabbi ranger rebel receiver receptionist recruit referee regulator rep rep. reporter
+        representative republican reserve rev. roops rorter ruler safety sailor scientist seal secretary secretary-general security sen. senator sergeant service serviceman sgt sgt. shah shareholder
+        sheik sheikh sheriff shortstop singer skipper sniper soldier solicitor specialist speechwriter spokesman spokeswoman spy star starter strategist striker stuntman submariner sultan superintendent
+        supervisor tackle tailback teacher terrorist treasurer troop umpire undersecretary unit vet veteran vice vice-chairman vice-premier vice-president waiter waitress warden whip wicketkeeper
+        worker writer
+
+	<!-- titles collected from coldstart 2012 assessment -->
+	ambassador administrator analyst anthropologist artist associate astrophysicist author biologist ceo cfo chair chairman co-director columnist coo dancer dean detective diplomat director doctor economist editor executive faculty geologist guitarist historian lecturer manager philosopher president professor provost psychologist reporter researcher scholar scientist singer sociologist teacher translator writer)
+)
+
+(entitylabels
+(AGENT1)
+)
+
+(reference
+	(mention (shortcut TITLE) (acetype PER) (block_headword student students freshman sophmore junior senior) (return (ff_role PerTitle+AGENT1) (ff_fact_type PerTitle)) (entitylabel    AGENT1))
+	(mention (shortcut ORG_GPE) (acetype ORG GPE))			 
+	(mention (shortcut ORG_ONLY) (acetype ORG))			 
+	(mention (shortcut GPE_ONLY) (acetype GPE))	
+	(mention (shortcut PERSON) (acetype PER))
+
+	(nprop (id title_of_org) (shortcut TITLE_OF_ORG)
+		(args (argument (role <ref>) TITLE)
+			(argument (role to in for of at <poss> <unknown>) ORG_ONLY)))
+		
+	(nprop (id title_of_org2) (shortcut TITLE_OF_ORG2)
+		(args (argument (role <ref>) TITLE)
+			(argument (role in) (nprop (predicate office offices) 
+					     (args (argument (role <unknown> <poss>) ORG_ONLY))))))
+
+	(nprop (id title_of_gpe) (shortcut TITLE_OF_GPE)
+		(args (argument (role <ref>) TITLE)
+			(argument (role for of at <poss> <unknown>) ORG_GPE)))
+												
+	(nprop (id title_of_gpe_ws) (shortcut TITLE_OF_GPE_WS) 
+		(predicate WS_TITLES)
+		(args (argument (role <ref>) TITLE)
+			(argument (role for of at <poss> <unknown>) ORG_GPE)))
+									
+	(any-of (shortcut TITLE_OF_ORGANIZATION) (members TITLE_OF_GPE TITLE_OF_ORG TITLE_OF_ORG2))
+	(all-of (shortcut TITLE_DESCRIPTOR) (members 
+			(mention (acetype PER) (mentiontype desc) (headword WS_TITLES) )
+			(mention (acetype PER) (mentiontype desc) (headword WS_TITLES) (return (ff_role PerTitle+AGENT1) (ff_fact_type PerTitle)) (entitylabel    AGENT1))))
+)
+
+(toplevel
+
+(mention	(id mention_title) (score 0.9)
+                (headword WS_TITLES)
+                (return (ff_role PerTitle+AGENT1) (ff_fact_type PerTitle1))
+		(entitylabel    AGENT1)
+)
+
+	(vprop (id served_ptio) (score 0.9)
+        (predicate serv* work* teach* taught)
+        (args
+            (argument (role <sub>) PERSON)
+			(any-of (members
+				(argument (role as) TITLE)
+				(argument (role for of at) ORG_GPE)
+				(argument (role in <obj>) ORG_ONLY)			
+				(argument TITLE_OF_ORGANIZATION)))))
+
+	(vprop (id served_ptio) (score 0.9)
+        (predicate join*)
+        (args
+            (argument (role <sub>) PERSON)
+			(any-of (members
+				(argument (role as) TITLE)
+				(argument (role for of at) ORG_GPE)
+				(argument (role in <obj>) ORG_ONLY)			
+				(argument TITLE_OF_ORGANIZATION)))))				
+			
+
+	(vprop (id subj_working_verb) (score 0.9)
+        (predicate appoint* elect* chosen assign* select*)
+        (args
+            (argument (role <obj>) PERSON)
+			(any-of (members
+				(argument (role as for) TITLE)
+				(argument (role as for) TITLE_OF_ORGANIZATION)
+				(argument (role to) ORG_GPE)))))
+			
+	(vprop (id copula_1) (score 0.9)
+		(predicate is was been)
+		(args 
+			(argument (role <sub>) PERSON)
+			(argument (role <obj>) TITLE_OF_ORGANIZATION)))
+	
+	(vprop (id copula_1b) (score 0.9)
+		(predicate is was been)
+			(args 
+				(argument (role <sub>) PERSON)
+				(argument (role <obj>) TITLE)
+				(argument (role at for of) ORG_GPE)))
+	(vprop (id copula_2) (score 0.9)
+		(predicate became)
+		(args 
+			(argument (role <sub>) PERSON)
+			(argument (role <obj>) TITLE_OF_ORGANIZATION)))
+	
+	(vprop (id copula_2b) (score 0.9)
+		(predicate became)
+			(args 
+				(argument (role <sub>) PERSON)
+				(argument (role <obj>) TITLE)
+				(argument (role at for of) ORG_GPE)))				
+			
+	TITLE_OF_ORG
+	TITLE_OF_ORG2
+	TITLE_OF_GPE_WS
+	
+	<!-- training queries ask for titles that are not associated with a specific organizatio e.g. accountant, so we want to label descriptors -->
+	
+		(vprop (id title_descriptor) (score 0.9) (args (argument TITLE_DESCRIPTOR)))
+		(nprop (id title_descriptor) (score 0.9) (args (argument TITLE_DESCRIPTOR)))
+
+)
+)

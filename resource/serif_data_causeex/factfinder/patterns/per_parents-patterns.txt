@@ -1,0 +1,103 @@
+(per_parents
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- {1} son , {0} -->
+		(regex (id per_parents_0) (score 0.9) (score_group 1) (re (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "son")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- noun:mother[<poss> = 0][<unknown> = 1] -->
+		(nprop (id per_parents_1) (score 0.9) (score_group 1) (predicate mother) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <unknown>) (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER)))))
+
+		<!-- noun:son[<poss> = 1][<unknown> = 0] -->
+		(nprop (id per_parents_2) (score 0.9) (score_group 1) (predicate son) (args (argument (role <poss>) (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER))) (argument (role <unknown>) (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- noun:mother[<ref> = 1][<poss> = 0] -->
+		(nprop (id per_parents_3) (score 0.9) (score_group 1) (predicate mother) (args (argument (role <ref>) (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- set:[<member> = noun:lawyer[for = noun:mother[<poss> = 0]]][<member> = 1] -->
+		(sprop (id per_parents_4) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate lawyer) (args (argument (role for) (nprop (predicate mother) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))))))) (argument (role <member>) (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER)))))
+
+		<!-- {1} youngest son {0} -->
+		(regex (id per_parents_5) (score 0.9) (score_group 1) (re (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "youngest")) (text DONT_ADD_SPACES (string "son")) (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- noun:daughter[<ref> = 0][<poss> = 1] -->
+		(nprop (id per_parents_6) (score 0.9) (score_group 1) (predicate daughter) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER)))))
+
+		<!-- {0} 's mother , {1} -->
+		(regex (id per_parents_7) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "mother")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER))))
+
+		<!-- {0} 's father , {1} -->
+		(regex (id per_parents_8) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "father")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER))))
+
+		<!-- {1} youngest son , {0} -->
+		(regex (id per_parents_9) (score 0.9) (score_group 1) (re (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "youngest")) (text DONT_ADD_SPACES (string "son")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- noun:child[<ref> = 0][<poss> = 1] -->
+		(nprop (id per_parents_10) (score 0.9) (score_group 1) (predicate child) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER)))))
+
+		<!-- {1} daughter {0} -->
+		(regex (id per_parents_11) (score 0.9) (score_group 1) (re (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "daughter")) (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- {1} , father of {0} -->
+		(regex (id per_parents_12) (score 0.9) (score_group 1) (re (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "father")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- {1} 's son {0} -->
+		(regex (id per_parents_13) (score 0.9) (score_group 1) (re (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "son")) (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- {1} daughter , {0} -->
+		(regex (id per_parents_14) (score 0.9) (score_group 1) (re (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "daughter")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- noun:father[<ref> = 1][<poss> = 0] -->
+		(nprop (id per_parents_15) (score 0.9) (score_group 1) (predicate father) (args (argument (role <ref>) (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- noun:mother[<ref> = 1][of = name:[<ref> = 0]] -->
+		(nprop (id per_parents_16) (score 0.9) (score_group 1) (predicate mother) (args (argument (role <ref>) (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER))) (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- {1} 's daughter , {0} -->
+		(regex (id per_parents_17) (score 0.9) (score_group 1) (re (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "daughter")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- {0} father , {1} -->
+		(regex (id per_parents_18) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "father")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER))))
+
+		<!-- noun:stepfather[<ref> = 1][<poss> = 0] -->
+		(nprop (id per_parents_19) (score 0.9) (score_group 1) (predicate stepfather) (args (argument (role <ref>) (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- noun:father[<ref> = 1][of = 0] -->
+		(nprop (id per_parents_20) (score 0.9) (score_group 1) (predicate father) (args (argument (role <ref>) (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- noun:son[<ref> = 0][<poss> = 1] -->
+		(nprop (id per_parents_21) (score 0.9) (score_group 1) (predicate son) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER)))))
+
+		<!-- {0} son of {1} -->
+		(regex (id per_parents_22) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "son")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER))))
+
+		<!-- noun:mother[<ref> = 1][of = 0] -->
+		(nprop (id per_parents_23) (score 0.9) (score_group 1) (predicate mother) (args (argument (role <ref>) (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- {0} , son of {1} -->
+		(regex (id per_parents_24) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "son")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER))))
+
+		<!-- modifier:youngest[<ref> = noun:son[<poss> = 1][<unknown> = 0]] -->
+		(mprop (id per_parents_25) (score 0.9) (score_group 1) (predicate youngest) (args (argument (role <ref>) (nprop (predicate son) (args (argument (role <poss>) (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER))) (argument (role <unknown>) (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- {0} mother , {1} -->
+		(regex (id per_parents_26) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "mother")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER))))
+
+		<!-- noun:son[<ref> = 0][of = 1] -->
+		(nprop (id per_parents_27) (score 0.9) (score_group 1) (predicate son) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER)))))
+
+		<!-- noun:daughter[<poss> = 1][<unknown> = 0] -->
+		(nprop (id per_parents_28) (score 0.9) (score_group 1) (predicate daughter) (args (argument (role <poss>) (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER))) (argument (role <unknown>) (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- {1} 's son , {0} -->
+		(regex (id per_parents_29) (score 0.9) (score_group 1) (re (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "son")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- {0} mother {1} -->
+		(regex (id per_parents_30) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_parents)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "mother")) (mention (return (ff_role per_parents)) (min-entitylevel NAME) (block AGENT1) (acetype PER))))
+
+	)
+)

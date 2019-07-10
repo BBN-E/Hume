@@ -1,0 +1,18 @@
+(per_place_of_birth
+
+
+ (wordsets)
+
+ (entitylabels (AGENT1))
+
+ (toplevel
+		<!-- 90   per_place_of_birth ==> modifier:where[<ref> = 1][where = verb:born[<obj> = 0]] -->
+		(mprop (id cs2015_per_place_of_birth_20005) (score 0.9) (score_group 1) (predicate where) (args (argument (role <ref>) (mention (return (ff_role per_place_of_birth)) (block AGENT1) (acetype LOC GPE))) (argument (role where) (vprop (predicate born) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_place_of_birth_20005)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 84   per_place_of_birth ==> verb:born[<obj> = pronoun:she[<ref> = 0]][in = 1] -->
+		(vprop (id cs2015_per_place_of_birth_20006) (score 0.9) (score_group 1) (predicate born) (args (argument (role <obj>) (anyprop (predicate she) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_place_of_birth_20006)) (entitylabel AGENT1) (acetype PER)))))) (argument (role in) (mention (return (ff_role per_place_of_birth)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 1   per_place_of_birth ==> verb:born[<iobj> = 0][in = 1] -->
+		(vprop (id cs2015_per_place_of_birth_20023) (score 0.9) (score_group 1) (predicate born) (args (argument (role <iobj>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_place_of_birth_20023)) (entitylabel AGENT1) (acetype PER))) (argument (role in) (mention (return (ff_role per_place_of_birth)) (block AGENT1) (acetype LOC GPE)))))
+	)
+)

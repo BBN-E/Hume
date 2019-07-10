@@ -1,0 +1,69 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix meas: <http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#>
+prefix event: <http://ontology.causeex.com/ontology/odps/Event#>
+prefix cameocc: <http://ontology.causeex.com/cameo/CountryCodeOntology/>
+prefix eh: <http://ontology.causeex.com/ontology/odps/Event#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix bbnta1: <http://graph.causeex.com/bbn#>
+prefix actor: <http://ontology.causeex.com/ontology/odps/Actor#>
+prefix dataprov: <http://ontology.causeex.com/ontology/odps/DataProvenance#>
+prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/>
+prefix cx: <http://ontology.causeex.com/ontology/odps/CauseEffect#>
+prefix oeo: <http://www.ontologylibrary.mil/OperationalEnvironment/Mid/OEOrganizationOntology#>
+prefix doco: <http://purl.org/spar/doco/>
+prefix gconcept: <http://ontology.causeex.com/ontology/odps/GeneralConcepts#>
+prefix var: <http://www.bbn.com/2017/TA1locals/>
+prefix cr: <http://ontology.causeex.com/CausalExplorationOntology/ClassRelationships#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix ro: <http://www.obofoundry.org/ro/ro.owl#>
+prefix event: <http://ontology.causeex.com/ontology/odps/Event#>
+prefix oee: <http://www.ontologylibrary.mil/OperationalEnvironment/Mid/OEEventOntology#>
+
+select distinct
+?cause ?effect
+("BBN" as ?performer) ?document_id
+?causal_assertion_type
+?cause_assertion_text ?cause_assertion_text_offset ?cause_sentence_text ?cause_sentence_text_offset
+?cause_genericity ?cause_modality ?cause_polarity
+?effect_assertion_text ?effect_assertion_text_offset ?effect_sentence_text ?effect_sentence_text_offset
+?effect_genericity ?effect_modality ?effect_polarity
+
+from <http://graph.causeex.com>
+from <http://ontology.causeex.com>
+WHERE {
+  ?cause ?causal_assertion_type ?effect .
+  FILTER(?causal_assertion_type = event:preceded_by) .
+  ?cause rdf:type ?cause_type .
+  ?cause_type rdfs:subClassOf* event:Event .
+  ?effect rdf:type ?effect_type .
+  ?effect_type rdfs:subClassOf* event:Event .
+
+  ?cause dataprov:sourced_from ?cause_span .
+  ?cause_span rdf:type dataprov:Span .
+  MINUS { ?cause_span rdf:type doco:Sentence . }
+  ?cause_span dataprov:text_value ?cause_assertion_text .
+  ?cause_span dataprov:char_offset ?cause_assertion_text_offset .
+  ?cause dataprov:sourced_from ?cause_sentence .
+  ?cause_sentence rdf:type doco:Sentence .
+  ?cause_sentence dataprov:text_value ?cause_sentence_text .
+  ?cause_sentence dataprov:char_offset ?cause_sentence_text_offset .
+  OPTIONAL { ?cause event:has_genericity ?cause_genericity . }
+  OPTIONAL { ?cause event:has_modality ?cause_modality . }
+  OPTIONAL { ?cause event:has_polarity ?cause_polarity . }
+
+  ?effect dataprov:sourced_from ?effect_span .
+  ?effect_span rdf:type dataprov:Span .
+  MINUS { ?effect_span rdf:type doco:Sentence . }
+  ?effect_span dataprov:text_value ?effect_assertion_text .
+  ?effect_span dataprov:char_offset ?effect_assertion_text_offset .
+  ?effect dataprov:sourced_from ?effect_sentence .
+  ?effect_sentence rdf:type doco:Sentence .
+  ?effect_sentence dataprov:text_value ?effect_sentence_text .
+  ?effect_sentence dataprov:char_offset ?effect_sentence_text_offset .
+  OPTIONAL { ?effect event:has_genericity ?effect_genericity . }
+  OPTIONAL { ?effect event:has_modality ?effect_modality . }
+  OPTIONAL { ?effect event:has_polarity ?effect_polarity . }
+
+  ?document dataprov:contains ?cause_sentence .
+  ?document dataprov:original_source ?document_id .
+}

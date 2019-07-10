@@ -1,0 +1,36 @@
+# Words/Phrases	Indicators
+#
+# https://partners.mitre.org/sites/worldmodelers/_layouts/15/WopiFrame.aspx?sourcedoc=/sites/worldmodelers/Shared%20Documents/June2018_Hackathons/Core_Concept_Primer_v2.pdf&action=default
+# 
+poverty,deprivation	Human Poverty Index (UN, 1997), Multidimensional Poverty Index (UN, 2010), poverty line
+prosperity	Legatum Prosperity Index, Family Prosperity Index, Financial Prosperity Index
+food security	Global Food Security Index
+general security	Human Security Index, Index of Human Insecurity
+financial security	Financial Security Index
+agricultural productivity	International Agricultural Productivity, Total Factor Productivity, Crop Productivity Index
+infant mortality	Infant Mortality Rate
+human Fertility	Total Fertility Rate
+soil fertility	Soil Fertility Index
+longevity	JP Morgan Longevity Index (LifeMetrics Index), Australian Longevity Index
+accessibility (of locations)	Hansen 1959 Accessibility Index (and many others)
+diversity,biodiversity	Shannon Diversity Index, Simpson Diversity Index
+sustainability	Sustainable Society Index, Dow Jones Sustainability Indices
+vulnerability	Social Vulnerability Index, Climate Change Vulnerability Index
+uncertainty	Economic Policy Uncertainty Index
+drought	Palmer Drought Index
+flooding,flood,floods	Flood Potential Index, RVCA Flood Warning Index, Flash-Flood Potential Index, Flash-Flood Severity Index
+water scarcity	Water Scarcity Index, Water Poverty Index
+famine, Hunger	Global Hunger Index, Integrated Phase Classification
+development	Human Development Index
+household resiliency	Household Resiliency Index
+conflict	Global Peace Index, Women Peace & Security Index
+vegetation health	Vegetation Health Index, Normalized Difference Vegetation Index
+market volatility	CBOE Volatility Index
+personality	Meyer-Briggs Type Indicator, OCEAN
+intelligence	Intelligence Quotient, Wechsler Adult Intelligence Scale
+
+# https://docs.google.com/document/d/140nERCeqdyC5ibKpQhRE1JppCrMoeAoPAKK9oGwjwpw/edit
+#
+Conflict	Political stability and absence of violence/terrorism (index), Value
+drought	Drought index
+food security	Global food security index

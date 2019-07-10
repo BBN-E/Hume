@@ -1,0 +1,441 @@
+(per_date_of_death
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 0: 3733 {0} died {1} -->
+		(regex (id per_date_of_death_ds_1) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_1)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "died")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 1: 2295 {0} , died {1} -->
+		(regex (id per_date_of_death_ds_2) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_2)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "died")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+		<!-- 3: 1358 {0} died on {1} -->
+		(regex (id per_date_of_death_ds_4) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_4)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 5: 1028 {0} , died on {1} -->
+		(regex (id per_date_of_death_ds_6) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_6)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+
+		<!-- 8: 515 {0} died in {1} -->
+		(regex (id per_date_of_death_ds_9) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_9)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+
+
+
+		<!-- 13: 330 CombinationPattern[{0} died {1}][{1} at his home] -->
+		(regex (id per_date_of_death_ds_14) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_14)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "died")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "at")) (text DONT_ADD_SPACES (string "his")) (text DONT_ADD_SPACES (string "home"))))
+
+
+		<!-- 15: 267 {0} [PER] died {1} -->
+		(regex (id per_date_of_death_ds_16) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_16)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (mention (acetype PER)) (text DONT_ADD_SPACES (string "died")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+		<!-- 17: 258 CombinationPattern[{0} , died {1}][{1} at his home] -->
+		(regex (id per_date_of_death_ds_18) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_18)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "died")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "at")) (text DONT_ADD_SPACES (string "his")) (text DONT_ADD_SPACES (string "home"))))
+
+		<!-- 18: 245 CombinationPattern[{0} died {1}][{1} at the age] -->
+		(regex (id per_date_of_death_ds_19) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_19)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "died")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "at")) (text DONT_ADD_SPACES (string "the")) (text DONT_ADD_SPACES (string "age"))))
+
+
+		<!-- 28: 176 {0} was killed {1} -->
+		(regex (id per_date_of_death_ds_29) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_29)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "killed")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 31: 168 {0} , who died {1} -->
+		(regex (id per_date_of_death_ds_32) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_32)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "who")) (text DONT_ADD_SPACES (string "died")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 32: 157 {0} death in {1} -->
+		(regex (id per_date_of_death_ds_33) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_33)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "death")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 33: 155 verb: [died]   <sub> = 0    <temp> = 1 -->
+		(vprop (id per_date_of_death_ds_34) (score 0.9) (score_group 1) (predicate died) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_34)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <temp>) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)))))
+
+		<!-- 34: 153 {0} 's death on {1} -->
+		(regex (id per_date_of_death_ds_35) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_35)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "death")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 35: 144 {0} death on {1} -->
+		(regex (id per_date_of_death_ds_36) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_36)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "death")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+		<!-- 37: 142 {0} 's death {1} -->
+		(regex (id per_date_of_death_ds_38) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_38)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "death")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+
+		<!-- 40: 124 {0} death {1} -->
+		(regex (id per_date_of_death_ds_41) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_41)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "death")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+		<!-- 42: 120 {0} was killed on {1} -->
+		(regex (id per_date_of_death_ds_43) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_43)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "killed")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+
+		<!-- 45: 111 CombinationPattern[{0} died on {1}][{1} at the age] -->
+		(regex (id per_date_of_death_ds_46) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_46)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "at")) (text DONT_ADD_SPACES (string "the")) (text DONT_ADD_SPACES (string "age"))))
+
+
+
+		<!-- 50: 92 CombinationPattern[{0} , died {1}][{1} at the age] -->
+		(regex (id per_date_of_death_ds_51) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_51)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "died")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "at")) (text DONT_ADD_SPACES (string "the")) (text DONT_ADD_SPACES (string "age"))))
+
+
+
+
+
+
+
+
+		<!-- 54: 90 CombinationPattern[{0} died on {1}][{1} at his home] -->
+		(regex (id per_date_of_death_ds_55) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_55)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "at")) (text DONT_ADD_SPACES (string "his")) (text DONT_ADD_SPACES (string "home"))))
+
+
+		<!-- 58: 85 {0} died of cancer {1} -->
+		(regex (id per_date_of_death_ds_59) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_59)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "of")) (text DONT_ADD_SPACES (string "cancer")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 64: 75 {0} was found dead {1} -->
+		(regex (id per_date_of_death_ds_65) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_65)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "found")) (text DONT_ADD_SPACES (string "dead")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 65: 75 {0} , was killed {1} -->
+		(regex (id per_date_of_death_ds_66) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_66)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "killed")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+		<!-- 67: 73 {1} death of {0} -->
+		(regex (id per_date_of_death_ds_68) (score 0.9) (score_group 1) (re (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "death")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_68)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+		<!-- 69: 72 {0} 's death in {1} -->
+		(regex (id per_date_of_death_ds_70) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_70)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "death")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 70: 69 verb: [killed]   <obj> = 0    <temp> = 1 -->
+		(vprop (id per_date_of_death_ds_71) (score 0.9) (score_group 1) (predicate killed) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_71)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <temp>) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)))))
+
+
+		<!-- 75: 64 {1} killing of {0} -->
+		(regex (id per_date_of_death_ds_76) (score 0.9) (score_group 1) (re (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "killing")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_76)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+
+		<!-- 82: 56 noun: [death]   <ref> = 1    <poss> = 0 -->
+		(nprop (id per_date_of_death_ds_83) (score 0.9) (score_group 1) (predicate death) (args (argument (role <ref>) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_83)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 88: 54 {1} murder of {0} -->
+		(regex (id per_date_of_death_ds_89) (score 0.9) (score_group 1) (re (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "murder")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_89)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+		<!-- 90: 54 {0} passed away {1} -->
+		(regex (id per_date_of_death_ds_91) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_91)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "passed")) (text DONT_ADD_SPACES (string "away")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+		<!-- 99: 51 {0} passed away on {1} -->
+		(regex (id per_date_of_death_ds_100) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_100)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "passed")) (text DONT_ADD_SPACES (string "away")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 104: 48 verb: [died]   <sub> = 0    in = 1 -->
+		(vprop (id per_date_of_death_ds_105) (score 0.9) (score_group 1) (predicate died) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_105)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role in) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)))))
+
+
+		<!-- 112: 45 verb: [died]   <sub> = 0    on = 1 -->
+		(vprop (id per_date_of_death_ds_113) (score 0.9) (score_group 1) (predicate died) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_113)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role on) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)))))
+
+		<!-- 113: 45 verb: [died]   <sub> = 0    <obj> = 1 -->
+		(vprop (id per_date_of_death_ds_114) (score 0.9) (score_group 1) (predicate died) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_114)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)))))
+
+
+		<!-- 115: 44 {0} died here {1} -->
+		(regex (id per_date_of_death_ds_116) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_116)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "here")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+		<!-- 118: 42 {1} slaying of {0} -->
+		(regex (id per_date_of_death_ds_119) (score 0.9) (score_group 1) (re (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "slaying")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_119)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+		<!-- 130: 39 {0} who died {1} -->
+		(regex (id per_date_of_death_ds_131) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_131)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "who")) (text DONT_ADD_SPACES (string "died")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 131: 39 {0} , died in {1} -->
+		(regex (id per_date_of_death_ds_132) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_132)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+		<!-- 133: 38 verb: [shot]   <obj> = 0    <temp> = 1 -->
+		(vprop (id per_date_of_death_ds_134) (score 0.9) (score_group 1) (predicate shot) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_134)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <temp>) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)))))
+
+
+		<!-- 136: 36 {0} was gunned down {1} -->
+		(regex (id per_date_of_death_ds_137) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_137)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "gunned")) (text DONT_ADD_SPACES (string "down")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 137: 36 {0} was assassinated on {1} -->
+		(regex (id per_date_of_death_ds_138) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_138)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "assassinated")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+
+
+
+
+
+		<!-- 140: 35 {0} died in [GPE] {1} -->
+		(regex (id per_date_of_death_ds_141) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_141)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "in")) (mention (acetype GPE)) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 144: 34 {0} was shot dead {1} -->
+		(regex (id per_date_of_death_ds_145) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_145)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "shot")) (text DONT_ADD_SPACES (string "dead")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+		<!-- 151: 32 {1} assassination of {0} -->
+		(regex (id per_date_of_death_ds_152) (score 0.9) (score_group 1) (re (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "assassination")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_152)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+		<!-- 155: 31 {0} had died {1} -->
+		(regex (id per_date_of_death_ds_156) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_156)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "had")) (text DONT_ADD_SPACES (string "died")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 156: 31 {0} , died here {1} -->
+		(regex (id per_date_of_death_ds_157) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_157)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "here")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 167: 28 {1} , killing {0} -->
+		(regex (id per_date_of_death_ds_168) (score 0.9) (score_group 1) (re (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "killing")) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_168)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 168: 28 {0} who died on {1} -->
+		(regex (id per_date_of_death_ds_169) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_169)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "who")) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+		<!-- 182: 26 {0} was shot {1} -->
+		(regex (id per_date_of_death_ds_183) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_183)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "shot")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+		<!-- 189: 25 {1} 's killing of {0} -->
+		(regex (id per_date_of_death_ds_190) (score 0.9) (score_group 1) (re (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "killing")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_190)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 190: 25 {0} was executed {1} -->
+		(regex (id per_date_of_death_ds_191) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_191)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "executed")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 191: 25 noun: [death]   <ref> = 1    of = 0 -->
+		(nprop (id per_date_of_death_ds_192) (score 0.9) (score_group 1) (predicate death) (args (argument (role <ref>) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_192)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+
+		<!-- 201: 24 {0} was executed on {1} -->
+		(regex (id per_date_of_death_ds_202) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_202)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "executed")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 210: 23 {0} was killed in {1} -->
+		(regex (id per_date_of_death_ds_211) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_211)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "killed")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+		<!-- 216: 22 modifier: [dead]   <ref> = 0    <temp> = 1 -->
+		(mprop (id per_date_of_death_ds_217) (score 0.9) (score_group 1) (predicate dead) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_217)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <temp>) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)))))
+
+
+		<!-- 223: 21 {1} 's assassination of {0} -->
+		(regex (id per_date_of_death_ds_224) (score 0.9) (score_group 1) (re (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "assassination")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_224)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 224: 21 {0} was assassinated {1} -->
+		(regex (id per_date_of_death_ds_225) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_225)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "assassinated")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 225: 21 {0} , dies {1} -->
+		(regex (id per_date_of_death_ds_226) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_226)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "dies")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 226: 21 verb: [died]   <sub> = name: []      <ref> = 0    <temp> = 1 -->
+		(vprop (id per_date_of_death_ds_227) (score 0.9) (score_group 1) (predicate died) (args (argument (role <sub>) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_227)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))) (argument (role <temp>) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)))))
+
+		<!-- 227: 21 noun: [death]   <poss> = 0    <temp> = 1 -->
+		(nprop (id per_date_of_death_ds_228) (score 0.9) (score_group 1) (predicate death) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_228)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <temp>) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)))))
+
+
+		<!-- 233: 20 {1} killed {0} -->
+		(regex (id per_date_of_death_ds_234) (score 0.9) (score_group 1) (re (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "killed")) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_234)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+		<!-- 235: 20 {0} committed suicide {1} -->
+		(regex (id per_date_of_death_ds_236) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_236)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "committed")) (text DONT_ADD_SPACES (string "suicide")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+		<!-- 243: 19 {0} dies {1} -->
+		(regex (id per_date_of_death_ds_244) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_244)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "dies")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 244: 19 {0} died of pneumonia {1} -->
+		(regex (id per_date_of_death_ds_245) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_245)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "of")) (text DONT_ADD_SPACES (string "pneumonia")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+
+		<!-- 253: 18 {1} , killing of {0} -->
+		(regex (id per_date_of_death_ds_254) (score 0.9) (score_group 1) (re (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "killing")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_254)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+		<!-- 255: 18 {1} 's death of {0} -->
+		(regex (id per_date_of_death_ds_256) (score 0.9) (score_group 1) (re (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "death")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_256)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 256: 18 {0} was shot on {1} -->
+		(regex (id per_date_of_death_ds_257) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_257)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "shot")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 257: 18 {0} was murdered on {1} -->
+		(regex (id per_date_of_death_ds_258) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_258)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "murdered")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 258: 18 {0} died at home {1} -->
+		(regex (id per_date_of_death_ds_259) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_259)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "at")) (text DONT_ADD_SPACES (string "home")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 259: 18 {0} committed suicide on {1} -->
+		(regex (id per_date_of_death_ds_260) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_260)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "committed")) (text DONT_ADD_SPACES (string "suicide")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 260: 18 verb: [killed]   <obj> = name: []      <ref> = 0    <temp> = 1 -->
+		(vprop (id per_date_of_death_ds_261) (score 0.9) (score_group 1) (predicate killed) (args (argument (role <obj>) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_261)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))) (argument (role <temp>) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)))))
+
+		<!-- 261: 18 modifier: [when]   <ref> = 1    when = verb: [died]      <sub> = 0 -->
+		(mprop (id per_date_of_death_ds_262) (score 0.9) (score_group 1) (predicate when) (args (argument (role <ref>) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))) (argument (role when) (vprop (predicate died) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_262)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 276: 17 {1} that killed {0} -->
+		(regex (id per_date_of_death_ds_277) (score 0.9) (score_group 1) (re (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "that")) (text DONT_ADD_SPACES (string "killed")) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_277)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+		<!-- 280: 17 {1} , assassination of {0} -->
+		(regex (id per_date_of_death_ds_281) (score 0.9) (score_group 1) (re (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "assassination")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_281)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+		<!-- 282: 17 verb: [killed]   <obj> = 0    in = 1 -->
+		(vprop (id per_date_of_death_ds_283) (score 0.9) (score_group 1) (predicate killed) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_283)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role in) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)))))
+
+		<!-- 283: 17 modifier: [when]   <ref> = 1    when = verb: [killed]      <obj> = 0 -->
+		(mprop (id per_date_of_death_ds_284) (score 0.9) (score_group 1) (predicate when) (args (argument (role <ref>) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))) (argument (role when) (vprop (predicate killed) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_284)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 292: 16 {1} , murder of {0} -->
+		(regex (id per_date_of_death_ds_293) (score 0.9) (score_group 1) (re (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "murder")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_293)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+		<!-- 294: 16 {0} were killed {1} -->
+		(regex (id per_date_of_death_ds_295) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_295)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "were")) (text DONT_ADD_SPACES (string "killed")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 295: 16 {0} was slain {1} -->
+		(regex (id per_date_of_death_ds_296) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_296)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "slain")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 296: 16 {0} died in hospital {1} -->
+		(regex (id per_date_of_death_ds_297) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_297)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "in")) (text DONT_ADD_SPACES (string "hospital")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+
+
+
+
+
+
+
+
+
+		<!-- 312: 15 {1} shooting of {0} -->
+		(regex (id per_date_of_death_ds_313) (score 0.9) (score_group 1) (re (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "shooting")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_313)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 313: 15 {1} execution of {0} -->
+		(regex (id per_date_of_death_ds_314) (score 0.9) (score_group 1) (re (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "execution")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_314)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 317: 15 {0} -- died {1} -->
+		(regex (id per_date_of_death_ds_318) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_318)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "--")) (text DONT_ADD_SPACES (string "died")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+		<!-- 330: 14 {1} shooting death of {0} -->
+		(regex (id per_date_of_death_ds_331) (score 0.9) (score_group 1) (re (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "shooting")) (text DONT_ADD_SPACES (string "death")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_331)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 334: 14 {0} was murdered {1} -->
+		(regex (id per_date_of_death_ds_335) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_335)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "murdered")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 335: 14 {0} was fatally shot {1} -->
+		(regex (id per_date_of_death_ds_336) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_336)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "fatally")) (text DONT_ADD_SPACES (string "shot")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 360: 13 {0} was hanged on {1} -->
+		(regex (id per_date_of_death_ds_361) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_361)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "hanged")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 361: 13 {0} died suddenly {1} -->
+		(regex (id per_date_of_death_ds_362) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_362)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "suddenly")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 362: 13 {0} died suddenly on {1} -->
+		(regex (id per_date_of_death_ds_363) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_363)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "suddenly")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+		<!-- 366: 13 {0} 's passing {1} -->
+		(regex (id per_date_of_death_ds_367) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_367)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "passing")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 367: 13 verb: [shot]   <obj> = name: []      <ref> = 0    <temp> = 1 -->
+		(vprop (id per_date_of_death_ds_368) (score 0.9) (score_group 1) (predicate shot) (args (argument (role <obj>) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_368)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))) (argument (role <temp>) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)))))
+
+		<!-- 368: 13 noun: [death]   of = 0    <temp> = 1 -->
+		(nprop (id per_date_of_death_ds_369) (score 0.9) (score_group 1) (predicate death) (args (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_369)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <temp>) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)))))
+
+
+		<!-- 390: 12 {0} died here on {1} -->
+		(regex (id per_date_of_death_ds_391) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_391)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "here")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 391: 12 {0} died at {1} -->
+		(regex (id per_date_of_death_ds_392) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_392)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "at")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 392: 12 {0} [PER] died on {1} -->
+		(regex (id per_date_of_death_ds_393) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_393)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (mention (acetype PER)) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 393: 12 {0} 's murder on {1} -->
+		(regex (id per_date_of_death_ds_394) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_394)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "murder")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 395: 12 verb: [gunned]   <obj> = 0    <temp> = 1 -->
+		(vprop (id per_date_of_death_ds_396) (score 0.9) (score_group 1) (predicate gunned) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_396)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <temp>) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)))))
+
+		<!-- 396: 12 verb: [died]   <temp> = 1    at = noun: [home]      <poss> = 0 -->
+		(vprop (id per_date_of_death_ds_397) (score 0.9) (score_group 1) (predicate died) (args (argument (role <temp>) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))) (argument (role at) (nprop (predicate home) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_397)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))))))
+
+
+		<!-- 415: 11 {0} was slain on {1} -->
+		(regex (id per_date_of_death_ds_416) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_416)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "slain")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 422: 11 {0} 's killing on {1} -->
+		(regex (id per_date_of_death_ds_423) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_423)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "killing")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+		<!-- 424: 11 verb: [assassinated]   <obj> = 0    <temp> = 1 -->
+		(vprop (id per_date_of_death_ds_425) (score 0.9) (score_group 1) (predicate assassinated) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_425)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <temp>) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)))))
+
+
+		<!-- 443: 10 {1} , slaying of {0} -->
+		(regex (id per_date_of_death_ds_444) (score 0.9) (score_group 1) (re (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "slaying")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_444)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 446: 10 {0} was pronounced dead {1} -->
+		(regex (id per_date_of_death_ds_447) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_447)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "pronounced")) (text DONT_ADD_SPACES (string "dead")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 454: 10 {0} 's murder {1} -->
+		(regex (id per_date_of_death_ds_455) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_455)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "murder")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 455: 10 {0} 's killing {1} -->
+		(regex (id per_date_of_death_ds_456) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_456)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "killing")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+		<!-- 457: 10 noun: [murder]   <ref> = 1    <poss> = 0 -->
+		(nprop (id per_date_of_death_ds_458) (score 0.9) (score_group 1) (predicate murder) (args (argument (role <ref>) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_458)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 458: 10 noun: [execution]   <ref> = 1    <poss> = 0 -->
+		(nprop (id per_date_of_death_ds_459) (score 0.9) (score_group 1) (predicate execution) (args (argument (role <ref>) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_459)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 498: 9 {1} 's slaying of {0} -->
+		(regex (id per_date_of_death_ds_499) (score 0.9) (score_group 1) (re (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "slaying")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_499)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 499: 9 {1} 's murder of {0} -->
+		(regex (id per_date_of_death_ds_500) (score 0.9) (score_group 1) (re (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "murder")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_500)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 500: 9 {0} was murdered in {1} -->
+		(regex (id per_date_of_death_ds_501) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_501)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "murdered")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 502: 9 {0} to death on {1} -->
+		(regex (id per_date_of_death_ds_503) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_503)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "to")) (text DONT_ADD_SPACES (string "death")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+		<!-- 504: 9 {0} murder on {1} -->
+		(regex (id per_date_of_death_ds_505) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_505)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "murder")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+
+		<!-- 506: 9 {0} killed himself {1} -->
+		(regex (id per_date_of_death_ds_507) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_507)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "killed")) (text DONT_ADD_SPACES (string "himself")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 507: 9 {0} had died on {1} -->
+		(regex (id per_date_of_death_ds_508) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_508)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "had")) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 508: 9 {0} died late on {1} -->
+		(regex (id per_date_of_death_ds_509) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_509)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "late")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+		<!-- 509: 9 {0} died early on {1} -->
+		(regex (id per_date_of_death_ds_510) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_ds_510)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "early")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_death)) (type TIMEX2.TIME))))
+
+	)
+)

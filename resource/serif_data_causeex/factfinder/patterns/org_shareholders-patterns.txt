@@ -1,0 +1,403 @@
+(org_shareholders
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- {0} largest shareholders are {1} -->
+		(regex (id org_shareholders_0) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "largest")) (text DONT_ADD_SPACES (string "shareholders")) (text DONT_ADD_SPACES (string "are")) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))))
+
+		<!-- {0} is majority-owned by {1} -->
+		(regex (id org_shareholders_1) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "is")) (text DONT_ADD_SPACES (string "majority-owned")) (text DONT_ADD_SPACES (string "by")) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))))
+
+		<!-- copula:is[<sub> = 1][<obj> = noun:investor[in = 0]] -->
+		(anyprop (id org_shareholders_2) (score 0.9) (score_group 1) (predicate is) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate investor) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:buying[<obj> = noun:stake[<poss> = 1][in = 0]] -->
+		(vprop (id org_shareholders_3) (score 0.9) (score_group 1) (predicate buying) (args (argument (role <obj>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:bought[<sub> = 1][<obj> = noun:stake[in = 0]] -->
+		(vprop (id org_shareholders_4) (score 0.9) (score_group 1) (predicate bought) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate stake) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- noun:shareholder[<ref> = 1][of = 0] -->
+		(nprop (id org_shareholders_5) (score 0.9) (score_group 1) (predicate shareholder) (args (argument (role <ref>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- {1} 's stake in {0} -->
+		(regex (id org_shareholders_6) (score 0.9) (score_group 1) (re (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "stake")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- {1} sells stake in {0} -->
+		(regex (id org_shareholders_7) (score 0.9) (score_group 1) (re (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)) (text DONT_ADD_SPACES (string "sells")) (text DONT_ADD_SPACES (string "stake")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- verb:sell[<obj> = noun:stake[<poss> = 1][in = 0]] -->
+		(vprop (id org_shareholders_8) (score 0.9) (score_group 1) (predicate sell) (args (argument (role <obj>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- noun:stake[<poss> = 1][in = name:[<ref> = 0]] -->
+		(nprop (id org_shareholders_9) (score 0.9) (score_group 1) (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:delay[<sub> = 1][<obj> = noun:sale[of = noun:stake[in = 0]]] -->
+		(vprop (id org_shareholders_10) (score 0.9) (score_group 1) (predicate delay) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate sale) (args (argument (role of) (nprop (predicate stake) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))))))))
+
+		<!-- verb:sell[<obj> = 0][to = 1] -->
+		(vprop (id org_shareholders_11) (score 0.9) (score_group 1) (predicate sell) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))) (argument (role to) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)))))
+
+		<!-- verb:sold[<sub> = 0][to = 1] -->
+		(vprop (id org_shareholders_12) (score 0.9) (score_group 1) (predicate sold) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))) (argument (role to) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)))))
+
+		<!-- copula:is[<sub> = 1][<obj> = noun:shareholder[<poss> = 0]] -->
+		(anyprop (id org_shareholders_13) (score 0.9) (score_group 1) (predicate is) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate shareholder) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- modifier:entire[<ref> = noun:stake[<poss> = 1][in = 0]] -->
+		(mprop (id org_shareholders_14) (score 0.9) (score_group 1) (predicate entire) (args (argument (role <ref>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:sell[<sub> = noun:decision[<poss> = 1]][<obj> = noun:stake[in = 0]] -->
+		(vprop (id org_shareholders_15) (score 0.9) (score_group 1) (predicate sell) (args (argument (role <sub>) (nprop (predicate decision) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)))))) (argument (role <obj>) (nprop (predicate stake) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:signed[<obj> = verb:acquire[<obj> = noun:stake[in = 0]][from = noun:company[<unknown> = 1]]] -->
+		(vprop (id org_shareholders_16) (score 0.9) (score_group 1) (predicate signed) (args (argument (role <obj>) (vprop (predicate acquire) (args (argument (role <obj>) (nprop (predicate stake) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))) (argument (role from) (nprop (predicate company) (args (argument (role <unknown>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)))))))))))
+
+		<!-- verb:holds[<sub> = 1][<obj> = noun:stakes[in = 0]] -->
+		(vprop (id org_shareholders_17) (score 0.9) (score_group 1) (predicate holds) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate stakes) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- noun:stake[<poss> = noun:company[<poss> = 1]][in = 0] -->
+		(nprop (id org_shareholders_18) (score 0.9) (score_group 1) (predicate stake) (args (argument (role <poss>) (nprop (predicate company) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)))))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- verb:buy[<sub> = 1][<obj> = noun:stake[in = 0]] -->
+		(vprop (id org_shareholders_19) (score 0.9) (score_group 1) (predicate buy) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate stake) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- modifier:percent[<ref> = noun:stake[<poss> = 1][in = 0]] -->
+		(mprop (id org_shareholders_20) (score 0.9) (score_group 1) (predicate percent) (args (argument (role <ref>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- noun:sale[of = 0][to = 1] -->
+		(nprop (id org_shareholders_21) (score 0.9) (score_group 1) (predicate sale) (args (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))) (argument (role to) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)))))
+
+		<!-- modifier:ownership[<ref> = noun:stake[<poss> = 1][in = 0]] -->
+		(mprop (id org_shareholders_22) (score 0.9) (score_group 1) (predicate ownership) (args (argument (role <ref>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:sell[<obj> = noun:share[<poss> = 1]][in = 0] -->
+		(vprop (id org_shareholders_23) (score 0.9) (score_group 1) (predicate sell) (args (argument (role <obj>) (nprop (predicate share) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)))))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- verb:completed[<obj> = noun:sale[of = noun:stake[<poss> = 1][in = 0]]] -->
+		(vprop (id org_shareholders_24) (score 0.9) (score_group 1) (predicate completed) (args (argument (role <obj>) (nprop (predicate sale) (args (argument (role of) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))))))))
+
+		<!-- modifier:percent[<ref> = noun:ownership[<poss> = 1][in = 0]] -->
+		(mprop (id org_shareholders_25) (score 0.9) (score_group 1) (predicate percent) (args (argument (role <ref>) (nprop (predicate ownership) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:owns[<sub> = 1][<obj> = noun:shares[<unknown> = 0]] -->
+		(vprop (id org_shareholders_26) (score 0.9) (score_group 1) (predicate owns) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate shares) (args (argument (role <unknown>) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- modifier:controlling[<ref> = noun:stake[<poss> = 1][in = 0]] -->
+		(mprop (id org_shareholders_27) (score 0.9) (score_group 1) (predicate controlling) (args (argument (role <ref>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- {0} shares to {1} -->
+		(regex (id org_shareholders_28) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "shares")) (text DONT_ADD_SPACES (string "to")) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))))
+
+		<!-- modifier:remaining[<ref> = noun:stake[<poss> = 1][in = 0]] -->
+		(mprop (id org_shareholders_29) (score 0.9) (score_group 1) (predicate remaining) (args (argument (role <ref>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- noun:stake[<poss> = 1][<unknown> = 0] -->
+		(nprop (id org_shareholders_30) (score 0.9) (score_group 1) (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <unknown>) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- noun:ownership[<poss> = 1][in = 0] -->
+		(nprop (id org_shareholders_31) (score 0.9) (score_group 1) (predicate ownership) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- noun:sale[of = noun:stake[<poss> = 1][in = 0]] -->
+		(nprop (id org_shareholders_32) (score 0.9) (score_group 1) (predicate sale) (args (argument (role of) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:acquire[<obj> = noun:stake[in = 0]][from = noun:company[<unknown> = 1]] -->
+		(vprop (id org_shareholders_33) (score 0.9) (score_group 1) (predicate acquire) (args (argument (role <obj>) (nprop (predicate stake) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))) (argument (role from) (nprop (predicate company) (args (argument (role <unknown>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))))))))
+
+		<!-- noun:investment[<poss> = 1][in = 0] -->
+		(nprop (id org_shareholders_34) (score 0.9) (score_group 1) (predicate investment) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- verb:delay[<sub> = noun:government[<unknown> = 1]][<obj> = noun:sale[of = noun:stake[in = 0]]] -->
+		(vprop (id org_shareholders_35) (score 0.9) (score_group 1) (predicate delay) (args (argument (role <sub>) (nprop (predicate government) (args (argument (role <unknown>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)))))) (argument (role <obj>) (nprop (predicate sale) (args (argument (role of) (nprop (predicate stake) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))))))))
+
+		<!-- noun:shares[<poss> = 1][<unknown> = 0] -->
+		(nprop (id org_shareholders_36) (score 0.9) (score_group 1) (predicate shares) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <unknown>) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- noun:stockholder[<ref> = 1][<poss> = 0] -->
+		(nprop (id org_shareholders_37) (score 0.9) (score_group 1) (predicate stockholder) (args (argument (role <ref>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- modifier:large[<ref> = noun:stake[<poss> = 1][in = 0]] -->
+		(mprop (id org_shareholders_38) (score 0.9) (score_group 1) (predicate large) (args (argument (role <ref>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- {1} ownership stake in {0} -->
+		(regex (id org_shareholders_39) (score 0.9) (score_group 1) (re (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)) (text DONT_ADD_SPACES (string "ownership")) (text DONT_ADD_SPACES (string "stake")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- verb:raise[<obj> = noun:stake[<poss> = 1][in = 0]] -->
+		(vprop (id org_shareholders_40) (score 0.9) (score_group 1) (predicate raise) (args (argument (role <obj>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:acquired[<sub> = 1][<obj> = 0] -->
+		(vprop (id org_shareholders_41) (score 0.9) (score_group 1) (predicate acquired) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- noun:shareholder[<ref> = 1][in = 0] -->
+		(nprop (id org_shareholders_42) (score 0.9) (score_group 1) (predicate shareholder) (args (argument (role <ref>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- verb:sell[<sub> = 1][<obj> = 0] -->
+		(vprop (id org_shareholders_43) (score 0.9) (score_group 1) (predicate sell) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- {1} 's acquisition of {0} -->
+		(regex (id org_shareholders_44) (score 0.9) (score_group 1) (re (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "acquisition")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- verb:acquire[<obj> = noun:stake[<poss> = 1][in = 0]] -->
+		(vprop (id org_shareholders_45) (score 0.9) (score_group 1) (predicate acquire) (args (argument (role <obj>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:sell[<obj> = noun:stake[in = 0]][to = 1] -->
+		(vprop (id org_shareholders_46) (score 0.9) (score_group 1) (predicate sell) (args (argument (role <obj>) (nprop (predicate stake) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))) (argument (role to) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)))))
+
+		<!-- modifier:$[<ref> = noun:takeover[<poss> = 1][of = 0]] -->
+		(mprop (id org_shareholders_47) (score 0.9) (score_group 1) (predicate $) (args (argument (role <ref>) (nprop (predicate takeover) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- modifier:$[<ref> = noun:purchase[<poss> = 1][of = 0]] -->
+		(mprop (id org_shareholders_48) (score 0.9) (score_group 1) (predicate $) (args (argument (role <ref>) (nprop (predicate purchase) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:rise[<sub> = noun:stake[<poss> = 1][in = 0]] -->
+		(vprop (id org_shareholders_49) (score 0.9) (score_group 1) (predicate rise) (args (argument (role <sub>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- modifier:minority[<ref> = noun:stake[<poss> = 1][in = 0]] -->
+		(mprop (id org_shareholders_50) (score 0.9) (score_group 1) (predicate minority) (args (argument (role <ref>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:sold[<obj> = noun:stake[<poss> = 1][in = 0]] -->
+		(vprop (id org_shareholders_51) (score 0.9) (score_group 1) (predicate sold) (args (argument (role <obj>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- modifier:$[<ref> = noun:investment[<poss> = 1][in = 0]] -->
+		(mprop (id org_shareholders_52) (score 0.9) (score_group 1) (predicate $) (args (argument (role <ref>) (nprop (predicate investment) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- copula:is[<sub> = 1][<obj> = noun:shareholder[in = 0]] -->
+		(anyprop (id org_shareholders_53) (score 0.9) (score_group 1) (predicate is) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate shareholder) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- noun:shareholder[<ref> = 1][<poss> = 0] -->
+		(nprop (id org_shareholders_54) (score 0.9) (score_group 1) (predicate shareholder) (args (argument (role <ref>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- copula:is[<sub> = 1][<obj> = noun:stockholder[<poss> = 0]] -->
+		(anyprop (id org_shareholders_55) (score 0.9) (score_group 1) (predicate is) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate stockholder) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:sell[<sub> = 1][<obj> = noun:stake[in = 0]] -->
+		(vprop (id org_shareholders_56) (score 0.9) (score_group 1) (predicate sell) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate stake) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- {1} investment in {0} -->
+		(regex (id org_shareholders_57) (score 0.9) (score_group 1) (re (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)) (text DONT_ADD_SPACES (string "investment")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- modifier:20-percent[<ref> = noun:stake[<poss> = 1][in = 0]] -->
+		(mprop (id org_shareholders_58) (score 0.9) (score_group 1) (predicate 20-percent) (args (argument (role <ref>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:buying[<sub> = 1][<obj> = noun:stake[in = 0]] -->
+		(vprop (id org_shareholders_59) (score 0.9) (score_group 1) (predicate buying) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate stake) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- noun:investor[<ref> = 1][in = 0] -->
+		(nprop (id org_shareholders_60) (score 0.9) (score_group 1) (predicate investor) (args (argument (role <ref>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- {1} agreed to buy {0} -->
+		(regex (id org_shareholders_61) (score 0.9) (score_group 1) (re (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)) (text DONT_ADD_SPACES (string "agreed")) (text DONT_ADD_SPACES (string "to")) (text DONT_ADD_SPACES (string "buy")) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- verb:agreed[<obj> = verb:buy[<obj> = noun:stake[in = 0]][from = 1]] -->
+		(vprop (id org_shareholders_62) (score 0.9) (score_group 1) (predicate agreed) (args (argument (role <obj>) (vprop (predicate buy) (args (argument (role <obj>) (nprop (predicate stake) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))) (argument (role from) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))))))))
+
+		<!-- verb:invested[<sub> = 1][in = 0] -->
+		(vprop (id org_shareholders_63) (score 0.9) (score_group 1) (predicate invested) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- {0} , but divested {1} -->
+		(regex (id org_shareholders_64) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "but")) (text DONT_ADD_SPACES (string "divested")) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))))
+
+		<!-- modifier:20[<ref> = noun:stake[<poss> = 1][in = 0]] -->
+		(mprop (id org_shareholders_65) (score 0.9) (score_group 1) (predicate 20) (args (argument (role <ref>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- copula:be[<sub> = noun:acquisition[of = 0]][for = noun:company[<poss> = 1]] -->
+		(anyprop (id org_shareholders_66) (score 0.9) (score_group 1) (predicate be) (args (argument (role <sub>) (nprop (predicate acquisition) (args (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))) (argument (role for) (nprop (predicate company) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))))))))
+
+		<!-- noun:percent[<ref> = noun:stake[<poss> = 1][in = 0]] -->
+		(nprop (id org_shareholders_67) (score 0.9) (score_group 1) (predicate percent) (args (argument (role <ref>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- set:[<ref> = noun:stake[<poss> = 1][in = 0]] -->
+		(sprop (id org_shareholders_68) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- noun:stake[<poss> = 1][in = 0] -->
+		(nprop (id org_shareholders_69) (score 0.9) (score_group 1) (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- noun:takeover[<poss> = 1][of = 0] -->
+		(nprop (id org_shareholders_70) (score 0.9) (score_group 1) (predicate takeover) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- verb:purchased[<sub> = 1][<obj> = noun:stake[in = 0]] -->
+		(vprop (id org_shareholders_71) (score 0.9) (score_group 1) (predicate purchased) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate stake) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- set:[<member> = noun:stake[<poss> = 1][in = 0]] -->
+		(sprop (id org_shareholders_72) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:remains[<sub> = 1][<obj> = noun:shareholder[<poss> = 0]] -->
+		(vprop (id org_shareholders_73) (score 0.9) (score_group 1) (predicate remains) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate shareholder) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:said[<sub> = 1][<obj> = verb:raise[<obj> = noun:stake[in = 0]]] -->
+		(vprop (id org_shareholders_74) (score 0.9) (score_group 1) (predicate said) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (vprop (predicate raise) (args (argument (role <obj>) (nprop (predicate stake) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))))))))
+
+		<!-- verb:sold[<sub> = 1][<obj> = noun:stake[in = 0]] -->
+		(vprop (id org_shareholders_75) (score 0.9) (score_group 1) (predicate sold) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate stake) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- modifier:25[<ref> = noun:stake[<poss> = 1][in = 0]] -->
+		(mprop (id org_shareholders_76) (score 0.9) (score_group 1) (predicate 25) (args (argument (role <ref>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:sell[<obj> = noun:stake[in = 0]][to = noun:maker[<ref> = 1]] -->
+		(vprop (id org_shareholders_77) (score 0.9) (score_group 1) (predicate sell) (args (argument (role <obj>) (nprop (predicate stake) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))) (argument (role to) (nprop (predicate maker) (args (argument (role <ref>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))))))))
+
+		<!-- verb:buy[<obj> = noun:stake[in = 0]][from = 1] -->
+		(vprop (id org_shareholders_78) (score 0.9) (score_group 1) (predicate buy) (args (argument (role <obj>) (nprop (predicate stake) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))) (argument (role from) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)))))
+
+		<!-- verb:increasing[<sub> = 1][<obj> = noun:stake[in = 0]] -->
+		(vprop (id org_shareholders_79) (score 0.9) (score_group 1) (predicate increasing) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate stake) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- copula:was[<sub> = 1][<obj> = noun:investor[in = 0]] -->
+		(anyprop (id org_shareholders_80) (score 0.9) (score_group 1) (predicate was) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate investor) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:reduce[<obj> = noun:stake[<poss> = 1][in = 0]] -->
+		(vprop (id org_shareholders_81) (score 0.9) (score_group 1) (predicate reduce) (args (argument (role <obj>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:owns[<sub> = 1][<obj> = noun:stake[in = 0]] -->
+		(vprop (id org_shareholders_82) (score 0.9) (score_group 1) (predicate owns) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate stake) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:increasing[<obj> = noun:stake[<poss> = 1][in = 0]] -->
+		(vprop (id org_shareholders_83) (score 0.9) (score_group 1) (predicate increasing) (args (argument (role <obj>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- comp:and[<member> = verb:increased[<obj> = noun:stake[<poss> = 1][in = 0]]] -->
+		(cprop (id org_shareholders_84) (score 0.9) (score_group 1) (predicate and) (args (argument (role <member>) (vprop (predicate increased) (args (argument (role <obj>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))))))))
+
+		<!-- modifier:for[for = noun:stake[<poss> = 1][in = 0]] -->
+		(mprop (id org_shareholders_85) (score 0.9) (score_group 1) (predicate for) (args (argument (role for) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:said[<obj> = verb:sold[<sub> = 1][<obj> = noun:stake[in = 0]]] -->
+		(vprop (id org_shareholders_86) (score 0.9) (score_group 1) (predicate said) (args (argument (role <obj>) (vprop (predicate sold) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate stake) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))))))))
+
+		<!-- verb:buy[<obj> = 0][from = 1] -->
+		(vprop (id org_shareholders_87) (score 0.9) (score_group 1) (predicate buy) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))) (argument (role from) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)))))
+
+		<!-- noun:shareholder[<ref> = 1][<unknown> = 0] -->
+		(nprop (id org_shareholders_88) (score 0.9) (score_group 1) (predicate shareholder) (args (argument (role <ref>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <unknown>) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- noun:shares[<poss> = 1][in = 0] -->
+		(nprop (id org_shareholders_89) (score 0.9) (score_group 1) (predicate shares) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- verb:selling[<obj> = noun:stake[<poss> = 1][in = 0]] -->
+		(vprop (id org_shareholders_90) (score 0.9) (score_group 1) (predicate selling) (args (argument (role <obj>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:became[<sub> = 1][<obj> = noun:shareholder[<poss> = 0]] -->
+		(vprop (id org_shareholders_91) (score 0.9) (score_group 1) (predicate became) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate shareholder) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- modifier:majority-owned[<ref> = 0][by = 1] -->
+		(mprop (id org_shareholders_92) (score 0.9) (score_group 1) (predicate majority-owned) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))) (argument (role by) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)))))
+
+		<!-- verb:selling[<sub> = 1][<obj> = noun:stake[in = 0]] -->
+		(vprop (id org_shareholders_93) (score 0.9) (score_group 1) (predicate selling) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate stake) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:holds[<sub> = 1][<obj> = noun:shares[<unknown> = 0]] -->
+		(vprop (id org_shareholders_94) (score 0.9) (score_group 1) (predicate holds) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate shares) (args (argument (role <unknown>) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:become[<sub> = noun:stake[<poss> = 1][in = 0]] -->
+		(vprop (id org_shareholders_95) (score 0.9) (score_group 1) (predicate become) (args (argument (role <sub>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:cut[<obj> = noun:stake[<poss> = 1][in = 0]] -->
+		(vprop (id org_shareholders_96) (score 0.9) (score_group 1) (predicate cut) (args (argument (role <obj>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- {1} stake in {0} -->
+		(regex (id org_shareholders_97) (score 0.9) (score_group 1) (re (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)) (text DONT_ADD_SPACES (string "stake")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- verb:take[<sub> = 1][<obj> = noun:stake[in = 0]] -->
+		(vprop (id org_shareholders_98) (score 0.9) (score_group 1) (predicate take) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate stake) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- set:[<ref> = noun:shareholder[<poss> = 1]][<member> = 0] -->
+		(sprop (id org_shareholders_99) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate shareholder) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)))))) (argument (role <member>) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- verb:held[<sub> = 1][<obj> = noun:stake[in = 0]] -->
+		(vprop (id org_shareholders_100) (score 0.9) (score_group 1) (predicate held) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate stake) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- {0} investor , investment {1} -->
+		(regex (id org_shareholders_101) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "investor")) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "investment")) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))))
+
+		<!-- noun:value[of = noun:stake[<poss> = 1][in = 0]] -->
+		(nprop (id org_shareholders_102) (score 0.9) (score_group 1) (predicate value) (args (argument (role of) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:acquire[<sub> = 1][<obj> = 0] -->
+		(vprop (id org_shareholders_103) (score 0.9) (score_group 1) (predicate acquire) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- verb:help[<sub> = noun:stake[<poss> = 1][in = 0]] -->
+		(vprop (id org_shareholders_104) (score 0.9) (score_group 1) (predicate help) (args (argument (role <sub>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:agreed[<obj> = verb:sell[<obj> = noun:stake[<poss> = 1][in = 0]]] -->
+		(vprop (id org_shareholders_105) (score 0.9) (score_group 1) (predicate agreed) (args (argument (role <obj>) (vprop (predicate sell) (args (argument (role <obj>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))))))))
+
+		<!-- {1} remaining stake in {0} -->
+		(regex (id org_shareholders_106) (score 0.9) (score_group 1) (re (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)) (text DONT_ADD_SPACES (string "remaining")) (text DONT_ADD_SPACES (string "stake")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- {1} 20-percent stake in {0} -->
+		(regex (id org_shareholders_107) (score 0.9) (score_group 1) (re (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)) (text DONT_ADD_SPACES (string "20-percent")) (text DONT_ADD_SPACES (string "stake")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- modifier:current[<ref> = noun:stake[<poss> = 1][in = 0]] -->
+		(mprop (id org_shareholders_108) (score 0.9) (score_group 1) (predicate current) (args (argument (role <ref>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- noun:acquisition[<poss> = 1][of = 0] -->
+		(nprop (id org_shareholders_109) (score 0.9) (score_group 1) (predicate acquisition) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- noun:half[<ref> = noun:stake[<poss> = 1][in = 0]] -->
+		(nprop (id org_shareholders_110) (score 0.9) (score_group 1) (predicate half) (args (argument (role <ref>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- {0} shareholder and {1} -->
+		(regex (id org_shareholders_111) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "shareholder")) (text DONT_ADD_SPACES (string "and")) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))))
+
+		<!-- noun:connection[with = noun:acquisition[<poss> = 1][of = 0]] -->
+		(nprop (id org_shareholders_112) (score 0.9) (score_group 1) (predicate connection) (args (argument (role with) (nprop (predicate acquisition) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:owns[<sub> = 1][<obj> = noun:stock[<poss> = 0]] -->
+		(vprop (id org_shareholders_113) (score 0.9) (score_group 1) (predicate owns) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate stock) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:increased[<obj> = noun:stake[<poss> = 1][in = 0]] -->
+		(vprop (id org_shareholders_114) (score 0.9) (score_group 1) (predicate increased) (args (argument (role <obj>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:selling[<obj> = 0][to = 1] -->
+		(vprop (id org_shareholders_115) (score 0.9) (score_group 1) (predicate selling) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))) (argument (role to) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)))))
+
+		<!-- verb:increased[<sub> = 1][<obj> = noun:stake[in = 0]] -->
+		(vprop (id org_shareholders_116) (score 0.9) (score_group 1) (predicate increased) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate stake) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- noun:stake[<unknown> = 1][in = 0] -->
+		(nprop (id org_shareholders_117) (score 0.9) (score_group 1) (predicate stake) (args (argument (role <unknown>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- modifier:share[<ref> = noun:stake[<poss> = 1][in = 0]] -->
+		(mprop (id org_shareholders_118) (score 0.9) (score_group 1) (predicate share) (args (argument (role <ref>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- {1} acquisition of {0} -->
+		(regex (id org_shareholders_119) (score 0.9) (score_group 1) (re (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)) (text DONT_ADD_SPACES (string "acquisition")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- verb:upped[<obj> = noun:stake[<poss> = 1][in = 0]] -->
+		(vprop (id org_shareholders_120) (score 0.9) (score_group 1) (predicate upped) (args (argument (role <obj>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- verb:drop[<obj> = noun:stake[<poss> = 1][in = 0]] -->
+		(vprop (id org_shareholders_121) (score 0.9) (score_group 1) (predicate drop) (args (argument (role <obj>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- modifier:largest-ever[<ref> = noun:investment[<poss> = 1][in = 0]] -->
+		(mprop (id org_shareholders_122) (score 0.9) (score_group 1) (predicate largest-ever) (args (argument (role <ref>) (nprop (predicate investment) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- noun:part[<ref> = noun:stake[<poss> = 1][in = 0]] -->
+		(nprop (id org_shareholders_123) (score 0.9) (score_group 1) (predicate part) (args (argument (role <ref>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- {1} ' stake in {0} -->
+		(regex (id org_shareholders_124) (score 0.9) (score_group 1) (re (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)) (text DONT_ADD_SPACES (string "'")) (text DONT_ADD_SPACES (string "stake")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- modifier:equity[<ref> = noun:stake[<poss> = 1][in = 0]] -->
+		(mprop (id org_shareholders_125) (score 0.9) (score_group 1) (predicate equity) (args (argument (role <ref>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- {1} share of {0} -->
+		(regex (id org_shareholders_126) (score 0.9) (score_group 1) (re (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)) (text DONT_ADD_SPACES (string "share")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- verb:said[<sub> = 1][<obj> = verb:sold[<obj> = noun:stake[<poss> = 0]]] -->
+		(vprop (id org_shareholders_127) (score 0.9) (score_group 1) (predicate said) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (vprop (predicate sold) (args (argument (role <obj>) (nprop (predicate stake) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))))))))
+
+		<!-- {1} 's investment in {0} -->
+		(regex (id org_shareholders_128) (score 0.9) (score_group 1) (re (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "investment")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- verb:has[<sub> = 1][<obj> = noun:stake[in = 0]] -->
+		(vprop (id org_shareholders_129) (score 0.9) (score_group 1) (predicate has) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG))) (argument (role <obj>) (nprop (predicate stake) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- {1} invested in {0} -->
+		(regex (id org_shareholders_130) (score 0.9) (score_group 1) (re (mention (return (ff_role org_shareholders)) (min-entitylevel NAME) (block AGENT1) (acetype GPE PER ORG)) (text DONT_ADD_SPACES (string "invested")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))))
+
+	)
+)

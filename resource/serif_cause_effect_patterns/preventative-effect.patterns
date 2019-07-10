@@ -1,0 +1,38 @@
+(preventative-effect
+
+(options
+
+(blocked_proposition_types Unreliable)
+
+)
+
+(wordsets
+
+(HINDER hinder* burden* crimp* curb* delay* frustrate* hamper* hamstring* handicap* impede* inhibit* interrupt* obstruct* prohibit* retard* thwart* fetter* neutraliz* offset* stymie* terminate* limit* cap restrain* impair*) 
+
+)
+
+(reference
+
+(nprop (shortcut NOUN_CAUSE) (return CAUSE))
+(vprop (shortcut VERB_CAUSE) (return CAUSE))
+(mprop (shortcut MOD_CAUSE) (block_predicate because since as) (return CAUSE))
+(any-of (shortcut CAUSE) (members VERB_CAUSE NOUN_CAUSE MOD_CAUSE))
+
+(nprop (shortcut NOUN_EFFECT) (return EFFECT))
+(vprop (shortcut VERB_EFFECT) (return EFFECT))
+(mprop (shortcut MOD_EFFECT) (block_predicate because since as) (return EFFECT))
+(any-of (shortcut EFFECT) (members VERB_EFFECT NOUN_EFFECT MOD_EFFECT))
+
+)
+
+(toplevel
+
+(vprop (id hindered)
+       (predicate HINDER)
+       (args (argument (role <sub>) CAUSE)
+             (argument (role <obj>) EFFECT)))
+
+)
+
+)

@@ -1,0 +1,81 @@
+(org_place_of_headquarters
+
+ (wordsets)
+
+ (entitylabels (AGENT1))
+
+ (toplevel
+ 
+  <!-- San Francisco-based Muslim Advocates. -->
+  <!-- the Bayshore Mall in Eureka -->
+  (mprop (id org_place_of_headquarters_100000) (score 0.9) (score_group 1) (predicate -based in of)
+   (args
+    (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_100000)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))
+    (argument (role <unknown> in of) (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))
+   )
+  )
+
+  <!-- the San Francisco-based Muslim Advocates. -->
+  (regex (id org_place_of_headquarters_100001) (score 0.9) (score_group 1) 
+   (re
+    (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) 
+    (text DONT_ADD_SPACES (string "-based"))
+    (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_100001)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))
+   )
+  )
+
+  <!-- # Based in Des Moines, the company is known for hearth-and-home titles. -->
+  (regex (id org_place_of_headquarters_100002) (score 0.9) (score_group 1) 
+   (re
+    (text DONT_ADD_SPACES (string "(Based|Headquartered) in"))
+     (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype GPE))
+     (text DONT_ADD_SPACES (string ","))
+     (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))
+    )
+   )
+
+   <!-- # John works for IFMC, a health care management company based in West Des Moines, Iowa. -->
+   (regex (id org_place_of_headquarters_100003) (score 0.9) (score_group 1) 
+    (re 
+     (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_100003)) (min-entitylevel DESC)  (entitylabel AGENT1)(acetype ORG))
+     (text DONT_ADD_SPACES (string "(,|is|) (based|headquartered|) (in|of)")) 
+     (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype GPE))
+    )
+   )
+
+   <!--
+   (regex (id org_place_of_headquarters_100004) (score 0.9) (score_group 1)
+    (re
+     (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_100004)) (entitylabel AGENT1) (min-entitylevel DESC)  (acetype ORG))
+     (text DONT_ADD_SPACES (string "(based) in"))
+     (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype GPE))
+    )
+   )
+   -->
+
+   <!-- Southern Daily, a Guangzhou-based newspaper -->
+(regex (id org_place_of_headquarters_100005) (score 0.9) (score_group 1)
+ (re 
+  (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_100005)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))
+  (text DONT_ADD_SPACES (string "(,|) (a|an|the)")) 
+  (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype GPE))
+  (text DONT_ADD_SPACES (string "-based"))
+ )
+ )
+
+(vprop (id org_place_of_headquarters_100006) (score 0.9) (score_group 1) (predicate base* headquarter*)
+ (args 
+  (argument (role <obj> <sub>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_100005)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))
+  (argument (role in) (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))
+ )
+ )
+
+ <!-- the St. Petersburg company. -->
+(nprop (id org_place_of_headquarters_100007) (score 0.9) (score_group 1) (predicate company newspaper organization group)
+ (args 
+  (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_place_of_headquarters_100007)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))
+  (argument (role <unknown>) (mention (return (ff_role org_place_of_headquarters)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))
+ )
+ )
+  )
+ )

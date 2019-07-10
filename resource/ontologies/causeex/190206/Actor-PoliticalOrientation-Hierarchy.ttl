@@ -1,0 +1,267 @@
+@prefix : <http://ontology.causeex.com/ontology/odps/Actor#> .
+@prefix actor: <http://ontology.causeex.com/ontology/odps/Actor#> .
+@prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ontology.causeex.com/ontology/odps/Actor-PoliticalOrientation-Hierarchy> rdf:type owl:Ontology ;
+    dcterms:description "Ontology defining a CCO PoliticalOrientation class hierarchy. The existing classes from the OEIdeology ontology are replicated to avoid importing the file (which also included religious ideology and religious acts). Note that NamedIndividuals are not defined - classes can also be used as individuals via OWL punning."@en ;
+    dcterms:created "April 18, 2018"^^xsd:string ;
+    dcterms:modified "February 5, 2019"^^xsd:string ;
+    rdfs:comment """February 5th 2019 revisions:
+                     Adjusted the modified date.
+                     Added the Nativist class and changed the super-class of USDemocrat/Republican to Constitutionalist and Republican.
+                   January 23rd 2019 revisions:
+                     Corrected cut and paste error for Republicanism.
+                     Updated the ontology name, replicated OEIdeology concepts in the Actor namespace (following the CauseEx naming conventions), renamed 
+                       classes to remove the _Class suffix and use proper noun forms, removed the definition of NamedIndividuals, and removed unused prefixes.
+                     Distinguished Democrat/Republican in general from USDemocrat/Republican.
+                  October 22nd 2018 revisions:
+                    Modified the imports to only add the ontologies explicitly referenced.
+                  August 3rd 2018 revisions:
+                    Added import of the Actor ontology for completeness.
+                  June 27th 2018 revisions:
+                    Added the sub-classes of cco:PoliticalOrientation from the OEIdeology ontology (this avoids loading that
+                       ontology)."""@en ;
+    owl:imports <http://ontology.causeex.com/ontology/odps/Actor-ReificationsAndProperties> ;
+    owl:imports <http://purl.org/dc/terms> ;
+    owl:versionInfo "Version 1.1"^^xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+:Anarchist a owl:Class ;
+    rdfs:label "Anarchist"@en ;
+    rdfs:comment "Belief that governmental hierarchy and authority are unnecessary, and that society should be organized based on voluntary actions and cooperation."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation .
+
+:Authoritarian a owl:Class ;
+    rdfs:label "Authoritarian"@en ;
+    rdfs:comment "Authoritarianism is characterized by a strong, central government with limited political institutions or opposition, limited individual freedoms, suppression of anti-government activities and poorly defined/shifting/expansive governmental powers. Totalitarianism is one, extreme example."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation .
+
+:Autocratist a owl:Class ;
+    rdfs:label "Autocratist or Autocrat"@en ;
+    rdfs:comment "An autocracy places governmental control in the hands of a one person, with virtually unlimited power."@en ;
+    rdfs:subClassOf :Authoritarian .
+
+:Capitalist a owl:Class ;
+    rdfs:label "Capitalist"@en ;
+    rdfs:comment "Belief that trade and industry should be controlled by corporations and/or private individuals, and that prices should be set in a free market, as opposed to control by the government."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation .
+
+:Centrist a owl:Class ;
+    rdfs:label "Centrist"@en ;
+    rdfs:comment "Centrism is neither right- or left-leaning, but a balance of the two. It involves taking a 'moderate' position on issues or courses of action."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation .
+
+:Collectivist a owl:Class ;
+    rdfs:label "Collectivist"@en ;
+    rdfs:comment "Belief that ownership of land/means of production/... should be by a group of individuals or by the government. Examples are communism and socialism. Note that collectivism is disjoint from individualism."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation ;
+    owl:disjointWith :Individualist .
+
+:Communist a owl:Class ;
+    rdfs:label "Communist"@en ;
+    rdfs:comment "Communism is a form of Collectivism that also advocates a classless society. Examples include Marxism, Leninism, Maoism and Trotskyism."@en ;
+    rdfs:subClassOf :Collectivist .
+
+:Conservative a owl:Class ;
+    rdfs:label "Conservative"@en ;
+    rdfs:comment "Conservatism promotes maintaining existing (or returning to previously established) social, governmental, religious, ... hierarchies and practices. The focus is on tradition, and social stability and continuity. Note that conservatism is disjoint from progressivism."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation ;
+    owl:disjointWith :Progressive.
+
+:Constitutionalist a owl:Class ;
+    rdfs:label "Constitutionalist"@en ;
+    rdfs:comment "Belief that a government and its authority derive from, and are limited by an established body of laws (the constitution)."@en ;
+    rdfs:subClassOf :Democrat .
+
+:Democrat a owl:Class ;
+    rdfs:label "Democrat"@en ;
+    rdfs:comment "A democracy is based on citizens influencing the government by voting. From Wikipedia ... 'In a direct democracy, the citizens as a whole form a governing body and vote directly on each issue. In a representative democracy, the citizens elect representatives from among themselves. These representatives meet to form a governing body, such as a legislature. In a constitutional democracy, the powers of the majority are exercised within the framework of a representative democracy, but the constitution limits the majority and protects the minority, usually through the enjoyment by all of certain individual rights, e.g. freedom of speech, or freedom of association.' Note that these concepts overlap with constitutionalism and republicanism."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation .
+
+:Egalitarian a owl:Class ;
+    rdfs:label "Egalitarian"@en ;
+    rdfs:comment "Belief that all persons are equal and should have the same rights and opportunities. Note that egalitarianism is disjoint from elitism ."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation ;
+    owl:disjointWith :Elitist .
+
+:Elitist a owl:Class ;
+    rdfs:label "Elitist"@en ;
+    rdfs:comment "From Wikipedia, elitism is the belief that 'individuals who form an elite — a select group of people with a certain ancestry, intrinsic quality, high intellect, wealth, special skills, or experience — are more likely to be constructive to society as a whole, and therefore deserve influence or authority greater than that of others'. Types of elitism are meritocracies and aristocracies. Note that elitism is disjoint from egalitarianism."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation .
+
+:Environmentalist a owl:Class ;
+    rdfs:label "Environmentalist"@en ;
+    rdfs:comment "Concern for the environment and a desire to protect and sustain/improve it."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation .
+
+:Extremist a owl:Class ;
+    rdfs:label "Extremist"@en ;
+    rdfs:comment "Taking an 'extreme' or unconditional position or advocating the use of 'extreme' measures. Note that extremism is disjoint from centrism."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation .
+
+:FarLeftOrientation a owl:Class ;
+    rdfs:label "Far Left Orientation"@en ;
+    rdfs:comment "From Key Concepts in Politics and International Relations (Andrew Heywood, 2015), a left-leaning political orientation places a focus on 'ideas such as freedom, equality, fraternity, rights, progress, reform and internationalism'."@en ;
+    rdfs:subClassOf :LeftLeaningOrientation, :Extremist .
+
+:FarRightOrientation a owl:Class ;
+    rdfs:label "Far Right Orientation"@en ;
+    rdfs:comment "From Key Concepts in Politics and International Relations (Andrew Heywood, 2015), a right-leaning political orientation places a focus on 'notions such as authority, hierarchy, order, duty, tradition, reaction and nationalism'."@en ;
+    rdfs:subClassOf :RightLeaningOrientation, :Extremist .
+
+:Federalist a owl:Class ;
+    rdfs:label "Federalist"@en ;
+    rdfs:comment "Federalism is a mixed mode of government that combines a central (national/'federal') government with smaller, regional units that are self-governing within the bounds of the central system. The United States of America is an example of a federalist government. Note that federalism is disjoint from authoritarianism."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation ;
+    owl:disjointWith :Authoritarian .
+
+:Imperialist a owl:Class ;
+    rdfs:label "Imperialist"@en ;
+    rdfs:comment "Belief or desire to extend a country's or government's influence via military, diplomatic or political means. Note that militarism is a component of imperialism."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation .
+
+:Individualist a owl:Class ;
+    rdfs:label "Individualist"@en ;
+    rdfs:comment "Belief that an individual should be have freedom of action, independent of governmental/societal/group control. Liberalism is one example. Note that individualism is disjoint from collectivism."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation .
+
+:Isolationist a owl:Class ;
+    rdfs:label "Isolationist"@en ;
+    rdfs:comment "Belief that the government should not be involved in the affairs of other governments/countries, and should avoid international politics."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation .
+
+:LeftLeaningOrientation a owl:Class ;
+    rdfs:label "Left-leaning/Left-wing Orientation"@en ;
+    rdfs:comment "From Key Concepts in Politics and International Relations (Andrew Heywood, 2015), a left-leaning political orientation places a focus on 'ideas such as freedom, equality, fraternity, rights, progress, reform and internationalism'."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation .
+
+:Liberalist a owl:Class ;
+    rdfs:label "Liberalist or Liberal"@en ;
+    rdfs:comment "Belief in liberty and equality, deriving from John Locke's belief in a person's rights to life, liberty and property."@en ;
+    rdfs:subClassOf :Individualist .
+
+:Libertarian a owl:Class ;
+    rdfs:label "Libertarian"@en ;
+    rdfs:comment "Strong focus on the liberties of a government's citizens and a belief that the government should only minimally affect/intervene in its citizens' lives."@en ;
+    rdfs:subClassOf :Liberalist .
+
+:Meritocratist a owl:Class ;
+    rdfs:label "Meritocratist or Meritocrat"@en ;
+    rdfs:comment "From Wikipedia, meritocracy 'holds that certain things, such as economic goods or power, should be vested in individuals on the basis of talent, effort, and achievement, rather than factors such as sexuality, race, gender, or wealth'. An example is Singapore's reference to meritocracy as one of its guiding principles."@en ;
+    rdfs:subClassOf :Elitist .
+
+:Militarist a owl:Class ;
+    rdfs:label "Militarist"@en ;
+    rdfs:comment "A desire for war, conflict or the escalation of a conflict, and support for a strong military. Note that miltarism is disjoint from pacifism."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation ;
+    owl:disjointFrom :Pacifist .
+
+:Monarchist a owl:Class ;
+    rdfs:label "Monarchist"@en ;
+    rdfs:comment "From Wikipedia, a monarchy is 'a form of government in which a group, generally a group of people representing a dynasty (aristocracy), embodies the country's national identity and its head, the monarch, exercises the role of supreme sovereignty. The actual power of the monarch may vary from purely symbolic (crowned republic), to partial and restricted (constitutional monarchy), to completely autocratic (absolute monarchy). Traditionally the monarch's post is inherited and lasts until death or abdication. In contrast, elective monarchies require the monarch to be elected.'"@en ;
+    rdfs:subClassOf :Elitist .
+
+:Nationalist a owl:Class ;
+    rdfs:label "Nationalist"@en ;
+    rdfs:comment "Nationalism's goal is to build a national identity for its people, establish sovereignty over its lands, free from external political influence."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation .
+
+:Nativist a owl:Class ;
+    rdfs:label "Nativist"@en ;
+    rdfs:comment "Protection/promotion of native-born or established peoples versus immigrants, including supporting immigration restriction."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation .
+
+:NonSecularist a owl:Class ;
+    rdfs:label "Non-Secularist"@en ;
+    rdfs:comment "Support for the association of a government with a particular religion, along with that government enforcing the practices and conventions of the religion."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation ;
+    owl:disjointWith :Secularist .
+
+:Pacifist a owl:Class ;
+    rdfs:label "Pacifist"@en ;
+    rdfs:comment "A desire for compromise as opposed to conflict and an opposition to war, militarism and violence. Note that pacifism is disjoint from miltarism."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation .
+
+:Populist a owl:Class ;
+    rdfs:label "Populist"@en ;
+    rdfs:comment "Appealing to 'the people'/an 'ordinary' person as opposed to an elite."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation .
+
+:Progressive a owl:Class ;
+    rdfs:label "Progressive"@en ;
+    rdfs:comment "Belief in societal and government reform and the advancement of science, technology, economic development and social organization to improve the conditions in which people live. Note that progressivism is disjoint from conservatism."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation .
+
+:Radicalist a owl:Class ;
+    rdfs:label "Radicalist or Revolutionary"@en ;
+    rdfs:comment "Belief in the use of revolutionary means to achieve governmental and societal change."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation .
+
+:Reactionist a owl:Class ;
+    rdfs:label "Reactionist"@en ;
+    rdfs:comment "Reactionaries have a strong desire to maintain the status quo, and oppose societal and governmental change. Reactionism is an extreme form of conservatism."@en ;
+    rdfs:subClassOf :Conservative, :Extremist .
+
+:Republican a owl:Class ;
+    rdfs:label "Republican"@en ;
+    rdfs:comment "Belief that a 'republic' is the correct form of government, where the latter means 'a political order in which the supreme power lies in a body of citizens who are entitled to vote for officers and representatives responsible to them' (American Heritage Dictionary)."@en ;
+    rdfs:subClassOf :Democrat .
+
+:RightLeaningOrientation a owl:Class ;
+    rdfs:label "Right-leaning/Right-wing Orientation"@en ;
+    rdfs:comment "From Key Concepts in Politics and International Relations (Andrew Heywood, 2015), a right-leaning political orientation places a focus on 'notions such as authority, hierarchy, order, duty, tradition, reaction and nationalism'."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation .
+
+:Secularist a owl:Class ;
+    rdfs:label "Secularist"@en ;
+    rdfs:comment "Support for the separation of religion from government affairs. From Wikipedia, 'secularism means that governments should remain neutral on the matter of religion and should not enforce nor prohibit the free exercise of religion, leaving religious choice to the liberty of the people.'"@en ;
+    rdfs:subClassOf cco:PoliticalOrientation .
+
+:Segregationist a owl:Class ;
+    rdfs:label "Segregationist"@en ;
+    rdfs:comment "Belief in racial or political segregation/separation. An example is apartheid which was previously practiced in the Republic of South Africa."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation .
+
+:SocialDemocrat a owl:Class ;
+    rdfs:label "Social Democrat"@en ;
+    rdfs:comment "Social democracy advocates moving to a socialist society via democratic means."@en ;
+    rdfs:subClassOf :Democrat .
+
+:Socialist a owl:Class ;
+    rdfs:label "Socialist"@en ;
+    rdfs:comment "Belief that the means of producing, distributing, exchanging, ... goods should be overseen by a community or group of persons/workers, or by the government."@en ;
+    rdfs:subClassOf :Collectivist .
+
+:Theocratist a owl:Class ;
+    rdfs:label "Theocratist or Theocrat"@en ;
+    rdfs:comment "A theocracy places governmental power in the hands of individuals who are believed to be divinely guided. The government's laws are based on religious law and leaders may be members of the clergy. Examples include Saudi Arabia and the Vatican."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation .
+
+:Totalitarianist a owl:Class ;
+    rdfs:label "Totalitarianist"@en ;
+    rdfs:comment "Totalitarianism is an extreme form of authoritarianism, which strives to control all aspects of its citizens' lives. An example of an autocratic and totalitarian regime can be found in North Korea."@en ;
+    rdfs:subClassOf :Authoritarian, :Extremist .
+
+:Tribalist a owl:Class ;
+    rdfs:label "Tribalist"@en ;
+    rdfs:comment "Tribalism is a social ordering/grouping involving relatively small groups of persons with a specific identity that clearly separates the group from another."@en ;
+    rdfs:subClassOf cco:PoliticalOrientation .
+
+:USDemocrat a owl:Class ;
+    rdfs:label "US Democrat"@en ;
+    rdfs:comment "Supporter/member of the US Democratic Party."@en ;
+    rdfs:subClassOf :Constitutionalist, :Republican .
+
+:USRepublican a owl:Class ;
+    rdfs:label "US Republican"@en ;
+    rdfs:comment "Supporter/member of the US Republican Party."@en ;
+    rdfs:subClassOf :Constitutionalist, :Republican .

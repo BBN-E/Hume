@@ -1,0 +1,134 @@
+(per_place_of_birth
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 2: 3707 verb: [born]   <obj> = 0    in = 1 -->
+		(vprop (id per_place_of_birth_ds_3) (score 0.9) (score_group 1) (predicate born) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_3)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role in) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 3: 2965 {0} was born in {1} -->
+		(regex (id per_place_of_birth_ds_4) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_4)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "born")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE))))
+
+
+		<!-- 6: 1755 verb: [born]   <sub> = 0    in = 1 -->
+		(vprop (id per_place_of_birth_ds_7) (score 0.9) (score_group 1) (predicate born) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_7)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role in) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 21: 792 CombinationPattern[{1} , {0}][Born in {1}] -->
+		(regex (id per_place_of_birth_ds_22) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "Born")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_22)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 31: 512 noun: [-born]   <ref> = 0    <mod> = 1 -->
+		(nprop (id per_place_of_birth_ds_32) (score 0.9) (score_group 1) (predicate -born) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_32)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 42: 440 verb: [born]   <obj> = 0    in = name: []      <ref> = 1 -->
+		(vprop (id per_place_of_birth_ds_43) (score 0.9) (score_group 1) (predicate born) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_43)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role in) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE))))))))
+
+		<!-- 56: 339 modifier: [-born]   <ref> = 0    <mod> = 1 -->
+		(mprop (id per_place_of_birth_ds_57) (score 0.9) (score_group 1) (predicate -born) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_57)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 103: 177 verb: [born]   <obj> = name: []      <ref> = 0    in = 1 -->
+		(vprop (id per_place_of_birth_ds_104) (score 0.9) (score_group 1) (predicate born) (args (argument (role <obj>) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_104)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))) (argument (role in) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 107: 173 {1} -born {0} -->
+		(regex (id per_place_of_birth_ds_108) (score 0.9) (score_group 1) (re (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "-born")) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_108)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 175: 104 modifier: [where]   <ref> = 1    where = verb: [born]      <obj> = 0 -->
+		(mprop (id per_place_of_birth_ds_176) (score 0.9) (score_group 1) (predicate where) (args (argument (role <ref>) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE))) (argument (role where) (vprop (predicate born) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_176)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 182: 100 {0} , born in {1} -->
+		(regex (id per_place_of_birth_ds_183) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_183)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "born")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE))))
+
+		<!-- 198: 91 verb: [born]   <sub> = 0    in = name: []      <ref> = 1 -->
+		(vprop (id per_place_of_birth_ds_199) (score 0.9) (score_group 1) (predicate born) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_199)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role in) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE))))))))
+
+		<!-- 204: 88 noun: [birthplace]   <ref> = 1    <poss> = 0 -->
+		(nprop (id per_place_of_birth_ds_205) (score 0.9) (score_group 1) (predicate birthplace) (args (argument (role <ref>) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_205)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 226: 84 verb: [born]   <obj> = 0    in = noun: [town]      of = 1 -->
+		(vprop (id per_place_of_birth_ds_227) (score 0.9) (score_group 1) (predicate born) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_227)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role in) (nprop (predicate town) (args (argument (role of) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE))))))))
+
+		<!-- 242: 78 verb: [born]   <obj> = 0    in = noun: [city]      of = 1 -->
+		(vprop (id per_place_of_birth_ds_243) (score 0.9) (score_group 1) (predicate born) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_243)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role in) (nprop (predicate city) (args (argument (role of) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE))))))))
+
+
+		<!-- 354: 54 verb: [born]   <sub> = 0    in = noun: [city]      of = 1 -->
+		(vprop (id per_place_of_birth_ds_355) (score 0.9) (score_group 1) (predicate born) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_355)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role in) (nprop (predicate city) (args (argument (role of) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE))))))))
+
+		<!-- 423: 45 CombinationPattern[{1} -born [PER] , {0}][The {1}] -->
+		(regex (id per_place_of_birth_ds_424) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "The")) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "-born")) (mention (acetype PER)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_424)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 482: 40 noun: [birthplace]   <poss> = 0    in = 1 -->
+		(nprop (id per_place_of_birth_ds_483) (score 0.9) (score_group 1) (predicate birthplace) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_483)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role in) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+
+		<!-- 512: 38 verb: [born]   <obj> = 0    in = modifier: [in]      in = 1 -->
+		(vprop (id per_place_of_birth_ds_513) (score 0.9) (score_group 1) (predicate born) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_513)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role in) (mprop (predicate in) (args (argument (role in) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE))))))))
+
+		<!-- 540: 36 {0} born in {1} -->
+		(regex (id per_place_of_birth_ds_541) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_541)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "born")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE))))
+
+		<!-- 578: 34 noun: [birthplace]   <poss> = 0    of = 1 -->
+		(nprop (id per_place_of_birth_ds_579) (score 0.9) (score_group 1) (predicate birthplace) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_579)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 587: 33 {1} -born , {0} -->
+		(regex (id per_place_of_birth_ds_588) (score 0.9) (score_group 1) (re (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "-born")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_588)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+
+
+
+
+
+
+
+
+		<!-- 693: 29 noun: [city]   <ref> = 1    where = verb: [born]      <obj> = 0 -->
+		(nprop (id per_place_of_birth_ds_694) (score 0.9) (score_group 1) (predicate city) (args (argument (role <ref>) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE))) (argument (role where) (vprop (predicate born) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_694)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))))))
+
+
+		<!-- 704: 28 {0} birthplace in {1} -->
+		(regex (id per_place_of_birth_ds_705) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_705)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "birthplace")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE))))
+
+
+		<!-- 775: 26 noun: [birthplace]   <ref> = 1    of = 0 -->
+		(nprop (id per_place_of_birth_ds_776) (score 0.9) (score_group 1) (predicate birthplace) (args (argument (role <ref>) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_776)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 843: 24 verb: [born]   <obj> = 0    <loc> = 1 -->
+		(vprop (id per_place_of_birth_ds_844) (score 0.9) (score_group 1) (predicate born) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_844)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <loc>) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 885: 23 verb: [born]   <iobj> = 0    in = 1 -->
+		(vprop (id per_place_of_birth_ds_886) (score 0.9) (score_group 1) (predicate born) (args (argument (role <iobj>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_886)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role in) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 901: 23 noun: [birth]   <poss> = 0    in = 1 -->
+		(nprop (id per_place_of_birth_ds_902) (score 0.9) (score_group 1) (predicate birth) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_902)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role in) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 925: 22 {0} was born {1} -->
+		(regex (id per_place_of_birth_ds_926) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_926)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "born")) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE))))
+
+		<!-- 986: 21 {0} birthplace of {1} -->
+		(regex (id per_place_of_birth_ds_987) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_987)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "birthplace")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE))))
+
+		<!-- 1029: 21 CombinationPattern[{1} , where {0}][{0} was born .] -->
+		(regex (id per_place_of_birth_ds_1030) (score 0.9) (score_group 1) (re (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "where")) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_1030)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "born")) (text DONT_ADD_SPACES (string "."))))
+
+		<!-- 1057: 20 {0} 's birthplace in {1} -->
+		(regex (id per_place_of_birth_ds_1058) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_1058)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "birthplace")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE))))
+
+		<!-- 1066: 20 verb: [born]   <obj> = 0    in = noun: [village]      of = 1 -->
+		(vprop (id per_place_of_birth_ds_1067) (score 0.9) (score_group 1) (predicate born) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_1067)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role in) (nprop (predicate village) (args (argument (role of) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE))))))))
+
+
+		<!-- 1068: 20 set: []   <ref> = modifier: [-born]      <mod> = 1    <member> = 0 -->
+		(sprop (id per_place_of_birth_ds_1069) (score 0.9) (score_group 1) (args (argument (role <ref>) (mprop (predicate -born) (args (argument (role <mod>) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))) (argument (role <member>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_1069)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+
+		<!-- 1072: 20 noun: [town]   <ref> = 1    where = verb: [born]      <obj> = 0 -->
+		(nprop (id per_place_of_birth_ds_1073) (score 0.9) (score_group 1) (predicate town) (args (argument (role <ref>) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE))) (argument (role where) (vprop (predicate born) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_1073)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))))))
+
+
+		<!-- 1085: 20 comp: [and]   <member> = verb: [born]      in = 1    <member> = copula: [was]      <obj> = 0 -->
+		(cprop (id per_place_of_birth_ds_1086) (score 0.9) (score_group 1) (predicate and) (args (argument (role <member>) (vprop (predicate born) (args (argument (role in) (mention (return (ff_role per_place_of_birth)) (min-entitylevel DESC) (block AGENT1) (acetype LOC GPE)))))) (argument (role <member>) (anyprop (predicate was) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_ds_1086)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))))))
+	)
+)

@@ -1,0 +1,25 @@
+(per_date_of_birth
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 1: 1 {0} was born {1} -->
+		(regex (id per_date_of_birth_2) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_birth_2)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "born")) (value (return (ff_role per_date_of_birth)) (type TIMEX2.TIME))))
+
+		<!-- 2: 1 {0} was born in {1} -->
+		(regex (id per_date_of_birth_3) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_birth_3)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "born")) (text DONT_ADD_SPACES (string "in")) (value (return (ff_role per_date_of_birth)) (type TIMEX2.TIME))))
+
+		<!-- 3: 1 {0} , was born {1} -->
+		(regex (id per_date_of_birth_4) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_birth_4)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "born")) (value (return (ff_role per_date_of_birth)) (type TIMEX2.TIME))))
+
+		<!-- 4: 1 {0} , born on {1} -->
+		(regex (id per_date_of_birth_5) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_birth_5)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "born")) (text DONT_ADD_SPACES (string "on")) (value (return (ff_role per_date_of_birth)) (type TIMEX2.TIME))))
+
+		<!-- 5: 1 verb: [born]   <obj> = 0    in = 1 -->
+		(vprop (id per_date_of_birth_6) (score 0.9) (score_group 1) (predicate born) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_birth_6)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role in) (value (return (ff_role per_date_of_birth)) (type TIMEX2.TIME)))))
+
+	)
+)

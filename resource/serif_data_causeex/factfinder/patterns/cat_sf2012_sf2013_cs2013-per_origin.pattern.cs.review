@@ -1,0 +1,171 @@
+(per_origin
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- write general patterns with headword constraints: "dutch citizen" -->
+
+		<!-- 1: 10 noun: [country]   <ref> = 1    <poss> = 0 -->
+		(nprop (id per_origin_2) (score 0.9) (score_group 1) (predicate country) (args (argument (role <ref>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_2)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 7: 4 modifier: [of]   <ref> = 0    of = 1 -->
+		(mprop (id per_origin_8) (score 0.9) (score_group 1) (predicate of) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_8)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 8: 3 noun: [woman]   <ref> = 0    <mod> = 1 -->
+		(nprop (id per_origin_9) (score 0.9) (score_group 1) (predicate woman) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_9)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 9: 3 noun: [secretary]   <ref> = 0    <mod> = 1 -->
+		(nprop (id per_origin_10) (score 0.9) (score_group 1) (predicate secretary) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_10)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 10: 3 noun: [president]   <ref> = 0    <mod> = 1 -->
+		(nprop (id per_origin_11) (score 0.9) (score_group 1) (predicate president) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_11)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 11: 3 noun: [poet]   <ref> = 0    <mod> = 1 -->
+		(nprop (id per_origin_12) (score 0.9) (score_group 1) (predicate poet) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_12)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 12: 3 modifier: [-born]   <ref> = 0    <mod> = 1 -->
+		(mprop (id per_origin_13) (score 0.9) (score_group 1) (predicate -born) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_13)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 13: 2 {1} top diplomat , {0} -->
+		(regex (id per_origin_14) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "top")) (text DONT_ADD_SPACES (string "diplomat")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_14)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 14: 2 {1} secretary of {0} -->
+		(regex (id per_origin_15) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "secretary")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_15)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+		<!-- 16: 2 {1} jazz {0} -->
+		(regex (id per_origin_17) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "jazz")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_17)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 18: 2 {1} film {0} -->
+		(regex (id per_origin_19) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "film")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_19)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 19: 2 {1} dissident {0} -->
+		(regex (id per_origin_20) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "dissident")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_20)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 20: 2 {1} cricketer {0} -->
+		(regex (id per_origin_21) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "cricketer")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_21)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 21: 2 {1} cleric {0} -->
+		(regex (id per_origin_22) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "cleric")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_22)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+
+		<!-- 24: 2 {1} [GPE] secretary of {0} -->
+		(regex (id per_origin_25) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (mention (acetype GPE)) (text DONT_ADD_SPACES (string "secretary")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_25)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 25: 2 {1} [GPE] film {0} -->
+		(regex (id per_origin_26) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (mention (acetype GPE)) (text DONT_ADD_SPACES (string "film")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_26)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+
+		<!-- 31: 2 {0} of {1} -->
+		(regex (id per_origin_32) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_origin_32)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE))))
+
+
+
+		<!-- 43: 2 verb: [born]   <sub> = 0    in = 1 -->
+		(vprop (id per_origin_44) (score 0.9) (score_group 1) (predicate born) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_44)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role in) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 44: 2 set: []   <ref> = noun: [president]      <mod> = 1    <member> = 0 -->
+		(sprop (id per_origin_45) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate president) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))) (argument (role <member>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_45)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 45: 2 set: []   <ref> = noun: [poet]      <mod> = 1    <member> = 0 -->
+		(sprop (id per_origin_46) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate poet) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))) (argument (role <member>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_46)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 46: 2 noun: [star]   <ref> = 0    <mod> = 1 -->
+		(nprop (id per_origin_47) (score 0.9) (score_group 1) (predicate star) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_47)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+
+		<!-- 48: 2 noun: [pianist]   <ref> = 0    <mod> = 1 -->
+		(nprop (id per_origin_49) (score 0.9) (score_group 1) (predicate pianist) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_49)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 49: 2 noun: [physicist]   <ref> = 0    <mod> = 1 -->
+		(nprop (id per_origin_50) (score 0.9) (score_group 1) (predicate physicist) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_50)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 50: 2 noun: [musician]   <ref> = 0    <mod> = 1 -->
+		(nprop (id per_origin_51) (score 0.9) (score_group 1) (predicate musician) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_51)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 51: 2 noun: [filmmaker]   <ref> = 0    <mod> = 1 -->
+		(nprop (id per_origin_52) (score 0.9) (score_group 1) (predicate filmmaker) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_52)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 52: 2 noun: [director]   <ref> = 0    <mod> = 1 -->
+		(nprop (id per_origin_53) (score 0.9) (score_group 1) (predicate director) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_53)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 53: 2 noun: [cyclist]   <ref> = 0    <mod> = 1 -->
+		(nprop (id per_origin_54) (score 0.9) (score_group 1) (predicate cyclist) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_54)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 54: 2 noun: [cricketer]   <ref> = 0    <mod> = 1 -->
+		(nprop (id per_origin_55) (score 0.9) (score_group 1) (predicate cricketer) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_55)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 55: 2 noun: [cleric]   <ref> = 0    <mod> = 1 -->
+		(nprop (id per_origin_56) (score 0.9) (score_group 1) (predicate cleric) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_56)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 56: 2 noun: [citizen]   <ref> = 0    <mod> = 1 -->
+		(nprop (id per_origin_57) (score 0.9) (score_group 1) (predicate citizen) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_57)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 57: 2 noun: [choreographer]   <ref> = 0    <mod> = 1 -->
+		(nprop (id per_origin_58) (score 0.9) (score_group 1) (predicate choreographer) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_58)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 58: 2 modifier: [u.s.]   <ref> = 0    <mod> = 1 -->
+		(mprop (id per_origin_59) (score 0.9) (score_group 1) (predicate u.s.) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_59)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 59: 2 modifier: [cuban]   <ref> = 0    <mod> = 1 -->
+		(mprop (id per_origin_60) (score 0.9) (score_group 1) (predicate cuban) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_60)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 60: 2 modifier: [canadian]   <ref> = 0    <mod> = 1 -->
+		(mprop (id per_origin_61) (score 0.9) (score_group 1) (predicate canadian) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_61)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 61: 2 modifier: [american]   <ref> = 0    <mod> = 1 -->
+		(mprop (id per_origin_62) (score 0.9) (score_group 1) (predicate american) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_62)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+
+		<!-- 91: 2 CombinationPattern[{0} , a {1}][{1} citizen born in] -->
+		(regex (id per_origin_92) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_origin_92)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "citizen")) (text DONT_ADD_SPACES (string "born")) (text DONT_ADD_SPACES (string "in"))))
+
+
+		<!-- 113: 1 {1} woman {0} -->
+		(regex (id per_origin_114) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "woman")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_114)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 123: 1 {1} reality TV {0} -->
+		(regex (id per_origin_124) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "reality")) (text DONT_ADD_SPACES (string "TV")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_124)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 124: 1 {1} president {0} -->
+		(regex (id per_origin_125) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "president")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_125)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 130: 1 {1} political prisoner {0} -->
+		(regex (id per_origin_131) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "political")) (text DONT_ADD_SPACES (string "prisoner")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_131)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 133: 1 {1} poet {0} -->
+		(regex (id per_origin_134) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "poet")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_134)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 135: 1 {1} pianist and composer {0} -->
+		(regex (id per_origin_136) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "pianist")) (text DONT_ADD_SPACES (string "and")) (text DONT_ADD_SPACES (string "composer")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_136)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 145: 1 {1} lawmaker {0} -->
+		(regex (id per_origin_146) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "lawmaker")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_146)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+		<!-- 156: 1 {1} dissident [PER] {0} -->
+		(regex (id per_origin_157) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "dissident")) (mention (acetype PER)) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_157)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 157: 1 {1} director {0} -->
+		(regex (id per_origin_158) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "director")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_158)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 158: 1 {1} cyclist {0} -->
+		(regex (id per_origin_159) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "cyclist")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_159)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 164: 1 {1} citizen {0} -->
+		(regex (id per_origin_165) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "citizen")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_165)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+		<!-- 167: 1 {1} choreographer {0} -->
+		(regex (id per_origin_168) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "choreographer")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_168)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 169: 1 {1} bowler {0} -->
+		(regex (id per_origin_170) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "bowler")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_170)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+	)
+)

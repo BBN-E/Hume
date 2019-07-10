@@ -1,0 +1,545 @@
+- TimeSeriesAndMeasurements:
+  - {_id: TimeSeriesAndMeasurements_001}
+  - _source: ['UNK: TimeSeriesAndMeasurements']
+  - {_description: NA}
+  - _examples: [NA]
+  - TimeSeries:
+    - {_id: TimeSeries_001}
+    - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#TimeSeries']
+    - {_description: NA}
+    - _examples: [NA]
+  - ReportedPropertyType:
+    - {_id: ReportedPropertyType_001}
+    - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#ReportedPropertyType']
+    - {_description: NA}
+    - _examples: [NA]
+  - ReportedValue:
+    - {_id: ReportedValue_001}
+    - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#ReportedValue']
+    - {_description: NA}
+    - _examples: [NA]
+  - RelatedValues:
+    - {_id: RelatedValues_001}
+    - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#RelatedValues']
+    - {_description: NA}
+    - _examples: [NA]
+  - ReportedProperty:
+    - {_id: ReportedProperty_001}
+    - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#ReportedProperty']
+    - {_description: NA}
+    - _examples: [NA]
+    - Weather:
+      - {_id: Weather_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Weather']
+      - {_description: NA}
+      - _examples: [NA]
+    - Housing:
+      - {_id: Housing_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Housing']
+      - {_description: NA}
+      - _examples: [NA]
+    - FinanceRelated:
+      - {_id: FinanceRelated_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#FinanceRelated']
+      - {_description: NA}
+      - _examples: [NA]
+      - Stocks:
+        - {_id: Stocks_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Stocks']
+        - {_description: NA}
+        - _examples: [NA]
+      - ExchangeRates:
+        - {_id: ExchangeRates_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#ExchangeRates']
+        - {_description: NA}
+        - _examples: [NA]
+      - Bonds:
+        - {_id: Bonds_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Bonds']
+        - {_description: NA}
+        - _examples: [NA]
+      - Debt:
+        - {_id: Debt_000}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Debt']
+        - {_description: NA}
+        - _examples: [NA]
+      - Investment:
+        - {_id: Investment_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Investment']
+        - {_description: NA}
+        - _examples: [NA]
+      - Savings:
+        - {_id: Savings_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Savings']
+        - {_description: NA}
+        - _examples: [NA]
+      - LoansAndLending:
+        - {_id: LoansAndLending_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#LoansAndLending']
+        - {_description: NA}
+        - _examples: [NA]
+    - CrimeAndSafety:
+      - {_id: CrimeAndSafety_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#CrimeAndSafety']
+      - {_description: NA}
+      - _examples: [NA]
+      - Corruption:
+        - {_id: Corruption_000}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Corruption']
+        - {_description: NA}
+        - _examples: [NA]
+      - Violence:
+        - {_id: Violence_000}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Violence']
+        - {_description: NA}
+        - _examples: [NA]
+        - Militancy:
+          - {_id: Militancy_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Militancy']
+          - {_description: NA}
+          - _examples: [NA]
+        - Insurgency:
+          - {_id: Insurgency_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Insurgency']
+          - {_description: NA}
+          - _examples: [NA]
+      - JailsAndPrisoners:
+        - {_id: JailsAndPrisoners_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#JailsAndPrisoners']
+        - {_description: NA}
+        - _examples: [NA]
+      - Justice:
+        - {_id: Justice_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Justice']
+        - {_description: NA}
+        - _examples: [NA]
+      - Abuse:
+        - {_id: Abuse_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Abuse']
+        - {_description: NA}
+        - _examples: [NA]
+    - Transportation:
+      - {_id: Transportation_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Transportation']
+      - {_description: NA}
+      - _examples: [NA]
+    - EducationAndTraining:
+      - {_id: EducationAndTraining_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#EducationAndTraining']
+      - {_description: NA}
+      - _examples: [NA]
+    - PhysicalMeasurement:
+      - {_id: PhysicalMeasurement_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#PhysicalMeasurement']
+      - {_description: NA}
+      - _examples: [NA]
+      - Pressure:
+        - {_id: Pressure_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Pressure']
+        - {_description: NA}
+        - _examples: [NA]
+      - ChemicalAndCatalyticActivity:
+        - {_id: ChemicalAndCatalyticActivity_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#ChemicalAndCatalyticActivity']
+        - {_description: NA}
+        - _examples: [NA]
+      - Electromagnetic:
+        - {_id: Electromagnetic_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Electromagnetic']
+        - {_description: NA}
+        - _examples: [NA]
+      - EnergyWorkOrHeat:
+        - {_id: EnergyWorkOrHeat_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#EnergyWorkOrHeat']
+        - {_description: NA}
+        - _examples: [NA]
+      - LengthAreaVolumeOrAngle:
+        - {_id: LengthAreaVolumeOrAngle_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#LengthAreaVolumeOrAngle']
+        - {_description: NA}
+        - _examples: [NA]
+      - Photometric:
+        - {_id: Photometric_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Photometric']
+        - {_description: NA}
+        - _examples: [NA]
+      - MassOrAmount:
+        - {_id: MassOrAmount_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#MassOrAmount']
+        - {_description: NA}
+        - _examples: [NA]
+      - Temperature:
+        - {_id: Temperature_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Temperature']
+        - {_description: NA}
+        - _examples: [NA]
+      - Time:
+        - {_id: Time_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Time']
+        - {_description: NA}
+        - _examples: [NA]
+      - AccelerationOrSpeed:
+        - {_id: AccelerationOrSpeed_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#AccelerationOrSpeed']
+        - {_description: NA}
+        - _examples: [NA]
+      - Radioactivity:
+        - {_id: Radioactivity_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Radioactivity']
+        - {_description: NA}
+        - _examples: [NA]
+      - Power:
+        - {_id: Power_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Power']
+        - {_description: NA}
+        - _examples: [NA]
+      - Frequency:
+        - {_id: Frequency_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Frequency']
+        - {_description: NA}
+        - _examples: [NA]
+      - Force:
+        - {_id: Force_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Force']
+        - {_description: NA}
+        - _examples: [NA]
+      - SoundLevel:
+        - {_id: SoundLevel_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#SoundLevel']
+        - {_description: NA}
+        - _examples: [NA]
+    - TravelAndTourism:
+      - {_id: TravelAndTourism_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#TravelAndTourism']
+      - {_description: NA}
+      - _examples: [NA]
+    - HealthAndDisease:
+      - {_id: HealthAndDisease_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#HealthAndDisease']
+      - {_description: NA}
+      - _examples: [NA]
+      - Vaccination:
+        - {_id: Vaccination_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Vaccination']
+        - {_description: NA}
+        - _examples: [NA]
+      - AlcoholDrugAndSubstanceAbuse:
+        - {_id: AlcoholDrugAndSubstanceAbuse_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#AlcoholDrugAndSubstanceAbuse']
+        - {_description: NA}
+        - _examples: [NA]
+    - SocialServices:
+      - {_id: SocialServices_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#SocialServices']
+      - {_description: NA}
+      - _examples: [NA]
+    - Displacement:
+      - {_id: Displacement_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Displacement']
+      - {_description: NA}
+      - _examples: [NA]
+    - Recreation:
+      - {_id: Recreation_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Recreation']
+      - {_description: NA}
+      - _examples: [NA]
+    - Environment:
+      - {_id: Environment_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Environment']
+      - {_description: NA}
+      - _examples: [NA]
+      - Contaminants:
+        - {_id: Contaminants_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Contaminants']
+        - {_description: NA}
+        - _examples: [NA]
+      - WasteManagement:
+        - {_id: WasteManagement_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#WasteManagement']
+        - {_description: NA}
+        - _examples: [NA]
+      - Production:
+        - {_id: Production_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Production']
+        - {_description: NA}
+        - _examples: [NA]
+        - EnergyProduction:
+          - {_id: EnergyProduction_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#EnergyProduction']
+          - {_description: NA}
+          - _examples: [NA]
+      - Consumption:
+        - {_id: Consumption_000}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Consumption']
+        - {_description: NA}
+        - _examples: [NA]
+        - EnergyConsumption:
+          - {_id: EnergyConsumption_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#EnergyConsumption']
+          - {_description: NA}
+          - _examples: [NA]
+      - NaturalResources:
+        - {_id: NaturalResources_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#NaturalResources']
+        - {_description: NA}
+        - _examples: [NA]
+      - ChemicalUse:
+        - {_id: ChemicalUse_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#ChemicalUse']
+        - {_description: NA}
+        - _examples: [NA]
+      - EnergySources:
+        - {_id: EnergySources_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#EnergySources']
+        - {_description: NA}
+        - _examples: [NA]
+      - LandUse:
+        - {_id: LandUse_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#LandUse']
+        - {_description: NA}
+        - _examples: [NA]
+        - AgriculturalLandUse:
+          - {_id: AgriculturalLandUse_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#AgriculturalLandUse']
+          - {_description: NA}
+          - _examples: [NA]
+        - ConservationLandUse:
+          - {_id: ConservationLandUse_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#ConservationLandUse']
+          - {_description: NA}
+          - _examples: [NA]
+        - ReforestationLandUse:
+          - {_id: ReforestationLandUse_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#ReforestationLandUse']
+          - {_description: NA}
+          - _examples: [NA]
+        - WaterManagementLandUse:
+          - {_id: WaterManagementLandUse_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#WaterManagementLandUse']
+          - {_description: NA}
+          - _examples: [NA]
+      - Capacity:
+        - {_id: Capacity_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Capacity']
+        - {_description: NA}
+        - _examples: [NA]
+      - AirQualityAndEmissions:
+        - {_id: AirQualityAndEmissions_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#AirQualityAndEmissions']
+        - {_description: NA}
+        - _examples: [NA]
+      - Availability:
+        - {_id: Availability_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Availability']
+        - {_description: NA}
+        - _examples: [NA]
+    - Nutrition:
+      - {_id: Nutrition_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Nutrition']
+      - {_description: NA}
+      - _examples: [NA]
+    - SentimentAndAttitude:
+      - {_id: SentimentAndAttitude_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#SentimentAndAttitude']
+      - {_description: NA}
+      - _examples: [NA]
+      - PositiveSentiment:
+        - {_id: PositiveSentiment_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#PositiveSentiment']
+        - {_description: NA}
+        - _examples: [NA]
+      - NegativeSentiment:
+        - {_id: NegativeSentiment_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#NegativeSentiment']
+        - {_description: NA}
+        - _examples: [NA]
+    - AggregateProperty:
+      - {_id: AggregateProperty_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#AggregateProperty']
+      - {_description: NA}
+      - _examples: [NA]
+    - Aid:
+      - {_id: Aid_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Aid']
+      - {_description: NA}
+      - _examples: [NA]
+      - Charity:
+        - {_id: Charity_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Charity']
+        - {_description: NA}
+        - _examples: [NA]
+    - Economy:
+      - {_id: Economy_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Economy']
+      - {_description: NA}
+      - _examples: [NA]
+      - ImportAndExport:
+        - {_id: ImportAndExport_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#ImportAndExport']
+        - {_description: NA}
+        - _examples: [NA]
+      - GrossNationalIncome:
+        - {_id: GrossNationalIncome_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#GrossNationalIncome']
+        - {_description: NA}
+        - _examples: [NA]
+      - ConsumerSpending:
+        - {_id: ConsumerSpending_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#ConsumerSpending']
+        - {_description: NA}
+        - _examples: [NA]
+      - GrossDomesticProduct:
+        - {_id: GrossDomesticProduct_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#GrossDomesticProduct']
+        - {_description: NA}
+        - _examples: [NA]
+      - IncomeAndExpense:
+        - {_id: IncomeAndExpense_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#IncomeAndExpense']
+        - {_description: NA}
+        - _examples: [NA]
+      - Price:
+        - {_id: Price_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Price']
+        - {_description: NA}
+        - _examples: [NA]
+      - InternalTrade:
+        - {_id: InternalTrade_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#InternalTrade']
+        - {_description: NA}
+        - _examples: [NA]
+        - BlackMarketTrade:
+          - {_id: BlackMarketTrade_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#BlackMarketTrade']
+          - {_description: NA}
+          - _examples: [NA]
+      - ServicesExchange:
+        - {_id: ServicesExchange_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#ServicesExchange']
+        - {_description: NA}
+        - _examples: [NA]
+    - BusinessRelated:
+      - {_id: BusinessRelated_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#BusinessRelated']
+      - {_description: NA}
+      - _examples: [NA]
+      - ProfitAndLoss:
+        - {_id: ProfitAndLoss_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#ProfitAndLoss']
+        - {_description: NA}
+        - _examples: [NA]
+      - Bankruptcy:
+        - {_id: Bankruptcy_002}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Bankruptcy']
+        - {_description: NA}
+        - _examples: [NA]
+      - Innovation:
+        - {_id: Innovation_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Innovation']
+        - {_description: NA}
+        - _examples: [NA]
+      - Productivity:
+        - {_id: Productivity_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Productivity']
+        - {_description: NA}
+        - _examples: [NA]
+      - Revenue:
+        - {_id: Revenue_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Revenue']
+        - {_description: NA}
+        - _examples: [NA]
+      - Labor:
+        - {_id: Labor_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Labor']
+        - {_description: NA}
+        - _examples: [NA]
+        - UnemploymentRelated:
+          - {_id: UnemploymentRelated_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#UnemploymentRelated']
+          - {_description: NA}
+          - _examples: [NA]
+        - Wages:
+          - {_id: Wages_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Wages']
+          - {_description: NA}
+          - _examples: [NA]
+        - EmploymentRelated:
+          - {_id: EmploymentRelated_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#EmploymentRelated']
+          - {_description: NA}
+          - _examples: [NA]
+      - Spending:
+        - {_id: Spending_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Spending']
+        - {_description: NA}
+        - _examples: [NA]
+    - InfrastructureAndUtilities:
+      - {_id: InfrastructureAndUtilities_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#InfrastructureAndUtilities']
+      - {_description: NA}
+      - _examples: [NA]
+      - EnergyProduction:
+        - {_id: EnergyProduction_000}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#EnergyProduction']
+        - {_description: NA}
+        - _examples: [NA]
+      - EnergyConsumption:
+        - {_id: EnergyConsumption_000}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#EnergyConsumption']
+        - {_description: NA}
+        - _examples: [NA]
+    - Demographic:
+      - {_id: Demographic_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Demographic']
+      - {_description: NA}
+      - _examples: [NA]
+      - AgeDemographic:
+        - {_id: AgeDemographic_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#AgeDemographic']
+        - {_description: NA}
+        - _examples: [NA]
+      - LifeExpenctancy:
+        - {_id: LifeExpenctancy_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#LifeExpenctancy']
+        - {_description: NA}
+        - _examples: [NA]
+      - EthnicityDemographic:
+        - {_id: EthnicityDemographic_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#EthnicityDemographic']
+        - {_description: NA}
+        - _examples: [NA]
+      - BirthsAndFertility:
+        - {_id: BirthsAndFertility_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#BirthsAndFertility']
+        - {_description: NA}
+        - _examples: [NA]
+      - DisabilityDemographic:
+        - {_id: DisabilityDemographic_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#DisabilityDemographic']
+        - {_description: NA}
+        - _examples: [NA]
+      - Mortality:
+        - {_id: Mortality_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Mortality']
+        - {_description: NA}
+        - _examples: [NA]
+    - AccidentAndInjury:
+      - {_id: AccidentAndInjury_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#AccidentAndInjury']
+      - {_description: NA}
+      - _examples: [NA]
+    - ArtsAndCulture:
+      - {_id: ArtsAndCulture_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#ArtsAndCulture']
+      - {_description: NA}
+      - _examples: [NA]
+    - Disasters:
+      - {_id: Disasters_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#Disasters']
+      - {_description: NA}
+      - _examples: [NA]
+      - NaturalDisasters:
+        - {_id: NaturalDisasters_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#NaturalDisasters']
+        - {_description: NA}
+        - _examples: [NA]

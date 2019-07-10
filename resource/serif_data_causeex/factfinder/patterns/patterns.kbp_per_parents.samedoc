@@ -1,0 +1,52 @@
+(per_parents
+
+ (wordsets)
+
+ (entitylabels (AGENT1))
+
+ (toplevel
+
+		<!-- 36   per_parents ==> verb:lay[<sub> = noun:father[<poss> = 0][<ref> = 1]] -->
+		(vprop (id cs2015_per_parents_20012) (score 0.9) (score_group 1) (predicate lay) (args (argument (role <sub>) (nprop (predicate father) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_parents_20012)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_parents)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 36   per_parents ==> verb:lay[<sub> = noun:father[<poss> = pronoun:her[<ref> = 0]][<ref> = 1]] -->
+		(vprop (id cs2015_per_parents_20014) (score 0.9) (score_group 1) (predicate lay) (args (argument (role <sub>) (nprop (predicate father) (args (argument (role <poss>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_parents_20014)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_parents)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 36   per_parents ==> verb:took[with = noun:father[<poss> = 0][<ref> = 1]] -->
+		(vprop (id cs2015_per_parents_20015) (score 0.9) (score_group 1) (predicate took) (args (argument (role with) (nprop (predicate father) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_parents_20015)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_parents)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 36   per_parents ==> verb:took[with = noun:father[<poss> = pronoun:her[<ref> = 0]][<ref> = 1]] -->
+		(vprop (id cs2015_per_parents_20017) (score 0.9) (score_group 1) (predicate took) (args (argument (role with) (nprop (predicate father) (args (argument (role <poss>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_parents_20017)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_parents)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 24   per_parents ==> verb:took[<sub> = 0][with = noun:father[<ref> = 1]] -->
+		(vprop (id cs2015_per_parents_20022) (score 0.9) (score_group 1) (predicate took) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_parents_20022)) (entitylabel AGENT1) (acetype PER))) (argument (role with) (nprop (predicate father) (args (argument (role <ref>) (mention (return (ff_role per_parents)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 24   per_parents ==> verb:took[<sub> = pronoun:she[<ref> = 0]][with = noun:father[<ref> = 1]] -->
+		(vprop (id cs2015_per_parents_20023) (score 0.9) (score_group 1) (predicate took) (args (argument (role <sub>) (anyprop (predicate she) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_parents_20023)) (entitylabel AGENT1) (acetype PER)))))) (argument (role with) (nprop (predicate father) (args (argument (role <ref>) (mention (return (ff_role per_parents)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 24   per_parents ==> verb:lay[<sub> = noun:father[<ref> = 1]][as = verb:supplied[<sub> = pronoun:she[<ref> = 0]]] -->
+		(vprop (id cs2015_per_parents_20024) (score 0.9) (score_group 1) (predicate lay) (args (argument (role <sub>) (nprop (predicate father) (args (argument (role <ref>) (mention (return (ff_role per_parents)) (block AGENT1) (acetype PER)))))) (argument (role as) (vprop (predicate supplied) (args (argument (role <sub>) (anyprop (predicate she) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_parents_20024)) (entitylabel AGENT1) (acetype PER)))))))))))
+
+
+		<!-- 6   per_parents ==> noun:presidency[<poss> = noun:father[<poss> = pronoun:his[<ref> = 0]][<ref> = 1]] -->
+		(nprop (id cs2015_per_parents_20036) (score 0.9) (score_group 1) (predicate presidency) (args (argument (role <poss>) (nprop (predicate father) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_parents_20036)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_parents)) (block AGENT1) (acetype PER))))))))
+
+
+		<!-- 6   per_parents ==> copula:was[<sub> = name:[<ref> = 0]][during = noun:presidency[<poss> = noun:father[<ref> = 1]]] -->
+		(anyprop (id cs2015_per_parents_20038) (score 0.9) (score_group 1) (predicate was) (args (argument (role <sub>) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_parents_20038)) (entitylabel AGENT1) (acetype PER)))))) (argument (role during) (nprop (predicate presidency) (args (argument (role <poss>) (nprop (predicate father) (args (argument (role <ref>) (mention (return (ff_role per_parents)) (block AGENT1) (acetype PER)))))))))))
+
+
+		<!-- 6   per_parents ==> copula:was[<sub> = 0][during = noun:presidency[<poss> = noun:father[<ref> = 1]]] -->
+		(anyprop (id cs2015_per_parents_20042) (score 0.9) (score_group 1) (predicate was) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_parents_20042)) (entitylabel AGENT1) (acetype PER))) (argument (role during) (nprop (predicate presidency) (args (argument (role <poss>) (nprop (predicate father) (args (argument (role <ref>) (mention (return (ff_role per_parents)) (block AGENT1) (acetype PER)))))))))))
+
+		<!-- 6   per_parents ==> copula:was[<obj> = 0][during = noun:presidency[<poss> = noun:father[<ref> = 1]]] -->
+		(anyprop (id cs2015_per_parents_20047) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_parents_20047)) (entitylabel AGENT1) (acetype PER))) (argument (role during) (nprop (predicate presidency) (args (argument (role <poss>) (nprop (predicate father) (args (argument (role <ref>) (mention (return (ff_role per_parents)) (block AGENT1) (acetype PER)))))))))))
+
+		<!-- 6   per_parents ==> noun:presidency[<poss> = noun:father[<poss> = 0][<ref> = 1]] -->
+		(nprop (id cs2015_per_parents_20048) (score 0.9) (score_group 1) (predicate presidency) (args (argument (role <poss>) (nprop (predicate father) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_parents_20048)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_parents)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 6   per_parents ==> copula:was[during = noun:presidency[<poss> = noun:father[<poss> = 0][<ref> = 1]]] -->
+		(anyprop (id cs2015_per_parents_20049) (score 0.9) (score_group 1) (predicate was) (args (argument (role during) (nprop (predicate presidency) (args (argument (role <poss>) (nprop (predicate father) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_parents_20049)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_parents)) (block AGENT1) (acetype PER)))))))))))
+
+	)
+)

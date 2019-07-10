@@ -1,0 +1,975 @@
+Efon-Alaiye	Federal Republic of Nigeria	EntityUnified-44405
+Plateau State	Federal Republic of Nigeria	EntityUnified-55812
+Koukawa	Federal Republic of Nigeria	EntityUnified-39008
+Yakoba	Federal Republic of Nigeria	EntityUnified-85865
+Agbègbè Olúìlú Ìjọba Àpapọ̀ Abùjá	Federal Republic of Nigeria	EntityUnified-26111
+Онитша	Federal Republic of Nigeria	EntityUnified-69452
+SKO	Federal Republic of Nigeria	EntityUnified-29719
+Jigawa State	Federal Republic of Nigeria	EntityUnified-31517
+Okeho	Federal Republic of Nigeria	EntityUnified-84098
+Awde	Federal Republic of Nigeria	EntityUnified-94887
+Maringa	Federal Republic of Nigeria	EntityUnified-119214
+Aramoko	Federal Republic of Nigeria	EntityUnified-111407
+Adamawa	Federal Republic of Nigeria	EntityUnified-31276
+Pápá Ọkọ̀ Òfurufú Káríayé Port Harcourt	Federal Republic of Nigeria	EntityUnified-55153
+Ago Are	Federal Republic of Nigeria	EntityUnified-14703
+Owerri	Federal Republic of Nigeria	EntityUnified-61953
+Aeroporto Internacional Nnamdi Azikiwe	Federal Republic of Nigeria	EntityUnified-74726
+לאגאס	Federal Republic of Nigeria	EntityUnified-23429
+Osun State	Federal Republic of Nigeria	EntityUnified-48088
+Koukaoua	Federal Republic of Nigeria	EntityUnified-39008
+Koton-Karfe	Federal Republic of Nigeria	EntityUnified-43658
+بنین	Federal Republic of Nigeria	EntityUnified-83435
+Hadejia	Federal Republic of Nigeria	EntityUnified-113030
+Овери	Federal Republic of Nigeria	EntityUnified-61953
+Oke Mesi	Federal Republic of Nigeria	EntityUnified-83876
+AKR	Federal Republic of Nigeria	EntityUnified-3025
+Universidade de Ibadan	Federal Republic of Nigeria	EntityUnified-42921
+Araomoko Ekiti	Federal Republic of Nigeria	EntityUnified-111407
+Abẹ́òkúta	Federal Republic of Nigeria	EntityUnified-28334
+QUS	Federal Republic of Nigeria	EntityUnified-116588
+Abudža	Federal Republic of Nigeria	EntityUnified-26155
+Makurdi	Federal Republic of Nigeria	EntityUnified-7339
+Uga	Federal Republic of Nigeria	EntityUnified-5344
+Йос	Federal Republic of Nigeria	EntityUnified-68285
+Баучи	Federal Republic of Nigeria	EntityUnified-85865
+Ибадан	Federal Republic of Nigeria	EntityUnified-109716
+AUST	Federal Republic of Nigeria	EntityUnified-76885
+イバダン大学	Federal Republic of Nigeria	EntityUnified-42921
+Ibadan	Federal Republic of Nigeria	EntityUnified-109716
+Gargarawa	Federal Republic of Nigeria	EntityUnified-20979
+ABV	Federal Republic of Nigeria	EntityUnified-74726
+DNKN	Federal Republic of Nigeria	EntityUnified-59691
+Putuskum	Federal Republic of Nigeria	EntityUnified-55097
+ILR	Federal Republic of Nigeria	EntityUnified-88645
+Lacupolis	Federal Republic of Nigeria	EntityUnified-23429
+Koton Karifi	Federal Republic of Nigeria	EntityUnified-43658
+Eko	Federal Republic of Nigeria	EntityUnified-23429
+Џос	Federal Republic of Nigeria	EntityUnified-68285
+אילורין	Federal Republic of Nigeria	EntityUnified-88645
+Samri	Federal Republic of Nigeria	EntityUnified-40005
+Nasarawa State	Federal Republic of Nigeria	EntityUnified-47728
+یولا، نائجیریا	Federal Republic of Nigeria	EntityUnified-94838
+Benim	Federal Republic of Nigeria	EntityUnified-83435
+約拉	Federal Republic of Nigeria	EntityUnified-94838
+奧卡	Federal Republic of Nigeria	EntityUnified-102099
+Birni-Gwari	Federal Republic of Nigeria	EntityUnified-80742
+Effium	Federal Republic of Nigeria	EntityUnified-44517
+Benue	Federal Republic of Nigeria	EntityUnified-83238
+Saki	Federal Republic of Nigeria	EntityUnified-37135
+Langtang	Federal Republic of Nigeria	EntityUnified-20871
+라고스	Federal Republic of Nigeria	EntityUnified-23429
+Абуҷа	Federal Republic of Nigeria	EntityUnified-26155
+Oil City 3	Federal Republic of Nigeria	EntityUnified-71768
+Kafin Hausa	Federal Republic of Nigeria	EntityUnified-52871
+Горад Кадуна	Federal Republic of Nigeria	EntityUnified-65895
+Lagosas	Federal Republic of Nigeria	EntityUnified-23429
+Катсина	Federal Republic of Nigeria	EntityUnified-54760
+Èkó	Federal Republic of Nigeria	EntityUnified-23429
+Obetim	Federal Republic of Nigeria	EntityUnified-28528
+ਜ਼ਾਰੀਆ	Federal Republic of Nigeria	EntityUnified-91423
+Obiaruku	Federal Republic of Nigeria	EntityUnified-97284
+KAD	Federal Republic of Nigeria	EntityUnified-65895
+Kaiama	Federal Republic of Nigeria	EntityUnified-64370
+Abugia	Federal Republic of Nigeria	EntityUnified-26155
+Universitas Ibadanensis	Federal Republic of Nigeria	EntityUnified-42921
+Bаppи	Federal Republic of Nigeria	EntityUnified-108087
+Sokotas	Federal Republic of Nigeria	EntityUnified-29719
+奧尼查	Federal Republic of Nigeria	EntityUnified-69452
+Kàdúná	Federal Republic of Nigeria	EntityUnified-65895
+Bénin	Federal Republic of Nigeria	EntityUnified-83435
+Damasak	Federal Republic of Nigeria	EntityUnified-63005
+Լագոս	Federal Republic of Nigeria	EntityUnified-23429
+Niger	Federal Republic of Nigeria	EntityUnified-104990
+ਕਾਨੋ	Federal Republic of Nigeria	EntityUnified-59721
+Wukari	Federal Republic of Nigeria	EntityUnified-105475
+ヨラ	Federal Republic of Nigeria	EntityUnified-94838
+Оффа	Federal Republic of Nigeria	EntityUnified-92250
+National Stadium	Federal Republic of Nigeria	EntityUnified-108069
+Warri	Federal Republic of Nigeria	EntityUnified-108087
+Nassarawa State	Federal Republic of Nigeria	EntityUnified-47728
+Twon-Brass	Federal Republic of Nigeria	EntityUnified-76841
+Laguosos	Federal Republic of Nigeria	EntityUnified-23429
+Ilorin	Federal Republic of Nigeria	EntityUnified-88645
+Ebute Ero Market	Federal Republic of Nigeria	EntityUnified-105953
+Onicha	Federal Republic of Nigeria	EntityUnified-69452
+ZAR	Federal Republic of Nigeria	EntityUnified-91423
+লেগোস	Federal Republic of Nigeria	EntityUnified-23429
+Gashua	Federal Republic of Nigeria	EntityUnified-12600
+Udi	Federal Republic of Nigeria	EntityUnified-5903
+Aku	Federal Republic of Nigeria	EntityUnified-3470
+Badeji	Federal Republic of Nigeria	EntityUnified-20409
+فرودگاه بین‌المللی ننامدی آزیکیوه	Federal Republic of Nigeria	EntityUnified-74726
+Ijebu-Ode	Federal Republic of Nigeria	EntityUnified-98046
+Ado	Federal Republic of Nigeria	EntityUnified-20643
+Ise-Ekiti	Federal Republic of Nigeria	EntityUnified-83037
+Laqos	Federal Republic of Nigeria	EntityUnified-23429
+Ekiti State	Federal Republic of Nigeria	EntityUnified-47692
+Gombi	Federal Republic of Nigeria	EntityUnified-123012
+Agenebode	Federal Republic of Nigeria	EntityUnified-15590
+DNEN	Federal Republic of Nigeria	EntityUnified-33727
+Jebba	Federal Republic of Nigeria	EntityUnified-71528
+Mutumbiyu	Federal Republic of Nigeria	EntityUnified-113662
+Kano	Federal Republic of Nigeria	EntityUnified-59691
+Umuahia	Federal Republic of Nigeria	EntityUnified-1423
+Oyo	Federal Republic of Nigeria	EntityUnified-60431
+Kabba	Federal Republic of Nigeria	EntityUnified-67118
+Авка	Federal Republic of Nigeria	EntityUnified-102099
+Ijebu-Jesa	Federal Republic of Nigeria	EntityUnified-98039
+MXJ	Federal Republic of Nigeria	EntityUnified-119419
+Igede-Ekiti	Federal Republic of Nigeria	EntityUnified-100886
+Port lotniczy Port Harcourt	Federal Republic of Nigeria	EntityUnified-55153
+Аба	Federal Republic of Nigeria	EntityUnified-31328
+马库尔迪	Federal Republic of Nigeria	EntityUnified-7339
+Olupono	Federal Republic of Nigeria	EntityUnified-73052
+Onịchạ	Federal Republic of Nigeria	EntityUnified-69452
+Kano	Federal Republic of Nigeria	EntityUnified-59721
+ലാഗോസ്	Federal Republic of Nigeria	EntityUnified-23429
+Niger State	Federal Republic of Nigeria	EntityUnified-104990
+Borno State	Federal Republic of Nigeria	EntityUnified-77444
+Abak	Federal Republic of Nigeria	EntityUnified-30374
+Omu-Aran	Federal Republic of Nigeria	EntityUnified-71515
+Абеокута	Federal Republic of Nigeria	EntityUnified-28334
+Ibadano	Federal Republic of Nigeria	EntityUnified-109716
+Ebonyi State	Federal Republic of Nigeria	EntityUnified-47687
+Abá	Federal Republic of Nigeria	EntityUnified-31328
+Potiskum	Federal Republic of Nigeria	EntityUnified-55097
+აბუჯა	Federal Republic of Nigeria	EntityUnified-26155
+Оніча	Federal Republic of Nigeria	EntityUnified-69452
+Gambaru Ngala	Federal Republic of Nigeria	EntityUnified-19065
+Макурди	Federal Republic of Nigeria	EntityUnified-7339
+Ganye	Federal Republic of Nigeria	EntityUnified-16395
+明納	Federal Republic of Nigeria	EntityUnified-119419
+Brass Town	Federal Republic of Nigeria	EntityUnified-76841
+Abuja Capital Territory	Federal Republic of Nigeria	EntityUnified-26111
+လေးဂို့စ်မြို့	Federal Republic of Nigeria	EntityUnified-23429
+Abuĝo	Federal Republic of Nigeria	EntityUnified-26155
+Kano	Federal Republic of Nigeria	EntityUnified-59692
+Kanduga	Federal Republic of Nigeria	EntityUnified-45929
+Damba	Federal Republic of Nigeria	EntityUnified-67148
+ابوجا	Federal Republic of Nigeria	EntityUnified-26155
+லாகோஸ்	Federal Republic of Nigeria	EntityUnified-23429
+PHC	Federal Republic of Nigeria	EntityUnified-55153
+Arochuku	Federal Republic of Nigeria	EntityUnified-109213
+Порт Харкурт	Federal Republic of Nigeria	EntityUnified-55152
+Kogi State	Federal Republic of Nigeria	EntityUnified-48102
+ابیوکوتا	Federal Republic of Nigeria	EntityUnified-28334
+ლაგოსი	Federal Republic of Nigeria	EntityUnified-23429
+QAX	Federal Republic of Nigeria	EntityUnified-31328
+Kaduna	Federal Republic of Nigeria	EntityUnified-65794
+Ila Orangun	Federal Republic of Nigeria	EntityUnified-90291
+Emure	Federal Republic of Nigeria	EntityUnified-34147
+Ибаданский университет	Federal Republic of Nigeria	EntityUnified-42921
+Rano	Federal Republic of Nigeria	EntityUnified-52745
+Bauczi	Federal Republic of Nigeria	EntityUnified-85865
+Nasarawa	Federal Republic of Nigeria	EntityUnified-47728
+Ise	Federal Republic of Nigeria	EntityUnified-83037
+إيبادان	Federal Republic of Nigeria	EntityUnified-109716
+Sân bay quốc tế Nnamdi Azikiwe	Federal Republic of Nigeria	EntityUnified-74726
+Λάγος	Federal Republic of Nigeria	EntityUnified-23429
+QRW	Federal Republic of Nigeria	EntityUnified-74730
+Nigerian Navy Barracks	Federal Republic of Nigeria	EntityUnified-107216
+Bopo	Federal Republic of Nigeria	EntityUnified-77612
+Abodža	Federal Republic of Nigeria	EntityUnified-26155
+오웨리	Federal Republic of Nigeria	EntityUnified-61953
+Макурді	Federal Republic of Nigeria	EntityUnified-7339
+BNI	Federal Republic of Nigeria	EntityUnified-83435
+Kota Benin	Federal Republic of Nigeria	EntityUnified-83435
+Universitetet i Ibadan	Federal Republic of Nigeria	EntityUnified-42921
+ਕਾਦੂਨਾ	Federal Republic of Nigeria	EntityUnified-65895
+Akure	Federal Republic of Nigeria	EntityUnified-3025
+Enugu	Federal Republic of Nigeria	EntityUnified-33625
+લાગોસ	Federal Republic of Nigeria	EntityUnified-23429
+Wurno	Federal Republic of Nigeria	EntityUnified-104761
+کانو	Federal Republic of Nigeria	EntityUnified-59721
+Gorgorum	Federal Republic of Nigeria	EntityUnified-121935
+卡齐纳	Federal Republic of Nigeria	EntityUnified-54760
+Ugbokpo	Federal Republic of Nigeria	EntityUnified-77612
+Горад Ібадан	Federal Republic of Nigeria	EntityUnified-109716
+Ilorinas	Federal Republic of Nigeria	EntityUnified-88645
+ンナムディ・アジキウェ国際空港	Federal Republic of Nigeria	EntityUnified-74726
+Benin City	Federal Republic of Nigeria	EntityUnified-83435
+Ikeja	Federal Republic of Nigeria	EntityUnified-96999
+Beninas	Federal Republic of Nigeria	EntityUnified-83435
+लागोस	Federal Republic of Nigeria	EntityUnified-23429
+Abùjá	Federal Republic of Nigeria	EntityUnified-26155
+Afikpo	Federal Republic of Nigeria	EntityUnified-19343
+Otan Ayegbaju	Federal Republic of Nigeria	EntityUnified-63982
+カドゥナ	Federal Republic of Nigeria	EntityUnified-65895
+Akuce	Federal Republic of Nigeria	EntityUnified-3025
+Puntua	Federal Republic of Nigeria	EntityUnified-22857
+阿布賈	Federal Republic of Nigeria	EntityUnified-26155
+Territorio da Capital Federal de Nixeria	Federal Republic of Nigeria	EntityUnified-26111
+Dukku	Federal Republic of Nigeria	EntityUnified-49859
+Igbo-Ora	Federal Republic of Nigeria	EntityUnified-101306
+Kaduno	Federal Republic of Nigeria	EntityUnified-65895
+ئەبووجا	Federal Republic of Nigeria	EntityUnified-26155
+Kaduna	Federal Republic of Nigeria	EntityUnified-65895
+伊洛林	Federal Republic of Nigeria	EntityUnified-88645
+Cross River	Federal Republic of Nigeria	EntityUnified-67148
+Argungu	Federal Republic of Nigeria	EntityUnified-110211
+فرودگاه بین‌المللی پورت هارکورت	Federal Republic of Nigeria	EntityUnified-55153
+KAN	Federal Republic of Nigeria	EntityUnified-59721
+Ondo State	Federal Republic of Nigeria	EntityUnified-71178
+Onikan Stadium	Federal Republic of Nigeria	EntityUnified-105852
+Akwa Ibom State	Federal Republic of Nigeria	EntityUnified-2730
+Ібадан	Federal Republic of Nigeria	EntityUnified-109716
+Yola	Federal Republic of Nigeria	EntityUnified-94838
+Sam Mbakwe International Airport	Federal Republic of Nigeria	EntityUnified-76659
+Lagos	Federal Republic of Nigeria	EntityUnified-23089
+Mkpor	Federal Republic of Nigeria	EntityUnified-103640
+Kwale	Federal Republic of Nigeria	EntityUnified-28528
+Amaigbo	Federal Republic of Nigeria	EntityUnified-120107
+Kambo	Federal Republic of Nigeria	EntityUnified-61339
+Kagoro	Federal Republic of Nigeria	EntityUnified-64611
+Emure-Ekiti	Federal Republic of Nigeria	EntityUnified-34147
+Нассарава	Federal Republic of Nigeria	EntityUnified-111561
+Ejigbo	Federal Republic of Nigeria	EntityUnified-41581
+Ogun State	Federal Republic of Nigeria	EntityUnified-88350
+Bali	Federal Republic of Nigeria	EntityUnified-83974
+Горад Абуджа	Federal Republic of Nigeria	EntityUnified-26155
+Ahoada	Federal Republic of Nigeria	EntityUnified-12158
+Ebute Ikorodu	Federal Republic of Nigeria	EntityUnified-45738
+エヌグ	Federal Republic of Nigeria	EntityUnified-33731
+邁杜古里	Federal Republic of Nigeria	EntityUnified-10721
+칼라바르	Federal Republic of Nigeria	EntityUnified-70772
+Ikere-Ekiti	Federal Republic of Nigeria	EntityUnified-96635
+ሌጎስ	Federal Republic of Nigeria	EntityUnified-23429
+Beninurbo	Federal Republic of Nigeria	EntityUnified-83435
+Gombi Fulani	Federal Republic of Nigeria	EntityUnified-123012
+扎里亚	Federal Republic of Nigeria	EntityUnified-91423
+Kiyawa	Federal Republic of Nigeria	EntityUnified-49171
+Bori	Federal Republic of Nigeria	EntityUnified-77535
+مطار نامدي أزيكيوي الدولي	Federal Republic of Nigeria	EntityUnified-74726
+Malummaduri	Federal Republic of Nigeria	EntityUnified-6175
+Badagri	Federal Republic of Nigeria	EntityUnified-97456
+Denge	Federal Republic of Nigeria	EntityUnified-61014
+Yunifásítì ìlú Ìbàdàn	Federal Republic of Nigeria	EntityUnified-42921
+لاگوس	Federal Republic of Nigeria	EntityUnified-23429
+Mubi	Federal Republic of Nigeria	EntityUnified-115657
+Ode	Federal Republic of Nigeria	EntityUnified-94887
+เลกอส	Federal Republic of Nigeria	EntityUnified-23429
+North-Central State	Federal Republic of Nigeria	EntityUnified-65794
+Mallammaduri	Federal Republic of Nigeria	EntityUnified-6175
+마쿠르디	Federal Republic of Nigeria	EntityUnified-7339
+Варри	Federal Republic of Nigeria	EntityUnified-108087
+LOS	Federal Republic of Nigeria	EntityUnified-23811
+Biu	Federal Republic of Nigeria	EntityUnified-79930
+Benínborg	Federal Republic of Nigeria	EntityUnified-83435
+Ijero	Federal Republic of Nigeria	EntityUnified-97878
+Dutsin-Ma	Federal Republic of Nigeria	EntityUnified-47345
+Kafarati	Federal Republic of Nigeria	EntityUnified-65649
+Jigawa	Federal Republic of Nigeria	EntityUnified-31517
+أبيوكوتا	Federal Republic of Nigeria	EntityUnified-28334
+Bukuru	Federal Republic of Nigeria	EntityUnified-74738
+KAN	Federal Republic of Nigeria	EntityUnified-59691
+Bama	Federal Republic of Nigeria	EntityUnified-91867
+Заря	Federal Republic of Nigeria	EntityUnified-91423
+Lafia Beriberi	Federal Republic of Nigeria	EntityUnified-23706
+Эпе	Federal Republic of Nigeria	EntityUnified-33316
+Nkpor	Federal Republic of Nigeria	EntityUnified-103640
+အဘူဂျာမြို့	Federal Republic of Nigeria	EntityUnified-26155
+Ado-Ekiti	Federal Republic of Nigeria	EntityUnified-20980
+Kàtsínà	Federal Republic of Nigeria	EntityUnified-54760
+Илорин	Federal Republic of Nigeria	EntityUnified-88645
+Ugwu Ọcha	Federal Republic of Nigeria	EntityUnified-55152
+Katsina	Federal Republic of Nigeria	EntityUnified-54760
+Abakaliki	Federal Republic of Nigeria	EntityUnified-30375
+Ihiala	Federal Republic of Nigeria	EntityUnified-99289
+Nsukka	Federal Republic of Nigeria	EntityUnified-102237
+Igbo	Federal Republic of Nigeria	EntityUnified-101014
+Benue State	Federal Republic of Nigeria	EntityUnified-83238
+Université dIbadan	Federal Republic of Nigeria	EntityUnified-42921
+Oyo	Federal Republic of Nigeria	EntityUnified-60285
+연방 수도 지구	Federal Republic of Nigeria	EntityUnified-26111
+아부자	Federal Republic of Nigeria	EntityUnified-26155
+Jibia	Federal Republic of Nigeria	EntityUnified-70137
+Кано	Federal Republic of Nigeria	EntityUnified-59721
+Etinan	Federal Republic of Nigeria	EntityUnified-30410
+South-Eastern State	Federal Republic of Nigeria	EntityUnified-67148
+Gorgoram	Federal Republic of Nigeria	EntityUnified-121935
+Monguno	Federal Republic of Nigeria	EntityUnified-117346
+Marte	Federal Republic of Nigeria	EntityUnified-2591
+Deba	Federal Republic of Nigeria	EntityUnified-57041
+University of Ibadan	Federal Republic of Nigeria	EntityUnified-42921
+Abouja	Federal Republic of Nigeria	EntityUnified-26155
+Умуахія	Federal Republic of Nigeria	EntityUnified-1423
+아우카	Federal Republic of Nigeria	EntityUnified-102099
+Маидугури	Federal Republic of Nigeria	EntityUnified-10721
+Огваши-Уку	Federal Republic of Nigeria	EntityUnified-87768
+Kajanchan	Federal Republic of Nigeria	EntityUnified-65720
+Калабар	Federal Republic of Nigeria	EntityUnified-70772
+Katagum	Federal Republic of Nigeria	EntityUnified-55481
+آبا، ابیا	Federal Republic of Nigeria	EntityUnified-31328
+카두나	Federal Republic of Nigeria	EntityUnified-65895
+Ijebu-Ijesha	Federal Republic of Nigeria	EntityUnified-98039
+Bauchi	Federal Republic of Nigeria	EntityUnified-85865
+Apapa Quays	Federal Republic of Nigeria	EntityUnified-107280
+Ciudad de Benín	Federal Republic of Nigeria	EntityUnified-83435
+Кунми	Federal Republic of Nigeria	EntityUnified-118519
+Федеральная столичная территория	Federal Republic of Nigeria	EntityUnified-26111
+Zalanga	Federal Republic of Nigeria	EntityUnified-92891
+Oshodi Market	Federal Republic of Nigeria	EntityUnified-107863
+Geregu Kogi Stat	Federal Republic of Nigeria	EntityUnified-48102
+Uyo	Federal Republic of Nigeria	EntityUnified-112357
+İbadan	Federal Republic of Nigeria	EntityUnified-109716
+Lokoja	Federal Republic of Nigeria	EntityUnified-16834
+Kumaganum	Federal Republic of Nigeria	EntityUnified-38036
+Onitsha	Federal Republic of Nigeria	EntityUnified-69452
+ਲਾਗੋਸ	Federal Republic of Nigeria	EntityUnified-23429
+Newi	Federal Republic of Nigeria	EntityUnified-103155
+Aeropuerto Internacional Nnamdi Azikiwe	Federal Republic of Nigeria	EntityUnified-74726
+Brass	Federal Republic of Nigeria	EntityUnified-76841
+イロリン	Federal Republic of Nigeria	EntityUnified-88645
+Nafada	Federal Republic of Nigeria	EntityUnified-112786
+Igede	Federal Republic of Nigeria	EntityUnified-100886
+اومواہیا	Federal Republic of Nigeria	EntityUnified-1423
+Enugu Airport	Federal Republic of Nigeria	EntityUnified-33727
+Cano	Federal Republic of Nigeria	EntityUnified-59721
+أبوجا	Federal Republic of Nigeria	EntityUnified-26155
+Ado	Federal Republic of Nigeria	EntityUnified-20980
+بنين	Federal Republic of Nigeria	EntityUnified-83435
+Dutsi	Federal Republic of Nigeria	EntityUnified-47686
+Sókótó	Federal Republic of Nigeria	EntityUnified-29719
+Oguta	Federal Republic of Nigeria	EntityUnified-87885
+마이두구리	Federal Republic of Nigeria	EntityUnified-10721
+Kafareti	Federal Republic of Nigeria	EntityUnified-65649
+Абужа	Federal Republic of Nigeria	EntityUnified-26155
+Ikot Ekpene	Federal Republic of Nigeria	EntityUnified-94441
+Αμπούζα	Federal Republic of Nigeria	EntityUnified-26155
+Port Harcourt	Federal Republic of Nigeria	EntityUnified-55153
+Akurė	Federal Republic of Nigeria	EntityUnified-3025
+LOS	Federal Republic of Nigeria	EntityUnified-23429
+Ондо	Federal Republic of Nigeria	EntityUnified-71216
+소코토	Federal Republic of Nigeria	EntityUnified-29719
+Agulu	Federal Republic of Nigeria	EntityUnified-13227
+Kanas	Federal Republic of Nigeria	EntityUnified-59721
+Ìlú Benin	Federal Republic of Nigeria	EntityUnified-83435
+Лера	Federal Republic of Nigeria	EntityUnified-18383
+Зариа	Federal Republic of Nigeria	EntityUnified-91423
+Sabo Market	Federal Republic of Nigeria	EntityUnified-108048
+YOL	Federal Republic of Nigeria	EntityUnified-94838
+Bara	Federal Republic of Nigeria	EntityUnified-89687
+Benin Siti	Federal Republic of Nigeria	EntityUnified-83435
+Bauchi	Federal Republic of Nigeria	EntityUnified-85805
+Кадуна	Federal Republic of Nigeria	EntityUnified-65895
+زاريا	Federal Republic of Nigeria	EntityUnified-91423
+קנו	Federal Republic of Nigeria	EntityUnified-59721
+Ikere	Federal Republic of Nigeria	EntityUnified-96635
+Taraba State	Federal Republic of Nigeria	EntityUnified-48123
+Kishi	Federal Republic of Nigeria	EntityUnified-49366
+Ifoko Rural Craft Center	Federal Republic of Nigeria	EntityUnified-96217
+Dikoa	Federal Republic of Nigeria	EntityUnified-54940
+Eket	Federal Republic of Nigeria	EntityUnified-40606
+Enúgwu	Federal Republic of Nigeria	EntityUnified-33731
+Meringa	Federal Republic of Nigeria	EntityUnified-119214
+ਇਬਾਦਾਨ	Federal Republic of Nigeria	EntityUnified-109716
+Kaffin-Hausa	Federal Republic of Nigeria	EntityUnified-52871
+كانو	Federal Republic of Nigeria	EntityUnified-59721
+Oke Messi	Federal Republic of Nigeria	EntityUnified-83876
+Ijebu Ode	Federal Republic of Nigeria	EntityUnified-98046
+Territoire de la capitale fédérale du Nigeria	Federal Republic of Nigeria	EntityUnified-26111
+ابادان	Federal Republic of Nigeria	EntityUnified-109716
+QOW	Federal Republic of Nigeria	EntityUnified-61953
+욜라	Federal Republic of Nigeria	EntityUnified-94838
+Óká	Federal Republic of Nigeria	EntityUnified-102099
+Oió	Federal Republic of Nigeria	EntityUnified-60431
+Kumagunnam	Federal Republic of Nigeria	EntityUnified-38036
+Jimeta	Federal Republic of Nigeria	EntityUnified-69279
+Ijebu-Ijesa	Federal Republic of Nigeria	EntityUnified-98039
+إنوغو	Federal Republic of Nigeria	EntityUnified-33731
+Katsena Ala	Federal Republic of Nigeria	EntityUnified-54789
+لاجوس	Federal Republic of Nigeria	EntityUnified-23429
+Kisi	Federal Republic of Nigeria	EntityUnified-49366
+Иво	Federal Republic of Nigeria	EntityUnified-79358
+Igarra	Federal Republic of Nigeria	EntityUnified-103382
+842105	Federal Republic of Nigeria	EntityUnified-121626
+Абуджа	Federal Republic of Nigeria	EntityUnified-28099
+Kebbi State	Federal Republic of Nigeria	EntityUnified-48087
+Нсукка	Federal Republic of Nigeria	EntityUnified-102237
+Ado Odo	Federal Republic of Nigeria	EntityUnified-20643
+Universidad de Ibadán	Federal Republic of Nigeria	EntityUnified-42921
+Ijebu-Jesha	Federal Republic of Nigeria	EntityUnified-98039
+ABB	Federal Republic of Nigeria	EntityUnified-108129
+Bopa	Federal Republic of Nigeria	EntityUnified-77612
+카노	Federal Republic of Nigeria	EntityUnified-59721
+Lafia	Federal Republic of Nigeria	EntityUnified-23706
+Aliade	Federal Republic of Nigeria	EntityUnified-122470
+Maidiguri	Federal Republic of Nigeria	EntityUnified-10721
+Gomboru Market	Federal Republic of Nigeria	EntityUnified-42771
+ابوکاتا	Federal Republic of Nigeria	EntityUnified-28334
+Йола	Federal Republic of Nigeria	EntityUnified-94838
+Tambuwal	Federal Republic of Nigeria	EntityUnified-24321
+N’gourou	Federal Republic of Nigeria	EntityUnified-105321
+Абуджа	Federal Republic of Nigeria	EntityUnified-26155
+Suleija	Federal Republic of Nigeria	EntityUnified-28099
+Бенін-Сіті	Federal Republic of Nigeria	EntityUnified-83435
+Lagos Airport	Federal Republic of Nigeria	EntityUnified-23811
+Okija	Federal Republic of Nigeria	EntityUnified-114124
+Оверри	Federal Republic of Nigeria	EntityUnified-61953
+Ondo	Federal Republic of Nigeria	EntityUnified-71216
+Benin	Federal Republic of Nigeria	EntityUnified-83435
+Enuga	Federal Republic of Nigeria	EntityUnified-33731
+Lagoso	Federal Republic of Nigeria	EntityUnified-23429
+Thành phố Benin	Federal Republic of Nigeria	EntityUnified-83435
+Dutse	Federal Republic of Nigeria	EntityUnified-47686
+Bebeji	Federal Republic of Nigeria	EntityUnified-84620
+Lagos State	Federal Republic of Nigeria	EntityUnified-23089
+Ẹnúgu	Federal Republic of Nigeria	EntityUnified-33731
+Kafanchan Junction	Federal Republic of Nigeria	EntityUnified-65720
+卡諾	Federal Republic of Nigeria	EntityUnified-59721
+Delta State	Federal Republic of Nigeria	EntityUnified-31282
+קדונה	Federal Republic of Nigeria	EntityUnified-65895
+Kamba	Federal Republic of Nigeria	EntityUnified-61339
+DNSU	Federal Republic of Nigeria	EntityUnified-74730
+Abuca	Federal Republic of Nigeria	EntityUnified-26155
+Sandgrouse Market	Federal Republic of Nigeria	EntityUnified-106157
+Imo State	Federal Republic of Nigeria	EntityUnified-87377
+Igbo-Ukwu	Federal Republic of Nigeria	EntityUnified-101014
+Гусау	Federal Republic of Nigeria	EntityUnified-116588
+Logos	Federal Republic of Nigeria	EntityUnified-23429
+乔斯	Federal Republic of Nigeria	EntityUnified-68285
+เบนินซิตี	Federal Republic of Nigeria	EntityUnified-83435
+Enugu	Federal Republic of Nigeria	EntityUnified-33731
+카치나	Federal Republic of Nigeria	EntityUnified-54760
+Arochukwu	Federal Republic of Nigeria	EntityUnified-109213
+ਬੇਨਿਨ ਸ਼ਹਿਰ	Federal Republic of Nigeria	EntityUnified-83435
+Biliri	Federal Republic of Nigeria	EntityUnified-81864
+Gunmi	Federal Republic of Nigeria	EntityUnified-118519
+Deba Habe	Federal Republic of Nigeria	EntityUnified-57041
+マイドゥグリ	Federal Republic of Nigeria	EntityUnified-10721
+Obiariku	Federal Republic of Nigeria	EntityUnified-97284
+Calabar	Federal Republic of Nigeria	EntityUnified-70772
+Акуре	Federal Republic of Nigeria	EntityUnified-3025
+ENU	Federal Republic of Nigeria	EntityUnified-33727
+கனோ	Federal Republic of Nigeria	EntityUnified-59721
+イバダン	Federal Republic of Nigeria	EntityUnified-109716
+Gwaram	Federal Republic of Nigeria	EntityUnified-114830
+Горад Кано	Federal Republic of Nigeria	EntityUnified-59721
+Makoko	Federal Republic of Nigeria	EntityUnified-7554
+Owodi Onirin Market	Federal Republic of Nigeria	EntityUnified-108994
+Gaidam	Federal Republic of Nigeria	EntityUnified-8483
+अबुजा	Federal Republic of Nigeria	EntityUnified-26155
+Dapchi	Federal Republic of Nigeria	EntityUnified-58732
+Illorin	Federal Republic of Nigeria	EntityUnified-88645
+Pápá Ọkọ̀ Òfurufú Káríayé Nnamdi Azikiwe	Federal Republic of Nigeria	EntityUnified-74726
+Ukari	Federal Republic of Nigeria	EntityUnified-105475
+Abia State	Federal Republic of Nigeria	EntityUnified-31275
+Ogaminana	Federal Republic of Nigeria	EntityUnified-91670
+Shagamu	Federal Republic of Nigeria	EntityUnified-37530
+Little Gombi	Federal Republic of Nigeria	EntityUnified-123012
+ماکوردی	Federal Republic of Nigeria	EntityUnified-7339
+Awja-Ikoradu	Federal Republic of Nigeria	EntityUnified-45738
+Kánò	Federal Republic of Nigeria	EntityUnified-59721
+포트하커트	Federal Republic of Nigeria	EntityUnified-55152
+Mongono	Federal Republic of Nigeria	EntityUnified-117346
+لاگۆس	Federal Republic of Nigeria	EntityUnified-23429
+ABV	Federal Republic of Nigeria	EntityUnified-26155
+Okeni	Federal Republic of Nigeria	EntityUnified-83875
+Olupona	Federal Republic of Nigeria	EntityUnified-73052
+Oba of Lagos Palace	Federal Republic of Nigeria	EntityUnified-105970
+Ібаданскі ўніверсітэт	Federal Republic of Nigeria	EntityUnified-42921
+BCU	Federal Republic of Nigeria	EntityUnified-85865
+Sokoto	Federal Republic of Nigeria	EntityUnified-29681
+Ilesha	Federal Republic of Nigeria	EntityUnified-89542
+Bonny Town	Federal Republic of Nigeria	EntityUnified-77690
+아쿠레	Federal Republic of Nigeria	EntityUnified-3025
+Alade Market	Federal Republic of Nigeria	EntityUnified-107887
+Kuje	Federal Republic of Nigeria	EntityUnified-39620
+Gwadabawa	Federal Republic of Nigeria	EntityUnified-116021
+자리아	Federal Republic of Nigeria	EntityUnified-91423
+ソコト	Federal Republic of Nigeria	EntityUnified-29719
+Abuja	Federal Republic of Nigeria	EntityUnified-28099
+Zarija	Federal Republic of Nigeria	EntityUnified-91423
+Port Harkortas	Federal Republic of Nigeria	EntityUnified-55152
+Beli	Federal Republic of Nigeria	EntityUnified-83974
+Sapele	Federal Republic of Nigeria	EntityUnified-41376
+アベオクタ	Federal Republic of Nigeria	EntityUnified-28334
+Nassarawa	Federal Republic of Nigeria	EntityUnified-47728
+Amper	Federal Republic of Nigeria	EntityUnified-117240
+Lairdstown	Federal Republic of Nigeria	EntityUnified-16834
+Kalabaras	Federal Republic of Nigeria	EntityUnified-70772
+სოკოტო	Federal Republic of Nigeria	EntityUnified-29719
+Eshogbo	Federal Republic of Nigeria	EntityUnified-64901
+Ikeja Air-Port	Federal Republic of Nigeria	EntityUnified-23811
+Zamfara State	Federal Republic of Nigeria	EntityUnified-47762
+Eleyeddi	Federal Republic of Nigeria	EntityUnified-122470
+Marte-Kuna	Federal Republic of Nigeria	EntityUnified-2591
+Kaima	Federal Republic of Nigeria	EntityUnified-64370
+ポートハーコート	Federal Republic of Nigeria	EntityUnified-55152
+Owo	Federal Republic of Nigeria	EntityUnified-61850
+Бенин	Federal Republic of Nigeria	EntityUnified-83435
+Birnin Kudu	Federal Republic of Nigeria	EntityUnified-80701
+Degema	Federal Republic of Nigeria	EntityUnified-35674
+Ибадан шаары	Federal Republic of Nigeria	EntityUnified-109716
+Ebonyi	Federal Republic of Nigeria	EntityUnified-47687
+Chuo Kikuu cha Ibadan	Federal Republic of Nigeria	EntityUnified-42921
+Lere	Federal Republic of Nigeria	EntityUnified-18383
+奧韋里	Federal Republic of Nigeria	EntityUnified-61953
+Bandar Udara Internasional Port Harcourt	Federal Republic of Nigeria	EntityUnified-55153
+Umuahia-Ibeku	Federal Republic of Nigeria	EntityUnified-1423
+Kangiwa	Federal Republic of Nigeria	EntityUnified-64122
+Old Gwaram	Federal Republic of Nigeria	EntityUnified-114830
+Djebba	Federal Republic of Nigeria	EntityUnified-71528
+Plateau	Federal Republic of Nigeria	EntityUnified-55812
+Numan	Federal Republic of Nigeria	EntityUnified-101429
+Dindima	Federal Republic of Nigeria	EntityUnified-54285
+Barbo	Federal Republic of Nigeria	EntityUnified-87421
+Badagry	Federal Republic of Nigeria	EntityUnified-97456
+Epe	Federal Republic of Nigeria	EntityUnified-33316
+اوکا	Federal Republic of Nigeria	EntityUnified-102099
+Malumfashi	Federal Republic of Nigeria	EntityUnified-5786
+Ilesa	Federal Republic of Nigeria	EntityUnified-89542
+Лагос	Federal Republic of Nigeria	EntityUnified-23429
+واري	Federal Republic of Nigeria	EntityUnified-108087
+에누구	Federal Republic of Nigeria	EntityUnified-33731
+Dżos	Federal Republic of Nigeria	EntityUnified-68285
+Zokoja	Federal Republic of Nigeria	EntityUnified-16834
+베닌시티	Federal Republic of Nigeria	EntityUnified-83435
+Lapai	Federal Republic of Nigeria	EntityUnified-20409
+조스	Federal Republic of Nigeria	EntityUnified-68285
+Taraba	Federal Republic of Nigeria	EntityUnified-48123
+Abonnema	Federal Republic of Nigeria	EntityUnified-96065
+Azare	Federal Republic of Nigeria	EntityUnified-99947
+അബുജ	Federal Republic of Nigeria	EntityUnified-26155
+Badeggi	Federal Republic of Nigeria	EntityUnified-20409
+아베오쿠타	Federal Republic of Nigeria	EntityUnified-28334
+索科托	Federal Republic of Nigeria	EntityUnified-29719
+Benin-stad	Federal Republic of Nigeria	EntityUnified-83435
+Abuja Federal Capital Territory	Federal Republic of Nigeria	EntityUnified-26111
+QAT	Federal Republic of Nigeria	EntityUnified-28334
+الورن	Federal Republic of Nigeria	EntityUnified-88645
+बेनिन सिटी	Federal Republic of Nigeria	EntityUnified-83435
+कानो	Federal Republic of Nigeria	EntityUnified-59721
+Goronyo	Federal Republic of Nigeria	EntityUnified-121626
+カノ	Federal Republic of Nigeria	EntityUnified-59721
+Zaria	Federal Republic of Nigeria	EntityUnified-91423
+Gombe	Federal Republic of Nigeria	EntityUnified-123012
+842101	Federal Republic of Nigeria	EntityUnified-104761
+瓦里	Federal Republic of Nigeria	EntityUnified-108087
+Benin-Stadt	Federal Republic of Nigeria	EntityUnified-83435
+Ibadanas	Federal Republic of Nigeria	EntityUnified-109716
+Gujba	Federal Republic of Nigeria	EntityUnified-119676
+Ozubulu	Federal Republic of Nigeria	EntityUnified-59937
+Ila	Federal Republic of Nigeria	EntityUnified-90291
+Abuja (F.C.T.)	Federal Republic of Nigeria	EntityUnified-26111
+کالابار	Federal Republic of Nigeria	EntityUnified-70772
+Auchi	Federal Republic of Nigeria	EntityUnified-103434
+阿庫雷	Federal Republic of Nigeria	EntityUnified-3025
+Dutsin Wai	Federal Republic of Nigeria	EntityUnified-47345
+乌穆阿希亚	Federal Republic of Nigeria	EntityUnified-1423
+אבודזשא	Federal Republic of Nigeria	EntityUnified-26155
+Майдугурі	Federal Republic of Nigeria	EntityUnified-10721
+Socoto	Federal Republic of Nigeria	EntityUnified-29719
+Lagos-Ikeja	Federal Republic of Nigeria	EntityUnified-23811
+Ondo	Federal Republic of Nigeria	EntityUnified-71178
+拉哥斯	Federal Republic of Nigeria	EntityUnified-23429
+Lagos State Government Abattoir	Federal Republic of Nigeria	EntityUnified-109088
+Ankpa	Federal Republic of Nigeria	EntityUnified-114264
+Ikirun	Federal Republic of Nigeria	EntityUnified-96383
+Imo State Airport	Federal Republic of Nigeria	EntityUnified-76659
+Jos	Federal Republic of Nigeria	EntityUnified-68285
+490101	Federal Republic of Nigeria	EntityUnified-19343
+Igbede	Federal Republic of Nigeria	EntityUnified-100886
+Àkúrẹ́	Federal Republic of Nigeria	EntityUnified-3025
+Бида	Federal Republic of Nigeria	EntityUnified-82524
+Rivers State	Federal Republic of Nigeria	EntityUnified-51083
+African University of Science and Technology	Federal Republic of Nigeria	EntityUnified-76885
+Tambawel	Federal Republic of Nigeria	EntityUnified-24321
+انوگو	Federal Republic of Nigeria	EntityUnified-33731
+Anambara	Federal Republic of Nigeria	EntityUnified-116258
+ਅਬੁਜਾ	Federal Republic of Nigeria	EntityUnified-26155
+Malamaduri	Federal Republic of Nigeria	EntityUnified-6175
+ಲಾಗೊಸ್	Federal Republic of Nigeria	EntityUnified-23429
+Ikeia	Federal Republic of Nigeria	EntityUnified-23811
+FCT	Federal Republic of Nigeria	EntityUnified-26111
+Enugu-Ukwu	Federal Republic of Nigeria	EntityUnified-33625
+オニチャ	Federal Republic of Nigeria	EntityUnified-69452
+Порт-Харкорт	Federal Republic of Nigeria	EntityUnified-55152
+Tejuosho Market	Federal Republic of Nigeria	EntityUnified-108046
+ベニンシティ	Federal Republic of Nigeria	EntityUnified-83435
+Dikwa	Federal Republic of Nigeria	EntityUnified-54940
+Port Harcourt International Airport	Federal Republic of Nigeria	EntityUnified-55153
+Enugwu-Ukwu	Federal Republic of Nigeria	EntityUnified-33625
+Kaura Namoda	Federal Republic of Nigeria	EntityUnified-54146
+Damask	Federal Republic of Nigeria	EntityUnified-63005
+Минна	Federal Republic of Nigeria	EntityUnified-119419
+Ossiomo Leper Settlement	Federal Republic of Nigeria	EntityUnified-64367
+Jankara Market	Federal Republic of Nigeria	EntityUnified-105946
+Föderaalne pealinnaala	Federal Republic of Nigeria	EntityUnified-26111
+Bende	Federal Republic of Nigeria	EntityUnified-83586
+Lagosa	Federal Republic of Nigeria	EntityUnified-23429
+Yakubu	Federal Republic of Nigeria	EntityUnified-85865
+Igbeti	Federal Republic of Nigeria	EntityUnified-102585
+Ifaw	Federal Republic of Nigeria	EntityUnified-103767
+Kebbi	Federal Republic of Nigeria	EntityUnified-48087
+Abudża	Federal Republic of Nigeria	EntityUnified-26155
+లాగోస్	Federal Republic of Nigeria	EntityUnified-23429
+QRW	Federal Republic of Nigeria	EntityUnified-108087
+ザリア	Federal Republic of Nigeria	EntityUnified-91423
+Addo	Federal Republic of Nigeria	EntityUnified-20643
+Birnin-Gwari	Federal Republic of Nigeria	EntityUnified-80742
+Bross	Federal Republic of Nigeria	EntityUnified-76841
+QNI	Federal Republic of Nigeria	EntityUnified-69452
+Kaduna State	Federal Republic of Nigeria	EntityUnified-65794
+Dutsen Wai	Federal Republic of Nigeria	EntityUnified-47466
+Sokoto State	Federal Republic of Nigeria	EntityUnified-29681
+Kalfungo	Federal Republic of Nigeria	EntityUnified-61843
+Oshogbo	Federal Republic of Nigeria	EntityUnified-64901
+일로린	Federal Republic of Nigeria	EntityUnified-88645
+Kumagunam	Federal Republic of Nigeria	EntityUnified-38036
+Baro	Federal Republic of Nigeria	EntityUnified-87421
+IBA	Federal Republic of Nigeria	EntityUnified-109716
+Бенин-Сити	Federal Republic of Nigeria	EntityUnified-83435
+Sokoto	Federal Republic of Nigeria	EntityUnified-29719
+Aéroport international Nnamdi Azikiwe	Federal Republic of Nigeria	EntityUnified-74726
+Maidugari	Federal Republic of Nigeria	EntityUnified-10721
+Nnamdi Azikiwe internasjonale lufthavn	Federal Republic of Nigeria	EntityUnified-74726
+Ойо	Federal Republic of Nigeria	EntityUnified-60431
+Okene	Federal Republic of Nigeria	EntityUnified-83875
+은남디 아지키웨 국제공항	Federal Republic of Nigeria	EntityUnified-74726
+JOS	Federal Republic of Nigeria	EntityUnified-68285
+連邦首都地区	Federal Republic of Nigeria	EntityUnified-26111
+Zungeru	Federal Republic of Nigeria	EntityUnified-89133
+ラゴス	Federal Republic of Nigeria	EntityUnified-23429
+Aba i Nigeria	Federal Republic of Nigeria	EntityUnified-31328
+Kaltungo	Federal Republic of Nigeria	EntityUnified-61843
+Território da Capital Federal da Nigéria	Federal Republic of Nigeria	EntityUnified-26111
+Miringa	Federal Republic of Nigeria	EntityUnified-119214
+Sauri	Federal Republic of Nigeria	EntityUnified-40005
+Ughelli	Federal Republic of Nigeria	EntityUnified-4277
+Nnewi	Federal Republic of Nigeria	EntityUnified-103155
+Anambra	Federal Republic of Nigeria	EntityUnified-116258
+Bonny	Federal Republic of Nigeria	EntityUnified-77690
+Abudž	Federal Republic of Nigeria	EntityUnified-26155
+Енугу	Federal Republic of Nigeria	EntityUnified-33731
+یولا، نیجریه	Federal Republic of Nigeria	EntityUnified-94838
+Adamawa State	Federal Republic of Nigeria	EntityUnified-31276
+QOW	Federal Republic of Nigeria	EntityUnified-76659
+Darazo	Federal Republic of Nigeria	EntityUnified-58450
+Горад Порт-Харкорт	Federal Republic of Nigeria	EntityUnified-55152
+کادونا	Federal Republic of Nigeria	EntityUnified-65895
+Gamawa	Federal Republic of Nigeria	EntityUnified-19199
+Palace of the Oba Itire	Federal Republic of Nigeria	EntityUnified-108132
+Otan Aiyegbaju	Federal Republic of Nigeria	EntityUnified-63982
+ジョス	Federal Republic of Nigeria	EntityUnified-68285
+Муби	Federal Republic of Nigeria	EntityUnified-115657
+منطقة العاصمة الإتحادية لنيجيريا	Federal Republic of Nigeria	EntityUnified-26111
+Ekpoma	Federal Republic of Nigeria	EntityUnified-39439
+Oke-Iho	Federal Republic of Nigeria	EntityUnified-84098
+Awka	Federal Republic of Nigeria	EntityUnified-102099
+بینن شہر	Federal Republic of Nigeria	EntityUnified-83435
+Ода	Federal Republic of Nigeria	EntityUnified-94887
+ཨ་པུ་ཅ།	Federal Republic of Nigeria	EntityUnified-26155
+Niger Dam	Federal Republic of Nigeria	EntityUnified-64067
+Federalne Terytorium Stołeczne	Federal Republic of Nigeria	EntityUnified-26111
+National Theatre	Federal Republic of Nigeria	EntityUnified-108357
+Iwo	Federal Republic of Nigeria	EntityUnified-79358
+Osogbo	Federal Republic of Nigeria	EntityUnified-64901
+Ajasse Ipo	Federal Republic of Nigeria	EntityUnified-9879
+Ajaokuta	Federal Republic of Nigeria	EntityUnified-9965
+აბა	Federal Republic of Nigeria	EntityUnified-31328
+Warri Airport	Federal Republic of Nigeria	EntityUnified-74730
+Okrika	Federal Republic of Nigeria	EntityUnified-79951
+Kaingiwa	Federal Republic of Nigeria	EntityUnified-64122
+Ibadana	Federal Republic of Nigeria	EntityUnified-109716
+Ikire	Federal Republic of Nigeria	EntityUnified-96439
+Kwara	Federal Republic of Nigeria	EntityUnified-27318
+Asaba	Federal Republic of Nigeria	EntityUnified-108129
+卡拉巴尔	Federal Republic of Nigeria	EntityUnified-70772
+Dindawa	Federal Republic of Nigeria	EntityUnified-54285
+Flughafen Abuja	Federal Republic of Nigeria	EntityUnified-74726
+Bode Saadu	Federal Republic of Nigeria	EntityUnified-79359
+Obonoma	Federal Republic of Nigeria	EntityUnified-96065
+Trade Fair Complex	Federal Republic of Nigeria	EntityUnified-107338
+Idah	Federal Republic of Nigeria	EntityUnified-107175
+Agbor-BoIIboji	Federal Republic of Nigeria	EntityUnified-16216
+Igbara-Odo	Federal Republic of Nigeria	EntityUnified-102928
+Omu	Federal Republic of Nigeria	EntityUnified-71515
+Gwoza	Federal Republic of Nigeria	EntityUnified-113400
+Shaki	Federal Republic of Nigeria	EntityUnified-37135
+アブジャ	Federal Republic of Nigeria	EntityUnified-26155
+Сокото	Federal Republic of Nigeria	EntityUnified-29719
+Duku	Federal Republic of Nigeria	EntityUnified-49859
+Maiyama	Federal Republic of Nigeria	EntityUnified-8710
+Ilobu	Federal Republic of Nigeria	EntityUnified-88924
+Offa	Federal Republic of Nigeria	EntityUnified-92250
+Агбор	Federal Republic of Nigeria	EntityUnified-16216
+Ijebu-Igbo	Federal Republic of Nigeria	EntityUnified-98042
+Bugama	Federal Republic of Nigeria	EntityUnified-75583
+Gamboru	Federal Republic of Nigeria	EntityUnified-19065
+Rivers	Federal Republic of Nigeria	EntityUnified-51083
+Ehugbo	Federal Republic of Nigeria	EntityUnified-19343
+Mongonu	Federal Republic of Nigeria	EntityUnified-117346
+Gombe State	Federal Republic of Nigeria	EntityUnified-47795
+Абуџа	Federal Republic of Nigeria	EntityUnified-26155
+ଅବୁଜା	Federal Republic of Nigeria	EntityUnified-26155
+Ово	Federal Republic of Nigeria	EntityUnified-61850
+Gummi	Federal Republic of Nigeria	EntityUnified-118519
+Zamfara	Federal Republic of Nigeria	EntityUnified-47762
+Matsena	Federal Republic of Nigeria	EntityUnified-1225
+Edo	Federal Republic of Nigeria	EntityUnified-31357
+QUO	Federal Republic of Nigeria	EntityUnified-112357
+Lagos	Federal Republic of Nigeria	EntityUnified-23429
+Gagarawa	Federal Republic of Nigeria	EntityUnified-20979
+Damaturu	Federal Republic of Nigeria	EntityUnified-63057
+Damboa	Federal Republic of Nigeria	EntityUnified-62768
+Obiaruku Quarters	Federal Republic of Nigeria	EntityUnified-97284
+伊巴丹	Federal Republic of Nigeria	EntityUnified-109716
+إبادان	Federal Republic of Nigeria	EntityUnified-109716
+Anambra State	Federal Republic of Nigeria	EntityUnified-116258
+Ннюви	Federal Republic of Nigeria	EntityUnified-103155
+Gembu	Federal Republic of Nigeria	EntityUnified-8273
+Oyo State	Federal Republic of Nigeria	EntityUnified-60285
+Djibia	Federal Republic of Nigeria	EntityUnified-70137
+Rijau	Federal Republic of Nigeria	EntityUnified-51852
+Yenegoa	Federal Republic of Nigeria	EntityUnified-95776
+Kafanchan	Federal Republic of Nigeria	EntityUnified-65720
+Фурудгоҳи бин‌алмилалӣ пӯр ҳоркурт	Federal Republic of Nigeria	EntityUnified-55153
+Igbarra-Odo	Federal Republic of Nigeria	EntityUnified-102928
+Aramoko-Ekiti	Federal Republic of Nigeria	EntityUnified-111407
+Джос	Federal Republic of Nigeria	EntityUnified-68285
+อาบูจา	Federal Republic of Nigeria	EntityUnified-26155
+Kwara State	Federal Republic of Nigeria	EntityUnified-27318
+کانو، نیجریه	Federal Republic of Nigeria	EntityUnified-59721
+Benin by	Federal Republic of Nigeria	EntityUnified-83435
+Borno	Federal Republic of Nigeria	EntityUnified-77444
+Ahoadao	Federal Republic of Nigeria	EntityUnified-12158
+Майдугури	Federal Republic of Nigeria	EntityUnified-10721
+Ogaminan	Federal Republic of Nigeria	EntityUnified-91670
+Abuja Airport	Federal Republic of Nigeria	EntityUnified-74726
+Gamboru Ngala	Federal Republic of Nigeria	EntityUnified-19065
+Okigwe	Federal Republic of Nigeria	EntityUnified-82962
+Nkwerre	Federal Republic of Nigeria	EntityUnified-103412
+Afbor	Federal Republic of Nigeria	EntityUnified-16216
+Federal Capital Territory	Federal Republic of Nigeria	EntityUnified-26111
+Funtua	Federal Republic of Nigeria	EntityUnified-22857
+Nguru	Federal Republic of Nigeria	EntityUnified-105321
+Birnin Kebbi	Federal Republic of Nigeria	EntityUnified-80750
+Abuya	Federal Republic of Nigeria	EntityUnified-26155
+DNMM	Federal Republic of Nigeria	EntityUnified-23811
+Degema Hulk	Federal Republic of Nigeria	EntityUnified-35674
+Abeokuta	Federal Republic of Nigeria	EntityUnified-28334
+Kirikiri Prison	Federal Republic of Nigeria	EntityUnified-107290
+Gombe	Federal Republic of Nigeria	EntityUnified-123073
+우무아히아	Federal Republic of Nigeria	EntityUnified-1423
+Ìbàdàn	Federal Republic of Nigeria	EntityUnified-109716
+Ank	Federal Republic of Nigeria	EntityUnified-114264
+Monday Market	Federal Republic of Nigeria	EntityUnified-42771
+مايدوغوري	Federal Republic of Nigeria	EntityUnified-10721
+Baučis	Federal Republic of Nigeria	EntityUnified-85865
+Billiri	Federal Republic of Nigeria	EntityUnified-81864
+Աբա	Federal Republic of Nigeria	EntityUnified-31328
+Maiyema	Federal Republic of Nigeria	EntityUnified-8710
+Kwale Station	Federal Republic of Nigeria	EntityUnified-28528
+University of Nigeria	Federal Republic of Nigeria	EntityUnified-97371
+Kontagora	Federal Republic of Nigeria	EntityUnified-45415
+Ogwashi-Uku	Federal Republic of Nigeria	EntityUnified-87768
+Kafachan	Federal Republic of Nigeria	EntityUnified-65720
+அபுஜா	Federal Republic of Nigeria	EntityUnified-26155
+Gusau	Federal Republic of Nigeria	EntityUnified-116588
+Kainji Dam	Federal Republic of Nigeria	EntityUnified-64067
+Wilayah Ibu Kota Federal	Federal Republic of Nigeria	EntityUnified-26111
+Yoruba Central State	Federal Republic of Nigeria	EntityUnified-60285
+أويري	Federal Republic of Nigeria	EntityUnified-61953
+이바단	Federal Republic of Nigeria	EntityUnified-109716
+Byen Kano	Federal Republic of Nigeria	EntityUnified-59721
+Mutum Biyu	Federal Republic of Nigeria	EntityUnified-113662
+Pategi	Federal Republic of Nigeria	EntityUnified-57471
+Онича	Federal Republic of Nigeria	EntityUnified-69452
+Ubiaja	Federal Republic of Nigeria	EntityUnified-6639
+CBQ	Federal Republic of Nigeria	EntityUnified-70772
+Maiduguri	Federal Republic of Nigeria	EntityUnified-10721
+DNAA	Federal Republic of Nigeria	EntityUnified-74726
+Ugep	Federal Republic of Nigeria	EntityUnified-4299
+Энугу	Federal Republic of Nigeria	EntityUnified-33731
+Igbo-Awra	Federal Republic of Nigeria	EntityUnified-101306
+Lagos International Airport	Federal Republic of Nigeria	EntityUnified-23811
+Nassarawa	Federal Republic of Nigeria	EntityUnified-111561
+Minna	Federal Republic of Nigeria	EntityUnified-119419
+Kadun	Federal Republic of Nigeria	EntityUnified-65895
+Escravos Light House	Federal Republic of Nigeria	EntityUnified-23826
+Agaw-Are	Federal Republic of Nigeria	EntityUnified-14703
+Kano State	Federal Republic of Nigeria	EntityUnified-59692
+Ota	Federal Republic of Nigeria	EntityUnified-63982
+Dutsan Wai	Federal Republic of Nigeria	EntityUnified-47466
+اوویری	Federal Republic of Nigeria	EntityUnified-61953
+Лагос шаары	Federal Republic of Nigeria	EntityUnified-23429
+Dange	Federal Republic of Nigeria	EntityUnified-61014
+Ekiti	Federal Republic of Nigeria	EntityUnified-47692
+Горад Ілорын	Federal Republic of Nigeria	EntityUnified-88645
+Aéroport international de Port Harcourt	Federal Republic of Nigeria	EntityUnified-55153
+واری	Federal Republic of Nigeria	EntityUnified-108087
+Bayelsa	Federal Republic of Nigeria	EntityUnified-47691
+Keffin Hausa	Federal Republic of Nigeria	EntityUnified-52871
+Akwa Ibom	Federal Republic of Nigeria	EntityUnified-2730
+Лаґос	Federal Republic of Nigeria	EntityUnified-23429
+Agaie	Federal Republic of Nigeria	EntityUnified-18438
+Katsina	Federal Republic of Nigeria	EntityUnified-54756
+Lere	Federal Republic of Nigeria	EntityUnified-18387
+Nasarawa	Federal Republic of Nigeria	EntityUnified-111561
+Maiduguris	Federal Republic of Nigeria	EntityUnified-10721
+Patigi	Federal Republic of Nigeria	EntityUnified-57471
+Otan	Federal Republic of Nigeria	EntityUnified-63982
+Ifo	Federal Republic of Nigeria	EntityUnified-103767
+Army Signal Barracks	Federal Republic of Nigeria	EntityUnified-107295
+جوس	Federal Republic of Nigeria	EntityUnified-68285
+Ibadán	Federal Republic of Nigeria	EntityUnified-109716
+Саки	Federal Republic of Nigeria	EntityUnified-37135
+Leri	Federal Republic of Nigeria	EntityUnified-18383
+MDI	Federal Republic of Nigeria	EntityUnified-7339
+Yenagoa	Federal Republic of Nigeria	EntityUnified-95776
+DNPO	Federal Republic of Nigeria	EntityUnified-55153
+아바	Federal Republic of Nigeria	EntityUnified-31328
+Bakori	Federal Republic of Nigeria	EntityUnified-93965
+Machina	Federal Republic of Nigeria	EntityUnified-1225
+Даура	Federal Republic of Nigeria	EntityUnified-57831
+Gbongan	Federal Republic of Nigeria	EntityUnified-9053
+Gambaru	Federal Republic of Nigeria	EntityUnified-19065
+843103	Federal Republic of Nigeria	EntityUnified-116021
+Mallam Aminu Kano International Airport	Federal Republic of Nigeria	EntityUnified-59691
+卡杜納	Federal Republic of Nigeria	EntityUnified-65895
+DNIM	Federal Republic of Nigeria	EntityUnified-76659
+Effon Alaiye	Federal Republic of Nigeria	EntityUnified-44405
+QNK	Federal Republic of Nigeria	EntityUnified-102237
+Egbe	Federal Republic of Nigeria	EntityUnified-43933
+Bida	Federal Republic of Nigeria	EntityUnified-82524
+פורט הרקורט	Federal Republic of Nigeria	EntityUnified-55152
+Obonema	Federal Republic of Nigeria	EntityUnified-96065
+Sulaija	Federal Republic of Nigeria	EntityUnified-28099
+ポートハーコート国際空港	Federal Republic of Nigeria	EntityUnified-55153
+Aeropuerto Internacional de Port Harcourt	Federal Republic of Nigeria	EntityUnified-55153
+Bode-Sadu	Federal Republic of Nigeria	EntityUnified-79359
+Agbor	Federal Republic of Nigeria	EntityUnified-16216
+阿贝奥库塔	Federal Republic of Nigeria	EntityUnified-28334
+Oke Ila	Federal Republic of Nigeria	EntityUnified-84068
+Yobe	Federal Republic of Nigeria	EntityUnified-48206
+埃努古	Federal Republic of Nigeria	EntityUnified-33731
+Yobe State	Federal Republic of Nigeria	EntityUnified-48206
+איבדאן	Federal Republic of Nigeria	EntityUnified-109716
+Delta	Federal Republic of Nigeria	EntityUnified-31282
+Flughafen Port Harcourt	Federal Republic of Nigeria	EntityUnified-55153
+Uruobo-Okija	Federal Republic of Nigeria	EntityUnified-114124
+Jibiya	Federal Republic of Nigeria	EntityUnified-70137
+Federal Başkent Bölgesi	Federal Republic of Nigeria	EntityUnified-26111
+Gargaraw	Federal Republic of Nigeria	EntityUnified-20979
+Aba	Federal Republic of Nigeria	EntityUnified-31328
+Асаба	Federal Republic of Nigeria	EntityUnified-108129
+Avka	Federal Republic of Nigeria	EntityUnified-102099
+אבה	Federal Republic of Nigeria	EntityUnified-31328
+贝宁城	Federal Republic of Nigeria	EntityUnified-83435
+Sokoto stad	Federal Republic of Nigeria	EntityUnified-29719
+Ogun	Federal Republic of Nigeria	EntityUnified-88350
+אבאוקוטה	Federal Republic of Nigeria	EntityUnified-28334
+Ugwashi-Uku	Federal Republic of Nigeria	EntityUnified-87768
+Ajasse	Federal Republic of Nigeria	EntityUnified-9879
+哈科特港	Federal Republic of Nigeria	EntityUnified-55152
+Nnamdi Azikiwe International Airport	Federal Republic of Nigeria	EntityUnified-74726
+Buguma	Federal Republic of Nigeria	EntityUnified-75583
+Камба	Federal Republic of Nigeria	EntityUnified-61339
+Kogi	Federal Republic of Nigeria	EntityUnified-48102
+阿布贾	Federal Republic of Nigeria	EntityUnified-26155
+Epeh	Federal Republic of Nigeria	EntityUnified-33316
+Aeroporto Internazionale Nnamdi Azikiwe	Federal Republic of Nigeria	EntityUnified-74726
+Imo	Federal Republic of Nigeria	EntityUnified-87377
+Bornu	Federal Republic of Nigeria	EntityUnified-77444
+MIU	Federal Republic of Nigeria	EntityUnified-10721
+אבוגה	Federal Republic of Nigeria	EntityUnified-26155
+Sofo-Birnin-Gwari	Federal Republic of Nigeria	EntityUnified-80742
+አቡጃ	Federal Republic of Nigeria	EntityUnified-26155
+Omoko	Federal Republic of Nigeria	EntityUnified-71768
+Ogoja	Federal Republic of Nigeria	EntityUnified-89617
+PHC	Federal Republic of Nigeria	EntityUnified-55152
+Sân bay quốc tế Port Harcourt	Federal Republic of Nigeria	EntityUnified-55153
+بورت هاركورت	Federal Republic of Nigeria	EntityUnified-55152
+آبوجا	Federal Republic of Nigeria	EntityUnified-26155
+Elele	Federal Republic of Nigeria	EntityUnified-37665
+Akwa	Federal Republic of Nigeria	EntityUnified-102099
+Igara	Federal Republic of Nigeria	EntityUnified-103382
+Աբուջա	Federal Republic of Nigeria	EntityUnified-26155
+Bandar Udara Internasional Nnamdi Azikiwe	Federal Republic of Nigeria	EntityUnified-74726
+Sagamu	Federal Republic of Nigeria	EntityUnified-37530
+Omoku	Federal Republic of Nigeria	EntityUnified-71768
+Gumel	Federal Republic of Nigeria	EntityUnified-118582
+Gombe	Federal Republic of Nigeria	EntityUnified-47795
+اکورے	Federal Republic of Nigeria	EntityUnified-3025
+Rima State	Federal Republic of Nigeria	EntityUnified-29681
+Ібаданський університет	Federal Republic of Nigeria	EntityUnified-42921
+Toungo	Federal Republic of Nigeria	EntityUnified-17175
+Malam-Maduri	Federal Republic of Nigeria	EntityUnified-6175
+Murtala Mohammed International Airport	Federal Republic of Nigeria	EntityUnified-23811
+كادونا	Federal Republic of Nigeria	EntityUnified-65895
+לאגוס	Federal Republic of Nigeria	EntityUnified-23429
+Dutsinma	Federal Republic of Nigeria	EntityUnified-47345
+Ilaro	Federal Republic of Nigeria	EntityUnified-90250
+Enugu	Federal Republic of Nigeria	EntityUnified-31538
+Zaki Biyem	Federal Republic of Nigeria	EntityUnified-92970
+Enugu State	Federal Republic of Nigeria	EntityUnified-31538
+Katsina-Ala	Federal Republic of Nigeria	EntityUnified-54789
+Kalabaro	Federal Republic of Nigeria	EntityUnified-70772
+Баро	Federal Republic of Nigeria	EntityUnified-87421
+Suleja	Federal Republic of Nigeria	EntityUnified-28099
+Умуахия	Federal Republic of Nigeria	EntityUnified-1423
+Kacina	Federal Republic of Nigeria	EntityUnified-54760
+Bauchi State	Federal Republic of Nigeria	EntityUnified-85805
+Port Harcourt	Federal Republic of Nigeria	EntityUnified-55152
+Konduga	Federal Republic of Nigeria	EntityUnified-45929
+Akwanga	Federal Republic of Nigeria	EntityUnified-2540
+Ikare	Federal Republic of Nigeria	EntityUnified-96635
+Madalla	Federal Republic of Nigeria	EntityUnified-13814
+Isieke	Federal Republic of Nigeria	EntityUnified-82395
+민나	Federal Republic of Nigeria	EntityUnified-119419
+Ara	Federal Republic of Nigeria	EntityUnified-111407
+Горад Лагас	Federal Republic of Nigeria	EntityUnified-23429
+Abia	Federal Republic of Nigeria	EntityUnified-31275
+阿巴卡利基	Federal Republic of Nigeria	EntityUnified-30375
+Kazaure	Federal Republic of Nigeria	EntityUnified-53209
+ワリ	Federal Republic of Nigeria	EntityUnified-108087
+Zaki Biam	Federal Republic of Nigeria	EntityUnified-92970
+包奇	Federal Republic of Nigeria	EntityUnified-85865
+Katsina State	Federal Republic of Nigeria	EntityUnified-54756
+Osun	Federal Republic of Nigeria	EntityUnified-48088
+QJK	Federal Republic of Nigeria	EntityUnified-9965
+Abuja	Federal Republic of Nigeria	EntityUnified-26155
+Owẹrrẹ	Federal Republic of Nigeria	EntityUnified-61953
+Geidam	Federal Republic of Nigeria	EntityUnified-8483
+جوس، نائجیریا	Federal Republic of Nigeria	EntityUnified-68285
+Bayelsa State	Federal Republic of Nigeria	EntityUnified-47691
+Madala	Federal Republic of Nigeria	EntityUnified-13814
+Igbetti	Federal Republic of Nigeria	EntityUnified-102585
+阿巴	Federal Republic of Nigeria	EntityUnified-31328
+مینا، نائجیریا	Federal Republic of Nigeria	EntityUnified-119419
+Cross River State	Federal Republic of Nigeria	EntityUnified-67148
+Daura	Federal Republic of Nigeria	EntityUnified-57831
+Burutu	Federal Republic of Nigeria	EntityUnified-71736
+Мінна	Federal Republic of Nigeria	EntityUnified-119419
+Ifoko Rural Craft Centre	Federal Republic of Nigeria	EntityUnified-96217
+Igboho	Federal Republic of Nigeria	EntityUnified-101892
+Kukawa	Federal Republic of Nigeria	EntityUnified-39008
+Ikerre	Federal Republic of Nigeria	EntityUnified-96635
+আবুজা	Federal Republic of Nigeria	EntityUnified-26155
+Dumboa	Federal Republic of Nigeria	EntityUnified-62768
+Zariya	Federal Republic of Nigeria	EntityUnified-91423
+ENU	Federal Republic of Nigeria	EntityUnified-33731
+Jalingo	Federal Republic of Nigeria	EntityUnified-75806
+Ijero-Ekiti	Federal Republic of Nigeria	EntityUnified-97878
+Ebute-Egga	Federal Republic of Nigeria	EntityUnified-45738
+Makurdu	Federal Republic of Nigeria	EntityUnified-7339
+Iddo Market	Federal Republic of Nigeria	EntityUnified-108401
+Okigwi	Federal Republic of Nigeria	EntityUnified-82962
+מידוגורי	Federal Republic of Nigeria	EntityUnified-10721
+נמל התעופה הבינלאומי של פורט הרקורט	Federal Republic of Nigeria	EntityUnified-55153
+Udi State	Federal Republic of Nigeria	EntityUnified-116258
+Tambawal	Federal Republic of Nigeria	EntityUnified-24321
+アバ	Federal Republic of Nigeria	EntityUnified-31328
+Oton	Federal Republic of Nigeria	EntityUnified-63982
+오니차	Federal Republic of Nigeria	EntityUnified-69452
+آبا	Federal Republic of Nigeria	EntityUnified-31328
+Mutum Mbiyu	Federal Republic of Nigeria	EntityUnified-113662
+Gwarzo	Federal Republic of Nigeria	EntityUnified-114376
+Port lotniczy Abudża	Federal Republic of Nigeria	EntityUnified-74726
+Oyingbo Market	Federal Republic of Nigeria	EntityUnified-108218
+와리	Federal Republic of Nigeria	EntityUnified-108087
+لاغوس	Federal Republic of Nigeria	EntityUnified-23429
+Talata Mafara	Federal Republic of Nigeria	EntityUnified-24736
+纳姆迪·阿齐基韦国际机场	Federal Republic of Nigeria	EntityUnified-74726

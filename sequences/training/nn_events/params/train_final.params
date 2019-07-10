@@ -1,0 +1,56 @@
+
+cnn.dropout: 0.5
+cnn.filter_length: 3
+cnn.int_type: int32
+cnn.neighbor_dist: 3
+cnn.position_embedding_vec_len: 50
+cnn.use_bio_index: False
+domain: ui
+domain_ontology: /nfs/raid87/u10/CauseEx/nn_models/annotation/annotation_02062019_full/batch_1/domain_ontology.txt
+
+embedding.embedding_file: /nfs/raid66/u14/users/jfaschin/EN-wform.w.5.cbow.neg10.400.subsmpl.txt.spaceSep.utf8
+embedding.missing_token: the
+embedding.none_token: .
+embedding.none_token_index: 0
+embedding.vector_size: 400
+embedding.vocab_size: 251236
+
+filelist.train: /nfs/raid87/u10/CauseEx/nn_models/annotation/annotation_02062019_full/batch_1/argument.abridged.fold_0.train
+filelist.dev: /nfs/raid87/u10/CauseEx/nn_models/annotation/annotation_02062019_full/batch_1/argument.abridged.fold_0.train
+filelist.test: /nfs/raid87/u10/CauseEx/nn_models/annotation/annotation_02062019_full/batch_1/argument.abridged.fold_0.test
+
+filelist_dir: /nfs/raid87/u15/users/ychan/wm/experiments/ui_032118
+home_dir: /nfs/raid87/u15/users/ychan
+max_sent_length: 201
+negative_trigger_words: /nfs/mercury-04/u40/ychan/event_type_extension/negative_words
+#np_span_file: /home/hqiu/Public/np_trigger_test
+event_keywords: /nfs/raid87/u10/CauseEx/nn_models/annotation/annotation_02062019_full/batch_1/recovered_keyword.json
+output_dir: /nfs/raid87/u10/CauseEx/nn_models/annotation/annotation_02062019_full/batch_1/nlplingo_out
+
+
+role.batch_size: 40
+role.entity_embedding_vec_length: 10
+role.epoch: 20
+role.num_feature_maps: 300
+role.positive_weight: 10
+role.use_head: True
+role.use_event_embedding: False
+run: run1
+trigger.batch_size: 50
+trigger.epoch: 30
+trigger.num_feature_maps: 200
+trigger.positive_weight: 5
+trigger_candidate_span_file: /nfs/raid87/u10/CauseEx/nn_models/annotation/annotation_02062019_full/batch_1/argument.sent_spans.list
+
+trigger_model_dir: /nfs/raid87/u10/CauseEx/nn_models/annotation/annotation_02062019_full/batch_1/nlplingo_out
+
+#trigger.restrict_none_examples_using_keywords: False
+
+#trigger.spans_to_generate_examples: /nfs/raid87/u13/users/jfaschin/tf_nlplingo_test/yeeseng3_4.anchor_offsets.list
+
+# new parameters
+num_batches: 12
+experiment_name: cx_02062019_final
+input_directory: /nfs/raid87/u10/CauseEx/nn_models/annotation/annotation_02062019_full/
+do_cross_validation: 0
+arg_decoding_file: /nfs/raid87/u10/CauseEx/nn_models/annotation/annotation_02062019_full/decoding.json

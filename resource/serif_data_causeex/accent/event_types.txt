@@ -1,0 +1,2300 @@
+# ICEWS Event Types
+# 
+# Each entry describes a single event type.  In addition to the
+# information that is available from the "rcdr.events" database table,
+# we also include information about which events override which other
+# events.
+
+#============================================================================
+# 01x: MAKE PUBLIC STATEMENT
+#----------------------------------------------------------------------------
+
+(event-type (code "01")
+            (name "MAKE PUBLIC STATEMENT")
+     (event-group "01")
+       (overrides "")
+     (description "NULL"))
+
+(event-type (code "010")
+            (name "Make statement, not specified elsewhere")
+     (event-group "01")
+       (overrides "01")
+     (description "All public statements expressed verbally or in action not otherwise specified."))
+
+(event-type (code "011")
+            (name "Decline comment")
+     (event-group "01")
+       (overrides "01 010 12*")
+     (description "Explicitly decline or refuse to comment on a situation."))
+
+(event-type (code "012")
+            (name "Make pessimistic comment")
+     (event-group "01")
+       (overrides "01 010")
+     (description "Express pessimism, negative outlook."))
+
+(event-type (code "013")
+            (name "Make optimistic comment")
+     (event-group "01")
+       (overrides "01 010")
+     (description "Express optimism, assurance, confidence."))
+
+(event-type (code "014")
+            (name "Consider policy option")
+     (event-group "01")
+       (overrides "01 010")
+     (description "Review, reflect upon, or study policy option."))
+
+(event-type (code "015")
+            (name "Acknowledge or claim responsibility")
+     (event-group "01")
+       (overrides "01 010 020")
+     (description "Non-apologetically claim responsibility, admit an error or wrongdoing, or retract a statement without expression of remorse."))
+
+(event-type (code "016")
+            (name "Deny responsibility")
+     (event-group "01")
+       (overrides "01 010 12*")
+     (description "Discard or deny accusations or charges."))
+
+(event-type (code "017")
+            (name "Engage in symbolic act")
+     (event-group "01")
+       (overrides "01 010")
+     (description "Engage in symbolic activities such as holding vigils, attending funerals, and laying wreath."))
+
+(event-type (code "018")
+            (name "Make empathetic comment")
+     (event-group "01")
+       (overrides "01 010")
+     (description "Express empathy, condolences, sympathy, understanding."))
+
+(event-type (code "019")
+            (name "Express accord")
+     (event-group "01")
+       (overrides "01 010")
+     (description "Express common understanding, agreement, or accord."))
+
+#============================================================================
+# 02x: APPEAL
+#----------------------------------------------------------------------------
+
+(event-type (code "02")
+            (name "APPEAL")
+     (event-group "02")
+       (overrides "")
+     (description "NULL"))
+
+(event-type (code "020")
+            (name "Make an appeal or request, not specified elsewhere")
+     (event-group "02")
+       (overrides "02")
+     (description "All requests, proposals, suggestions and appeals not otherwise specified."))
+
+(event-type (code "021")
+            (name "Appeal for material cooperation, not specified elsewhere")
+     (event-group "02")
+       (overrides "02 020 05* 06*")
+     (description "Make an appeal for, request, or suggest material cooperation."))
+
+(event-type (code "0211")
+            (name "Appeal for economic cooperation")
+     (event-group "02")
+       (overrides "02 020 021 0210 05* 06*")
+     (description "Make an appeal for, request, or suggest initiating or expanding economic ties."))
+
+(event-type (code "0212")
+            (name "Appeal for military cooperation")
+     (event-group "02")
+       (overrides "02 020 021 0210 05* 06*")
+     (description "Make an appeal for, request, or suggest initiating or expanding military ties."))
+
+(event-type (code "0213")
+            (name "Appeal for judicial cooperation")
+     (event-group "02")
+       (overrides "02 020 021 0210 05* 06*")
+     (description "Make an appeal for, request, or suggest initiating or expanding cooperation in judicial matters."))
+
+(event-type (code "0214")
+            (name "Appeal for intelligence")
+     (event-group "02")
+       (overrides "02 020 021 0210 05* 06*")
+     (description "Make an appeal for, request, or suggest sharing of intelligence."))
+
+(event-type (code "022")
+            (name "Appeal for diplomatic cooperation (such as policy support)")
+     (event-group "02")
+       (overrides "02 020 05* 06*")
+     (description "Make an appeal for, request, or suggest expansion of diplomatic ties or cooperation."))
+
+(event-type (code "023")
+            (name "Appeal for aid, not specified elsewhere")
+     (event-group "02")
+       (overrides "02 020 07*")
+     (description "Make an appeal for, request, or suggest provision of material assistance not otherwise specified."))
+
+(event-type (code "0231")
+            (name "Appeal for economic aid")
+     (event-group "02")
+       (overrides "02 020 023 0230 07*")
+     (description "Make an appeal for, request, or suggest economic assistance."))
+
+(event-type (code "0232")
+            (name "Appeal for military aid")
+     (event-group "02")
+       (overrides "02 020 023 0230 07*")
+     (description "Make an appeal for, request, or suggest military assistance."))
+
+(event-type (code "0233")
+            (name "Appeal for humanitarian aid")
+     (event-group "02")
+       (overrides "02 020 023 0230 07*")
+     (description "Make an appeal for, request, or suggest humanitarian assistance."))
+
+(event-type (code "0234")
+            (name "Appeal for military protection or peacekeeping")
+     (event-group "02")
+       (overrides "02 020 023 0230 07*")
+     (description "Make an appeal for, request, or suggest deployment of peacekeepers or other military forces to preserve peace, enforce ceasefires, or protect civilians."))
+
+(event-type (code "024")
+            (name "Appeal for political reform, not specified elsewhere")
+     (event-group "02")
+       (overrides "02 020 083*")
+     (description "Make an appeal for, request, or suggest political change not otherwise specified."))
+
+(event-type (code "0241")
+            (name "Appeal for change in leadership")
+     (event-group "02")
+       (overrides "02 020 024 0240 083*")
+     (description "Make an appeal for, request, or suggest change in leadership or power."))
+
+(event-type (code "0242")
+            (name "Appeal for policy change")
+     (event-group "02")
+       (overrides "02 020 024 0240 083*")
+     (description "Make an appeal for, request, or suggest change in any particular policy."))
+
+(event-type (code "0243")
+            (name "Appeal for rights")
+     (event-group "02")
+       (overrides "02 020 024 0240 083*")
+     (description "Make an appeal for, request, or suggest provision or expansion of social, political, or other rights."))
+
+(event-type (code "0244")
+            (name "Appeal for change in institutions, regime")
+     (event-group "02")
+       (overrides "02 020 024 0240 083*")
+     (description "Make an appeal for, request, or suggest major institutional, constitutional, or regime change."))
+
+(event-type (code "025")
+            (name "Appeal to yield, not specified elsewhere")
+     (event-group "02")
+       (overrides "02 020 08*")
+     (description "Make an appeal for, request, or suggest that target yields or concedes; not otherwise specified."))
+
+(event-type (code "0251")
+            (name "Appeal for easing of administrative sanctions")
+     (event-group "02")
+       (overrides "02 020 025 0250 081*")
+     (description "Make an appeal for, request, or suggest that target relaxes administrative restrictions."))
+
+(event-type (code "0252")
+            (name "Appeal for easing of political dissent")
+     (event-group "02")
+       (overrides "02 020 025 0250 082")
+     (description "Make an appeal for, request, or suggest that target stops political protest activities."))
+
+(event-type (code "0253")
+            (name "Appeal for release of persons or property")
+     (event-group "02")
+       (overrides "02 020 025 0250 084*")
+     (description "Make an appeal for, request, or suggest that target releases persons or property."))
+
+(event-type (code "0254")
+            (name "Appeal for easing of economic sanctions, boycott, or embargo")
+     (event-group "02")
+       (overrides "02 020 025 0250 085")
+     (description "Make an appeal for, request, or suggest that target stops or eases economic"))
+
+(event-type (code "0255")
+            (name "Appeal for target to allow international involvement (non-mediation)")
+     (event-group "02")
+       (overrides "02 020 025 0250 086*")
+     (description "Make an appeal for, request, or suggest that target allows the entry of international actors, such as observers, humanitarian agencies, and peacekeeping forces."))
+
+(event-type (code "0256")
+            (name "Appeal for de-escalation of military engagement")
+     (event-group "02")
+       (overrides "02 020 025 0250 087*")
+     (description "Make an appeal for, request, or suggest that target stops fighting or takes measures to ease military conflict or tension."))
+
+(event-type (code "026")
+            (name "Appeal to others to meet or negotiate")
+     (event-group "02")
+       (overrides "02 020 04*")
+     (description "Propose or suggest meeting, negotiation, or discussion among other parties."))
+
+(event-type (code "027")
+            (name "Appeal to others to settle dispute")
+     (event-group "02")
+       (overrides "02 020 057")
+     (description "Propose or suggest that others reach a settlement, agreement, or resolution of conflict."))
+
+(event-type (code "028")
+            (name "Appeal to engage in or accept mediation")
+     (event-group "02")
+       (overrides "02 020 04*")
+     (description "Propose or suggest that target mediates or accepts the mediation of others."))
+
+#============================================================================
+# 03x: EXPRESS INTENT TO COOPERATE
+#----------------------------------------------------------------------------
+
+(event-type (code "03")
+            (name "EXPRESS INTENT TO COOPERATE")
+     (event-group "03")
+       (overrides "")
+     (description "NULL"))
+
+(event-type (code "030")
+            (name "Express intent to cooperate, not specified elsewhere")
+     (event-group "03")
+       (overrides "03 019 05* 06*")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to cooperate not otherwise specified."))
+
+(event-type (code "031")
+            (name "Express intent to engage in material cooperation, not specified elsewhere")
+     (event-group "03")
+       (overrides "03 019 030 032 05* 06*")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to engage in or expand material cooperative exchange not otherwise specified."))
+
+(event-type (code "0311")
+            (name "Express intent to cooperate economically")
+     (event-group "03")
+       (overrides "03 019 030 031 0310 05* 06*")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to engage in or expand economic ties."))
+
+(event-type (code "0312")
+            (name "Express intent to cooperate militarily")
+     (event-group "03")
+       (overrides "03 019 030 031 0310 05* 06*")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to engage in or expand military ties."))
+
+(event-type (code "0313")
+            (name "Express intent to cooperate on judicial matters")
+     (event-group "03")
+       (overrides "03 019 030 031 0310 05* 06*")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to engage in or expand judicial cooperation."))
+
+(event-type (code "0314")
+            (name "Express intent to cooperate on intelligence")
+     (event-group "03")
+       (overrides "03 019 030 031 0310 05* 06*")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to engage in or expand intelligence sharing."))
+
+(event-type (code "032")
+            (name "Express intent to engage in diplomatic cooperation (such as policy support)")
+     (event-group "03")
+       (overrides "03 019 030 05* 06*")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to expand diplomatic ties or cooperation."))
+
+(event-type (code "033")
+            (name "Express intent to provide material aid, not specified elsewhere")
+     (event-group "03")
+       (overrides "03 019 030 07*")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to provide some form of material support not otherwise specified."))
+
+(event-type (code "0331")
+            (name "Express intent to provide economic aid")
+     (event-group "03")
+       (overrides "03 019 030 033 0330 07*")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to provide economic support."))
+
+(event-type (code "0332")
+            (name "Express intent to provide military aid")
+     (event-group "03")
+       (overrides "03 019 030 033 0330 07*")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to provide military support."))
+
+(event-type (code "0333")
+            (name "Express intent to provide humanitarian aid")
+     (event-group "03")
+       (overrides "03 019 030 033 0330 07*")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to provide humanitarian support."))
+
+(event-type (code "0334")
+            (name "Express intent to provide military protection or peacekeeping")
+     (event-group "03")
+       (overrides "03 019 030 033 0330 07*")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to deploy peacekeeping or other military forces for security."))
+
+(event-type (code "034")
+            (name "Express intent to institute political reform, not specified elsewhere")
+     (event-group "03")
+       (overrides "03 019 030")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to institute political change not otherwise specified."))
+
+(event-type (code "0341")
+            (name "Express intent to change leadership")
+     (event-group "03")
+       (overrides "03 019 030 034 0340 083*")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to change leadership or relinquish power."))
+
+(event-type (code "0342")
+            (name "Express intent to change policy")
+     (event-group "03")
+       (overrides "03 019 030 034 0340 083*")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment for policy change."))
+
+(event-type (code "0343")
+            (name "Express intent to provide rights")
+     (event-group "03")
+       (overrides "03 019 030 034 0340 083*")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to provide social, political, economic, or other rights and freedoms."))
+
+(event-type (code "0344")
+            (name "Express intent to change institutions, regime")
+     (event-group "03")
+       (overrides "03 019 030 034 0340 083*")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to make fundamental political changes, such as moving from one type of political system to another and reforming political ..."))
+
+(event-type (code "035")
+            (name "Express intent to yield, not specified elsewhere")
+     (event-group "03")
+       (overrides "03 019 030 08*")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to yield not otherwise specified."))
+
+(event-type (code "0351")
+            (name "Express intent to ease administrative sanctions")
+     (event-group "03")
+       (overrides "03 019 030 035 0350 081*")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to ease administrative sanctions, such as censorship, curfew, state of emergency, and martial law."))
+
+(event-type (code "0352")
+            (name "Express intent to ease popular dissent")
+     (event-group "03")
+       (overrides "03 019 030 035 0350 082")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to reduce or stop political protest activities, such as demonstrations and rallies."))
+
+(event-type (code "0353")
+            (name "Express intent to release persons or property")
+     (event-group "03")
+       (overrides "03 019 030 035 0350 084*")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to release or return persons or property."))
+
+(event-type (code "0354")
+            (name "Express intent to ease economic sanctions, boycott, or embargo")
+     (event-group "03")
+       (overrides "03 019 030 035 0350 085")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to"))
+
+(event-type (code "0355")
+            (name "Express intent to allow international involvement (non-mediation)")
+     (event-group "03")
+       (overrides "03 019 030 035 0350 086*")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to allow access to international actors, such as observers, humanitarian agencies, and peacekeeping forces."))
+
+(event-type (code "0356")
+            (name "Express intent to de-escalate military engagement")
+     (event-group "03")
+       (overrides "03 019 030 035 0350 087*")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to stop fighting or take measures to ease military conflict or tension."))
+
+(event-type (code "036")
+            (name "Express intent to meet or negotiate")
+     (event-group "03")
+       (overrides "03 019 030 04* 02*")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to meet, visit, or engage in talks or negotiations."))
+
+(event-type (code "037")
+            (name "Express intent to settle dispute")
+     (event-group "03")
+       (overrides "03 019 030 025* 057")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to reach a comprehensive settlement, agreement, or resolution to conflict."))
+
+(event-type (code "038")
+            (name "Express intent to accept mediation")
+     (event-group "03")
+       (overrides "03 019 030 028 04*")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to accept mediation."))
+
+(event-type (code "039")
+            (name "Express intent to mediate")
+     (event-group "03")
+       (overrides "03 019 030 028 04*")
+     (description "Offer, promise, agree to, or otherwise indicate willingness or commitment to play the role of a mediator."))
+
+#============================================================================
+# 04x: CONSULT
+#----------------------------------------------------------------------------
+
+(event-type (code "04")
+            (name "CONSULT")
+     (event-group "04")
+       (overrides "")
+     (description "NULL"))
+
+(event-type (code "040")
+            (name "Consult, not specified elsewhere")
+     (event-group "04")
+       (overrides "04")
+     (description "All consultations and meetings not otherwise specified."))
+
+(event-type (code "041")
+            (name "Discuss by telephone")
+     (event-group "04")
+       (overrides "04 040")
+     (description "Consult, talk on the telephone."))
+
+(event-type (code "042")
+            (name "Make a visit")
+     (event-group "04")
+       (overrides "04 040")
+     (description "Travel to another location for a meeting or other event."))
+
+(event-type (code "043")
+            (name "Host a visit")
+     (event-group "04")
+       (overrides "04 040")
+     (description "Host or receive a visitor at residence, office or home country."))
+
+(event-type (code "044")
+            (name "Meet at a 'third' location")
+     (event-group "04")
+       (overrides "04 040")
+     (description "Meet, come together, gather with others at a neutral location, some place with which none of the attending parties are associated. If mediation or negotiation is mentioned specifically as having ta..."))
+
+(event-type (code "045")
+            (name "Mediate")
+     (event-group "04")
+       (overrides "04 040 042 043 044 046")
+     (description "Mediate between two or more parties."))
+
+(event-type (code "046")
+            (name "Engage in negotiation")
+     (event-group "04")
+       (overrides "04 040")
+     (description "Negotiate or bargain with others."))
+
+#============================================================================
+# 05x: ENGAGE IN DIPLOMATIC COOPERATION
+#----------------------------------------------------------------------------
+
+(event-type (code "05")
+            (name "ENGAGE IN DIPLOMATIC COOPERATION")
+     (event-group "05")
+       (overrides "")
+     (description "NULL"))
+
+(event-type (code "050")
+            (name "Engage in diplomatic cooperation, not specified elsewhere")
+     (event-group "05")
+       (overrides "05")
+     (description "Initiate, resume, improve, or expand diplomatic, non-material cooperation or exchange not otherwise specified."))
+
+(event-type (code "051")
+            (name "Praise or endorse")
+     (event-group "05")
+       (overrides "05 050")
+     (description "Express support for, commend, approve policy, action, or actor."))
+
+(event-type (code "052")
+            (name "Defend verbally")
+     (event-group "05")
+       (overrides "05 050")
+     (description "Defend verbally, justify policy, action or actor."))
+
+(event-type (code "053")
+            (name "Rally support on behalf of")
+     (event-group "05")
+       (overrides "05 050 111")
+     (description "Call on other parties to support the target."))
+
+(event-type (code "054")
+            (name "Grant diplomatic recognition")
+     (event-group "05")
+       (overrides "05 050")
+     (description "Grant diplomatic recognition, initiate diplomatic relations with a state or a government."))
+
+(event-type (code "055")
+            (name "Apologize")
+     (event-group "05")
+       (overrides "05 050")
+     (description "Express regret or remorse for an action or situation."))
+
+(event-type (code "056")
+            (name "Forgive")
+     (event-group "05")
+       (overrides "05 050")
+     (description "Express forgiveness, pardon."))
+
+(event-type (code "057")
+            (name "Sign formal agreement")
+     (event-group "05")
+       (overrides "05 050 06* 0871")
+     (description "Ratify, sign, finalize an agreement, treaty."))
+
+#============================================================================
+# 06x: ENGAGE IN MATERIAL COOPERATION
+#----------------------------------------------------------------------------
+
+(event-type (code "06")
+            (name "ENGAGE IN MATERIAL COOPERATION")
+     (event-group "06")
+       (overrides "")
+     (description "NULL"))
+
+(event-type (code "060")
+            (name "Engage in material cooperation, not specified elsewhere")
+     (event-group "06")
+       (overrides "06 050")
+     (description "Initiate, resume, improve, or expand material cooperation or exchange, not otherwise specified."))
+
+(event-type (code "061")
+            (name "Cooperate economically")
+     (event-group "06")
+       (overrides "06 060")
+     (description "Initiate, resume, improve, or expand economic exchange or cooperation."))
+
+(event-type (code "062")
+            (name "Cooperate militarily")
+     (event-group "06")
+       (overrides "06 060 051")
+     (description "Initiate, resume, improve, or expand military exchange or cooperation."))
+
+(event-type (code "063")
+            (name "Engage in judicial cooperation")
+     (event-group "06")
+       (overrides "06 060")
+     (description "Initiate, resume, improve, or expand judicial cooperation."))
+
+(event-type (code "064")
+            (name "Share intelligence or information")
+     (event-group "06")
+       (overrides "06 060 072")
+     (description "Provide, share, or exchange intelligence or information."))
+
+#============================================================================
+# 07x: PROVIDE AID
+#----------------------------------------------------------------------------
+
+(event-type (code "07")
+            (name "PROVIDE AID")
+     (event-group "07")
+       (overrides "")
+     (description "NULL"))
+
+(event-type (code "070")
+            (name "Provide aid, not specified elsewhere")
+     (event-group "07")
+       (overrides "07 05* 06*")
+     (description "All provisions, extension of material aid, not otherwise specified."))
+
+(event-type (code "071")
+            (name "Provide economic aid")
+     (event-group "07")
+       (overrides "07 070 05* 06*")
+     (description "Extend, provide monetary aid and financial guarantees, grants, gifts and credit."))
+
+(event-type (code "072")
+            (name "Provide military aid")
+     (event-group "07")
+       (overrides "07 070 071 05* 06*")
+     (description "Extend, provide military and police assistance including arms and personnel."))
+
+(event-type (code "073")
+            (name "Provide humanitarian aid")
+     (event-group "07")
+       (overrides "07 070 071 05* 06*")
+     (description "Extend, provide humanitarian aid, mainly in the form of emergency assistance."))
+
+(event-type (code "074")
+            (name "Provide military protection or peacekeeping")
+     (event-group "07")
+       (overrides "07 070 05* 06*")
+     (description "Provide peacekeepers or other military forces for protection, extend or expand their mandates."))
+
+(event-type (code "075")
+            (name "Grant asylum")
+     (event-group "07")
+       (overrides "07 070 05* 06*")
+     (description "Provide, grant asylum to persons."))
+
+(event-type (code "07x") 
+            (name "BLOCK 07 events")
+     (event-group "07")
+       (overrides "07*")
+     (description "Block 07 events")
+     DISCARD-EVENTS-WITH-THIS-TYPE)
+
+#============================================================================
+# 08x: YIELD
+#----------------------------------------------------------------------------
+
+(event-type (code "08")
+            (name "YIELD")
+     (event-group "08")
+       (overrides "")
+     (description "NULL"))
+
+(event-type (code "080")
+            (name "Yield, not specified elsewhere")
+     (event-group "08")
+       (overrides "08 09*")
+     (description "All yieldings, concessions not otherwise specified."))
+
+(event-type (code "081")
+            (name "Ease administrative sanctions, not specified elsewhere")
+     (event-group "08")
+       (overrides "08 080")
+     (description "Relax or remove all administrative non-force sanctions and penalties, not otherwise specified."))
+
+(event-type (code "0811")
+            (name "Ease restrictions on political freedoms")
+     (event-group "08")
+       (overrides "08 080 081 0810")
+     (description "Relax or remove administrative restrictions on fundamental political freedoms such as freedoms of speech, expression, and assembly."))
+
+(event-type (code "0812")
+            (name "Ease ban on political parties or politicians")
+     (event-group "08")
+       (overrides "08 080 081 0810")
+     (description "Relax or remove administrative restrictions on the establishment or activities of political parties or certain politicians."))
+
+(event-type (code "0813")
+            (name "Ease curfew")
+     (event-group "08")
+       (overrides "08 080 081 0810")
+     (description "Relax or remove regulations that require people to be off the streets at a given hour."))
+
+(event-type (code "0814")
+            (name "Ease state of emergency or martial law")
+     (event-group "08")
+       (overrides "08 080 081 0810")
+     (description "Relax or remove emergency regulations that suspend certain given rights, or relax or remove temporary rule by military authorities."))
+
+(event-type (code "082")
+            (name "Ease political dissent")
+     (event-group "08")
+       (overrides "08 080")
+     (description "Cancel, suspend, or postpone any (non-war) activity that constitutes political dissent."))
+
+(event-type (code "083")
+            (name "Accede to requests or demands for political reform, not specified elsewhere")
+     (event-group "08")
+       (overrides "08 080")
+     (description "Yield by instituting requested political changes."))
+
+(event-type (code "0831")
+            (name "Accede to demands for change in leadership")
+     (event-group "08")
+       (overrides "08 080 083 0830")
+     (description "Yield by relinquishing political power."))
+
+(event-type (code "0832")
+            (name "Accede to demands for change in policy")
+     (event-group "08")
+       (overrides "08 080 083 0830")
+     (description "Yield by instituting demanded policy changes."))
+
+(event-type (code "0833")
+            (name "Accede to demands for rights")
+     (event-group "08")
+       (overrides "08 080 083 0830")
+     (description "Yield by establishing, providing, or respecting political, social, or other rights."))
+
+(event-type (code "0834")
+            (name "Accede to demands for change in institutions, regime")
+     (event-group "08")
+       (overrides "08 080 083 0830")
+     (description "Yield by undertaking major reforms that change how the political system functions."))
+
+(event-type (code "084")
+            (name "Return, release, not specified elsewhere")
+     (event-group "08")
+       (overrides "08 080")
+     (description "All acts of releasing or returning not otherwise specified."))
+
+(event-type (code "0841")
+            (name "Return, release person(s)")
+     (event-group "08")
+       (overrides "08 080 084 0840 10*")
+     (description "Release people, including prisoners and hostages, from detention or arrest."))
+
+(event-type (code "0842")
+            (name "Return, release property")
+     (event-group "08")
+       (overrides "08 080 084 0840")
+     (description "Return or release previously controlled, confiscated property, including land."))
+
+(event-type (code "085")
+            (name "Ease economic sanctions, boycott, embargo")
+     (event-group "08")
+       (overrides "08 080")
+     (description "Lift, relax, or lessen economic sanctions, boycott, embargoes, or penalties."))
+
+(event-type (code "086")
+            (name "Allow international involvement, not specified elsewhere")
+     (event-group "08")
+       (overrides "08 080")
+     (description "Allow entry of or intervention by international actors not further specified."))
+
+(event-type (code "0861")
+            (name "Receive deployment of peacekeepers")
+     (event-group "08")
+       (overrides "08 080 086 0860")
+     (description "Allow, receive peacekeeping forces in territories controlled by the source."))
+
+(event-type (code "0862")
+            (name "Receive inspectors")
+     (event-group "08")
+       (overrides "08 080 086 0860")
+     (description "Allow, receive inspectors in territories controlled by the source actor."))
+
+(event-type (code "0863")
+            (name "Allow humanitarian access")
+     (event-group "08")
+       (overrides "08 080 086 0860")
+     (description "Allow access to, receive humanitarian agencies in territories controlled by the source actor."))
+
+(event-type (code "087")
+            (name "De-escalate military engagement")
+     (event-group "08")
+       (overrides "08 080")
+     (description "Concede militarily, stop fighting, or take measures to ease military conflict or tension not further specified."))
+
+(event-type (code "0871")
+            (name "Declare truce, ceasefire")
+     (event-group "08")
+       (overrides "08 080 087 0870")
+     (description "Declare or observe truce or ceasefire to interrupt fighting."))
+
+(event-type (code "0872")
+            (name "Ease military blockade")
+     (event-group "08")
+       (overrides "08 080 087 0870")
+     (description "Lessen or halt use of armed (military, police, or security) forces to seal off a territory to prevent exit or entry of goods and/or people."))
+
+(event-type (code "0873")
+            (name "Demobilize armed forces")
+     (event-group "08")
+       (overrides "08 080 087 0870")
+     (description "Hand over or otherwise reduce or eliminate arms, weapons; discharge soldiers or other armed personnel."))
+
+(event-type (code "0874")
+            (name "Retreat or surrender militarily")
+     (event-group "08")
+       (overrides "08 080 087 0870")
+     (description "Retreat, withdraw, yield control of a location or territory by pulling out armed forces."))
+
+#============================================================================
+# 09x: INVESTIGATE
+#----------------------------------------------------------------------------
+
+(event-type (code "09")
+            (name "INVESTIGATE")
+     (event-group "09")
+       (overrides "")
+     (description "NULL"))
+
+(event-type (code "090")
+            (name "Investigate, not specified elsewhere")
+     (event-group "09")
+       (overrides "09")
+     (description "All non-covert investigations not otherwise specified."))
+
+(event-type (code "091")
+            (name "Investigate crime, corruption")
+     (event-group "09")
+       (overrides "09 090")
+     (description "Question or inquire criminal (theft, killing, etc) or corruption cases."))
+
+(event-type (code "092")
+            (name "Investigate human rights abuses")
+     (event-group "09")
+       (overrides "09 090")
+     (description "Inquire or search into human rights abuses such as rape, torture, targeted assassinations, and violations of basic freedoms."))
+
+(event-type (code "093")
+            (name "Investigate military action")
+     (event-group "09")
+       (overrides "09 090")
+     (description "Inquire or search into military activities such as violations of ceasefire, seizures, and invasions."))
+
+(event-type (code "094")
+            (name "Investigate war crimes")
+     (event-group "09")
+       (overrides "09 090")
+     (description "Inquire or investigate potential war crimes or look into allegations of war crimes."))
+
+#============================================================================
+# 10x: DEMAND
+#----------------------------------------------------------------------------
+
+(event-type (code "10")
+            (name "DEMAND")
+     (event-group "10")
+       (overrides "")
+     (description "NULL"))
+
+(event-type (code "100")
+            (name "Demand, not specified elsewhere")
+     (event-group "10")
+       (overrides "10 111")
+     (description "All demands and orders not otherwise specified."))
+
+(event-type (code "101")
+            (name "Demand material cooperation, not specified elsewhere")
+     (event-group "10")
+       (overrides "10 100 05* 06*")
+     (description "Require, demand that target engages in some form of material exchange."))
+
+(event-type (code "1011")
+            (name "Demand economic cooperation")
+     (event-group "10")
+       (overrides "10 100 101 1010 05* 06*")
+     (description "Require, demand that target engages in economic exchange or expands such ties."))
+
+(event-type (code "1012")
+            (name "Demand military cooperation")
+     (event-group "10")
+       (overrides "10 100 101 1010 05* 06*")
+     (description "Require, demand that target engages in or expands military relations."))
+
+(event-type (code "1013")
+            (name "Demand judicial cooperation")
+     (event-group "10")
+       (overrides "10 100 101 1010 05* 06*")
+     (description "Require, demand that target engages in or expands cooperation in judicial matters."))
+
+(event-type (code "1014")
+            (name "Demand intelligence cooperation")
+     (event-group "10")
+       (overrides "10 100 101 1010 05* 06*")
+     (description "Require, demand that target exchanges intelligence or information."))
+
+(event-type (code "102")
+            (name "Demand diplomatic cooperation (such as policy support)")
+     (event-group "10")
+       (overrides "10 100 05* 06*")
+     (description "Require, demand expansion of diplomatic ties or cooperation."))
+
+(event-type (code "103")
+            (name "Demand material aid, not specified elsewhere")
+     (event-group "10")
+       (overrides "10 100 07*")
+     (description "Require, demand provision of material assistance not otherwise specified."))
+
+(event-type (code "1031")
+            (name "Demand economic aid")
+     (event-group "10")
+       (overrides "10 100 103 07*")
+     (description "Require, demand provision of economic assistance."))
+
+(event-type (code "1032")
+            (name "Demand military aid")
+     (event-group "10")
+       (overrides "10 100 103 07*")
+     (description "Require, demand provision of military assistance."))
+
+(event-type (code "1033")
+            (name "Demand humanitarian aid")
+     (event-group "10")
+       (overrides "10 100 103 07*")
+     (description "Require, demand provision of humanitarian aid."))
+
+(event-type (code "1034")
+            (name "Demand military protection or peacekeeping")
+     (event-group "10")
+       (overrides "10 100 103 07*")
+     (description "Require, demand that the target provides military protection or peacekeeping forces."))
+
+(event-type (code "104")
+            (name "Demand political reform, not specified elsewhere")
+     (event-group "10")
+       (overrides "10 100")
+     (description "Require, demand political change not otherwise specified."))
+
+(event-type (code "1041")
+            (name "Demand change in leadership")
+     (event-group "10")
+       (overrides "10 100 104")
+     (description "Require, demand change in leadership or power."))
+
+(event-type (code "1042")
+            (name "Demand policy change")
+     (event-group "10")
+       (overrides "10 100 104")
+     (description "Require, demand change in any particular policy."))
+
+(event-type (code "1043")
+            (name "Demand rights")
+     (event-group "10")
+       (overrides "10 100 104")
+     (description "Require, demand provision or expansion of social, political, or other rights."))
+
+(event-type (code "1044")
+            (name "Demand change in institutions, regime")
+     (event-group "10")
+       (overrides "10 100 104")
+     (description "Require, demand major institutional, constitutional, or regime change."))
+
+(event-type (code "105")
+            (name "Demand that target yields, not specified elsewhere")
+     (event-group "10")
+       (overrides "10 100 08*")
+     (description "Require, demand that target yields or concedes, not otherwise specified."))
+
+(event-type (code "1051")
+            (name "Demand easing of administrative sanctions")
+     (event-group "10")
+       (overrides "10 100 105 081*")
+     (description "Require, demand that target relaxes administrative restrictions."))
+
+(event-type (code "1052")
+            (name "Demand easing of political dissent")
+     (event-group "10")
+       (overrides "10 100 105 082")
+     (description "Require, demand that target stops political protest activities."))
+
+(event-type (code "1053")
+            (name "Demand release of persons or property")
+     (event-group "10")
+       (overrides "10 100 105 084*")
+     (description "Require, demand that target releases persons or property."))
+
+(event-type (code "1054")
+            (name "Demand easing of economic sanctions, boycott, or embargo")
+     (event-group "10")
+       (overrides "10 100 105 085")
+     (description "Require, demand that target lifts or eases economic sanctions, boycott, or embargo."))
+
+(event-type (code "1055")
+            (name "Demand that target allows international involvement (non-mediation)")
+     (event-group "10")
+       (overrides "10 100 105 086*")
+     (description "Require, demand that target allow access to international actors, such as observers, humanitarian agencies, and peacekeeping forces."))
+
+(event-type (code "1056")
+            (name "Demand de-escalation of military engagement")
+     (event-group "10")
+       (overrides "10 100 105 087*")
+     (description "Require, demand that target stops fighting or takes measures to ease military conflict or tension."))
+
+(event-type (code "106")
+            (name "Demand meeting, negotiation")
+     (event-group "10")
+       (overrides "10 100 04*")
+     (description "Require, order party(ies) to meet, negotiate."))
+
+(event-type (code "107")
+            (name "Demand settling of dispute")
+     (event-group "10")
+       (overrides "10 100 05*")
+     (description "Order parties to a conflict to reach a settlement, agreement, or resolution of conflict."))
+
+(event-type (code "108")
+            (name "Demand mediation")
+     (event-group "10")
+       (overrides "10 100 04*")
+     (description "Require or demand that a third party mediates a conflict or that adversaries accept mediation of another party."))
+
+#============================================================================
+# 11x: DISAPPROVE
+#----------------------------------------------------------------------------
+
+(event-type (code "11")
+            (name "DISAPPROVE")
+     (event-group "11")
+       (overrides "")
+     (description "NULL"))
+
+(event-type (code "110")
+            (name "Disapprove, not specified elsewhere")
+     (event-group "11")
+       (overrides "11")
+     (description "Express disapprovals, objections, and complaints not otherwise specified."))
+
+(event-type (code "111")
+            (name "Criticize or denounce")
+     (event-group "11")
+       (overrides "11 110")
+     (description "Condemn, decry a policy or an action; criticize, defame, denigrate responsible parties."))
+
+(event-type (code "112")
+            (name "Accuse, not specified elsewhere")
+     (event-group "11")
+       (overrides "11 110")
+     (description "Charge, blame, incriminate for allegations not otherwise specified."))
+
+(event-type (code "1121")
+            (name "Accuse of crime, corruption")
+     (event-group "11")
+       (overrides "11 110 112 1120")
+     (description "Allege, charge the target with, or blame for engaging in crime or corruption."))
+
+(event-type (code "1122")
+            (name "Accuse of human rights abuses")
+     (event-group "11")
+       (overrides "11 110 112 1120")
+     (description "Allege, charge the target with, or blame for human rights violations, such as arbitrary detentions for prosecutions, torture, and slavery."))
+
+(event-type (code "1123")
+            (name "Accuse of aggression")
+     (event-group "11")
+       (overrides "11 110 112 1120")
+     (description "Allege, charge the target with, or blame for initiating hostilities or engaging in questionable or unjustifiable military actions such as violations of ceasefire."))
+
+(event-type (code "1124")
+            (name "Accuse of war crimes")
+     (event-group "11")
+       (overrides "11 110 112 1120")
+     (description "Allege, charge the target with, or blame for participation in war crimes/"))
+
+(event-type (code "1125")
+            (name "Accuse of espionage, treason")
+     (event-group "11")
+       (overrides "11 110 112 1120")
+     (description "Allege, charge the target with, or blame for spying, espionage, or treason."))
+
+(event-type (code "113")
+            (name "Rally opposition against")
+     (event-group "11")
+       (overrides "11 110 16* 020")
+     (description "Mobilize other parties against the target."))
+
+(event-type (code "114")
+            (name "Complain officially")
+     (event-group "11")
+       (overrides "11 110 14*")
+     (description "Written and institutionalized protests, appeals, and all petition drives and recalls."))
+
+(event-type (code "115")
+            (name "Bring lawsuit against")
+     (event-group "11")
+       (overrides "11 110")
+     (description "Sue, file civil or criminal lawsuit at domestic or international courts."))
+
+(event-type (code "116")
+            (name "find guilty or liable (legally)")
+     (event-group "11")
+       (overrides "11 110")
+     (description "Find guilty or liable at a court of law."))
+
+(event-type (code "11x") 
+            (name "BLOCK 11 events")
+     (event-group "11")
+       (overrides "11*")
+     (description "Block 11 events")
+     DISCARD-EVENTS-WITH-THIS-TYPE)
+
+#============================================================================
+# 12x: REJECT
+#----------------------------------------------------------------------------
+
+(event-type (code "12")
+            (name "REJECT")
+     (event-group "12")
+       (overrides "")
+     (description "NULL"))
+
+(event-type (code "120")
+            (name "Reject, not specified elsewhere")
+     (event-group "12")
+       (overrides "12 111")
+     (description "All rejections and refusals not otherwise specified."))
+
+(event-type (code "121")
+            (name "Reject material cooperation")
+     (event-group "12")
+       (overrides "12 120 05* 06*")
+     (description "Refuse to engage in or expand material exchange."))
+
+(event-type (code "1211")
+            (name "Reject economic cooperation")
+     (event-group "12")
+       (overrides "12 120 121 1210 05* 06*")
+     (description "Refuse to engage in or expand economic ties."))
+
+(event-type (code "1212")
+            (name "Reject military cooperation")
+     (event-group "12")
+       (overrides "12 120 121 1210 05* 06*")
+     (description "Refuse to engage in or expand military ties."))
+
+(event-type (code "1213")
+            (name "Reject judicial cooperation")
+     (event-group "12")
+       (overrides "12 120 121 1210 05* 06*")
+     (description "Refuse to engage in or expand cooperation in judicial matters."))
+
+(event-type (code "122")
+            (name "Reject request or demand for material aid, not specified elsewhere")
+     (event-group "12")
+       (overrides "12 120 07*")
+     (description "Refuse to extend material aid not otherwise specified."))
+
+(event-type (code "1221")
+            (name "Reject request for economic aid")
+     (event-group "12")
+       (overrides "12 120 122 1220 07*")
+     (description "Refuse to extend financial assistance."))
+
+(event-type (code "1222")
+            (name "Reject request for military aid")
+     (event-group "12")
+       (overrides "12 120 122 1220 07*")
+     (description "Refuse to extend military assistance."))
+
+(event-type (code "1223")
+            (name "Reject request for humanitarian aid")
+     (event-group "12")
+       (overrides "12 120 122 1220 07*")
+     (description "Refuse to extend humanitarian assistance."))
+
+(event-type (code "1224")
+            (name "Reject request for military protection or peacekeeping")
+     (event-group "12")
+       (overrides "12 120 122 1220 07*")
+     (description "Refuse to provide peacekeeping forces or other form of military protection."))
+
+(event-type (code "123")
+            (name "Reject request or demand for political reform, not specified elsewhere")
+     (event-group "12")
+       (overrides "12 120 083* 104*")
+     (description "Refuse to institute political change not otherwise specified."))
+
+(event-type (code "1231")
+            (name "Reject request for change in leadership")
+     (event-group "12")
+       (overrides "12 120 123 1230 083* 104*")
+     (description "Refuse to change leadership or relinquish power."))
+
+(event-type (code "1232")
+            (name "Reject request for policy change")
+     (event-group "12")
+       (overrides "12 120 123 1230 083* 104*")
+     (description "Refuse to change a given policy."))
+
+(event-type (code "1233")
+            (name "Reject request for rights")
+     (event-group "12")
+       (overrides "12 120 123 1230 083* 104*")
+     (description "Refuse to provide or respect social, political, economic or other rights and freedoms."))
+
+(event-type (code "1234")
+            (name "Reject request for change in institutions, regime")
+     (event-group "12")
+       (overrides "12 120 123 1230 083* 104*")
+     (description "Refuse to make fundamental political changes, such as moving from one type of a political system to another and reforming political institutions or key laws."))
+
+(event-type (code "124")
+            (name "Refuse to yield, not specified elsewhere")
+     (event-group "12")
+       (overrides "12 120 08*")
+     (description "Reject requests, refuse, or decline to yield not otherwise specified."))
+
+(event-type (code "1241")
+            (name "Refuse to ease administrative sanctions")
+     (event-group "12")
+       (overrides "12 120 124 1240 081*")
+     (description "Reject requests, refuse or decline to ease administrative sanctions, such as censorship, curfew, state of emergency, and martial law."))
+
+(event-type (code "1242")
+            (name "Refuse to ease popular dissent")
+     (event-group "12")
+       (overrides "12 120 124 1240 082")
+     (description "Reject requests, refuse, or decline to reduce or stop political protest activities, such as demonstrations and rallies."))
+
+(event-type (code "1243")
+            (name "Refuse to release persons or property")
+     (event-group "12")
+       (overrides "12 120 124 1240 084*")
+     (description "Reject requests, refuse, or decline to release or return persons or property."))
+
+(event-type (code "1244")
+            (name "Refuse to ease economic sanctions, boycott, or embargo")
+     (event-group "12")
+       (overrides "12 120 124 1240 085")
+     (description "Reject requests, refuse, or decline to reduce or eliminate economic sanctions,"))
+
+(event-type (code "1245")
+            (name "Refuse to allow international involvement (non mediation)")
+     (event-group "12")
+       (overrides "12 120 124 1240 086*")
+     (description "Reject requests, refuse or decline to allow access to international actors such as observers, humanitarian agencies, and peacekeeping forces."))
+
+(event-type (code "1246")
+            (name "Refuse to de-escalate military engagement")
+     (event-group "12")
+       (overrides "12 120 124 1240 087*")
+     (description "Reject requests, refuse, or decline to stop fighting or take measures to ease military conflict or tension."))
+
+(event-type (code "125")
+            (name "Reject proposal to meet, discuss, or negotiate")
+     (event-group "12")
+       (overrides "12 120 04* 14*")
+     (description "Refuse to meet, discuss, or negotiate."))
+
+(event-type (code "126")
+            (name "Reject mediation")
+     (event-group "12")
+       (overrides "12 120 04*")
+     (description "Refuse involvement of mediators or mediation initiatives."))
+
+(event-type (code "127")
+            (name "Reject plan, agreement to settle dispute")
+     (event-group "12")
+       (overrides "12 120 04* 05*")
+     (description "Reject a proposal or request for a final, comprehensive settlement, peace proposal, or resolution."))
+
+(event-type (code "128")
+            (name "Defy norms, law")
+     (event-group "12")
+       (overrides "12 120")
+     (description "Disobey, challenge, or resist laws or norms."))
+
+(event-type (code "129")
+            (name "Veto")
+     (event-group "12")
+       (overrides "12 120 057")
+     (description "Refuse to assent or formally reject legislative proposal, recommendation, or resolution."))
+
+(event-type (code "12x") 
+            (name "BLOCK 12 events")
+     (event-group "12")
+       (overrides "12*")
+     (description "Block 12 events")
+     DISCARD-EVENTS-WITH-THIS-TYPE)
+
+#============================================================================
+# 13x: THREATEN
+#----------------------------------------------------------------------------
+
+(event-type (code "13")
+            (name "THREATEN")
+     (event-group "13")
+       (overrides "")
+     (description "NULL"))
+
+(event-type (code "130")
+            (name "Threaten, not specified elsewhere")
+     (event-group "13")
+       (overrides "13 15*")
+     (description "All threats, coercive or forceful warnings with serious potential repercussions, not otherwise specified."))
+
+(event-type (code "131")
+            (name "Threaten non-force, not specified elsewhere")
+     (event-group "13")
+       (overrides "13 130")
+     (description "All non-force threats not otherwise specified."))
+
+(event-type (code "1311")
+            (name "Threaten to reduce or stop aid")
+     (event-group "13")
+       (overrides "13 130 131 1310 07* 162*")
+     (description "Threaten to reduce or stop providing material aid."))
+
+(event-type (code "1312")
+            (name "Threaten with sanctions, boycott, embargo")
+     (event-group "13")
+       (overrides "13 130 131 1310 143 163")
+     (description "Threaten to restrict normal economic interactions by imposing sanctions, boycotts, or embargoes."))
+
+(event-type (code "1313")
+            (name "Threaten to reduce or break relations")
+     (event-group "13")
+       (overrides "13 130 131 1310 05* 06* 160* 161* 166*")
+     (description "Threaten to reduce or formally sever ties."))
+
+(event-type (code "132")
+            (name "Threaten with administrative sanctions, not specified elsewhere")
+     (event-group "13")
+       (overrides "13 130 172")
+     (description "Threaten to impose or expand non-force administrative restrictions and"))
+
+(event-type (code "1321")
+            (name "Threaten with restrictions on political freedoms")
+     (event-group "13")
+       (overrides "13 130 132 1320 1721")
+     (description "Threaten to impose or expand restrictions on fundamental freedoms, such as freedoms of speech, expression, and assembly."))
+
+(event-type (code "1322")
+            (name "Threaten to ban political parties or politicians")
+     (event-group "13")
+       (overrides "13 130 132 1320 1722")
+     (description "Threaten to ban political activities of particular parties or individuals."))
+
+(event-type (code "1323")
+            (name "Threaten to impose curfew")
+     (event-group "13")
+       (overrides "13 130 132 1320 1723")
+     (description "Threaten to enforce a deadline beyond which inhabitants of an area are not permitted to be on the streets or in public places."))
+
+(event-type (code "1324")
+            (name "Threaten to impose state of emergency or martial law")
+     (event-group "13")
+       (overrides "13 130 132 1320 1724")
+     (description "Threaten with suspending certain given rights or the whole constitution by imposing state of emergency or military rule."))
+
+(event-type (code "133")
+            (name "Threaten with political dissent, protest")
+     (event-group "13")
+       (overrides "13 130 14*")
+     (description "Threaten to mobilize or engage in actions of political dissent such as protest demonstrations, hunger strikes, strikes or boycotts, physical obstructions into buildings or areas, and riots."))
+
+(event-type (code "134")
+            (name "Threaten to halt negotiations")
+     (event-group "13")
+       (overrides "13 130 04* 164")
+     (description "Threaten to break-up or withdraw from discussion, negotiation, or meeting."))
+
+(event-type (code "135")
+            (name "Threaten to halt mediation")
+     (event-group "13")
+       (overrides "13 130 04* 165")
+     (description "Threaten to stop mediation activities."))
+
+(event-type (code "136")
+            (name "Threaten to halt international involvement (non-mediation)")
+     (event-group "13")
+       (overrides "13 130 166*")
+     (description "Threaten to reduce or stop international intervention by expelling or withdrawing observers, humanitarian agencies, peacekeepers, etc."))
+
+(event-type (code "137")
+            (name "Threaten with repression")
+     (event-group "13")
+       (overrides "13 130 17*")
+     (description "Threaten dissidents with forcible subjugation."))
+
+## Override 133, because this will usually be 'strikes', and when these are threatened, they're usually military
+(event-type (code "138")
+            (name "Threaten with military force, not specified elsewhere")
+     (event-group "13")
+       (overrides "13 130 133 15* 180* 181* 182* 183* 184 186 19* 20*")
+     (description "Threaten to use force not otherwise specified."))
+
+(event-type (code "1381")
+            (name "Threaten blockade")
+     (event-group "13")
+       (overrides "13 130 138 1380 15* 191")
+     (description "Threaten to prevent entry into and/or exit from a territory using military measures."))
+
+(event-type (code "1382")
+            (name "Threaten occupation")
+     (event-group "13")
+       (overrides "13 130 138 1380 15* 192")
+     (description "Threaten to occupy, seize control of the whole or part of a territory."))
+
+(event-type (code "1383")
+            (name "Threaten unconventional violence")
+     (event-group "13")
+       (overrides "13 130 138 1380 15* 180* 181* 182* 183* 184 186 19* 20*")
+     (description "Threaten to use unconventional violence, including terrorist activities."))
+
+(event-type (code "1384")
+            (name "Threaten conventional attack")
+     (event-group "13")
+       (overrides "13 130 138 1380 15* 180* 181* 182* 183* 184 186 19* 20*")
+     (description "Threaten to attack, use conventional weapons against a party."))
+
+(event-type (code "1385")
+            (name "Threaten attack with WMD")
+     (event-group "13")
+       (overrides "13 130 138 1380 15* 180* 181* 182* 183* 184 186 19* 20*")
+     (description "Threaten to use force potentially affecting large masses of people, including the use of weapons of mass destruction (nuclear or chemical-biologicalradiological attacks), mass expulsions or killing..."))
+
+(event-type (code "139")
+            (name "Give ultimatum")
+     (event-group "13")
+       (overrides "13 130")
+     (description "Give a final warning, ultimate demand or order."))
+
+#============================================================================
+# 14x: PROTEST
+#----------------------------------------------------------------------------
+
+(event-type (code "14")
+            (name "PROTEST")
+     (event-group "14")
+       (overrides "")
+            (role "SOURCE")
+            (role "TARGET")
+            (role "TRIGGER")
+            (role "LOCATION")
+   (required-role "NONE")
+     (description "NULL"))
+
+(event-type (code "140")
+            (name "Engage in political dissent, not specified elsewhere")
+     (event-group "14")
+       (overrides "14")
+     (description "All civilian demonstrations and other collective actions carried out as protests against the target actor not otherwise specified."))
+
+(event-type (code "141")
+            (name "Demonstrate or rally, not specified elsewhere")
+     (event-group "14")
+       (overrides "14 140 10* 111 112*")
+     (description "Dissent collectively, publicly show negative feelings or opinions; rally, gather to protest a policy, action, or actor(s)."))
+
+(event-type (code "1411")
+            (name "Demonstrate for leadership change")
+     (event-group "14")
+       (overrides "14 140 141 1410 10* 111 112*")
+     (description "Dissent collectively, gather, or rally demanding leadership change."))
+
+(event-type (code "1412")
+            (name "Demonstrate for policy change")
+     (event-group "14")
+       (overrides "14 140 141 1410 10* 111 112*")
+     (description "Dissent collectively, gather, or rally demanding policy change."))
+
+(event-type (code "1413")
+            (name "Demonstrate for rights")
+     (event-group "14")
+       (overrides "14 140 141 1410 10* 111 112*")
+     (description "Dissent collectively, gather, or rally demanding political, social, economic, or other rights."))
+
+(event-type (code "1414")
+            (name "Demonstrate for change in institutions, regime")
+     (event-group "14")
+       (overrides "14 140 141 1410 10* 111 112*")
+     (description "Dissent collectively, gather, or rally demanding major institutional, constitutional, or regime change."))
+
+(event-type (code "142")
+            (name "Conduct hunger strike, not specified elsewhere")
+     (event-group "14")
+       (overrides "14 140 10* 111 112*")
+     (description "Protest by refusing to eat until certain demands are met, not further specified."))
+
+(event-type (code "1421")
+            (name "Conduct hunger strike for leadership change")
+     (event-group "14")
+       (overrides "14 140 142 1420 10* 111 112*")
+     (description "Refuse to eat until demands for leadership change are met."))
+
+(event-type (code "1422")
+            (name "Conduct hunger strike for policy change")
+     (event-group "14")
+       (overrides "14 140 142 1420 10* 111 112*")
+     (description "Refuse to eat until demands for policy reform are met."))
+
+(event-type (code "1423")
+            (name "Conduct hunger strike for rights")
+     (event-group "14")
+       (overrides "14 140 142 1420 10* 111 112*")
+     (description "Refuse to eat until demands for political, social, economic, or other rights are met."))
+
+(event-type (code "1424")
+            (name "Conduct hunger strike for change in institutions, regime")
+     (event-group "14")
+       (overrides "14 140 142 1420 10* 111 112*")
+     (description "Refuse to eat until demands for major institutional, constitutional, or regime change."))
+
+(event-type (code "143")
+            (name "Conduct strike or boycott, not specified elsewhere")
+     (event-group "14")
+       (overrides "14 140 10* 111 112*")
+     (description "Protest by refusing to work or cooperate until certain demands are met, not specified further."))
+
+(event-type (code "1431")
+            (name "Conduct strike or boycott for leadership change")
+     (event-group "14")
+       (overrides "14 140 143 1430 10* 111 112*")
+     (description "Refuse to work or cooperate until demands for leadership change are met."))
+
+(event-type (code "1432")
+            (name "Conduct strike or boycott for policy change")
+     (event-group "14")
+       (overrides "14 140 143 1430 10* 111 112*")
+     (description "Refuse to work or cooperate until demands for policy reform are met."))
+
+(event-type (code "1433")
+            (name "Conduct strike or boycott for rights")
+     (event-group "14")
+       (overrides "14 140 143 1430 10* 111 112*")
+     (description "Refuse to work or cooperate until demands for political, social, economic, or other rights are met."))
+
+(event-type (code "1434")
+            (name "Conduct strike or boycott for change in institutions, regime")
+     (event-group "14")
+       (overrides "14 140 143 1430 10* 111 112*")
+     (description "Refuse to work or cooperate until demands for major institutional, constitutional, or regime change."))
+
+(event-type (code "144")
+            (name "Obstruct passage, block, not specified elsewhere")
+     (event-group "14")
+       (overrides "14 140 10* 111 112* 191 12*")
+     (description "Protest by blocking entry and/or exit into building or area, not otherwise specified."))
+
+(event-type (code "1441")
+            (name "Obstruct passage to demand leadership change")
+     (event-group "14")
+       (overrides "14 140 144 1440 10* 111 112* 191 12*")
+     (description "Obstruct passage, block entry/exit to demand leadership change."))
+
+(event-type (code "1442")
+            (name "Obstruct passage to demand policy change")
+     (event-group "14")
+       (overrides "14 140 144 1440 10* 111 112* 191 12*")
+     (description "Obstruct passage, block entry/exit to demand policy reform."))
+
+(event-type (code "1443")
+            (name "Obstruct passage to demand rights")
+     (event-group "14")
+       (overrides "14 140 144 1440 10* 111 112* 191 12*")
+     (description "Obstruct passage, block entry/exit to demand political, social, economic, or other rights."))
+
+(event-type (code "1444")
+            (name "Obstruct passage to demand change in institutions, regime")
+     (event-group "14")
+       (overrides "14 140 144 1440 10* 111 112* 191 12*")
+     (description "Obstruct passage, block entry/exit to demand major institutional, constitutional, or regime change."))
+
+(event-type (code "145")
+            (name "Protest violently, riot, not specified elsewhere")
+     (event-group "14")
+       (overrides "14 140 141 18* 19* 10* 111 112*")
+     (description "Protest forcefully, in a potentially destructive manner, not further specified."))
+
+(event-type (code "1451")
+            (name "Engage in violent protest for leadership change")
+     (event-group "14")
+       (overrides "14 140 1411 145 1450 18* 19* 10* 111 112*")
+     (description "Protest forcefully, in a potentially destructive manner, to demand leadership change."))
+
+(event-type (code "1452")
+            (name "Engage in violent protest for policy change")
+     (event-group "14")
+       (overrides "14 140 1412 145 1450 18* 19* 10* 111 112*")
+     (description "Protest forcefully, in a potentially destructive manner, to demand policy reform."))
+
+(event-type (code "1453")
+            (name "Engage in violent protest for rights")
+     (event-group "14")
+       (overrides "14 140 1413 145 1450 18* 19* 10* 111 112*")
+     (description "Protest forcefully, in a potentially destructive manner, to demand political, social, economic, or other rights."))
+
+(event-type (code "1454")
+            (name "Engage in violent protest for change in institutions, regime")
+     (event-group "14")
+       (overrides "14 140 1414 145 1450 18* 19* 10* 111 112*")
+     (description "Protest forcefully, in a potentially destructive manner, to demand major institutional, constitutional, or regime change."))
+
+#============================================================================
+# 15x: EXHIBIT FORCE POSTURE
+#----------------------------------------------------------------------------
+
+(event-type (code "15")
+            (name "EXHIBIT FORCE POSTURE")
+     (event-group "15")
+       (overrides "")
+     (description "NULL"))
+
+(event-type (code "150")
+            (name "Demonstrate military or police power, not specified elsewhere")
+     (event-group "15")
+       (overrides "15")
+     (description "All military or police moves that fall short of the actual use of force, not otherwise specified."))
+
+(event-type (code "151")
+            (name "Increase police alert status")
+     (event-group "15")
+       (overrides "15 150")
+     (description "Need new description."))
+
+(event-type (code "152")
+            (name "Increase military alert status")
+     (event-group "15")
+       (overrides "15 150")
+     (description "Heighten military readiness and caution; be prepared to use force."))
+
+(event-type (code "153")
+            (name "Mobilize or increase police power")
+     (event-group "15")
+       (overrides "15 150")
+     (description "Increase the number of military personnel and/or weapons."))
+
+(event-type (code "154")
+            (name "Mobilize or increase armed forces")
+     (event-group "15")
+       (overrides "15 150")
+     (description "Increase the number of military personnel and/or weapons."))
+
+#============================================================================
+# 16x: REDUCE RELATIONS
+#----------------------------------------------------------------------------
+
+(event-type (code "16")
+            (name "REDUCE RELATIONS")
+     (event-group "16")
+       (overrides "")
+     (description "NULL"))
+
+(event-type (code "160")
+            (name "Reduce relations, not specified elsewhere")
+     (event-group "16")
+       (overrides "16 05* 06*")
+     (description "All reductions in normal, routine, or cooperative relations not otherwise specified."))
+
+(event-type (code "161")
+            (name "Reduce or break diplomatic relations")
+     (event-group "16")
+       (overrides "16 160 05* 06* 174")
+     (description "Curtail, decrease, break, or terminate diplomatic exchange."))
+
+(event-type (code "162")
+            (name "Reduce or stop material aid, not specified elsewhere")
+     (event-group "16")
+       (overrides "16 160 07*")
+     (description "Reductions or terminations of aid not otherwise specified."))
+
+(event-type (code "1621")
+            (name "Reduce or stop economic assistance")
+     (event-group "16")
+       (overrides "16 160 162 1620 07*")
+     (description "Decrease or terminate provision of economic aid."))
+
+(event-type (code "1622")
+            (name "Reduce or stop military assistance")
+     (event-group "16")
+       (overrides "16 160 162 1620 07*")
+     (description "Decrease or terminate provision of military aid."))
+
+(event-type (code "1623")
+            (name "Reduce or stop humanitarian assistance")
+     (event-group "16")
+       (overrides "16 160 162 1620 07*")
+     (description "Decrease or terminate provision of humanitarian aid."))
+
+(event-type (code "163")
+            (name "Impose embargo, boycott, or sanctions")
+     (event-group "16")
+       (overrides "16 160")
+     (description "Stop or restrict commercial or other material exchange as a form of protest or punishment."))
+
+(event-type (code "164")
+            (name "Halt negotiations")
+     (event-group "16")
+       (overrides "16 160 161 04*")
+     (description "Terminate discussions, negotiations."))
+
+(event-type (code "165")
+            (name "Halt mediation")
+     (event-group "16")
+       (overrides "16 160 161 04*")
+     (description "Terminate mediation activities."))
+
+(event-type (code "166")
+            (name "Expel or withdraw, not specified elsewhere")
+     (event-group "16")
+       (overrides "16 160")
+     (description "Terminate the presence of groups or organizations not otherwise specified."))
+
+(event-type (code "1661")
+            (name "Expel or withdraw peacekeepers")
+     (event-group "16")
+       (overrides "16 160 166 1660")
+     (description "Terminate the deployment or presence of peacekeeping forces."))
+
+(event-type (code "1662")
+            (name "Expel or withdraw inspectors, observers")
+     (event-group "16")
+       (overrides "16 160 166 1660")
+     (description "Terminate the presence of inspectors or other observers."))
+
+(event-type (code "1663")
+            (name "Expel or withdraw aid agencies")
+     (event-group "16")
+       (overrides "16 160 166 1660")
+     (description "Terminate the presence of aid agencies or other non-governmental organizations helping civilians."))
+
+(event-type (code "16x") 
+            (name "BLOCK 16 events")
+     (event-group "16")
+       (overrides "16*")
+     (description "Block 16 events")
+     DISCARD-EVENTS-WITH-THIS-TYPE)
+
+#============================================================================
+# 17x: COERCE
+#----------------------------------------------------------------------------
+
+(event-type (code "17")
+            (name "COERCE")
+     (event-group "17")
+       (overrides "")
+     (description "NULL"))
+
+(event-type (code "170")
+            (name "Coerce, not specified elsewhere")
+     (event-group "17")
+       (overrides "17")
+     (description "Repression, violence against civilians, or their rights or properties not otherwise specified."))
+
+(event-type (code "171")
+            (name "Seize or damage property, not specified elsewhere")
+     (event-group "17")
+       (overrides "17 170")
+     (description "Use of force against property or violation of property rights not otherwise specified."))
+
+(event-type (code "1711")
+            (name "Confiscate property")
+     (event-group "17")
+       (overrides "17 170 171 1710 190")
+     (description "Use force to take control of somebody else‚Äôs property, confiscate, expropriate."))
+
+(event-type (code "1712")
+            (name "Destroy property")
+     (event-group "17")
+       (overrides "17 170 171 1710")
+     (description "Use force to destroy, demolish property."))
+
+(event-type (code "172")
+            (name "Impose administrative sanctions, not specified elsewhere")
+     (event-group "17")
+       (overrides "17 170 12* 15*")
+     (description "Formal decrees, laws, or policies aimed at curbing the rights of civilians not otherwise specified."))
+
+(event-type (code "1721")
+            (name "Impose restrictions on political freedoms")
+     (event-group "17")
+       (overrides "17 170 172 1720 12* 15*")
+     (description "Violate or impose limitations on fundamental political rights such as freedoms of speech, expression, and assembly."))
+
+(event-type (code "1722")
+            (name "Ban political parties or politicians")
+     (event-group "17")
+       (overrides "17 170 172 1720 12* 15*")
+     (description "Prevent establishment or activities of political parties or politicians."))
+
+(event-type (code "1723")
+            (name "Impose curfew")
+     (event-group "17")
+       (overrides "17 170 172 1720 12* 15*")
+     (description "Set a deadline beyond which inhabitants of an area are not permitted to be on the streets or in public places."))
+
+(event-type (code "1724")
+            (name "Impose state of emergency or martial law")
+     (event-group "17")
+       (overrides "17 170 172 1720 12* 15*")
+     (description "Suspend normal constitutional rights and provisions by installing state of emergency or military rule."))
+
+(event-type (code "173")
+            (name "Arrest, detain, or charge with legal action")
+     (event-group "17")
+       (overrides "17 170 09* 10* 11*")
+     (description "Legal or extrajudicial arrests, detentions, or imprisonments."))
+
+(event-type (code "174")
+            (name "Expel or deport individuals")
+     (event-group "17")
+       (overrides "17 170 160")
+     (description "Formal removal or expulsion of individuals from territories, typically following legal proceedings."))
+
+(event-type (code "175")
+            (name "Use tactics of violent repression")
+     (event-group "17")
+       (overrides "17 170 173 15*")
+     (description "Actively repress collective actions of dissent by forcing subjugation through crowd control tactics, arrests, etc."))
+
+#============================================================================
+# 18x: ASSAULT
+#----------------------------------------------------------------------------
+
+(event-type (code "18")
+            (name "ASSAULT")
+     (event-group "1819")
+       (overrides "")
+     (description "NULL"))
+
+(event-type (code "180")
+            (name "Use unconventional violence, not specified elsewhere")
+     (event-group "1819")
+       (overrides "18 190 175 15*")
+     (description "Use of unconventional forms of violence which do not require high levels of organization or conventional weaponry, not otherwise specified."))
+
+(event-type (code "181")
+            (name "Abduct, hijack, or take hostage")
+     (event-group "1819")
+       (overrides "18 180 15*")
+     (description "Kidnap, take hostage, hijack, or forcibly seize control of an aircraft, car, bus, ship, etc."))
+
+(event-type (code "182")
+            (name "Physically assault, not specified elsewhere")
+     (event-group "1819")
+       (overrides "18 180 15*")
+     (description "Attack physical well-being of individuals without the use of weaponry, not otherwise specified."))
+
+(event-type (code "1821")
+            (name "Sexually assault")
+     (event-group "1819")
+       (overrides "18 180 182 1820 15*")
+     (description "Sexually abuse, assault sexual integrity of individuals."))
+
+(event-type (code "1822")
+            (name "Torture")
+     (event-group "1819")
+       (overrides "18 180 182 1820 15*")
+     (description "Torture, inflict extreme pain on individuals."))
+
+(event-type (code "1823")
+            (name "Kill by physical assault")
+     (event-group "1819")
+       (overrides "18 180 182 1820 1821 1822 15*")
+     (description "Kill individuals by physically assaulting them without the use of weaponry, through beating, torture, lynching, etc."))
+
+(event-type (code "183")
+            (name "Conduct suicide, car, or other non-military bombing, not specified elsewhere")
+     (event-group "1819")
+       (overrides "18 180 15*")
+     (description "Use improvised explosives or makeshift bombs not otherwise specified."))
+
+(event-type (code "1831")
+            (name "Carry out suicide bombing")
+     (event-group "1819")
+       (overrides "18 180 183 1830 15*")
+     (description "Carry out bomb attack with the intention of causing own death as well as other casualties."))
+
+(event-type (code "1832")
+            (name "Carry out car bombing")
+     (event-group "1819")
+       (overrides "18 180 183 1830 15*")
+     (description "Blow up a car or other vehicle to cause damage to surroundings."))
+
+(event-type (code "1833")
+            (name "Carry out roadside bombing")
+     (event-group "1819")
+       (overrides "18 180 183 1830 15*")
+     (description "Detonate explosives on the roadside to cause damage and casualties to passers-by."))
+
+(event-type (code "184")
+            (name "Use as human shield")
+     (event-group "1819")
+       (overrides "18 180 15*")
+     (description "Use civilians as buffer on the front lines or in other dangerous environments."))
+
+(event-type (code "185")
+            (name "Attempt to assassinate")
+     (event-group "1819")
+       (overrides "18 180 186 138 15*") ## Note that this trumps threaten violence 138
+     (description "Attempt but fail to kill politically significant and influential persons."))
+
+(event-type (code "186")
+            (name "Assassinate")
+     (event-group "1819")
+       (overrides "18 180 15*")
+     (description "Kill politically significant and influential persons."))
+
+#============================================================================
+# 19x: FIGHT
+#----------------------------------------------------------------------------
+
+(event-type (code "19")
+            (name "FIGHT")
+     (event-group "1819")
+       (overrides "")
+     (description "NULL"))
+
+(event-type (code "190")
+            (name "Use conventional military force, not specified elsewhere")
+     (event-group "1819")
+       (overrides "19 175 15*")
+     (description "All uses of conventional force and acts of war typically by organized armed groups not otherwise specified."))
+
+(event-type (code "191")
+            (name "Impose blockade, restrict movement")
+     (event-group "1819")
+       (overrides "19 190 15*")
+     (description "Prevent entry into and/or exit from a territory using armed forces."))
+
+(event-type (code "192")
+            (name "Occupy territory")
+     (event-group "1819")
+       (overrides "19 190 15*")
+     (description "Occupy, seize control of a territory using armed forces."))
+
+(event-type (code "193")
+            (name "fight with small arms and light weapons")
+     (event-group "1819")
+       (overrides "19 190 175 15*")
+     (description "Attack using small arms and light weapons such as rifles, machine-guns, and mortar shells."))
+
+(event-type (code "194")
+            (name "fight with artillery and tanks")
+     (event-group "1819")
+       (overrides "19 190 175 15*")
+     (description "Attack using artillery, tanks, and rocket fire."))
+
+(event-type (code "195")
+            (name "Employ aerial weapons")
+     (event-group "1819")
+       (overrides "183 19 190 175 15*")
+     (description "Attack, bomb from air."))
+
+(event-type (code "196")
+            (name "Violate ceasefire")
+     (event-group "1819")
+       (overrides "19 190 15*")
+     (description "Reinitiate fighting in the midst of a formal or informal ceasefire or truce."))
+
+(event-type (code "1819x") 
+            (name "BLOCK 18/19 events")
+     (event-group "1819")
+       (overrides "18* 19*")
+     (description "Block 18/19 events")
+     DISCARD-EVENTS-WITH-THIS-TYPE)
+
+#============================================================================
+# 20x: USE UNCONVENTIONAL MASS VIOLENCE
+#----------------------------------------------------------------------------
+
+(event-type (code "20")
+            (name "USE UNCONVENTIONAL MASS VIOLENCE")
+     (event-group "20")
+       (overrides "")
+     (description "NULL"))
+
+(event-type (code "200")
+            (name "Use unconventional mass violence, not specified elsewhere")
+     (event-group "20")
+       (overrides "20 15*")
+     (description "All uses of unconventional force that are meant to cause mass destruction, casualties, and suffering not otherwise specified."))
+
+(event-type (code "201")
+            (name "Engage in mass expulsion")
+     (event-group "20")
+       (overrides "20 200 15*")
+     (description "Force large groups of people or populations out of some territory."))
+
+(event-type (code "202")
+            (name "Engage in mass killings")
+     (event-group "20")
+       (overrides "20 200 18* 19* 15*")
+     (description "Kill a substantial number of people, typically with the intention of ridding a territory of a particular group of people."))
+
+(event-type (code "203")
+            (name "Engage in ethnic cleansing")
+     (event-group "20")
+       (overrides "20 200 18* 19* 15*")
+     (description "Use mass expulsions and/or mass killings targeting a specific ethnic group."))
+
+(event-type (code "204")
+            (name "Use weapons of mass destruction, not specified elsewhere")
+     (event-group "20")
+       (overrides "20 200 18* 19* 15*")
+     (description "Attack with unconventional weapons that are meant to cause massive destruction and casualties."))
+
+(event-type (code "2041")
+            (name "Use chemical, biological, or radiological weapons")
+     (event-group "20")
+       (overrides "20 200 204 2040 18* 19* 15*")
+     (description "Attack using chemical, biological, or radiological weapons."))
+
+(event-type (code "2042")
+            (name "Detonate nuclear weapons")
+     (event-group "20")
+       (overrides "20 200 204 2040 18* 19* 15*")
+     (description "Attack using nuclear weapons."))
+
+#============================================================================
+# 30x: COMMIT CRIME
+#----------------------------------------------------------------------------
+
+(event-type (code "30")
+	    (id 30)
+            (name "COMMIT CRIME")
+	    (event-group "30")
+	    (overrides "")
+	    (description "NULL"))
+
+(event-type (code "301")
+	    (id 301)
+            (name "Extort")
+	    (event-group "30")
+	    (overrides "30")
+	    (description "Extort"))
+
+#============================================================================
+# 31x: CYBERATTACK
+#----------------------------------------------------------------------------
+
+(event-type (code "31")
+	    (id 1001)
+            (name "CYBERATTACK")
+	    (event-group "31")
+	    (overrides "")
+	    (description "NULL"))
+	    
+(event-type (code "310")
+	    (id 1002)
+            (name "Cyberattack, not specified below")
+	    (event-group "31")
+	    (overrides "31")
+	    (description "Cyberattack, not specified below"))
+	    
+(event-type (code "311")
+	    (id 1003)
+            (name "Cyberattack via application layer")
+	    (event-group "31")
+	    (overrides "31")
+	    (description "Cyberattack via application layer"))
+
+(event-type (code "312")
+	    (id 1004)
+            (name "Cyberattack via DDos")
+	    (event-group "31")
+	    (overrides "31")
+	    (description "Cyberattack via DDos"))
+
+(event-type (code "3121")
+	    (id 1005)
+            (name "Cyberattack via DDos, specifically to test defenses")
+	    (event-group "31")
+	    (overrides "31 312")
+	    (description "Cyberattack via DDos, specifically to test defenses"))
+
+(event-type (code "313")
+	    (id 1006)
+            (name "Cyberattack via phishing")
+	    (event-group "31")
+	    (overrides "31")
+	    (description "Cyberattack via phishing"))
+	    
+#============================================================================
+# 32x: ORGANIZATIONAL ACTIONS
+#----------------------------------------------------------------------------
+
+(event-type (code "32")
+	    (id 1007)
+            (name "ORGANIZATIONAL ACTIONS")
+	    (event-group "32")
+	    (overrides "")
+	    (description "NULL"))
+
+(event-type (code "321")
+	    (id 1008)
+            (name "Layoff employees")
+	    (event-group "32")
+	    (overrides "32")
+	    (description "Layoff employees"))
+
+(event-type (code "322")
+	    (id 1009)
+            (name "Close office")
+	    (event-group "32")
+	    (overrides "32")
+	    (description "Close office"))
+
+(event-type (code "323")
+	    (id 1010)
+            (name "Employ unfair practices")
+	    (event-group "32")
+	    (overrides "32")
+	    (description "Employ unfair practices"))
+
+(event-type (code "324")
+	    (id 1011)
+            (name "Gain financially")
+	    (event-group "32")
+	    (overrides "32")
+	    (description "Gain financially"))
+
+(event-type (code "325")
+	    (id 1012)
+            (name "Lose financially")
+	    (event-group "32")
+	    (overrides "32")
+	    (description "Lose financially"))
+
+(event-type (code "326")
+	    (id 1013)
+            (name "Lose other people's money")
+	    (event-group "32")
+	    (overrides "32")
+	    (description "Lose other people's money"))
+
+(event-type (code "327")
+	    (id 1014)
+            (name "Highly pay executive")
+	    (event-group "32")
+	    (overrides "32")
+	    (description "Highly pay executive"))
+
+(event-type (code "328")
+	    (id 1015)
+            (name "Hire new executive")
+	    (event-group "32")
+	    (overrides "32")
+	    (description "Hire new executive"))
+
+(event-type (code "329")
+	    (id 1016)
+            (name "Develop new IP")
+	    (event-group "32")
+	    (overrides "32")
+	    (description "Develop new IP"))
+	    
+
+#============================================================================
+# 33x: STAND UP ORGANIZATION
+#----------------------------------------------------------------------------
+
+(event-type (code "33")
+	    (id 1017)
+            (name "STAND UP ORGANIZATION")
+	    (event-group "33")
+	    (overrides "")
+	    (description "NULL"))
+
+(event-type (code "331")
+	    (id 1018)
+            (name "Stand up cyber organization")
+	    (event-group "33")
+	    (overrides "33")
+	    (description "Stand up cyber organization"))
+	    
+#============================================================================
+# 34x: 
+#----------------------------------------------------------------------------
+(event-type (code "34")
+	    (id 1019)
+            (name "RUN EVENT")
+	    (event-group "34")
+	    (overrides "")
+	    (description "NULL"))
+
+(event-type (code "341")
+	    (id 1020)
+            (name "Run hacker competition")
+	    (event-group "34")
+	    (overrides "34")
+	    (description "Run hacker competition"))
+
+(event-type (code "342")
+      (id 1020)
+            (name "Hold election")
+      (event-group "342")
+      (overrides "34")
+      (description "Hold election"))
+
+(event-type (code "343")
+      (id 1020)
+            (name "Win election")
+      (event-group "343")
+      (overrides "34")
+      (description "Win election"))	   
+
+(event-type (code "344")
+      (id 1020)
+            (name "Run for election")
+      (event-group "344")
+      (overrides "34")
+      (description "Run for election")) 
+#============================================================================
+# 40x: ACQUIRE
+#----------------------------------------------------------------------------
+(event-type (code "40")
+	    (id 1021)
+            (name "ACQUIRE")
+	    (event-group "40")
+	    (overrides "")
+	    (description "NULL"))
+
+(event-type (code "401")
+	    (id 1022)
+            (name "Acquire cyber exploit")
+	    (event-group "40")
+	    (overrides "40")
+	    (description "Acquire cyber exploit"))
+	    
+#============================================================================
+# 41x: OFFER
+#----------------------------------------------------------------------------
+
+(event-type (code "41")
+	    (id 1023)
+            (name "OFFER")
+	    (event-group "41")
+	    (overrides "")
+	    (description "NULL"))
+
+(event-type (code "411")
+	    (id 1024)
+            (name "Offer cyber exploit for sale")
+	    (event-group "41")
+	    (overrides "41")
+	    (description "Offer cyber exploit for sale"))
+
+(event-type (code "412")
+	    (id 1025)
+            (name "Offer cyber exploit for free")
+	    (event-group "41")
+	    (overrides "41")
+	    (description "Offer cyber exploit for free"))
+	    
+#============================================================================
+# 50x: KNOWS ABOUT
+#----------------------------------------------------------------------------
+
+(event-type (code "50")
+	    (id 1026)
+            (name "KNOWS ABOUT")
+	    (event-group "50")
+	    (overrides "")
+	    (description "NULL"))
+
+(event-type (code "501")
+	    (id 1027)
+            (name "Knows about cyber vulnerability")
+	    (event-group "50")
+	    (overrides "50")
+	    (description "Knows about cyber vulnerability"))
+
+(event-type (code "502")
+	    (id 1028)
+            (name "Knows about cyber exploit")
+	    (event-group "50")
+	    (overrides "50")
+	    (description "Knows about cyber exploit"))
+
+(event-type (code "503")
+	    (id 1029)
+            (name "Knows target uses product")
+	    (event-group "50")
+	    (overrides "50")
+	    (description "Knows target uses product"))
+	    
+#============================================================================
+# 51x: USES
+#----------------------------------------------------------------------------
+
+(event-type (code "51")
+	    (id 1030)
+            (name "USES")
+	    (event-group "51")
+	    (overrides "")
+	    (description "NULL"))
+
+(event-type (code "511")
+	    (id 1031)
+            (name "Uses hardware")
+	    (event-group "51")
+	    (overrides "51")
+	    (description "Uses hardware"))
+
+(event-type (code "512")
+	    (id 1032)
+            (name "Uses software")
+	    (event-group "51")
+	    (overrides "51")
+	    (description "Uses software"))
+
+(event-type (code "513")
+	    (id 1033)
+            (name "Uses service")
+	    (event-group "51")
+	    (overrides "51")
+	    (description "Uses service"))
+	    

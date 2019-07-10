@@ -1,0 +1,67 @@
+# Run on full CauseEx korea peninsula docs (KoreaPeninsula)
+
+job_name: causeex_scs.full.nre.v1
+
+###########
+# Pipeline
+###########
+#stages_to_run: serif,kbp,generic-events,nn-events,event-consolidation,event-event-relations,serialization
+stages_to_run: event-event-relations,serialization
+jserif_branch: 364-add-event-from-json
+mode: CauseEx
+
+########
+# Serif
+########
+serif_input_sgm_list: /nfs/raid87/u14/CauseEx/KoreaPeninsula-Dataset-TwoSix/sgms_sampled_100.list
+serif_input_awake_db: /nfs/raid87/u10/shared/Hume/common/serif/causeex_scs_awake.sqlite
+
+######
+# KBP
+######
+kbp_input_serifxml_list: GENERATED
+
+##################
+## Generic events
+##################
+generic_events_input_serifxml_list: GENERATED
+file_whitelist: /nfs/ld100/u10/bmin/repo_clean_for_exp/CauseEx/lib/generic_events/m15.trigger.whitelist.v3.h5084
+file_blacklist: NA
+
+#######################
+## NN event extraction
+#######################
+nn_events_input_serifxml_list: GENERATED
+nn_events_model_list: /nfs/raid66/u14/users/jfaschin/runjobs/expts/training/cx_0507019_final/w5s50e30f300/fold_0/nn_models.list
+
+
+######################
+# Event consolidation
+######################
+event_consolidation_input_serifxml_list: GENERATED
+event_consolidation_input_metadata_file: /nfs/raid87/u14/CauseEx/KoreaPeninsula-Dataset-TwoSix/metadata.txt
+copyArgumentSentenceWindow: 1
+
+########################
+# Event-Event relations
+########################
+eer_input_serifxml_list: /nfs/raid87/u12/hqiu/runjob/expts/Hume/causeex_scs.v1.from_generic/event_consolidation_serifxml_out.list
+eer_input_serif_cause_effect_relations_dir: GENERATED
+learnit_pattern_dir: DEFAULT
+learnit_min_freq_event_pairs: 1
+
+##########################
+# Probabilistic grounding
+##########################
+grounding_input: GENERATED
+grounding_config: /nfs/raid87/u14/users/criley/repo/CauseEx/util/python/misc/internal_grounder.config
+
+################
+# Serialization
+################
+serialization_input_serifxml_list: GENERATED
+serialization_input_metadata_file: /nfs/raid87/u14/CauseEx/KoreaPeninsula-Dataset-TwoSix/metadata.txt
+serialization_input_factfinder_json_file: GENERATED
+serialization_input_learnit_triple_file: GENERATED
+serialization_input_learnit_event_count_file: GENERATED
+serialization_do_event_uploading: False

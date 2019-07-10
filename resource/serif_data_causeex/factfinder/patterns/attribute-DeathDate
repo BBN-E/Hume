@@ -1,0 +1,117 @@
+(DeathDate
+
+(wordsets
+
+)
+
+(entitylabels
+
+(AGENT1)
+
+)
+
+(reference
+
+<!-- generic AGENT1 reference -->
+(mention	(shortcut 	AGENT1_REF)
+		(return 	(ff_role AGENT1) (ff_fact_type DeathDate1))
+        	(entitylabel    AGENT1)
+)
+
+
+(argument (shortcut AGENT_SUBJECT) (role <sub>)		AGENT1_REF)
+(argument (shortcut AGENT_OBJECT)  (role <obj>)		AGENT1_REF)
+(argument (shortcut AGENT_REFER)   (role <ref>)		AGENT1_REF)
+(argument (shortcut AGENT_ON)      (role on)		AGENT1_REF)
+(argument (shortcut AGENT_POSS)    (role <poss> of)	AGENT1_REF)
+
+(value (shortcut DATE) SPECIFIC-DATE (return (ff_role DeathDate)))
+
+(any-of (shortcut DATE_ARG) (members
+	(argument (role <temp> <obj> <iobj>) DATE)
+	(argument (role in) (nprop (predicate attack) (args (argument (role <temp>) DATE))))
+))
+
+)
+
+(toplevel
+
+<!-- NOTE: unfortunately, without modality, events are way too buggy to use for deaths.
+     Far too much of the time they are discussing a planned assassination of a world leader. -->
+
+<!-- Until we can deal with this, we are going to be conservative. This will miss some
+     things found by SERIF as deaths... for instance, "AGENT was shot dead" -->
+
+(vprop	 (id deathdate_agent_object)
+	 (score_group 1) (score 0.9)
+	 (predicate killed murdered assassinated hanged executed gunned slain)
+	 (args AGENT_OBJECT DATE_ARG))
+
+(vprop	 (id deathdate_agent_subject)
+	 (score_group 1) (score 0.9)
+	 (predicate died)
+	 (args AGENT_SUBJECT DATE_ARG))
+
+(vprop	 (id deathdate_died_of)
+	 (score_group 1) (score 0.9)
+	 (predicate died)
+	 (args AGENT_SUBJECT (argument (role of) (nprop (args DATE_ARG)))))
+
+(vprop	 (id deathdate_to_death)
+	 (score_group 1) (score 0.9)
+	 (args AGENT_OBJECT DATE_ARG (argument (role to) (nprop (predicate death)))))
+
+(vprop	 (id deathdate_committed_suicide)
+	 (score_group 1) (score 0.9)
+	 (predicate committed)
+	 (args AGENT_SUBJECT DATE_ARG (argument (role <obj> <iobj>) (nprop (predicate suicide)))))
+
+(nprop   (id deathdate_nprop)
+	 (score_group 1) (score 0.9)
+	 (block_adj planned proposed attempted)
+	 (predicate killing murder homicide assassination slaying slaughter gunning-down suicide death)
+	 (args AGENT_POSS DATE_ARG))
+
+(nprop   (id deathdate_fatal_nprop)
+	 (score_group 1) (score 0.9)
+	 (block_adj planned proposed attempted)
+	 (adj fatal deadly)
+	 (predicate attack assault shooting)
+	 (args (argument (role of on) AGENT1_REF) DATE_ARG))
+
+(nprop   (id deathdate_fatal_vprop)
+	 (score_group 1) (score 0.9)
+	 (adverb_or_particle fatally dead)
+	 (predicate shot stabbed)
+	 (args AGENT_OBJECT DATE_ARG))
+
+(mprop   (score_group 1) (score 0.9) (id deathdeate_mprop) (predicate d. died) (args AGENT_REFER DATE_ARG))
+
+(regex (score_group 1) (score 0.9) (id regex_shot_dead1) (re AGENT1_REF (text (string "was shot dead in")) DATE))
+(regex (score_group 1) (score 0.9) (id regex_shot_dead2) (re AGENT1_REF (text (string "was shot dead")) DATE))
+
+<!-- LearnIt -->
+
+(regex (score_group 1) (score 0.9) (id learnit_regex_died_1) (re AGENT1_REF (text RAW_TEXT (string ", died in")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_died_2) (re AGENT1_REF (text RAW_TEXT (string ", died on")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_died_3) (re AGENT1_REF (text RAW_TEXT (string ", died")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_died_4) (re AGENT1_REF (text RAW_TEXT (string "-lrb- d.")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_died_5) (re AGENT1_REF (text RAW_TEXT (string "-lrb- died")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_died_6) (re AGENT1_REF (text RAW_TEXT (string "-lrb- january")) (text (string "\d+")) (text RAW_TEXT (string ",")) (text (string "[12]\d\d\d")) (text RAW_TEXT (string "-")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_died_7) (re AGENT1_REF (text RAW_TEXT (string "-lrb- february")) (text (string "\d+")) (text RAW_TEXT (string ",")) (text (string "[12]\d\d\d")) (text RAW_TEXT (string "-")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_died_8) (re AGENT1_REF (text RAW_TEXT (string "-lrb- march")) (text (string "\d+")) (text RAW_TEXT (string ",")) (text (string "[12]\d\d\d")) (text RAW_TEXT (string "-")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_died_9) (re AGENT1_REF (text RAW_TEXT (string "-lrb- april")) (text (string "\d+")) (text RAW_TEXT (string ",")) (text (string "[12]\d\d\d")) (text RAW_TEXT (string "-")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_died_10) (re AGENT1_REF (text RAW_TEXT (string "-lrb- may")) (text (string "\d+")) (text RAW_TEXT (string ",")) (text (string "[12]\d\d\d")) (text RAW_TEXT (string "-")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_died_11) (re AGENT1_REF (text RAW_TEXT (string "-lrb- june")) (text (string "\d+")) (text RAW_TEXT (string ",")) (text (string "[12]\d\d\d")) (text RAW_TEXT (string "-")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_died_12) (re AGENT1_REF (text RAW_TEXT (string "-lrb- july")) (text (string "\d+")) (text RAW_TEXT (string ",")) (text (string "[12]\d\d\d")) (text RAW_TEXT (string "-")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_died_13) (re AGENT1_REF (text RAW_TEXT (string "-lrb- august")) (text (string "\d+")) (text RAW_TEXT (string ",")) (text (string "[12]\d\d\d")) (text RAW_TEXT (string "-")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_died_14) (re AGENT1_REF (text RAW_TEXT (string "-lrb- september")) (text (string "\d+")) (text RAW_TEXT (string ",")) (text (string "[12]\d\d\d")) (text RAW_TEXT (string "-")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_died_15) (re AGENT1_REF (text RAW_TEXT (string "-lrb- october")) (text (string "\d+")) (text RAW_TEXT (string ",")) (text (string "[12]\d\d\d")) (text RAW_TEXT (string "-")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_died_16) (re AGENT1_REF (text RAW_TEXT (string "-lrb- november")) (text (string "\d+")) (text RAW_TEXT (string ",")) (text (string "[12]\d\d\d")) (text RAW_TEXT (string "-")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_died_17) (re AGENT1_REF (text RAW_TEXT (string "-lrb- december")) (text (string "\d+")) (text RAW_TEXT (string ",")) (text (string "[12]\d\d\d")) (text RAW_TEXT (string "-")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_died_18) (re AGENT1_REF (text RAW_TEXT (string "-lrb-")) (text (string "[12]\d\d\d")) (text RAW_TEXT (string "-")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_died_19) (re AGENT1_REF (text RAW_TEXT (string "-lrb-")) (text (string "\d+")) (text (string "(?i)\d\d[/-]\d\d([/-]\d\d(\d\d)?)?|((jan(uary)?|feb(ruary)?|mar(ch)|apr(il)?|may|jun(e)?|jul(y)?|aug(ust)?|sept?(ember)?|oct(ober)?|nov(ember)?|dec(ember)?).?) \d\d(\d\d)?(( ,)? \d\d(\d\d)?)?")) (text RAW_TEXT (string "-")) DATE))
+(regex (score_group 1) (score 0.9) (id learnit_regex_died_20) (re AGENT1_REF (text RAW_TEXT (string "-lrb-")) (text (string "(?i)\d\d[/-]\d\d([/-]\d\d(\d\d)?)?|((jan(uary)?|feb(ruary)?|mar(ch)|apr(il)?|may|jun(e)?|jul(y)?|aug(ust)?|sept?(ember)?|oct(ober)?|nov(ember)?|dec(ember)?).?) \d\d(\d\d)?(( ,)? \d\d(\d\d)?)?")) (text RAW_TEXT (string "-")) DATE))
+
+)
+)

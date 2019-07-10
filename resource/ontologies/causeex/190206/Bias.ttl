@@ -1,0 +1,170 @@
+@prefix : <http://ontology.causeex.com/ontology/odps/Bias#> .
+@prefix bias: <http://ontology.causeex.com/ontology/odps/Bias#> .
+@prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/> .
+@prefix data-prov: <http://ontology.causeex.com/ontology/odps/DataProvenance#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix event: <http://ontology.causeex.com/ontology/odps/Event#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ontology.causeex.com/ontology/odps/Bias> rdf:type owl:Ontology ;
+    dcterms:description "Ontology defining the concept of bias and supporting the description of an Actor's, Document's or DocumentComponent's bias(es)."@en ;
+    dcterms:created "January 22, 2019"^^xsd:string ;
+    dcterms:modified "January 29, 2019"^^xsd:string ;
+    rdfs:comment """January 29th 2019 revisions:
+                    Added the probability and percentage_of_statements datatype properties.
+                    Updated most of the descriptions/comments. Also corrected the types of the NamedIndividuals."""@en ;
+    owl:imports <http://purl.org/dc/terms> ;
+    owl:imports <http://ontology.causeex.com/ontology/odps/Event> ;
+    owl:imports <http://ontology.causeex.com/ontology/odps/DataProvenance> ;
+    owl:versionInfo "Version 0.3"^^xsd:string .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+:disfavored a owl:ObjectProperty ;
+    rdfs:label "disfavored"@en ;
+    rdfs:comment "Indicates an Actor or Event/topic that is denigrated or characterized/mischaracterized in overly negative terms by another Actor or in a Document/DocumentComponent. The Actor or Document/DocumentComponent who/which makes the characterizations should be indicated as having a :StatementBias. This is accomplished by associating a BiasDetails instance with the Actor/Document/DocumentComponent (via the has_bias_details property), where the BiasDetails instance uses has_bias_type to reference :StatementBias. The particular actors or topics for which there is a negative bias are identified using this (disfavored) property, while the ones for which there is a positive bias are identified using the favored property."@en ;
+    rdfs:domain :BiasDetails ;
+    rdfs:range [ a owl:Class ;
+                 owl:unionOf ( event:Actor event:Event ) ] .
+
+:excluded a owl:ObjectProperty ;
+    rdfs:label "excluded"@en ;
+    rdfs:comment "Indicates an Actor or Event/topic who/which is ignored/excluded from reference by another Actor or in a Document/DocumentComponent. The Actor or Document/DocumentComponent who/which does the exclusion should be indicated as having a :SelectionBias. This is accomplished by associating a BiasDetails instance with the Actor/Document/DocumentComponent (via the has_bias_details property), where the BiasDetails instance uses has_bias_type to reference :SelectionBias. The particular actors or topics that are ignored/excluded are identified using this (excluded) property, while the ones which are included/unduly mentioned are identified using the included property."@en ;
+    rdfs:domain :BiasDetails ;
+    rdfs:range [ a owl:Class ;
+                 owl:unionOf ( event:Actor event:Event ) ] .
+
+:favored a owl:ObjectProperty ;
+    rdfs:label "favored"@en ;
+    rdfs:comment "Indicates an Actor or Event/topic that is characterized in overly positive terms by another Actor or in a Document/DocumentComponent. The Actor or Document/DocumentComponent who/which makes the characterizations should be indicated as having a :StatementBias. This is accomplished by associating a BiasDetails instance with the Actor/Document/DocumentComponent (via the has_bias_details property), where the BiasDetails instance uses has_bias_type to reference :StatementBias. The particular actors or topics that for which there is a positive bias are identified using this (favored) property, while the ones for which there is a negative bias are identified using the disfavored property."@en ;
+    rdfs:domain :BiasDetails ;
+    rdfs:range [ a owl:Class ;
+                 owl:unionOf ( event:Actor event:Event ) ] .
+
+:has_bias_based_on_political_orientation a owl:ObjectProperty ;
+    rdfs:label "has bias based on political orientation"@en ;
+    rdfs:comment "Indicates that an Actor (typically an Organization/publisher), Document or DocumentComponent has bias due to their specific political views/orientation. Bias will affect the inclusion/exclusion/favoring/disfavoring of various actors or topics. The political orientation of the Actor/Document/DocumentComponent is defined by associating a BiasDetails instance (via the has_bias_details property) and then associating a particular subclass of cco:PoliticalOrientation (taking advantage of OWL punning) to the BiasDetails individual. The BiasDetails instance acts to reify information related to the political orientation, such as the confidence or time frame."@en ;
+    rdfs:domain :BiasDetails ;
+    rdfs:range cco:PoliticalOrientation .
+
+:has_bias_details a owl:ObjectProperty ;
+    rdfs:label "has bias details"@en ;
+    rdfs:comment "Defines the bias(es) of an Actor (typically an Organization/publisher), Document or DocumentComponent."@en ;
+    rdfs:domain [ a owl:Class ;
+                  owl:unionOf ( event:Actor data-prov:Document data-prov:DocumentComponent ) ] ;
+    rdfs:range :BiasDetails .
+
+:has_bias_type a owl:ObjectProperty ;
+    rdfs:label "has bias type"@en ;
+    rdfs:comment "Indicates that an Actor (typically an Organization/publisher), Document or DocumentComponent uses a writing style indicative of bias and/or has specific biases for including/excluding/favoring/disfavoring various actors or topics. The type of bias is defined by the BiasType enumeration. The Actor or Document/DocumentComponent who/which is described has an associated BiasDetails instance (defined using the has_bias_details property), which then associates the BiasType."@en ;
+    rdfs:domain :BiasDetails ;
+    rdfs:range :BiasType .
+
+:included a owl:ObjectProperty ;
+    rdfs:label "included"@en ;
+    rdfs:comment "Indicates an Actor or Event/topic who/which is excessively referenced/discussed by another Actor or in a Document/DocumentComponent. The Actor or Document/DocumentComponent who/which makes the references should be indicated as having a :SelectionBias. This is accomplished by associating a BiasDetails instance with the Actor/Document/DocumentComponent (via the has_bias_details property), where the BiasDetails instance uses has_bias_type to reference :SelectionBias. The particular actors or topics that are mentioned/discussed are identified using this (included) property, while the ones which are ignored/excluded are identified using the excluded property."@en ;
+    rdfs:domain :BiasDetails ;
+    rdfs:range [ a owl:Class ;
+                 owl:unionOf ( event:Actor event:Event ) ] .
+
+
+#################################################################
+#    Datatype Properties
+#################################################################
+
+:percentage_of_statements a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "percentage of statements"@en ;
+    rdfs:comment "Indicates the percentage of sentences that exhibit the reporting quality indicated by the BiasDetails' has_bias_type reference. For example, if has_bias_type references :UseOfSubjectiveStatements, then this property would be associated to indicate the percentage of statements that were deemed to be 'subjective'. Note that, depending on how bias is determined/calculated, either this property or probability may be used to provide information on the degree of bias."@en ;
+    rdfs:domain :BiasDetails ;
+    rdfs:range [ a rdfs:Datatype ;
+                 owl:onDatatype xsd:decimal ;
+                 owl:withRestrictions ( [ owl:minInclusive "0.00"^^xsd:decimal ]
+                                        [ owl:maxInclusive "1.00"^^xsd:decimal ] ) ] .
+
+:probability a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "probability"@en ;
+    rdfs:comment "Indicates the probability that the Actor/Document/DocumentComponent which references the BiasDetails instance exhibits the bias/reporting quality indicated by the BiasDetails' has_bias_type reference. For example, if has_bias_type references :UseOfSensationalismOrExaggeration, then this property would be associated to indicate the probability that the Actor/Document/DocumentComponent was indeed sensationalist/contained exaggeration or sensationalism. Note that, depending on how bias is determined/calculated, either this property or percentage_of_statements may be used to provide information on the degree of bias."@en ;
+    rdfs:domain :BiasDetails ;
+    rdfs:range [ a rdfs:Datatype ;
+                 owl:onDatatype xsd:decimal ;
+                 owl:withRestrictions ( [ owl:minInclusive "0.00"^^xsd:decimal ]
+                                        [ owl:maxInclusive "1.00"^^xsd:decimal ] ) ] .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+:BiasType a owl:Class ;
+    rdfs:label "Bias Type (also indicating lack of bias)"@en ;
+    rdfs:comment "Bias is defined as a 'disproportionate weight in favor of or against one thing, person, or group compared with another' (Wikipedia). In terms of news or analysis, bias is defined based on 'the selection of events and stories that are reported and how they are covered' (Wikipedia). Bias includes right/left (conservative/liberal) leanings and support for other political ideologies - as described by the subclasses/individuals of cco:PoliticalOrientation, as well as the inclusion/exclusion of (or positive/negative support for) various actors, groups or events/factors. Examples of the latter include bias related to ethnicity/race, age and gender/sexual orientation. An Actor's or Document/DocumentComponent's bias is characterized by associating a BiasDetails individual (with its relationship to a :BiasType or cco:PoliticalOrientation individual via the has_bias_type or has_bias_based_on_political_orientation properties)."@en ;
+    rdfs:comment "Right/left (conservative/liberal) leanings are indicated using the Actor-PoliticalOrientation-Hierarchy ontology's FarLeft/RightOrientation, Left/RightLeaningOrientation and Centrism classes (which can also denote individuals via OWL punning). Strictly taking a liberal vs conservative stance can determine what is (typically) included/excluded or the (overall) positive/negative slant of an Actor, Document or DocumentComponent. However, it is possible to go beyond this (or to even override/clarify what is 'typical') by also characterizing an entity as having :Selection/StatementBias."@en ;
+    rdfs:comment "The inclusion/exclusion of (or positive/negative support for) various actors, groups or events/factors are indicated using the :SelectionBias or :StatementBias individuals. If an Actor, Document or DocumentComponent individual is characterized by SelectionBias, then the :included and/or :excluded properties should be associated with a BiasDetails individual, indicating the specific actors or event topics that are overtly selected or ignored. If an individual is characterized by :StatementBias, then the :favored and/or :disfavored properties should be associated with a BiasDetails individual, indicating the slant toward specific actors or topics."@en ;
+    rdfs:comment "Reporting quality is another indicator of bias and is defined as the overall quality of published information. It is based on the veracity of reporting, use of expression (use of grammar, parts of speech, punctuation, etc.), incorporation of opinion vs fact, and relevancy. Reporting quality covers various criteria and multiple values may be used to characterize an Actor or Document/Component. One set of values is related to reporting of events/facts (with/without additional analysis or opinion) versus reporting of inaccurate or fabricated information. These are: :UnbiasedFactReporting, :ComplexAnalysisWithUnbiasedFacts, :AnalysisOpinionOrPersuasion, :InclusionOfMisleadingInformation and :InclusionOfInaccurateInformation. Other sets of values deal with the level of detail (high vs low), the objective/subjective nature of the text, level of spelling/grammar/etc. and the presence of sensationalism/exaggeration/over-generalization or self-promotion. These are: :LowDetail, :HighDetail, :UseOfSubjectiveStatements, :UnacceptableWritingConventions, :UseOfSensationalismOrExageration and :UseOfSelfPromotion (respectively)."@en ;
+    owl:equivalentClass [ a owl:Class ;
+                          owl:oneOf ( :SelectionBias :StatementBias 
+                                      :UnbiasedFactReporting :ComplexAnalysisWithUnbiasedFacts :AnalysisOpinionOrPersuasion 
+                                      :InclusionOfMisleadingInformation :InclusionOfInaccurateInformation 
+                                      :UseOfSensationalismOrExaggeration :LowDetail :HighDetail :UseOfSubjectiveStatements 
+                                      :UnacceptableWritingConventions :UseOfSelfPromotion ) ] .
+
+:BiasDetails a owl:Class ;
+    rdfs:label "Bias Details"@en ;
+    rdfs:comment "BiasDetails individuals reify references to specific BiasTypes and cco:PoliticalOrientations that describe the biases of an Actor, Document or DocumentComponent. They allow the addition of confidence information (which is valuable if an algorithm is used to create the Classification), clarifying information related to Statement/SelectionBias, or the definitions of time frames when certain biases were exhibited. The specific biases/qualities are associated using the has_bias_type and has_bias_based_on_political_orientation properties, respectively. Confidence in the bias/quality is indicated using the GeneralConcepts ontology's numeric_confidence property. Time is specified using the GeneralConcepts ontology's time properties. Favored/disfavored/included/excluded references are defined using the equivalently named properties."@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+:AnalysisOpinionOrPersuasion a owl:NamedIndividual, :BiasType ;
+    rdfs:label "Analysis Opinion or Persuasion"@en .
+
+:ComplexAnalysisWithUnbiasedFacts a owl:NamedIndividual, :BiasType ;
+    rdfs:label "Complex Analysis with Unbiased Facts"@en .
+
+:HighDetail a owl:NamedIndividual, :BiasType ;
+    rdfs:label "High Detail"@en .
+
+:InclusionOfInaccurateInformation a owl:NamedIndividual, :BiasType ;
+    rdfs:label "Inclusion of Inaccurate Information"@en .
+
+:InclusionOfMisleadingInformation a owl:NamedIndividual, :BiasType ;
+    rdfs:label "Inclusion of Misleading Information"@en .
+
+:LowDetail a owl:NamedIndividual, :BiasType ;
+    rdfs:label "Low Detail"@en .
+
+:SelectionBias a owl:NamedIndividual, :BiasType ;
+    rdfs:label "Selection Bias"@en .
+
+:StatementBias a owl:NamedIndividual, :BiasType ;
+    rdfs:label "Statement Bias"@en .
+
+:UnacceptableWritingConventions a owl:NamedIndividual, :BiasType ;
+    rdfs:label "Unacceptable Writing Conventions"@en .
+
+:UnbiasedFactReporting a owl:NamedIndividual, :BiasType ;
+    rdfs:label "Unbiased Fact Reporting"@en .
+
+:UseOfSelfPromotion a owl:NamedIndividual, :BiasType ;
+    rdfs:label "Use of Self-Promotion"@en .
+
+:UseOfSensationalismOrExaggeration a owl:NamedIndividual, :BiasType ;
+    rdfs:label "Use of Sensationalism or Exaggeration"@en .
+
+:UseOfSubjectiveStatements a owl:NamedIndividual, :BiasType ;
+    rdfs:label "Use of Subjective Statements"@en .
+
+_:diff1 rdf:type owl:AllDifferent ; 
+    owl:members ( :AnalysisOpinionOrPersuasion :ComplexAnalysisWithUnbiasedFacts 
+                  :HighDetail :InclusionOfInaccurateInformation :InclusionOfMisleadingInformation 
+                  :LowDetail :SelectionBias :StatementBias :UnacceptableWritingConventions 
+                  :UnbiasedFactReporting :UseOfSelfPromotion :UseOfSensationalismOrExaggeration 
+                  :UseOfSubjectiveStatements ) .

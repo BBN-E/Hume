@@ -1,0 +1,36 @@
+ProvideFood	food assistance	food aid	food support
+ProvideSeed	seed aid
+ProvideVeterinaryService	veterinary care
+AntiRetroviralTreatment	antiretrovirals	anti-retroviral
+VectorControl	mosquito control	space spraying	vector management	vector control
+TherapeuticFeedingOrTreating	therapeutic feeding	emergency feeding	specialized feeding	therapeutic diet	therapeutic intervention
+SexualViolenceManagement	prophylaxis	prophylaxis	post-rape care
+Intervention	policy
+Famine	hunger	food insecurity
+Access	access	accessibility
+CurrencyDevaluation	depreciating value	depreciate value
+Conflict	civil unrest	violence	conflict	insecurity	security concerns	strife
+CropProduction	harvest	harvests	wheat production	planting
+Demand	demand
+Drought	drought	drought conditions	drought condition
+EconomicActivity	revenue
+Emotion	concerns	concern	morale
+Export	export	exports	exporting
+Flooding	flooding	flood	floods
+FoodExport	maize export	maize exports
+FoodPrice	wheat prices	wheat price	grain prices	grain price	food price	food prices	maize prices	maize price	sorghum prices	sorghum price	bean price	bean prices
+FoodShortage	food shortage	food shortages	cereal shortage	cereal shortages
+FoodSupply	grain	supply	supplies	food supply	food supplies	food access	food availability
+HumanDisease	malaria	diarrhea
+HumanDisplacement	flee	ebola
+Import	imports	import	importing
+Inflation	inflation
+Market	market
+Precipitation	rain	rains	rainfall	precipitation	precipitations
+Price	price	prices
+Shortage	deficits	deficit	shortage	shortages	scarcity
+Tension	pressure	tensions	tension
+Trend	decline	increase	increases	trends	trend	decline	strengthen	strengthening	pressure
+WaterShortage	water availability
+Weather	weather	weather condition	weather conditions	dry weather	seasonal patterns	seasonal pattern
+NO_EVENT	importing countries	import country	lowland	lowlands	area	areas

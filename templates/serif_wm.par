@@ -1,0 +1,86 @@
+########################################################################
+# 10/12/2015, Alex Zamanian                                            #
+#                                                                      #
+# serif_accent.par                                                     #
+# modified parameter file from run_awake_pipeline sequence             # 
+#                                                                      #
+########################################################################
+
+# External variables (must be defined first)
+parallel:           0000
+serif_data:         +SERIF_DATA+
+serif_score:        NO_SCORE
+start_stage:        START
+end_stage:          output
+experiment_dir:     +experiment_dir+
+batch_file:         +batch_file+
+
+INCLUDE +par_dir+/master.english.par
+INCLUDE +par_dir+/master.awake.english.par
+
+# Used for listing a manifest of serif data files so a
+# lean data repo can be created
+track_files_read: +should_track_files_read+
+use_feature_module_BasicCipherStream : +use_basic_cipher_stream+
+cipher_stream_always_decrypt: +use_basic_cipher_stream+
+
+OVERRIDE max_parser_seconds: 5
+
+input_type: sgm
+OVERRIDE sentence_breaker_dateline_mode: very_aggressive
+OVERRIDE use_dateline_mode_on_whole_document: true
+
+OVERRIDE actor_match_require_exact_entity_type_match: true
+OVERRIDE actor_match_only_match_names: true
+OVERRIDE allow_fac_org_matches: true
+
+entity_linking_mode: MENTION_GROUP
+
+# Robustness for runjobs expts
+OVERRIDE open_file_retries: 4
+
+# Speed improvement on Linux
+linux_temp_dir: /export/u10
+
+# Default also produces APF; we don't want that
+OVERRIDE output_format: 		      SerifXML
+
+# So countries don't get linked with their capitals
+OVERRIDE use_metonymy: false 
+
+# To run with sqlite (typical operation)
+bbn_actor_db: sqlite://+bbn_actor_db+?readonly&copy&cache_size=30000&temp_store=MEMORY
+bbn_actor_db_name: default
+use_normalized_sqlite_geonames_tables: false
+
+OVERRIDE minimum_actor_string_confidence: 0.79
+
+types_to_force_as_actor_mentions: PER,ORG
+awake_gazetteer_tablename_prefix: NONE
+
+do_cause_effect_relation_finding: true
+causeex_pattern_dir: +serif_cause_effect_patterns_dir+
+cause_effect_pattern_set_list:  +serif_cause_effect_patterns_dir+/causeex_patterns.list
+cause_effect_relation_output_dir: +cause_effect_output_dir+
+
+doc_reader_replace_invalid_xml_characters: true
+
+# Name finding through regex patterns
+use_name_finding_patterns: true
+project_specific_serif_data_root: +project_specific_serif_data_root+
+name_pattern_set_list: +project_specific_serif_data_root+/names/causeex_name_patterns.list
+
+# Keep "Lake Chad" from linking with "Chad"
+contraining_location_name_prefixes: +project_specific_serif_data_root+/edt/name_prefix_constraints.txt
+contraining_location_name_suffixes: +project_specific_serif_data_root+/edt/name_suffix_constraints.txt
+
+# Serif data file/model overrides
+OVERRIDE entity_type_set: +project_specific_serif_data_root+/types/causeex_entity_types.txt
+OVERRIDE pidf_tag_set_file: +project_specific_serif_data_root+/types/causeex_pidf.tags
+
+OVERRIDE entity_subtype_set: +project_specific_serif_data_root+/subtypes/causeex-entity-subtypes.txt
+OVERRIDE desc_head_subtypes: +project_specific_serif_data_root+/subtypes/causeex-desc-head-mappings.txt
+OVERRIDE full_name_subtypes: +project_specific_serif_data_root+/subtypes/causeex-full-name-mappings.txt
+OVERRIDE name_word_subtypes: +project_specific_serif_data_root+/subtypes/causeex-name-word-mappings.txt
+
+OVERRIDE run_fact_finder: false

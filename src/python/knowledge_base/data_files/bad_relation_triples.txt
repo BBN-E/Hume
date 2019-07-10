@@ -1,0 +1,32 @@
+# tab separated lines where the first and third elements are either trigger-words or trigger-phrases, and the middle element is the relation name
+
+localized production shocks	MitigatingFactor-Effect	costs
+national levels due  to increasing violence as well as other compounding factors including erratic rainfall in some parts of the  country and the spread of FAW	Cause-Effect	national levels
+global levels	MitigatingFactor-Effect	poverty
+the  absence	Catalyst-Effect	high  clay  content  soils
+Widespread  flooding	Catalyst-Effect	traders’  movements
+the main drivers	Cause-Effect	interruption
+the main drivers	Before-After	interruption
+increasing displacements	Catalyst-Effect	crop production
+established	Precondition-Effect	Farmers’ training centers
+equity principles	Before-After	The response
+people’s  susceptibility	Catalyst-Effect	disease
+expectations	Before-After	the good performance
+This hyperinflation	Catalyst-Effect	rising
+agriculture	Cause-Effect	the plundering
+meters	MitigatingFactor-Effect	the safety
+the conflict	Cause-Effect	The main drivers
+the conflict	Catalyst-Effect	season
+drought	Before-After	crop by-products
+1.6-fold [95% confidence interval	Catalyst-Effect	The risk
+The cumulative effects	Precondition-Effect	humaNitariaN
+arrest	Precondition-Effect	peace efforts
+insecurity	Precondition-Effect	their farms
+water resources	Preventative-Effect	plant genetics
+the attack	Before-After	shelter
+disease	Cause-Effect	death
+2007/8	Cause-Effect	rapid food price inflation
+production shocks	Cause-Effect	short run
+production shocks	Cause-Effect	short run
+food insecurity worsened  by rising staple food prices and collapse of the market	Catalyst-Effect	food insecurity
+food insecurity worsened  by rising staple food prices and collapse of the market	Catalyst-Effect	food insecurity

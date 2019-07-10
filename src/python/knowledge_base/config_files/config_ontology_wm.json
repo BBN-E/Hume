@@ -1,0 +1,114 @@
+{
+  "mappings": {
+    "entity": {
+      "default_type": "/wm/concept/entity",
+      "OTH": {
+        "default_type": "/wm/concept/entity",
+        "sub_types": {}
+      },
+      "PER": {
+        "default_type": "/wm/concept/entity/person_and_group",
+        "sub_types": {
+          "Individual": "/wm/concept/entity/person_and_group",
+          "Group": "/wm/concept/entity/person_and_group/population",
+          "Indeterminate": "/wm/concept/entity/person_and_group"
+        }
+      },
+      "ORG": {
+        "default_type": "/wm/concept/entity/organization",
+        "sub_types": {
+          "Commercial": "/wm/concept/entity/organization",
+          "Educational": "/wm/concept/entity/organization",
+          "Entertainment": "/wm/concept/entity/organization",
+          "Government": "/wm/concept/entity/government_entity",
+          "Media": "/wm/concept/entity/organization",
+          "Medical-Science": "/wm/concept/entity/organization",
+          "Non-Governmental": "/wm/concept/entity/organization",
+          "Religious": "/wm/concept/entity/organization",
+          "Sports": "/wm/concept/entity/organization",
+          "Military": "/wm/concept/entity/organization"
+        }
+      },
+      "LOC": {
+        "default_type": "/wm/concept/entity/geo-location",
+        "sub_types": {
+          "Address": "/wm/concept/entity/geo-location",
+          "Boundary": "/wm/concept/entity/geo-location",
+          "Celestial": "/wm/concept/entity/geo-location",
+          "Land-Region-Natural": "/wm/concept/entity/geo-location",
+          "Region-General": "/wm/concept/entity/geo-location",
+          "Region-International": "/wm/concept/entity/geo-location",
+          "Water-Body": "/wm/concept/entity/geo-location"
+        }
+      },
+      "FAC": {
+        "default_type": "/wm/concept/entity",
+        "sub_types": {
+          "Airport": "/wm/concept/entity",
+          "Building-Grounds": "/wm/concept/entity",
+          "Path": "/wm/concept/entity",
+          "Plant": "/wm/concept/entity",
+          "Subarea-Facility": "/wm/concept/entity"
+        }
+      },
+      "GPE": {
+        "default_type": "/wm/concept/entity/geo-location",
+        "sub_types": {
+          "Continent": "/wm/concept/entity/geo-location",
+          "County-or-District": "/wm/concept/entity/geo-location",
+          "GPE-Cluster": "/wm/concept/entity/geo-location",
+          "Nation": "/wm/concept/entity/geo-location",
+          "Population-Center": "/wm/concept/entity/geo-location",
+          "Special": "/wm/concept/entity/geo-location",
+          "State-or-Province": "/wm/concept/entity/geo-location"
+        }
+      },
+      "VEH": {
+        "default_type": "/wm/concept/entity",
+        "sub_types": {
+          "Air": "/wm/concept/entity",
+          "Land": "/wm/concept/entity",
+          "Subarea-Vehicle": "/wm/concept/entity",
+          "Underspecified": "/wm/concept/entity",
+          "Water": "/wm/concept/entity"
+        }
+      },
+      "WEA": {
+        "default_type": "/wm/concept/entity/artifact",
+        "sub_types": {}
+      },
+      "REFUGEE": {
+        "default_type": "/wm/concept/entity/person_and_group/population",
+        "sub_types": {}
+      }
+    },
+    "event": {
+    },
+    "event-event-relation": {
+      "causation": {
+        "left_predicate": "source",
+        "right_predicate": "destination"
+      },
+      "precondition": { 
+        "left_predicate": "source",
+        "right_predicate": "destination"
+      },
+      "prevention": { 
+        "left_predicate": "source",
+        "right_predicate": "destination"
+      },
+      "catalyst": { 
+        "left_predicate": "source",
+        "right_predicate": "destination"
+      },
+      "mitigation": { 
+        "left_predicate": "source",
+        "right_predicate": "destination"
+      },
+      "temporallyPrecedes": { 
+        "left_predicate": "source",
+        "right_predicate": "destination"
+      }
+    }
+  }
+}

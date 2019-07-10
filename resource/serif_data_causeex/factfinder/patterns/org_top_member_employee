@@ -1,0 +1,278 @@
+(org_top_members_employees
+  (wordsets
+    <!-- mshafir added headwords chairman, mayor, principal, manager because they are considered correct for coldstart -->
+    (WS_TOP_MEMBER director co-director owner cfo c.f.o. ceo c.e.o coo c.o.o. officer president lead leader first-in-command command executive chief head governor exectutive chairman principal manager commissioner)
+    (WS_TOP_GPE_MEMBER president mayor governor commissioner)
+    (WS_TOP_ORG_MEMBER director co-director owner cfo c.f.o. ceo c.e.o coo c.o.o. officer president lead leader first-in-command command executive chief head exectutive chairman principal manager trustee commissioner)
+  )
+  (entitylabels
+    (AGENT1)
+  
+    (TOP_EMP_HEADWORD_DESC 
+        (mention FOCUS (acetype PER) (mentiontype desc) (min-entitylevel NAME) (headword WS_TOP_MEMBER)))
+
+	(AFFILIATED_PERSON
+		(relation (fulltype ORG-AFF.Employment  ORG-AFF.Membership)
+		(args (argument (role ARG1) (mention FOCUS (acetype PER))))))
+	(AFFILIATED_ORG_GPE
+		(relation (fulltype ORG-AFF.Employment  ORG-AFF.Membership)
+		  (args (argument (role ARG2) (mention FOCUS (acetype ORG GPE))))))
+	
+		
+  )
+  (reference 
+	  
+    (mention (shortcut PERSON) (acetype PER) 
+		(return (ff_role org_top_members_employees)))
+	(mention (shortcut ORG_LEADER_HW) (acetype PER) (headword WS_TOP_ORG_MEMBER) 
+		(return (ff_role org_top_members_employees)))
+	(mention (shortcut GPE_LEADER_HW) (acetype PER) (headword WS_TOP_GPE_MEMBER) 
+		(return (ff_role org_top_members_employees)))
+	(mention (shortcut LEADER_HW) (acetype PER) (headword WS_TOP_MEMBER) 
+		(return (ff_role org_top_members_employees)))
+	(mention (shortcut AFFILIATE) (acetype ORG GPE) (entitylabel AGENT1)
+		(return (ff_role AGENT1) (ff_fact_type org_top_members_employees)))
+
+	(mention (shortcut PERSON_REL) (entitylabel AFFILIATED_PERSON)
+		(return (ff_role org_top_members_employees)))
+	(mention (shortcut LEADER_REL) (entitylabel AFFILIATED_PERSON) (headword WS_TOP_MEMBER) 
+		(return (ff_role org_top_members_employees)))
+	(mention (shortcut EMPLOYER_REL) (entitylabel AGENT1 AFFILIATED_ORG_GPE) 
+		(return (ff_role AGENT1) (ff_fact_type org_top_members_employees)))
+
+	
+	
+	(any-of (shortcut REL_AFFILIATE_ASSIGN) (id nmprop_affil_assign)  GREEDY
+	  (members
+		<!-- allow GPEs for this one only -->
+		(nprop (score 0.9) (args (argument (role <ref>) LEADER_REL) (argument (role <unknown> <poss> of) EMPLOYER_REL)))
+		<!-- ORGs only for these -->
+		(nprop (score 0.9) (args (argument (role <ref>) LEADER_REL) (argument (role at) EMPLOYER_REL)))
+		(mprop (score 0.9) (args (argument (role <ref>) LEADER_REL) (argument (role <poss> of) EMPLOYER_REL)))
+		<!-- We don't really want "his/her party" for these two, so block that too -->
+		(nprop (score 0.9) (args (argument (role <ref>) EMPLOYER_REL) (argument (role <unknown> <poss> of) LEADER_REL)))
+		(mprop (score 0.9) (args (argument (role <ref>) EMPLOYER_REL) (argument (role <poss> of) LEADER_REL)))))	
+		
+ 
+
+	(nprop (shortcut REPRESENTATIVE_OF_ORG) (args (argument (role <ref>) (mention (acetype PER))) (argument (role <poss> <unknown> of) AFFILIATE)))	
+	(nprop (shortcut AFFILIATE_WITH_ORG) (args (argument (role <ref>) LEADER_HW) (argument (role <poss> <unknown> of) AFFILIATE)))	
+	
+	(any-of (shortcut AFFILIATE_OR_REP)
+		(members AFFILIATE REPRESENTATIVE_OF_ORG))
+
+	(any-of (shortcut PROP_AFFILIATE) GREEDY (members
+		(nprop (args (argument (role <ref>) AFFILIATE)))
+		(mprop (args (argument (role <ref>) AFFILIATE)))
+		(sprop (args (argument (role <member>) AFFILIATE)))
+	))		
+	
+	(any-of (shortcut AFF_PATIENT_NO_LEADER_ARG) (members 
+		(argument (role <obj> <iobj>) PERSON)
+		(argument (role <obj> <iobj>) (vprop (args (argument (role <sub>) PERSON))))		
+		(argument (role <obj> <iobj>) (vprop (args (argument (role <sub>) PERSON))))	
+	))
+	(any-of (shortcut AFF_AGENT_NO_LEADER_ARG) (members 
+		(argument (role <sub>) PERSON)
+		(argument (role <poss> of) PERSON)		
+	
+	))
+	(any-of (shortcut AFF_PATIENT_PER_ARG) (members 
+		(argument (role <obj> <iobj>) LEADER_HW)
+		(argument (role <obj> <iobj>) (vprop (args (argument (role <sub>) LEADER_HW))))		
+		(argument (role <obj> <iobj>) (vprop (args (argument (role <sub>) LEADER_HW))))	
+	))
+	(any-of (shortcut AFF_AGENT_PER_ARG) (members 
+		(argument (role <sub>) LEADER_HW)
+		(argument (role <poss> of) LEADER_HW)		
+	
+	))
+	(any-of (shortcut AFF_AGENT_ORG_ARG) (members 
+		(argument (role <sub>) PROP_AFFILIATE)
+		(argument (role <sub>) AFFILIATE_OR_REP)
+		(argument (role as) (nprop (args (argument (role <ref>) (mention (acetype PER))) (argument AFFILIATE))))		
+		(argument (role <obj> <iobj>) (vprop (predicate turn head run prepare manage help rescue get oversee work bolster lead) 
+			(args (argument (role <obj> <iobj> in at <poss> <unknown>) AFFILIATE))))
+		(argument (role from) AFFILIATE)
+	))
+	(any-of (shortcut AFF_PATIENT_ORG_ARG) (members 
+		(argument (role <obj> <iobj> at of) AFFILIATE)
+		(argument (role from) AFFILIATE)
+		(argument (role as) (nprop (args (argument (role <ref>) (mention (acetype PER))) (argument AFFILIATE))))
+		(argument (role <obj> <iobj> from) (nprop (predicate job position) (args (argument (role at <unknown> with) AFFILIATE))))
+	)) 
+
+	(mention (shortcut TOP_POSITION) (headword WS_TOP_MEMBER))
+	(argument (shortcut TOP_POSITION_ARG) (role <obj> <iobj> as to) TOP_POSITION)
+	
+	)
+  (toplevel
+  
+	 <!-- Example: he served as Cinergy's chairman and CEO 
+			This is for recovering poss props, which are usually a prop error, 
+			in cases where there is a set involved because fall-through will be broken -->
+	 (sprop (id propmod_possessive) (score 0.9) (args 
+		(argument (role <member>) LEADER_REL))
+		(propmod (role <ref>)
+			(anyprop (args (argument (role <poss>) EMPLOYER_REL)))))
+			
+	 <!-- Example: Kodak hadn't been clear in guaranteeing the money wouldn't go to top management insiders like Chief Executive Antonio Perez
+			This is an inference pattern, if you have a keyword like executive in a sentence and there is only one ORG,
+			probably the person is the executive of that org -->
+	 (intersection (id leader_of_org_occurs_once) (score 0.9) (members
+		ORG_LEADER_HW
+		(mention (entitylabel AGENT1) 
+			(sent_etype_freq == 1) (acetype ORG)
+			(return (ff_role AGENT1) (ff_fact_type org_top_members_employees)))))
+		
+	
+     (vprop (id fired_basic)
+       (predicate replac* resign*)
+       (args AFF_PATIENT_PER_ARG AFF_AGENT_ORG_ARG))
+	 
+	 (vprop (id became) (predicate became) (return (role KBP:START) (type kbp:START))
+		(args 
+			(argument (role <obj> ) LEADER_HW)
+			(argument (role in of) AFFILIATE))
+		(block_args (argument (role in) (mention (acetype GPE)))))
+
+
+   (relation (id org_aff_employment1)
+      (fulltype ORG-AFF.Employment)
+      (args
+        (argument (role ARG1) LEADER_HW)
+        (argument (role ARG2) AFFILIATE)))
+   (relation (id org_aff_employment2)
+      (fulltype ORG-AFF.Membership)
+      (args
+        (argument (role ARG1) LEADER_HW)
+        (argument (role ARG2) AFFILIATE)))
+
+	
+	<!-- Get the 'former' premod when it is there -->
+	
+	REL_AFFILIATE_ASSIGN
+	
+	(vprop (id aff_assign1)
+		(args (argument (role <sub>) REL_AFFILIATE_ASSIGN)))
+	(vprop (id aff_assign2)
+		(args (argument (role <obj>) REL_AFFILIATE_ASSIGN)))		
+	(vprop (id aff_assign3)
+		(args (argument REL_AFFILIATE_ASSIGN)))
+		
+		
+	(vprop (id sub_obj) (score 0.9)
+		   (predicate work* )
+		   (args (argument (role <sub>) LEADER_REL) 
+		         (argument (role for at in) EMPLOYER_REL)))
+
+	(vprop (id sub_obj) (score 0.9)
+		   (predicate work* serv* teach* taught)
+		   (args (argument (role <sub>) LEADER_REL) 
+		         (argument (role for at in) EMPLOYER_REL))
+			(block_args (argument (role in) (mention (acetype GPE)))))
+				 
+	(mprop (id where_serve) (score 0.9)
+		(predicate where) (args 
+				(argument (role <ref>) AFFILIATE)
+				(argument (role where) 	(vprop (predicate serv* work*) 
+						(args (argument (role <sub>) LEADER_HW))))))
+		
+	(nprop (id promotion)
+		(predicate promotion)
+		(args AFF_PATIENT_NO_LEADER_ARG TOP_POSITION_ARG AFF_AGENT_ORG_ARG))
+		
+	(vprop (id hired)
+       (predicate appoint* hired hires hiring hire rehir* promot* appoint* elect* becom* became)
+       (args AFF_PATIENT_PER_ARG AFF_AGENT_ORG_ARG))
+	   
+	(vprop (id hired_pos)
+       (predicate hired hires hiring hire rehir* promot* appoint* elect* becom* became)
+       (args AFF_PATIENT_NO_LEADER_ARG TOP_POSITION_ARG AFF_AGENT_ORG_ARG))
+	   
+	(vprop (id fired_basic)
+       (predicate fired fires firing fire sack sacks sacking sacked)
+       (args AFF_PATIENT_PER_ARG AFF_AGENT_ORG_ARG))
+	   
+	(vprop (id fired_basic_pos)
+       (predicate fired fires firing fire sack sacks sacking sacked)
+       (args AFF_PATIENT_NO_LEADER_ARG TOP_POSITION_ARG AFF_AGENT_ORG_ARG))
+   
+	(vprop (id fired_person_with_org)
+       (predicate replac* resign*)
+       (args (argument (role <obj> <iobj>) AFFILIATE_WITH_ORG)))
+	
+	<!-- this might be redundant, but... -->
+	(vprop (id hired_to_run2)
+       (predicate appoint* hired hires hiring hire rehir*)
+       (args (argument (role <obj> <iobj>) (vprop (predicate turn head run prepare manage help rescue get oversee work bolster lead) 
+	     	       	     	   	   	  (args (argument (role <sub>) LEADER_HW)
+											(argument (role <obj> <iobj> in at <poss> <unknown>) AFFILIATE)))))										
+		)
+	(vprop (id joined)
+       (predicate join* enlist* )
+       (args AFF_AGENT_PER_ARG AFF_PATIENT_ORG_ARG))
+	   
+	(vprop (id joined_pos)
+       (predicate join* )
+       (args AFF_PATIENT_NO_LEADER_ARG TOP_POSITION_ARG AFF_AGENT_ORG_ARG))
+
+	(vprop (id left)
+       (predicate resign* quit left* leav* retir*)
+       (args AFF_AGENT_PER_ARG AFF_PATIENT_ORG_ARG)
+	   (block_args (argument (role <obj> <iobj> at) (mention (acetype GPE)))))
+	   
+	(vprop (id left_pos)
+       (predicate resign* quit left* leav* retir*)
+       (args AFF_PATIENT_NO_LEADER_ARG TOP_POSITION_ARG AFF_AGENT_ORG_ARG)
+	   (block_args (argument (role <obj> <iobj> at) (mention (acetype GPE)))))
+	
+	(vprop (id resigned)
+       (predicate resign* quit)
+       (args AFF_AGENT_PER_ARG AFF_PATIENT_ORG_ARG))	   
+
+	(nprop (id retirement_from)
+       (predicate resignation retirement)
+        (args AFF_AGENT_PER_ARG AFF_PATIENT_ORG_ARG))
+
+	(nprop (id retirement)
+       (predicate resignation retirement)
+       (args (argument (role <poss> of) AFFILIATE_WITH_ORG))
+	   )
+
+	(vprop (id discharge_dismiss)
+       (predicate discharg* dismiss*)
+       (args (argument (role <sub>) AFFILIATE)
+       	    (argument (role <obj> <iobj>) LEADER_HW))
+		(block_args (argument (role <sub>) (mention (headword court)))))		
+		
+	(nprop (id nprop_member) (predicate leader) 
+		(args (argument (role <ref>) PERSON) 
+		(argument (role of <unknown>)  AFFILIATE)))
+	
+	(vprop (id vprop_leads) (predicate lead* led) 
+		(args (argument (role <ref>) PERSON) 
+		(argument (role of <unknown>)  AFFILIATE)))
+	
+	(vprop (id step_down1)
+       (predicate step) (adverb_or_particle down)
+       (args AFF_AGENT_PER_ARG AFF_PATIENT_ORG_ARG))
+	   
+	(vprop (id step_down2)
+       (predicate step) (adverb_or_particle down)
+       (args AFF_PATIENT_NO_LEADER_ARG TOP_POSITION_ARG AFF_AGENT_ORG_ARG))
+	   
+	(vprop (id take_over1)
+       (predicate take took) (adverb_or_particle over)
+       (args AFF_AGENT_PER_ARG AFF_PATIENT_ORG_ARG))
+	   
+	(vprop (id take_over2)
+       (predicate take took) (adverb_or_particle over)
+       (args AFF_PATIENT_NO_LEADER_ARG TOP_POSITION_ARG AFF_AGENT_ORG_ARG))
+	   
+	)
+
+<!-- TODO: 1. former speaker of the Florida House of Representatives, 2. former Florida House Speaker Tom Feeney -->
+
+)
+	

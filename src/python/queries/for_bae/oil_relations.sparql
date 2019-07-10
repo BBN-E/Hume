@@ -1,0 +1,30 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix causal: <http://ontology.causeex.com/ontology/odps/CauseEffect#>
+prefix event: <http://ontology.causeex.com/ontology/odps/Event#>
+PREFIX prov: <http://ontology.causeex.com/ontology/odps/DataProvenance#>
+PREFIX general: <http://ontology.causeex.com/ontology/odps/GeneralConcepts#>
+PREFIX bbnta1: <http://graph.causeex.com/bbn#>
+PREFIX actor: <http://ontology.causeex.com/ontology/odps/Actor#>
+PREFIX cco: <http://ontology.causeex.com/cameo/CountryCodeOntology/>
+PREFIX doco: <http://purl.org/spar/doco/>
+
+SELECT DISTINCT
+*
+WHERE {
+
+      ?event a ?event_type ; general:involves_goods_or_property ?goods .
+      ?goods a bbnta1:Oil .
+      ?ca a causal:CausalAssertion .
+      { ?ca causal:has_effect ?event .
+        { ?ca causal:has_cause ?related } union
+        { ?ca causal:has_catalyst ?related } union
+        { ?ca causal:has_precondition ?related }
+      } union
+      { ?ca causal:has_effect ?related .
+        { ?ca causal:has_cause ?event } union
+        { ?ca causal:has_catalyst ?event } union
+        { ?ca causal:has_precondition ?event }
+      }
+      ?related a ?related_type .
+}

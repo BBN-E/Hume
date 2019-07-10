@@ -1,0 +1,55 @@
+(per_other_family
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 8 copula:was[<obj> = noun:sister-in-law[of = 1]][<sub> = 0] -->
+		(anyprop (id per_other_family_tac_10) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (nprop (predicate sister-in-law) (args (argument (role of) (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER)))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_other_family_tac_400000)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 8 copula:was[<obj> = noun:sister-in-law[of = name:[<ref> = 1]]][<sub> = 0] -->
+		(anyprop (id per_other_family_tac_7) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (nprop (predicate sister-in-law) (args (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER))))))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_other_family_tac_400001)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 8 copula:was[<obj> = noun:sister-in-law[<ref> = 0][of = 1]] -->
+		(anyprop (id per_other_family_tac_9) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (nprop (predicate sister-in-law) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_other_family_tac_400002)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 5 modifier:late[<ref> = noun:grandmother[<poss> = 0][<ref> = 1]] -->
+		(mprop (id per_other_family_tac_2) (score 0.9) (score_group 1) (predicate late) (args (argument (role <ref>) (nprop (predicate grandmother) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_other_family_tac_400003)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 5 {0} late {1}&[slot=0, word=his, lang=english]&[slot=1, word=grandmother, lang=english] -->
+		(regex (id per_other_family_tac_4) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_other_family_tac_400004)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "his")))))) (text DONT_ADD_SPACES (string "late")) (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "grandmother"))))))))
+
+		<!-- 5 noun:grandmother[<poss> = pronoun:his[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_other_family_tac_6) (score 0.9) (score_group 1) (predicate grandmother) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_other_family_tac_400005)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 5 {0} late {1}&[slot=1, word=grandmother, lang=english] -->
+		(regex (id per_other_family_tac_3) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_other_family_tac_400006)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "late")) (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "grandmother"))))))))
+
+		<!-- 2 {0} niece , {1} -->
+		(regex (id per_other_family_tac_27) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_other_family_tac_400007)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "niece")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER))))
+
+		<!-- 2 noun:aunt[<poss> = 0][<ref> = 1] -->
+		(nprop (id per_other_family_tac_16) (score 0.9) (score_group 1) (predicate aunt) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_other_family_tac_400008)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 2 verb:said[<iobj> = noun:niece[<mod> = 0][<poss> = 1]] -->
+		(vprop (id per_other_family_tac_2) (score 0.9) (score_group 1) (predicate said) (args (argument (role <iobj>) (nprop (predicate niece) (args (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type per_other_family_tac_400009)) (entitylabel AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 2 {0} foster mother , {1} -->
+		(regex (id per_other_family_tac_18) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_other_family_tac_400010)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "foster")) (text DONT_ADD_SPACES (string "mother")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER))))
+
+		<!-- 2 {1} niece {0} -->
+		(regex (id per_other_family_tac_7) (score 0.9) (score_group 1) (re (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "niece")) (mention (return (ff_role AGENT1) (ff_fact_type per_other_family_tac_400011)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 1 noun:cousin[<ref> = 0][of = 1] -->
+		(nprop (id per_other_family_tac_40) (score 0.9) (score_group 1) (predicate cousin) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_other_family_tac_400012)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 1 copula:is[<obj> = noun:cousin[<ref> = 0][of = 1]] -->
+		(anyprop (id per_other_family_tac_37) (score 0.9) (score_group 1) (predicate is) (args (argument (role <obj>) (nprop (predicate cousin) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_other_family_tac_400013)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 1 copula:is[<obj> = noun:cousin[<ref> = 0][of = name:[<ref> = 1]]] -->
+		(anyprop (id per_other_family_tac_38) (score 0.9) (score_group 1) (predicate is) (args (argument (role <obj>) (nprop (predicate cousin) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_other_family_tac_400014)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER)))))))))))
+
+	)
+)

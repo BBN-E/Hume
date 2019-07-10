@@ -1,0 +1,27 @@
+(per_employee_or_member_of_serif
+
+(wordsets)
+
+(entitylabels (AGENT1))
+
+(reference)
+
+(toplevel
+
+(event (fulltype Personnel.End-Position Personnel.Start-Position) (id mapping_1) (score 1.0) (score_group 1)
+        (args
+                (argument (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_serif1)) (entitylabel AGENT1)) (role Person))
+                (argument (mention (return (ff_role per_employee_or_member_of_serif)) (min-entitylevel NAME) (acetype ORG)) (role Entity))
+        )
+)
+
+
+(relation (fulltype ORG-AFF.Employment ORG-AFF.Membership) (id mapping_2) (score 1.0) (score_group 1)
+        (args
+                (argument (role ARG1) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_serif2)) (entitylabel AGENT1)))
+                (argument (role ARG2) (mention (return (ff_role per_employee_or_member_of_serif)) (min-entitylevel NAME) (acetype ORG GPE)))
+        )
+)
+
+)
+)

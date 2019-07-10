@@ -1,0 +1,5 @@
+Cause-Effect: %causeex_pattern_dir%/cause-effect.patterns
+Preventative-Effect: %causeex_pattern_dir%/preventative-effect.patterns
+Catalyst-Effect: %causeex_pattern_dir%/catalyst-effect.patterns
+MitigatingFactor-Effect:  %causeex_pattern_dir%/mitigatingfactor-effect.patterns
+Before-After: %causeex_pattern_dir%/before-after.patterns

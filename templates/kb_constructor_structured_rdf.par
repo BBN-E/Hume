@@ -1,0 +1,7 @@
+READER StructuredDataReader
++structured_kb_file+
+
+SERIALIZER RDFSerializer
++ttl_output_file+
++nt_output_file+
++jsonld_output_file+

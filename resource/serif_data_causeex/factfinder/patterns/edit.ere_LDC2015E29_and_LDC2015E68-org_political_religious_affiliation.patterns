@@ -1,0 +1,34 @@
+(org_political_religious_affiliation
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 3 {1}  {0}&[slot=0, word=congress, lang=english]&[slot=1, word=muslim, lang=english] -->
+		(regex (id org_political_religious_affiliation_ere_4) (score 0.9) (score_group 1) (re (mention (return (ff_role org_political_religious_affiliation)) (block AGENT1) (acetype PER GPE LOC) (regex (regex (re (text DONT_ADD_SPACES (string "muslim")))))) (mention (return (ff_role AGENT1) (ff_fact_type org_political_religious_affiliation_ere_200000)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "congress"))))))))
+
+		<!-- 3 {1}  {0}&[slot=1, word=muslim, lang=english] -->
+		(regex (id org_political_religious_affiliation_ere_3) (score 0.9) (score_group 1) (re (mention (return (ff_role org_political_religious_affiliation)) (block AGENT1) (acetype PER GPE LOC) (regex (regex (re (text DONT_ADD_SPACES (string "muslim")))))) (mention (return (ff_role AGENT1) (ff_fact_type org_political_religious_affiliation_ere_200001)) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 2 modifier:fundamentalist[<ref> = noun:regime[<mod> = 1][<ref> = 0]] -->
+		(mprop (id org_political_religious_affiliation_ere_7) (score 0.9) (score_group 1) (predicate fundamentalist) (args (argument (role <ref>) (nprop (predicate regime) (args (argument (role <mod>) (mention (return (ff_role org_political_religious_affiliation)) (block AGENT1) (acetype PER GPE LOC))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_political_religious_affiliation_ere_200002)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 1 {1}  {0}&[slot=1, word=catholic, lang=english] -->
+		(regex (id org_political_religious_affiliation_ere_66) (score 0.9) (score_group 1) (re (mention (return (ff_role org_political_religious_affiliation)) (block AGENT1) (acetype PER GPE LOC) (regex (regex (re (text DONT_ADD_SPACES (string "catholic")))))) (mention (return (ff_role AGENT1) (ff_fact_type org_political_religious_affiliation_ere_200003)) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 1 {1}  {0}&[slot=0, word=organisations, lang=english]&[slot=1, word=islamist, lang=english] -->
+		(regex (id org_political_religious_affiliation_ere_37) (score 0.9) (score_group 1) (re (mention (return (ff_role org_political_religious_affiliation)) (block AGENT1) (acetype PER GPE LOC) (regex (regex (re (text DONT_ADD_SPACES (string "islamist")))))) (mention (return (ff_role AGENT1) (ff_fact_type org_political_religious_affiliation_ere_200004)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "organisations"))))))))
+
+		<!-- 1 noun:government[<mod> = 1][<ref> = 0]&[slot=1, word=hindu, lang=english] -->
+		(nprop (id org_political_religious_affiliation_ere_48) (score 0.9) (score_group 1) (predicate government) (args (argument (role <mod>) (mention (return (ff_role org_political_religious_affiliation)) (block AGENT1) (acetype PER GPE LOC) (regex (regex (re (text DONT_ADD_SPACES (string "hindu"))))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_political_religious_affiliation_ere_200005)) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 1 {1}  {0}&[slot=0, word=monastery, lang=english]&[slot=1, word=buddhist, lang=english] -->
+		(regex (id org_political_religious_affiliation_ere_29) (score 0.9) (score_group 1) (re (mention (return (ff_role org_political_religious_affiliation)) (block AGENT1) (acetype PER GPE LOC) (regex (regex (re (text DONT_ADD_SPACES (string "buddhist")))))) (mention (return (ff_role AGENT1) (ff_fact_type org_political_religious_affiliation_ere_200006)) (entitylabel AGENT1) (acetype ORG) (regex (regex (re (text DONT_ADD_SPACES (string "monastery"))))))))
+
+		<!-- 1 {1}  {0}&[slot=1, word=buddhist, lang=english] -->
+		(regex (id org_political_religious_affiliation_ere_44) (score 0.9) (score_group 1) (re (mention (return (ff_role org_political_religious_affiliation)) (block AGENT1) (acetype PER GPE LOC) (regex (regex (re (text DONT_ADD_SPACES (string "buddhist")))))) (mention (return (ff_role AGENT1) (ff_fact_type org_political_religious_affiliation_ere_200007)) (entitylabel AGENT1) (acetype ORG))))
+
+	)
+)

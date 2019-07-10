@@ -1,0 +1,333 @@
+(wm-m12-hackathon-name-patterns-1
+
+(wordsets
+
+(GPE
+
+Leer
+Mayendit
+Koch
+Panyijar
+Northern_Bahr_el_Ghazal
+Unity
+Northern_Bahr_el_Ghazal_State
+Unity_State
+
+)
+
+(CROP
+
+maize
+sorghum
+sorghums
+rice
+bean
+beans
+cereal
+cereals
+
+)
+
+(REFUGEE
+
+refugee
+refugees
+
+)
+
+(MONEY
+
+cash
+money
+funding
+assets
+asset
+vouchers
+voucher
+payment
+payments
+
+)
+
+(FOOD
+
+food
+foods
+milk
+cereal
+cereals
+bread
+rice
+nutrition
+vegetable
+bean
+beans
+pasta
+beaf
+chicken
+fish
+whole_grains
+meat
+
+)
+
+(WATER
+
+water
+
+)
+
+(MEDICAL
+
+medical_resource
+medical_resources
+de-wormer
+de-wormers
+
+)
+
+(FERTILIZER
+
+fertilizer
+fertilizers
+
+)
+
+(SEED
+
+seed
+seeds
+
+)
+
+(LIVESTOCK
+
+sheep
+goat
+goats
+
+)
+
+(HUMAN_RIGHT
+
+human_rights
+
+)
+
+(HYGIENE_TOOL
+
+handwashing_station
+handwashing_stations
+hygiene_kit
+hygiene_kits
+hygiene_supplies
+hygiene_item
+hygiene_items
+hygiene_product
+hygiene_products
+sanitation_supplies
+sanitation_kit
+sanitation_kits
+soap
+shampoo
+toothbrush
+detergent
+diaper
+diapers
+water_kit
+water_kits
+sanitiser
+sanitisers
+sanitary_cloth
+sanitary_cloths
+washing_powder
+water_purification_tablet
+water_purification_tablets
+wash_supplies
+chlorine_tablet
+chlorine_tablets
+
+)
+
+(INSECT_CONTROL
+
+insecticidal_net
+insecticidal_nets
+bed_net
+bed_nets
+window_screen
+window_screens
+insecticide
+insecticides
+larvicide
+larvicides
+rodenticide
+rodenticides
+ovitrap
+ovitraps
+repellent
+repellents
+
+)
+
+(LIVESTOCK_FEED
+
+livestock_feed
+animal_feed
+fodder
+forage
+hay
+pasture
+
+)
+
+(SEXUAL_VIOLENCE
+
+SGBV
+sexual_violence
+sexual_assault
+rape
+sexual_abuse
+
+)
+
+(STATIONARY
+
+education_kit
+education_kits
+education_material
+education_materials
+education_pack
+education_packs
+learning_material
+learning_materials
+
+)
+
+(VETERINARY_SERVICE
+
+veterinary_service
+veterinary_services
+livestock_service
+livestock_services
+animal_service
+animal_services
+
+)
+
+(DELIVERY_KIT
+
+delivery_kit
+delivery_kits
+
+)
+
+(FARMING_TOOL
+
+fertilizer
+fertilizers
+farming tools
+
+)
+
+(FISHING_TOOL
+
+fishing_boat
+fishing_boats
+fishing_net
+fishing_nets
+fishing_gear
+fishing_asset
+fishing_assets
+fishing_support
+fishing_tool
+fishing_tools
+fishing_supplies
+fishing_equipment
+
+)
+
+(THERAPEUTIC_FEEDING
+
+food_items
+food_item
+therapeutic_food
+therapeutic_food_product
+therapeutic_snack
+therapeutic_snacks
+medicine
+nutritious_food
+
+)
+
+)
+
+(toplevel
+
+(regex (return (type GPE) (force YES))
+       (re (text (string GPE))))
+
+(regex (return (type CROP) (force YES))
+       (re (text (string CROP))))
+
+(regex (return (type REFUGEE) (force YES))
+       (re (text (string REFUGEE))))
+
+(regex (return (type MONEY) (force YES))
+       (re (text (string MONEY))))
+
+(regex (return (type FOOD) (force YES))
+       (re (text (string FOOD))))
+
+(regex (return (type WATER) (force YES))
+       (re (text (string WATER))))
+
+(regex (return (type MEDICAL) (force YES))
+       (re (text (string MEDICAL))))
+
+(regex (return (type FERTILIZER) (force YES))
+       (re (text (string FERTILIZER))))
+
+(regex (return (type SEED) (force YES))
+       (re (text (string SEED))))
+
+(regex (return (type LIVESTOCK) (force YES))
+       (re (text (string LIVESTOCK))))
+
+
+(regex (return (type DELIVERY_KIT) (force YES))
+       (re (text (string DELIVERY_KIT))))
+
+(regex (return (type FARMING_TOOL) (force YES))
+       (re (text (string FARMING_TOOL))))
+       
+(regex (return (type FISHING_TOOL) (force YES))
+       (re (text (string FISHING_TOOL))))
+
+(regex (return (type HUMAN_RIGHT) (force YES))
+       (re (text (string HUMAN_RIGHT))))
+
+(regex (return (type HYGIENE_TOOL) (force YES))
+       (re (text (string HYGIENE_TOOL))))
+
+(regex (return (type INSECT_CONTROL) (force YES))
+       (re (text (string INSECT_CONTROL))))
+
+(regex (return (type LIVESTOCK_FEED) (force YES))
+       (re (text (string LIVESTOCK_FEED))))
+
+(regex (return (type SEXUAL_VIOLENCE) (force YES))
+       (re (text (string SEXUAL_VIOLENCE))))
+
+(regex (return (type STATIONARY) (force YES))
+       (re (text (string STATIONARY))))
+
+(regex (return (type VETERINARY_SERVICE) (force YES))
+       (re (text (string VETERINARY_SERVICE))))
+
+(regex (return (type THERAPEUTIC_FEEDING) (force YES))
+       (re (text (string THERAPEUTIC_FEEDING))))
+
+)
+
+)

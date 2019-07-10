@@ -1,0 +1,40 @@
+READER SerifXMLReader
++serifxml_dir+
++metadata_file+
++mode+
++serif_accent_event_type+
+
+READER FactReader
++factfinder_json_file+
+
+RESOLVER CountryCodePropertyResolver
+
+RESOLVER FactorEventGenericGenericityResolver
+
+RESOLVER BadRelationResolver
+
+RESOLVER RedundantEventResolver
+
+RESOLVER RedundantRelationResolver
+
+RESOLVER PrecisionResolver
+
+RESOLVER RemovalByTypeResolver
+
+RESOLVER AdditionalEntityTypeResolver
+
+RESOLVER ConfidenceResolver
++learnit_relation_triple_file+
++learnit_event_head_count_file+
+
+RESOLVER EventDirectionResolver
+
+RESOLVER EventTypeChangeResolver
+
+RESOLVER EventMappingResolver
+
+RESOLVER EventGrounder
++internal_ontology_dir+
++external_ontology+
+3
++output_cache_file+

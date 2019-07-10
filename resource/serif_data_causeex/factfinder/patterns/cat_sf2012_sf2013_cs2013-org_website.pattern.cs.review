@@ -1,0 +1,27 @@
+(org_website
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 1: 5 {0} : {1} -->
+		(regex (id org_website_2) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_website_2)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string ":")) (value (return (ff_role org_website)) (type Contact-Info.URL))))
+
+		<!-- 3: 3 set: []   <ref> = 1    <member> = 0 -->
+		(sprop (id org_website_4) (score 0.9) (score_group 1) (args (argument (role <ref>) (value (return (ff_role org_website)) (type Contact-Info.URL))) (argument (role <member>) (mention (return (ff_role AGENT1) (ff_fact_type org_website_4)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 4: 3 name: []   <ref> = 0    UNKNOWN = 1 -->
+		(anyprop (id org_website_5) (score 0.9) (score_group 1) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_website_5)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))) (argument (role unknown) (value (return (ff_role org_website)) (type Contact-Info.URL)))))
+
+		<!-- 5: 1 {1} -RRB- , {0} -->
+		(regex (id org_website_6) (score 0.9) (score_group 1) (re (value (return (ff_role org_website)) (type Contact-Info.URL)) (text DONT_ADD_SPACES (string "-RRB-")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type org_website_6)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 6: 1 {0} research : {1} -->
+		(regex (id org_website_7) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_website_7)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "research")) (text DONT_ADD_SPACES (string ":")) (value (return (ff_role org_website)) (type Contact-Info.URL))))
+
+		<!-- 7: 1 {0} 's {1} -->
+		(regex (id org_website_8) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_website_8)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "'s")) (value (return (ff_role org_website)) (type Contact-Info.URL))))
+	)
+)

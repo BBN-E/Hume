@@ -1,0 +1,442 @@
+@prefix : <http://ontology.causeex.com/ontology/odps/ICM#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix icm: <http://ontology.causeex.com/ontology/odps/ICM#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ontology.causeex.com/ontology/odps/ICM-Hierarchy> rdf:type owl:Ontology ;
+    dcterms:description "Ontology defining sub-classes of CausalVariable to standardize the semantics across various causal modeling teams."@en ;
+    dcterms:created "May 3, 2018"^^xsd:string ;
+    dcterms:modified "January 29, 2019"^^xsd:string ;
+    rdfs:comment """January 29th 2019 revisions:
+                    Renamed GovermentActivities to Government (to generalize it and updated several subClassOf statements to use this new class).
+                    Renamed DemocraticProcesses to SupportForDemocraticConcepts, and HumanitarianCrisisLevel to HumanitarianCrisis.
+                    Added the classes, Propaganda, EconomicConditions, InternationalTradeRelationships and MilitaryConflicts.
+                  January 21st 2019 revisions:
+                    Removed EconomicActivities as it added no new semantics to EconomicFactors. Added other, new subclasses of EconomicFactors.
+                    Added the Espionage, Offensive/Defensive, Conventional/UnConventional, AntiAccessAreaDenial/Biological/Chemical/Nuclear/
+                      Radiological, AbilityToAddressBasicNeeds and RightsAndFreedoms classes, as well as sub-classes.
+                    Added sub-classes of MilitaryActivities. Renamed Support to Sentiments and added sub-classes.
+                    Separated PreparednessOrCapabilities into two separate classes, and added sub-classes to Capabilities.
+                    Made ExhibitionOfPower into a plural ExhibitionsOfPower. 
+                    Corrected typos in several labels.
+                    Renamed the ontology.
+                  October 23rd 2018 revisions:
+                    Corrected rdfs:label that should have been an rdfs:comment.
+                    Renamed Preparedness to PreparednessOrCapability.
+                    Added CivilSocietyActivities, Employment (sub-class of EconomicActivities), Health (super-class of 
+                      HealthCareActivities), InfrastructureAndUtilities, InternationalInfluence, RecruitmentActivities, 
+                      Water and Weather (sub-class of EnvironmentalFactors).
+                    Added DiplomaticActivities, Deaths, DisagreementsOrTensions, EconomicFactors, ExhibitionOfPower, InformationOperations
+                      (and sub-classes, MisInformation/Disinformation/FactualInformationRelease and CyberActivities) and Sanctions.
+                    Removed unused prefixes.
+                  September 15th 2018 revisions:
+                    Added IllegalDrugActivities, PeacekeepingActivities, PoliceActivities, Security and Support.
+                    Renamed MedicalActivities to HealthCareActivities.
+                  August 3rd 2018 revisions:
+                    Modified the ontology name to be unique for use in the XML Catalog.
+                    Added the Violence and Preparedness classes.
+                    Renamed EnvironmentFactors to EnvironmentalFactors.
+                    Added import of the ICM ontology for completeness."""@en ;
+    dcterms:description "Ontology defining the sub-classes of ICM CausalVariable, extending the top-level hierarchy defined in the ICM.ttl ontology."@en ;
+    owl:imports <http://purl.org/dc/terms> ; 
+    owl:imports <http://ontology.causeex.com/ontology/odps/ICM-Evidence> ; 
+    owl:versionInfo "Version 0.8"^^xsd:string .
+
+
+#################################################################
+#    Sub-classes of :CausalVariable
+#################################################################
+
+
+# Following are descriptive variable tags that can be added to any individual
+# to further clarify the Variable
+
+:AntiAccessAreaDenial a owl:Class ;
+    rdfs:label "Anti-Access Area Denial (A2AD)"@en ;
+    rdfs:comment "An additional classification for a CausalVariable (such as Attacks, Preparedness or Capabilities) to indicate its specific nature - e.g., anti-access, area denial."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:Biological a owl:Class ;
+    rdfs:label "Biological"@en ;
+    rdfs:comment "An additional classification for a CausalVariable (such as Attacks, Preparedness or Capabilities) to indicate its specific nature - e.g., biological."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:Chemical a owl:Class ;
+    rdfs:label "Chemical"@en ;
+    rdfs:comment "An additional classification for a CausalVariable (such as Attacks, Preparedness or Capabilities) to indicate its specific nature - e.g., chemical."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:Conventional a owl:Class ;
+    rdfs:label "Conventional"@en ;
+    rdfs:comment "An additional classification for a CausalVariable (such as any 'Activities' or their sub-classes) to indicate that normally/generally/standard approaches are taken."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:Defensive a owl:Class ;
+    rdfs:label "Defensive"@en ;
+    rdfs:comment "An additional classification for a CausalVariable (such as Attacks or CyberAttacks) to indicate the motivation for the behavior is protective."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:Nuclear a owl:Class ;
+    rdfs:label "Nuclear"@en ;
+    rdfs:comment "An additional classification for a CausalVariable (such as Attacks, Preparedness or Capabilities) to indicate its specific nature - e.g., nuclear."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:Offensive a owl:Class ;
+    rdfs:label "Offensive"@en ;
+    rdfs:comment "An additional classification for a CausalVariable (such as Attacks or CyberAttacks) to indicate the motivation for the behavior is aggressive."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:Radiological a owl:Class ;
+    rdfs:label "Radiological"@en ;
+    rdfs:comment "An additional classification for a CausalVariable (such as Attacks, Preparedness or Capabilities) to indicate its specific nature - e.g., radiological."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:Unconventional a owl:Class ;
+    rdfs:label "Unconventional"@en ;
+    rdfs:comment "An additional classification for a CausalVariable (such as any 'Activities' or their sub-classes) to indicate that extraordinary/unexpected/non-standard approaches are taken."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+
+# The following are specific types of CausalVariables.
+
+:AbilityToAddressBasicNeeds a owl:Class ;
+    rdfs:label "Ability to Address Basic Needs"@en ;
+    rdfs:comment "Variable dealing with basic human needs such as access to food, water, shelter, clothing and basic services such as sanitation, education, healthcare and internet/communications."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:AidActivities a owl:Class ;
+    rdfs:label "Aid Activities"@en ;
+    rdfs:comment "Activities dealing with provisioning or receiving military, economic, humanitarian, ... aid."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:Attacks a owl:Class ;
+    rdfs:label "Attacks"@en ;
+    rdfs:subClassOf :Violence .
+
+:Capabilities a owl:Class ;
+    rdfs:label "Capabilities"@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:CivilSocietyActivities a owl:Class ;
+    rdfs:label "Civil Society Activities"@en ;
+    rdfs:comment "Activities dealing with civilian interaction with the government and politics. Its semantics include elections, protests, political dissent, etc."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:CoercionOrIntimidation a owl:Class ;
+    rdfs:label "Coercion or Intimidation"@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:ConstructionActivities a owl:Class ;
+    rdfs:label "Construction Activities"@en ;
+    rdfs:comment "Activities related to building or creating something."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:CooperativeActivities a owl:Class ;
+    rdfs:label "Cooperative Activities"@en ;
+    rdfs:comment "Activities where the parties work together to achieve a goal. The semantics of this class can be combined with others (such as Diplomatic or MilitaryActivities) to indicate specific types of cooperation."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:Corruption a owl:Class ;
+    rdfs:label "Corruption"@en ;
+    rdfs:subClassOf :CriminalActivities .
+
+:CriminalActivities a owl:Class ;
+    rdfs:label "Criminal Activities"@en ;
+    rdfs:comment "Unlawful or harmful activities. CriminalActivities are sub-classed to Corruption, HumanRightsAbuses, IllegalDrugActivities and TerroristActivities."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:CyberActivities a owl:Class ;
+    rdfs:label "Cyber Activities"@en ;
+    rdfs:comment "Activities dealing with the use or targeting of computers, control systems, networks and online devices. It involves both offensive and defensive operations related to cyberattacks, espionage and sabotage. Offensive cyber attacks versus defensive/protective activities are distinguished by defining sub-classes or individuals using multiple inheritance (CyberActivities + Offensive/Defensive, respectively)."@en ;
+    rdfs:subClassOf :InformationOperations .
+
+:Deaths a owl:Class ;
+    rdfs:label "Deaths"@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:DiplomaticActivities a owl:Class ;
+    rdfs:label "Diplomatic Activities"@en ;
+    rdfs:subClassOf :InternationalInfluence .
+
+:DisagreementsOrTensions a owl:Class ;
+    rdfs:label "Disagreements or Tensions"@en ;
+    rdfs:comment "The semantics of this class can be combined with others (such as DiplomaticActivities) to indicate strained relations or disagreements."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:Discontent a owl:Class ;
+    rdfs:label "Discontent"@en ;
+    rdfs:subClassOf :Sentiments .
+
+:DisinformationRelease a owl:Class ;
+    rdfs:label "Release of Disinformation"@en ;
+    rdfs:comment "Activities regarding issuing/publishing false information in order to harm an Actor or to deceive. This class can be contrasted with MisinformationRelease (its super-class) or Propaganda (its peer), where the former does not assume intent, and the latter may not involve false information."@en ;
+    rdfs:subClassOf :MisinformationRelease .
+
+:DueProcess a owl:Class ;
+    rdfs:label "Due Process"@en ;
+    rdfs:comment "Due Process involves being given notice of reasons for restrictions/detainment, the opportunity to demonstrate innocence or reasons for a transgression/violation, and a decision by a neutral party (e.g., via a trial)."@en ;
+    rdfs:subClassOf :RightsAndFreedoms, :Government .
+
+:EconomicConditions a owl:Class ;
+    rdfs:label "Economic Conditions"@en ;
+    rdfs:comment "An overall assessment of the economic environment (for example, as Good/Neutral/Bad). The overall EconomicConditions in an area are defined by a combination of its EconomicFactors."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:EconomicFactors a owl:Class ;
+    rdfs:label "Economic Factors"@en ;
+    rdfs:comment "Factors describing or affecting the production, distribution, consumption and use of goods and services, such as trade deficits, high/low employment, high taxes, inflation, etc."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:EconomicInequality a owl:Class ;
+    rdfs:label "Economic Inequality"@en ;
+    rdfs:subClassOf :EconomicFactors .
+
+:EducationalFactors a owl:Class ;
+    rdfs:label "Educational Factors"@en ;
+    rdfs:comment "Factors describing or affecting teaching and learning."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:Employment a owl:Class ;
+    rdfs:label "Employment"@en ;
+    rdfs:subClassOf :EconomicFactors .
+
+:EnvironmentalFactors a owl:Class ;
+    rdfs:label "Environmental Factors"@en ;
+    rdfs:comment "Factors describing or affecting water or air quality, land use, weather and natural disasters, etc."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:Espionage a owl:Class ;
+    rdfs:label "Espionage"@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:ExecutiveGovernmentActivities a owl:Class ;
+    rdfs:label "Executive Government Activities"@en ;
+    rdfs:subClassOf :Government .
+
+:ExhibitionsOfPower a owl:Class ;
+    rdfs:label "Exhibitions of Power"@en ;
+    rdfs:comment "The semantics of ExhibitionsOfPower can be combined with other class types (such as Government or MilitaryActivities) to indicate the purpose of these activities."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:FactualInformationRelease a owl:Class ;
+    rdfs:label "Release of Factual Information"@en ;
+    rdfs:comment "Activities regarding issuing factual or correct information, such as fact-checking reports or a summary of actual events."@en ;
+    rdfs:subClassOf :InformationOperations .
+
+:FoodAndNutrition a owl:Class ;
+    rdfs:label "Food and Nutrition"@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:FreedomOfExpression a owl:Class ;
+    rdfs:label "Freedom of Expression"@en ;
+    rdfs:subClassOf :RightsAndFreedoms .
+
+:FreedomOfPress a owl:Class ;
+    rdfs:label "Freedom of the Press"@en ;
+    rdfs:subClassOf :FreedomOfExpression .
+
+:FundamentalRights a owl:Class ;
+    rdfs:label "Fundamental Rights"@en ;
+    rdfs:conmment "Fundamental rights (as defined by the United Nations) include the right to self-determination, liberty and peaceful assembly/freedom of association, as well as freedom of thought, religion, movement and expression."@en;
+    rdfs:subClassOf :RightsAndFreedoms .
+
+:Government a owl:Class ;
+    rdfs:label "Government-Related"@en ;
+    rdfs:comment "Factors and activitives which deal with the government - such as GovernmentServices or executive, legislative and judicial activities."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:GovernmentServices a owl:Class ;
+    rdfs:label "Government Services"@en ;
+    rdfs:comment "Government services are related to emergency management, law enforcement, waste and water management/sanitation, guaranteeing available power and communications capabilities, providing public transportation options, social services, ... Note that some GovernmentServices overlap with the semantics of InfrastructureAndUtilities (for example, waste or water management). If this smaller set of services is considered, then the InfrastructureAndUtilities class may also be used to classify an individual."@en ;
+    rdfs:subClassOf :Government .
+
+:GovernmentTransparency a owl:Class ;
+    rdfs:label "Government Transparency"@en ;
+    rdfs:subClassOf :Government .
+
+:Health a owl:Class ;
+    rdfs:label "Health-Related"@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:HealthCareActivities a owl:Class ;
+    rdfs:label "Health Care Activities"@en ;
+    rdfs:comment "Activities dealing with health care and medicine, including research into and treatment of illnesses and injuries."@en ;
+    rdfs:subClassOf :Health .
+
+:HumanitarianCrisis a owl:Class ;
+    rdfs:label "Humanitarian Crisis"@en ;
+    rdfs:comment "An indication of the severity or scope of a humanitarian crisis. For example, this variable may indicate whether a crisis even exists, or its severity (e.g., the crisis can be addressed locally or regionally, or is severe enough to require global participation/support)."@en ;
+    rdfs:subClassOf :EnvironmentalFactors .
+
+:HumanRightsAbuses a owl:Class ;
+    rdfs:label "Human Rights Abuses"@en ;
+    rdfs:subClassOf :CriminalActivities, :Oppression .
+
+:IllegalDrugActivities a owl:Class ;
+    rdfs:label "Illegal Drug Activities"@en ;
+    rdfs:subClassOf :CriminalActivities .
+
+:InformationOperations a owl:Class ;
+    rdfs:label "Information Operations"@en ;
+    rdfs:comment "Information operations deal with actions taken to affect an adversary's positions and information systems, while defending one's own positions and systems. Sub-classes include CyberActivities, FactualInformationRelease and MisinformationRelease."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:InfrastructureAndUtilities a owl:Class ;
+    rdfs:label "Infrastructure and Utilities"@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:InternationalInfluence a owl:Class ;
+    rdfs:label "International Influence"@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:InternationalTradeRelationships a owl:Class ;
+    rdfs:label "International Trade Relationships"@en ;
+    rdfs:comment "Trade relationships deal with the movement of goods across international boundaries. This is not only concerned with import/export, but also factors/conditions such as sanctions or embargos that prohibit/prevent the flow of goods."@en ;
+    rdfs:subClassOf :InternationalInfluence .
+
+:JudicialActivities a owl:Class ;
+    rdfs:label "Judicial Activities"@en ;
+    rdfs:subClassOf :Government .
+
+:LegislativeActivities a owl:Class ;
+    rdfs:label "Legistlative Activities"@en ;
+    rdfs:subClassOf :Government .
+
+:MilitaryActivities a owl:Class ;
+    rdfs:label "Military Activities"@en ;
+    rdfs:comment "Activities dealing with the operation of military forces including campaigns, attacks, etc. Military activities can be under government jurisdiction or outside of the government (for example when dealing with paramilitary forces). If an activity is both military and government, then both the MilitaryActivities and Government classes should be used."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:MilitaryCapabilities a owl:Class ;
+    rdfs:label "Military Capabilities"@en ;
+    rdfs:subClassOf :Capabilities .
+
+:MilitaryConflicts a owl:Class ;
+    rdfs:label "Military Conflicts"@en ;
+    rdfs:comment "A sub-class of MilitaryEngagements, indicating a battle or struggle."@en ;
+    rdfs:subClassOf :MilitaryEngagements .
+
+:MilitaryDeployments a owl:Class ;
+    rdfs:label "Military Deployments"@en ;
+    rdfs:subClassOf :MilitaryActivities .
+
+:MilitaryEngagements a owl:Class ;
+    rdfs:label "Military Engagements"@en ;
+    rdfs:subClassOf :MilitaryActivities .
+
+:MilitaryExercises a owl:Class ;
+    rdfs:label "Military Exercises"@en ;
+    rdfs:subClassOf :MilitaryActivities .
+
+:MisinformationRelease a owl:Class ;
+    rdfs:label "Release of Misinformation"@en ;
+    rdfs:comment "Activities regarding issuing false, inaccurate or misleading information. If known to be intended to deceive or to cause harm, instead use the DisinformationRelease sub-class."@en ;
+    rdfs:subClassOf :InformationOperations .
+
+:MovementAndDisplacementOfPersons a owl:Class ;
+    rdfs:label "Movement and Displacement of Persons"@en ;
+    rdfs:comment "Activities dealing with moving/transporting people, and with their displacement from their homes."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:NationalistSentiments a owl:Class ;
+    rdfs:label "Nationalist Sentiments"@en ;
+    rdfs:subClassOf :Sentiments .
+
+:Oppression a owl:Class ;
+    rdfs:label "Oppression"@en ;
+    rdfs:comment "Activities dealing with human rights abuses, unfair or unjust treatment of others, imposition of bans, prohibitions, curfews, states of emergency, etc."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:PeacekeepingActivities a owl:Class ;
+    rdfs:label "Peacekeeping Activities"@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:PoliceActivities a owl:Class ;
+    rdfs:label "Police Activities"@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:Preparedness a owl:Class ;
+    rdfs:label "Preparedness"@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:Propaganda a owl:Class ;
+    rdfs:label "Propaganda"@en ;
+    rdfs:subClassOf :InformationOperations .
+
+:RecruitmentActivities a owl:Class ;
+    rdfs:label "Recruitment Activities"@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:ResourceDependencies a owl:Class ;
+    rdfs:label "Resource Dependencies"@en ;
+    rdfs:comment "Resource dependencies exist when one entity requires something from/is dependent on another. The transaction to acquire what is needed can be either cooperative/advantageous or not. In a cooperative transaction, both entities provide something of value to the other. If this does not occur (because the resource is scarce or one entity has little to offer in exchange), then transaction becomes unfair since the 'weaker' entity has little bargaining power."@en ;
+    rdfs:subClassOf :EconomicFactors .
+
+:ReviewOfGovernment a owl:Class ;
+    rdfs:label "Review of Government"@en ;
+    rdfs:subClassOf :RightsAndFreedoms .
+
+:RightsAndFreedoms  a owl:Class ;
+    rdfs:label "Rights And Freedoms"@en ;
+    rdfs:comment "Basic rights and freedoms include the right to life, liberty, due process of law, free speech, equality, freedom of action and religion, privacy, ... These concepts are called out individually as sub-classes."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:Sanctions a owl:Class ;
+    rdfs:label "Sanctions"@en ;
+    rdfs:subClassOf :EconomicActivities, :InternationalTradeRelationships .
+
+:Security a owl:Class ;
+    rdfs:label "Security"@en ;
+    rdfs:comment "A state of being safe from danger or threat (real or perceived)."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:Sentiments a owl:Class ;
+    rdfs:label "Sentiments"@en ;
+    rdfs:comment "The sub-classes of Sentiments describe various, specific reactions/opinions."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:SocialActivities a owl:Class ;
+    rdfs:label "Social Activities"@en ;
+    rdfs:comment "Activities dealing with family and friends, joining/associating with others in groups, etc."@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:SupportForDemocraticConcepts a owl:Class ;
+    rdfs:label "Support for Democratic Concepts"@en ;
+    rdfs:comment "Democratic concepts include support for open elections, individual or representative voting on issues, ..."@en ;
+    rdfs:subClassOf :Government .
+
+:Taxation a owl:Class ;
+    rdfs:label "Taxation"@en ;
+    rdfs:subClassOf :EconomicFactors .
+
+:TelecommunicationsInfrastructure a owl:Class ;
+    rdfs:label "Telecommunications Infrastructure"@en ;
+    rdfs:subClassOf :InfrastructureAndUtilities .
+
+:TerroristActivities a owl:Class ;
+    rdfs:label "Terrorist Activities"@en ;
+    rdfs:subClassOf :CriminalActivities .
+
+:TradeBalance a owl:Class ;
+    rdfs:label "Trade Balance"@en ;
+    rdfs:comment "Trade balance deals with a comparison of imports/exports for a geo-political entity, or the overall balance of imports/exports between entities."@en ;
+    rdfs:subClassOf :EconomicFactors, :InternationalTradeRelationships .
+
+:TransportationInfrastructure a owl:Class ;
+    rdfs:label "Transportation Infrastructure"@en ;
+    rdfs:subClassOf :InfrastructureAndUtilities .
+
+:Violence a owl:Class ;
+    rdfs:label "Violence"@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:Water a owl:Class ;
+    rdfs:label "Water-Related"@en ;
+    rdfs:subClassOf :CausalVariable .
+
+:Weather a owl:Class ;
+    rdfs:label "Weather-Related"@en ;
+    rdfs:subClassOf :EnvironmentalFactors .

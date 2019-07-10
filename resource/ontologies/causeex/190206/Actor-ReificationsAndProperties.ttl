@@ -1,0 +1,271 @@
+@prefix : <http://ontology.causeex.com/ontology/odps/Actor#> .
+@prefix actor: <http://ontology.causeex.com/ontology/odps/Actor#> .
+@prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix event: <http://ontology.causeex.com/ontology/odps/Event#> .
+@prefix general: <http://ontology.causeex.com/ontology/odps/GeneralConcepts#> .
+# @prefix oeceo: <http://www.ontologylibrary.mil/OperationalEnvironment/Mid/OECausalExplorationOntology#> .
+# @prefix oeorg: <http://www.ontologylibrary.mil/OperationalEnvironment/Mid/OEOrganizationOntology#> .
+@prefix oereligion: <http://www.ontologylibrary.mil/OperationalEnvironment/Mid/OEReligionOntology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ontology.causeex.com/ontology/odps/Actor-ReificationsAndProperties> rdf:type owl:Ontology ;
+    dcterms:description "Ontology defining actor-related properties and reification classes."@en ;
+    dcterms:created "January 28, 2018"^^xsd:string ;
+    dcterms:modified "January 22, 2019"^^xsd:string ;
+    rdfs:comment """January 22nd 2019 revisions:
+                    Separated the Actor ontology into two separate ontologies - Actor-ReificationsAndProperties and Actor-Hierarchy. This ontology 
+                      is the former.
+                    Adjusted the imports based on the ontology separation.
+                    Moved the definition of oereligion:Religion here to avoid importing the OEReligion ontology.
+                    Added the ethnicity string property.
+                  October 28th 2018 revisions:
+                    Added the regex pattern for the iso_code properties. 
+                    Changed the domain of has_citizenship to Actor to account for legal entities that may not be people.
+                    Added owl:FunctionalProperty to the related_xxx properties.
+                    Added the cco:Ethnicity and PolicitcalOrientation classes.
+                    Removed ontology history older than 6 months. 
+                  September 17th 2018 revisions:
+                    Removed LifeStatus, its individuals and has_life_status as they are incorrectly defined at the level of
+                      a Person. They should be applied to a reference to a Person in some Event, and are better defined with
+                      Death Event(s) with some possible earliest/latest_possible_start/end_time.
+                    Added range datatypes (xsd:string) to the iso_code properties. Added GenderDetails.
+                    Corrected several descriptions/comments.
+                  August 24th 2018 revisions:
+                    Added the iso_code_3166-2 and iso_code_3166-1_alpha3 properties.
+                  June 12th 2018 revisions:
+                    Corrected owl:Class to be owl:ObjectProperty for has_gender/has_life_status. 
+                    Corrected typo in the range of has_country_of_origin.
+                    Used the predefined blank node for union of Person and GroupOfPersons (_:UnionOfPersonGroupOfPersons) 
+                      as the domain of several relationships (instead of redefining it).
+                    Added SymmetricProperty to has_familial_relationship. Modified has_life_status to apply to GroupsOfPersons. 
+                    Corrected the range of has_citizenship - it referred to 'County' instead of 'Country'.
+                    Added the properties, has_emotional_status, has_country_of_origin and has_life_status, and the classes, 
+                      EthnicGroup and LifeStatus (and its individuals Alive and Dead).
+                  April 21st 2018 revisions:
+                    Added cco:Artifact to the range of classes allowed for Affiliation (for has_affiliation and related_affiliation).
+                    Added the has_gender property and Male/Female individuals.
+                    Changed the domain of has_citizenship to be either a Person, GroupOfPersons or Organization. Also changed
+                      the domain and range of has_familial_relationship to be either a Person or GroupOfPersons."""@en ;
+#   owl:imports <http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AllCoreOntology> ;
+    owl:imports <http://www.ontologyrepository.com/CommonCoreOntologies/Mid/ArtifactOntology> ;
+#   owl:imports <http://www.ontologylibrary.mil/OperationalEnvironment/Mid/OEOntology> ;
+#   owl:imports <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/ExtendedRelationOntology/> ;
+    owl:imports <http://purl.org/dc/terms> ;
+    owl:imports <http://ontology.causeex.com/ontology/odps/GeneralConcepts-Location> ;
+    owl:imports <http://ontology.causeex.com/ontology/odps/Event-Hierarchy> ;
+    owl:imports <http://ontology.causeex.com/ontology/odps/Actor-Hierarchy> ;
+    owl:versionInfo "Version 1.6"^^xsd:string .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+:has_affiliation a owl:ObjectProperty, owl:IrreflexiveProperty ;
+    rdfs:label "has affiliation"@en ;
+    rdfs:comment "Indicates that an Actor is/was affiliated with the referenced entity. That entity can be another Actor (for example, a person affiliated with a business or religious group), a Location (such as a business associated with their headquarters or a facility), an Artifact (for example, a person affiliated with something that they invented), a Religion or an AffiliationDetails individual (which is then associated with the Actor, Location or Religion using the related_affiliation property.)"@en ;
+    rdfs:comment "Note that there is a level of indirection when referencing an AffiliationDetails individual, since the actual Actor, Location or Religion is defined using the related_affiliation property. This approach also allows for the specification of the timing of the association - defined by using the GeneralConcepts ontology's time-related properties. Time cannot be specified if using the has_affiliation property to directly relate an Actor to another Actor, Location or Religion. However, if the direct association is defined, it can be converted to an AffiliationDetails individual but with no time-related detail."@en ;
+    rdfs:domain event:Actor ;
+    rdfs:range [ a owl:Class ;
+                 owl:unionOf (event:Actor general:Location oereligion:Religion :AffiliationDetails cco:Artifact) ] .
+
+:has_citizenship a owl:ObjectProperty ;
+    rdfs:label "has citizenship"@en ;
+    rdfs:comment "Indicates that a Person/GroupOfPersons/legal entity has citizenship in the country indicated by the referenced entity. The entity can be defined as an individual of type, cco:Country (where the individuals are already defined in the CAMEOCountryCode ontology) or actor:CitizenshipDetails."@en ;
+    rdfs:comment "Note that there is a level of indirection when referencing a CitizenshipDetails individual, since the country is defined using the related_country_code property. This approach also allows for the specification of the timing of the association - defined by using the GeneralConcepts ontology's time-related properties. Time cannot be specified if using the has_citizenship property to define the country. However, if the direct association is defined, it can be converted to a Citizenship individual but with no time-related detail."@en ;
+    rdfs:domain event:Actor ;
+    rdfs:range  [ a owl:Class ;
+                 owl:unionOf (cco:Country :CitizenshipDetails) ] .
+
+:has_country_of_origin a owl:ObjectProperty ;
+    rdfs:label "has country of origin"@en ;
+    rdfs:comment "This property is used for any displaced persons or persons who have changed their country of birth. It indicates the original citizenship of the Person or GroupOfPersons."@en ;
+    rdfs:domain _:UnionOfPersonGroupOfPersons ;
+    rdfs:range  cco:Country .
+
+:has_emotional_status a owl:ObjectProperty ;
+    rdfs:label "has emotional status"@en ;
+    rdfs:comment "Indicates that an Actor (usually a Person or GroupOfPersons) has/is in the emotional state defined by the referenced sub-class of event:EmotionalResponse. This relationship is an implicit Event where the Actor is the Person/Group."@en ;
+    rdfs:domain _:UnionOfPersonGroupOfPersons ;
+    rdfs:range event:EmotionalResponse .
+
+:has_ethnicity a owl:ObjectProperty ;
+    rdfs:label "has ethnicity"@en ;
+    rdfs:comment "Indicates that an Actor (usually a Person) is descended from, is a member of, and/or associates with the ethnicity indicated by the referenced entity. The entity can be defined as an individual of type, cco:Ethnicity (typically, one of its sub-classes) or actor:EthnicityDetails."@en ;
+    rdfs:comment "Note that there is a level of indirection when referencing an EthnicityDetails individual, since the ethnic group is defined using the related_ethnicity property. This approach also allows for the specification of the timing of the association - defined by using the GeneralConcepts ontology's time-related properties. Time cannot be specified if using the has_ethnicity property to directly indicate the ethnic group. However, if the direct association is defined, it can be converted to an EthnicityDetails individual but with no time-related detail."@en ;
+    rdfs:domain event:Actor ;
+    rdfs:range [ a owl:Class ;
+                 owl:unionOf (cco:Ethnicity :EthnicityDetails) ] .
+
+:has_familial_relationship a owl:ObjectProperty, owl:IrreflexiveProperty, owl:SymmetricProperty ;
+    rdfs:label "has familial relationship"@en ;
+    rdfs:comment "Indicates that two Persons are related 'by virtue of ancestry or legal union' (per the CCO definition). This property is defined as an alternative to creating an individual of type, Family, and placing the Persons in the Family Group using the has_member property. It does not allow for the specification of a time frame when the Person is/was in the Family (if by marriage) or the relationship between the Person (such as specifying that two people are spouses or cousins which is accomplished by using the position_or_role property)."@en ;
+    rdfs:domain _:UnionOfPersonGroupOfPersons ;
+    rdfs:range _:UnionOfPersonGroupOfPersons .
+# cco:has_familial_relationship_to rdfs:subPropertyOf :has_familial_relationship .
+
+:has_gender a owl:ObjectProperty ;
+    rdfs:label "has gender"@en ;
+    rdfs:comment "Indicates whether a Person or GroupOfPersons has a gender of Male or Female. The related entity can be defined as an individual of type, actor:Gender or actor:GenderDetails."@en ;
+    rdfs:comment "Note that there is a level of indirection when referencing a GenderDetails individual, since the gender is defined using the related_gender property. This approach also allows for the specification of the timing of the association - defined by using the GeneralConcepts ontology's time-related properties. Time cannot be specified if using the has_gender property to directly indicate male or female. However, if the direct association is defined, it can be converted to a GenderDetails individual but with no time-related detail."@en ;
+    rdfs:domain _:UnionOfPersonGroupOfPersons ;
+    rdfs:range [ a owl:Class ;
+                 owl:unionOf (:Gender :GenderDetails) ] .
+
+:has_political_orientation a owl:ObjectProperty ;
+    rdfs:label "has political orientation"@en ;
+    rdfs:comment "Indicates that an Actor supports the political thinking indicated by the referenced entity. The entity can be defined as an individual of type, cco:PoliticalOrientation (typically, one of its sub-classes) or actor:PoliticalOrientationDetails."@en ;
+    rdfs:comment "Note that there is a level of indirection when referencing a PoliticalOrientationDetails individual, since the orientation is defined using the related_orientation property. This approach also allows for the specification of the timing of the association - defined by using the GeneralConcepts ontology's time-related properties. Time cannot be specified if using the has_political_orientation property to directly indicate the orientation. However, if the direct association is defined, it can be converted to a PoliticalOrientationDetails individual but with no time-related detail."@en ;
+    rdfs:domain event:Actor ;
+    rdfs:range [ a owl:Class ;
+                 owl:unionOf (cco:PoliticalOrientation :PoliticalOrientationDetails) ] .
+
+:has_position_or_role a owl:ObjectProperty ;
+    rdfs:label "has position or role"@en ;
+    rdfs:comment "Indicates that an Actor (usually a Person) holds a particular position or role as indicated by the PositionOrRoleDetails entity."@en; 
+    rdfs:comment "Note that there is a level of indirection when referencing a PositionOrRoleDetails individual, since the position/role is specified using the general:position_or_role property. This approach also allows for the specification of the time when the position/role was held - defined using the GeneralConcepts ontology's time-related properties. Time cannot be defined if using the general:position_or_role property to directly associate an Actor to their position/role."@en ;
+    rdfs:domain event:Actor ;
+    rdfs:range :PositionOrRoleDetails .
+
+:related_affiliation a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "related affiliation"@en ;
+    rdfs:comment "Indicates the entity to which an AffiliationDetails individual applies. This could be a Person, Organization or GroupOfActors, Artifact, Location or Religion. As an example, an Organization/Group could be affiliated with another Group or a Person (for example, if a terrorist group associates itself with a specific leader), a location (for example, owning a facility) or a religion (e.g., a charity associated with a specific religion). For this reason, the affiliated_with property associates an AffiliationDetails individual with any type of Actor, Artifact, Location or Religion."@en ;
+    rdfs:domain :AffiliationDetails ;
+    rdfs:range [ a owl:Class ;
+                 owl:unionOf (event:Actor general:Location oereligion:Religion cco:Artifact) ] .
+
+:related_country_code a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "related country code"@en ;
+    rdfs:comment "Indicates the Country code of a Citizenship as defined by the individuals in the CAMEO Country code ontology."@en ;
+    rdfs:domain :CitizenshipDetails ;
+    rdfs:range cco:Country .
+
+:related_ethnicity a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "related ethnicity"@en ;
+    rdfs:comment "Identifies the specific ethnicity (defined by individuals whose type is a sub-class of cco:Ethnicity) of an EthnicityDetails individual."@en ;
+    rdfs:domain :EthnicityDetails ;
+    rdfs:range cco:Ethnicity .
+
+:related_gender a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "related gender"@en ;
+    rdfs:comment "Identifies a Gender individual for a GenderDetails individual."@en ;
+    rdfs:domain :GenderDetails ;
+    rdfs:range actor:Gender .
+
+:related_orientation a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "related political orientation"@en ;
+    rdfs:comment "Identifies the specific political orientation (defined by individuals whose type is a sub-class of cco:PoliticalOrientation) of a PoliticalOrientationDetails individual."@en ;
+    rdfs:domain :PoliticalOrientationDetails ;
+    rdfs:range cco:PoliticalOrientation .
+
+:uses a owl:ObjectProperty ;
+    rdfs:label "uses"@en ;
+    rdfs:comment "Indicates that an Actor is associated with an Artifact and employs it for some end. An example would be an Organization 'using' a Facility as its headquarters, or a Person 'using' a car for transportation. Note that this is a general description of usage, not to be confused with the use of an instrument in an Event - such as the use of an IED in a RoadsideBombing Event."@en ;
+    rdfs:domain event:Actor ;
+    rdfs:range cco:Artifact .
+
+
+#################################################################
+#    Datatype Properties
+#################################################################
+
+:ethnicity a owl:DatatypeProperty ;
+    rdfs:label "ethnicity (string)"@en ;
+    rdfs:comment "String defining an ethnicity. The string SHOULD be populated based on the last two segments of a Wikipedia URI, if at all possible. For example, for the ethnicities, Chinese, Bosniak and Russian, the values would be 'wiki/Chinese_people', 'wiki/Russians' and 'wiki/Bosniaks'. Note that the Wikipedia references vary in terms of syntax and their singular/plural aspect, but the intent is still captured."@en ;
+    rdfs:comment "This approach provides a means to standardize the values of the property, without the extensive effort of curating a complete list of ethnicities. In addition, the Wikipedia entries can be mined for  background."@en ;
+    rdfs:domain [ a owl:Class ;
+                 owl:unionOf ( event:Actor :EthnicityDetails ) ] ;
+    rdfs:range xsd:string .
+
+:iso_code_3166-1_alpha3 a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "ISO 3166-1 alpha-3 code"@en ;
+    rdfs:domain :GeopoliticalEntity ;
+    rdfs:range [ a rdfs:Datatype ;
+                 owl:onDatatype xsd:string ;
+                 owl:withRestrictions ( [ xsd:pattern "[A-Z]{3}" ] ) ] .
+#   owl:equivalentClass cco:CountryIdentifier .
+
+:iso_code_3166-2 a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "ISO 3166-2 code"@en ;
+    rdfs:domain :GeopoliticalEntity ;
+    rdfs:range [ a rdfs:Datatype ;
+                 owl:onDatatype xsd:string ;
+                 owl:withRestrictions ( [ xsd:pattern "[A-Z]{2}" ] ) ] .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+:AffiliationDetails a owl:Class ;
+    rdfs:label "Affiliation Details"@en ;
+    rdfs:comment "Identifies that an Actor is affiliated with another Actor (typically a Group/Organization), a Location, an Artifact or a specific OE Religion, along with time and/or position/role-related information. For example, to indicate that a person is affiliated with a company, the triple, Person individual - has_affiliation - AffiliationDetails individual, is defined. To identify the company, the triple, AffiliationDetails individual - related_affiliated - Organization/company individual, is defined. The time-related aspects of the affiliation are defined for the AffiliationDetails individual, using the time properties of the GeneralConcepts ontology. Lastly, the role that the individual plays in the company can be defined using the general:position_or_role property."@en .
+
+:CitizenshipDetails a owl:Class ;
+    rdfs:label "Citizenship Details"@en ;
+    rdfs:comment "Identifies a country of citizenship for a Person, along with time-related information regarding when the Person held the citizenship. CitizenshipDetails are associated with a Person using the has_citizenship property. The country of citizenship is specified using the related_country_code object property, while the time aspects are defined using the time-related properties of the GeneralConcepts ontology."@en .
+
+:EthnicityDetails a owl:Class ;
+    rdfs:label "Ethnicity Details"@en ;
+    rdfs:comment "Identifies the ethnicity of an Actor, along with time-related information regarding when the Actor/Person belonged to/associated with the ethnic group. EthnicityDetails are associated with an Actor using the has_ethnicity property. The ethnicity itself is specified using the related_ethnicity object property, while the time aspects are defined using time-related properties of the GeneralConcepts ontology."@en .
+
+:Gender a owl:Class ;
+    rdfs:label "Gender"@en ;
+    rdfs:comment "An enumeration indicating that a Person is either a Male or Female. The gender individual is associated with a Person using the has_gender property."@en ;
+    owl:equivalentClass [ a owl:Class ;
+                          owl:oneOf ( :Male :Female ) ] .
+
+:GenderDetails a owl:Class ;
+    rdfs:label "Gender Details"@en ;
+    rdfs:comment "Identifies the gender of a Person or GroupOfPersons, along with time-related information regarding when the Persons identified as that specific gender. GenderDetails are associated with a Person/Group using the has_gender property. The gender itself is specified using the related_gender object property, while the time aspects are defined using time-related properties of the GeneralConcepts ontology."@en .
+
+:PoliticalOrientationDetails a owl:Class ;
+    rdfs:label "Political Orientation Details"@en ;
+    rdfs:comment "Identifies the political thinking of an Actor, along with time-related information regarding when the Actor practiced/expounded that thinking. PoliticalOrientationDetails are associated with an Actor using the has_political_orientation property. The orientation itself is specified using the related_orientation object property, while the time aspects are defined using the time-related properties of the GeneralConcepts ontology."@en .
+
+:PositionOrRoleDetails a owl:Class ;
+    rdfs:label "Position or Role Details"@en ;
+    rdfs:comment "Identifies the position/role held by an Actor, along with time-related information regarding when the Actor held the position/role. PositionOrRoleDetails are associated with an Actor using the has_position_or_role property. The position/role itself is specified using the datatype property, general:position_or_role, while the time aspects are defined using time-related properties of the GeneralConcepts ontology."@en .
+
+_:UnionOfPersonGroupOfPersons a owl:Class ;
+    owl:unionOf ( :Person :GroupOfPersons ) .
+
+
+#################################################################
+#    CCO Ethnicity, Ideology and PoliticalOrientation classes
+#       extracted from the CCO Agent Ontology
+#################################################################
+
+cco:Ethnicity rdf:type owl:Class ;
+#             rdfs:subClassOf obo:BFO_0000019 ;
+              rdfs:comment "A Quality that inheres in its bearers by virtue of a common heritage, often consisting of a common language, a common culture (often including a shared religion) and an ideology that stresses common ancestry or endogamy."@en ;
+              rdfs:label "Ethnicity"@en .
+
+cco:PoliticalOrientation rdf:type owl:Class ;
+#            rdfs:subClassOf cco:Ideology ;
+             rdfs:comment "An Ideology that characterizes the political thinking of an Agent or Group of Agents, usually with respect to the political environment within a particular nation."@en ;
+             rdfs:label "Political Orientation"@en .
+
+oereligion:Religion rdf:type owl:Class ;
+#            rdfs:subClassOf obo:BFO_0000019 ;
+             rdfs:comment "A Quality that inheres in its bearers by virtue of a common cultural system of designated behaviors and practices, world views, texts, sanctified places, ethics, or organizations, that relate humanity to the supernatural or transcendental. Religious practices may include rituals, sermons, commemoration or veneration (of deities), sacrifices, festivals, feasts, trances, initiations, funerary services, matrimonial services, meditation, prayer, music, art, dance, public service, or other aspects of human culture. Religions have sacred histories and narratives, which may be preserved in sacred scriptures, and symbols and holy places, that aim mostly to give a meaning to life. Religions may contain symbolic stories, which are sometimes said by followers to be true, that have the side purpose of explaining the origin of life, the Universe and other things."@en ; 
+             rdfs:label "Religion"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+:Female a owl:NamedIndividual, :Gender ;
+    rdfs:label "Female"@en .
+
+:Male a owl:NamedIndividual, :Gender ;
+    rdfs:label "Male"@en .
+
+_:diff1 rdf:type owl:AllDifferent ; 
+    owl:members ( :Female :Male ) .
+

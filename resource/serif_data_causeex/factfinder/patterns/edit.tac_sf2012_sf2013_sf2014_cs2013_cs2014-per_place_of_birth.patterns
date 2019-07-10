@@ -1,0 +1,28 @@
+(per_place_of_birth
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 59 verb:born[<obj> = 0][in = 1] -->
+		(vprop (id per_place_of_birth_tac_4) (score 0.9) (score_group 1) (predicate born) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_tac_400000)) (entitylabel AGENT1) (acetype PER))) (argument (role in) (mention (return (ff_role per_place_of_birth)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 9 noun:-born[<mod> = 1][<ref> = 0] -->
+		(nprop (id per_place_of_birth_tac_48) (score 0.9) (score_group 1) (predicate -born) (args (argument (role <mod>) (mention (return (ff_role per_place_of_birth)) (block AGENT1) (acetype LOC GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_tac_400001)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 8 modifier:-born[<mod> = 1][<ref> = 0] -->
+		(mprop (id per_place_of_birth_tac_50) (score 0.9) (score_group 1) (predicate -born) (args (argument (role <mod>) (mention (return (ff_role per_place_of_birth)) (block AGENT1) (acetype LOC GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_tac_400002)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 3 verb:born[<sub> = 0][in = 1] -->
+		(vprop (id per_place_of_birth_tac_28) (score 0.9) (score_group 1) (predicate born) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_tac_400003)) (entitylabel AGENT1) (acetype PER))) (argument (role in) (mention (return (ff_role per_place_of_birth)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 1 verb:born[<obj> = 0][in = modifier:in[in = 1]] -->
+		(vprop (id per_place_of_birth_tac_15) (score 0.9) (score_group 1) (predicate born) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_tac_400004)) (entitylabel AGENT1) (acetype PER))) (argument (role in) (mprop (predicate in) (args (argument (role in) (mention (return (ff_role per_place_of_birth)) (block AGENT1) (acetype LOC GPE))))))))
+
+		<!-- 1 modifier:-born[<mod> = 1][<ref> = noun:player[<ref> = 0]] -->
+		(mprop (id per_place_of_birth_tac_74) (score 0.9) (score_group 1) (predicate -born) (args (argument (role <mod>) (mention (return (ff_role per_place_of_birth)) (block AGENT1) (acetype LOC GPE))) (argument (role <ref>) (nprop (predicate player) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_birth_tac_400005)) (entitylabel AGENT1) (acetype PER))))))))
+
+	)
+)

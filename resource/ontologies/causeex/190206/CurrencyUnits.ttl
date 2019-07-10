@@ -1,0 +1,143 @@
+@prefix : <http://ontology.causeex.com/ontology/odps/GeneralConcepts#> .
+@prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix general: <http://ontology.causeex.com/ontology/odps/GeneralConcepts#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ontology.causeex.com/ontology/odps/CurrencyUnits> rdf:type owl:Ontology ;
+    dcterms:description "Ontology holding new individuals, extending the individuals defined in the CCO CurrencyUnit ontology."@en ;
+    dcterms:created "October 16, 2018"^^xsd:string ;
+    dcterms:modified "January 20, 2019"^^xsd:string ;
+    rdfs:comment """January 20th 2019 revisions:
+                    Changed labels from xsd:strings to @en tagged literals."""@en ;
+    owl:imports <http://www.ontologyrepository.com/CommonCoreOntologies/Mid/CurrencyUnitOntology> ;
+    owl:imports <http://ontology.causeex.com/ontology/odps/GeneralConcepts> ;
+    owl:imports <http://purl.org/dc/terms> ;
+    owl:versionInfo "Version 0.2"^^xsd:string .
+
+#################################################################
+#    Individuals
+#################################################################
+
+:Auroracoin rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Auroracoin (AUR)"@en .
+
+:BasicAttentionToken rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Basic Attention Token (BAT)"@en .
+
+:Bitcoin rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Bitcoin (BTC)"@en .
+
+:BitcoinCash rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "BitcoinCash"@en .
+
+:BitcoinGold rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "BitcoinGold"@en .
+
+:Bytecoin rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Bytecoinn (BCN)"@en .
+
+:Cardano rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Cardano (ADA)"@en .
+
+:Dash rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Dash (DASH)"@en .
+
+:Decred rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Decred (DCR)"@en .
+
+:DjiboutiFranc rdf:type owl:NamedIndividual, cco:CurrencyUnit ;
+    rdfs:label "Djibouti Franc"@en .
+
+:Dogecoin rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Dogecoin (DOGE)"@en .
+
+:EOS rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "EOS"@en .
+
+:Ethereum rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Ethereum (ETH)"@en .
+
+:EthereumClassic rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Ethereum Classic (ETC)"@en .
+
+:Feathercoin rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Feathercoin (FTC)"@en .
+
+:Gridcoin rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Gridcoin (GRC)"@en .
+
+:IOTA rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "IOTA"@en .
+
+:Lisk rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Lisk (LSK)"@en .
+
+:Litecoin rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Litecoin (LTC)"@en .
+
+:Mazacoin rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Mazacoin (MZC)"@en .
+
+:Monero rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Monero (XMR)"@en .
+
+:Namecoin rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Namecoin (NMC)"@en .
+
+:NEM rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "NEM (XEM)"@en .
+
+:NEO rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "NEO"@en .
+
+:Nxt rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Nxt (NXT)"@en .
+
+:Peercoin rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Peercoin (PPC)"@en .
+
+:Potcoin rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Potcoin (POT)"@en .
+
+:Primecoin rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Primecoin (XPM)"@en .
+
+:Ripple rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Ripple (XRP)"@en .
+
+:Skycoin rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Skycoin (SKY)"@en .
+
+:SomaliaShilling rdf:type owl:NamedIndividual, cco:CurrencyUnit ;
+    rdfs:label "Somalia Shilling"@en .
+
+:Stellar rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Stellar/Stellar Lumens (XLM)"@en .
+
+:Swiftcoin rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Swiftcoin (STC)"@en .
+
+:SynereoAMP rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Synereo AMP (AMP)"@en .
+
+:Tether rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Tether (USDT)"@en .
+
+:Tron rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Tron (TRX)"@en .
+
+:Verge rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Verge (XVG)"@en .
+
+:Vertcoin rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Vertcoin (VTC)"@en .
+
+:Zcash rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Zcash (ZEC)"@en .
+
+:Zero-X rdf:type owl:NamedIndividual, general:Cryptocurrency ;
+    rdfs:label "Zero-X (ZRX)"@en .

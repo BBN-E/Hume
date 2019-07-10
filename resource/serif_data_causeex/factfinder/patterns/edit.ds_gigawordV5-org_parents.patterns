@@ -1,0 +1,181 @@
+(org_parents
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 2352 {1} took over {0}&{0} , insurance -->
+		(regex (id ds_1) (score 0.9) (score_group 1) (re (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "took")) (text DONT_ADD_SPACES (string "over")) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200000)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "insurance"))))
+
+		<!-- 1049 verb:buy[<obj> = 0][<sub> = 1] -->
+		(vprop (id ds_12) (score 0.9) (score_group 1) (predicate buy) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200001)) (entitylabel AGENT1) (acetype ORG))) (argument (role <sub>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 980 verb:said[<obj> = verb:buying[<obj> = 0]][<sub> = 1] -->
+		(vprop (id ds_13) (score 0.9) (score_group 1) (predicate said) (args (argument (role <obj>) (vprop (predicate buying) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200002)) (entitylabel AGENT1) (acetype ORG)))))) (argument (role <sub>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 784 {1} took over {0}&the fallout , {1}&{0} , -->
+		(regex (id ds_19) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "the")) (text DONT_ADD_SPACES (string "fallout")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "took")) (text DONT_ADD_SPACES (string "over")) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200003)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string ","))))
+
+		<!-- 784 {1} took over {0}&the fallout , {1} -->
+		(regex (id ds_23) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "the")) (text DONT_ADD_SPACES (string "fallout")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "took")) (text DONT_ADD_SPACES (string "over")) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200004)) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 530 noun:takeover[by = 1][of = 0] -->
+		(nprop (id ds_80) (score 0.9) (score_group 1) (predicate takeover) (args (argument (role by) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200005)) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 464 {1} agreed to buy {0} -->
+		(regex (id ds_89) (score 0.9) (score_group 1) (re (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "agreed")) (text DONT_ADD_SPACES (string "to")) (text DONT_ADD_SPACES (string "buy")) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200006)) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 422 {0} by {1}&takeover of {0} -->
+		(regex (id ds_128) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "takeover")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200007)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "by")) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))))
+
+		<!-- 392 verb:have[<sub> = 1][following = noun:acquisition[of = 0]] -->
+		(vprop (id ds_156) (score 0.9) (score_group 1) (predicate have) (args (argument (role <sub>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role following) (nprop (predicate acquisition) (args (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200008)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 350 set:[<member> = noun:takeover[by = 1][of = 0]] -->
+		(sprop (id ds_182) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate takeover) (args (argument (role by) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200009)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 345 verb:swallowed[<obj> = 0][<sub> = 1] -->
+		(vprop (id ds_183) (score 0.9) (score_group 1) (predicate swallowed) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200010)) (entitylabel AGENT1) (acetype ORG))) (argument (role <sub>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 340 {0} was swallowed by {1} -->
+		(regex (id ds_187) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200011)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "swallowed")) (text DONT_ADD_SPACES (string "by")) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))))
+
+		<!-- 313 noun:acquisition[<poss> = 1][of = 0] -->
+		(nprop (id ds_205) (score 0.9) (score_group 1) (predicate acquisition) (args (argument (role <poss>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200012)) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 306 verb:going[<obj> = verb:manage[<obj> = 0][like = 1]] -->
+		(vprop (id ds_215) (score 0.9) (score_group 1) (predicate going) (args (argument (role <obj>) (vprop (predicate manage) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200013)) (entitylabel AGENT1) (acetype ORG))) (argument (role like) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 300 {0} was part of {1}&{1} , and -->
+		(regex (id ds_219) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200014)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "part")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "and"))))
+
+		<!-- 300 {1} was part of {0}&{0} , and they -->
+		(regex (id ds_221) (score 0.9) (score_group 1) (re (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "part")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200015)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "and")) (text DONT_ADD_SPACES (string "they"))))
+
+		<!-- 294 verb:went[<sub> = 0][into = noun:ownership[by = 1]] -->
+		(vprop (id ds_226) (score 0.9) (score_group 1) (predicate went) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200016)) (entitylabel AGENT1) (acetype ORG))) (argument (role into) (nprop (predicate ownership) (args (argument (role by) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 289 noun:unit[<mod> = 0][<poss> = 1] -->
+		(nprop (id ds_229) (score 0.9) (score_group 1) (predicate unit) (args (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200017)) (entitylabel AGENT1) (acetype ORG))) (argument (role <poss>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 260 verb:hurt[by = noun:sales[in = noun:divisions[<mod> = 0][<poss> = 1]]] -->
+		(vprop (id ds_277) (score 0.9) (score_group 1) (predicate hurt) (args (argument (role by) (nprop (predicate sales) (args (argument (role in) (nprop (predicate divisions) (args (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200018)) (entitylabel AGENT1) (acetype ORG))) (argument (role <poss>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)))))))))))
+
+		<!-- 260 noun:sales[in = noun:divisions[<mod> = 0][<poss> = 1]] -->
+		(nprop (id ds_284) (score 0.9) (score_group 1) (predicate sales) (args (argument (role in) (nprop (predicate divisions) (args (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200019)) (entitylabel AGENT1) (acetype ORG))) (argument (role <poss>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 256 noun:agencies[<mod> = 1][like = name:[<ref> = 0]] -->
+		(nprop (id ds_293) (score 0.9) (score_group 1) (predicate agencies) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role like) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200020)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 256 noun:member[of = noun:agencies[<mod> = 1][like = 0]] -->
+		(nprop (id ds_294) (score 0.9) (score_group 1) (predicate member) (args (argument (role of) (nprop (predicate agencies) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role like) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200021)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 256 modifier:dues-paying[<ref> = noun:member[of = noun:agencies[<mod> = 1][like = 0]]] -->
+		(mprop (id ds_295) (score 0.9) (score_group 1) (predicate dues-paying) (args (argument (role <ref>) (nprop (predicate member) (args (argument (role of) (nprop (predicate agencies) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role like) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200022)) (entitylabel AGENT1) (acetype ORG)))))))))))
+
+		<!-- 248 verb:bought[<obj> = 0][<sub> = 1] -->
+		(vprop (id ds_300) (score 0.9) (score_group 1) (predicate bought) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200023)) (entitylabel AGENT1) (acetype ORG))) (argument (role <sub>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 241 verb:take[<obj> = noun:unit[<mod> = 0][<poss> = 1]] -->
+		(vprop (id ds_309) (score 0.9) (score_group 1) (predicate take) (args (argument (role <obj>) (nprop (predicate unit) (args (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200024)) (entitylabel AGENT1) (acetype ORG))) (argument (role <poss>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 231 verb:buying[<obj> = 0][<sub> = 1] -->
+		(vprop (id ds_325) (score 0.9) (score_group 1) (predicate buying) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200025)) (entitylabel AGENT1) (acetype ORG))) (argument (role <sub>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 228 noun:sale[of = 0][to = 1] -->
+		(nprop (id ds_329) (score 0.9) (score_group 1) (predicate sale) (args (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200026)) (entitylabel AGENT1) (acetype ORG))) (argument (role to) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 228 {1} will acquire {0} -->
+		(regex (id ds_331) (score 0.9) (score_group 1) (re (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "will")) (text DONT_ADD_SPACES (string "acquire")) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200027)) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 228 {1} was buying {0} -->
+		(regex (id ds_335) (score 0.9) (score_group 1) (re (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "buying")) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200028)) (entitylabel AGENT1) (acetype ORG))))
+
+		<!-- 224 verb:sell[<sub> = 0][to = 1] -->
+		(vprop (id ds_346) (score 0.9) (score_group 1) (predicate sell) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200029)) (entitylabel AGENT1) (acetype ORG))) (argument (role to) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 200 noun:unit[<mod> = 0][<poss> = 1] -->
+		(nprop (id ds_380) (score 0.9) (score_group 1) (predicate unit) (args (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200030)) (entitylabel AGENT1) (acetype ORG))) (argument (role <poss>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 196 noun:acquisition[<poss> = 1][of = 0] -->
+		(nprop (id ds_383) (score 0.9) (score_group 1) (predicate acquisition) (args (argument (role <poss>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200031)) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 196 {0} to {1}&and sale of {0} -->
+		(regex (id ds_387) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "and")) (text DONT_ADD_SPACES (string "sale")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200032)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "to")) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))))
+
+		<!-- 196 verb:accepted[<obj> = noun:sale[to = 1]][<sub> = 0] -->
+		(vprop (id ds_388) (score 0.9) (score_group 1) (predicate accepted) (args (argument (role <obj>) (nprop (predicate sale) (args (argument (role to) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200033)) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 183 noun:acquisition[by = 1][of = 0] -->
+		(nprop (id ds_463) (score 0.9) (score_group 1) (predicate acquisition) (args (argument (role by) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200034)) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 180 {0} by {1}&the takeover of {0}&{1} sent shockwaves -->
+		(regex (id ds_482) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "the")) (text DONT_ADD_SPACES (string "takeover")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200035)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "by")) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "sent")) (text DONT_ADD_SPACES (string "shockwaves"))))
+
+		<!-- 180 {0} by {1}&takeover of {0}&{1} sent -->
+		(regex (id ds_484) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "takeover")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200036)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "by")) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "sent"))))
+
+		<!-- 180 {0} by {1}&takeover of {0}&{1} sent shockwaves across -->
+		(regex (id ds_485) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "takeover")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200037)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "by")) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "sent")) (text DONT_ADD_SPACES (string "shockwaves")) (text DONT_ADD_SPACES (string "across"))))
+
+		<!-- 180 {0} by {1}&the takeover of {0}&{1} sent shockwaves across -->
+		(regex (id ds_486) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "the")) (text DONT_ADD_SPACES (string "takeover")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200038)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "by")) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "sent")) (text DONT_ADD_SPACES (string "shockwaves")) (text DONT_ADD_SPACES (string "across"))))
+
+		<!-- 149 noun:subsidiary[<poss> = 1][<ref> = 0] -->
+		(nprop (id ds_632) (score 0.9) (score_group 1) (predicate subsidiary) (args (argument (role <poss>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200039)) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- 149 modifier:former[<ref> = noun:subsidiary[<poss> = 1][<ref> = 0]] -->
+		(mprop (id ds_640) (score 0.9) (score_group 1) (predicate former) (args (argument (role <ref>) (nprop (predicate subsidiary) (args (argument (role <poss>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200040)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 144 {0} by {1}&the takeover of {0}&{1} , -->
+		(regex (id ds_689) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "the")) (text DONT_ADD_SPACES (string "takeover")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200041)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "by")) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ","))))
+
+		<!-- 144 verb:sell[<obj> = noun:chain[<mod> = 1][<ref> = 0]] -->
+		(vprop (id ds_694) (score 0.9) (score_group 1) (predicate sell) (args (argument (role <obj>) (nprop (predicate chain) (args (argument (role <mod>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200042)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 144 {0} by {1}&takeover of {0}&{1} , -->
+		(regex (id ds_695) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "takeover")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200043)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "by")) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ","))))
+
+		<!-- 144 {1} will take over {0}&{0} for -->
+		(regex (id ds_699) (score 0.9) (score_group 1) (re (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "will")) (text DONT_ADD_SPACES (string "take")) (text DONT_ADD_SPACES (string "over")) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200044)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "for"))))
+
+		<!-- 144 {0} by {1}&the takeover of {0}&{1} , sent shock -->
+		(regex (id ds_701) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "the")) (text DONT_ADD_SPACES (string "takeover")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200045)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "by")) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "sent")) (text DONT_ADD_SPACES (string "shock"))))
+
+		<!-- 144 verb:sell[<obj> = noun:chain[<mod> = 0][<ref> = 1]] -->
+		(vprop (id ds_702) (score 0.9) (score_group 1) (predicate sell) (args (argument (role <obj>) (nprop (predicate chain) (args (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200046)) (entitylabel AGENT1) (acetype ORG))) (argument (role <ref>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 144 {0} by {1}&takeover of {0}&{1} , sent -->
+		(regex (id ds_713) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "takeover")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200047)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "by")) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "sent"))))
+
+		<!-- 140 noun:unit[<mod> = 0][<poss> = pronoun:its[<ref> = 1]] -->
+		(nprop (id ds_747) (score 0.9) (score_group 1) (predicate unit) (args (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200048)) (entitylabel AGENT1) (acetype ORG))) (argument (role <poss>) (anyprop (predicate its) (args (argument (role <ref>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 133 verb:sell[<sub> = 0][to = 1] -->
+		(vprop (id ds_774) (score 0.9) (score_group 1) (predicate sell) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200049)) (entitylabel AGENT1) (acetype ORG))) (argument (role to) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 130 {0} is owned by {1} -->
+		(regex (id ds_782) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200050)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "is")) (text DONT_ADD_SPACES (string "owned")) (text DONT_ADD_SPACES (string "by")) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))))
+
+		<!-- 114 noun:news[that = verb:buying[<obj> = 0][<sub> = 1]] -->
+		(nprop (id ds_986) (score 0.9) (score_group 1) (predicate news) (args (argument (role that) (vprop (predicate buying) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200051)) (entitylabel AGENT1) (acetype ORG))) (argument (role <sub>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 113 verb:take[<obj> = noun:unit[<mod> = 0][<poss> = 1]] -->
+		(vprop (id ds_1001) (score 0.9) (score_group 1) (predicate take) (args (argument (role <obj>) (nprop (predicate unit) (args (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200052)) (entitylabel AGENT1) (acetype ORG))) (argument (role <poss>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 108 {0} was bought by {1} -->
+		(regex (id ds_1071) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200053)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "bought")) (text DONT_ADD_SPACES (string "by")) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE))))
+
+		
+		<!-- 100 {1} was part of {0}&when {1} -->
+		(regex (id ds_1169) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "when")) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "part")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200054)) (entitylabel AGENT1) (acetype ORG))))
+
+				<!-- 85 noun:subsidiary[<poss> = pronoun:its[<ref> = 1]][<ref> = 0] -->
+		(nprop (id ds_1587) (score 0.9) (score_group 1) (predicate subsidiary) (args (argument (role <poss>) (anyprop (predicate its) (args (argument (role <ref>) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200055)) (entitylabel AGENT1) (acetype ORG)))))
+
+				<!-- 48 {0} , a {1}&{1} subsidiary -->
+		(regex (id ds_3360) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_parents_ds_200056)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (mention (return (ff_role org_parents)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "subsidiary"))))
+	)
+)

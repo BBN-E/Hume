@@ -1,0 +1,38 @@
+(org_place_of_headquarters
+
+ (wordsets)
+
+ (entitylabels (AGENT1))
+
+ (toplevel
+
+		<!-- 42   org_place_of_headquarters ==> noun:acquisition[by = noun:company[<mod> = 1][<ref> = 0]] -->
+		(nprop (id cs2015_org_place_of_headquarters_20037) (score 0.9) (score_group 1) (predicate acquisition) (args (argument (role by) (nprop (predicate company) (args (argument (role <mod>) (mention (return (ff_role org_place_of_headquarters)) (block AGENT1) (acetype LOC GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_place_of_headquarters_20037)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 42   org_place_of_headquarters ==> verb:pose[<sub> = noun:acquisition[by = noun:company[<mod> = 1][<ref> = 0]]] -->
+		(vprop (id cs2015_org_place_of_headquarters_20038) (score 0.9) (score_group 1) (predicate pose) (args (argument (role <sub>) (nprop (predicate acquisition) (args (argument (role by) (nprop (predicate company) (args (argument (role <mod>) (mention (return (ff_role org_place_of_headquarters)) (block AGENT1) (acetype LOC GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_place_of_headquarters_20038)) (entitylabel AGENT1) (acetype ORG)))))))))))
+
+		<!-- 4   org_place_of_headquarters ==> verb:headquartered[<obj> = pronoun:which[<ref> = 0]][in = 1] -->
+		(vprop (id cs2015_org_place_of_headquarters_20066) (score 0.9) (score_group 1) (predicate headquartered) (args (argument (role <obj>) (anyprop (predicate which) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_place_of_headquarters_20066)) (entitylabel AGENT1) (acetype ORG)))))) (argument (role in) (mention (return (ff_role org_place_of_headquarters)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 4   org_place_of_headquarters ==> verb:headquartered[<obj> = 0][in = 1] -->
+		(vprop (id cs2015_org_place_of_headquarters_20068) (score 0.9) (score_group 1) (predicate headquartered) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_place_of_headquarters_20068)) (entitylabel AGENT1) (acetype ORG))) (argument (role in) (mention (return (ff_role org_place_of_headquarters)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 4   org_place_of_headquarters ==> verb:based[<obj> = noun:club[<ref> = 0]][in = 1] -->
+		(vprop (id cs2015_org_place_of_headquarters_20070) (score 0.9) (score_group 1) (predicate based) (args (argument (role <obj>) (nprop (predicate club) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_place_of_headquarters_20070)) (entitylabel AGENT1) (acetype ORG)))))) (argument (role in) (mention (return (ff_role org_place_of_headquarters)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 1   org_place_of_headquarters ==> modifier:huge[<ref> = noun:conglomerate[<ref> = 0][in = 1]] -->
+		(mprop (id cs2015_org_place_of_headquarters_20072) (score 0.9) (score_group 1) (predicate huge) (args (argument (role <ref>) (nprop (predicate conglomerate) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_place_of_headquarters_20072)) (entitylabel AGENT1) (acetype ORG))) (argument (role in) (mention (return (ff_role org_place_of_headquarters)) (block AGENT1) (acetype LOC GPE))))))))
+
+
+		<!-- 1   org_place_of_headquarters ==> modifier:military-linked[<ref> = noun:conglomerate[<ref> = 0][in = 1]] -->
+		(mprop (id cs2015_org_place_of_headquarters_20079) (score 0.9) (score_group 1) (predicate military-linked) (args (argument (role <ref>) (nprop (predicate conglomerate) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_place_of_headquarters_20079)) (entitylabel AGENT1) (acetype ORG))) (argument (role in) (mention (return (ff_role org_place_of_headquarters)) (block AGENT1) (acetype LOC GPE))))))))
+
+		<!-- 1   org_place_of_headquarters ==> noun:conglomerate[<ref> = 0][in = 1] -->
+		(nprop (id cs2015_org_place_of_headquarters_20082) (score 0.9) (score_group 1) (predicate conglomerate) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_place_of_headquarters_20082)) (entitylabel AGENT1) (acetype ORG))) (argument (role in) (mention (return (ff_role org_place_of_headquarters)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 1   org_place_of_headquarters ==> {1} 's central bank {0} -->
+		(regex (id cs2015_org_place_of_headquarters_20083) (score 0.9) (score_group 1) (re (mention (return (ff_role org_place_of_headquarters)) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "central")) (text DONT_ADD_SPACES (string "bank")) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_place_of_headquarters_20083)) (entitylabel AGENT1) (acetype ORG))))
+
+	)
+)

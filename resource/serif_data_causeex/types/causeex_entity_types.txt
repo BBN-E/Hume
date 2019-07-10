@@ -1,0 +1,19 @@
+# Entity Type List
+#
+# Entity type options are:
+#   -IdFDesc: IdF can find mentions of this type as descriptors.
+#   -NotRelArg: No mention of this type may be considered a relation
+#       argument.
+#   -MatchesXXX: Entities of this type would be considered to be of ACE
+#       type XXX in the ACE world.
+#   -IsNat: Nationality words should be assigned this type (if they
+#       aren't person-descriptors
+
+PER     -MatchesPER
+ORG     -MatchesORG
+GPE     -MatchesGPE -IsNat
+FAC     -MatchesFAC
+LOC     -MatchesLOC
+VEH		-IdFDesc
+WEA		-IdFDesc
+ART     -IdFDesc

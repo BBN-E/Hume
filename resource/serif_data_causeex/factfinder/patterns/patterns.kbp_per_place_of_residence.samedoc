@@ -1,0 +1,18 @@
+(per_place_of_residence
+
+ (wordsets)
+
+ (entitylabels (AGENT1))
+
+ (toplevel
+		<!-- 1   per_place_of_residence ==> verb:witness[<sub> = noun:emissaries[<member> = noun:president[<ref> = 0][of = 1]]] -->
+		(vprop (id cs2015_per_place_of_residence_20220) (score 0.9) (score_group 1) (predicate witness) (args (argument (role <sub>) (nprop (predicate emissaries) (args (argument (role <member>) (nprop (predicate president) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_place_of_residence_20220)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE)))))))))))
+
+		<!-- 1   per_place_of_residence ==> noun:vice-president[<poss> = 1][<ref> = 0] -->
+		(nprop (id cs2015_per_place_of_residence_20243) (score 0.9) (score_group 1) (predicate vice-president) (args (argument (role <poss>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_place_of_residence_20243)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 1   per_place_of_residence ==> noun:politician[<mod> = 1][<ref> = 0] -->
+		(nprop (id cs2015_per_place_of_residence_20259) (score 0.9) (score_group 1) (predicate politician) (args (argument (role <mod>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_place_of_residence_20259)) (entitylabel AGENT1) (acetype PER)))))
+
+	)
+)

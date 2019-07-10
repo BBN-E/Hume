@@ -1,0 +1,25 @@
+(org_founded_by
+
+ (wordsets)
+
+ (entitylabels (AGENT1))
+
+ (toplevel
+		<!-- 144   org_founded_by ==> set:[<member> = 1][<ref> = noun:founder[<poss> = 0]] -->
+		(sprop (id cs2015_org_founded_by_20007) (score 0.9) (score_group 1) (args (argument (role <member>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER))) (argument (role <ref>) (nprop (predicate founder) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_founded_by_20007)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 144   org_founded_by ==> set:[<member> = name:[<ref> = 1]][<ref> = noun:founder[<poss> = 0]] -->
+		(sprop (id cs2015_org_founded_by_20008) (score 0.9) (score_group 1) (args (argument (role <member>) (anyprop (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (nprop (predicate founder) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_founded_by_20008)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 144   org_founded_by ==> set:[<member> = 1][<ref> = noun:founder[<poss> = noun:company[<ref> = 0]]] -->
+		(sprop (id cs2015_org_founded_by_20009) (score 0.9) (score_group 1) (args (argument (role <member>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER))) (argument (role <ref>) (nprop (predicate founder) (args (argument (role <poss>) (nprop (predicate company) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_founded_by_20009)) (entitylabel AGENT1) (acetype ORG)))))))))))
+
+		<!-- 144   org_founded_by ==> set:[<member> = name:[<ref> = 1]][<ref> = noun:founder[<poss> = noun:company[<ref> = 0]]] -->
+		(sprop (id cs2015_org_founded_by_20010) (score 0.9) (score_group 1) (args (argument (role <member>) (anyprop (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (nprop (predicate founder) (args (argument (role <poss>) (nprop (predicate company) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_founded_by_20010)) (entitylabel AGENT1) (acetype ORG)))))))))))
+
+		<!-- 104   org_founded_by ==> {0} founder and CEO {1} -->
+		(regex (id cs2015_org_founded_by_20011) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_founded_by_20011)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "founder")) (text DONT_ADD_SPACES (string "and")) (text DONT_ADD_SPACES (string "CEO")) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER))))
+
+	)
+)
+

@@ -1,0 +1,117 @@
+(per_employee_or_member_of
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 9312 {1}  {0}&[slot=0, word=GOVERNOR, lang=english] -->
+		(regex (id ds_17) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200000)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "GOVERNOR"))))))))
+
+		<!-- 7612 noun:party[<poss> = 0][<ref> = 1] -->
+		(nprop (id ds_29) (score 0.9) (score_group 1) (predicate party) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200001)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG)))))
+
+		<!-- 6126 noun:party[<poss> = pronoun:his[<ref> = 0]][<ref> = 1] -->
+		(nprop (id ds_38) (score 0.9) (score_group 1) (predicate party) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200002)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 5651 {1}  {0}&[slot=0, word=PRESIDENT, lang=english] -->
+		(regex (id ds_42) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200003)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "PRESIDENT"))))))))
+
+		<!-- 5587 noun:president[<mod> = 1][<ref> = 0]&[slot=0, word=PRESIDENT, lang=english] -->
+		(nprop (id ds_43) (score 0.9) (score_group 1) (predicate president) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200004)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "PRESIDENT")))))))))
+
+		<!-- 4965 noun:president[<mod> = 1][<ref> = 0]&[slot=0, word=PRESIDENT, lang=english] -->
+		(nprop (id ds_49) (score 0.9) (score_group 1) (predicate president) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200005)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "PRESIDENT")))))))))
+
+		<!-- 4576 noun:president[<mod> = 1][<ref> = 0]&[slot=0, word=PRESIDENT, lang=english] -->
+		(nprop (id ds_54) (score 0.9) (score_group 1) (predicate president) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200006)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "PRESIDENT")))))))))
+
+		<!-- 4319 noun:party[<mod> = 1][<poss> = pronoun:his[<ref> = 0]] -->
+		(nprop (id ds_61) (score 0.9) (score_group 1) (predicate party) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200007)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 4313 noun:president[<mod> = 1][<ref> = 0]&[slot=0, word=PRESIDENT, lang=english] -->
+		(nprop (id ds_62) (score 0.9) (score_group 1) (predicate president) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200008)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "PRESIDENT")))))))))
+
+		<!-- 4071 {1}  {0}&[slot=0, word=PRESIDENT, lang=english] -->
+		(regex (id ds_66) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200009)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "PRESIDENT"))))))))
+
+		<!-- 3756 {1}  {0}&[slot=0, word=GOVERNOR, lang=english] -->
+		(regex (id ds_70) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200010)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "GOVERNOR"))))))))
+
+		<!-- 3518 noun:governor[<mod> = 1][<ref> = 0] -->
+		(nprop (id ds_78) (score 0.9) (score_group 1) (predicate governor) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200011)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 3339 {1}  {0}&[slot=0, word=GOVERNOR, lang=english] -->
+		(regex (id ds_83) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200012)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "GOVERNOR"))))))))
+
+		<!-- 3284 {1}  {0}&[slot=0, word=PRESIDENT, lang=english] -->
+		(regex (id ds_87) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200013)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "PRESIDENT"))))))))
+
+		<!-- 2689 noun:president[<mod> = 1][<ref> = 0]&[slot=0, word=PRESIDENT, lang=english] -->
+		(nprop (id ds_115) (score 0.9) (score_group 1) (predicate president) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200014)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "PRESIDENT")))))))))
+
+		<!-- 2390 {1}  {0}&[slot=0, word=PRESIDENT, lang=english] -->
+		(regex (id ds_126) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200015)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "PRESIDENT"))))))))
+
+		<!-- 2342 modifier:secretary[<ref> = noun:general[<mod> = 1][<ref> = 0]] -->
+		(mprop (id ds_132) (score 0.9) (score_group 1) (predicate secretary) (args (argument (role <ref>) (nprop (predicate general) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200016)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2169 modifier:secretary[<ref> = noun:general[<mod> = 1][<ref> = 0]] -->
+		(mprop (id ds_156) (score 0.9) (score_group 1) (predicate secretary) (args (argument (role <ref>) (nprop (predicate general) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200017)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 2019 noun:party[<poss> = 0][<ref> = 1] -->
+		(nprop (id ds_169) (score 0.9) (score_group 1) (predicate party) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200018)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 1916 noun:chief[<mod> = 1][<ref> = 0]&[slot=0, word=CHIEF, lang=english] -->
+		(nprop (id ds_187) (score 0.9) (score_group 1) (predicate chief) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200019)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "CHIEF")))))))))
+
+		<!-- 1834 {1}  {0}&[slot=0, word=GOVERNOR, lang=english] -->
+		(regex (id ds_202) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200020)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "GOVERNOR"))))))))
+
+		<!-- 1803 noun:secretary-general[<mod> = 1][<ref> = 0] -->
+		(nprop (id ds_208) (score 0.9) (score_group 1) (predicate secretary-general) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200021)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 1769 {1} Secretary {0} -->
+		(regex (id ds_212) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "Secretary")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200022)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 1765 noun:president[<mod> = 1][<ref> = 0]&[slot=0, word=PRESIDENT, lang=english] -->
+		(nprop (id ds_213) (score 0.9) (score_group 1) (predicate president) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200023)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "PRESIDENT")))))))))
+
+		<!-- 1564 {1}  {0}&[slot=0, word=GOVERNOR, lang=english] -->
+		(regex (id ds_260) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200024)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "GOVERNOR"))))))))
+
+		<!-- 1539 {1}  {0}&[slot=0, word=LEADER, lang=english] -->
+		(regex (id ds_264) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200025)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "LEADER"))))))))
+
+		<!-- 1518 noun:governor[<mod> = 1][<ref> = 0] -->
+		(nprop (id ds_267) (score 0.9) (score_group 1) (predicate governor) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200026)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 1461 noun:movement[<mod> = 1][<poss> = 0] -->
+		(nprop (id ds_286) (score 0.9) (score_group 1) (predicate movement) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200027)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 1209 {1} Secretary {0} -->
+		(regex (id ds_378) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "Secretary")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200028)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 960 {0} Sworn In As {1} -->
+		(regex (id ds_507) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200029)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "Sworn")) (text DONT_ADD_SPACES (string "In")) (text DONT_ADD_SPACES (string "As")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))
+
+		<!-- 949 noun:gov.[<mod> = 1][<ref> = 0] -->
+		(nprop (id ds_514) (score 0.9) (score_group 1) (predicate gov.) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200030)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 839 {1}  {0}&[slot=0, word=PRESIDENT, lang=english] -->
+		(regex (id ds_592) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200031)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "PRESIDENT"))))))))
+
+		<!-- 682 noun:leader[<ref> = 0][of = noun:party[<ref> = 1]] -->
+		(nprop (id ds_760) (score 0.9) (score_group 1) (predicate leader) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200032)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (nprop (predicate party) (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 678 noun:party[<poss> = 0][<ref> = 1] -->
+		(nprop (id ds_762) (score 0.9) (score_group 1) (predicate party) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200033)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 677 {1} Secretary {0} -->
+		(regex (id ds_763) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "Secretary")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200034)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 471 modifier:chief[<ref> = noun:officer[<ref> = 0][of = 1]] -->
+		(mprop (id ds_1214) (score 0.9) (score_group 1) (predicate chief) (args (argument (role <ref>) (nprop (predicate officer) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_ds_200035)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG))))))))
+	)
+)

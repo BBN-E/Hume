@@ -1,0 +1,19 @@
+(Event313_Patterns
+
+(@INCLUDE "%icews_lib_dir%/event_models/icews_required.model")
+(@INCLUDE "%icews_lib_dir%/event_models/source-target.model")
+(@INCLUDE "%project_specific_serif_data_root%/accent/CYBERATTACK.model")
+
+(entitylabels
+)
+
+(wordsets
+)
+
+(reference
+
+)
+
+(toplevel
+
+)

@@ -1,0 +1,53 @@
+(Spouse
+
+(@INCLUDE "date-patterns")
+
+(wordsets
+
+<!-- doesn't include bride/groom -->
+(WS_SPOUSE  wife second-wife husband second-husband ex-wife ex-husband couple)
+)
+
+(entitylabels
+
+(AGENT1)
+(SPOUSE_HEADWORD_DESC (mention FOCUS (headword WS_SPOUSE)))
+
+)
+
+(toplevel
+
+<!-- WITH HEADWORD: score_group 1 -->
+(relation	(id spouse_relation_with_headword1)
+		(score_group 1) (score 0.9)
+		(fulltype PER-SOC.Family)
+		(args 
+			 (argument (mention (return (ff_role AGENT1) (ff_fact_type Spouse)) (headword WS_SPOUSE)))
+			 (argument 
+				(mention
+			          (block AGENT1) (acetype PER)
+			          (min-entitylevel NAME)
+			          (return (ff_role Spouse)))
+				)
+			)
+		)
+
+(relation       (id spouse_relation_with_headword2)
+                (score_group 1) (score 0.9)
+                (fulltype PER-SOC.Family)
+                (args
+                         (argument (mention (return (ff_role AGENT1) (ff_fact_type Spouse))))
+                         (argument
+                                (mention
+				  (headword WS_SPOUSE)
+                                  (block AGENT1) (acetype PER)
+                                  (min-entitylevel NAME)
+                                  (return (ff_role Spouse)))
+                                )
+                        )
+                )
+
+
+
+)
+)

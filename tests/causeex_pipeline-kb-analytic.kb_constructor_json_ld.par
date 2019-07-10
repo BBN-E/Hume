@@ -1,0 +1,42 @@
+READER SerifXMLReader
+/nfs/ld100/u10/bmin/repo_clean_for_exp_wm_m12_hackathon/CauseEx/experiments/causeex_pipeline/test/docs
+/home/hqiu/Public/wm_m12_v2_1/metadata.txt
+WorldModelers
+
+READER CausalRelationReader
+/nfs/mercury-04/u42/bmin/projects/WM/m12/empty.json
+/nfs/raid87/u14/users/bmin/Runjobs/expts/causeex_pipeline/wm_m12.v7.bbn/serif_cause_effect_json
+/nfs/raid87/u14/users/bmin/Runjobs/expts/causeex_pipeline/wm_m12.v7.bbn/regular_learnit/learnit_event_event_relations_file.json
+/nfs/mercury-04/u42/bmin/projects/WM/m12/empty.json
+
+RESOLVER EntityAddPropertyResolver
+
+RESOLVER CountryCodePropertyResolver
+
+RESOLVER FactorEventGenericGenericityResolver
+
+RESOLVER EventRemovalResolver
+
+RESOLVER RedundantEventResolver
+
+RESOLVER RedundantRelationResolver
+
+RESOLVER PrecisionResolver
+
+RESOLVER KbUnificationResolver
+
+RESOLVER ExternalOntologyCacheGrounder
+/nfs/ld100/u10/bmin/repo_clean_for_exp_wm_m12_hackathon/CauseEx/ontology/internal_ontology/hume/
+/nfs/raid87/u14/users/bmin/Runjobs/expts/causeex_pipeline/wm_m12.v7.bbn/grounding_cache
+
+SERIALIZER JSONLDSerializer
+/tmp/wm_m12.v7.bbn.json-ld
+
+SERIALIZER VisualizationSerializer
+/tmp/wm_m12.v7.bbn.graph.json
+
+SERIALIZER WMTabularFormatSerializer
+/home/hqiu/Public/wm_m12_v2_1/metadata.txt
+/tmp/wm_m12.v7.bbn.tsv
+
+

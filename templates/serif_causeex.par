@@ -1,0 +1,123 @@
+########################################################################
+# 10/12/2015, Alex Zamanian                                            #
+#                                                                      #
+# serif_accent.par                                                     #
+# modified parameter file from run_awake_pipeline sequence             # 
+#                                                                      #
+########################################################################
+
+# External variables (must be defined first)
+parallel:           0000
+serif_data:         +SERIF_DATA+
+serif_score:        NO_SCORE
+start_stage:        START
+end_stage:          output
+experiment_dir:     +experiment_dir+
+batch_file:         +batch_file+
+icews_lib_dir:	    +icews_lib_dir+
+
+INCLUDE +par_dir+/master.english.par
+INCLUDE +par_dir+/master.awake.english.par
+
+# Used for listing a manifest of serif data files so a
+# lean data repo can be created
+track_files_read: +should_track_files_read+
+use_feature_module_BasicCipherStream: +use_basic_cipher_stream+
+cipher_stream_always_decrypt: +use_basic_cipher_stream+
+
+input_type: sgm
+OVERRIDE sentence_breaker_dateline_mode: very_aggressive
+OVERRIDE use_dateline_mode_on_whole_document: true
+
+OVERRIDE actor_match_require_exact_entity_type_match: true
+OVERRIDE actor_match_only_match_names: true
+OVERRIDE allow_fac_org_matches: true
+
+entity_linking_mode: MENTION_GROUP
+
+# Robustness for runjobs expts
+OVERRIDE open_file_retries: 4
+
+# Speed improvement on Linux
+linux_temp_dir: /export/u10
+
+# Default also produces APF; we don't want that
+OVERRIDE output_format: 		      SerifXML
+
+# So countries don't get linked with their capitals
+OVERRIDE use_metonymy: false 
+
+# To run with sqlite (typical operation)
+bbn_actor_db: sqlite://+bbn_actor_db+?readonly&copy&cache_size=30000&temp_store=MEMORY
+bbn_actor_db_name: default
+use_normalized_sqlite_geonames_tables: false
+
+INCLUDE +par_dir+/master.icews.english.par
+
+OVERRIDE icews_read_stories_from_database: false
+
+OVERRIDE minimum_actor_string_confidence: 0.79
+OVERRIDE require_source_and_target_for_icews_events: false
+OVERRIDE allow_source_only_icews_protest_events: true
+UNSET icews_hard_sentence_cutoff
+
+UNSET icews_db
+use_awake_db_for_icews: true
+
+awake_agent_patterns: %icews_lib_dir%/actor_mention_finder/awake_agent_patterns.txt
+types_to_force_as_actor_mentions: PER,ORG
+awake_gazetteer_tablename_prefix: NONE
+
+do_cause_effect_relation_finding: true
+causeex_pattern_dir: +serif_cause_effect_patterns_dir+
+cause_effect_pattern_set_list:  +serif_cause_effect_patterns_dir+/causeex_patterns.list
+cause_effect_relation_output_dir: +cause_effect_output_dir+
+
+OVERRIDE max_parser_seconds: 20
+
+doc_reader_replace_invalid_xml_characters: true
+
+# Name finding through regex patterns
+use_name_finding_patterns: true
+project_specific_serif_data_root: +project_specific_serif_data_root+
+name_pattern_set_list: +project_specific_serif_data_root+/names/causeex_name_patterns.list
+
+# For forcing the entity type of a name span that the model found
+names_with_forced_entity_types: +project_specific_serif_data_root+/names/names_with_forced_entity_types.txt
+
+# Keep "Lake Chad" from linking with "Chad"
+contraining_location_name_prefixes: +project_specific_serif_data_root+/edt/name_prefix_constraints.txt
+contraining_location_name_suffixes: +project_specific_serif_data_root+/edt/name_suffix_constraints.txt
+
+# Serif data file/model overrides
+OVERRIDE entity_type_set: +project_specific_serif_data_root+/types/causeex_entity_types.txt
+OVERRIDE pidf_tag_set_file: +project_specific_serif_data_root+/types/causeex_pidf.tags
+
+OVERRIDE entity_subtype_set: +project_specific_serif_data_root+/subtypes/causeex-entity-subtypes.txt
+OVERRIDE desc_head_subtypes: +project_specific_serif_data_root+/subtypes/causeex-desc-head-mappings.txt
+OVERRIDE full_name_subtypes: +project_specific_serif_data_root+/subtypes/causeex-full-name-mappings.txt
+OVERRIDE name_word_subtypes: +project_specific_serif_data_root+/subtypes/causeex-name-word-mappings.txt
+
+# Coldstart FactFinder params, but limited pattern files for speed
+fact_finder_dir: %experiment_dir%/factfinder
+ff_pattern_dir: +project_specific_serif_data_root+/factfinder/patterns
+UNSET sector_fact_pattern_list
+OVERRIDE find_custom_facts: false
+OVERRIDE fact_pattern_list: +project_specific_serif_data_root+/factfinder/causeex_patterns.list
+OVERRIDE print_factfinder_match_info: true
+OVERRIDE print_factfinder_coldstart_info: true
+min_actor_match_conf: 0.55
+min_actor_mention_match_actor_pattern_conf: 1.9
+min_actor_mention_match_edit_distance: 1.1
+min_actor_entity_match_conf_accept_at_mention_level: 1.4
+min_pattern_match_score_plus_association_score: 10000
+force_entitylabels: true
+force_entity_subtypes: true
+force_entity_types: true
+use_actor_id_for_entity_linker: true
+
+# Same as ACCENT/ICEWS, but add in cyberattack patterns
+OVERRIDE icews_event_types: +project_specific_serif_data_root+/accent/event_types.txt
+OVERRIDE icews_event_models: +project_specific_serif_data_root+/accent/event_models.txt
+OVERRIDE icews_event_codes: 01*,02*,03*,04*,05*,06*,07*,08*,09*,10*,11*,12*,13*,14*,15*,16*,17*,18*,19*,20*,31*
+

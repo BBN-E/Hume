@@ -1,0 +1,43 @@
+(org_website
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- verb:website[<sub> = 0][at = 1] -->
+		(vprop (id org_website_0) (score 0.9) (score_group 1) (predicate website) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type org_website)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG))) (argument (role at) (value (return (ff_role org_website)) (type Contact-Info.URL)))))
+
+		<!-- verb:go[to = verb:website[<sub> = 0]][at = 1] -->
+		(vprop (id org_website_1) (score 0.9) (score_group 1) (predicate go) (args (argument (role to) (vprop (predicate website) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type org_website)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))) (argument (role at) (value (return (ff_role org_website)) (type Contact-Info.URL)))))
+
+		<!-- noun:website[<ref> = 1][<unknown> = 0] -->
+		(nprop (id org_website_2) (score 0.9) (score_group 1) (predicate website) (args (argument (role <ref>) (value (return (ff_role org_website)) (type Contact-Info.URL))) (argument (role <unknown>) (mention (return (ff_role AGENT1) (ff_fact_type org_website)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)))))
+
+		<!-- {0} website : {1} -->
+		(regex (id org_website_3) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_website)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "website")) (text DONT_ADD_SPACES (string ":")) (value (return (ff_role org_website)) (type Contact-Info.URL))))
+
+		<!-- {0} Website {1} -->
+		(regex (id org_website_4) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_website)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "Website")) (value (return (ff_role org_website)) (type Contact-Info.URL))))
+
+		<!-- {0} website {1} -->
+		(regex (id org_website_5) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_website)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "website")) (value (return (ff_role org_website)) (type Contact-Info.URL))))
+
+		<!-- {0} website at {1} -->
+		(regex (id org_website_6) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_website)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "website")) (text DONT_ADD_SPACES (string "at")) (value (return (ff_role org_website)) (type Contact-Info.URL))))
+
+		<!-- {0} website -LRB- {1} -->
+		(regex (id org_website_7) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_website)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "website")) (text DONT_ADD_SPACES (string "-LRB-")) (value (return (ff_role org_website)) (type Contact-Info.URL))))
+
+		<!-- {0} -LRB- {1} -->
+		(regex (id org_website_8) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_website)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "-LRB-")) (value (return (ff_role org_website)) (type Contact-Info.URL))))
+
+		<!-- {0} online at {1} -->
+		(regex (id org_website_9) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_website)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "online")) (text DONT_ADD_SPACES (string "at")) (value (return (ff_role org_website)) (type Contact-Info.URL))))
+
+		<!-- {0} website , {1} -->
+		(regex (id org_website_10) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type org_website)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "website")) (text DONT_ADD_SPACES (string ",")) (value (return (ff_role org_website)) (type Contact-Info.URL))))
+
+	)
+)

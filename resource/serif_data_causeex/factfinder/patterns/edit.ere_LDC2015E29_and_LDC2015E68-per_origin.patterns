@@ -1,0 +1,69 @@
+(per_origin
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+		
+		<!-- 12 noun:country[<poss> = 0][<ref> = 1]&[slot=1, word=country, lang=english] -->
+		(nprop (id per_religion_or_origin_ere_5) (score 0.9) (score_group 1) (predicate country) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_religion_or_origin_ere_200000)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_religion_or_origin)) (block AGENT1) (acetype PER GPE LOC) (regex (regex (re (text DONT_ADD_SPACES (string "country")))))))))
+		
+		<!-- 6 {1}  {0}&[slot=1, word=british, lang=english] -->
+		(regex (id per_religion_or_origin_ere_19) (score 0.9) (score_group 1) (re (mention (return (ff_role per_religion_or_origin)) (block AGENT1) (acetype PER GPE LOC) (regex (regex (re (text DONT_ADD_SPACES (string "british")))))) (mention (return (ff_role AGENT1) (ff_fact_type per_religion_or_origin_ere_200001)) (entitylabel AGENT1) (acetype PER))))
+		
+		<!-- 5 noun:country[<poss> = 0][<ref> = 1]&[slot=0, word=our, lang=english]&[slot=1, word=country, lang=english] -->
+		(nprop (id per_religion_or_origin_ere_45) (score 0.9) (score_group 1) (predicate country) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_religion_or_origin_ere_200002)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "our"))))))) (argument (role <ref>) (mention (return (ff_role per_religion_or_origin)) (block AGENT1) (acetype PER GPE LOC) (regex (regex (re (text DONT_ADD_SPACES (string "country")))))))))
+		
+		<!-- 5 {0}  {1}&[slot=0, word=our, lang=english]&[slot=1, word=country, lang=english] -->
+		(regex (id per_religion_or_origin_ere_49) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_religion_or_origin_ere_200003)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "our")))))) (mention (return (ff_role per_religion_or_origin)) (block AGENT1) (acetype PER GPE LOC) (regex (regex (re (text DONT_ADD_SPACES (string "country"))))))))
+		
+		<!-- 5 noun:country[<poss> = 0][<ref> = 1]&[slot=0, word=our, lang=english] -->
+		(nprop (id per_religion_or_origin_ere_44) (score 0.9) (score_group 1) (predicate country) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_religion_or_origin_ere_200004)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "our"))))))) (argument (role <ref>) (mention (return (ff_role per_religion_or_origin)) (block AGENT1) (acetype PER GPE LOC)))))
+		
+		<!-- 4 {1}  {0}&[slot=1, word=indian, lang=english] -->
+		(regex (id per_religion_or_origin_ere_68) (score 0.9) (score_group 1) (re (mention (return (ff_role per_religion_or_origin)) (block AGENT1) (acetype PER GPE LOC) (regex (regex (re (text DONT_ADD_SPACES (string "indian")))))) (mention (return (ff_role AGENT1) (ff_fact_type per_religion_or_origin_ere_200005)) (entitylabel AGENT1) (acetype PER))))
+		
+		<!-- 4 {1}  {0}&[slot=1, word=saudi, lang=english] -->
+		(regex (id per_religion_or_origin_ere_70) (score 0.9) (score_group 1) (re (mention (return (ff_role per_religion_or_origin)) (block AGENT1) (acetype PER GPE LOC) (regex (regex (re (text DONT_ADD_SPACES (string "saudi")))))) (mention (return (ff_role AGENT1) (ff_fact_type per_religion_or_origin_ere_200006)) (entitylabel AGENT1) (acetype PER))))
+		
+		<!-- 4 {1}  {0}&[slot=0, word=lawyer, lang=english]&[slot=1, word=swiss, lang=english] -->
+		(regex (id per_religion_or_origin_ere_55) (score 0.9) (score_group 1) (re (mention (return (ff_role per_religion_or_origin)) (block AGENT1) (acetype PER GPE LOC) (regex (regex (re (text DONT_ADD_SPACES (string "swiss")))))) (mention (return (ff_role AGENT1) (ff_fact_type per_religion_or_origin_ere_200007)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "lawyer"))))))))
+		
+		<!-- 3 noun:country[<poss> = 0][<ref> = 1]&[slot=0, word=my, lang=english]&[slot=1, word=country, lang=english] -->
+		(nprop (id per_religion_or_origin_ere_106) (score 0.9) (score_group 1) (predicate country) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_religion_or_origin_ere_200008)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "my"))))))) (argument (role <ref>) (mention (return (ff_role per_religion_or_origin)) (block AGENT1) (acetype PER GPE LOC) (regex (regex (re (text DONT_ADD_SPACES (string "country")))))))))
+
+		<!-- 3 noun:country[<poss> = pronoun:my[<ref> = 0]][<ref> = 1]&[slot=0, word=my, lang=english] -->
+		(nprop (id per_religion_or_origin_ere_253) (score 0.9) (score_group 1) (predicate country) (args (argument (role <poss>) (anyprop (predicate my) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_religion_or_origin_ere_200009)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "my")))))))))) (argument (role <ref>) (mention (return (ff_role per_religion_or_origin)) (block AGENT1) (acetype PER GPE LOC)))))
+
+		<!-- 2 noun:country[<poss> = pronoun:their[<ref> = 0]][<ref> = 1]&[slot=0, word=their, lang=english]&[slot=1, word=country, lang=english] -->
+		(nprop (id per_religion_or_origin_ere_614) (score 0.9) (score_group 1) (predicate country) (args (argument (role <poss>) (anyprop (predicate their) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_religion_or_origin_ere_200010)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "their")))))))))) (argument (role <ref>) (mention (return (ff_role per_religion_or_origin)) (block AGENT1) (acetype PER GPE LOC) (regex (regex (re (text DONT_ADD_SPACES (string "country")))))))))
+
+		<!-- 2 noun:country[<poss> = 0][<ref> = 1]&[slot=0, word=your, lang=english] -->
+		(nprop (id per_religion_or_origin_ere_624) (score 0.9) (score_group 1) (predicate country) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_religion_or_origin_ere_200011)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "your"))))))) (argument (role <ref>) (mention (return (ff_role per_religion_or_origin)) (block AGENT1) (acetype PER GPE LOC)))))
+
+		<!-- 2 noun:country[<poss> = pronoun:your[<ref> = 0]][<ref> = 1] -->
+		(nprop (id per_religion_or_origin_ere_690) (score 0.9) (score_group 1) (predicate country) (args (argument (role <poss>) (anyprop (predicate your) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_religion_or_origin_ere_200012)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_religion_or_origin)) (block AGENT1) (acetype PER GPE LOC)))))
+
+		<!-- 2 verb:protecting[<obj> = noun:country[<poss> = pronoun:your[<ref> = 0]][<ref> = 1]] -->
+		(vprop (id per_religion_or_origin_ere_479) (score 0.9) (score_group 1) (predicate protecting) (args (argument (role <obj>) (nprop (predicate country) (args (argument (role <poss>) (anyprop (predicate your) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_religion_or_origin_ere_200013)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_religion_or_origin)) (block AGENT1) (acetype PER GPE LOC))))))))
+
+		<!-- 2 noun:country[<poss> = pronoun:their[<ref> = 0]][<ref> = 1]&[slot=0, word=their, lang=english] -->
+		(nprop (id per_religion_or_origin_ere_519) (score 0.9) (score_group 1) (predicate country) (args (argument (role <poss>) (anyprop (predicate their) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_religion_or_origin_ere_200014)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "their")))))))))) (argument (role <ref>) (mention (return (ff_role per_religion_or_origin)) (block AGENT1) (acetype PER GPE LOC)))))
+
+		<!-- 2 verb:born[<obj> = 0][in = noun:country[<ref> = 1]] -->
+		(vprop (id per_religion_or_origin_ere_669) (score 0.9) (score_group 1) (predicate born) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_religion_or_origin_ere_200015)) (entitylabel AGENT1) (acetype PER))) (argument (role in) (nprop (predicate country) (args (argument (role <ref>) (mention (return (ff_role per_religion_or_origin)) (block AGENT1) (acetype PER GPE LOC))))))))
+
+		<!-- 2 noun:immigrant[<mod> = 1][<ref> = 0] -->
+		(nprop (id per_religion_or_origin_ere_412) (score 0.9) (score_group 1) (predicate immigrant) (args (argument (role <mod>) (mention (return (ff_role per_religion_or_origin)) (block AGENT1) (acetype PER GPE LOC))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_religion_or_origin_ere_200016)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 2 noun:country[<poss> = 0][<ref> = 1]&[slot=0, word=their, lang=english] -->
+		(nprop (id per_religion_or_origin_ere_363) (score 0.9) (score_group 1) (predicate country) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_religion_or_origin_ere_200017)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "their"))))))) (argument (role <ref>) (mention (return (ff_role per_religion_or_origin)) (block AGENT1) (acetype PER GPE LOC)))))
+
+		<!-- 2 noun:country[<poss> = 0][<ref> = 1]&[slot=0, word=your, lang=english]&[slot=1, word=country, lang=english] -->
+		(nprop (id per_religion_or_origin_ere_370) (score 0.9) (score_group 1) (predicate country) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_religion_or_origin_ere_200018)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "your"))))))) (argument (role <ref>) (mention (return (ff_role per_religion_or_origin)) (block AGENT1) (acetype PER GPE LOC) (regex (regex (re (text DONT_ADD_SPACES (string "country")))))))))
+
+		<!-- 2 noun:country[<poss> = 0][<ref> = 1]&[slot=0, word=their, lang=english]&[slot=1, word=country, lang=english] -->
+		(nprop (id per_religion_or_origin_ere_406) (score 0.9) (score_group 1) (predicate country) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_religion_or_origin_ere_200019)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "their"))))))) (argument (role <ref>) (mention (return (ff_role per_religion_or_origin)) (block AGENT1) (acetype PER GPE LOC) (regex (regex (re (text DONT_ADD_SPACES (string "country")))))))))
+	)
+)

@@ -1,0 +1,19 @@
+(reference
+
+(value (shortcut START_DATE_V) SPECIFIC-DATE (return (ff_date start)))
+(value (shortcut END_DATE_V) SPECIFIC-DATE (return (ff_date end)))
+(value (shortcut ACTIVITY_DATE_V) SPECIFIC-DATE (return (ff_date activity)))
+(value (shortcut HOLD_DATE_V) SPECIFIC-DATE (return (ff_date hold)))
+
+(value (shortcut RECENT_HOLD_DATE_V) RECENT-DATE (return (ff_date hold)))
+
+<!-- Generally used as opt_args in prop patterns -->
+(argument (shortcut START_DATE_A) START_DATE_V)
+(argument (shortcut END_DATE_A) END_DATE_V)
+(argument (shortcut ACTIVITY_DATE_A) ACTIVITY_DATE_V)
+(argument (shortcut HOLD_DATE_A) HOLD_DATE_V)
+
+<!-- FactFinder will only use this date if it's a recent date -->
+(argument (shortcut RECENT_HOLD_DATE_A) RECENT_HOLD_DATE_V)
+
+)

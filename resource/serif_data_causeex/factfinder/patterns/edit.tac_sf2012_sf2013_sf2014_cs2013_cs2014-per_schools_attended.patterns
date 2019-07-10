@@ -1,0 +1,100 @@
+(per_schools_attended
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 16 verb:attended[<obj> = 1][<sub> = pronoun:he[<ref> = 0]] -->
+		(vprop (id per_schools_attended_tac_2) (score 0.9) (score_group 1) (predicate attended) (args (argument (role <obj>) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG))) (argument (role <sub>) (anyprop (predicate he) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400000)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 12 set:[<member> = noun:boyfriend[<poss> = 0]][<ref> = noun:student[at = 1]] -->
+		(sprop (id per_schools_attended_tac_8) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate boyfriend) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400001)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (nprop (predicate student) (args (argument (role at) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG))))))))
+
+		<!-- 12 set:[<member> = noun:boyfriend[<poss> = pronoun:her[<ref> = 0]]][<ref> = noun:student[at = 1]] -->
+		(sprop (id per_schools_attended_tac_7) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate boyfriend) (args (argument (role <poss>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400002)) (entitylabel AGENT1) (acetype PER))))))))) (argument (role <ref>) (nprop (predicate student) (args (argument (role at) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG))))))))
+
+		<!-- 9 {1} , an {0}&{0} graduate student who -->
+		(regex (id per_schools_attended_tac_2) (score 0.9) (score_group 1) (re (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "an")) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400003)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "graduate")) (text DONT_ADD_SPACES (string "student")) (text DONT_ADD_SPACES (string "who"))))
+
+		<!-- 8 verb:graduate[<sub> = 0][from = 1] -->
+		(vprop (id per_schools_attended_tac_7) (score 0.9) (score_group 1) (predicate graduate) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400004)) (entitylabel AGENT1) (acetype PER))) (argument (role from) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)))))
+
+		<!-- 6 verb:earned[<obj> = noun:degree[from = 1]][<sub> = 0] -->
+		(vprop (id per_schools_attended_tac_22) (score 0.9) (score_group 1) (predicate earned) (args (argument (role <obj>) (nprop (predicate degree) (args (argument (role from) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400005)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 5 verb:graduated[<sub> = pronoun:he[<ref> = 0]][from = 1] -->
+		(vprop (id per_schools_attended_tac_43) (score 0.9) (score_group 1) (predicate graduated) (args (argument (role <sub>) (anyprop (predicate he) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400006)) (entitylabel AGENT1) (acetype PER)))))) (argument (role from) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)))))
+
+		<!-- 5 verb:earned[<obj> = noun:degree[<poss> = 0]][from = 1] -->
+		(vprop (id per_schools_attended_tac_26) (score 0.9) (score_group 1) (predicate earned) (args (argument (role <obj>) (nprop (predicate degree) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400007)) (entitylabel AGENT1) (acetype PER)))))) (argument (role from) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)))))
+
+		<!-- 5 verb:graduated[<sub> = pronoun:she[<ref> = 0]][from = 1] -->
+		(vprop (id per_schools_attended_tac_44) (score 0.9) (score_group 1) (predicate graduated) (args (argument (role <sub>) (anyprop (predicate she) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400008)) (entitylabel AGENT1) (acetype PER)))))) (argument (role from) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)))))
+
+		<!-- 4 {0} enrolled at {1} -->
+		(regex (id per_schools_attended_tac_11) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400009)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "enrolled")) (text DONT_ADD_SPACES (string "at")) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG))))
+
+		<!-- 3 verb:honored[<obj> = 0][<sub> = noun:classmates[from = name:[<ref> = 1]]] -->
+		(vprop (id per_schools_attended_tac_21) (score 0.9) (score_group 1) (predicate honored) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400010)) (entitylabel AGENT1) (acetype PER))) (argument (role <sub>) (nprop (predicate classmates) (args (argument (role from) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)))))))))))
+
+		<!-- 3 verb:got[<poss> = noun:master[<poss> = 0]][at = 1] -->
+		(vprop (id per_schools_attended_tac_43) (score 0.9) (score_group 1) (predicate got) (args (argument (role <poss>) (nprop (predicate master) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400011)) (entitylabel AGENT1) (acetype PER)))))) (argument (role at) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)))))
+
+		<!-- 3 {0} , a recent {1}&{1} graduate -->
+		(regex (id per_schools_attended_tac_2) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400012)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (text DONT_ADD_SPACES (string "recent")) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "graduate"))))
+
+		<!-- 3 verb:graduated[<sub> = 0][from = 1] -->
+		(vprop (id per_schools_attended_tac_16) (score 0.9) (score_group 1) (predicate graduated) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400013)) (entitylabel AGENT1) (acetype PER))) (argument (role from) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)))))
+
+		<!-- 3 {0} , a recent {1}&{1} graduate teaching -->
+		(regex (id per_schools_attended_tac_4) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400014)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (text DONT_ADD_SPACES (string "recent")) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "graduate")) (text DONT_ADD_SPACES (string "teaching"))))
+
+		<!-- 3 verb:graduated[<sub> = pronoun:he[<ref> = 0]][from = 1] -->
+		(vprop (id per_schools_attended_tac_9) (score 0.9) (score_group 1) (predicate graduated) (args (argument (role <sub>) (anyprop (predicate he) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400015)) (entitylabel AGENT1) (acetype PER)))))) (argument (role from) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)))))
+
+		<!-- 3 {0} , an {1}&{1} graduate -->
+		(regex (id per_schools_attended_tac_13) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400016)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "an")) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "graduate"))))
+
+		<!-- 2 verb:concentrate[on = noun:education[<poss> = 0][at = 1]] -->
+		(vprop (id per_schools_attended_tac_35) (score 0.9) (score_group 1) (predicate concentrate) (args (argument (role on) (nprop (predicate education) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400017)) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG))))))))
+
+		<!-- 2 verb:concentrate[on = noun:education[<poss> = pronoun:her[<ref> = 0]][at = 1]] -->
+		(vprop (id per_schools_attended_tac_25) (score 0.9) (score_group 1) (predicate concentrate) (args (argument (role on) (nprop (predicate education) (args (argument (role <poss>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400018)) (entitylabel AGENT1) (acetype PER)))))) (argument (role at) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG))))))))
+
+		<!-- 2 noun:education[<poss> = 0][at = 1] -->
+		(nprop (id per_schools_attended_tac_26) (score 0.9) (score_group 1) (predicate education) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400019)) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)))))
+
+		<!-- 2 noun:education[<poss> = pronoun:her[<ref> = 0]][at = 1] -->
+		(nprop (id per_schools_attended_tac_33) (score 0.9) (score_group 1) (predicate education) (args (argument (role <poss>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400020)) (entitylabel AGENT1) (acetype PER)))))) (argument (role at) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)))))
+
+		<!-- 2 noun:education[<poss> = pronoun:her[<ref> = 0]][at = name:[<ref> = 1]] -->
+		(nprop (id per_schools_attended_tac_24) (score 0.9) (score_group 1) (predicate education) (args (argument (role <poss>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400021)) (entitylabel AGENT1) (acetype PER)))))) (argument (role at) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG))))))))
+
+		<!-- 1 noun:degree[<poss> = noun:bachelor[<ref> = 0]][from = 1] -->
+		(nprop (id per_schools_attended_tac_39) (score 0.9) (score_group 1) (predicate degree) (args (argument (role <poss>) (nprop (predicate bachelor) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400022)) (entitylabel AGENT1) (acetype PER)))))) (argument (role from) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)))))
+
+		<!-- 1 verb:graduated[<sub> = 0][from = 1] -->
+		(vprop (id per_schools_attended_tac_26) (score 0.9) (score_group 1) (predicate graduated) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400023)) (entitylabel AGENT1) (acetype PER))) (argument (role from) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)))))
+
+		<!-- 1 verb:holds[<obj> = noun:degree[from = 1]][<sub> = name:[<ref> = 0]] -->
+		(vprop (id per_schools_attended_tac_52) (score 0.9) (score_group 1) (predicate holds) (args (argument (role <obj>) (nprop (predicate degree) (args (argument (role from) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)))))) (argument (role <sub>) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400024)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 1 {0} , an {1}&this by {0}&{1} graduate student -->
+		(regex (id per_schools_attended_tac_39) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "this")) (text DONT_ADD_SPACES (string "by")) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400025)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "an")) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "graduate")) (text DONT_ADD_SPACES (string "student"))))
+
+		<!-- 1 noun:degree[<poss> = noun:bachelor[<poss> = 0]][from = 1] -->
+		(nprop (id per_schools_attended_tac_60) (score 0.9) (score_group 1) (predicate degree) (args (argument (role <poss>) (nprop (predicate bachelor) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400026)) (entitylabel AGENT1) (acetype PER)))))) (argument (role from) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)))))
+
+		<!-- 1 {0} , an {1}&by {0}&{1} graduate -->
+		(regex (id per_schools_attended_tac_51) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "by")) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400027)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "an")) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "graduate"))))
+
+		<!-- 1 {0} , an {1}&this by {0}&{1} graduate -->
+		(regex (id per_schools_attended_tac_50) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "this")) (text DONT_ADD_SPACES (string "by")) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400028)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "an")) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "graduate"))))
+
+		<!-- 1 {0} , an {1}&of this by {0}&{1} graduate student who -->
+		(regex (id per_schools_attended_tac_48) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "of")) (text DONT_ADD_SPACES (string "this")) (text DONT_ADD_SPACES (string "by")) (mention (return (ff_role AGENT1) (ff_fact_type per_schools_attended_tac_400029)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "an")) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "graduate")) (text DONT_ADD_SPACES (string "student")) (text DONT_ADD_SPACES (string "who"))))
+
+	)
+)

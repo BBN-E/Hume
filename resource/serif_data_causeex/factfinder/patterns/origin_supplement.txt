@@ -1,0 +1,54 @@
+(origin_supplement
+
+(wordsets
+
+  (RESIDENT_WORDS citizen resident native local)
+
+)
+
+(reference
+
+  <!-- [GPE] ... [PER] -->
+  (regex (shortcut PARSE_NODE_RE) (re 
+    (mention (min-entitylevel NAME) (acetype GPE))
+    (text (string "\S+(\s+\S+){0,2}"))
+    (mention (min-entitylevel NAME) (acetype PER))
+  ))
+
+)
+
+(entitylabels (AGENT1))
+
+(toplevel
+
+  (vprop (id sub_to) (score 0.9)
+    (predicate move*)
+    (args
+      (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type resident_of4)) (entitylabel AGENT1) (min-entitylevel NAME))) 
+      (argument (role to) (mention (return (ff_role resident_of)) (acetype GPE)))
+    )
+	)
+	
+	(nprop (id ref_poss) (score 0.9)
+    (args
+      (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type resident_of5)) (entitylabel AGENT1) (min-entitylevel NAME))) 
+      (argument (role <poss>) (mention (return (ff_role resident_of)) (acetype GPE)))
+    )
+	)
+	
+	(parse-node (id per_employee_or_member_of_gpe_parse_1) (score 0.9) (score_group 1) (tag NPA)
+    (regex PARSE_NODE_RE)
+    (premod
+      (mention (return (ff_role resident_of)) (min-entitylevel NAME) (block AGENT1) (acetype GPE))
+      (parse-node (tag NNP NN))
+    )
+    (head
+      (mention (return (ff_role AGENT1) (ff_fact_type resident_of6)) (min-entitylevel NAME) (entitylabel AGENT1) (acetype PER))
+    )
+  )
+	
+)
+
+)
+
+)

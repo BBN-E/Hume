@@ -1,0 +1,375 @@
+- Actor:
+  - {_id: Actor_001}
+  - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Actor']
+  - {_description: NA}
+  - _examples: [NA]
+  - Person:
+    - {_id: Person_001}
+    - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#Person']
+    - {_description: NA}
+    - _examples: [NA]
+    - StatelessPersons:
+      - {_id: StatelessPersons_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#StatelessPersons']
+      - {_description: NA}
+      - _examples: [NA]
+    - CyberSpecialist:
+      - {_id: CyberSpecialist_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#CyberSpecialist']
+      - {_description: NA}
+      - _examples: [NA]
+    - DisplacedPersons:
+      - {_id: DisplacedPersons_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#DisplacedPersons']
+      - {_description: NA}
+      - _examples: [NA]
+      - AsylumSeekers:
+        - {_id: AsylumSeekers_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#AsylumSeekers']
+        - {_description: NA}
+        - _examples: [NA]
+      - Refugees:
+        - {_id: Refugees_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#Refugees']
+        - {_description: NA}
+        - _examples: [NA]
+      - InternallyDisplacedPersons:
+        - {_id: InternallyDisplacedPersons_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#InternallyDisplacedPersons']
+        - {_description: NA}
+        - _examples: [NA]
+    - Returnees:
+      - {_id: Returnees_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#Returnees']
+      - {_description: NA}
+      - _examples: [NA]
+      - ReturnedInternallyDisplacedPersons:
+        - {_id: ReturnedInternallyDisplacedPersons_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#ReturnedInternallyDisplacedPersons']
+        - {_description: NA}
+        - _examples: [NA]
+      - ReturnedRefugees:
+        - {_id: ReturnedRefugees_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#ReturnedRefugees']
+        - {_description: NA}
+        - _examples: [NA]
+  - GroupOfActors:
+    - {_id: GroupOfActors_001}
+    - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#GroupOfActors']
+    - {_description: NA}
+    - _examples: [NA]
+    - GroupOfPersons:
+      - {_id: GroupOfPersons_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#GroupOfPersons']
+      - {_description: NA}
+      - _examples: [NA]
+      - Populace:
+        - {_id: Populace_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#Populace']
+        - {_description: NA}
+        - _examples: [NA]
+        - EthnicGroup:
+          - {_id: EthnicGroup_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#EthnicGroup']
+          - {_description: NA}
+          - _examples: [NA]
+      - Household:
+        - {_id: Household_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#Household']
+        - {_description: NA}
+        - _examples: [NA]
+      - Family:
+        - {_id: Family_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#Family']
+        - {_description: NA}
+        - _examples: [NA]
+      - TaskForce:
+        - {_id: TaskForce_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#TaskForce']
+        - {_description: NA}
+        - _examples: [NA]
+      - Crew:
+        - {_id: Crew_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#Crew']
+        - {_description: NA}
+        - _examples: [NA]
+      - PopulationOfConcern:
+        - {_id: PopulationOfConcern_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#PopulationOfConcern']
+        - {_description: NA}
+        - _examples: [NA]
+        - DisplacedPersons:
+          - {_id: DisplacedPersons_000}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#DisplacedPersons']
+          - {_description: NA}
+          - _examples: [NA]
+          - AsylumSeekers:
+            - {_id: AsylumSeekers_000}
+            - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#AsylumSeekers']
+            - {_description: NA}
+            - _examples: [NA]
+          - Refugees:
+            - {_id: Refugees_000}
+            - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#Refugees']
+            - {_description: NA}
+            - _examples: [NA]
+          - InternallyDisplacedPersons:
+            - {_id: InternallyDisplacedPersons_000}
+            - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#InternallyDisplacedPersons']
+            - {_description: NA}
+            - _examples: [NA]
+        - Returnees:
+          - {_id: Returnees_000}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#Returnees']
+          - {_description: NA}
+          - _examples: [NA]
+          - ReturnedInternallyDisplacedPersons:
+            - {_id: ReturnedInternallyDisplacedPersons_000}
+            - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#ReturnedInternallyDisplacedPersons']
+            - {_description: NA}
+            - _examples: [NA]
+          - ReturnedRefugees:
+            - {_id: ReturnedRefugees_000}
+            - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#ReturnedRefugees']
+            - {_description: NA}
+            - _examples: [NA]
+        - StatelessPersons:
+          - {_id: StatelessPersons_000}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#StatelessPersons']
+          - {_description: NA}
+          - _examples: [NA]
+    - Enemies:
+      - {_id: Enemies_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#Enemies']
+      - {_description: NA}
+      - _examples: [NA]
+    - GroupOfOrganizations:
+      - {_id: GroupOfOrganizations_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#GroupOfOrganizations']
+      - {_description: NA}
+      - _examples: [NA]
+    - Organization:
+      - {_id: Organization_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#Organization']
+      - {_description: NA}
+      - _examples: [NA]
+      - CivilSocietyOrganization:
+        - {_id: CivilSocietyOrganization_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#CivilSocietyOrganization']
+        - {_description: NA}
+        - _examples: [NA]
+        - NonGovernmentalOrganization:
+          - {_id: NonGovernmentalOrganization_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#NonGovernmentalOrganization']
+          - {_description: NA}
+          - _examples: [NA]
+      - EducationalOrganization:
+        - {_id: EducationalOrganization_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#EducationalOrganization']
+        - {_description: NA}
+        - _examples: [NA]
+      - HumanRightsOrganization:
+        - {_id: HumanRightsOrganization_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#HumanRightsOrganization']
+        - {_description: NA}
+        - _examples: [NA]
+      - GovernmentAgency:
+        - {_id: GovernmentAgency_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#GovernmentAgency']
+        - {_description: NA}
+        - _examples: [NA]
+      - LaborOrganization:
+        - {_id: LaborOrganization_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#LaborOrganization']
+        - {_description: NA}
+        - _examples: [NA]
+      - EnvironmentalOrganization:
+        - {_id: EnvironmentalOrganization_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#EnvironmentalOrganization']
+        - {_description: NA}
+        - _examples: [NA]
+      - ReligiousOrganization:
+        - {_id: ReligiousOrganization_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#ReligiousOrganization']
+        - {_description: NA}
+        - _examples: [NA]
+      - OrganizationalUnit:
+        - {_id: OrganizationalUnit_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#OrganizationalUnit']
+        - {_description: NA}
+        - _examples: [NA]
+      - BranchOfGovernment:
+        - {_id: BranchOfGovernment_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#BranchOfGovernment']
+        - {_description: NA}
+        - _examples: [NA]
+        - ExecutiveBranchOfGovernment:
+          - {_id: ExecutiveBranchOfGovernment_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#ExecutiveBranchOfGovernment']
+          - {_description: NA}
+          - _examples: [NA]
+        - JudicialBranchOfGovernment:
+          - {_id: JudicialBranchOfGovernment_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#JudicialBranchOfGovernment']
+          - {_description: NA}
+          - _examples: [NA]
+        - LegislativeBranchOfGovernment:
+          - {_id: LegislativeBranchOfGovernment_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#LegislativeBranchOfGovernment']
+          - {_description: NA}
+          - _examples: [NA]
+      - UtilitiesOrganization:
+        - {_id: UtilitiesOrganization_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#UtilitiesOrganization']
+        - {_description: NA}
+        - _examples: [NA]
+      - GeopoliticalEntity:
+        - {_id: GeopoliticalEntity_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#GeopoliticalEntity']
+        - {_description: NA}
+        - _examples: [NA]
+        - Country:
+          - {_id: Country_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#GeopoliticalEntity']
+          - {_description: NA}
+          - _examples: [NA]
+        - City:
+          - {_id: City_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#GeopoliticalEntity']
+          - {_description: NA}
+          - _examples: [NA]
+      - CommercialOrganization:
+        - {_id: CommercialOrganization_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#CommercialOrganization']
+        - {_description: NA}
+        - _examples: [NA]
+        - EntertainmentOrganization:
+          - {_id: EntertainmentOrganization_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#EntertainmentOrganization']
+          - {_description: NA}
+          - _examples: [NA]
+        - ManufacturingOrganization:
+          - {_id: ManufacturingOrganization_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#ManufacturingOrganization']
+          - {_description: NA}
+          - _examples: [NA]
+        - RealEstateOrganization:
+          - {_id: RealEstateOrganization_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#RealEstateOrganization']
+          - {_description: NA}
+          - _examples: [NA]
+        - SoftwareOrganization:
+          - {_id: SoftwareOrganization_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#SoftwareOrganization']
+          - {_description: NA}
+          - _examples: [NA]
+        - RetailOrganization:
+          - {_id: RetailOrganization_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#RetailOrganization']
+          - {_description: NA}
+          - _examples: [NA]
+        - FinanceOrganization:
+          - {_id: FinanceOrganization_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#FinanceOrganization']
+          - {_description: NA}
+          - _examples: [NA]
+        - MediaOrganization:
+          - {_id: MediaOrganization_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#MediaOrganization']
+          - {_description: NA}
+          - _examples: [NA]
+        - ConstructionOrganization:
+          - {_id: ConstructionOrganization_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#ConstructionOrganization']
+          - {_description: NA}
+          - _examples: [NA]
+        - TransportationOrganization:
+          - {_id: TransportationOrganization_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#TransportationOrganization']
+          - {_description: NA}
+          - _examples: [NA]
+        - LegalOrganization:
+          - {_id: LegalOrganization_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#LegalOrganization']
+          - {_description: NA}
+          - _examples: [NA]
+        - ServiceProvider:
+          - {_id: ServiceProvider_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#ServiceProvider']
+          - {_description: NA}
+          - _examples: [NA]
+        - MiningOrDrillingOrganization:
+          - {_id: MiningOrDrillingOrganization_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#MiningOrDrillingOrganization']
+          - {_description: NA}
+          - _examples: [NA]
+      - TerroristOrganization:
+        - {_id: TerroristOrganization_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#TerroristOrganization']
+        - {_description: NA}
+        - _examples: [NA]
+        - JihadistOrganization:
+          - {_id: JihadistOrganization_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#JihadistOrganization']
+          - {_description: NA}
+          - _examples: [NA]
+          - SalafistJihadistOrganization:
+            - {_id: SalafistJihadistOrganization_001}
+            - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#SalafistJihadistOrganization']
+            - {_description: NA}
+            - _examples: [NA]
+      - AgriculturalOrganization:
+        - {_id: AgriculturalOrganization_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#AgriculturalOrganization']
+        - {_description: NA}
+        - _examples: [NA]
+      - PoliticalParty:
+        - {_id: PoliticalParty_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#PoliticalParty']
+        - {_description: NA}
+        - _examples: [NA]
+      - ArmedForce:
+        - {_id: ArmedForce_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#ArmedForce']
+        - {_description: NA}
+        - _examples: [NA]
+        - MilitaryForce:
+          - {_id: MilitaryForce_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#MilitaryForce']
+          - {_description: NA}
+          - _examples: [NA]
+        - ParamilitaryForce:
+          - {_id: ParamilitaryForce_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#ParamilitaryForce']
+          - {_description: NA}
+          - _examples: [NA]
+        - PoliceForce:
+          - {_id: PoliceForce_001}
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#PoliceForce']
+          - {_description: NA}
+          - _examples: [NA]
+      - CriminalOrganization:
+        - {_id: CriminalOrganization_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#CriminalOrganization']
+        - {_description: NA}
+        - _examples: [NA]
+      - HealthcareOrganization:
+        - {_id: HealthcareOrganization_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#HealthcareOrganization']
+        - {_description: NA}
+        - _examples: [NA]
+      - ForestryOrganization:
+        - {_id: ForestryOrganization_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#ForestryOrganization']
+        - {_description: NA}
+        - _examples: [NA]
+      - AidOrReliefOrganization:
+        - {_id: AidOrReliefOrganization_001}
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#AidOrReliefOrganization']
+        - {_description: NA}
+        - _examples: [NA]
+    - Allies:
+      - {_id: Allies_001}
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Actor#Allies']
+      - {_description: NA}
+      - _examples: [NA]

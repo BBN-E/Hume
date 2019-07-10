@@ -1,0 +1,10 @@
+has_actor
+has_active_actor, has_provider
+has_affected_actor, has_recipient
+located_at
+time
+involves_goods_or_property
+has_instrument
+has_origin
+has_destination
+has_topic

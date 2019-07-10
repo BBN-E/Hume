@@ -1,0 +1,39 @@
+(per_schools_attended
+
+
+ (wordsets)
+
+ (entitylabels (AGENT1))
+
+ (toplevel
+		<!-- 25   per_schools_attended ==> verb:holds[<obj> = noun:degree[in = noun:economics[from = 1]]][<sub> = 0] -->
+		(vprop (id cs2015_per_schools_attended_20000) (score 0.9) (score_group 1) (predicate holds) (args (argument (role <obj>) (nprop (predicate degree) (args (argument (role in) (nprop (predicate economics) (args (argument (role from) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG))))))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_schools_attended_20000)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 25   per_schools_attended ==> noun:degree[<poss> = noun:master[<ref> = 0]][in = noun:economics[from = 1]] -->
+		(nprop (id cs2015_per_schools_attended_20001) (score 0.9) (score_group 1) (predicate degree) (args (argument (role <poss>) (nprop (predicate master) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_schools_attended_20001)) (entitylabel AGENT1) (acetype PER)))))) (argument (role in) (nprop (predicate economics) (args (argument (role from) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG))))))))
+
+		<!-- 25   per_schools_attended ==> verb:holds[<obj> = noun:degree[in = noun:economics[from = 1]]][<sub> = pronoun:who[<ref> = 0]] -->
+		(vprop (id cs2015_per_schools_attended_20002) (score 0.9) (score_group 1) (predicate holds) (args (argument (role <obj>) (nprop (predicate degree) (args (argument (role in) (nprop (predicate economics) (args (argument (role from) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG))))))))) (argument (role <sub>) (anyprop (predicate who) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_schools_attended_20002)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 25   per_schools_attended ==> noun:degree[<poss> = 0][in = noun:economics[from = 1]] -->
+		(nprop (id cs2015_per_schools_attended_20003) (score 0.9) (score_group 1) (predicate degree) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_schools_attended_20003)) (entitylabel AGENT1) (acetype PER))) (argument (role in) (nprop (predicate economics) (args (argument (role from) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG))))))))
+
+		<!-- 25   per_schools_attended ==> verb:holds[<obj> = noun:degree[<poss> = noun:master[<ref> = 0]][in = noun:economics[from = 1]]] -->
+		(vprop (id cs2015_per_schools_attended_20004) (score 0.9) (score_group 1) (predicate holds) (args (argument (role <obj>) (nprop (predicate degree) (args (argument (role <poss>) (nprop (predicate master) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_schools_attended_20004)) (entitylabel AGENT1) (acetype PER)))))) (argument (role in) (nprop (predicate economics) (args (argument (role from) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)))))))))))
+
+		<!-- 25   per_schools_attended ==> verb:holds[<obj> = noun:degree[<poss> = 0][in = noun:economics[from = 1]]] -->
+		(vprop (id cs2015_per_schools_attended_20005) (score 0.9) (score_group 1) (predicate holds) (args (argument (role <obj>) (nprop (predicate degree) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_schools_attended_20005)) (entitylabel AGENT1) (acetype PER))) (argument (role in) (nprop (predicate economics) (args (argument (role from) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)))))))))))
+
+		<!-- 4   per_schools_attended ==> verb:received[<obj> = verb:attend[<obj> = 1]][<sub> = pronoun:she[<ref> = 0]] -->
+		(vprop (id cs2015_per_schools_attended_20007) (score 0.9) (score_group 1) (predicate received) (args (argument (role <obj>) (vprop (predicate attend) (args (argument (role <obj>) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)))))) (argument (role <sub>) (anyprop (predicate she) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_schools_attended_20007)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 4   per_schools_attended ==> verb:received[<obj> = verb:attend[<obj> = 1]][<sub> = 0] -->
+		(vprop (id cs2015_per_schools_attended_20008) (score 0.9) (score_group 1) (predicate received) (args (argument (role <obj>) (vprop (predicate attend) (args (argument (role <obj>) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_schools_attended_20008)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 4   per_schools_attended ==> verb:took[when = copula:was[<obj> = noun:student[<ref> = 0]][at = 1]] -->
+		(vprop (id cs2015_per_schools_attended_20010) (score 0.9) (score_group 1) (predicate took) (args (argument (role when) (anyprop (predicate was) (args (argument (role <obj>) (nprop (predicate student) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_schools_attended_20010)) (entitylabel AGENT1) (acetype PER)))))) (argument (role at) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG))))))))
+
+		<!-- 4   per_schools_attended ==> copula:was[<obj> = noun:student[<ref> = 0]][at = 1] -->
+		(anyprop (id cs2015_per_schools_attended_20011) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (nprop (predicate student) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_schools_attended_20011)) (entitylabel AGENT1) (acetype PER)))))) (argument (role at) (mention (return (ff_role per_schools_attended)) (block AGENT1) (acetype ORG)))))
+	)
+)

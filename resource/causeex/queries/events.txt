@@ -1,0 +1,82 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix meas: <http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#>
+prefix event: <http://ontology.causeex.com/ontology/odps/Event#>
+prefix cameocc: <http://ontology.causeex.com/cameo/CountryCodeOntology/>
+prefix eh: <http://ontology.causeex.com/ontology/odps/Event#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix bbnta1: <http://graph.causeex.com/bbn#>
+prefix actor: <http://ontology.causeex.com/ontology/odps/Actor#>
+prefix dataprov: <http://ontology.causeex.com/ontology/odps/DataProvenance#>
+prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/>
+prefix cx: <http://ontology.causeex.com/ontology/odps/CauseEffect#>
+prefix oeo: <http://www.ontologylibrary.mil/OperationalEnvironment/Mid/OEOrganizationOntology#>
+prefix doco: <http://purl.org/spar/doco/>
+prefix gconcept: <http://ontology.causeex.com/ontology/odps/GeneralConcepts#>
+prefix var: <http://www.bbn.com/2017/TA1locals/>
+prefix cr: <http://ontology.causeex.com/CausalExplorationOntology/ClassRelationships#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix ro: <http://www.obofoundry.org/ro/ro.owl#>
+prefix event: <http://ontology.causeex.com/ontology/odps/Event#>
+prefix oee: <http://www.ontologylibrary.mil/OperationalEnvironment/Mid/OEEventOntology#>
+
+select distinct
+?event
+("BBN" as ?performer) ?document_id
+?event_label ?event_class
+?event_text ?event_text_offset ?event_sentence_text ?event_sentence_text_offset
+?event_genericity ?event_modality ?event_polarity
+?event_start_time ?event_location_label ?event_location_canonical_label ?event_location_latitude ?event_location_longitude
+?has_active_actor ?has_actor ?has_affected_actor ?has_destination ?has_instrument ?has_origin ?has_provider ?has_recipient ?has_topic ?associated_monetary_amount ?involves_goods_or_property ?located_at ?position_or_role
+
+from <http://graph.causeex.com>
+from <http://ontology.causeex.com>
+WHERE {
+  ?event rdf:type ?event_class .
+  ?event_class rdfs:subClassOf* event:Event .
+
+  ?event dataprov:sourced_from ?event_span .
+  ?event_span rdf:type dataprov:Span .
+  MINUS { ?event_span rdf:type doco:Sentence . }
+  ?event_span dataprov:text_value ?event_text .
+  ?event_span dataprov:char_offset ?event_text_offset .
+
+  ?event dataprov:sourced_from ?event_sentence .
+  ?event_sentence rdf:type doco:Sentence .
+  ?event_sentence dataprov:text_value ?event_sentence_text .
+  ?event_sentence dataprov:char_offset ?event_sentence_text_offset .
+  ?event_sentence dataprov:contains ?event_span
+
+  OPTIONAL { ?event event:has_genericity ?event_genericity . }
+  OPTIONAL { ?event event:has_modality ?event_modality . }
+  OPTIONAL { ?event event:has_polarity ?event_polarity . }
+
+  ?document dataprov:contains ?event_sentence .
+  ?document dataprov:original_source ?document_id .
+
+  ?event rdfs:label ?event_label .
+
+  OPTIONAL { ?event gconcept:earliest_possible_start_time ?event_start_time . }
+
+  OPTIONAL {
+    ?event gconcept:located_at ?event_location .
+    ?event_location dataprov:sourced_from ?event_location_span .
+    ?event_location_span dataprov:text_value ?event_location_label .
+    ?event_location gconcept:canonical_label ?event_location_canonical_label .
+    ?event_location gconcept:latitude ?event_location_latitude .
+    ?event_location gconcept:longitude ?event_location_longitude .
+  }
+
+  OPTIONAL { ?event event:has_active_actor ?has_active_actor . }
+  OPTIONAL { ?event event:has_actor ?has_actor . }
+  OPTIONAL { ?event event:has_affected_actor ?has_affected_actor . }
+  OPTIONAL { ?event event:has_destination ?has_destination . }
+  OPTIONAL { ?event event:has_instrument ?has_instrument . }
+  OPTIONAL { ?event event:has_origin ?has_origin . }
+  OPTIONAL { ?event event:has_provider ?has_provider . }
+  OPTIONAL { ?event event:has_recipient ?has_recipient . }
+  OPTIONAL { ?event event:has_topic ?has_topic . }
+  OPTIONAL { ?event gconcept:associated_monetary_amount ?associated_monetary_amount . }
+  OPTIONAL { ?event gconcept:involves_goods_or_property ?involves_goods_or_property . }
+  OPTIONAL { ?event gconcept:located_at ?located_at . }
+  OPTIONAL { ?event gconcept:position_or_role ?position_or_role . }
+}

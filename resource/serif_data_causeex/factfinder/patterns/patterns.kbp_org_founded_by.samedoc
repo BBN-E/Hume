@@ -1,0 +1,45 @@
+(org_founded_by
+
+ (wordsets)
+
+ (entitylabels (AGENT1))
+
+ (toplevel
+
+		<!-- 184   org_founded_by ==> noun:founder[<poss> = 0][<ref> = 1] -->
+		(nprop (id cs2015_org_founded_by_20030) (score 0.9) (score_group 1) (predicate founder) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_founded_by_20030)) (entitylabel AGENT1) (acetype ORG))) (argument (role <ref>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER)))))
+		<!-- 112   org_founded_by ==> noun:founder[<poss> = noun:company[<ref> = 0]][<ref> = 1] -->
+		(nprop (id cs2015_org_founded_by_20044) (score 0.9) (score_group 1) (predicate founder) (args (argument (role <poss>) (nprop (predicate company) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_founded_by_20044)) (entitylabel AGENT1) (acetype ORG)))))) (argument (role <ref>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER)))))
+
+		<!-- 72   org_founded_by ==> noun:founder[<mod> = 0][<ref> = 1] -->
+		(nprop (id cs2015_org_founded_by_20051) (score 0.9) (score_group 1) (predicate founder) (args (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_founded_by_20051)) (entitylabel AGENT1) (acetype ORG))) (argument (role <ref>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER)))))
+
+		<!-- 72   org_founded_by ==> verb:vote[against = noun:buyout[of = 0]][by = noun:founder[<ref> = 1]] -->
+		(vprop (id cs2015_org_founded_by_20052) (score 0.9) (score_group 1) (predicate vote) (args (argument (role against) (nprop (predicate buyout) (args (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_founded_by_20052)) (entitylabel AGENT1) (acetype ORG)))))) (argument (role by) (nprop (predicate founder) (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 72   org_founded_by ==> verb:vote[against = noun:buyout[of = noun:company[<ref> = 0]]][by = noun:founder[<ref> = 1]] -->
+		(vprop (id cs2015_org_founded_by_20055) (score 0.9) (score_group 1) (predicate vote) (args (argument (role against) (nprop (predicate buyout) (args (argument (role of) (nprop (predicate company) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_founded_by_20055)) (entitylabel AGENT1) (acetype ORG))))))))) (argument (role by) (nprop (predicate founder) (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 72   org_founded_by ==> noun:founder[<poss> = pronoun:its[<ref> = 0]][<ref> = 1] -->
+		(nprop (id cs2015_org_founded_by_20056) (score 0.9) (score_group 1) (predicate founder) (args (argument (role <poss>) (anyprop (predicate its) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_founded_by_20056)) (entitylabel AGENT1) (acetype ORG)))))) (argument (role <ref>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER)))))
+
+		<!-- 24   org_founded_by ==> set:[<member> = 1][<ref> = noun:founder[<poss> = noun:company[<ref> = 0]]] -->
+		(sprop (id cs2015_org_founded_by_20108) (score 0.9) (score_group 1) (args (argument (role <member>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER))) (argument (role <ref>) (nprop (predicate founder) (args (argument (role <poss>) (nprop (predicate company) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_founded_by_20108)) (entitylabel AGENT1) (acetype ORG)))))))))))
+
+		<!-- 24   org_founded_by ==> set:[<member> = 1][<ref> = noun:founder[<poss> = 0]] -->
+		(sprop (id cs2015_org_founded_by_20113) (score 0.9) (score_group 1) (args (argument (role <member>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER))) (argument (role <ref>) (nprop (predicate founder) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_founded_by_20113)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 16   org_founded_by ==> noun:co-founder[<poss> = 0][<ref> = 1] -->
+		(nprop (id cs2015_org_founded_by_20116) (score 0.9) (score_group 1) (predicate co-founder) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_founded_by_20116)) (entitylabel AGENT1) (acetype ORG))) (argument (role <ref>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER)))))
+
+		<!-- 8   org_founded_by ==> set:[<member> = noun:graduate[<ref> = 1]][<ref> = noun:founder[of = 0]] -->
+		(sprop (id cs2015_org_founded_by_20140) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate graduate) (args (argument (role <ref>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER)))))) (argument (role <ref>) (nprop (predicate founder) (args (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_founded_by_20140)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 8   org_founded_by ==> set:[<member> = 1][<ref> = noun:founder[of = 0]] -->
+		(sprop (id cs2015_org_founded_by_20144) (score 0.9) (score_group 1) (args (argument (role <member>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER))) (argument (role <ref>) (nprop (predicate founder) (args (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_founded_by_20144)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 1   org_founded_by ==> verb:started[<obj> = 0][<sub> = 1] -->
+		(vprop (id cs2015_org_founded_by_20148) (score 0.9) (score_group 1) (predicate started) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_founded_by_20148)) (entitylabel AGENT1) (acetype ORG))) (argument (role <sub>) (mention (return (ff_role org_founded_by)) (block AGENT1) (acetype PER)))))
+
+	)
+)

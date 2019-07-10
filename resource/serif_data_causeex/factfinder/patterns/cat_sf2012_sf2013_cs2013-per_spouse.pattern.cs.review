@@ -1,0 +1,130 @@
+(per_spouse
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 0: 24 noun: [wife]   <ref> = 1    <poss> = 0 -->
+		(nprop (id per_spouse_1) (score 0.9) (score_group 1) (predicate wife) (args (argument (role <ref>) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_1)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 1: 14 {0} wife , {1} -->
+		(regex (id per_spouse_2) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_2)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "wife")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))
+
+
+		<!-- 3: 12 noun: [husband]   <ref> = 1    <poss> = 0 -->
+		(nprop (id per_spouse_4) (score 0.9) (score_group 1) (predicate husband) (args (argument (role <ref>) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_4)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+
+
+
+		<!-- 7: 8 noun: [wife]   <ref> = 0    <poss> = 1 -->
+		(nprop (id per_spouse_8) (score 0.9) (score_group 1) (predicate wife) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_8)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER)))))
+
+
+		<!-- 10: 6 {0} husband , {1} -->
+		(regex (id per_spouse_11) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_11)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "husband")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))
+
+		<!-- 11: 6 set: []   <ref> = noun: [wife]      <poss> = 0    <member> = 1 -->
+		(sprop (id per_spouse_12) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate wife) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_12)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))) (argument (role <member>) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER)))))
+
+		<!-- 12: 5 {0} married {1} -->
+		(regex (id per_spouse_13) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_13)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "married")) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))
+
+		<!-- 13: 5 verb: [married]   <sub> = 0    <obj> = 1 -->
+		(vprop (id per_spouse_14) (score 0.9) (score_group 1) (predicate married) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_14)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER)))))
+
+		<!-- 14: 5 set: []   <ref> = noun: [wife]      <ref> = 1       <poss> = 0 -->
+		(sprop (id per_spouse_15) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate wife) (args (argument (role <ref>) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_15)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 15: 4 {1} wife , {0} -->
+		(regex (id per_spouse_16) (score 0.9) (score_group 1) (re (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "wife")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_16)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+
+		<!-- 19: 3 {1} husband , {0} -->
+		(regex (id per_spouse_20) (score 0.9) (score_group 1) (re (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "husband")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_20)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+		<!-- 21: 3 {0} wife {1} -->
+		(regex (id per_spouse_22) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_22)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "wife")) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))
+
+
+		<!-- 23: 3 {0} third wife , {1} -->
+		(regex (id per_spouse_24) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_24)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "third")) (text DONT_ADD_SPACES (string "wife")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))
+
+
+		<!-- 25: 3 verb: [survived]   <sub> = noun: [wife]      <ref> = 1    <obj> = 0 -->
+		(vprop (id per_spouse_26) (score 0.9) (score_group 1) (predicate survived) (args (argument (role <sub>) (nprop (predicate wife) (args (argument (role <ref>) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER)))))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_26)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 26: 3 verb: [survived]   <sub> = noun: [wife]      <ref> = 1       <poss> = 0 -->
+		(vprop (id per_spouse_27) (score 0.9) (score_group 1) (predicate survived) (args (argument (role <sub>) (nprop (predicate wife) (args (argument (role <ref>) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_27)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))))))
+
+
+
+		<!-- 29: 3 set: []   <ref> = noun: [wife]      <poss> = 1    <member> = 0 -->
+		(sprop (id per_spouse_30) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate wife) (args (argument (role <poss>) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER)))))) (argument (role <member>) (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_30)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+
+		<!-- 31: 3 CombinationPattern[{0} wife , {1}][is survived by {0}] -->
+		(regex (id per_spouse_32) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "is")) (text DONT_ADD_SPACES (string "survived")) (text DONT_ADD_SPACES (string "by")) (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_32)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "wife")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))
+
+		<!-- 32: 2 {1} wife {0} -->
+		(regex (id per_spouse_33) (score 0.9) (score_group 1) (re (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "wife")) (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_33)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+		<!-- 35: 2 {1} married {0} -->
+		(regex (id per_spouse_36) (score 0.9) (score_group 1) (re (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "married")) (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_36)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+
+
+		<!-- 39: 2 {0} second wife , {1} -->
+		(regex (id per_spouse_40) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_40)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "second")) (text DONT_ADD_SPACES (string "wife")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))
+
+
+		<!-- 41: 2 {0} first husband , {1} -->
+		(regex (id per_spouse_42) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_42)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "first")) (text DONT_ADD_SPACES (string "husband")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))
+
+
+		<!-- 44: 2 {0} 's wife , {1} -->
+		(regex (id per_spouse_45) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_45)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "wife")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))
+
+		<!-- 45: 2 {0} 's husband , {1} -->
+		(regex (id per_spouse_46) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_46)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "husband")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))
+
+		<!-- 46: 2 {0} ' wife , {1} -->
+		(regex (id per_spouse_47) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_47)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "'")) (text DONT_ADD_SPACES (string "wife")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))
+
+
+		<!-- 48: 2 verb: [married]   <sub> = 1    <obj> = 0 -->
+		(vprop (id per_spouse_49) (score 0.9) (score_group 1) (predicate married) (args (argument (role <sub>) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_49)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+
+		<!-- 50: 2 set: []   <ref> = noun: [husband]      <ref> = 1       <poss> = 0 -->
+		(sprop (id per_spouse_51) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate husband) (args (argument (role <ref>) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_51)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 51: 2 set: []   <ref> = noun: [husband]      <poss> = 0    <member> = 1 -->
+		(sprop (id per_spouse_52) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate husband) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_52)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))) (argument (role <member>) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER)))))
+
+
+
+		<!-- 54: 2 noun: [wife]   <ref> = 1    of = 0 -->
+		(nprop (id per_spouse_55) (score 0.9) (score_group 1) (predicate wife) (args (argument (role <ref>) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_55)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 55: 2 noun: [widow]   <ref> = 1    <poss> = 0 -->
+		(nprop (id per_spouse_56) (score 0.9) (score_group 1) (predicate widow) (args (argument (role <ref>) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_56)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 56: 2 noun: [husband]   <ref> = 0    <poss> = 1 -->
+		(nprop (id per_spouse_57) (score 0.9) (score_group 1) (predicate husband) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_57)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER)))))
+
+
+		<!-- 58: 2 CombinationPattern[{0} wife , {1}][by survived is {0}] -->
+		(regex (id per_spouse_59) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "by")) (text DONT_ADD_SPACES (string "survived")) (text DONT_ADD_SPACES (string "is")) (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_59)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "wife")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_spouse)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))
+
+	)
+)
+
+
+

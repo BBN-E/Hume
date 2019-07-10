@@ -1,0 +1,15 @@
+(org_alternate_names
+
+
+ (wordsets)
+
+ (entitylabels (AGENT1))
+
+ (toplevel
+		<!-- 12   org_alternate_names ==> {0} known as {1} -->
+		(regex (id cs2015_org_alternate_names_20001) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_alternate_names_20001)) (entitylabel AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string "known")) (text DONT_ADD_SPACES (string "as")) (mention (return (ff_role org_alternate_names)) (block AGENT1) (acetype ORG) (mentiontype name))))
+
+		<!-- 12   org_alternate_names ==> verb:known[<sub> = noun:talks[between = 0]][as = 1] -->
+		(vprop (id cs2015_org_alternate_names_20002) (score 0.9) (score_group 1) (predicate known) (args (argument (role <sub>) (nprop (predicate talks) (args (argument (role between) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_alternate_names_20002)) (entitylabel AGENT1) (acetype ORG)))))) (argument (role as) (mention (return (ff_role org_alternate_names)) (block AGENT1) (acetype ORG) (mentiontype name)))))
+	)
+)

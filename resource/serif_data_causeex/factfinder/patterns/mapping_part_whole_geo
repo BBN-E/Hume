@@ -1,0 +1,32 @@
+(part_whole_geo
+
+(entitylabels
+(AGENT1)
+)
+
+(toplevel
+
+(relation	(id mapping_1)
+		(score_group 1) (score 0.9)
+		(fulltype PART-WHOLE.Geographical)
+		(args 
+			 (argument
+				(mention
+					(return (ff_role AGENT1) (ff_fact_type part_whole_geo))
+					(entitylabel AGENT1)
+				)
+				(role ARG2)
+			 )
+			 (argument 
+				(mention
+				          (acetype GPE)
+				          (min-entitylevel DESC)
+				          (return (ff_role part_whole_geo))
+				)
+				(role ARG1)
+			)
+		)
+)
+
+)
+)

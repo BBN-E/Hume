@@ -1,0 +1,247 @@
+(per_title
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 117 {1} , {0}&[slot=1, word=spokeswoman, lang=english] -->
+		(regex (id per_title_tac_6) (score 0.9) (score_group 1) (re (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "spokeswoman")))))) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400000)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 69 copula:is[<obj> = 1][<sub> = 0]&[slot=1, word=journalist, lang=english] -->
+		(anyprop (id per_title_tac_35) (score 0.9) (score_group 1) (predicate is) (args (argument (role <obj>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "journalist"))))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400001)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 69 copula:is[<obj> = noun:journalist[<ref> = 1]][<sub> = 0] -->
+		(anyprop (id per_title_tac_34) (score 0.9) (score_group 1) (predicate is) (args (argument (role <obj>) (nprop (predicate journalist) (args (argument (role <ref>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none)))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400002)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 54 {0} , {1}&[slot=1, word=president, lang=english] -->
+		(regex (id per_title_tac_6) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400003)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "president"))))))))
+
+		<!-- 49 {0} , {1}&[slot=1, word=president, lang=english] -->
+		(regex (id per_title_tac_52) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400004)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "president"))))))))
+
+		<!-- 48 {0} , a {1}&[slot=1, word=lawyer, lang=english] -->
+		(regex (id per_title_tac_20) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400005)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "lawyer"))))))))
+
+		<!-- 40 {0} , {1}&[slot=1, word=director, lang=english] -->
+		(regex (id per_title_tac_59) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400006)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "director"))))))))
+
+		<!-- 40 {0} , {1}&[slot=1, word=chairman, lang=english] -->
+		(regex (id per_title_tac_13) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400007)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "chairman"))))))))
+
+		<!-- 39 verb:become[<obj> = noun:chairman[<ref> = 1]][<sub> = 0] -->
+		(vprop (id per_title_tac_15) (score 0.9) (score_group 1) (predicate become) (args (argument (role <obj>) (nprop (predicate chairman) (args (argument (role <ref>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none)))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400008)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 36 noun:secretary[<ref> = 1][of = name:[<ref> = 0]] -->
+		(nprop (id per_title_tac_16) (score 0.9) (score_group 1) (predicate secretary) (args (argument (role <ref>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none))) (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400009)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 25 {0} , {1}&[slot=0, word=ginsburg, lang=english]&[slot=1, word=president, lang=english] -->
+		(regex (id per_title_tac_39) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400010)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "ginsburg")))))) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "president"))))))))
+
+		<!-- 25 {0} , a [GPE] {1}&[slot=1, word=author, lang=english] -->
+		(regex (id per_title_tac_134) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400011)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (mention (acetype GPE)) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "author"))))))))
+
+		<!-- 24 {0} , former {1}&{1} and former -->
+		(regex (id per_title_tac_143) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400012)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "former")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none)) (text DONT_ADD_SPACES (string "and")) (text DONT_ADD_SPACES (string "former"))))
+
+		<!-- 24 {0} , a {1}&{1} and fellow at -->
+		(regex (id per_title_tac_49) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400013)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none)) (text DONT_ADD_SPACES (string "and")) (text DONT_ADD_SPACES (string "fellow")) (text DONT_ADD_SPACES (string "at"))))
+
+		<!-- 24 {0} , {1}&{1} and author of -->
+		(regex (id per_title_tac_46) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400014)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none)) (text DONT_ADD_SPACES (string "and")) (text DONT_ADD_SPACES (string "author")) (text DONT_ADD_SPACES (string "of"))))
+
+		<!-- 20 {1} [PER] , {0}&[slot=1, word=writer, lang=english] -->
+		(regex (id per_title_tac_67) (score 0.9) (score_group 1) (re (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "writer")))))) (mention (acetype PER)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400015)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 20 copula:been[<obj> = noun:architect[<ref> = 1]][<sub> = 0] -->
+		(anyprop (id per_title_tac_174) (score 0.9) (score_group 1) (predicate been) (args (argument (role <obj>) (nprop (predicate architect) (args (argument (role <ref>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none)))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400016)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 20 copula:been[<obj> = 1][<sub> = 0]&[slot=1, word=architect, lang=english] -->
+		(anyprop (id per_title_tac_171) (score 0.9) (score_group 1) (predicate been) (args (argument (role <obj>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "architect"))))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400017)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 20 {1} [PER] , {0}&film {1} -->
+		(regex (id per_title_tac_70) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "film")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none)) (mention (acetype PER)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400018)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 20 {0} , a {1}&[slot=1, word=writer, lang=english] -->
+		(regex (id per_title_tac_66) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400019)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "writer"))))))))
+
+		<!-- 18 copula:was[<obj> = 1][<sub> = 0]&[slot=0, word=chabrol, lang=english]&[slot=1, word=director, lang=english] -->
+		(anyprop (id per_title_tac_76) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "director"))))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400020)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "chabrol")))))))))
+
+		<!-- 18 {0} , a {1}&{1} and cartographer whose -->
+		(regex (id per_title_tac_73) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400021)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none)) (text DONT_ADD_SPACES (string "and")) (text DONT_ADD_SPACES (string "cartographer")) (text DONT_ADD_SPACES (string "whose"))))
+
+		<!-- 18 copula:been[<obj> = 1][<sub> = 0]&[slot=0, word=gage, lang=english]&[slot=1, word=architect, lang=english] -->
+		(anyprop (id per_title_tac_190) (score 0.9) (score_group 1) (predicate been) (args (argument (role <obj>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "architect"))))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400022)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "gage")))))))))
+	
+		<!-- 17 verb:convicted[<obj> = noun:director[<ref> = 1][of = name:[<ref> = 0]]] -->
+		(vprop (id per_title_tac_195) (score 0.9) (score_group 1) (predicate convicted) (args (argument (role <obj>) (nprop (predicate director) (args (argument (role <ref>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none))) (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400023)) (entitylabel AGENT1) (acetype PER)))))))))))
+
+		<!-- 17 noun:director[<ref> = 1][of = name:[<ref> = 0]] -->
+		(nprop (id per_title_tac_200) (score 0.9) (score_group 1) (predicate director) (args (argument (role <ref>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none))) (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400024)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 17 modifier:former[<ref> = noun:director[<ref> = 1][of = 0]] -->
+		(mprop (id per_title_tac_198) (score 0.9) (score_group 1) (predicate former) (args (argument (role <ref>) (nprop (predicate director) (args (argument (role <ref>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400025)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 16 verb:known[<obj> = noun:architect[<ref> = 1]][for = noun:designs[<poss> = 0]] -->
+		(vprop (id per_title_tac_91) (score 0.9) (score_group 1) (predicate known) (args (argument (role <obj>) (nprop (predicate architect) (args (argument (role <ref>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none)))))) (argument (role for) (nprop (predicate designs) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400026)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 16 copula:is[<obj> = 1][<sub> = 0]&[slot=1, word=spy, lang=english] -->
+		(anyprop (id per_title_tac_73) (score 0.9) (score_group 1) (predicate is) (args (argument (role <obj>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "spy"))))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400027)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 16 {0} was {1}&[slot=1, word=president, lang=english] -->
+		(regex (id per_title_tac_90) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400028)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "president"))))))))
+
+		<!-- 16 {0} is a {1}&[slot=1, word=spy, lang=english] -->
+		(regex (id per_title_tac_89) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400029)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "is")) (text DONT_ADD_SPACES (string "a")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "spy"))))))))
+
+		<!-- 16 {0} , a {1}&[slot=0, word=edwards, lang=english]&[slot=1, word=writer, lang=english] -->
+		(regex (id per_title_tac_92) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400030)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "edwards")))))) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "writer"))))))))
+
+		<!-- 14 {0} , a {1}&[slot=0, word=rashid, lang=english]&[slot=1, word=journalist, lang=english] -->
+		(regex (id per_title_tac_224) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400031)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "rashid")))))) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "journalist"))))))))
+
+		<!-- 14 {1} , {0}&[slot=1, word=executive, lang=english] -->
+		(regex (id per_title_tac_117) (score 0.9) (score_group 1) (re (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "executive")))))) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400032)) (entitylabel AGENT1) (acetype PER))))
+		
+		<!-- 14 {0} , a {1}&[slot=1, word=journalist, lang=english] -->
+		(regex (id per_title_tac_228) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400033)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "journalist"))))))))
+
+		<!-- 14 copula:was[<obj> = 1][<sub> = 0]&[slot=0, word=goodman, lang=english]&[slot=1, word=psychologist, lang=english] -->
+		(anyprop (id per_title_tac_104) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "psychologist"))))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400034)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "goodman")))))))))
+
+		<!-- 14 {1} [PER] , {0}&[slot=0, word=who, lang=english]&[slot=1, word=writer, lang=english] -->
+		(regex (id per_title_tac_132) (score 0.9) (score_group 1) (re (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "writer")))))) (mention (acetype PER)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400035)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "who"))))))))
+
+		<!-- 14 {0} was a {1}&[slot=1, word=psychologist, lang=english] -->
+		(regex (id per_title_tac_118) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400036)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "a")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "psychologist"))))))))
+
+		<!-- 13 {0} , the {1}&[slot=0, word=gou, lang=english]&[slot=1, word=chairman, lang=english] -->
+		(regex (id per_title_tac_129) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400037)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "gou")))))) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "the")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "chairman"))))))))
+
+		<!-- 12 {0} and chief {1}&{1} officer , will -->
+		(regex (id per_title_tac_250) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400038)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "and")) (text DONT_ADD_SPACES (string "chief")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none)) (text DONT_ADD_SPACES (string "officer")) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "will"))))
+
+		<!-- 12 {0} , a {1}&aerial photography by {0} -->
+		(regex (id per_title_tac_155) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "aerial")) (text DONT_ADD_SPACES (string "photography")) (text DONT_ADD_SPACES (string "by")) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400039)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none))))
+
+		<!-- 12 {0} was the first {1}&[slot=1, word=manager, lang=english] -->
+		(regex (id per_title_tac_164) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400040)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "the")) (text DONT_ADD_SPACES (string "first")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "manager"))))))))
+
+		<!-- 12 {0} , the {1}&[slot=1, word=president, lang=english] -->
+		(regex (id per_title_tac_169) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400041)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "the")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "president"))))))))
+
+		<!-- 12 {0} and {1}&[slot=0, word=columnist, lang=english]&[slot=1, word=author, lang=english] -->
+		(regex (id per_title_tac_176) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400042)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "columnist")))))) (text DONT_ADD_SPACES (string "and")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "author"))))))))
+
+
+		<!-- 11 {0} [GPE] {1}&[slot=1, word=architect, lang=english] -->
+		(regex (id per_title_tac_281) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400043)) (entitylabel AGENT1) (acetype PER)) (mention (acetype GPE)) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "architect"))))))))
+
+		<!-- 10 {0} , a {1}&[slot=1, word=fellow, lang=english] -->
+		(regex (id per_title_tac_189) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400044)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "fellow"))))))))
+
+		<!-- 10 {1} and {0}&[slot=0, word=artist, lang=english]&[slot=1, word=writer, lang=english] -->
+		(regex (id per_title_tac_329) (score 0.9) (score_group 1) (re (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "writer")))))) (text DONT_ADD_SPACES (string "and")) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400045)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "artist"))))))))
+
+		<!-- 9 copula:is[<obj> = noun:author[<ref> = 1]][<sub> = 0] -->
+		(anyprop (id per_title_tac_364) (score 0.9) (score_group 1) (predicate is) (args (argument (role <obj>) (nprop (predicate author) (args (argument (role <ref>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none)))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400046)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 9 modifier:at[<ref> = noun:secretary[<ref> = 1][of = name:[<ref> = 0]]] -->
+		(mprop (id per_title_tac_253) (score 0.9) (score_group 1) (predicate at) (args (argument (role <ref>) (nprop (predicate secretary) (args (argument (role <ref>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none))) (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400047)) (entitylabel AGENT1) (acetype PER)))))))))))
+
+		<!-- 9 modifier:at[<ref> = noun:secretary[<ref> = 1][of = 0]] -->
+		(mprop (id per_title_tac_239) (score 0.9) (score_group 1) (predicate at) (args (argument (role <ref>) (nprop (predicate secretary) (args (argument (role <ref>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400048)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 8 copula:was[<obj> = noun:host[<ref> = 1]][<sub> = 0] -->
+		(anyprop (id per_title_tac_320) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (nprop (predicate host) (args (argument (role <ref>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none)))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400049)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 8 modifier:columnist[<mod> = noun:columnist[<ref> = 0]][<ref> = 1] -->
+		(mprop (id per_title_tac_238) (score 0.9) (score_group 1) (predicate columnist) (args (argument (role <mod>) (nprop (predicate columnist) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400050)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none)))))
+
+		<!-- 8 {0} , former {1}&and {0}&{1} and former -->
+		(regex (id per_title_tac_374) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "and")) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400051)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "former")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none)) (text DONT_ADD_SPACES (string "and")) (text DONT_ADD_SPACES (string "former"))))
+
+		<!-- 8 modifier:as[<ref> = noun:experience[<poss> = 0]][as = noun:manager[<ref> = 1]] -->
+		(mprop (id per_title_tac_391) (score 0.9) (score_group 1) (predicate as) (args (argument (role <ref>) (nprop (predicate experience) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400052)) (entitylabel AGENT1) (acetype PER)))))) (argument (role as) (nprop (predicate manager) (args (argument (role <ref>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none))))))))
+
+		<!-- 8 modifier:columnist[<mod> = 1][<ref> = 0] -->
+		(mprop (id per_title_tac_242) (score 0.9) (score_group 1) (predicate columnist) (args (argument (role <mod>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400053)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 8 verb:became[<obj> = noun:mayor[<ref> = 1]][<sub> = 0] -->
+		(vprop (id per_title_tac_302) (score 0.9) (score_group 1) (predicate became) (args (argument (role <obj>) (nprop (predicate mayor) (args (argument (role <ref>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none)))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400054)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 8 {0} was the {1}&[slot=0, word=hewitt, lang=english]&[slot=1, word=producer, lang=english] -->
+		(regex (id per_title_tac_329) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400055)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "hewitt")))))) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "the")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "producer"))))))))
+
+		<!-- 8 {1} and {0}&[slot=0, word=author, lang=english]&[slot=1, word=analyst, lang=english] -->
+		(regex (id per_title_tac_401) (score 0.9) (score_group 1) (re (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "analyst")))))) (text DONT_ADD_SPACES (string "and")) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400056)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "author"))))))))
+
+		<!-- 8 {1} and {0}&[slot=0, word=founder, lang=english]&[slot=1, word=ceo, lang=english] -->
+		(regex (id per_title_tac_254) (score 0.9) (score_group 1) (re (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "ceo")))))) (text DONT_ADD_SPACES (string "and")) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400057)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "founder"))))))))
+
+		<!-- 8 {0} , the chief {1}&[slot=1, word=executive, lang=english] -->
+		(regex (id per_title_tac_257) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400058)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "the")) (text DONT_ADD_SPACES (string "chief")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "executive"))))))))
+
+		<!-- 8 modifier:columnist[<mod> = noun:columnist[<ref> = 1]][<ref> = 0] -->
+		(mprop (id per_title_tac_227) (score 0.9) (score_group 1) (predicate columnist) (args (argument (role <mod>) (nprop (predicate columnist) (args (argument (role <ref>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400059)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 7 verb:served[<sub> = 0][as = 1] -->
+		(vprop (id per_title_tac_406) (score 0.9) (score_group 1) (predicate served) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400060)) (entitylabel AGENT1) (acetype PER))) (argument (role as) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none)))))
+
+		<!-- 7 verb:take[<sub> = 0][as = noun:chairman[<ref> = 1]] -->
+		(vprop (id per_title_tac_348) (score 0.9) (score_group 1) (predicate take) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400061)) (entitylabel AGENT1) (acetype PER))) (argument (role as) (nprop (predicate chairman) (args (argument (role <ref>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none))))))))
+
+		<!-- 7 copula:was[<obj> = 1][<sub> = 0]&[slot=0, word=chowdhry, lang=english]&[slot=1, word=president, lang=english] -->
+		(anyprop (id per_title_tac_354) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "president"))))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400062)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "chowdhry")))))))))
+		
+		<!-- 6 {1} is an {0}&[slot=1, word=journalist, lang=english] -->
+		(regex (id per_title_tac_289) (score 0.9) (score_group 1) (re (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "journalist")))))) (text DONT_ADD_SPACES (string "is")) (text DONT_ADD_SPACES (string "an")) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400063)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 6 modifier:president[<mod> = noun:president[<ref> = 1]][<ref> = 0]&[slot=1, word=president, lang=english] -->
+		(mprop (id per_title_tac_452) (score 0.9) (score_group 1) (predicate president) (args (argument (role <mod>) (nprop (predicate president) (args (argument (role <ref>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "president")))))))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400064)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 6 copula:is[<obj> = 1][<sub> = name:[<ref> = 0]]&[slot=1, word=editor, lang=english] -->
+		(anyprop (id per_title_tac_291) (score 0.9) (score_group 1) (predicate is) (args (argument (role <obj>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "editor"))))))) (argument (role <sub>) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400065)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 6 verb:resigned[<obj> = noun:position[<poss> = pronoun:his[<ref> = 0]]][<sub> = noun:professor[<ref> = 1]] -->
+		(vprop (id per_title_tac_523) (score 0.9) (score_group 1) (predicate resigned) (args (argument (role <obj>) (nprop (predicate position) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400066)) (entitylabel AGENT1) (acetype PER))))))))) (argument (role <sub>) (nprop (predicate professor) (args (argument (role <ref>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none))))))))
+
+		<!-- 6 {1} , a {0}&appointed {1}&{0} , as -->
+		(regex (id per_title_tac_270) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "appointed")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400067)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "as"))))
+
+		<!-- 6 copula:is[<obj> = 1][<sub> = 0]&[slot=1, word=editor, lang=english] -->
+		(anyprop (id per_title_tac_365) (score 0.9) (score_group 1) (predicate is) (args (argument (role <obj>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "editor"))))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400068)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 6 {1} is an {0}&[slot=0, word=editor, lang=english] -->
+		(regex (id per_title_tac_306) (score 0.9) (score_group 1) (re (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none)) (text DONT_ADD_SPACES (string "is")) (text DONT_ADD_SPACES (string "an")) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400069)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "editor"))))))))
+
+		<!-- 6 modifier:president[<mod> = 0][<ref> = 1]&[slot=0, word=president, lang=english] -->
+		(mprop (id per_title_tac_419) (score 0.9) (score_group 1) (predicate president) (args (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400070)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "president"))))))) (argument (role <ref>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none)))))
+
+		<!-- 6 copula:was[<obj> = noun:ambassador[<ref> = 1]][<sub> = pronoun:who[<ref> = 0]] -->
+		(anyprop (id per_title_tac_532) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (nprop (predicate ambassador) (args (argument (role <ref>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none)))))) (argument (role <sub>) (anyprop (predicate who) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400071)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 6 {0} is an {1}&[slot=0, word=journalist, lang=english] -->
+		(regex (id per_title_tac_300) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400072)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "journalist")))))) (text DONT_ADD_SPACES (string "is")) (text DONT_ADD_SPACES (string "an")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none))))
+
+		<!-- 5 {0} , the {1}&[slot=1, word=chairwoman, lang=english] -->
+		(regex (id per_title_tac_426) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400073)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "the")) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "chairwoman"))))))))
+
+		<!-- 4 modifier:sixth[<ref> = noun:wife[<poss> = noun:author[<ref> = 1]][<ref> = 0]] -->
+		(mprop (id per_title_tac_551) (score 0.9) (score_group 1) (predicate sixth) (args (argument (role <ref>) (nprop (predicate wife) (args (argument (role <poss>) (nprop (predicate author) (args (argument (role <ref>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400074)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 4 copula:was[<obj> = 1][<sub> = pronoun:he[<ref> = 0]]&[slot=1, word=producer, lang=english] -->
+		(anyprop (id per_title_tac_495) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "producer"))))))) (argument (role <sub>) (anyprop (predicate he) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400075)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 4 verb:returned[<sub> = pronoun:he[<ref> = 0]][to = noun:job[as = noun:writer[<ref> = 1]]] -->
+		(vprop (id per_title_tac_631) (score 0.9) (score_group 1) (predicate returned) (args (argument (role <sub>) (anyprop (predicate he) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400076)) (entitylabel AGENT1) (acetype PER)))))) (argument (role to) (nprop (predicate job) (args (argument (role as) (nprop (predicate writer) (args (argument (role <ref>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none)))))))))))
+
+		<!-- 4 copula:was[<obj> = 1][<sub> = 0]&[slot=1, word=physicist, lang=english] -->
+		(anyprop (id per_title_tac_674) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none) (regex (regex (re (text DONT_ADD_SPACES (string "physicist"))))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400077)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 4 copula:was[<obj> = noun:physicist[<ref> = 1]][<sub> = 0] -->
+		(anyprop (id per_title_tac_593) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (nprop (predicate physicist) (args (argument (role <ref>) (mention (return (ff_role per_title)) (block AGENT1) (acetype PER) (mentiontype none)))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_tac_400078)) (entitylabel AGENT1) (acetype PER)))))
+	)
+)

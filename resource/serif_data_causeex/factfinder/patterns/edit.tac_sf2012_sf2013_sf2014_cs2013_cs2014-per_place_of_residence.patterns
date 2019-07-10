@@ -1,0 +1,208 @@
+(per_place_of_residence
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+
+		<!-- 51 noun:apartment[<mod> = 1][<poss> = 0] -->
+		(nprop (id per_place_of_residence_tac_11) (score 0.9) (score_group 1) (predicate apartment) (args (argument (role <mod>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400000)) (entitylabel AGENT1) (acetype PER)))))
+
+
+		<!-- 24 {0} home in {1}&at {0} -->
+		(regex (id per_place_of_residence_tac_38) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "at")) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400001)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "home")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))))
+
+		<!-- 22 verb:collapsed[<sub> = noun:girlfriend[<poss> = pronoun:his[<ref> = 0]]][outside = noun:apartment[<mod> = 1]] -->
+		(vprop (id per_place_of_residence_tac_50) (score 0.9) (score_group 1) (predicate collapsed) (args (argument (role <sub>) (nprop (predicate girlfriend) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400002)) (entitylabel AGENT1) (acetype PER))))))))) (argument (role outside) (nprop (predicate apartment) (args (argument (role <mod>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))))))))
+
+		<!-- 22 verb:collapsed[outside = noun:apartment[<mod> = 1][<poss> = pronoun:his[<ref> = 0]]] -->
+		(vprop (id per_place_of_residence_tac_56) (score 0.9) (score_group 1) (predicate collapsed) (args (argument (role outside) (nprop (predicate apartment) (args (argument (role <mod>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))) (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400003)) (entitylabel AGENT1) (acetype PER)))))))))))
+
+
+		<!-- 22 {0} home in {1}&and died at {0} -->
+		(regex (id per_place_of_residence_tac_60) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "and")) (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "at")) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400004)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "home")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))))
+
+		<!-- 21 {0} home in {1}&{1} , Massachusetts -->
+		(regex (id per_place_of_residence_tac_62) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400005)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "home")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "Massachusetts"))))
+
+		<!-- 20 {0}  {1}&dead in {0}&{1} home -->
+		(regex (id per_place_of_residence_tac_72) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "dead")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400006)) (entitylabel AGENT1) (acetype PER)) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "home"))))
+
+		<!-- 18 {0} home in {1}&[slot=0, word=his, lang=english] -->
+		(regex (id per_place_of_residence_tac_39) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400007)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "his")))))) (text DONT_ADD_SPACES (string "home")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))))
+
+		<!-- 16 modifier:seattle[<mod> = 1][<ref> = 0] -->
+		(mprop (id per_place_of_residence_tac_171) (score 0.9) (score_group 1) (predicate seattle) (args (argument (role <mod>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400008)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 15 noun:home[<mod> = 1][<poss> = 0]&[slot=0, word=his, lang=english] -->
+		(nprop (id per_place_of_residence_tac_182) (score 0.9) (score_group 1) (predicate home) (args (argument (role <mod>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400009)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "his")))))))))
+
+		<!-- 15 modifier:suburban[<ref> = noun:home[<mod> = 1][<poss> = pronoun:his[<ref> = 0]]] -->
+		(mprop (id per_place_of_residence_tac_191) (score 0.9) (score_group 1) (predicate suburban) (args (argument (role <ref>) (nprop (predicate home) (args (argument (role <mod>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))) (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400010)) (entitylabel AGENT1) (acetype PER)))))))))))
+
+		<!-- 15 noun:home[<mod> = 1][<poss> = pronoun:his[<ref> = 0]]&[slot=0, word=his, lang=english] -->
+		(nprop (id per_place_of_residence_tac_181) (score 0.9) (score_group 1) (predicate home) (args (argument (role <mod>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))) (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400011)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "his"))))))))))))
+
+		<!-- 14 {0} home in {1}&died at {0}&{1} , on -->
+		(regex (id per_place_of_residence_tac_109) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "died")) (text DONT_ADD_SPACES (string "at")) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400012)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "home")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "on"))))
+
+
+		
+		
+		
+		<!-- 13 noun:childhood[<poss> = pronoun:her[<ref> = 0]][in = name:[<ref> = 1]] -->
+		(nprop (id per_place_of_residence_tac_292) (score 0.9) (score_group 1) (predicate childhood) (args (argument (role <poss>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400013)) (entitylabel AGENT1) (acetype PER)))))) (argument (role in) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))))))))
+	
+		<!-- 13 {1}  {0}&[slot=0, word=citizen, lang=english]&[slot=1, word=canadian, lang=english] -->
+		(regex (id per_place_of_residence_tac_118) (score 0.9) (score_group 1) (re (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE) (regex (regex (re (text DONT_ADD_SPACES (string "canadian")))))) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400014)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "citizen"))))))))
+
+		<!-- 13 noun:childhood[<poss> = 0][in = name:[<ref> = 1]] -->
+		(nprop (id per_place_of_residence_tac_269) (score 0.9) (score_group 1) (predicate childhood) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400015)) (entitylabel AGENT1) (acetype PER))) (argument (role in) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))))))))
+
+		<!-- 12 verb:moved[<sub> = 0][to = 1] -->
+		(vprop (id per_place_of_residence_tac_89) (score 0.9) (score_group 1) (predicate moved) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400016)) (entitylabel AGENT1) (acetype PER))) (argument (role to) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE)))))
+
+
+		<!-- 11 verb:found[outside = noun:apartment[<mod> = 1][<poss> = 0]] -->
+		(vprop (id per_place_of_residence_tac_148) (score 0.9) (score_group 1) (predicate found) (args (argument (role outside) (nprop (predicate apartment) (args (argument (role <mod>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400017)) (entitylabel AGENT1) (acetype PER))))))))
+
+
+		<!-- 11 noun:stairwell[of = noun:apartment[<mod> = 1][<poss> = 0]] -->
+		(nprop (id per_place_of_residence_tac_156) (score 0.9) (score_group 1) (predicate stairwell) (args (argument (role of) (nprop (predicate apartment) (args (argument (role <mod>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400018)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 10 noun:home[<mod> = 1][<poss> = pronoun:his[<ref> = 0]]&[slot=1, word=tampa, lang=english] -->
+		(nprop (id per_place_of_residence_tac_173) (score 0.9) (score_group 1) (predicate home) (args (argument (role <mod>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE) (regex (regex (re (text DONT_ADD_SPACES (string "tampa"))))))) (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400019)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 10 {0} lived in {1} -->
+		(regex (id per_place_of_residence_tac_179) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400020)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "lived")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))))
+
+		<!-- 10 noun:home[<mod> = 1][<poss> = pronoun:his[<ref> = 0]]&[slot=0, word=his, lang=english]&[slot=1, word=tampa, lang=english] -->
+		(nprop (id per_place_of_residence_tac_171) (score 0.9) (score_group 1) (predicate home) (args (argument (role <mod>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE) (regex (regex (re (text DONT_ADD_SPACES (string "tampa"))))))) (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400021)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "his"))))))))))))
+
+		<!-- 10 noun:immigrant[<ref> = 0][to = 1] -->
+		(nprop (id per_place_of_residence_tac_190) (score 0.9) (score_group 1) (predicate immigrant) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400022)) (entitylabel AGENT1) (acetype PER))) (argument (role to) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 10 {1}  {0}&immigrant to {1}&{0} has lived -->
+		(regex (id per_place_of_residence_tac_177) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "immigrant")) (text DONT_ADD_SPACES (string "to")) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE)) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400023)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "has")) (text DONT_ADD_SPACES (string "lived"))))
+
+		<!-- 10 {0} who lived in {1} -->
+		(regex (id per_place_of_residence_tac_358) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400024)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "who")) (text DONT_ADD_SPACES (string "lived")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))))
+
+		<!-- 10 verb:lived[<sub> = noun:family[<poss> = pronoun:her[<ref> = 0]]][in = 1] -->
+		(vprop (id per_place_of_residence_tac_187) (score 0.9) (score_group 1) (predicate lived) (args (argument (role <sub>) (nprop (predicate family) (args (argument (role <poss>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400025)) (entitylabel AGENT1) (acetype PER))))))))) (argument (role in) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 10 noun:home[<mod> = 1][<poss> = 0]&[slot=1, word=tampa, lang=english] -->
+		(nprop (id per_place_of_residence_tac_204) (score 0.9) (score_group 1) (predicate home) (args (argument (role <mod>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE) (regex (regex (re (text DONT_ADD_SPACES (string "tampa"))))))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400026)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 10 noun:home[<mod> = 1][<poss> = 0]&[slot=1, word=ohio, lang=english] -->
+		(nprop (id per_place_of_residence_tac_206) (score 0.9) (score_group 1) (predicate home) (args (argument (role <mod>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE) (regex (regex (re (text DONT_ADD_SPACES (string "ohio"))))))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400027)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 10 {0}  {1}&dead in {0}&{1} home Sunday -->
+		(regex (id per_place_of_residence_tac_203) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "dead")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400028)) (entitylabel AGENT1) (acetype PER)) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "home")) (text DONT_ADD_SPACES (string "Sunday"))))
+
+		<!-- 10 noun:home[<mod> = 1][<poss> = pronoun:his[<ref> = 0]]&[slot=0, word=his, lang=english]&[slot=1, word=ohio, lang=english] -->
+		(nprop (id per_place_of_residence_tac_205) (score 0.9) (score_group 1) (predicate home) (args (argument (role <mod>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE) (regex (regex (re (text DONT_ADD_SPACES (string "ohio"))))))) (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400029)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "his"))))))))))))
+
+		<!-- 9 comp:and[<member> = verb:resided[in = 1][with = 0]] -->
+		(cprop (id per_place_of_residence_tac_385) (score 0.9) (score_group 1) (predicate and) (args (argument (role <member>) (vprop (predicate resided) (args (argument (role in) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))) (argument (role with) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400030)) (entitylabel AGENT1) (acetype PER))))))))
+
+
+		<!-- 9 {0} house in {1}&{1} after he failed -->
+		(regex (id per_place_of_residence_tac_105) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400031)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "house")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "after")) (text DONT_ADD_SPACES (string "he")) (text DONT_ADD_SPACES (string "failed"))))
+
+		<!-- 9 {1} with his {0}&resided in {1}&{0} of -->
+		(regex (id per_place_of_residence_tac_374) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "resided")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "with")) (text DONT_ADD_SPACES (string "his")) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400032)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "of"))))
+
+		<!-- 9 {0} house in {1}&{1} after he -->
+		(regex (id per_place_of_residence_tac_116) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400033)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "house")) (text DONT_ADD_SPACES (string "in")) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE)) (text DONT_ADD_SPACES (string "after")) (text DONT_ADD_SPACES (string "he"))))
+
+
+		<!-- 9 {0} hometown of {1} -->
+		(regex (id per_place_of_residence_tac_409) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400034)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "hometown")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))))
+
+
+		<!-- 8 modifier:-based[<mod> = 1][<ref> = noun:choreographer[<ref> = 0]] -->
+		(mprop (id per_place_of_residence_tac_280) (score 0.9) (score_group 1) (predicate -based) (args (argument (role <mod>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))) (argument (role <ref>) (nprop (predicate choreographer) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400035)) (entitylabel AGENT1) (acetype PER))))))))
+
+
+		<!-- 7 verb:said[<obj> = copula:was[<sub> = noun:boy[<ref> = 0]][from = 1]] -->
+		(vprop (id per_place_of_residence_tac_479) (score 0.9) (score_group 1) (predicate said) (args (argument (role <obj>) (anyprop (predicate was) (args (argument (role <sub>) (nprop (predicate boy) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400036)) (entitylabel AGENT1) (acetype PER)))))) (argument (role from) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))))))))
+
+		<!-- 7 verb:said[<obj> = copula:was[<sub> = 0][from = 1]]&[slot=0, word=boy, lang=english] -->
+		(vprop (id per_place_of_residence_tac_441) (score 0.9) (score_group 1) (predicate said) (args (argument (role <obj>) (anyprop (predicate was) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400037)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "boy"))))))) (argument (role from) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))))))))
+
+		<!-- 7 copula:was[<sub> = 0][from = 1]&[slot=0, word=boy, lang=english] -->
+		(anyprop (id per_place_of_residence_tac_469) (score 0.9) (score_group 1) (predicate was) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400038)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "boy"))))))) (argument (role from) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 7 noun:hometown[<poss> = pronoun:his[<ref> = 0]][of = 1] -->
+		(nprop (id per_place_of_residence_tac_447) (score 0.9) (score_group 1) (predicate hometown) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400039)) (entitylabel AGENT1) (acetype PER)))))) (argument (role of) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 7 copula:was[<sub> = noun:boy[<ref> = 0]][from = 1] -->
+		(anyprop (id per_place_of_residence_tac_451) (score 0.9) (score_group 1) (predicate was) (args (argument (role <sub>) (nprop (predicate boy) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400040)) (entitylabel AGENT1) (acetype PER)))))) (argument (role from) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 6 noun:home[<mod> = 1][<poss> = pronoun:his[<ref> = 0]]&[slot=1, word=toronto, lang=english] -->
+		(nprop (id per_place_of_residence_tac_173) (score 0.9) (score_group 1) (predicate home) (args (argument (role <mod>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE) (regex (regex (re (text DONT_ADD_SPACES (string "toronto"))))))) (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400041)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 6 modifier:dead[<ref> = 0][at = noun:home[<mod> = 1]] -->
+		(mprop (id per_place_of_residence_tac_350) (score 0.9) (score_group 1) (predicate dead) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400042)) (entitylabel AGENT1) (acetype PER))) (argument (role at) (nprop (predicate home) (args (argument (role <mod>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))))))))
+
+
+		<!-- 6 verb:found[<iobj> = modifier:dead[at = noun:home[<mod> = 1][<poss> = 0]]] -->
+		(vprop (id per_place_of_residence_tac_353) (score 0.9) (score_group 1) (predicate found) (args (argument (role <iobj>) (mprop (predicate dead) (args (argument (role at) (nprop (predicate home) (args (argument (role <mod>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400043)) (entitylabel AGENT1) (acetype PER)))))))))))
+
+		<!-- 6 verb:moved[<sub> = pronoun:he[<ref> = 0]][to = 1] -->
+		(vprop (id per_place_of_residence_tac_361) (score 0.9) (score_group 1) (predicate moved) (args (argument (role <sub>) (anyprop (predicate he) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400044)) (entitylabel AGENT1) (acetype PER)))))) (argument (role to) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 6 verb:returned[to = noun:hometown[<poss> = 0][of = 1]] -->
+		(vprop (id per_place_of_residence_tac_522) (score 0.9) (score_group 1) (predicate returned) (args (argument (role to) (nprop (predicate hometown) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400045)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))))))))
+
+		<!-- 6 verb:moved[<sub> = pronoun:he[<ref> = 0]][to = 1] -->
+		(vprop (id per_place_of_residence_tac_140) (score 0.9) (score_group 1) (predicate moved) (args (argument (role <sub>) (anyprop (predicate he) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400046)) (entitylabel AGENT1) (acetype PER)))))) (argument (role to) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 6 modifier:dead[at = noun:home[<mod> = 1][<poss> = pronoun:his[<ref> = 0]]] -->
+		(mprop (id per_place_of_residence_tac_342) (score 0.9) (score_group 1) (predicate dead) (args (argument (role at) (nprop (predicate home) (args (argument (role <mod>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))) (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400047)) (entitylabel AGENT1) (acetype PER)))))))))))
+
+		<!-- 6 noun:home[<mod> = 1][<poss> = pronoun:his[<ref> = 0]]&[slot=0, word=his, lang=english]&[slot=1, word=toronto, lang=english] -->
+		(nprop (id per_place_of_residence_tac_159) (score 0.9) (score_group 1) (predicate home) (args (argument (role <mod>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE) (regex (regex (re (text DONT_ADD_SPACES (string "toronto"))))))) (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400048)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "his"))))))))))))
+
+		<!-- 6 verb:died[<sub> = 0][at = noun:home[<mod> = 1]] -->
+		(vprop (id per_place_of_residence_tac_155) (score 0.9) (score_group 1) (predicate died) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400049)) (entitylabel AGENT1) (acetype PER))) (argument (role at) (nprop (predicate home) (args (argument (role <mod>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))))))))
+
+
+		<!-- 5 verb:tours[<obj> = noun:home[<mod> = 1][<poss> = 0]] -->
+		(vprop (id per_place_of_residence_tac_584) (score 0.9) (score_group 1) (predicate tours) (args (argument (role <obj>) (nprop (predicate home) (args (argument (role <mod>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400050)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 5 verb:died[at = noun:home[<poss> = pronoun:his[<ref> = 0]]][in = 1] -->
+		(vprop (id per_place_of_residence_tac_230) (score 0.9) (score_group 1) (predicate died) (args (argument (role at) (nprop (predicate home) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400051)) (entitylabel AGENT1) (acetype PER))))))))) (argument (role in) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 5 verb:tours[<obj> = noun:home[<mod> = 1][<poss> = pronoun:his[<ref> = 0]]] -->
+		(vprop (id per_place_of_residence_tac_579) (score 0.9) (score_group 1) (predicate tours) (args (argument (role <obj>) (nprop (predicate home) (args (argument (role <mod>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))) (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400052)) (entitylabel AGENT1) (acetype PER)))))))))))
+
+		<!-- 5 {0} then moved to {1} -->
+		(regex (id per_place_of_residence_tac_390) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400053)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "then")) (text DONT_ADD_SPACES (string "moved")) (text DONT_ADD_SPACES (string "to")) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))))
+
+		<!-- 5 verb:tours[<obj> = noun:home[<mod> = 1]][<sub> = 0] -->
+		(vprop (id per_place_of_residence_tac_582) (score 0.9) (score_group 1) (predicate tours) (args (argument (role <obj>) (nprop (predicate home) (args (argument (role <mod>) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE)))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400054)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 4 verb:lived[<sub> = 0][in = noun:suburb[of = 1]] -->
+		(vprop (id per_place_of_residence_tac_492) (score 0.9) (score_group 1) (predicate lived) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400055)) (entitylabel AGENT1) (acetype PER))) (argument (role in) (nprop (predicate suburb) (args (argument (role of) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))))))))
+
+		<!-- 4 verb:grew[<sub> = 0][in = 1] -->
+		(vprop (id per_place_of_residence_tac_597) (score 0.9) (score_group 1) (predicate grew) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400056)) (entitylabel AGENT1) (acetype PER))) (argument (role in) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 4 verb:lived[<sub> = 0][in = 1] -->
+		(vprop (id per_place_of_residence_tac_646) (score 0.9) (score_group 1) (predicate lived) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400057)) (entitylabel AGENT1) (acetype PER))) (argument (role in) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 4 verb:stayed[<sub> = pronoun:he[<ref> = 0]][in = 1] -->
+		(vprop (id per_place_of_residence_tac_485) (score 0.9) (score_group 1) (predicate stayed) (args (argument (role <sub>) (anyprop (predicate he) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400058)) (entitylabel AGENT1) (acetype PER)))))) (argument (role in) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 4 noun:architect[<ref> = 0][from = 1] -->
+		(nprop (id per_place_of_residence_tac_649) (score 0.9) (score_group 1) (predicate architect) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400059)) (entitylabel AGENT1) (acetype PER))) (argument (role from) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE)))))
+
+		<!-- 4 noun:city[in = 1][where = verb:lived[<sub> = 0]] -->
+		(nprop (id per_place_of_residence_tac_89) (score 0.9) (score_group 1) (predicate city) (args (argument (role in) (mention (return (ff_role per_place_of_residence)) (block AGENT1) (acetype LOC GPE))) (argument (role where) (vprop (predicate lived) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_place_of_residence_tac_400060)) (entitylabel AGENT1) (acetype PER))))))))
+
+	)
+)

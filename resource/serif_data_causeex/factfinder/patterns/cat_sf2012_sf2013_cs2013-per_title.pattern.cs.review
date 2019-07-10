@@ -1,0 +1,77 @@
+(per_title
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- TODO: write general pattern with headword constraints: "president Obama"-->
+
+
+		<!-- 4: 2 noun: [election]   <poss> = 0    as = 1 -->
+		(nprop (id per_title_5) (score 0.9) (score_group 1) (predicate election) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_5)) (min-entitylevel NAME) (acetype PER))) (argument (role as) (mention (return (ff_role per_title)) (acetype PER) (mentiontype name desc)))))
+
+
+
+		<!-- 16: 1 {0} was elected {1} -->
+		(regex (id per_title_17) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_17)) (min-entitylevel NAME) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "elected")) (mention (return (ff_role per_title)) (acetype PER) (mentiontype name desc))))
+
+
+		<!-- 18: 1 {0} tenure as {1} -->
+		(regex (id per_title_19) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_19)) (min-entitylevel NAME) (acetype PER)) (text DONT_ADD_SPACES (string "tenure")) (text DONT_ADD_SPACES (string "as")) (mention (return (ff_role per_title)) (acetype PER) (mentiontype name desc))))
+
+		<!-- 19: 1 {0} served briefly as {1} -->
+		(regex (id per_title_20) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_20)) (min-entitylevel NAME) (acetype PER)) (text DONT_ADD_SPACES (string "served")) (text DONT_ADD_SPACES (string "briefly")) (text DONT_ADD_SPACES (string "as")) (mention (return (ff_role per_title)) (acetype PER) (mentiontype name desc))))
+
+
+
+		<!-- 22: 1 {0} later tenure as {1} -->
+		(regex (id per_title_23) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_23)) (min-entitylevel NAME) (acetype PER)) (text DONT_ADD_SPACES (string "later")) (text DONT_ADD_SPACES (string "tenure")) (text DONT_ADD_SPACES (string "as")) (mention (return (ff_role per_title)) (acetype PER) (mentiontype name desc))))
+
+		<!-- 23: 1 {0} job as {1} -->
+		(regex (id per_title_24) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_24)) (min-entitylevel NAME) (acetype PER)) (text DONT_ADD_SPACES (string "job")) (text DONT_ADD_SPACES (string "as")) (mention (return (ff_role per_title)) (acetype PER) (mentiontype name desc))))
+
+		<!-- 24: 1 {0} election as {1} -->
+		(regex (id per_title_25) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_title_25)) (min-entitylevel NAME) (acetype PER)) (text DONT_ADD_SPACES (string "election")) (text DONT_ADD_SPACES (string "as")) (mention (return (ff_role per_title)) (acetype PER) (mentiontype name desc))))
+
+
+		<!-- 30: 1 verb: [take]   <sub> = 0    <obj> = noun: [role]      of = 1 -->
+		(vprop (id per_title_31) (score 0.9) (score_group 1) (predicate take) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_31)) (min-entitylevel NAME) (acetype PER))) (argument (role <obj>) (nprop (predicate role) (args (argument (role of) (mention (return (ff_role per_title)) (acetype PER) (mentiontype name desc))))))))
+
+		<!-- 31: 1 verb: [served]   <sub> = 0    as = 1 -->
+		(vprop (id per_title_32) (score 0.9) (score_group 1) (predicate served) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_32)) (min-entitylevel NAME) (acetype PER))) (argument (role as) (mention (return (ff_role per_title)) (acetype PER) (mentiontype name desc)))))
+
+		<!-- 32: 1 verb: [sat]   <sub> = 0    as = 1 -->
+		(vprop (id per_title_33) (score 0.9) (score_group 1) (predicate sat) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_33)) (min-entitylevel NAME) (acetype PER))) (argument (role as) (mention (return (ff_role per_title)) (acetype PER) (mentiontype name desc)))))
+
+
+		<!-- 40: 1 verb: [left]   <sub> = 0    <obj> = noun: [job]      as = 1 -->
+		(vprop (id per_title_41) (score 0.9) (score_group 1) (predicate left) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_41)) (min-entitylevel NAME) (acetype PER))) (argument (role <obj>) (nprop (predicate job) (args (argument (role as) (mention (return (ff_role per_title)) (acetype PER) (mentiontype name desc))))))))
+
+		<!-- 41: 1 verb: [left]   <obj> = noun: [job]      <poss> = 0       as = 1 -->
+		(vprop (id per_title_42) (score 0.9) (score_group 1) (predicate left) (args (argument (role <obj>) (nprop (predicate job) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_42)) (min-entitylevel NAME) (acetype PER))) (argument (role as) (mention (return (ff_role per_title)) (acetype PER) (mentiontype name desc))))))))
+
+
+		<!-- 55: 1 set: []   <member> = noun: [tenure]      <poss> = 0       as = 1 -->
+		(sprop (id per_title_56) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate tenure) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_56)) (min-entitylevel NAME) (acetype PER))) (argument (role as) (mention (return (ff_role per_title)) (acetype PER) (mentiontype name desc))))))))
+
+		<!-- 56: 1 set: []   <member> = noun: [election]      <poss> = 0       as = 1 -->
+		(sprop (id per_title_57) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate election) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_57)) (min-entitylevel NAME) (acetype PER))) (argument (role as) (mention (return (ff_role per_title)) (acetype PER) (mentiontype name desc))))))))
+
+		<!-- 57: 1 noun: [tenure]   as = 1    from = noun: [legacy]      <poss> = 0 -->
+		(nprop (id per_title_58) (score 0.9) (score_group 1) (predicate tenure) (args (argument (role as) (mention (return (ff_role per_title)) (acetype PER) (mentiontype name desc))) (argument (role from) (nprop (predicate legacy) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_58)) (min-entitylevel NAME) (acetype PER))))))))
+
+		<!-- 58: 1 noun: [tenure]   <poss> = 0    as = 1 -->
+		(nprop (id per_title_59) (score 0.9) (score_group 1) (predicate tenure) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_59)) (min-entitylevel NAME) (acetype PER))) (argument (role as) (mention (return (ff_role per_title)) (acetype PER) (mentiontype name desc)))))
+
+
+		<!-- 60: 1 noun: [job]   <poss> = 0    as = 1 -->
+		(nprop (id per_title_61) (score 0.9) (score_group 1) (predicate job) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_61)) (min-entitylevel NAME) (acetype PER))) (argument (role as) (mention (return (ff_role per_title)) (acetype PER) (mentiontype name desc)))))
+
+
+		<!-- 64: 1 modifier: [later]   <ref> = noun: [tenure]      <poss> = 0       as = 1 -->
+		(mprop (id per_title_65) (score 0.9) (score_group 1) (predicate later) (args (argument (role <ref>) (nprop (predicate tenure) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_title_65)) (min-entitylevel NAME) (acetype PER))) (argument (role as) (mention (return (ff_role per_title)) (acetype PER) (mentiontype name desc))))))))
+
+	)
+)

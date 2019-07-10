@@ -1,0 +1,60 @@
+(resident_of
+
+(wordsets)
+
+(entitylabels (AGENT1))
+
+(reference
+
+(mention        (return         (ff_role resident_of))
+                (shortcut       PLACE)
+                (acetype        GPE LOC))
+)
+
+(toplevel
+
+
+(regex (score_group 1) (score 0.9) (id regex_1)
+	(re  
+		(mention (return (ff_role AGENT1) (ff_fact_type resident_of1)) (entitylabel AGENT1) (min-entitylevel NAME))
+		(text (string "(\S+\s+){0,5}of"))
+		PLACE)
+)
+
+(regex (score_group 1) (score 0.9) (id regex_1)
+        (re
+                (mention (return (ff_role AGENT1) (ff_fact_type resident_of2)) (entitylabel AGENT1) (min-entitylevel NAME))
+                (text (string "(\S+\s+){0,5}home (\S+\s+){0,5}in"))
+                PLACE)
+)
+
+
+(vprop (id sub_obj) (score 0.9)
+       (predicate live*)
+       (args
+	(argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type resident_of3)) (entitylabel AGENT1) (min-entitylevel NAME))) 
+	(argument (role in) PLACE)
+	)
+)
+
+(vprop (id vprop) (score 1.0)
+       (predicate grow grew)
+       (args
+                (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type resident_of4)) (entitylabel AGENT1) (min-entitylevel NAME)))
+                (argument (role in at) PLACE)
+        )
+)
+
+(nprop (id nprop) (score 1.0)
+       (predicate resident)
+       (args
+                (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type resident_of5)) (entitylabel AGENT1) (min-entitylevel NAME)))
+                (argument (role <unknown>) PLACE)
+        )
+)
+
+)
+
+
+<!-- add inference rule: country:top_member_employee -> country:residents -->
+)

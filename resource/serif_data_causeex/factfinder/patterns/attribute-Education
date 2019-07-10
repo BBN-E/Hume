@@ -1,0 +1,279 @@
+(Education
+
+<!-- from mr/patterns/eru:attendedSchool .. lifted 20 Jan 2011  -->
+
+(@INCLUDE "date-patterns")
+
+(wordsets
+	(DEGREE_WS degree* doctorate* phd ph.d. m.a. ma b.a. ba b.s. bs a.b. mba m.b.a. bachelor master fellowship honors)
+	(PLAYER_WS quarterback linebacker receiver safety back forward teammate*)
+	(GET_WS earn* receiv* get* hold* held got finish* obtain* pursu* complete*)
+)
+
+(entitylabels (AGENT1) )
+
+(reference
+
+(mention (shortcut GRAD) (return (ff_role AGENT1) (ff_fact_type Education)) (entitylabel AGENT1))
+
+
+(mention (shortcut POSSIBLE_SCHOOL) (block_headword DEGREE_WS) (acetype ORG) (min-entitylevel NAME) (return (ff_role Education)))
+
+(any-of (shortcut DEFINITE_SCHOOL) (members
+	(mention (headword school college university) (min-entitylevel NAME) (return (ff_role Education)))
+	(mention (block_headword DEGREE_WS) (acesubtype ORG.Educational) (min-entitylevel NAME) (return (ff_role Education)))
+))
+
+(nprop (shortcut DEGREE) (block_adj honorary honourary) (predicate DEGREE_WS) (opt_args END_DATE_A))
+(nprop (shortcut DEGREE_GRAD) (block_adj honorary honourary) (predicate DEGREE_WS) (args (argument (role <poss>) GRAD)) (opt_args END_DATE_A))
+
+(any-of (shortcut DEGREE_AT_SCHOOL) (members
+	(nprop (block_adj honorary honourary) (predicate DEGREE_WS) (args (argument (role from at <unknown>) POSSIBLE_SCHOOL)) (opt_args END_DATE_A))
+	(nprop (block_adj honorary honourary) (predicate DEGREE_WS) (args (argument (role in) (nprop (args (argument (role from at) POSSIBLE_SCHOOL))))) (opt_args END_DATE_A))
+	(mprop (predicate from at) (args (argument (role <ref>) (nprop (predicate bachelor master) (args (argument (role from at) POSSIBLE_SCHOOL)) (opt_args END_DATE_A)))))
+	(mprop (predicate from) (args (argument (role from) DEFINITE_SCHOOL)) (opt_args END_DATE_A))
+	(sprop (args (argument (role <member>) (nprop (predicate DEGREE_WS))) (argument (role <member>) (nprop (args (argument (role from at) DEFINITE_SCHOOL)) (opt_args END_DATE_A)))) (opt_args END_DATE_A))
+))
+
+(nprop (shortcut PLAYER_PROP)
+       (predicate PLAYER_WS)
+       (args (argument (role <ref>) GRAD) (argument (role at <unknown>) DEFINITE_SCHOOL))
+       (opt_args HOLD_DATE_A))
+
+(nprop (shortcut TEAMMATE_POSS_PROP)
+       (predicate teammate roommate)
+       (args (argument (role <poss>) GRAD) (argument (role at <unknown>) DEFINITE_SCHOOL))
+       (opt_args HOLD_DATE_A))
+
+(nprop (shortcut AT_SCHOOL_PROP)
+       (predicate student* scholar* pupil* classmate* roommate* alumnus alumna alumnae alumni graduate 
+       		  man men woman women child children freshman freshmen freshwoman freshwomen sophomore 
+		  sophomores junior juniors senior seniors undergraduate undergrad)
+       (args (argument (role <ref>) GRAD) (argument (role of at in from <unknown>) DEFINITE_SCHOOL))
+       (opt_args HOLD_DATE_A))
+
+(nprop (shortcut AT_SCHOOL_PROP_POSS)
+       (predicate student* pupil*)
+       (args (argument (role <ref>) GRAD) (argument (role <poss>) DEFINITE_SCHOOL))
+       (opt_args HOLD_DATE_A))
+
+
+)
+
+(toplevel
+
+<!-- his degree at ORG -->
+(all-of (id poss_degree1) (score_group 1) (score 0.9) (members
+	DEGREE_AT_SCHOOL
+	(nprop (args (argument (role <poss>) GRAD)))
+))
+
+<!-- his bachelor's degree at ORG -->
+(all-of (id poss_degree2) (score_group 1) (score 0.9) (members
+	DEGREE_AT_SCHOOL
+	(nprop (args (argument (role <poss>) (nprop (predicate bachelor master) (args (argument (role <poss>) GRAD))))))
+))
+
+<!-- X attended ORG (needs to be definite school to avoid conferences, etc.) -->
+(vprop (id attended) (score_group 1) (score 0.9)
+       (predicate attend attends attending attended)
+       (args (argument (role <sub>) GRAD) (argument POSSIBLE_SCHOOL))
+       (opt_args HOLD_DATE_A))
+
+<!-- SCHOOL awared degree to X -->
+(vprop (id award_degree_vp) (score_group 1) (score 0.9)
+       (predicate award* confer*)
+       (args (argument (role <sub>) DEFINITE_SCHOOL)
+       	     (argument (role <obj> <iobj>) DEGREE)
+       	     (argument (role <obj> <iobj> to on) GRAD))
+       (opt_args END_DATE_A))
+
+<!-- X graduated ORG -->
+(vprop (id graduated_sub) (score_group 1) (score 0.9)
+       (predicate graduat* finish*)
+       (args (argument (role <sub>) GRAD) (argument (role <obj> <iobj>) DEFINITE_SCHOOL))
+       (opt_args END_DATE_A))
+
+<!-- X graduated from ORG -->
+(vprop (id graduated_from_sub) (score_group 1) (score 0.9)
+       (predicate graduate graduates graduating graduated)
+       (args (argument (role <sub>) GRAD) (argument (role from) POSSIBLE_SCHOOL))
+       (opt_args END_DATE_A))
+
+<!-- X was graduated from ORG -->
+(vprop (id graduated_from_obj) (score_group 1) (score 0.9)
+       (predicate graduated)
+       (args (argument (role <obj> <iobj>) GRAD) (argument (role from) POSSIBLE_SCHOOL))
+       (opt_args END_DATE_A))
+
+<!-- X studied at ORG -->
+(vprop (id studied_at) (score_group 1) (score 0.9)
+       (predicate study studies studying studied)
+       (args (argument (role <sub>) GRAD) (argument (role at in) POSSIBLE_SCHOOL))
+       (opt_args HOLD_DATE_A))
+
+<!-- X was trained/educated at ORG -->
+(vprop (id was_trained_at) (score_group 1) (score 0.9)
+       (predicate trained educated)
+       (args (argument (role <obj>) GRAD) (argument (role at in) DEFINITE_SCHOOL))
+       (opt_args HOLD_DATE_A))
+
+<!-- ORG-educated X -->
+(mprop (id trained) (score_group 1) (score 0.9)
+       (predicate -trained -educated)
+       (args (argument (role <ref>) GRAD) (argument (role <unknown>) DEFINITE_SCHOOL))
+       (opt_args HOLD_DATE_A))
+
+<!-- X did (doctoral/undergraduate/graduate) work at ORG -->
+(vprop (id did_work_at) (score_group 1) (score 0.9)
+       (predicate do did does doing perform performs performing performed)
+       (args (argument (role <sub>) GRAD)
+       	     (argument (role <obj>) (nprop (predicate work study studies) (adj doctoral undergraduate graduate) (opt_args HOLD_DATE_A)))
+	     (argument (role at in) POSSIBLE_SCHOOL))
+       (opt_args HOLD_DATE_A))
+
+<!-- Boston College quarterback Joe Smith -->
+(union GREEDY
+       (id player_prop) (score_group 1) (score 0.9)
+       (members (vprop (args (argument PLAYER_PROP) RECENT_HOLD_DATE_A))
+       		PLAYER_PROP))
+
+<!-- his teammate at Boston College -->
+(union GREEDY
+       (id teammate_poss_prop) (score_group 1) (score 0.9)
+       (members (mprop (args (argument (role <ref>) TEAMMATE_POSS_PROP) HOLD_DATE_A))
+                (vprop (args (argument TEAMMATE_POSS_PROP) RECENT_HOLD_DATE_A))
+       		TEAMMATE_POSS_PROP))
+
+<!-- student at SCHOOL -->
+(union GREEDY
+      (id at_school_prop) (score_group 1) (score 0.9)
+      (members (mprop (args (argument (role <ref>) AT_SCHOOL_PROP) HOLD_DATE_A))
+               (vprop (args (argument AT_SCHOOL_PROP) RECENT_HOLD_DATE_A))
+      	       AT_SCHOOL_PROP))
+
+<!-- X was a student at SCHOOL -->
+(vprop (id were_at_school_prop) (score_group 1) (score 0.9)
+       (predicate was were are am)
+       (args (argument (role <sub>) GRAD)
+       	     (argument (role <obj>) (mention (headword student students scholar scholars pupil pupils classmate classmates roommate roommates)))
+	     (argument (role at in) DEFINITE_SCHOOL))
+       (opt_args HOLD_DATE_A))
+
+<!-- SCHOOL's student -->
+(union GREEDY
+       (id at_school_prop_poss) (score_group 1) (score 0.9)
+       (members (vprop (args (argument AT_SCHOOL_PROP_POSS) RECENT_HOLD_DATE_A))
+                AT_SCHOOL_PROP_POSS))
+
+<!-- SCHOOL's alumn* -->
+(nprop (id at_school_prop_poss) (score_group 1) (score 0.9)
+       (predicate alumnus alumna alumnae alumni)
+       (args (argument (role <ref>) GRAD) (argument (role <poss>) DEFINITE_SCHOOL)))
+
+<!-- X's alma mater -->
+(nprop (id school_poss_prop) (score_group 1) (score 0.9)
+       (predicate mater)
+       (args (argument (role <poss>) GRAD) (argument (role <ref>) DEFINITE_SCHOOL)))
+
+<!-- X graduated at(?) SCHOOL -->
+(vprop (id school-graduated-study-prop) (score_group 1) (score 0.9)
+       (predicate graduate graduating graduated)
+       (args (argument GRAD) (argument DEFINITE_SCHOOL))
+       (opt_args END_DATE_A))
+
+<!-- X studied/trained at(?) SCHOOL -->
+(vprop (id school-graduated-study-prop) (score_group 1) (score 0.9)
+       (predicate studies study studying studied train training trained)
+       (args (argument GRAD) (argument DEFINITE_SCHOOL))
+       (opt_args HOLD_DATE_A))
+
+<!-- X enrolled at(?) SCHOOL -->
+(vprop (id school-graduated-study-prop) (score_group 1) (score 0.9)
+       (predicate enroll enrolling enrolled)
+       (args (argument GRAD) (argument DEFINITE_SCHOOL))
+       (opt_args START_DATE_A))
+
+<!-- X earned degree at SCHOOL -->
+(vprop (id get_degree1) (score_group 1) (score 0.9)
+       (predicate GET_WS)
+       (args (argument GRAD) (argument DEGREE) (argument DEFINITE_SCHOOL))
+       (opt_args END_DATE_A))
+
+<!-- X earned degree at SCHOOL -->
+(vprop (id get_degree2) (score_group 1) (score 0.9)
+       (predicate GET_WS)
+       (args (argument GRAD) (argument DEGREE_AT_SCHOOL))
+       (opt_args END_DATE_A))
+
+<!-- X earned degree in ____ at SCHOOL -->
+(vprop (id get_degree3) (score_group 1) (score 0.9)
+       (predicate GET_WS)
+       (args (argument (role <sub>) GRAD)
+       	     (argument (role <obj> <iobj>) DEGREE)
+	     (argument (role in) (nprop (args (argument (role from at) DEFINITE_SCHOOL)))))
+       (opt_args END_DATE_A))
+
+<!-- Person received/got his/her PhD./M.A/… [in…] from/at school  -->
+(vprop (id get_degree_cs12_1) (score_group 1) (score 0.9)
+       (predicate GET_WS)
+       (args (argument (role <sub>) GRAD)
+             (argument (role <obj> <iobj>) (mention (mentiontype desc) (headword DEGREE_WS) ))
+             (argument (role in) (nprop (args (argument (role from at) POSSIBLE_SCHOOL)))))
+       (opt_args END_DATE_A))
+(vprop (id get_degree_cs12_2) (score_group 1) (score 0.9)
+       (predicate GET_WS)
+       (args (argument (role <sub>) GRAD)
+             (argument (role <obj> <iobj>) (mention (mentiontype desc) (headword DEGREE_WS) ))
+	     (argument (role from at) POSSIBLE_SCHOOL))
+       (opt_args END_DATE_A))
+(vprop (id get_degree_cs12_3) (score_group 1) (score 0.9)
+       (predicate GET_WS)
+       (args (argument (role <sub>) GRAD)
+             (argument (role <obj> <iobj>) (mention (mentiontype desc) (headword DEGREE_WS) ))
+             (argument (role from at) POSSIBLE_SCHOOL))
+       (opt_args END_DATE_A))
+(nprop (block_adj honorary honourary) (predicate DEGREE_WS)
+ (args 
+  (argument (role <poss>) GRAD)
+  (argument (role in) (nprop (args (argument (role from at) POSSIBLE_SCHOOL))))))
+
+(nprop (block_adj honorary honourary) (predicate DEGREE_WS)
+ (args 
+  (argument (role <poss>) GRAD)
+  (argument (role from at) POSSIBLE_SCHOOL)))
+
+<!-- X's SCHOOL degree -->
+(nprop (id degree) (score_group 1) (score 0.9)
+       (predicate degree*)
+       (args (argument (role <poss>) (nprop (block_predicate master masters bachelor bachelors) (args (argument (role <ref>) GRAD))))
+       	     (argument (role from at <unknown>) DEFINITE_SCHOOL))
+       (opt_args END_DATE_A))
+
+<!-- X went to SCHOOL -->
+(vprop (id went_to) (score_group 1) (score 0.9)
+       (predicate went goes go going)
+       (args (argument (role <sub>) GRAD) (argument (role to) DEFINITE_SCHOOL))
+       (opt_args HOLD_DATE_A))
+
+<!-- X dropped out of SCHOOL -->
+(vprop (id dropped_out_of) (score_group 1) (score 0.9)
+       (predicate dropped dropping drops drop)
+       (args (argument (role <sub>) GRAD) (argument (role out_of) DEFINITE_SCHOOL))
+       (opt_args END_DATE_A))
+
+<!-- SCHOOL, where X... -->
+(mprop (id where) (score_group 1) (score 0.9)
+	(args (argument (role <ref>) DEFINITE_SCHOOL)
+	      (argument (role where) 
+		 	(any-of (members (vprop (predicate graduate graduating graduated) (args (argument (role <sub>) GRAD)) (opt_args END_DATE_A))
+					 (vprop (predicate studies study studying studied train training trained) (args (argument (role <sub>) GRAD)) (opt_args HOLD_DATE_A))
+				         (vprop (predicate enroll enrolling enrolled) (args (argument (role <sub>) GRAD)) (opt_args START_DATE_A))
+					 (vprop (predicate earned) (args (argument (role <sub>) GRAD) 
+ 					 		   	   	 (argument (role <obj>) (nprop (predicate DEGREE_WS) (opt_args END_DATE_A)))) 
+								   (opt_args END_DATE_A))
+					 (vprop (predicate was were) (args (argument (role <sub>) GRAD) (argument (role <obj>) (nprop (predicate student*) (opt_args HOLD_DATE_A))))
+					 	                     (opt_args HOLD_DATE_A)))))))
+
+)
+)

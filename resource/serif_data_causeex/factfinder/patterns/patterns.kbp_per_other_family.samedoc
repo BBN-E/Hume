@@ -1,0 +1,44 @@
+(per_other_family
+
+ (wordsets)
+
+ (entitylabels (AGENT1))
+
+ (toplevel
+
+		<!-- 120   per_other_family ==> set:[<member> = noun:nephew[<ref> = 1][of = 0]] -->
+		(sprop (id cs2015_per_other_family_20002) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate nephew) (args (argument (role <ref>) (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_other_family_20002)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 120   per_other_family ==> set:[<member> = noun:nephew[<ref> = 1][of = name:[<ref> = 0]]] -->
+		(sprop (id cs2015_per_other_family_20003) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate nephew) (args (argument (role <ref>) (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER))) (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_other_family_20003)) (entitylabel AGENT1) (acetype PER)))))))))))
+
+		<!-- 120   per_other_family ==> noun:nephew[<ref> = 1][of = 0] -->
+		(nprop (id cs2015_per_other_family_20004) (score 0.9) (score_group 1) (predicate nephew) (args (argument (role <ref>) (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_other_family_20004)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 120   per_other_family ==> noun:nephew[<ref> = 1][of = name:[<ref> = 0]] -->
+		(nprop (id cs2015_per_other_family_20005) (score 0.9) (score_group 1) (predicate nephew) (args (argument (role <ref>) (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER))) (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_other_family_20005)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 32   per_other_family ==> modifier:daily[<ref> = noun:display[<poss> = noun:cousin[<poss> = 0][<ref> = 1]]] -->
+		(mprop (id cs2015_per_other_family_20010) (score 0.9) (score_group 1) (predicate daily) (args (argument (role <ref>) (nprop (predicate display) (args (argument (role <poss>) (nprop (predicate cousin) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_other_family_20010)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER)))))))))))
+
+		<!-- 32   per_other_family ==> noun:cousin[<poss> = pronoun:his[<ref> = 0]][<ref> = 1] -->
+		(nprop (id cs2015_per_other_family_20012) (score 0.9) (score_group 1) (predicate cousin) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_other_family_20012)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 32   per_other_family ==> noun:display[<poss> = noun:cousin[<poss> = pronoun:his[<ref> = 0]][<ref> = 1]] -->
+		(nprop (id cs2015_per_other_family_20013) (score 0.9) (score_group 1) (predicate display) (args (argument (role <poss>) (nprop (predicate cousin) (args (argument (role <poss>) (anyprop (predicate his) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_other_family_20013)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 32   per_other_family ==> modifier:charitable[<ref> = noun:display[<poss> = noun:cousin[<poss> = 0][<ref> = 1]]] -->
+		(mprop (id cs2015_per_other_family_20014) (score 0.9) (score_group 1) (predicate charitable) (args (argument (role <ref>) (nprop (predicate display) (args (argument (role <poss>) (nprop (predicate cousin) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_other_family_20014)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER)))))))))))
+
+		<!-- 32   per_other_family ==> noun:cousin[<poss> = 0][<ref> = 1] -->
+		(nprop (id cs2015_per_other_family_20016) (score 0.9) (score_group 1) (predicate cousin) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_other_family_20016)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER)))))
+
+		<!-- 32   per_other_family ==> noun:display[<poss> = noun:cousin[<poss> = 0][<ref> = 1]] -->
+		(nprop (id cs2015_per_other_family_20017) (score 0.9) (score_group 1) (predicate display) (args (argument (role <poss>) (nprop (predicate cousin) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_other_family_20017)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER))))))))
+
+		<!-- 32   per_other_family ==> noun:plot[against = noun:display[<poss> = noun:cousin[<poss> = 0][<ref> = 1]]] -->
+		(nprop (id cs2015_per_other_family_20018) (score 0.9) (score_group 1) (predicate plot) (args (argument (role against) (nprop (predicate display) (args (argument (role <poss>) (nprop (predicate cousin) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_other_family_20018)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_other_family)) (block AGENT1) (acetype PER)))))))))))
+
+
+	)
+)

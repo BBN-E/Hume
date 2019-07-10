@@ -1,0 +1,179 @@
+(per_origin
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+
+		<!-- TODO: use country / continent / origin headwords to write general patterns -->
+
+		<!-- 16: 3594 noun: [country]   <ref> = 1    <poss> = 0 -->
+		(nprop (id per_origin_ds_17) (score 0.9) (score_group 1) (predicate country) (args (argument (role <ref>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_17)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+
+		<!-- 19: 2863 noun: [minister]   <ref> = 0    <mod> = 1 -->
+		(nprop (id per_origin_ds_20) (score 0.9) (score_group 1) (predicate minister) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_20)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 43: 1752 noun: [minister]   <ref> = 0    <poss> = 1 -->
+		(nprop (id per_origin_ds_44) (score 0.9) (score_group 1) (predicate minister) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_44)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+
+		<!-- 73: 1136 modifier: [german]   <ref> = 0    <mod> = 1 -->
+		(mprop (id per_origin_ds_74) (score 0.9) (score_group 1) (predicate german) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_74)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 88: 984 noun: [president]   <ref> = 0    <mod> = 1 -->
+		(nprop (id per_origin_ds_89) (score 0.9) (score_group 1) (predicate president) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_89)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 90: 962 modifier: [australian]   <ref> = 0    <mod> = 1 -->
+		(mprop (id per_origin_ds_91) (score 0.9) (score_group 1) (predicate australian) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_91)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 98: 873 modifier: [italian]   <ref> = 0    <mod> = 1 -->
+		(mprop (id per_origin_ds_99) (score 0.9) (score_group 1) (predicate italian) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_99)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 120: 740 noun: [homeland]   <ref> = 1    <poss> = 0 -->
+		(nprop (id per_origin_ds_121) (score 0.9) (score_group 1) (predicate homeland) (args (argument (role <ref>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_121)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 126: 704 modifier: [canadian]   <ref> = 0    <mod> = 1 -->
+		(mprop (id per_origin_ds_127) (score 0.9) (score_group 1) (predicate canadian) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_127)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 150: 584 set: []   <ref> = noun: [minister]      <mod> = 1    <member> = 0 -->
+		(sprop (id per_origin_ds_151) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate minister) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))) (argument (role <member>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_151)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 154: 581 noun: [minister]   <ref> = 0    of = 1 -->
+		(nprop (id per_origin_ds_155) (score 0.9) (score_group 1) (predicate minister) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_155)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 157: 567 noun: [president]   <ref> = 0    <poss> = 1 -->
+		(nprop (id per_origin_ds_158) (score 0.9) (score_group 1) (predicate president) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_158)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 166: 539 noun: [nation]   <ref> = 1    <poss> = 0 -->
+		(nprop (id per_origin_ds_167) (score 0.9) (score_group 1) (predicate nation) (args (argument (role <ref>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_167)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 172: 526 noun: [president]   <ref> = 0    of = 1 -->
+		(nprop (id per_origin_ds_173) (score 0.9) (score_group 1) (predicate president) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_173)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 190: 492 noun: [minister]   <mod> = 1    of = 0 -->
+		(nprop (id per_origin_ds_191) (score 0.9) (score_group 1) (predicate minister) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_191)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 194: 489 modifier: [french]   <ref> = 0    <mod> = 1 -->
+		(mprop (id per_origin_ds_195) (score 0.9) (score_group 1) (predicate french) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_195)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 207: 463 modifier: [chinese]   <ref> = 0    <mod> = 1 -->
+		(mprop (id per_origin_ds_208) (score 0.9) (score_group 1) (predicate chinese) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_208)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 210: 457 noun: [premier]   <ref> = 0    <mod> = 1 -->
+		(nprop (id per_origin_ds_211) (score 0.9) (score_group 1) (predicate premier) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_211)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 240: 414 noun: [citizen]   <ref> = 0    <mod> = 1 -->
+		(nprop (id per_origin_ds_241) (score 0.9) (score_group 1) (predicate citizen) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_241)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 242: 413 modifier: [austrian]   <ref> = 0    <mod> = 1 -->
+		(mprop (id per_origin_ds_243) (score 0.9) (score_group 1) (predicate austrian) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_243)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 259: 398 modifier: [england]   <ref> = 0    <mod> = 1 -->
+		(mprop (id per_origin_ds_260) (score 0.9) (score_group 1) (predicate england) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_260)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+
+
+
+
+
+		<!-- 273: 379 modifier: [british]   <ref> = 0    <mod> = 1 -->
+		(mprop (id per_origin_ds_274) (score 0.9) (score_group 1) (predicate british) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_274)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+
+		<!-- 280: 372 noun: [minister]   <ref> = 0    in = 1 -->
+		(nprop (id per_origin_ds_281) (score 0.9) (score_group 1) (predicate minister) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_281)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role in) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 291: 361 set: []   <ref> = noun: [minister]      <poss> = 1    <member> = 0 -->
+		(sprop (id per_origin_ds_292) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate minister) (args (argument (role <poss>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))) (argument (role <member>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_292)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 333: 323 modifier: [brazilian]   <ref> = 0    <mod> = 1 -->
+		(mprop (id per_origin_ds_334) (score 0.9) (score_group 1) (predicate brazilian) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_334)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 342: 318 modifier: [japanese]   <ref> = 0    <mod> = 1 -->
+		(mprop (id per_origin_ds_343) (score 0.9) (score_group 1) (predicate japanese) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_343)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 365: 304 noun: [minister]   <mod> = 1    for = 0 -->
+		(nprop (id per_origin_ds_366) (score 0.9) (score_group 1) (predicate minister) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE))) (argument (role for) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_366)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 371: 301 modifier: [african]   <ref> = 0    <mod> = 1 -->
+		(mprop (id per_origin_ds_372) (score 0.9) (score_group 1) (predicate african) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_372)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+
+		<!-- 409: 279 modifier: [swiss]   <ref> = 0    <mod> = 1 -->
+		(mprop (id per_origin_ds_410) (score 0.9) (score_group 1) (predicate swiss) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_410)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+
+		<!-- 422: 271 {1} Minister for {0} -->
+		(regex (id per_origin_ds_423) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "Minister")) (text DONT_ADD_SPACES (string "for")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_423)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+		<!-- 432: 265 {1} prime minister {0} -->
+		(regex (id per_origin_ds_433) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "prime")) (text DONT_ADD_SPACES (string "minister")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_433)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 462: 255 noun: [secretary]   <ref> = 0    <poss> = 1 -->
+		(nprop (id per_origin_ds_463) (score 0.9) (score_group 1) (predicate secretary) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_463)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+
+		<!-- 480: 250 modifier: [russian]   <ref> = 0    <mod> = 1 -->
+		(mprop (id per_origin_ds_481) (score 0.9) (score_group 1) (predicate russian) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_481)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 509: 234 noun: [premier]   <ref> = 0    <poss> = 1 -->
+		(nprop (id per_origin_ds_510) (score 0.9) (score_group 1) (predicate premier) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_510)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 511: 233 {1} national {0} -->
+		(regex (id per_origin_ds_512) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "national")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_512)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 527: 229 {0} , president of {1} -->
+		(regex (id per_origin_ds_528) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_528)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "president")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE))))
+
+
+		<!-- 535: 227 {1} president , {0} -->
+		(regex (id per_origin_ds_536) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "president")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_536)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+
+
+
+		<!-- 554: 223 modifier: [dutch]   <ref> = 0    <mod> = 1 -->
+		(mprop (id per_origin_ds_555) (score 0.9) (score_group 1) (predicate dutch) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_555)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 555: 223 modifier: [belgian]   <ref> = 0    <mod> = 1 -->
+		(mprop (id per_origin_ds_556) (score 0.9) (score_group 1) (predicate belgian) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_556)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+		<!-- 597: 212 modifier: [prime]   <ref> = noun: [minister]      <mod> = 1       <mod> = 0 -->
+		(mprop (id per_origin_ds_598) (score 0.9) (score_group 1) (predicate prime) (args (argument (role <ref>) (nprop (predicate minister) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE))) (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_598)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))))))
+
+
+		<!-- 617: 206 {1} President {0} -->
+		(regex (id per_origin_ds_618) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "President")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_618)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+
+		<!-- 647: 198 {1} prime minister , {0} -->
+		(regex (id per_origin_ds_648) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "prime")) (text DONT_ADD_SPACES (string "minister")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_648)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+		<!-- 685: 190 modifier: [australia]   <ref> = 0    <mod> = 1 -->
+		(mprop (id per_origin_ds_686) (score 0.9) (score_group 1) (predicate australia) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_686)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+
+		<!-- 718: 183 set: []   <ref> = noun: [president]      <mod> = 1    <member> = 0 -->
+		(sprop (id per_origin_ds_719) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate president) (args (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))) (argument (role <member>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_719)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 759: 174 modifier: [italy]   <ref> = 0    <mod> = 1 -->
+		(mprop (id per_origin_ds_760) (score 0.9) (score_group 1) (predicate italy) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_760)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+
+
+		<!-- 763: 173 {1} Prime Minister {0} -->
+		(regex (id per_origin_ds_764) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "Prime")) (text DONT_ADD_SPACES (string "Minister")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_764)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 827: 165 {1} foreign minister {0} -->
+		(regex (id per_origin_ds_828) (score 0.9) (score_group 1) (re (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)) (text DONT_ADD_SPACES (string "foreign")) (text DONT_ADD_SPACES (string "minister")) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_828)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 862: 162 modifier: [africa]   <ref> = 0    <mod> = 1 -->
+		(mprop (id per_origin_ds_863) (score 0.9) (score_group 1) (predicate africa) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_origin_ds_863)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_origin)) (min-entitylevel DESC) (block AGENT1) (acetype GPE)))))
+	)
+)

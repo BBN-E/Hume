@@ -1,0 +1,36 @@
+(org_subsidiary_serif
+
+(wordsets)
+
+(entitylabels (AGENT1))
+
+(reference)
+
+(toplevel
+
+(relation (fulltype PART-WHOLE.Subsidiary) (id mapping_1) (score 1.0) (score_group 1)
+        (args
+                (argument (role ARG1) (mention (return (ff_role org_subsidiary_serif)) (min-entitylevel NAME) (acetype ORG GPE)))
+                (argument (role ARG2) (mention (return (ff_role AGENT1) (ff_fact_type org_subsidiary_serif1)) (entitylabel AGENT1) ))
+        )
+)
+
+(regex (score_group 1) (score 0.9) (id regex_1)
+	(re  
+		(mention (return (ff_role AGENT1) (ff_fact_type org_subsidiary_serif2)) (entitylabel AGENT1) )
+		(text RAW_TEXT (string "'s"))
+		(mention (return (ff_role org_subsidiary_serif)) (min-entitylevel NAME) (acetype ORG))
+	)
+)
+
+(regex (score_group 1) (score 0.9) (id regex_2)
+        (re
+                (mention (return (ff_role org_subsidiary_serif)) (min-entitylevel NAME) (acetype ORG))
+                (text RAW_TEXT (string ","))
+                (mention (return (ff_role AGENT1) (ff_fact_type org_subsidiary_serif3)) (entitylabel AGENT1) )
+        )
+)
+
+
+)
+)

@@ -1,0 +1,19 @@
+(per_date_of_death_serif
+
+(wordsets)
+
+(entitylabels (AGENT1))
+
+(reference)
+
+(toplevel
+
+(event (fulltype Life.Die) (id mapping_1) (score 1.0) (score_group 1)
+        (args
+                (argument (mention (return (ff_role AGENT1) (ff_fact_type per_date_of_death_serif)) (entitylabel AGENT1)) (role Victim))
+                (argument (value (return (ff_role per_date_of_death_serif))) (role Time-Within))
+        )
+)
+)
+)
+

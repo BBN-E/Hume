@@ -1,0 +1,230 @@
+Islamic Republic of Afghanistan AFG 
+Republic of Albania ALB Albanian
+People’s Democratic Republic of Algeria DZA
+American Samoa, Territory of ASM
+Principality of Andorra AND
+Republic of Angola AGO
+Anguilla AIA
+Antigua and Barbuda ATG
+Republic of Armenia ARM Armenian
+Aruba ABW
+Commonwealth of Australia AUS
+Republic of Austria AUT
+Republic of Azerbaijan AZE
+Commonwealth of The Bahamas BHS
+Kingdom of Bahrain BHR
+Bangladesh BGD
+Barbados BRB
+Republic of Belarus BLR Belarusian
+Kingdom of Belgium BEL
+Belize BLZ
+Republic of Benin BEN
+Bermuda BMU
+Kingdom of Bhutan BTN
+Plurinational State of Bolivia BOL
+Bosnia and Herzegovina BIH Bosniak
+Republic of Botswana BWA
+Federative Republic of Brazil BRA
+British Virgin Islands VGB
+Brunei Darussalam BRN
+Republic of Bulgaria BGR Bulgarian
+Burkina Faso BFA
+Republic of Burundi BDI
+Kingdom of Cambodia KHM
+Republic of Cameroon CMR
+Canada CAN
+Cayman Islands CYM
+Central African Republic CAF
+Republic of Chad TCD
+Republic of Chile CHL Chilean
+People’s Republic of China CHN Chinese
+Union of the Comoros COM
+Cook Islands COK
+Republic of Costa Rica CRI Hispanic
+Republic of Croatia HRV Croatian
+Republic of Cuba CUB Hispanic
+Republic of Cyprus CYP
+Czech Republic CZE Czech
+Kingdom of Denmark DNK
+Republic of Djibouti DJI
+Dominican Republic DMA Hispanic
+Republic of Ecuador ECU Hispanic
+Arab Republic of Egypt EGY Egyptian
+Republic of El Salvador SLV Hispanic
+Republic of Equatorial Guinea GNQ
+State of Eritrea ERI
+Republic of Estonia EST
+Federal Democratic Republic of Ethiopia ETH
+Republic of Fiji FJI
+Republic of Finland FIN
+Republic of France FRA French
+Gabonese Republic GAB
+Gambia GMB
+Georgia GEO
+Federal Republic of Germany DEU German
+Republic of Ghana GHA
+Gibraltar GIB
+Greenland GRL
+Grenada GRD
+Guadeloupe GLP
+Guam GUM
+Republic of Guatemala GTM Hispanic
+Republic of Guinea GIN
+Republic of Guinea-Bissau GNB
+Co-operative Republic of Guyana GUY
+Republic of Haiti HTI
+Republic of Honduras HND Hispanic
+Hungary HUN Hungarian
+Republic of Iceland ISL
+Republic of India IND
+Republic of Indonesia IDN
+Islamic Republic of Iran IRN Iranian
+Republic of Iraq IRQ
+Ireland IRL Irish
+Isle of Man IMN
+State of Israel ISR
+Jamaica JAM
+Japan JPN Japanese
+Hashemite Kingdom of Jordan JOR
+Republic of Kazakhstan KAZ
+Republic of Kenya KEN
+Republic of Kiribati KIR
+State of Kuwait KWT
+Republic of Latvia LVA Latvian
+Lebanon LBN Lebanese
+Kingdom of Lesotho LSO
+Republic of Liberia LBR
+Libya LBY
+Principality of Liechtenstein LIE
+Republic of Lithuania LTU
+Grand Duchy of Luxembourg LUX
+Republic of Macedonia MKD
+Republic of Madagascar MDG
+Republic of Malawi MWI
+Malaysia MYS
+Republic of Maldives MDV
+Republic of Mali MLI
+Republic of Malta MLT
+Republic of the Marshall Islands MHL
+Martinique MTQ
+Islamic Republic of Mauritania MRT
+Republic of Mauritius MUS
+Mayotte MYT
+Mexico MEX Hispanic
+Federated States of Micronesia FSM
+Republic of Moldova MDA
+Principality of Monaco MCO
+Mongolia MNG Mongolian
+Montenegro MNE Montenegrin
+Kingdom of Morocco MAR
+Republic of Mozambique MOZ
+Republic of Namibia NAM
+Nauru NRU
+Federal Democratic Republic of Nepal NPL
+Kingdom of the Netherlands NLD Dutch
+New Zealand NZL
+Republic of Nicaragua NIC Hispanic
+Republic of Niger NER
+Federal Republic of Nigeria NGA
+Commonwealth of the Northern Mariana Islands MNP
+Kingdom of Norway NOR Norwegian
+Sultanate of Oman OMN
+Islamic Republic of Pakistan PAK Pakistani
+Republic of Palau PLW
+Republic of Panama PAN
+Independent State of Papua New Guinea PNG
+Republic of Paraguay PRY
+Republic of Peru PER
+Republic of the Philippines PHL Filipino
+Republic of Poland POL Pole
+Puerto Rico PRI
+State of Qatar QAT
+Russian Federation RUS Russian
+Republic of Rwanda RWA
+Saint Lucia LCA
+Saint Vincent and the Grenadines VCT
+Independent State of Samoa WSM
+Repubblica di San Marino SMR
+Sao Tome and Principe STP
+Kingdom of Saudi Arabia SAU Arab
+Republic of Senegal SEN
+Serbia SRB Serbian
+Republic of Seychelles SYC
+Republic of Sierra Leone SLE
+Republic of Singapore SGP
+Republic of Slovenia SVN Slovene
+Solomon Islands SLB
+Somalia SOM Somali
+Republic of South Africa ZAF
+Kingdom of Spain ESP Hispanic
+Democratic Socialist Republic of Sri Lanka LKA
+Republic of the Sudan SDN
+Republic of Suriname SUR
+Kingdom of Swaziland SWZ
+Kingdom of Sweden SWE
+Switzerland CHE
+Syrian Arab Republic SYR
+Republic of Tajikistan TJK
+United Republic of Tanzania TZA
+Kingdom of Thailand THA Thai
+Togolese Republic TGO
+Kingdom of Tonga TON
+Republic of Trinidad and Tobago TTO
+Republic of Tunisia TUN
+Republic of Turkey TUR Turk
+Turkmenistan TKM
+Turks and Caicos Islands TCA
+Tuvalu TUV
+Republic of Uganda UGA
+Ukraine UKR Ukrainian
+United Arab Emirates ARE
+United Kingdom of Great Britain and Northern Ireland GBR British
+Virgin Islands of the United States USA
+Oriental Republic of Uruguay URY Hispanic
+Republic of Uzbekistan UZB
+Republic of Vanuatu VUT
+Bolivarian Republic of Venezuela VEN Hispanic
+Western Sahara ESH
+Republic of Yemen YEM
+Republic of Zambia ZMB
+Republic of Zimbabwe ZWE
+Nouvelle-Calédonie NCL
+Socialist Republic of Vietnam VNM Vietnamese
+Republic of Colombia COL Hispanic
+Palestine PSE Palistinian
+Democratic Republic of Timor-Leste TMP
+Reunion REU
+Republic of Korea KOR Korean
+Republic of the Congo COG
+Dominica DMA
+Macau Special Administrative Region MAC
+Slovak Republic SVK Slovak
+Argentine Republic ARG Hispanic
+România ROM Romanian
+Portuguese Republic PRT Portuguese
+Democratic People’s Republic of Korea PRK Korean
+Republic of Côte d’Ivoire CIV
+Hong Kong Special Administrative Region HKG
+Wallis et Futuna WLF
+Democratic Republic of the Congo COD
+Taiwan TWN
+Kyrgyz Republic KGZ
+Guyane GUY
+United States USA
+Federation of Saint Kitts and Nevis KNA
+Lao People’s Democratic Republic LAO
+Repubblica Italiana ITA
+Hellenic Republic GRC Greek
+Republic of Cabo Verde CPV
+Union of Burma MMR
+Polynésie Française PYF
+Faroe Islands FRO
+Bailiwick of Guernsey
+Republic of Kosovo
+Bailiwick of Jersey
+Sint Maarten
+South Sudan
+Country of Curaçao
+Ahvenanmaan Lääni
+Saint-Martin
+Bonaire, Saint Eustatius and Saba

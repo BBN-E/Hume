@@ -1,0 +1,502 @@
+(per_employee_or_member_of
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 187 {1} , chairman of {0} -->
+		(regex (id per_employee_or_member_of_tac_1) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "chairman")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400000)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 132 {1} , head of {0} -->
+		(regex (id per_employee_or_member_of_tac_2) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "head")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400001)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 98 {1} , director of {0} -->
+		(regex (id per_employee_or_member_of_tac_13) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "director")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400002)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 68 {1} , president of {0}&{0} , -->
+		(regex (id per_employee_or_member_of_tac_6) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "president")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400003)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ","))))
+
+		<!-- 68 {1} , head of {0} -->
+		(regex (id per_employee_or_member_of_tac_7) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "head")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400003)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 42 {1} , CEO of {0} -->
+		(regex (id per_employee_or_member_of_tac_22) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "CEO")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400005)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 38 noun:director[<ref> = 0][of = 1] -->
+		(nprop (id per_employee_or_member_of_tac_18) (score 0.9) (score_group 1) (predicate director) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400006)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 35 modifier:new[<ref> = noun:ambassador[<mod> = 1][<ref> = 0]] -->
+		(mprop (id per_employee_or_member_of_tac_57) (score 0.9) (score_group 1) (predicate new) (args (argument (role <ref>) (nprop (predicate ambassador) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400007)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 34 modifier:former[<ref> = noun:director[<ref> = 0][of = 1]] -->
+		(mprop (id per_employee_or_member_of_tac_70) (score 0.9) (score_group 1) (predicate former) (args (argument (role <ref>) (nprop (predicate director) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400008)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 30 modifier:where[<ref> = 1][where = verb:worked[<sub> = 0]] -->
+		(mprop (id per_employee_or_member_of_tac_37) (score 0.9) (score_group 1) (predicate where) (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role where) (vprop (predicate worked) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400009)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 28 noun:leader[<poss> = 1][<ref> = 0] -->
+		(nprop (id per_employee_or_member_of_tac_42) (score 0.9) (score_group 1) (predicate leader) (args (argument (role <poss>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400010)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 27 {0} , former {1}&{1} chief and -->
+		(regex (id per_employee_or_member_of_tac_28) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400011)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "former")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "chief")) (text DONT_ADD_SPACES (string "and"))))
+
+		<!-- 25 noun:speaker[<mod> = 1][<ref> = 0] -->
+		(nprop (id per_employee_or_member_of_tac_9) (score 0.9) (score_group 1) (predicate speaker) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400012)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 22 {0} joined {1} -->
+		(regex (id per_employee_or_member_of_tac_77) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400013)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "joined")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG))))
+
+		<!-- 22 verb:replaced[<sub> = 0][in = 1] -->
+		(vprop (id per_employee_or_member_of_tac_78) (score 0.9) (score_group 1) (predicate replaced) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400014)) (entitylabel AGENT1) (acetype PER))) (argument (role in) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG)))))
+
+		<!-- 21 {1} , {0}&{0} director of -->
+		(regex (id per_employee_or_member_of_tac_24) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400015)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "director")) (text DONT_ADD_SPACES (string "of"))))
+
+		<!-- 21 {1} of {0}&{0} were patrolling -->
+		(regex (id per_employee_or_member_of_tac_28) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400016)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "were")) (text DONT_ADD_SPACES (string "patrolling"))))
+
+		<!-- 20 {1} , {0}&military chief of {1}&{0} , police -->
+		(regex (id per_employee_or_member_of_tac_84) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "military")) (text DONT_ADD_SPACES (string "chief")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400017)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "police"))))
+
+		<!-- 20 {1} , {0}&military chief of {1} -->
+		(regex (id per_employee_or_member_of_tac_82) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "military")) (text DONT_ADD_SPACES (string "chief")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400018)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 20 {1} , {0}&military chief of {1}&{0} , police sources -->
+		(regex (id per_employee_or_member_of_tac_93) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "military")) (text DONT_ADD_SPACES (string "chief")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400019)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "police")) (text DONT_ADD_SPACES (string "sources"))))
+
+		<!-- 20 {1} , {0}&chief of {1}&{0} , --
+		(regex (id per_employee_or_member_of_tac_86) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "chief")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400020)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ","))))
+
+		<!-- 20 {1} , {0}&chief of {1}&{0} , police sources -->
+		(regex (id per_employee_or_member_of_tac_88) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "chief")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400021)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "police")) (text DONT_ADD_SPACES (string "sources"))))
+
+		<!-- 20 {1} , {0}&military chief of {1}&{0} , -->
+		(regex (id per_employee_or_member_of_tac_90) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "military")) (text DONT_ADD_SPACES (string "chief")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400022)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ","))))
+
+		<!-- 20 {1} , {0}&chief of {1} -->
+		(regex (id per_employee_or_member_of_tac_89) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "chief")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400023)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 19 {1} , president of {0}&In September , {1}&{0} , noted that -->
+		(regex (id per_employee_or_member_of_tac_95) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "In")) (text DONT_ADD_SPACES (string "September")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "president")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400024)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "noted")) (text DONT_ADD_SPACES (string "that"))))
+
+		<!-- 19 {1} , {0}&director of {1}&{0} continued an influential -->
+		(regex (id per_employee_or_member_of_tac_72) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "director")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400025)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "continued")) (text DONT_ADD_SPACES (string "an")) (text DONT_ADD_SPACES (string "influential"))))
+
+		<!-- 19 {1} , president of {0}&September , {1}&{0} , noted that -->
+		(regex (id per_employee_or_member_of_tac_97) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "September")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "president")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400026)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "noted")) (text DONT_ADD_SPACES (string "that"))))
+
+		<!-- 19 {1} , {0}&director of {1}&{0} continued an -->
+		(regex (id per_employee_or_member_of_tac_75) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "director")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400027)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "continued")) (text DONT_ADD_SPACES (string "an"))))
+
+		<!-- 19 {1} , president of {0}&, {1}&{0} , noted that -->
+		(regex (id per_employee_or_member_of_tac_88) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "president")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400028)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "noted")) (text DONT_ADD_SPACES (string "that"))))
+
+		<!-- 19 {1} , president of {0}&, {1}&{0} , -->
+		(regex (id per_employee_or_member_of_tac_89) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "president")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400029)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ","))))
+
+		<!-- 19 {1} , president of {0}&, {1}&{0} , noted -->
+		(regex (id per_employee_or_member_of_tac_96) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "president")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400030)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "noted"))))
+
+		<!-- 19 {1} , president of {0}&In September , {1}&{0} , -->
+		(regex (id per_employee_or_member_of_tac_91) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "In")) (text DONT_ADD_SPACES (string "September")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "president")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400031)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ","))))
+
+		<!-- 18 noun:member[<ref> = 0][of = 1] -->
+		(nprop (id per_employee_or_member_of_tac_119) (score 0.9) (score_group 1) (predicate member) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400032)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 18 noun:head[<ref> = 0][of = noun:judiciary[<poss> = 1]] -->
+		(nprop (id per_employee_or_member_of_tac_100) (score 0.9) (score_group 1) (predicate head) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400033)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (nprop (predicate judiciary) (args (argument (role <poss>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 18 {0} led {1}&{1} to -->
+		(regex (id per_employee_or_member_of_tac_109) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400034)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "led")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "to"))))
+
+		<!-- 18 modifier:10-year[<ref> = noun:tenure[as = noun:director[<ref> = 0][of = 1]]] -->
+		(mprop (id per_employee_or_member_of_tac_88) (score 0.9) (score_group 1) (predicate 10-year) (args (argument (role <ref>) (nprop (predicate tenure) (args (argument (role as) (nprop (predicate director) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400035)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))))))))
+
+		<!-- 18 set:[<member> = noun:mayor[<ref> = 0]][<ref> = noun:president[<mod> = 1]] -->
+		(sprop (id per_employee_or_member_of_tac_116) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate mayor) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400036)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <ref>) (nprop (predicate president) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 17 noun:director[<ref> = 0][of = name:[<ref> = 1]] -->
+		(nprop (id per_employee_or_member_of_tac_90) (score 0.9) (score_group 1) (predicate director) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400037)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 17 modifier:general[<ref> = noun:director[<ref> = 0][of = name:[<ref> = 1]]] -->
+		(mprop (id per_employee_or_member_of_tac_92) (score 0.9) (score_group 1) (predicate general) (args (argument (role <ref>) (nprop (predicate director) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400038)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))))))))
+
+		<!-- 17 {1}  {0}&[slot=0, word=speaker, lang=english]&[slot=1, word=house, lang=english] -->
+		(regex (id per_employee_or_member_of_tac_36) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "house")))))) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400039)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "speaker"))))))))
+
+		<!-- 17 noun:manager[<mod> = 1][<ref> = 0] -->
+		(nprop (id per_employee_or_member_of_tac_129) (score 0.9) (score_group 1) (predicate manager) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400040)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 16 modifier:former[<ref> = noun:player[<mod> = 1][<ref> = 0]] -->
+		(mprop (id per_employee_or_member_of_tac_130) (score 0.9) (score_group 1) (predicate former) (args (argument (role <ref>) (nprop (predicate player) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400041)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 16 modifier:former[<ref> = noun:director[<ref> = 0][of = name:[<ref> = 1]]] -->
+		(mprop (id per_employee_or_member_of_tac_94) (score 0.9) (score_group 1) (predicate former) (args (argument (role <ref>) (nprop (predicate director) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400042)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))))))))
+
+		<!-- 16 verb:winning[<sub> = 1][for = noun:sheriff[of = 0]] -->
+		(vprop (id per_employee_or_member_of_tac_37) (score 0.9) (score_group 1) (predicate winning) (args (argument (role <sub>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role for) (nprop (predicate sheriff) (args (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400043)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 15 {1} , the {0}&{0} assistant supervisor -->
+		(regex (id per_employee_or_member_of_tac_39) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "the")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400044)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "assistant")) (text DONT_ADD_SPACES (string "supervisor"))))
+
+		<!-- 15 {1} , president of {0}&{0} and director of -->
+		(regex (id per_employee_or_member_of_tac_127) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "president")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400045)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "and")) (text DONT_ADD_SPACES (string "director")) (text DONT_ADD_SPACES (string "of"))))
+
+		<!-- 14 modifier:of[<ref> = 0][of = 1]&[slot=0, word=leader, lang=english] -->
+		(mprop (id per_employee_or_member_of_tac_170) (score 0.9) (score_group 1) (predicate of) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400046)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "leader"))))))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 14 modifier:of[<ref> = noun:leader[<ref> = 0]][of = 1] -->
+		(mprop (id per_employee_or_member_of_tac_171) (score 0.9) (score_group 1) (predicate of) (args (argument (role <ref>) (nprop (predicate leader) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400047)) (entitylabel AGENT1) (acetype PER)))))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 14 noun:president[<mod> = 1][<ref> = 0]&[slot=0, word=president, lang=english]&[slot=1, word=magazines, lang=english] -->
+		(nprop (id per_employee_or_member_of_tac_116) (score 0.9) (score_group 1) (predicate president) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "magazines"))))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400048)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "president")))))))))
+
+		<!-- 14 copula:was[<obj> = noun:president[<ref> = 0][of = 1]]&[slot=0, word=president, lang=english] -->
+		(anyprop (id per_employee_or_member_of_tac_172) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (nprop (predicate president) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400049)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "president"))))))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 14 modifier:10-year[<ref> = noun:tenure[<poss> = pronoun:her[<ref> = 0]][as = noun:director[of = 1]]] -->
+		(mprop (id per_employee_or_member_of_tac_126) (score 0.9) (score_group 1) (predicate 10-year) (args (argument (role <ref>) (nprop (predicate tenure) (args (argument (role <poss>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400050)) (entitylabel AGENT1) (acetype PER)))))) (argument (role as) (nprop (predicate director) (args (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))))))))
+
+		<!-- 14 noun:president[<ref> = 1][of = 0]&[slot=0, word=association, lang=english] -->
+		(nprop (id per_employee_or_member_of_tac_120) (score 0.9) (score_group 1) (predicate president) (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400051)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "association")))))))))
+
+		<!-- 14 noun:tenure[<poss> = 0][as = noun:director[of = 1]] -->
+		(nprop (id per_employee_or_member_of_tac_119) (score 0.9) (score_group 1) (predicate tenure) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400052)) (entitylabel AGENT1) (acetype PER))) (argument (role as) (nprop (predicate director) (args (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 14 noun:president[<ref> = 1][of = 0]&[slot=0, word=association, lang=english]&[slot=1, word=president, lang=english] -->
+		(nprop (id per_employee_or_member_of_tac_130) (score 0.9) (score_group 1) (predicate president) (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "president"))))))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400053)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "association")))))))))
+
+		<!-- 14 verb:retired[following = noun:tenure[<poss> = pronoun:her[<ref> = 0]][as = noun:director[of = 1]]] -->
+		(vprop (id per_employee_or_member_of_tac_118) (score 0.9) (score_group 1) (predicate retired) (args (argument (role following) (nprop (predicate tenure) (args (argument (role <poss>) (anyprop (predicate her) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400054)) (entitylabel AGENT1) (acetype PER)))))) (argument (role as) (nprop (predicate director) (args (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))))))))
+
+		<!-- 14 modifier:10-year[<ref> = noun:tenure[<poss> = 0][as = noun:director[of = 1]]] -->
+		(mprop (id per_employee_or_member_of_tac_122) (score 0.9) (score_group 1) (predicate 10-year) (args (argument (role <ref>) (nprop (predicate tenure) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400055)) (entitylabel AGENT1) (acetype PER))) (argument (role as) (nprop (predicate director) (args (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))))))))
+
+		<!-- 14 {1}  {0}&[slot=0, word=chairman, lang=english] -->
+		(regex (id per_employee_or_member_of_tac_51) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400056)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "chairman"))))))))
+
+		<!-- 13 noun:president[<ref> = noun:chief[<mod> = 1][<ref> = 0]]&[slot=0, word=chief, lang=english] -->
+		(nprop (id per_employee_or_member_of_tac_139) (score 0.9) (score_group 1) (predicate president) (args (argument (role <ref>) (nprop (predicate chief) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400057)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "chief"))))))))))))
+
+		<!-- 13 noun:president[<mod> = 0][<ref> = 1]&[slot=1, word=president, lang=english] -->
+		(nprop (id per_employee_or_member_of_tac_138) (score 0.9) (score_group 1) (predicate president) (args (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400058)) (entitylabel AGENT1) (acetype PER))) (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "president")))))))))
+
+		<!-- 13 {1} , president of {0}&[slot=0, word=institute, lang=english]&[slot=1, word=fertel, lang=english] -->
+		(regex (id per_employee_or_member_of_tac_179) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "fertel")))))) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "president")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400059)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "institute"))))))))
+
+		<!-- 13 noun:executive[<mod> = 1][<ref> = 0] -->
+		(nprop (id per_employee_or_member_of_tac_194) (score 0.9) (score_group 1) (predicate executive) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400060)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 12 modifier:of[<ref> = noun:executive[<mod> = 1][<ref> = 0]] -->
+		(mprop (id per_employee_or_member_of_tac_219) (score 0.9) (score_group 1) (predicate of) (args (argument (role <ref>) (nprop (predicate executive) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400061)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 12 modifier:vice[<ref> = noun:director[<ref> = 0][of = 1]] -->
+		(mprop (id per_employee_or_member_of_tac_171) (score 0.9) (score_group 1) (predicate vice) (args (argument (role <ref>) (nprop (predicate director) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400062)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 12 noun:president[<ref> = 0][of = 1]&[slot=0, word=president, lang=english]&[slot=1, word=congress, lang=english] -->
+		(nprop (id per_employee_or_member_of_tac_230) (score 0.9) (score_group 1) (predicate president) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400063)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "president"))))))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "congress")))))))))
+
+		<!-- 12 noun:chairman[<mod> = 1][<ref> = 0] -->
+		(nprop (id per_employee_or_member_of_tac_77) (score 0.9) (score_group 1) (predicate chairman) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400064)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 11 {1}  {0}&[slot=0, word=mayor, lang=english] -->
+		(regex (id per_employee_or_member_of_tac_241) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400065)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "mayor"))))))))
+
+		<!-- 11 {1} , {0}&director of {1} -->
+		(regex (id per_employee_or_member_of_tac_195) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "director")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400066)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 11 {1}  {0}&[slot=0, word=mayor, lang=english]&[slot=1, word=baltimore, lang=english] -->
+		(regex (id per_employee_or_member_of_tac_243) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "baltimore")))))) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400067)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "mayor"))))))))
+
+		<!-- 10 copula:been[<obj> = noun:director[<ref> = 0][at = 1]] -->
+		(anyprop (id per_employee_or_member_of_tac_268) (score 0.9) (score_group 1) (predicate been) (args (argument (role <obj>) (nprop (predicate director) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400068)) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 10 modifier:athletic[<ref> = noun:director[<ref> = 0][at = 1]] -->
+		(mprop (id per_employee_or_member_of_tac_276) (score 0.9) (score_group 1) (predicate athletic) (args (argument (role <ref>) (nprop (predicate director) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400069)) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 10 copula:was[<obj> = noun:director[<ref> = 0][of = 1]] -->
+		(anyprop (id per_employee_or_member_of_tac_210) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (nprop (predicate director) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400070)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 9 copula:was[<obj> = noun:director[of = 1]][<sub> = pronoun:he[<ref> = 0]] -->
+		(anyprop (id per_employee_or_member_of_tac_243) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (nprop (predicate director) (args (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))) (argument (role <sub>) (anyprop (predicate he) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400071)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 9 copula:was[<obj> = noun:commander[<mod> = 1][<ref> = 0]] -->
+		(anyprop (id per_employee_or_member_of_tac_300) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (nprop (predicate commander) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400072)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 9 noun:chief[<poss> = 1][<ref> = 0]&[slot=0, word=chief, lang=english] -->
+		(nprop (id per_employee_or_member_of_tac_28) (score 0.9) (score_group 1) (predicate chief) (args (argument (role <poss>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400073)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "chief")))))))))
+
+		<!-- 9 {0} was director of {1} -->
+		(regex (id per_employee_or_member_of_tac_238) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400074)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "director")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG))))
+
+		<!-- 9 {0} , head of {1} -->
+		(regex (id per_employee_or_member_of_tac_295) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400075)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "head")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG))))
+
+		<!-- 9 modifier:supreme[<ref> = noun:commander[<mod> = 1][<ref> = 0]] -->
+		(mprop (id per_employee_or_member_of_tac_291) (score 0.9) (score_group 1) (predicate supreme) (args (argument (role <ref>) (nprop (predicate commander) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400076)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 9 modifier:successful[<ref> = noun:commander[<mod> = 1][<ref> = 0]] -->
+		(mprop (id per_employee_or_member_of_tac_279) (score 0.9) (score_group 1) (predicate successful) (args (argument (role <ref>) (nprop (predicate commander) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400077)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 8 copula:was[<obj> = modifier:of[of = 1]][until = verb:resigned[<sub> = 0]] -->
+		(anyprop (id per_employee_or_member_of_tac_200) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (mprop (predicate of) (args (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))) (argument (role until) (vprop (predicate resigned) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400078)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 8 noun:absence[of = noun:leader[<mod> = 1][<ref> = 0]] -->
+		(nprop (id per_employee_or_member_of_tac_363) (score 0.9) (score_group 1) (predicate absence) (args (argument (role of) (nprop (predicate leader) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400079)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 8 {1} , president of {0}&delegation led by {1} -->
+		(regex (id per_employee_or_member_of_tac_193) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "delegation")) (text DONT_ADD_SPACES (string "led")) (text DONT_ADD_SPACES (string "by")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "president")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400080)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 8 noun:officer[<ref> = 0][at = 1] -->
+		(nprop (id per_employee_or_member_of_tac_340) (score 0.9) (score_group 1) (predicate officer) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400081)) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 8 copula:was[<obj> = noun:president[<ref> = 0][of = 1]]&[slot=0, word=president, lang=english]&[slot=1, word=association, lang=english] -->
+		(anyprop (id per_employee_or_member_of_tac_360) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (nprop (predicate president) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400082)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "president"))))))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "association"))))))))))))
+
+		<!-- 8 noun:executive[<ref> = 1][of = 0] -->
+		(nprop (id per_employee_or_member_of_tac_196) (score 0.9) (score_group 1) (predicate executive) (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400083)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 8 modifier:chief[<ref> = noun:executive[<ref> = 1][of = 0]] -->
+		(mprop (id per_employee_or_member_of_tac_197) (score 0.9) (score_group 1) (predicate chief) (args (argument (role <ref>) (nprop (predicate executive) (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400084)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 8 copula:was[<obj> = noun:president[of = 1]][<sub> = 0]&[slot=1, word=association, lang=english] -->
+		(anyprop (id per_employee_or_member_of_tac_343) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (nprop (predicate president) (args (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "association")))))))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400085)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 8 noun:president[<ref> = 0][of = 1]&[slot=1, word=association, lang=english] -->
+		(nprop (id per_employee_or_member_of_tac_374) (score 0.9) (score_group 1) (predicate president) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400086)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "association")))))))))
+
+		<!-- 8 noun:president[<ref> = 0][of = 1]&[slot=0, word=president, lang=english]&[slot=1, word=association, lang=english] -->
+		(nprop (id per_employee_or_member_of_tac_333) (score 0.9) (score_group 1) (predicate president) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400087)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "president"))))))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "association")))))))))
+
+		<!-- 8 {1}  {0}&[slot=0, word=ceo, lang=english] -->
+		(regex (id per_employee_or_member_of_tac_371) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG)) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400088)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "ceo"))))))))
+
+		<!-- 8 {1} , chairman of {0} -->
+		(regex (id per_employee_or_member_of_tac_290) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "chairman")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400089)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 8 {1} , president of {0}&[slot=0, word=parliament, lang=english] -->
+		(regex (id per_employee_or_member_of_tac_199) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "president")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400090)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "parliament"))))))))
+
+		<!-- 8 {1} , president of {0}&led by {1} -->
+		(regex (id per_employee_or_member_of_tac_293) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "led")) (text DONT_ADD_SPACES (string "by")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "president")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400091)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 8 modifier:team[<ref> = noun:leader[<mod> = 1][<ref> = 0]] -->
+		(mprop (id per_employee_or_member_of_tac_367) (score 0.9) (score_group 1) (predicate team) (args (argument (role <ref>) (nprop (predicate leader) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400092)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 8 verb:presented[<sub> = noun:absence[of = noun:leader[<mod> = 1][<ref> = 0]]] -->
+		(vprop (id per_employee_or_member_of_tac_334) (score 0.9) (score_group 1) (predicate presented) (args (argument (role <sub>) (nprop (predicate absence) (args (argument (role of) (nprop (predicate leader) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400093)) (entitylabel AGENT1) (acetype PER)))))))))))
+
+		<!-- 8 modifier:of[<ref> = noun:chairman[<ref> = 0]][of = 1] -->
+		(mprop (id per_employee_or_member_of_tac_77) (score 0.9) (score_group 1) (predicate of) (args (argument (role <ref>) (nprop (predicate chairman) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400094)) (entitylabel AGENT1) (acetype PER)))))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 8 verb:announced[<obj> = noun:participation[in = noun:show[for = 1]]][<sub> = 0] -->
+		(vprop (id per_employee_or_member_of_tac_342) (score 0.9) (score_group 1) (predicate announced) (args (argument (role <obj>) (nprop (predicate participation) (args (argument (role in) (nprop (predicate show) (args (argument (role for) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400095)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 7 {0} , chairman of {1} -->
+		(regex (id per_employee_or_member_of_tac_393) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400096)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "chairman")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))
+
+		<!-- 6 modifier:longtime[<ref> = noun:correspondent[<ref> = 0][for = name:[<ref> = 1]]] -->
+		(mprop (id per_employee_or_member_of_tac_466) (score 0.9) (score_group 1) (predicate longtime) (args (argument (role <ref>) (nprop (predicate correspondent) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400097)) (entitylabel AGENT1) (acetype PER))) (argument (role for) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))))))))
+
+		<!-- 6 {0} , president of {1}&[slot=0, word=yingling, lang=english]&[slot=1, word=association, lang=english] -->
+		(regex (id per_employee_or_member_of_tac_219) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400098)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "yingling")))))) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "president")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "association"))))))))
+
+		<!-- 6 noun:mayor[<ref> = 0][of = 1] -->
+		(nprop (id per_employee_or_member_of_tac_96) (score 0.9) (score_group 1) (predicate mayor) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400099)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 6 verb:led[<obj> = 1][<sub> = 0]&[slot=0, word=who, lang=english] -->
+		(vprop (id per_employee_or_member_of_tac_475) (score 0.9) (score_group 1) (predicate led) (args (argument (role <obj>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400100)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "who")))))))))
+
+		<!-- 6 poss:'s[<poss> = 1][<ref> = 0]&[slot=0, word=chairman, lang=english] -->
+		(anyprop (id per_employee_or_member_of_tac_261) (score 0.9) (score_group 1) (predicate 's) (args (argument (role <poss>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400101)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "chairman")))))))))
+
+		<!-- 6 {0} led {1}&[slot=0, word=who, lang=english] -->
+		(regex (id per_employee_or_member_of_tac_454) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400102)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "who")))))) (text DONT_ADD_SPACES (string "led")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))
+
+		<!-- 6 {0}  {1}&[slot=0, word=association, lang=english]&[slot=1, word=president, lang=english] -->
+		(regex (id per_employee_or_member_of_tac_218) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400103)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "association")))))) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "president"))))))))
+
+		<!-- 6 {1} , spokeswoman for {0} -->
+		(regex (id per_employee_or_member_of_tac_229) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "spokeswoman")) (text DONT_ADD_SPACES (string "for")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400104)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 6 poss:'s[<poss> = 1][<ref> = noun:chairman[<ref> = 0]] -->
+		(anyprop (id per_employee_or_member_of_tac_234) (score 0.9) (score_group 1) (predicate 's) (args (argument (role <poss>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (nprop (predicate chairman) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400105)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 6 modifier:longtime[<ref> = noun:correspondent[<ref> = 0][for = 1]] -->
+		(mprop (id per_employee_or_member_of_tac_431) (score 0.9) (score_group 1) (predicate longtime) (args (argument (role <ref>) (nprop (predicate correspondent) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400106)) (entitylabel AGENT1) (acetype PER))) (argument (role for) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 5 copula:was[<obj> = noun:president[<ref> = 0][of = 1]]&[slot=0, word=president, lang=english]&[slot=1, word=party, lang=english] -->
+		(anyprop (id per_employee_or_member_of_tac_559) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (nprop (predicate president) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400107)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "president"))))))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "party"))))))))))))
+
+		<!-- 5 noun:assistant[<ref> = 0][at = 1] -->
+		(nprop (id per_employee_or_member_of_tac_437) (score 0.9) (score_group 1) (predicate assistant) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400108)) (entitylabel AGENT1) (acetype PER))) (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 5 noun:president[<ref> = 0][of = 1]&[slot=0, word=president, lang=english]&[slot=1, word=party, lang=english] -->
+		(nprop (id per_employee_or_member_of_tac_536) (score 0.9) (score_group 1) (predicate president) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400109)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "president"))))))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "party")))))))))
+
+		<!-- 5 noun:director[<poss> = 1][<ref> = 0] -->
+		(nprop (id per_employee_or_member_of_tac_297) (score 0.9) (score_group 1) (predicate director) (args (argument (role <poss>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400110)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 5 noun:director[<mod> = 1][<ref> = 0] -->
+		(nprop (id per_employee_or_member_of_tac_561) (score 0.9) (score_group 1) (predicate director) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400111)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 5 {1} , president of {0}&[slot=0, word=foundation, lang=english] -->
+		(regex (id per_employee_or_member_of_tac_569) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "president")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400112)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "foundation"))))))))
+
+		<!-- 5 copula:was[<obj> = noun:assistant[at = 1]][<sub> = 0] -->
+		(anyprop (id per_employee_or_member_of_tac_357) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (nprop (predicate assistant) (args (argument (role at) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400113)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 5 {0} , CEO of {1} -->
+		(regex (id per_employee_or_member_of_tac_534) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400114)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "CEO")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG))))
+
+		<!-- 5 copula:was[<sub> = 0][with = verb:writing[for = 1]] -->
+		(anyprop (id per_employee_or_member_of_tac_547) (score 0.9) (score_group 1) (predicate was) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400115)) (entitylabel AGENT1) (acetype PER))) (argument (role with) (vprop (predicate writing) (args (argument (role for) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 5 noun:chairman[<ref> = 0][of = 1] -->
+		(nprop (id per_employee_or_member_of_tac_113) (score 0.9) (score_group 1) (predicate chairman) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400116)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 4 {0} career with {1} -->
+		(regex (id per_employee_or_member_of_tac_603) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400117)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "career")) (text DONT_ADD_SPACES (string "with")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG))))
+
+		<!-- 4 verb:started[<obj> = 0][with = 1] -->
+		(vprop (id per_employee_or_member_of_tac_479) (score 0.9) (score_group 1) (predicate started) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400118)) (entitylabel AGENT1) (acetype PER))) (argument (role with) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 4 set:[<member> = noun:mayor[of = 1]][<ref> = 0] -->
+		(sprop (id per_employee_or_member_of_tac_136) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate mayor) (args (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400119)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 4 noun:minister[<mod> = 1][<ref> = 0]&[slot=0, word=minister, lang=english]&[slot=1, word=cabinet, lang=english] -->
+		(nprop (id per_employee_or_member_of_tac_641) (score 0.9) (score_group 1) (predicate minister) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "cabinet"))))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400120)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "minister")))))))))
+
+		<!-- 4 modifier:vice[<ref> = noun:president[<ref> = 0][of = 1]] -->
+		(mprop (id per_employee_or_member_of_tac_328) (score 0.9) (score_group 1) (predicate vice) (args (argument (role <ref>) (nprop (predicate president) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400121)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 4 modifier:former[<ref> = noun:head[<ref> = 0][of = 1]] -->
+		(mprop (id per_employee_or_member_of_tac_606) (score 0.9) (score_group 1) (predicate former) (args (argument (role <ref>) (nprop (predicate head) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400122)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 4 {0} served as {1} -->
+		(regex (id per_employee_or_member_of_tac_352) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400123)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "served")) (text DONT_ADD_SPACES (string "as")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG))))
+
+		<!-- 4 copula:was[<obj> = noun:member[of = 1]][<sub> = 0] -->
+		(anyprop (id per_employee_or_member_of_tac_665) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (nprop (predicate member) (args (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400124)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 4 set:[<member> = noun:head[<ref> = 0][of = 1]] -->
+		(sprop (id per_employee_or_member_of_tac_596) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate head) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400125)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 4 verb:left[<obj> = 1][<sub> = 0]&[slot=1, word=gop, lang=english] -->
+		(vprop (id per_employee_or_member_of_tac_368) (score 0.9) (score_group 1) (predicate left) (args (argument (role <obj>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "gop"))))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400126)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 4 noun:veteran[<mod> = 1][<ref> = 0] -->
+		(nprop (id per_employee_or_member_of_tac_667) (score 0.9) (score_group 1) (predicate veteran) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400127)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 4 {0} , director of {1} -->
+		(regex (id per_employee_or_member_of_tac_515) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400128)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "director")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG))))
+
+		<!-- 3 verb:worked[as = noun:head[<ref> = 0][of = 1]] -->
+		(vprop (id per_employee_or_member_of_tac_839) (score 0.9) (score_group 1) (predicate worked) (args (argument (role as) (nprop (predicate head) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400129)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 3 {0} , a former {1}&{1} congresswoman from Washington -->
+		(regex (id per_employee_or_member_of_tac_455) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400130)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (text DONT_ADD_SPACES (string "former")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "congresswoman")) (text DONT_ADD_SPACES (string "from")) (text DONT_ADD_SPACES (string "Washington"))))
+
+		<!-- 3 {0} , a {1}&{1} analyst who has -->
+		(regex (id per_employee_or_member_of_tac_230) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400131)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "analyst")) (text DONT_ADD_SPACES (string "who")) (text DONT_ADD_SPACES (string "has"))))
+
+		<!-- 3 noun:contractor[<ref> = 0][with = 1] -->
+		(nprop (id per_employee_or_member_of_tac_643) (score 0.9) (score_group 1) (predicate contractor) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400132)) (entitylabel AGENT1) (acetype PER))) (argument (role with) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 3 {0} , a former {1}&{1} military chief -->
+		(regex (id per_employee_or_member_of_tac_615) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400133)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (text DONT_ADD_SPACES (string "former")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "military")) (text DONT_ADD_SPACES (string "chief"))))
+
+		<!-- 3 {1} , a former {0}&{0} chairman , serving -->
+		(regex (id per_employee_or_member_of_tac_601) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (text DONT_ADD_SPACES (string "former")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400134)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "chairman")) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "serving"))))
+
+		<!-- 3 noun:detention[of = noun:members[<mod> = 1][including = 0]] -->
+		(nprop (id per_employee_or_member_of_tac_876) (score 0.9) (score_group 1) (predicate detention) (args (argument (role of) (nprop (predicate members) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role including) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400135)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 3 noun:president[<mod> = 1][<ref> = 0]&[slot=1, word=association, lang=english] -->
+		(nprop (id per_employee_or_member_of_tac_477) (score 0.9) (score_group 1) (predicate president) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE) (regex (regex (re (text DONT_ADD_SPACES (string "association"))))))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400136)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 3 set:[<member> = noun:mayor[<mod> = 1][<ref> = 0]] -->
+		(sprop (id per_employee_or_member_of_tac_196) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate mayor) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400137)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 3 {1} president {0}&{0} was found dead -->
+		(regex (id per_employee_or_member_of_tac_843) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "president")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400138)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "found")) (text DONT_ADD_SPACES (string "dead"))))
+
+		<!-- 3 verb:succeed[<obj> = 0][as = noun:chairman[of = 1]] -->
+		(vprop (id per_employee_or_member_of_tac_714) (score 0.9) (score_group 1) (predicate succeed) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400139)) (entitylabel AGENT1) (acetype PER))) (argument (role as) (nprop (predicate chairman) (args (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 3 modifier:60-year[<ref> = noun:contractor[<ref> = 0][with = 1]] -->
+		(mprop (id per_employee_or_member_of_tac_178) (score 0.9) (score_group 1) (predicate 60-year) (args (argument (role <ref>) (nprop (predicate contractor) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400140)) (entitylabel AGENT1) (acetype PER))) (argument (role with) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 3 {1} , a former {0}&{0} commissioner from Ocala -->
+		(regex (id per_employee_or_member_of_tac_626) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (text DONT_ADD_SPACES (string "former")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400141)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "commissioner")) (text DONT_ADD_SPACES (string "from")) (text DONT_ADD_SPACES (string "Ocala"))))
+
+		<!-- 3 {1} , head of {0} -->
+		(regex (id per_employee_or_member_of_tac_459) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "head")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400142)) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 3 modifier:former[<ref> = noun:executive[<ref> = 1][of = 0]] -->
+		(mprop (id per_employee_or_member_of_tac_532) (score 0.9) (score_group 1) (predicate former) (args (argument (role <ref>) (nprop (predicate executive) (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400143)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 3 verb:worked[<sub> = 0][as = noun:head[of = 1]] -->
+		(vprop (id per_employee_or_member_of_tac_863) (score 0.9) (score_group 1) (predicate worked) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400144)) (entitylabel AGENT1) (acetype PER))) (argument (role as) (nprop (predicate head) (args (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 3 modifier:former[<ref> = noun:mayor[<mod> = 1][<ref> = 0]] -->
+		(mprop (id per_employee_or_member_of_tac_236) (score 0.9) (score_group 1) (predicate former) (args (argument (role <ref>) (nprop (predicate mayor) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400145)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 3 {0} , a former {1}&{1} commissioner -->
+		(regex (id per_employee_or_member_of_tac_587) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400146)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (text DONT_ADD_SPACES (string "former")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "commissioner"))))
+
+		<!-- 3 {0} , a former {1}&{1} congresswoman from -->
+		(regex (id per_employee_or_member_of_tac_524) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400147)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (text DONT_ADD_SPACES (string "former")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "congresswoman")) (text DONT_ADD_SPACES (string "from"))))
+
+		<!-- 3 noun:member[<ref> = 0][of = noun:club[<mod> = 1]] -->
+		(nprop (id per_employee_or_member_of_tac_556) (score 0.9) (score_group 1) (predicate member) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400148)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (nprop (predicate club) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 3 verb:hired[<sub> = 0][for = 1] -->
+		(vprop (id per_employee_or_member_of_tac_552) (score 0.9) (score_group 1) (predicate hired) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400149)) (entitylabel AGENT1) (acetype PER))) (argument (role for) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 3 {1} , a former {0}&{0} chairman , -->
+		(regex (id per_employee_or_member_of_tac_521) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (text DONT_ADD_SPACES (string "former")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400150)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "chairman")) (text DONT_ADD_SPACES (string ","))))
+
+		<!-- 3 verb:become[<obj> = noun:officer[<poss> = 0]][<sub> = name:[<ref> = 1]] -->
+		(vprop (id per_employee_or_member_of_tac_607) (score 0.9) (score_group 1) (predicate become) (args (argument (role <obj>) (nprop (predicate officer) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400151)) (entitylabel AGENT1) (acetype PER)))))) (argument (role <sub>) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 3 {1} , a former {0}&{0} chairman -->
+		(regex (id per_employee_or_member_of_tac_484) (score 0.9) (score_group 1) (re (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "a")) (text DONT_ADD_SPACES (string "former")) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400152)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "chairman"))))
+
+		<!-- 3 modifier:longtime[<ref> = noun:sportswriter[<mod> = 1][<ref> = 0]] -->
+		(mprop (id per_employee_or_member_of_tac_914) (score 0.9) (score_group 1) (predicate longtime) (args (argument (role <ref>) (nprop (predicate sportswriter) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400153)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 3 modifier:explosives[<ref> = noun:expert[<mod> = 1][<ref> = 0]] -->
+		(mprop (id per_employee_or_member_of_tac_629) (score 0.9) (score_group 1) (predicate explosives) (args (argument (role <ref>) (nprop (predicate expert) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400154)) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 3 modifier:-old[<ref> = noun:contractor[<ref> = 0][with = 1]] -->
+		(mprop (id per_employee_or_member_of_tac_237) (score 0.9) (score_group 1) (predicate -old) (args (argument (role <ref>) (nprop (predicate contractor) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400155)) (entitylabel AGENT1) (acetype PER))) (argument (role with) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 3 verb:resign[<sub> = name:[<ref> = 0]][from = noun:boards[of = 1]] -->
+		(vprop (id per_employee_or_member_of_tac_440) (score 0.9) (score_group 1) (predicate resign) (args (argument (role <sub>) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400156)) (entitylabel AGENT1) (acetype PER)))))) (argument (role from) (nprop (predicate boards) (args (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 3 {0} has been a {1}&{1} spokesman -->
+		(regex (id per_employee_or_member_of_tac_829) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400157)) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "has")) (text DONT_ADD_SPACES (string "been")) (text DONT_ADD_SPACES (string "a")) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)) (text DONT_ADD_SPACES (string "spokesman"))))
+
+		<!-- 3 noun:chairman[<ref> = 0][of = 1] -->
+		(nprop (id per_employee_or_member_of_tac_651) (score 0.9) (score_group 1) (predicate chairman) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400158)) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 3 copula:was[<obj> = noun:member[of = noun:club[<mod> = 1]]][<sub> = 0] -->
+		(anyprop (id per_employee_or_member_of_tac_609) (score 0.9) (score_group 1) (predicate was) (args (argument (role <obj>) (nprop (predicate member) (args (argument (role of) (nprop (predicate club) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))) (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400159)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 3 noun:director[<mod> = 1][<ref> = 0] -->
+		(nprop (id per_employee_or_member_of_tac_506) (score 0.9) (score_group 1) (predicate director) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400160)) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 3 noun:contractor[<ref> = 0][with = 1] -->
+		(nprop (id per_employee_or_member_of_tac_164) (score 0.9) (score_group 1) (predicate contractor) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400161)) (entitylabel AGENT1) (acetype PER))) (argument (role with) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE)))))
+
+		<!-- 3 noun:president[<ref> = 0][of = name:[<ref> = 1]]&[slot=0, word=president, lang=english] -->
+		(nprop (id per_employee_or_member_of_tac_546) (score 0.9) (score_group 1) (predicate president) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400162)) (entitylabel AGENT1) (acetype PER) (regex (regex (re (text DONT_ADD_SPACES (string "president"))))))) (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))))))))
+
+		<!-- 3 noun:expert[<mod> = 1][<ref> = 0] -->
+		(nprop (id per_employee_or_member_of_tac_619) (score 0.9) (score_group 1) (predicate expert) (args (argument (role <mod>) (mention (return (ff_role per_employee_or_member_of)) (block AGENT1) (acetype ORG GPE))) (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_employee_or_member_of_tac_400163)) (entitylabel AGENT1) (acetype PER)))))
+
+	)
+)

@@ -1,0 +1,39 @@
+# Entity Type List
+#
+# Entity type options are:
+#   -IdFDesc: IdF can find mentions of this type as descriptors.
+#   -NotRelArg: No mention of this type may be considered a relation
+#       argument.
+#   -MatchesXXX: Entities of this type would be considered to be of ACE
+#       type XXX in the ACE world.
+#   -IsNat: Nationality words should be assigned this type (if they
+#       aren't person-descriptors
+
+PER     -MatchesPER
+ORG     -MatchesORG
+GPE     -MatchesGPE -IsNat
+FAC     -MatchesFAC
+LOC     -MatchesLOC
+VEH		-IdFDesc
+WEA		-IdFDesc
+ART     -IdFDesc
+CROP    -IdFDesc
+REFUGEE -IdFDesc
+MONEY   -IdFDesc
+FOOD    -IdFDesc
+WATER   -IdFDesc
+MEDICAL -IdFDesc
+FERTILIZER  -IdFDesc
+SEED    -IdFDesc
+LIVESTOCK   -IdFDesc
+DELIVERY_KIT   -IdFDesc
+FARMING_TOOL   -IdFDesc
+FISHING_TOOL   -IdFDesc
+HUMAN_RIGHT   -IdFDesc
+HYGIENE_TOOL   -IdFDesc
+INSECT_CONTROL   -IdFDesc
+LIVESTOCK_FEED   -IdFDesc
+SEXUAL_VIOLENCE   -IdFDesc
+STATIONARY   -IdFDesc
+VETERINARY_SERVICE   -IdFDesc
+THERAPEUTIC_FEEDING   -IdFDesc

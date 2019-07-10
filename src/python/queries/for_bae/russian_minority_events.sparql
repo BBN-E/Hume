@@ -1,0 +1,31 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix causal: <http://ontology.causeex.com/ontology/odps/CauseEffect#>
+prefix event: <http://ontology.causeex.com/ontology/odps/Event#>
+PREFIX prov: <http://ontology.causeex.com/ontology/odps/DataProvenance#>
+PREFIX general: <http://ontology.causeex.com/ontology/odps/GeneralConcepts#>
+PREFIX bbnta1: <http://graph.causeex.com/bbn#>
+PREFIX actor: <http://ontology.causeex.com/ontology/odps/Actor#>
+PREFIX cco: <http://ontology.causeex.com/cameo/CountryCodeOntology/>
+PREFIX doco: <http://purl.org/spar/doco/>
+
+SELECT DISTINCT
+?actor ?eth_cit ?event ?place ?label
+WHERE {
+   {
+      ?actor actor:has_ethnicity ?eth .
+      ?eth actor:related_ethnicity ?ethnicity .
+      filter(?ethnicity not in ( actor:Russian ))
+      bind(?ethnicity as ?eth_cit)
+   } union {
+      ?actor actor:has_citizenship ?cit .
+      ?cit actor:related_country_code ?country .
+      filter(?country not in (cco:CAMEOrus))
+      bind(?country as ?eth_cit)
+   }
+   {?event event:has_affected_actor ?actor . }
+   ?event general:located_at ?place .
+   ?place general:canonical_label ?label .
+   filter(regex(?label, 'Kaliningrad') || regex(?label, 'Russia') || regex(?label, 'Crimea') )
+}
+Limit 100

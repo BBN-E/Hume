@@ -1,0 +1,13 @@
+# trigger _ original event type _ new event type
+
+military ReductionRestrictionOrRemoval MilitaryCapability
+military PeacekeepingOperation MilitaryCapability
+deploy CargoTransportation MilitaryDeployment
+deploys CargoTransportation MilitaryDeployment
+deployed CargoTransportation MilitaryDeployment
+deploying CargoTransportation MilitaryDeployment
+rights HumanRightsAbuse RespectForRightsFreedoms
+go CargoTransportation LocationChange
+went CargoTransportation LocationChange
+goes CargoTransportation LocationChange
+gone CargoTransportation LocationChange

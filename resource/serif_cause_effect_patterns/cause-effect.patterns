@@ -1,0 +1,91 @@
+(cause-effect
+
+(options
+
+(blocked_proposition_types Unreliable)
+
+)
+
+(reference
+
+(nprop (shortcut NOUN_CAUSE) (return CAUSE))
+(vprop (shortcut VERB_CAUSE) (return CAUSE))
+(mprop (shortcut MOD_CAUSE) (block_predicate because since as) (return CAUSE))
+(any-of (shortcut CAUSE) (members VERB_CAUSE NOUN_CAUSE MOD_CAUSE))
+
+(nprop (shortcut NOUN_EFFECT) (return EFFECT))
+(vprop (shortcut VERB_EFFECT) (return EFFECT))
+(mprop (shortcut MOD_EFFECT) (block_predicate because since as) (return EFFECT))
+(any-of (shortcut EFFECT) (members VERB_EFFECT NOUN_EFFECT MOD_EFFECT))
+
+)
+
+(toplevel
+
+(vprop (id cause)
+       (predicate caus*)
+       (args (argument (role <sub>) CAUSE)
+             (argument (role <obj>) EFFECT)))
+
+(vprop (id result-in)
+       (predicate result*)
+       (args (argument (role <sub>) CAUSE)
+             (argument (role in) EFFECT)))
+
+<!-- Worried investors remained idle as the result of two potentially destabilizing domestic developments. -->
+(nprop (id as-a-result)
+       (predicate result)
+       (args (argument (role of) CAUSE))
+       (propmod (role as) EFFECT))
+
+<!-- The collapse was the result of floods -->
+(nprop (id was-result-of)
+       (predicate result*)
+       (args (argument (role of) CAUSE))
+       (propmod (role <obj>)
+                (vprop (predicate be am is are was were been being)
+		       (args (argument (role <sub>) EFFECT)))))
+
+(vprop (id result-when)
+       (predicate result*)
+       (args (argument (role <sub>) EFFECT)
+             (argument (role when) CAUSE)))
+
+(vprop (id led-to)
+       (predicate led lead*)
+       (args (argument (role <sub>) CAUSE)
+             (argument (role to) EFFECT)))
+
+(all-of (id because)
+        (members EFFECT
+	         (anyprop (args (argument (role because) CAUSE)))))
+
+(vprop (id linked-to)
+       (predicate link* attribut*)
+       (args (argument (role <obj>) EFFECT)
+             (argument (role to) CAUSE)))
+
+(vprop (id infection)
+       (predicate kill* infect* poison*)
+       (args (argument (role <sub>)
+       	          (all-of (members NOUN_CAUSE (nprop (predicate that which outbreak infection disease))))))
+       (return EFFECT))
+
+
+<!-- These general as patterns are too imprecise 
+
+(all-of (id because)
+        (members EFFECT
+	         (anyprop (args (argument (role as) VERB_CAUSE)))))
+
+(mprop (id as-mprop)
+       (predicate as)
+       (propmod (role <sub>) VERB_EFFECT)
+       (args (argument (role as) VERB_CAUSE)))
+
+-->
+
+
+)
+
+)

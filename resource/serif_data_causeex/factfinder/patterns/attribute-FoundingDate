@@ -1,0 +1,34 @@
+(FoundingDate
+
+(wordsets
+
+)
+
+(entitylabels
+
+(AGENT1)
+
+)
+
+(reference
+
+<!-- generic AGENT1 reference -->
+(mention	(shortcut 	AGENT1_REF)
+		(return 	(ff_role AGENT1) (ff_fact_type FoundingDate))
+        	(entitylabel    AGENT1)
+)
+
+(value (shortcut DATE) SPECIFIC-DATE (return (ff_role FoundingDate)))
+
+)
+
+(toplevel
+
+(vprop (score_group 1) (score 0.9) (id founded_object)   (predicate founded established) (args (argument (role <obj>) AGENT1_REF) (argument (role <iobj> <temp>) DATE)))
+(vprop (score_group 1) (score 0.9) (id founded_in_mprop) (predicate founded established) (args (argument (role <obj>) AGENT1_REF) (argument (role in on) (mprop (predicate in on) (args (argument (role <temp>) DATE))))))
+
+(mprop (score_group 1) (score 0.9) (id founded_mprop) (predicate founded) (args (argument (role <ref>) AGENT1_REF) (argument (role <temp>) DATE)))
+
+
+)
+)

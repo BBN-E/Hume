@@ -1,0 +1,14 @@
+(per_place_of_birth
+
+ (wordsets)
+
+ (entitylabels (AGENT1))
+
+ (toplevel
+
+
+		<!-- 50   per_place_of_birth ==> noun:village[<ref> = 1][where = verb:born[<obj> = 0]] -->
+		(nprop (id cs2015_per_place_of_birth_20038) (score 0.9) (score_group 1) (predicate village) (args (argument (role <ref>) (mention (return (ff_role per_place_of_birth)) (block AGENT1) (acetype LOC GPE))) (argument (role where) (vprop (predicate born) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_per_place_of_birth_20038)) (entitylabel AGENT1) (acetype PER))))))))
+
+	)
+)

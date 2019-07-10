@@ -1,0 +1,71 @@
+# Run on full CauseEx month 17 docs (Kaliningrad)
+
+job_name: causeex_m17_5files_test.v1
+
+###########
+# Pipeline
+###########
+#stages_to_run: serif,kbp,generic-events,nn-events,event-consolidation,event-event-relations,serialization
+stages_to_run: serif,kbp,generic-events,nn-events,event-consolidation,event-event-relations,serialization,probabilistic-grounding
+jserif_branch: 364-add-event-from-json
+mode: CauseEx
+
+########
+# Serif
+########
+serif_input_sgm_list: /home/hqiu/tmp/causeex.test.list
+serif_input_awake_db: /nfs/raid87/u14/CauseEx/Kaliningrad-Dataset/TwoSix-Extracted-M15-Assessment/awake_dbs/causeex_dbpedia_20170308_m15a_kaliningrad_fix.sqlite
+
+######
+# KBP 
+######
+kbp_input_serifxml_list: GENERATED
+
+##################
+## Generic events
+##################
+generic_events_input_serifxml_list: GENERATED
+
+#######################
+## NN event extraction
+#######################
+nn_events_input_serifxml_list: GENERATED
+nn_events_model_list: /nfs/raid66/u14/users/jfaschin/runjobs/expts/training/cx_0507019_final/w5s50e30f300/fold_0/nn_models.list
+
+
+######################
+# Event consolidation
+######################
+event_consolidation_input_serifxml_list: GENERATED
+event_consolidation_input_metadata_file: /nfs/raid87/u14/CauseEx/Kaliningrad-Dataset/TwoSix-Extracted-M15-Assessment/metadata_files/metadata_190125.txt
+#compatibleEventFile: /nfs/raid87/u10/CauseEx/eventConsolidation/compatible_events.txt
+#argumentRoleEntityTypeFile: /nfs/raid87/u10/CauseEx/eventConsolidation/event_role.entity_type.constraints
+#keywordFile: /nfs/raid87/u10/CauseEx/eventConsolidation/event_type.keywords
+#lemmaFile: /nfs/raid87/u12/ychan/resources/lemma.nv
+copyArgumentSentenceWindow: 1
+
+########################
+# Event-Event relations
+########################
+eer_input_serifxml_list: GENERATED
+eer_input_serif_cause_effect_relations_dir: GENERATED
+eer_input_extra_causal_relations: /nfs/raid87/u14/CauseEx/Kaliningrad-Dataset/TwoSix-Extracted-M15-Assessment/extra_causal_json/m15_causal_json6pm.json
+learnit_pattern_dir: DEFAULT
+learnit_min_freq_event_pairs: 1
+
+##########################
+# Probabilistic grounding
+##########################
+grounding_input: GENERATED
+grounding_config: /nfs/raid87/u14/users/criley/repo/CauseEx/util/python/misc/internal_grounder.config
+
+################
+# Serialization
+################
+serialization_input_serifxml_list: GENERATED
+serialization_input_metadata_file: /nfs/raid87/u14/CauseEx/Kaliningrad-Dataset/TwoSix-Extracted-M15-Assessment/metadata_files/metadata_190125.txt
+serialization_input_factfinder_json_file: GENERATED
+serialization_input_learnit_triple_file: GENERATED
+serialization_input_learnit_event_count_file: GENERATED
+serialization_input_awake_db: /nfs/raid87/u14/CauseEx/Kaliningrad-Dataset/TwoSix-Extracted-M15-Assessment/awake_dbs/causeex_dbpedia_20170308_m15a_with_actor_source.sqlite
+serialization_do_event_uploading: False

@@ -1,0 +1,267 @@
+(per_siblings
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+
+
+		<!-- 4: 162 noun: [brother]   <ref> = 0    <poss> = 1 -->
+		(nprop (id per_siblings_ds_5) (score 0.9) (score_group 1) (predicate brother) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_5)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)))))
+
+		<!-- 5: 137 noun: [brother]   <ref> = 1    <poss> = 0 -->
+		(nprop (id per_siblings_ds_6) (score 0.9) (score_group 1) (predicate brother) (args (argument (role <ref>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_6)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+
+
+
+		<!-- 9: 75 noun: [sister]   <ref> = 1    <poss> = 0 -->
+		(nprop (id per_siblings_ds_10) (score 0.9) (score_group 1) (predicate sister) (args (argument (role <ref>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_10)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+
+		<!-- 11: 67 noun: [sister]   <ref> = 0    <poss> = 1 -->
+		(nprop (id per_siblings_ds_12) (score 0.9) (score_group 1) (predicate sister) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_12)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)))))
+
+		<!-- 12: 66 noun: [brother]   <ref> = 0    of = 1 -->
+		(nprop (id per_siblings_ds_13) (score 0.9) (score_group 1) (predicate brother) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_13)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)))))
+
+
+
+		<!-- 15: 64 {1} brother , {0} -->
+		(regex (id per_siblings_ds_16) (score 0.9) (score_group 1) (re (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "brother")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_16)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 16: 53 noun: [brother]   <ref> = 1    of = 0 -->
+		(nprop (id per_siblings_ds_17) (score 0.9) (score_group 1) (predicate brother) (args (argument (role <ref>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_17)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 17: 52 {0} brother , {1} -->
+		(regex (id per_siblings_ds_18) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_18)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "brother")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))
+
+
+
+		<!-- 20: 36 {1} 's brother , {0} -->
+		(regex (id per_siblings_ds_21) (score 0.9) (score_group 1) (re (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "brother")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_21)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+
+		<!-- 24: 33 {0} sister , {1} -->
+		(regex (id per_siblings_ds_25) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_25)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "sister")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))
+
+
+		<!-- 26: 29 {0} , brother of {1} -->
+		(regex (id per_siblings_ds_27) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_27)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "brother")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))
+
+		<!-- 27: 29 noun: [sister]   <ref> = 0    of = 1 -->
+		(nprop (id per_siblings_ds_28) (score 0.9) (score_group 1) (predicate sister) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_28)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)))))
+
+
+		<!-- 29: 28 set: []   <ref> = noun: [brother]      <poss> = 1    <member> = 0 -->
+		(sprop (id per_siblings_ds_30) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate brother) (args (argument (role <poss>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)))))) (argument (role <member>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_30)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 30: 26 {1} sister , {0} -->
+		(regex (id per_siblings_ds_31) (score 0.9) (score_group 1) (re (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "sister")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_31)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+		<!-- 32: 24 noun: [sister]   <ref> = 1    of = 0 -->
+		(nprop (id per_siblings_ds_33) (score 0.9) (score_group 1) (predicate sister) (args (argument (role <ref>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_33)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 33: 23 {1} , brother of {0} -->
+		(regex (id per_siblings_ds_34) (score 0.9) (score_group 1) (re (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "brother")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_34)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+
+		<!-- 36: 21 {0} 's brother , {1} -->
+		(regex (id per_siblings_ds_37) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_37)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "brother")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))
+
+
+		<!-- 38: 20 {1} sister {0} -->
+		(regex (id per_siblings_ds_39) (score 0.9) (score_group 1) (re (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "sister")) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_39)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+
+		<!-- 41: 20 {0} 's sister , {1} -->
+		(regex (id per_siblings_ds_42) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_42)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "sister")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))
+
+		<!-- 42: 20 set: []   <ref> = noun: [brother]      <poss> = 0    <member> = 1 -->
+		(sprop (id per_siblings_ds_43) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate brother) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_43)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))) (argument (role <member>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)))))
+
+
+
+		<!-- 48: 17 {1} 's sister , {0} -->
+		(regex (id per_siblings_ds_49) (score 0.9) (score_group 1) (re (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "sister")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_49)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+		<!-- 50: 17 noun: [sister]   <poss> = 1    <mod> = 0 -->
+		(nprop (id per_siblings_ds_51) (score 0.9) (score_group 1) (predicate sister) (args (argument (role <poss>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_51)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 51: 17 noun: [brothers]   <ref> = set: []      <member> = 1       <member> = 0 -->
+		(nprop (id per_siblings_ds_52) (score 0.9) (score_group 1) (predicate brothers) (args (argument (role <ref>) (sprop (args (argument (role <member>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) (argument (role <member>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_52)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 52: 17 copula: [is]   <sub> = 0    <obj> = noun: [brother]      of = 1 -->
+		(anyprop (id per_siblings_ds_53) (score 0.9) (score_group 1) (predicate is) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_53)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (nprop (predicate brother) (args (argument (role of) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))))))
+
+
+
+
+
+
+		<!-- 60: 15 {1} brother {0} -->
+		(regex (id per_siblings_ds_61) (score 0.9) (score_group 1) (re (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "brother")) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_61)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 61: 15 {0} sister {1} -->
+		(regex (id per_siblings_ds_62) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_62)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "sister")) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))
+
+
+		<!-- 63: 15 {0} , sister of {1} -->
+		(regex (id per_siblings_ds_64) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_64)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "sister")) (text DONT_ADD_SPACES (string "of")) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))
+
+
+
+
+		<!-- 68: 14 set: []   <ref> = noun: [sister]      <poss> = 1    <member> = 0 -->
+		(sprop (id per_siblings_ds_69) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate sister) (args (argument (role <poss>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)))))) (argument (role <member>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_69)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+
+
+		<!-- 71: 13 {1} older brother , {0} -->
+		(regex (id per_siblings_ds_72) (score 0.9) (score_group 1) (re (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "older")) (text DONT_ADD_SPACES (string "brother")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_72)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+		<!-- 73: 13 copula: [is]   <sub> = 1    <obj> = noun: [brother]      of = 0 -->
+		(anyprop (id per_siblings_ds_74) (score 0.9) (score_group 1) (predicate is) (args (argument (role <sub>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) (argument (role <obj>) (nprop (predicate brother) (args (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_74)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))))))
+
+
+
+		<!-- 76: 12 {0} brother {1} -->
+		(regex (id per_siblings_ds_77) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_77)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "brother")) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))
+
+
+		<!-- 80: 12 noun: [brother]   <poss> = 1    <mod> = 0 -->
+		(nprop (id per_siblings_ds_81) (score 0.9) (score_group 1) (predicate brother) (args (argument (role <poss>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_81)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 81: 12 noun: [brother]   <poss> = 0    <mod> = 1 -->
+		(nprop (id per_siblings_ds_82) (score 0.9) (score_group 1) (predicate brother) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_82)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)))))
+
+
+		<!-- 83: 11 {1} younger brother , {0} -->
+		(regex (id per_siblings_ds_84) (score 0.9) (score_group 1) (re (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "younger")) (text DONT_ADD_SPACES (string "brother")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_84)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+		<!-- 84: 11 set: []   <ref> = noun: [brother]      <ref> = 0       <poss> = 1 -->
+		(sprop (id per_siblings_ds_85) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate brother) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_85)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))))))
+
+
+		<!-- 86: 11 set: []   <member> = noun: [brother]      <poss> = 1    <member> = 0 -->
+		(sprop (id per_siblings_ds_87) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate brother) (args (argument (role <poss>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)))))) (argument (role <member>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_87)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+
+
+
+		<!-- 91: 10 {1} older brother {0} -->
+		(regex (id per_siblings_ds_92) (score 0.9) (score_group 1) (re (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "older")) (text DONT_ADD_SPACES (string "brother")) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_92)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+
+
+		<!-- 99: 10 noun: [sister]   <poss> = 0    <mod> = 1 -->
+		(nprop (id per_siblings_ds_100) (score 0.9) (score_group 1) (predicate sister) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_100)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)))))
+
+		<!-- 100: 10 noun: [brothers]   <ref> = set: []      <member> = 0       <member> = 1 -->
+		(nprop (id per_siblings_ds_101) (score 0.9) (score_group 1) (predicate brothers) (args (argument (role <ref>) (sprop (args (argument (role <member>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_101)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <member>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))))))
+
+
+
+		<!-- 106: 9 set: []   <ref> = noun: [sister]      <poss> = 0    <member> = 1 -->
+		(sprop (id per_siblings_ds_107) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate sister) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_107)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))) (argument (role <member>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)))))
+
+
+		<!-- 108: 9 copula: [is]   <sub> = 1    <obj> = noun: [sister]      of = 0 -->
+		(anyprop (id per_siblings_ds_109) (score 0.9) (score_group 1) (predicate is) (args (argument (role <sub>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) (argument (role <obj>) (nprop (predicate sister) (args (argument (role of) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_109)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))))))
+
+
+
+
+		<!-- 113: 8 {1} younger brother {0} -->
+		(regex (id per_siblings_ds_114) (score 0.9) (score_group 1) (re (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "younger")) (text DONT_ADD_SPACES (string "brother")) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_114)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+
+		<!-- 117: 8 {1} 's sister {0} -->
+		(regex (id per_siblings_ds_118) (score 0.9) (score_group 1) (re (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "sister")) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_118)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+
+
+		<!-- 122: 8 noun: [brother]   <ref> = 1    of = name: []      <ref> = 0 -->
+		(nprop (id per_siblings_ds_123) (score 0.9) (score_group 1) (predicate brother) (args (argument (role <ref>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_123)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))))))
+
+		<!-- 123: 8 modifier: [younger]   <ref> = noun: [brother]      <poss> = 1       <mod> = 0 -->
+		(mprop (id per_siblings_ds_124) (score 0.9) (score_group 1) (predicate younger) (args (argument (role <ref>) (nprop (predicate brother) (args (argument (role <poss>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_124)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))))))
+
+
+
+
+
+
+		<!-- 141: 7 noun: [brother]   <ref> = 0    of = name: []      <ref> = 1 -->
+		(nprop (id per_siblings_ds_142) (score 0.9) (score_group 1) (predicate brother) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_142)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role of) (anyprop (args (argument (role <ref>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))))))
+
+		<!-- 142: 7 noun: [brother]   <ref> = 0    <mod> = 1 -->
+		(nprop (id per_siblings_ds_143) (score 0.9) (score_group 1) (predicate brother) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_143)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)))))
+
+
+
+		<!-- 157: 6 {0} younger brother {1} -->
+		(regex (id per_siblings_ds_158) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_158)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "younger")) (text DONT_ADD_SPACES (string "brother")) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))
+
+		<!-- 158: 6 {0} younger brother , {1} -->
+		(regex (id per_siblings_ds_159) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_159)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "younger")) (text DONT_ADD_SPACES (string "brother")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))
+
+
+		<!-- 161: 6 {0} older brother {1} -->
+		(regex (id per_siblings_ds_162) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_162)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "older")) (text DONT_ADD_SPACES (string "brother")) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))
+
+		<!-- 163: 6 {0} brothers , {1} -->
+		(regex (id per_siblings_ds_164) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_164)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "brothers")) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))
+
+
+		<!-- 165: 6 {0} 's sister {1} -->
+		(regex (id per_siblings_ds_166) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_166)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "sister")) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))
+
+
+		<!-- 168: 6 set: []   <member> = 0    <member> = noun: [brother]      of = 1 -->
+		(sprop (id per_siblings_ds_169) (score 0.9) (score_group 1) (args (argument (role <member>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_169)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <member>) (nprop (predicate brother) (args (argument (role of) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))))))
+
+
+
+		<!-- 171: 6 noun: [brothers]   <ref> = 1    <mod> = 0 -->
+		(nprop (id per_siblings_ds_172) (score 0.9) (score_group 1) (predicate brothers) (args (argument (role <ref>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_172)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 172: 6 noun: [brother]   <ref> = 1    <mod> = 0 -->
+		(nprop (id per_siblings_ds_173) (score 0.9) (score_group 1) (predicate brother) (args (argument (role <ref>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_173)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 173: 6 modifier: [older]   <ref> = noun: [brother]      <poss> = 0       <mod> = 1 -->
+		(mprop (id per_siblings_ds_174) (score 0.9) (score_group 1) (predicate older) (args (argument (role <ref>) (nprop (predicate brother) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_174)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))))))
+
+		<!-- 174: 6 copula: [is]   <sub> = 0    <obj> = noun: [brother]      <poss> = 1 -->
+		(anyprop (id per_siblings_ds_175) (score 0.9) (score_group 1) (predicate is) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_175)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))) (argument (role <obj>) (nprop (predicate brother) (args (argument (role <poss>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))))))))
+
+
+		<!-- 193: 5 {1} 's younger brother {0} -->
+		(regex (id per_siblings_ds_194) (score 0.9) (score_group 1) (re (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)) (text DONT_ADD_SPACES (string "'s")) (text DONT_ADD_SPACES (string "younger")) (text DONT_ADD_SPACES (string "brother")) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_194)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))
+
+
+
+
+
+		<!-- 212: 5 set: []   <ref> = noun: [sister]      <ref> = 1       <poss> = 0 -->
+		(sprop (id per_siblings_ds_213) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate sister) (args (argument (role <ref>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_213)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))))))
+
+
+		<!-- 214: 5 set: []   <ref> = noun: [brother]      of = 1    <member> = 0 -->
+		(sprop (id per_siblings_ds_215) (score 0.9) (score_group 1) (args (argument (role <ref>) (nprop (predicate brother) (args (argument (role of) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER)))))) (argument (role <member>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_215)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER)))))
+
+		<!-- 215: 5 set: []   <member> = noun: [brother]      <poss> = 1       <mod> = 0 -->
+		(sprop (id per_siblings_ds_216) (score 0.9) (score_group 1) (args (argument (role <member>) (nprop (predicate brother) (args (argument (role <poss>) (mention (return (ff_role per_siblings)) (min-entitylevel DESC) (block AGENT1) (acetype PER))) (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type per_siblings_ds_216)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype PER))))))))
+	)
+)

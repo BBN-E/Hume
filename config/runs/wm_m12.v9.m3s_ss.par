@@ -1,0 +1,78 @@
+
+job_name: wm_m12.v9.m3s_ss.v1
+
+stages_to_run: serif,generic-events,nn-events,event-consolidation,probabilistic-grounding,event-timeline
+jserif_branch: 364-add-event-from-json
+mode: WorldModelers
+
+
+################
+## Quickrun mode
+#################
+serif_server_mode_endpoint: None
+nn_event_server_mode_endpoint: None
+
+########
+# Serif
+########
+serif_input_sgm_list: /home/hqiu/Public/M3S_201811_FINAL/sgm.list
+serif_input_awake_db: /nfs/raid87/u10/shared/Hume/common/serif/wm_eval_before_060119.sqlite
+
+
+
+##################
+## Generic events
+##################
+generic_events_input_serifxml_list: GENERATED
+
+#######################
+## NN event extraction
+#######################
+nn_events_input_serifxml_list: GENERATED
+nn_events_model_list: /nfs/raid87/u10/shared/Hume/wm/nlplingo/wm_models_virtual/060619/model.list
+nn_events_arg_model_path: None
+
+
+######################
+# Event consolidation
+######################
+event_consolidation_input_serifxml_list: GENERATED
+event_consolidation_input_metadata_file: /home/hqiu/Public/M3S_201811_FINAL/metadata.txt
+copyArgumentSentenceWindow: 1
+
+
+######################
+# Event timeline
+######################
+event_timeline_input_serifxml_list: GENERATED
+
+
+##########################
+# Probabilistic grounding
+##########################
+grounding_input: GENERATED
+
+################
+# Event-Event relations
+################
+eer_input_serifxml_list: GENERATED
+eer_input_serif_cause_effect_relations_dir: GENERATED
+learnit_pattern_dir: DEFAULT
+learnit_min_freq_event_pairs: 1
+
+################
+# Serialization
+################
+serialization_mode: WorldModelers
+internal_ontology_dir: /nfs/ld100/u10/bmin/repo_clean_for_exp_wm_m12_hackathon/CauseEx/ontology/internal_ontology/hume/
+serialization_input_serifxml_list: GENERATED
+serialization_input_metadata_file: /home/hqiu/Public/M3S_201811_FINAL/metadata.txt
+serialization_input_trigger_finder_file: NA
+serialization_input_pdtb_json_file: /nfs/mercury-04/u42/bmin/projects/WM/m12/empty.json
+serialization_input_serif_cause_effect_relations_dir: /nfs/mercury-04/u42/bmin/projects/WM/m12/empty.json
+serialization_input_learnit_cause_effect_relations_file: GENERATED
+serialization_input_factfinder_json_file: /nfs/mercury-04/u42/bmin/projects/WM/m12/empty.json
+serialization_input_learnit_triple_file: GENERATED
+serialization_input_learnit_event_count_file: GENERATED
+serialization_input_extra_causal_relations: /nfs/mercury-04/u42/bmin/projects/WM/m12/empty.json 
+serialization_do_event_uploading: False

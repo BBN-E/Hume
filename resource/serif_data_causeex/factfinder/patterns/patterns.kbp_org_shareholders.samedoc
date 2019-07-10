@@ -1,0 +1,28 @@
+(org_shareholders
+
+ (wordsets)
+
+ (entitylabels (AGENT1))
+
+ (toplevel
+
+		<!-- 48   org_shareholders ==> verb:pay[<sub> = 1][in = noun:shares[in = noun:company[<ref> = 0]]] -->
+		(vprop (id cs2015_org_shareholders_20053) (score 0.9) (score_group 1) (predicate pay) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (block AGENT1) (acetype PER ORG GPE))) (argument (role in) (nprop (predicate shares) (args (argument (role in) (nprop (predicate company) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_shareholders_20053)) (entitylabel AGENT1) (acetype ORG)))))))))))
+
+		<!-- 48   org_shareholders ==> verb:pay[<sub> = 1][in = noun:shares[in = 0]] -->
+		(vprop (id cs2015_org_shareholders_20054) (score 0.9) (score_group 1) (predicate pay) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (block AGENT1) (acetype PER ORG GPE))) (argument (role in) (nprop (predicate shares) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_shareholders_20054)) (entitylabel AGENT1) (acetype ORG))))))))
+
+		<!-- 48   org_shareholders ==> verb:offering[<obj> = verb:pay[<sub> = 1][in = noun:shares[in = 0]]] -->
+		(vprop (id cs2015_org_shareholders_20055) (score 0.9) (score_group 1) (predicate offering) (args (argument (role <obj>) (vprop (predicate pay) (args (argument (role <sub>) (mention (return (ff_role org_shareholders)) (block AGENT1) (acetype PER ORG GPE))) (argument (role in) (nprop (predicate shares) (args (argument (role in) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_shareholders_20055)) (entitylabel AGENT1) (acetype ORG)))))))))))
+
+		<!-- 40   org_shareholders ==> verb:selling[<obj> = 0][to = name:[<ref> = 1]] -->
+		(vprop (id cs2015_org_shareholders_20059) (score 0.9) (score_group 1) (predicate selling) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_shareholders_20059)) (entitylabel AGENT1) (acetype ORG))) (argument (role to) (anyprop (args (argument (role <ref>) (mention (return (ff_role org_shareholders)) (block AGENT1) (acetype PER ORG GPE))))))))
+
+		<!-- 40   org_shareholders ==> verb:gain[<obj> = noun:control[of = noun:board[<mod> = 0]]][<sub> = 1] -->
+		(vprop (id cs2015_org_shareholders_20063) (score 0.9) (score_group 1) (predicate gain) (args (argument (role <obj>) (nprop (predicate control) (args (argument (role of) (nprop (predicate board) (args (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_shareholders_20063)) (entitylabel AGENT1) (acetype ORG))))))))) (argument (role <sub>) (mention (return (ff_role org_shareholders)) (block AGENT1) (acetype PER ORG GPE)))))
+
+		<!-- 40   org_shareholders ==> verb:gain[<obj> = noun:control[of = noun:board[<mod> = 0]]][<sub> = pronoun:he[<ref> = 1]] -->
+		(vprop (id cs2015_org_shareholders_20064) (score 0.9) (score_group 1) (predicate gain) (args (argument (role <obj>) (nprop (predicate control) (args (argument (role of) (nprop (predicate board) (args (argument (role <mod>) (mention (return (ff_role AGENT1) (ff_fact_type cs2015_org_shareholders_20064)) (entitylabel AGENT1) (acetype ORG))))))))) (argument (role <sub>) (anyprop (predicate he) (args (argument (role <ref>) (mention (return (ff_role org_shareholders)) (block AGENT1) (acetype PER ORG GPE))))))))
+
+	)
+)

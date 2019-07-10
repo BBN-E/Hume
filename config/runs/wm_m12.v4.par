@@ -1,0 +1,75 @@
+# Run on full CauseEx month 15 docs (Kaliningrad)
+
+job_name: wm_m12.v4
+
+stages_to_run: nn-events,event-consolidation,learnit,serialization
+jserif_branch: 364-add-event-from-json
+
+batch_size: 4 
+
+########
+# Serif
+########
+serif_input_sgm_list: /home/hqiu/massive/Public/wm_m12_v1/sgm.list
+serif_input_awake_db: /nfs/raid87/u14/CauseEx/Kaliningrad-Dataset/TwoSix-Extracted-M15-Assessment/awake_dbs/causeex_dbpedia_20170308_m15a_kaliningrad_fix.sqlite
+
+######
+# KBP 
+######
+kbp_input_serifxml_list: /nfs/raid87/u14/users/bmin/Runjobs/expts/causeex_pipeline/wm_m12.v3/serif_serifxml.list.small
+
+################################
+## NN Entity Typing And Linking
+################################
+nn_entity_input_serifxml_list: /nfs/raid87/u14/users/bmin/Runjobs/expts/causeex_pipeline/wm_m12.v3/kbp_serifxml.list.small
+types_map_file: /nfs/ld100/u10/bmin/repo_clean_for_exp/CauseEx/experiments/causeex_pipeline/resources/namelists/kaliningrad.lists
+ontology_file: /nfs/raid87/u13/wm_ontologies/composite_hume_ontology.yaml
+nn_typing_model_prefix: wm_m6_plus_isi
+nn_entity_to_event_type: MILITARY_EXERCISES:MilitaryExercise
+
+##################
+## Generic events
+##################
+generic_events_input_serifxml_list: GENERATED
+
+#######################
+## NN event extraction
+#######################
+nn_events_input_serifxml_list: /nfs/raid87/u14/users/bmin/Runjobs/expts/causeex_pipeline/wm_m12.v4/generic_events_serifxml_out.list
+nn_events_model_list: /nfs/ld100/u10/bmin/repo_clean_for_exp/CauseEx/experiments/causeex_pipeline/nn_models/wm_m12/list.txt
+nn_events_arg_model_path: /nfs/raid66/u14/users/jfaschin/runjobs/expts/nlplingo_tf/ace_09062018-role_verify
+
+
+##############
+# PDTB parser
+##############
+pdtb_input_serifxml_list: GENERATED
+
+######################
+# Event consolidation
+######################
+event_consolidation_input_serifxml_list: GENERATED
+
+################
+# LearnIt
+################
+learnit_input_serifxml_list: GENERATED
+learnit_input_serif_cause_effect_relations_dir: GENERATED
+learnit_input_pattern_dir: DEFAULT
+learnit_min_freq_event_pairs: 1
+
+################
+# Serialization
+################
+serialization_mode: CauseEx
+serialization_input_serifxml_list: GENERATED
+serialization_input_metadata_file: /home/hqiu/massive/Public/wm_m12_v1/metadata.txt
+serialization_input_trigger_finder_file: NA
+serialization_input_pdtb_json_file: GENERATED
+serialization_input_serif_cause_effect_relations_dir: GENERATED
+serialization_input_learnit_cause_effect_relations_file: GENERATED
+serialization_input_factfinder_json_file: GENERATED
+serialization_input_learnit_triple_file: GENERATED
+serialization_input_learnit_event_count_file: GENERATED
+serialization_input_extra_causal_relations:  /nfs/raid87/u14/CauseEx/Kaliningrad-Dataset/TwoSix-Extracted-M15-Assessment/extra_causal_json/m15_causal_json6pm.json
+serialization_do_event_uploading: False

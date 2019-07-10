@@ -1,0 +1,27 @@
+(org_alternate_names
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+		<!-- 23: 1 0 -LRB- 1 -RRB- -->
+		(regex (id org_alternate_names_24) (score 0.9) (score_group 1)
+			(re
+				(mention (return (ff_role AGENT1) (ff_fact_type org_alternate_names_24)) (acetype ORG) (mentiontype name)) 
+				(text DONT_ADD_SPACES (string "-LRB-"))
+				(mention (return (ff_role org_alternate_names)) (acetype ORG) (mentiontype name))
+				(text DONT_ADD_SPACES (string "-RRB-"))
+			)
+		)
+
+                (regex (id org_alternate_names_25) (score 0.9) (score_group 1)
+                        (re
+                                (mention (return (ff_role org_alternate_names)) (acetype ORG) (mentiontype name))
+                                (text DONT_ADD_SPACES (string "-LRB-"))
+                                (mention (return (ff_role AGENT1) (ff_fact_type org_alternate_names_25)) (acetype ORG) (mentiontype name))
+                                (text DONT_ADD_SPACES (string "-RRB-"))
+                        )
+                )
+	)
+)

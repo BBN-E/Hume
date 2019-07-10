@@ -1,0 +1,44 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix causal: <http://ontology.causeex.com/ontology/odps/CauseEffect#>
+prefix event: <http://ontology.causeex.com/ontology/odps/Event#>
+PREFIX prov: <http://ontology.causeex.com/ontology/odps/DataProvenance#>
+PREFIX general: <http://ontology.causeex.com/ontology/odps/GeneralConcepts#>
+PREFIX bbnta1: <http://graph.causeex.com/bbn#>
+PREFIX actor: <http://ontology.causeex.com/ontology/odps/Actor#>
+PREFIX cco: <http://ontology.causeex.com/cameo/CountryCodeOntology/>
+PREFIX doco: <http://purl.org/spar/doco/>
+
+SELECT DISTINCT
+?place_label ?tertiary_type ?tertiary ?causal_type3 ?secondary_type ?secondary ?causal_type2 ?direct_type ?direct ?causal_type ?origin_type ?origin
+WHERE {
+
+      ?ca3 a causal:CausalAssertion ;
+        causal:has_effect ?tertiary .
+      Values ?causal_type3 { causal:has_cause causal:has_catalyst causal:has_precondition }
+      ?tertiary a ?tertiary_type .
+      {
+      ?tertiary general:located_at ?place .
+      optional {?place general:canonical_label ?place_label .}
+      }
+      ?ca3 ?causal_type3 ?secondary .
+      ?secondary a ?secondary_type .
+
+
+    optional {
+      ?ca2 a causal:CausalAssertion ;
+        causal:has_effect ?secondary .
+      Values ?causal_type2 { causal:has_cause causal:has_catalyst causal:has_precondition }
+      ?ca2 ?causal_type2 ?direct .
+      ?direct a ?direct_type .
+
+      optional {
+        ?ca a causal:CausalAssertion ;
+          causal:has_effect ?direct .
+        Values ?causal_type { causal:has_cause causal:has_catalyst causal:has_precondition }
+        ?ca ?causal_type ?origin .
+        ?origin a ?origin_type .
+      }
+    }
+}
+Limit 100

@@ -1,0 +1,47 @@
+READER SerifXMLReader
++serifxml_dir+
++metadata_file+
++mode+
++event_coreference_file+
+
+RESOLVER EntityAddPropertyResolver
+
+RESOLVER CountryCodePropertyResolver
+
+RESOLVER BadRelationResolver
+
+RESOLVER RedundantEventResolver
+
+RESOLVER RedundantRelationResolver
+
+RESOLVER PrecisionResolver
+
+RESOLVER KbUnificationResolver
+
+RESOLVER ExternalEventURIResolver
++event_yaml+
++external_ontology_flags+
++should_go_up_instead_of_using_backup_namespaces+
++bbn_namespace+
+
+RESOLVER AttachGeoNameResolver
++ua_geoid_txt_file_path+
+
+RESOLVER EntityMentionNumericResolver
+
+SERIALIZER KBPickleSerializer
++pickle_output_file+
+
+SERIALIZER WMTabularFormatSerializer
++metadata_file+
++tabular_output_file+
+
+SERIALIZER JSONLDSerializer
++jsonld_output_file+
++mode+
+
+SERIALIZER VisualizationSerializer
++json_graph_file+
+
+
+

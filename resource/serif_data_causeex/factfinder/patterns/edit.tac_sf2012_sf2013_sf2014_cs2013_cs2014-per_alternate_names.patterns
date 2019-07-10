@@ -1,0 +1,49 @@
+(per_alternate_names
+
+	(wordsets)
+
+	(entitylabels (AGENT1))
+
+	(toplevel
+
+		<!-- 8 {0} was born {1} -->
+		(regex (id per_alternate_names_tac_5) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_alternate_names_tac_400000)) (acetype PER)) (text DONT_ADD_SPACES (string "was")) (text DONT_ADD_SPACES (string "born")) (mention (return (ff_role per_alternate_names)) (acetype PER) (mentiontype name))))
+
+		<!-- 4 verb:changing[<obj> = noun:name[<poss> = 0]][to = 1] -->
+		(vprop (id per_alternate_names_tac_27) (score 0.9) (score_group 1) (predicate changing) (args (argument (role <obj>) (nprop (predicate name) (args (argument (role <poss>) (mention (return (ff_role AGENT1) (ff_fact_type per_alternate_names_tac_400001)) (acetype PER)))))) (argument (role to) (mention (return (ff_role per_alternate_names)) (acetype PER) (mentiontype name)))))
+
+		<!-- 4 verb:known[<obj> = 0][as = 1] -->
+		(vprop (id per_alternate_names_tac_4) (score 0.9) (score_group 1) (predicate known) (args (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type per_alternate_names_tac_400002)) (acetype PER))) (argument (role as) (mention (return (ff_role per_alternate_names)) (acetype PER) (mentiontype name)))))
+
+		<!-- 4 verb:known[<obj> = pronoun:he[<ref> = 0]][as = 1] -->
+		(vprop (id per_alternate_names_tac_5) (score 0.9) (score_group 1) (predicate known) (args (argument (role <obj>) (anyprop (predicate he) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_alternate_names_tac_400003)) (acetype PER)))))) (argument (role as) (mention (return (ff_role per_alternate_names)) (acetype PER) (mentiontype name)))))
+
+		<!-- 3 verb:born[<iobj> = 1][<obj> = pronoun:who[<ref> = 0]] -->
+		(vprop (id per_alternate_names_tac_42) (score 0.9) (score_group 1) (predicate born) (args (argument (role <iobj>) (mention (return (ff_role per_alternate_names)) (acetype PER) (mentiontype name))) (argument (role <obj>) (anyprop (predicate who) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_alternate_names_tac_400004)) (acetype PER))))))))
+
+		<!-- 3 {0} , born {1} -->
+		(regex (id per_alternate_names_tac_41) (score 0.9) (score_group 1) (re (mention (return (ff_role AGENT1) (ff_fact_type per_alternate_names_tac_400005)) (acetype PER)) (text DONT_ADD_SPACES (string ",")) (text DONT_ADD_SPACES (string "born")) (mention (return (ff_role per_alternate_names)) (acetype PER) (mentiontype name))))
+
+		<!-- 2 verb:went[<sub> = pronoun:who[<ref> = 0]][by = 1] -->
+		(vprop (id per_alternate_names_tac_6) (score 0.9) (score_group 1) (predicate went) (args (argument (role <sub>) (anyprop (predicate who) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_alternate_names_tac_400006)) (acetype PER)))))) (argument (role by) (mention (return (ff_role per_alternate_names)) (acetype PER) (mentiontype name)))))
+
+		<!-- 2 {1} , {0}&already known as {1}&{0} became an -->
+		(regex (id per_alternate_names_tac_70) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "already")) (text DONT_ADD_SPACES (string "known")) (text DONT_ADD_SPACES (string "as")) (mention (return (ff_role per_alternate_names)) (acetype PER) (mentiontype name)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_alternate_names_tac_400007)) (acetype PER)) (text DONT_ADD_SPACES (string "became")) (text DONT_ADD_SPACES (string "an"))))
+
+		<!-- 2 {1} , {0}&known as {1}&{0} became -->
+		(regex (id per_alternate_names_tac_63) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "known")) (text DONT_ADD_SPACES (string "as")) (mention (return (ff_role per_alternate_names)) (acetype PER) (mentiontype name)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_alternate_names_tac_400008)) (acetype PER)) (text DONT_ADD_SPACES (string "became"))))
+
+		<!-- 2 verb:born[<iobj> = 1][<obj> = pronoun:he[<ref> = 0]] -->
+		(vprop (id per_alternate_names_tac_83) (score 0.9) (score_group 1) (predicate born) (args (argument (role <iobj>) (mention (return (ff_role per_alternate_names)) (acetype PER) (mentiontype name))) (argument (role <obj>) (anyprop (predicate he) (args (argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type per_alternate_names_tac_400009)) (acetype PER))))))))
+
+		<!-- 2 verb:changing[<sub> = 0][to = 1] -->
+		(vprop (id per_alternate_names_tac_69) (score 0.9) (score_group 1) (predicate changing) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_alternate_names_tac_400010)) (acetype PER))) (argument (role to) (mention (return (ff_role per_alternate_names)) (acetype PER) (mentiontype name)))))
+
+		<!-- 2 verb:went[<sub> = 0][by = 1] -->
+		(vprop (id per_alternate_names_tac_9) (score 0.9) (score_group 1) (predicate went) (args (argument (role <sub>) (mention (return (ff_role AGENT1) (ff_fact_type per_alternate_names_tac_400011)) (acetype PER))) (argument (role by) (mention (return (ff_role per_alternate_names)) (acetype PER) (mentiontype name)))))
+
+		<!-- 2 {1} , {0}&known as {1} -->
+		(regex (id per_alternate_names_tac_79) (score 0.9) (score_group 1) (re (text DONT_ADD_SPACES (string "known")) (text DONT_ADD_SPACES (string "as")) (mention (return (ff_role per_alternate_names)) (acetype PER) (mentiontype name)) (text DONT_ADD_SPACES (string ",")) (mention (return (ff_role AGENT1) (ff_fact_type per_alternate_names_tac_400012)) (acetype PER))))
+
+	)
+)

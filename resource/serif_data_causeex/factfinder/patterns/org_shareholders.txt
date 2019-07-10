@@ -1,0 +1,31 @@
+(org_shareholders
+
+ (wordsets)
+
+ (entitylabels (AGENT1))
+
+ (toplevel
+ 
+  <!-- He holds shares in Ion Exchange. -->
+  (regex (id org_shareholders_100000) (score 0.9) (score_group 1) 
+   (re
+    (mention (return (ff_role org_shareholders)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE))
+    (text DONT_ADD_SPACES (string "(hold|held|buy|bought|has|have|had) shares (in|of)")) 
+    (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders_100000)) (min-entitylevel DESC)(entitylabel AGENT1) (acetype ORG))
+   )
+  )
+
+  (vprop (id org_shareholders_100001) (score 0.9) (score_group 1) (predicate hold* held purchase* buy bought) 
+   (args 
+    (argument (role <sub>) (mention (return (ff_role org_shareholders)) (min-entitylevel DESC) (block AGENT1) (acetype PER ORG GPE)))
+    (argument (role <obj>) 
+     (nprop (predicate share*) 
+      (args 
+       (argument (role in of <poss>) (mention (return (ff_role AGENT1) (ff_fact_type org_shareholders_100001)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))
+      )
+     )
+    )
+   )
+  )
+  )
+  )

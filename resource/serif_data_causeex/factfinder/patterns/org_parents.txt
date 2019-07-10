@@ -1,0 +1,47 @@
+(org_parents
+
+        (wordsets)
+
+        (entitylabels (AGENT1))
+
+        (toplevel
+		
+		<!-- # John works for the Knight Ridder newspaper chain, which published the Miami Herald and the Bradenton Herald. -->
+(vprop (id org_parents_100000) (score 0.9) (score_group 1) (predicate publish* include*) 
+(args 
+(argument (role <sub>) (mention (return (ff_role org_parents)) (min-entitylevel DESC) (block AGENT1)(acetype ORG GPE))) 
+(argument (role <obj>) 
+(mprop (predicate contractor) 
+(args 
+(argument (role <member>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_100000)) (min-entitylevel DESC) (entitylabel AGENT1)  (acetype ORG)))
+)
+)
+)
+)
+)
+
+<!-- It sold The Detroit Free Press earlier. -->
+(vprop (id org_parents_100001) (score 0.9) (score_group 1) (predicate sell sold purchase buy bought)
+ (args 
+ (argument (role <sub>) (mention (return (ff_role org_parents)) (min-entitylevel DESC) (block AGENT1) (acetype ORG GPE))) 
+ (argument (role <obj>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_100001)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))
+ )
+ )
+
+ <!-- # John works for the Miami Herald, another former Knight Ridder publication. -->
+(nprop (id org_parents_100002) (score 0.9) (score_group 1) (predicate publication company subsidiary unit) 
+(args 
+(argument (role of <unknown> <poss>) (mention (return (ff_role org_parents)) (min-entitylevel DESC) (block AGENT1) (acetype ORG GPE))) 
+(argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_100002)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))
+)
+)
+
+<!--  ORG at ORG -->
+(mprop (id org_parents_100003) (score 0.9) (score_group 1) (predicate of at) 
+(args 
+(argument (role at of <unknown> <poss>) (mention (return (ff_role org_parents)) (min-entitylevel DESC) (block AGENT1) (acetype ORG GPE))) 
+(argument (role <ref>) (mention (return (ff_role AGENT1) (ff_fact_type org_parents_100003)) (min-entitylevel DESC) (entitylabel AGENT1) (acetype ORG)))
+)
+)
+        )
+)

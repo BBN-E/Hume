@@ -1,0 +1,19 @@
+(per_spouse_serif
+
+(wordsets)
+
+(entitylabels (AGENT1))
+
+(reference)
+
+(toplevel
+
+(event (fulltype Life.Marry Life.Divorce) (id mapping_1) (score 1.0) (score_group 1)
+        (args
+                (argument (mention (return (ff_role AGENT1) (ff_fact_type per_spouse_serif)) (entitylabel AGENT1)) (role Person))
+                (argument (mention (return (ff_role per_spouse_serif)) (min-entitylevel NAME) (acetype PER)) (role Person))
+        )
+)
+
+)
+)
