@@ -1,0 +1,74 @@
+
+
+############
+## Pipeline
+############
+job_name: hume_test.scheduler_test.bert.050620
+
+stages_to_run: bert
+mode: CauseEx
+
+num_of_batches_global: 24
+max_number_of_tokens_per_sentence: 128
+only_cpu_available: true
+breaking_point: 10000
+number_of_batches_pyserif: 1
+number_of_batches_bert_io: 24
+number_of_batches_bert_cpu: 1
+single_bert_thread_mode: true
+
+
+################
+# CDR digestion
+################
+input_cdr_list: /nfs/raid88/u10/users/hqiu/raw_corpus/cx/cx_sams_small_testset.list
+
+
+metadata_file: /d4m/ears/expts/46850_CX_043020_v3/expts/hume_test.041420.cx.v1/cdr_ingestion/metadata_all.txt
+########
+# Serif
+########
+serif_input_sgm_list: GENERATED
+serif_input_awake_db: /nfs/raid87/u10/shared/Hume/common/serif/causeex_dbpedia_20170308_collab2.sqlite
+serif_fast_mode: false
+
+#######
+## BERT
+########
+bert_input_serifxml_list: /d4m/ears/expts/46850_CX_043020_v3/expts/hume_test.041420.cx.v1/learnit_decoder/cserif_causal_json/cserif_causal_json_serif.list
+bert_layers: -1
+
+######
+# KBP
+######
+kbp_input_serifxml_list: GENERATED
+
+
+####################################
+## LearnIt  Decoder
+#####################################
+learnit_decoder_input_serifxml_list: GENERATED
+learnit_event_and_event_arg_pattern_dir: DEFAULT
+learnit_event_event_relation_pattern_dir: DEFAULT
+input_serif_cause_effect_relations_dir:GENERATED
+generic_event_noun_whitelist: GENERATED
+generic_event_blacklist: GENERATED
+
+######################
+# PySerif
+######################
+pyserif_input_serifxml_list: /d4m/ears/expts/46850_CX_043020_v3/expts/hume_test.041420.cx.v1/learnit_decoder/cserif_causal_json/cserif_causal_json_serif.list
+#pyserif_input_serifxml_list: /home/hqiu/tmp/200_cserif_json.list
+copyArgumentSentenceWindow: 1
+bert_npz_filelist: /d4m/ears/expts/46850_CX_043020_v3/expts/hume_test.041420.cx.v1/bert/bert_npz.list
+grounding_mode: centroids_only
+
+################
+# Serialization
+################
+serialization_input_awake_db: /nfs/raid87/u10/shared/Hume/common/serif/causeex_dbpedia_20170308_collab2.sqlite
+serialization_input_serifxml_list: GENERATED
+serialization_input_factfinder_json_file: GENERATED
+serialization_input_learnit_triple_file: GENERATED
+serialization_input_learnit_event_count_file: GENERATED
+serialization_do_event_uploading: False

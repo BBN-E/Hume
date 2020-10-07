@@ -1,0 +1,9 @@
+{
+  "embeddings_file": "/home/hqiu/resource/glove.6B.50d.p",
+  "min_groundings": 5,
+  "threshold": 0.7,
+  "external_ontology_yaml": "/home/hqiu/resource/hume_ontology_with_metadata.20191007.yaml",
+  "grounding_list_dir": "/home/hqiu/grounding_cache_test",
+  "internal_ontology_yaml": "/home/hqiu/Hume_repo/Hume/resource/ontologies/event_ontology.yaml",
+  "exemplars_json": "/home/hqiu/resource/data_example_events.json"
+}

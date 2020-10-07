@@ -1,0 +1,12 @@
+JAVA_CLASSPATH
++doc_resolver_jar_path+
+
+IMPLEMENTATIONS
++textopen_root+/src/python/serif/model/impl/java_doc_resolver.py
+
+# EC Magnitude
+JAVA_BASE_MODEL JavaDocResolverModel
+# Resolvers
+resolvers ClearEventsResolver,EventFactorMagnitudeResolver,EventEventRelationReAttachResolver,StandaloneGenericEventPruner,SimpleEventCreator
+EventFactorMagnitudeResolver.propertiesFile +propertiesFile+
+EventFactorMagnitudeResolver.reverseFactorTypesFile +reverseFactorTypesFile+

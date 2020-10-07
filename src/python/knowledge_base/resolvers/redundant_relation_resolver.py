@@ -1,14 +1,12 @@
 import sys, os, codecs
 from knowledge_base import KnowledgeBase
-from kb_resolver import KBResolver
-from unidecode import unidecode
-
+from resolvers.kb_resolver import KBResolver
 class RedundantRelationResolver(KBResolver):
     def __init__(self):
         pass
 
     def resolve(self, kb):
-        print "RedundantRelationResolver RESOLVE"
+        print("RedundantRelationResolver RESOLVE")
 
         resolved_kb = KnowledgeBase()
         super(RedundantRelationResolver, self).copy_all(resolved_kb, kb)
@@ -31,7 +29,7 @@ class RedundantRelationResolver(KBResolver):
                 sentences_to_relation_mention_list[k].append(relation_mention)
 
         relation_mentions_to_remove = set()
-        for sentence_pair, relation_mention_list in sentences_to_relation_mention_list.iteritems():
+        for sentence_pair, relation_mention_list in sentences_to_relation_mention_list.items():
             # Essentially looking at the relations mentions for a particular sentence here
             for rm1 in relation_mention_list:
                 for rm2 in relation_mention_list:
@@ -42,7 +40,7 @@ class RedundantRelationResolver(KBResolver):
                     r2 = relation_mention_to_relation[rm2]
                     
                     if rm1.is_similar_and_better_than(rm2, r1.relation_type, r2.relation_type):
-                        #print "Throwing out: " + rm2.id + " because it's worse than: " + rm1.id
+                        #print("Throwing out: " + rm2.id + " because it's worse than: " + rm1.id)
                         relation_mentions_to_remove.add(rm2)
 
         for relid, relation in kb.get_relations():
@@ -75,15 +73,15 @@ class RedundantRelationResolver(KBResolver):
                     sentences_to_relation_mention_list[k] = []
                 sentences_to_relation_mention_list[k].append(relation_mention)
        
-        for sentence_pair, relation_mention_list in sentences_to_relation_mention_list.iteritems():
+        for sentence_pair, relation_mention_list in sentences_to_relation_mention_list.items():
             o.write("------------------------------------------------------------\n")
             num_relation_mentions = len(relation_mention_list)
             
             o.write(sentence_pair[0].id + " " + sentence_pair[1].id  + "\n" + str(num_relation_mentions) + "\n")
 
-            o.write(unidecode(sentence_pair[0].text) + "\n")
+            o.write(sentence_pair[0].text + "\n")
             if sentence_pair[1] != sentence_pair[0]:
-                o.write(unidecode(sentence_pair[1].text) + "\n")
+                o.write(sentence_pair[1].text + "\n")
 
             for relation_mention in relation_mention_list:
                 relation = relation_mention_to_relation[relation_mention]

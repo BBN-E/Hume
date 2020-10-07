@@ -1,7 +1,5 @@
-import unidecode
-
 from knowledge_base import KnowledgeBase
-from kb_resolver import KBResolver
+from resolvers.kb_resolver import KBResolver
 
 # Look at constituent entities of each entity group and choose a 
 # single entity type for the group. 
@@ -14,7 +12,7 @@ class EntityGroupEntityTypeResolver(KBResolver):
         pass
 
     def resolve(self, kb):
-        print "EntityGroupEntityTypeResolver RESOLVE"
+        print("EntityGroupEntityTypeResolver RESOLVE")
         
         resolved_kb = KnowledgeBase()
         super(EntityGroupEntityTypeResolver, self).copy_all(resolved_kb, kb)
@@ -31,7 +29,7 @@ class EntityGroupEntityTypeResolver(KBResolver):
             # Get best entity type from dict
             best_entity_type = None
             highest_count = None
-            for et, count in entity_type_to_count.iteritems():
+            for et, count in entity_type_to_count.items():
                 if best_entity_type is None or count > highest_count:
                     best_entity_type = et
                     highest_count = count

@@ -1,0 +1,42 @@
+IMPLEMENTATIONS
++textopen_root+/src/python/serif/model/impl/event_mention/probabilistic_grounding.py
+
+# PG Event
+BASE_MODEL ProbabilisticGrounding
+probabilictic_grounding_main_entry +probabilictic_grounding_main_entry+
+max_number_of_tokens_per_sentence +max_number_of_tokens_per_sentence+
+which_ontology CAUSEEX
+keywords +keywords+
+stopwords +stopwords+
+event_ontology_yaml +ontologyFile+
+internal_ontology_yaml NONE
+grounding_mode +grounding_mode+
+embeddings +embeddings+
+exemplars +event_exemplars+
+bert_centroids +event_centroid_file+
+bert_npz_file_list +bert_npz_file_list+
+n_best +n_best+
+only_use_bert_from_root false
+blacklist +event_blacklist+
+event_mention_typing_field event_types
+threshold +threshold+
+
+# PG ICM
+BASE_MODEL ProbabilisticGrounding
+probabilictic_grounding_main_entry +probabilictic_grounding_main_entry+
+max_number_of_tokens_per_sentence +max_number_of_tokens_per_sentence+
+which_ontology ICM
+keywords +keywords+
+stopwords +stopwords+
+event_ontology_yaml +cfOntologyFile+
+internal_ontology_yaml NONE
+grounding_mode +grounding_mode+
+embeddings +embeddings+
+exemplars +icm_exemplars+
+bert_centroids +icm_centroid_file+
+bert_npz_file_list +bert_npz_file_list+
+n_best +n_best+
+only_use_bert_from_root false
+blacklist +icm_blacklist+
+event_mention_typing_field factor_types
+threshold +threshold+

@@ -315,8 +315,8 @@ class CausalRelationReader:
             try:
                 json_data = json.load(f)
             except ValueError as ve:
-                print "While loading: " + filename
-                print str(ve)
+                print("While loading: " + filename)
+                print(str(ve))
                 sys.exit(1)
                 
         for eg in json_data:
@@ -405,7 +405,7 @@ class CausalRelationReader:
         #self.debug_out = codecs.open("/nfs/raid66/u14/users/azamania/temp/accent_event_relations.txt", 'w', encoding='utf8')
 
     def read(self, kb, serif_causal_relation, learnit_causal_relation, extra_causal_relation):
-        print "CausalRelationReader START"
+        print("CausalRelationReader START")
         count = 0
         #docid_to_relation_list = self.read_causal_relation_json(pdtb_json, self.causal_models.PDTB, flip_args_enabled=True)    # docs with pdtb relations
         #for key in docid_to_relation_list:
@@ -414,7 +414,7 @@ class CausalRelationReader:
 
         docid_to_relation_list = defaultdict(list)
 
-        print "CausalRelationReader READ CAUSAL RELATIONS"
+        print("CausalRelationReader READ CAUSAL RELATIONS")
         self.add_serif_causal_relations(serif_causal_relation, docid_to_relation_list)
         self.add_learnit_causal_relations(learnit_causal_relation, docid_to_relation_list)
         if extra_causal_relation != "NA":
@@ -426,7 +426,7 @@ class CausalRelationReader:
             
         # Build Document objects (Document object is a nested class above)
         docid_to_document = dict()
-        print "CausalRelationReader READ EVENTS"
+        print("CausalRelationReader READ EVENTS")
         for kb_event in kb.evid_to_kb_event.values():
             model = None
             
@@ -474,7 +474,7 @@ class CausalRelationReader:
                 e.docid = docid
                 docid_to_document[docid].add_event(e)
 
-        print "CausalRelationReader ADD RELATIONS TO DOCUMENTS"
+        print("CausalRelationReader ADD RELATIONS TO DOCUMENTS")
         """:type: Document"""   
         for docid, doc in docid_to_document.iteritems():
             if docid in docid_to_relation_list:
@@ -517,7 +517,7 @@ class CausalRelationReader:
                 relation_id = SharedIDManager.get_in_document_id("Relation", docid)
                 relation_mention_id = SharedIDManager.get_in_document_id("RelationMention", docid)
 
-                #print ("reln: " + relation_type + ", " + left_id + ", " + right_id)
+                #print("reln: " + relation_type + ", " + left_id + ", " + right_id)
 
                 kb_relation = KBRelation(relation_id, "event-event", relation_type, left_id, right_id)
 

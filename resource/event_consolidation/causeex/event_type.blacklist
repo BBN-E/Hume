@@ -5,28 +5,26 @@ Affiliation	organize	attend	enter	pursue	married	organized	stay	born	participate
 Aggression	campaign
 AgriculturalEvent	extinction	mining	production
 AlertStatus	restrict	imposed
-Announcement	comment	pledge	apology	expressed	reaffirmed	confirms
+Announcement	pledge	apology	reaffirmed
 AppointmentOrNomination	voted	contacted
 ArmedConflict	riots	tensions
-Attack	battlefield	scam	campaign	cyber	servers	avalanche	quake	patrol	targets	captured	capture	malware	targeting	cameras	slew	stealth	crackdown	manhunt	warfare	curfew	trash	trap	passwords	raid	defenses	targeted	revenge	robots	virus	pursuit	defeated	truce	target	stronghold	enemy	tactics	missions	game	defeating	victory	defeat	hacking
+Attack	battlefield	scam	campaign	cyber	servers	avalanche	quake	patrol	targets	captured	capture	malware	targeting	cameras	slew	stealth	crackdown	manhunt	warfare	curfew	trash	trap	passwords	raid	defenses	targeted	revenge	robots	virus	pursuit	defeated	truce	target	stronghold	enemy	tactics	missions	game	defeating	victory	defeat	hacking	force	air
 Autocracy	capitalism
 BlockadeOrRestrictionOfMovement	migration
 Bombing	suicide
-CargoTransportation	transit	migration	deployed
+CargoTransportation	transit	migration	deployed	holiday	visits
 Ceremony	completion	shootings	coffins	redaction	altar	completed	question	obtain	mourning	trial	referendum	resurrection	redacted	execution
 Change	respond	emerging	strengthen	move	recover	attract	disappear	fill	capitalize	spreads	revive	destabilize	spread	dominate	disrupt	collapse	express	reach	reflect	glam	bloom	generate	react	stabilize	remove	recession	turn	backlash	adjust	push	diversify
 CivilCampaign	reuse	renovations
 ClaimingOfResponsibility	apologize	knew	committed
 Collision	blow	hit	clash	crashes	exploded	tweet	shock	blasts	explodes	blaze	hole	blast	kick	blackout
 Commanding	prohibit
-Communication	available	signed		Moving Walls 24 sanctions
+Communication	available	signed		Moving Walls 24 sanctions	attacks	debate	accusations
 CommunicationConveyingEmotion	embargo	disobedience	forget	sanctions	boycott	ban	strike	tell
-Conflict.Attack	force	air
 Congratulation	celebrate
 ConsiderationOrExploration	attention
 Consumption	use	burning	burn	vomit	waste	spend
-Contact.Contact	attacks	debate	accusations
-Contact.Meet	date	funerals
+MeetingOrEncounter	date	funerals
 ContaminatedWater	water
 Cooperation	commodities	trade	transactions
 Corruption	indicted	mismanagement	rape
@@ -34,7 +32,7 @@ CostOfActionOrGoods	charges	refund	payment
 CounterOperation	combat
 CyberAttack	vulnerabilities
 CyberDefense	protect	counterterrorism	surveillance	defense	security	protected
-Death	coma	injured	accident	wounded	disappearance
+Death	coma	injured	accident	wounded	disappearance	taking	passing
 DeceptiveCommunication	apology	ignorance	accusations	telling	claims	mistake
 DecisionOrRecommendation	plans
 DeclarativeCommunication	understand	see	hear	submit
@@ -80,8 +78,7 @@ LackOfRespectForRightsFreedoms	lack
 LandslideOrMudslide	floods
 Lawlessness	devastation	mess	tensions	violence	feud	confusion	outrage	curfew
 LegalEvent	attorney	fraud	negligence	felony	jurisdiction	collusion	embezzlement	accused	responsibility	damages	wrongdoing	fined	dishonesty	assets
-Life.Die	taking	passing
-Life.Injure	hospital	rape
+Injury	hospital	rape
 Loan	bank
 LocationChange	move	asylum	detaining	rebuild	arrest	returns	visas	refuge	holiday	locate	return	tourist	stationed	detention	stay	visa	abortions	belongings	expand	seize	arrested	evade	leave	settle	detained	abandon	influx
 MaritimeSupply	imports	exports
@@ -90,14 +87,13 @@ MeetingEncounterOrNegotiation	probe	investigation
 MilitaryCampaignOrOperation	action
 MilitaryCapability	technologies	technology	devices
 MissingPersons	escaped	detained	raped
-Movement.Transport-Artifact	holiday	visits
 MurderOrHomicide	deportation	suicide	disappearance	uprising	arrests	crimes	arrested	arrest	incident	bombings	genocide	deportations	destruction	tragedy	rape	deported
 Negotiation	agreements	summit	agreement	diplomacy
 Ownership	sell
 PaymentOrRepayment	insured	sum	costs	rent
 Peacekeeping	treaty	mission	missions
 PersonalCommunication	dated	word	name	service	share	ts	subpoenas	inbox	subpoena	report	number	referred	prank
-Personnel.Start-Position	be
+EmploymentRelatedEvent	be
 Planning	organize
 PolicyChange	changed	changes	change
 PoliticalTension	confusion	differences
@@ -120,7 +116,7 @@ Terrorism	attacks	bombings
 Testifying	sentenced	according	impeachment
 Thanking	condolences	deserve
 TheftOrRobbery	extortion	relics
-Transaction.Transfer-Money	aid
+TransferOfFunds	aid
 ViolationOfAgreement	ceasefire
 War	enemy	raids	revolt	shelling	fight	blockade	attack	crackdown	caliphate	wounded
 WarCrime	humanity	bombing

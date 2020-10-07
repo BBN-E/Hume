@@ -1,6 +1,6 @@
 AbductionHostageTakingOrHijacking	abduction	captive	enslaved	hijack	hijacked	hijacking	hostage	hostages	ransom	ransoms
 Accident	accident	accidents
-Accusation	accusation	accusations	accuse	accused	accuses	allegation	allegations	charged	charges	condemn	condemned
+Accusation	accusation	accusations	accuse	accused	accuses	allegation	allegations	condemn	condemned
 AdequateSupply	food access	food availability	food supplies	food supply	grain	supplies	supply
 AdministrativeSanctions	fines	penalty
 Advising	advised	advising
@@ -8,7 +8,7 @@ Affiliation	affiliate	affiliated	affiliates	affiliation	affiliations	conscript	c
 Aggression	aggression	attack	attacked	belligerence	hostilities	hostility	incursion	incursions	invasion
 AgreementOrPromise	agree	agreed	agreement	arrangement	arrangements	assure	commitment	commitments	compromise	concession	concessions	deal	deals	ensuring	guarantee	guarantees	insure	insures	obligation	obligations	promise	promised	promising	re-assured	re-assuring	reassurance	reassure	reassured	reassuring	signed
 AgriculturalEvent	agricultural	agricultural productivity	agriculture production	biofertilizers	crop cultivation	cropland	cultivation	farmed	farming	fertilizer	fishery	fodder	food production	guano	harvest	intercropping	irrigation	nitrophosphates	ploughing	rangelands	superphosphate	tillage	fish manure	potting composts
-AmassingAndStockpiling	amassed	amassing	hoard	stashed	stockpiling	stocks
+AmassingAndStockpiling	amassed	amassing	hoard	stashed	stockpiling
 Ambush	ambush	ambushes
 Amusement	amused	amusement	chuckle	delight	enchant	endear	enjoyed	entertained	excitement	giggle	glee	hilarity	joy	laugh	laughter	merriment	tickled
 Anger	anger	angry	furious	fury	indignation	irritated	mad	madness	outburst	outrage	pissed	rage	ticked	wrath
@@ -16,13 +16,13 @@ AnimalIllnessOrDeath	animal death	animal disease	animal illness	brucellosis	live
 Announcement	announce	announced	announcement	announcing	comment	comments	communique	confirmed	confirms	declaration	declarations	declare	decree	denounce	expressed	mention	notification	proclaim	proclamation	pronouncement	pronouncements	reiterated	reiterates	reiterating	remark	report	statement	statements
 Annoyance	annoyance	annoyed	bothered	flustered	irked	miffed	perturbed	tweaked
 Anti-Government	anti-government
-Apology	apology
+Apology	apology	apologies
 ApplicationOfMilitaryOrPoliticalPressure	american hegemony	military pressure	political pressure	u.s. presence
 AppointmentOrNomination	appoint	appointed	appointment	elect	elected	nominate	nominated	nomination	nominations	reappointment	tapped
 ApprehensionAnxietyOrWorry	anxieties	anxiety	anxious	apprehension	apprehensive	concern	concerned	concerning	concerns	doubting	doubts	fidgety	fuss	insecure	jittery	nervous	tizzy	unease	uneasiness	uneasy	unsettling	worried	worry
 ArmedConflict	armed bands	armed conflict
-ArrestOrDetention	arrest	arrested	detained	detention	extradited	imprisonment	incarcerated	incarcerating	jail	prison	seized
-Arrival	alight	arrival	arrivals	arrive	arrived	arrives	arriving	disembark	docked	pop in	re-enter	show up	turn up
+ArrestOrDetention	arrest	arrested	detained	detention	imprisonment	incarcerated	incarcerating	jail	prison
+Arrival	arrival	arrivals	arrive	arrived	arrives	arriving	disembark	docked	pop in	re-enter	show up
 Assassination	assassinated	assassination	assassins	murdering
 Attempt	attempt	attempts	bid	effort	efforts	pursuing	trying
 Autocracy	authoritarian	authoritarianism	authoritarians	autocracy	dictatorship	totalitarian	totalitarianism	tyranny	undemocratic
@@ -47,7 +47,7 @@ ColdTemperature	below zero	cold	cold front	cold temperature	cold weather	freeze	
 CollapsedStructure	building fell	collapse	collapsed	collapsed structure	collapses	crashing down	debris	ruins
 CollectingOrRallying	rallying
 Collision	collide	collision	crash	sideswipe	slam
-Commanding	behest	command	commanding	decree	fiat	forbid	interdict	interdiction	mandate	prohibit	prohibition	proscribe	veto
+Commanding	behest	command	commanding	decree	fiat	forbid	interdict	interdiction	mandate	proscribe	veto
 Commemoration	commemoration
 CommercialOperation	commercial operation	gas pipeline	oil pipeline
 CommissiveCommunication	carry through	commissive communication	commit
@@ -70,7 +70,7 @@ Confiscation	appropriation	appropriations	confiscate	confiscated	confiscation	fo
 Conflict	bombing	civil unrest	conflict	fight	fighting	genocide	infighting	insecurity	raid	security concerns	shooting	strife	violence
 Congratulation	applaud	cheer	congrats	congratulate	congratulating	congratulation	encomium	extol	glorify	kudos	praise	salute
 ConsiderationOrExploration	alternative	alternatives	consideration	exploration	explore	options
-Consumption	bite	consume	consuming	consumption	deplete	devour	drink	eat	eat up	exhaust	exhaustion	expend	feed	gulp	intake	overexploit	overspend	overuse	spend	squander	tasting	use up	utilise	utilize	waste
+Consumption	bite	consume	consuming	consumption	deplete	devour	drink	eat	eat up	exhaust	exhaustion	expend	feed	gulp	intake	overexploit	overspend	overuse	squander	tasting	use up	utilise	utilize
 ContaminatedWater	contaminate	contaminated water	eutrophication	leached	polluted water	water pollution
 Contempt	condescend	contempt	despise	disdain	disregard	ingratitude	jeer	mockery	pettiness	scoff	scorn	worthless
 Contentment	amity	calm	calmness	comfort	comfortable	complacent	conciliation	contentment	fulfilled	gratifying	peaceful	peacefulness	repose	satisfying	serenity	tranquility	tranquillity
@@ -83,7 +83,7 @@ CounterTerrorismOperation	anti-terrorism	anti-terrorist	counter-guerrilla	counte
 CriminalActOrCorruption	a crime	abuse	abuses	corruption	crime	crimes	criminal act	financial crimes	illegal wiretaps	serious crimes	trafficking
 CriminalAct	abduction	abductor	armed robbery	arsonist	assassin	assault	bandit	blackmail	bribery	brigand	burglary	carjacking	crime	crimes	criminal	criminal act	crook	cybercrime	election fraud	embezzlement	embezzler	extortion	extortionist	felon	felony	forgery	fraud	fugitive	gangster	gunman	gunrunner	highway robbery	highwayman	hijack	hijacker	hijacking	hoodlum	infanticide	infraction	infringement	kidnapper	kidnapping	kill	lawbreaker	looter	lynching	malfeasance	mayhem	misconduct	misdemeanor	misdemeanour	molestation	murder	murderer	offences	outlaw	perjury	perpetration	pickpocket	piracy	pirate	plunderer	prostitution	racketeer	ransom	rape	rapist	robber	robbery	rustler	saboteur	scam	scandal	sedition	sexual abuse	sexual assault	shrinkage	smuggler	sodomy	stolen	swindle	theft	thief	thievery	thug	thuggery	treason	trespass	violation	violator	wrongdoing
 Curfew	curfew
-CyberAttack	botnet	botnets	cyber attack	cyber attacks	cyber war	cyber warfare	cyberattacks	cybercrime	cyberterrorism	cyberwarfare	ddos	hack	hacked	hacker	hackers	hacking	malware	phishing	ransomware attacks	social engineering	spyware	successful exploitation	virus	viruses	worm
+CyberAttack	botnet	botnets	cyber attack	cyber attacks	cyber war	cyber warfare	cyberattacks	cybercrime	cyberterrorism	cyberwarfare	ddos	hack	hacked	hacker	hackers	hacking	malware	phishing	ransomware attacks	social engineering	spyware	successful exploitation	virus	viruses
 CyberDefense	cyber defense	cyberdefense
 DamageOrDestruction	damage	damaged	destruction	the damage
 Death	dead	death	deaths	decease	deceased	die	dyings	fatal	fatalities	fatality	kill	killed	killing	mortality	suicide	the death
@@ -92,7 +92,7 @@ DeceptiveCommunication	bluff	crocodile tears	deceit	deceive	deception	deceptive 
 DecisionOrRecommendation	accepted	adopt	adopted	approval	chose	conclude	concluded	considered	decide	decided	deciding	decision	decisions	favour	proposal	proposals	proposed	re-consider	recommendation	recommendations	referred	reject	rejected	suggested	suggestions	the decision	the proposal
 DeclarativeCommunication	acknowledge	admit	affirm	agree	allege	assert	assure	attest	aver	avow	certify	clarify	comment	concede	conclude	condemn	condone	confess	confide	declarative communication	declare	describe	disclose	divulge	elaborate	elucidate	enlighten	exclaim	explain	proclaim	profess	rebut	refute	reveal	say	substantiate	verify	vouch
 DeclineToComment	declined comment	elude discussion	evade comment	no comment
-Decrease	abate	attenuate	attrition	collapse	contraction	curtail	curtailed	de-escalate	decelerate	decline	declines	decrease	decreases	decreasing	deflate	depreciate	depress	detract	devalue	dim	diminish	diminishing	dip	discount	downsize	drop	dwindle	dwindling	fade	falling	languish	lessen	loose	loosen	loss	lower	prune	reduce	reduced	reducing	reduction	reductions	shorten	shrink	shrinkage	shrinking	slack	slash	slow	slump	stall	subtract	truncate	tumble	undervalue	vanish	wane	weaken	worsen
+Decrease	abate	attenuate	attrition	contraction	curtail	curtailed	de-escalate	decelerate	decline	declines	decrease	decreases	decreasing	deflate	depreciate	depress	detract	devalue	dim	diminish	diminishing	dip	discount	downsize	drop	dwindle	dwindling	fade	falling	languish	lessen	loose	loosen	loss	lower	prune	reduce	reduced	reducing	reduction	reductions	shorten	shrink	shrinkage	shrinking	slack	slash	slump	stall	subtract	truncate	tumble	undervalue	vanish	wane	weaken	worsen
 Deescalation	de-escalate	de-escalation	deescalation	demilitarised	disarm	peace-making
 DefenseOrSupport	approves of	defend	defend comments	defended criticism	defending position	defensive attitude	support	supported	supporting	supports
 DefensiveManeuver	barricade	barricaded	defence	defend	defender	defenders	defending	defense	defenses	defensive	defensive maneuver	parry
@@ -118,7 +118,7 @@ DisinformationCampaign	cover-up	deception	disinformation	fabricate	fake news	fea
 Distrust	cannot believe	distrust	doubt	doubts	mistrust	not trust	scepticism	skepticism	suspicion	suspicions	suspicious
 Donation	charities	charity	donate	donation	donations	donor	donors	endow	endowment	gratuity	philanthropic	philanthropy
 Drought	drought	drought condition	drought conditions
-EarthquakeAndAftershock	aftershock	buildings swaying	earthquake	epicenter	epicentre	epicentres	quake	richter scale	seismic	temblor	tremor
+EarthquakeAndAftershock	aftershock	buildings swaying	earthquake	quake	richter scale	seismic	temblor	tremor
 EconomicCondition	bailouts	deficit	depreciate value	depreciating value	economic condition	economy	finance	gdp	hyper-inflation	hyperinflation	inflation	interest rate	investment	investments	labor statistics	market	monetisation	monetization	monopoly	ppi	profitability	profits	re-investment	recapitalisation	reinvest	revenue	stagflation	subsidization	trade	trade war	underinvestment
 EconomicCooperation	economic cooperation	free-trade
 EconomicCrisis	economic crisis	economic disaster	economic meltdown	economic shock	falling stockmarket	financial crisis	recession
@@ -129,7 +129,7 @@ EconomicFactor	economic factor
 EconomicInequality	economic inequality	income inequality	poverty
 EconomicInflation	economic inflation	hyper-inflation	hyperinflation	inflation	stagflation
 EconomicOpportunity	economic opportunity	investment	job -creation	job creation	job-creation	reinvest
-EconomicRecession	economic recession	quantitative easing	recession	retrenchment
+EconomicRecession	economic recession	quantitative easing	recession
 EconomicSanctions	banning export	banning import	economic sanctions	embargo	freeze assets	sanction
 EconomicSecrecy	economic secrecy	trade secrets
 EconomicTension	trade war
@@ -143,10 +143,10 @@ EnvironmentalDegradation	corrosion	deforestation	desertification	environmental d
 EnvironmentalHazard	asbestos	carcinogen	dichlorvos	dioxin	environmental hazard	lead paint	mercury	toxic	toxicants	toxicity
 Escape	abscond	break free	elude	escape	escapee	escapees	evade	evasion	exodus	fled	flee	fleeing	jailbreak
 EspionageOperation	clandestine operation	counter-intelligence	counterintelligence	covert action	covert operation	espionage	espionage operation	infiltrate	infiltrator	intelligence-gathering	secret mission	spy games
-EspionageOrTreason	defector	deserter	double agent	espionage	infiltrate	infiltrated	infiltrating	infiltrator	mole	saboteur	spies	spy	spying	traitor	traitors	treason	turncoat
+EspionageOrTreason	defector	deserter	double agent	espionage	infiltrate	infiltrated	infiltrating	infiltrator	saboteur	spies	spy	spying	traitor	traitors	treason	turncoat
 EthnicCleansing	ethnic cleansing	ethnic strife	genocide	genocides	holocaust	mass killing	mass murder	massacre	pogrom	pogroms
 Evacuation	evacuate	evacuation	evacuations
-EvaluationOrAppraisal	acclaim	analyse	analysed	analysis	analyze	analyzes	analyzing	appraisal	appraise	appraises	approximate	approximates	approximation	approximations	assess	assessed	assessment	assessments	calculated	calculating	calibrate	calibrated	classified	classify	commend	commended	commending	downgrade	estimate	estimated	estimates	estimation	estimations	evaluate	evaluated	evaluates	evaluating	evaluation	evaluations	exalt	exalting	extol	extolled	extolling	flattered	gauge	gauges	herald	judge	measure	overestimate	overestimates	praising	prioritise	prioritises	prioritize	prioritized	prioritizing	proclaim	quantify	ranked	rate	rave	reassess	reassessed	recalculate	recalculated	recalculating	reckon	reckons	reclassified	reclassify	reclassifying	recommend	recommended	recommends	reevaluate	reevaluated	study	underestimate	underestimated	underestimation
+EvaluationOrAppraisal	acclaim	analyse	analysed	analysis	analyze	analyzes	analyzing	appraisal	appraise	appraises	approximate	approximates	approximation	approximations	assess	assessed	assessment	assessments	calculated	calculating	calibrate	calibrated	classified	classify	commend	commended	commending	downgrade	estimate	estimated	estimates	estimation	estimations	evaluate	evaluated	evaluates	evaluating	evaluation	evaluations	exalt	exalting	extol	extolled	extolling	flattered	gauge	gauges	herald	judge	measure	overestimate	overestimates	praising	prioritise	prioritises	prioritize	prioritized	prioritizing	proclaim	quantify	ranked	rave	reassess	reassessed	recalculate	recalculated	recalculating	reckon	reckons	reclassified	reclassify	reclassifying	recommend	recommended	recommends	reevaluate	reevaluated	study	underestimate	underestimated	underestimation
 Excess	excess	excesses
 Execution	behead	beheading	capital punishment	crucify	death sentence	decapitate	electric chair	electrocution	execution	firing squad	gas chamber	kill	lethal injection	strangulation
 ExhibitionOfPower	military power	Zapad 2017	WEST 2017	Zapad Wargames	Exercise Zapad	Exercise Zapad	Zapad	Vostok-2018	Vostok 2018	Vostok-2014	Vostok 2014	East-2018	East-18	Trident Juncture	Anakonda exercise	Anakonda exercises	Zapad	Vostok	TRJE18	Anakonda
@@ -182,13 +182,13 @@ GovernmentCeremony	abdication	commissioning	coronation	diplomatic accreditation	
 Graduation	convocation	graduate	graduation
 GrantingOfAsylum	granted asylum	granting asylum
 Grief	agony	bereaved	bereavement	condole	crying	despair	distressing	grief	grieve	heartache	lament	lamenting	misery	mourn	sadness	sob	sorrow	torment	wailing	weeping
-GuardingOrPatrolling	bodyguard	chaperone	escort	escorts	gatekeeper	guard	guarding	guards	invigilator	look after	lookout	patrol	patrolling	patrols	safeguard	scout	sentinel	sentry	watchman
+GuardingOrPatrolling	bodyguard	chaperone	escort	escorts	gatekeeper	guard	guarding	guards	invigilator	lookout	patrol	patrolling	patrols	safeguard	scout	sentinel	sentry	watchman
 Happiness	blissful	cheer	cheerful	ecstatic	elated	euphoria	excitement	exuberance	glad	gladden	glory	happier	happiness	happy	humoured	joy	jubilate	jubilation	laugh	overjoyed	rejoice	triumph	upbeat	well-being
 Hatred	abhor	abhorrence	abomination	animosity	antagonise	antagonism	antagonize	antipathy	aversion	bad blood	belligerence	besmirch	bitterness	deride	despise	detest	disapproval	disdain	disfavour	dislike	distaste	enmity	grievance	grudge	hate	hateful	hatred	hostility	insults	loathe	malevolence	malice	misogyny	rancour	resent	resentment	revile	scorn	vilify	vindictiveness
 HeadquartersOrBaseEstablished	base camp	base established	base location	branch locations	establish headquarters	established base	established camp	headquartered	headquarters established	office branch
 HealthAndDisease	anti-retroviral	antiretrovirals	veterinary care
 Heritage	heritage	nationalities	nationality
-HighTemperature	bake	heat	heat wave	heatwave	heatwaves	high temperature	scorching	summer weather	warm weather	warmth
+HighTemperature	heat	heat wave	heatwave	heatwaves	high temperature	scorching	summer weather	warm weather
 HighUnemployment	high unemployment	joblessness	under-employment	underemployment
 HighWind	blustery	dangerous wind	gusts	high wind	hurricane force	hurricane strength	sandstorm	squall	whirlwind	whirlwinds	wind	winds	windswept	windy
 Hope	ambition	ambitions	aspire	aspired	daydream	determination	dream	enthusiasm	faith	hope	hopeful	hopes	hoping	idealism	zeal
@@ -207,7 +207,7 @@ InfectiousHumanDisease	co-infection	infect	infection	infections	malaria	noroviru
 InformationCampaign	advertising	disseminating	information campaign	information campaigns	promote	promoted	publicity	publicize
 InitiationOrStart	initiation	start	started	starting
 Injury	bandaged	bandages	bleeding	bleedings	decapitation	disembowelled	injuries	injury	mutilated	mutilating	mutilation	wounded
-InspectionOrObservation	examination	inspect	inspected	inspection	inspections	maintenance	observation	observations	observed	test	testing
+InspectionOrObservation	examination	inspect	inspected	inspection	inspections	maintenance	observation	observations	observed
 Inspiration	animate	arouse	encouraged	energise	energize	enliven	enthuse	excite	influenced	inspiration	inspire	inspired	invigorate	motivate	motivated	re-energise	reinvigorate	rouse
 IntelligenceGathering	clandestine	counterintelligence	eavesdrop	eavesdropping	espionage	humint	infiltrator	intelligence gathering	intelligence-gathering	intercept	rumint	security intelligence	sigint	snooping	spy	surveillance	wiretap	wiretapping
 IntelligenceOperation	intelligence operation
@@ -221,7 +221,7 @@ JointOperation	allies attack	combined operation	combined strike	forces combined	
 JudicialCooperation	judicial cooperation
 JuryDeliberation	deliberated	deliberation	jury deliberation	sequestered
 LandslideOrMudslide	avalanche	debris flow	earthflow	landslide	landslides	landslip	mass wasting	mudflow	mudslide	rockfall
-Lawlessness	anarchy	carnage	chaos	criminality	disorder	havoc	lawless	lawlessness	madness	mayhem	pandemonium	rampage	rioting	ruckus	turmoil	unrest	upheaval	uproar	vigilantism	violence
+Lawlessness	anarchy	carnage	chaos	criminality	disorder	havoc	lawless	lawlessness	madness	mayhem	pandemonium	rampage	rioting	ruckus	turmoil	unrest	upheaval	uproar	vigilantism
 LegalEvent	acquittal	adduce	adjournments	admissibility	affidavit	amicus	appellate	arraignment	averment	averments	bankruptcy	constitutionality	contemnor	counterclaim	counterclaims	criminal prosecution	cross-examination	cross-examined	deliberation	exoneration	fair hearing	hearing	hearings	impeachment	indictment	indictments	interlocutory	judgment	judicial review	lawsuit	legal action	legal event	litigate	litigation	magistrates	mandamus	motion	perjury	petition	pleadings	prosecution	re-arrest	rearrested	recantation	recuse	retrial	subpoena	trial
 LegalFinding	arraignment	contendre	dismissal	indicted	injuction	legal finding	mistrial	retrial	verdict
 LegalFine	fine	fined	fines	legal fine
@@ -233,7 +233,7 @@ Looting	banditry	booty	despoil	loot	looting	pillage	pillaging	plunder	plundered	
 LowUnemployment	employee shortage	low unemployment	worker shortage
 Malnutrition	malnourish	malnutrition
 ManufacturingOrBuilding	built	construction	manufacturing
-MaritimeSupply	barge	barges	container	containers	export	exports	import	imports	maritime	tanker	tankers
+MaritimeSupply	barge	barges	maritime	tanker	tankers
 MassKilling	holocaust	mass killing	mass murder	massacre
 Mediation	mediation	reconciliation
 MedicalEmergency	ailment	airlifted	ambulance	anaemia	bilharzia	brucellosis	cardiac arrest	cholera	co-infection	code blue	contagion	critical condition	dengue	dengue fever	diarrhoea	diphtheria	dysentery	ebola	emt	epidemic	euthanasia	falciparum	gastroenteritis	hepatitis	hepatitis e	herpes	hiv	hiv prevention	hookworm	immunization	infection	influenza	leprosy	leptospirosis	limping	listeriosis	mad cow	malaria	measles	medical emergency	meningitis	outbreaks	pandemic	paralysis	parasite	pertussis	pestilence	plague	pleuropneumonia	pneumonia	poisoning	polio	poliomyelitis	poliovirus	quarantine	rabies	salmonella	salmonellosis	sars	scabies	schistosomiasis	serious condition	stop breathing	tetanus	toxoplasmosis	trachoma	trematode	tuberculosis	typhi	typhoid	typhoid fever	veterinarian	vital signs	zoonoses
@@ -243,7 +243,7 @@ Merger	merger	mergers	takeover
 MilitaryAction	invasion	military action	military deployment	military enforcement	military intervention
 MilitaryBuildup	additional troops	militarisation	militarization	mobilization
 MilitaryCampaignOrOperation	airdrop	airstrike	airstrikes	ambush	besiege	besieging	blitz	blitzkrieg	blockade	blockades	bombard	bombardment	bombardments	counter-attack	counterattack	counteroffensive	incursion	invade	invaded	invading	invasion	military action	military campaign	military operation	miltary objective	offensives	onslaught	rearm	rearming
-MilitaryCapability	anti-aircraft technology	arm	arms	combat capabilities	combat-ready	fleet	nuclear capability	stockpile	stockpiles
+MilitaryCapability	anti-aircraft technology	arms	combat capabilities	combat-ready	fleet	nuclear capability	stockpile	stockpiles
 MilitaryCooperation	allied	allies	ally	military cooperation	military exercises	nato allies	nato enlargement
 MilitaryDeescalation	de-escalation	military deescalation
 MilitaryDeployment	military deployment	troop levels
@@ -252,7 +252,7 @@ MilitaryTension	destabilization	irredentism	irredentist	militarisation	militariz
 MissingPersons	abducted	hostage	kidnap	kidnapped	missing juvenile	missing person	missing persons	ransom
 Mobilization	mobilisation	mobilization
 MurderOrHomicide	homicide	murder	murdered
-NO_EVENT	area	areas	import country	importing countries	lowland	lowlands
+NO_EVENT	area	areas	lowland	lowlands
 NeedOrRequirement	criteria	need	needed	needs	require	required	requirement	requirements	requires	requiring	the need	those criteria	visa requirement
 Negotiation	dialogue	negotiate	negotiating	negotiation	negotiations
 OathTaking	enthronement	inauguration	oath taking	swear	swearing-in	sworn	vow
@@ -317,7 +317,7 @@ ReligiousOrPoliticalBeliefs	animism	catholic	catholics	christian	christianity	fa
 ReportAsMissing	a captive	amber alert	assumed dead	reported missing
 Reporting	aired	broadcast	broadcasting	broadcasts	cited	citing	communicated	editorialize	headline	headlines	news	op-eds	posted	posts	published	rebroadcast	report	reported	reporting	reports	stated	survey	surveyed	surveys	televised
 RepresentativeCommunication	acknowledge	broadcast	cite	communicate	convey	disseminate	instruct	invoke	proselytize	publicise	publicize	representative communication	speaking
-Repression	authoritarian	authoritarianism	autocracy	autocratic	censorship	colonialist	communism	dictator	dictatorial	dictatorship	non-democratic	oppression	oppressive	persecution	pogrom	politicide	repression	repressive	subjugation	suppression	totalitarian	tyranny
+Repression	authoritarian	authoritarianism	autocracy	autocratic	censorship	colonialist	communism	dictator	dictatorial	dictatorship	non-democratic	oppressive	persecution	pogrom	politicide	repression	repressive	subjugation	suppression	totalitarian	tyranny
 RequestAppealOrDemand	appeal	appealed	asked	called	demand	demanded	demanding	demands	implored	insist	insisted	insisting	needed	needs	request	requests	seek	sought	urged	urging	wanted
 RequestOrAppealForAsylum	asylum	asylum-seeker	asylum-seekers	refuge	safe harbor
 RequestOrAppeal	appeal	appealed	application	asked	asking	petition	request	seek	seeking	sought
@@ -340,7 +340,7 @@ SearchAndRescue	ambulance	emergency services	first responder	first responders	li
 SeekingPoliticalIndependence	autonomist	autonomy	independence	irredentism	irredentist	irredentists	secessionist	secessionists	semi-autonomy
 Sentiment	sentiment	sentiments
 SeparationOrDivorce	annulment	break-up	breakup	conscious uncoupling	dissolution	disunite	divorce	divorced	homewrecker
-SettlementOfDisagreementOrDispute	compromise	compromises	impasse	resolution	resolve	resolved	resolving	settlement	settlements	the compromise
+SettlementOfDisagreementOrDispute	compromise	compromises	resolution	resolve	resolved	resolving	settlement	settlements	the compromise
 SexualAssault	post-rape care	prophylaxis	sexual assault	sexual harassment	sexual violence
 Shame	ashamed	chastened	disgrace	dishonor	dishonour	eat crow	embarrass	embarrassment	guilt	humbled	humiliating	humiliation	mortified	shame	shameful	stigma
 SharingOfInformation	reference

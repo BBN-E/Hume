@@ -1,0 +1,852 @@
+@prefix actor: <http://ontology.causeex.com/ontology/odps/Actor#> .
+@prefix bias: <http://ontology.causeex.com/ontology/odps/Bias#> .
+@prefix data-prov: <http://ontology.causeex.com/ontology/odps/DataProvenance#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://ontology.causeex.com/ontology/odps/Bias-AdFontes> rdf:type owl:Ontology ;
+    dcterms:description "Ontology capturing the Ad Fontes Media Bias Worksheet, from https://www.adfontesmedia.com/."@en ;
+    rdfs:comment """The ad fontes media spreadsheet reports both political orientation and "reporting quality" for a News Source using specific horizontal/vertical ranking values. The 'hard numbers' are translated into the following BiasType and PoliticalOrientation enumerated values:
+    For horizontal rank: Less than -24 - FarLeftOrientation; Between -24 and -6 - LeftLeaningOrientation; 
+                         Between -6 and 6 - Centrist; Between 6 and 24 - RightLeaningOrientation; 
+                         Greater than 24 - FarRightOrientation
+    For vertical rank: Less than 8 - InclusionOfInaccurateInformation; Between 8 and 16 - InclusionOfMisleadingInformation; 
+                       Between 16 and 24 - SelectionBias; Between 24 and 40 - AnalysisOpinionOrPersuasion; 
+                       Between 40 and 48 - ComplexAnalysisWithUnbiasedFacts; Greater than 48 - UnbiasedFactReporting
+Note that there are additional BiasTypes (high/low detail, sensationalism, etc.) that were called out as criteria in the ad fontes determinations (and included in the BiasTypes enumeration) but not specifically reported in the spreadsheet."""@en ;
+    dcterms:created "February 6, 2019"^^xsd:string ;
+    dcterms:modified "February 17, 2019 to correct the object of the generated_by predicate and to correct the prefix statement for data-prov."^^xsd:string ;
+    owl:imports <http://purl.org/dc/terms> ;
+    owl:imports <http://ontology.causeex.com/ontology/odps/Actor-PoliticalOrientation-Hierarchy> ;
+    owl:imports <http://ontology.causeex.com/ontology/odps/Bias> ;
+    owl:versionInfo "Version 0.3"^^xsd:string .
+
+bias:AdFontesMediaAnalysis a data-prov:Activity ;
+    rdfs:label "Ad Fontes Media Analysis"@en .
+
+bias:ABC bias:has_bias_details bias:ABCAdFontesDetails ;
+   rdfs:label "ABC" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:ABCAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   bias:has_bias_type bias:UnbiasedFactReporting .
+
+bias:AgenceFrancePresse bias:has_bias_details bias:AFPAdFontesDetails ;
+   rdfs:label "Agence France-Presse or AFP" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:AgenceFrancePresseAdFontesDetails bias:has_bias_type bias:UnbiasedFactReporting ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:AlJazeeraUSCanadaNews bias:has_bias_details bias:AlJazeeraUSCanadaNewsAdFontesDetails ;
+   rdfs:label "Al Jazeera US/Canada News" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:AlJazeeraUSCanadaNewsAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   bias:has_bias_type bias:UnbiasedFactReporting .
+
+bias:Alternet bias:has_bias_details bias:AlternetAdFontesDetails ;
+   rdfs:label "Alternet" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:AlternetAdFontesDetails bias:has_bias_type bias:SelectionBias ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:AssociatedPress a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "Associated Press or AP" ;
+   bias:has_bias_details bias:AssociatedPressAdFontesDetails .
+bias:AssociatedPressAdFontesDetails bias:has_bias_type bias:UnbiasedFactReporting ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:Axios bias:has_bias_details bias:AxiosAdFontesDetails ;
+   rdfs:label "Axios" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:AxiosAdFontesDetails bias:has_bias_type bias:UnbiasedFactReporting ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:BBC bias:has_bias_details bias:BBCAdFontesDetails ;
+   rdfs:label "BBC" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:BBCAdFontesDetails bias:has_bias_type bias:UnbiasedFactReporting ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:BipartisanReport bias:has_bias_details bias:BipartisanReportAdFontesDetails ;
+   rdfs:label "Bipartisan Report" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:BipartisanReportAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:FarLeftOrientation ;
+   bias:has_bias_type bias:InclusionOfMisleadingInformation .
+
+bias:Bloomberg a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "Bloomberg" ;
+   bias:has_bias_details bias:BloombergAdFontesDetails .
+bias:BloombergAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   bias:has_bias_type bias:UnbiasedFactReporting .
+
+bias:Breitbart bias:has_bias_details bias:BreitbartAdFontesDetails ;
+   rdfs:label "Breitbart" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:BreitbartAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:FarRightOrientation ;
+   bias:has_bias_type bias:InclusionOfInaccurateInformation .
+
+bias:BusinessInsider bias:has_bias_details bias:BusinessInsiderAdFontesDetails ;
+   rdfs:label "Business Insider" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:BusinessInsiderAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   bias:has_bias_type bias:AnalysisOpinionOrPersuasion .
+
+bias:BuzzFeedNews bias:has_bias_details bias:BuzzFeedNewsAdFontesDetails ;
+   rdfs:label "BuzzFeed News" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:BuzzFeedNewsAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   bias:has_bias_type bias:UnbiasedFactReporting .
+
+bias:CBS a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "CBS" ;
+   bias:has_bias_details bias:CBSAdFontesDetails .
+bias:CBSAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   bias:has_bias_type bias:UnbiasedFactReporting .
+
+bias:CNN a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "CNN" ;
+   bias:has_bias_details bias:CNNAdFontesDetails .
+bias:CNNAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   bias:has_bias_type bias:AnalysisOpinionOrPersuasion .
+
+bias:CSPAN bias:has_bias_details bias:CSPANAdFontesDetails ;
+   rdfs:label "CSPAN" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:CSPANAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   bias:has_bias_type bias:UnbiasedFactReporting .
+
+bias:ChristianScienceMonitor a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "Christian Science Monitor" ;
+   bias:has_bias_details bias:ChristianScienceMonitorAdFontesDetails .
+bias:ChristianScienceMonitorAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:RightLeaningOrientation ;
+   bias:has_bias_type bias:UnbiasedFactReporting .
+
+bias:ConservativeTribune bias:has_bias_details bias:ConservativeTribuneAdFontesDetails ;
+   rdfs:label "Conservative Tribune" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:ConservativeTribuneAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:FarRightOrientation ;
+   bias:has_bias_type bias:InclusionOfMisleadingInformation .
+
+bias:DailyBeast a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "Daily Beast" ;
+   bias:has_bias_details bias:DailyBeastAdFontesDetails .
+bias:DailyBeastAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts .
+
+bias:DailyCaller bias:has_bias_details bias:DailyCallerAdFontesDetails ;
+   rdfs:label "Daily Caller" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:DailyCallerAdFontesDetails bias:has_bias_type bias:InclusionOfMisleadingInformation ;
+   bias:has_bias_based_on_political_orientation actor:RightLeaningOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:DailyKos bias:has_bias_details bias:DailyKosAdFontesDetails ;
+   rdfs:label "Daily Kos" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:DailyKosAdFontesDetails bias:has_bias_type bias:SelectionBias ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:DailyMail bias:has_bias_details bias:DailyMailAdFontesDetails ;
+   rdfs:label "Daily Mail" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:DailyMailAdFontesDetails bias:has_bias_type bias:SelectionBias ;
+   bias:has_bias_based_on_political_orientation actor:RightLeaningOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:DailySignal bias:has_bias_details bias:DailySignalAdFontesDetails ;
+   rdfs:label "Daily Signal" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:DailySignalAdFontesDetails bias:has_bias_type bias:AnalysisOpinionOrPersuasion ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:DailyWire a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "Daily Wire" ;
+   bias:has_bias_details bias:DailyWireAdFontesDetails .
+bias:DailyWireAdFontesDetails bias:has_bias_type bias:InclusionOfMisleadingInformation ;
+   bias:has_bias_based_on_political_orientation actor:FarRightOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:DavidWolfe bias:has_bias_details bias:DavidWolfeAdFontesDetails ;
+   rdfs:label "David Wolfe" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:DavidWolfeAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:FarLeftOrientation ;
+   bias:has_bias_type bias:InclusionOfInaccurateInformation .
+
+bias:DemocracyNow bias:has_bias_details bias:DemocracyNowAdFontesDetails ;
+   rdfs:label "Democracy Now" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:DemocracyNowAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts .
+
+bias:DrudgeReport a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "Drudge Report" ;
+   bias:has_bias_details bias:DrudgeReportAdFontesDetails .
+bias:DrudgeReportAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:RightLeaningOrientation ;
+   bias:has_bias_type bias:AnalysisOpinionOrPersuasion .
+
+bias:FinancialTimes bias:has_bias_details bias:FinancialTimesAdFontesDetails ;
+   rdfs:label "Financial Times" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:FinancialTimesAdFontesDetails bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:FiscalTimes a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "Fiscal Times" ;
+   bias:has_bias_details bias:FiscalTimesAdFontesDetails .
+bias:FiscalTimesAdFontesDetails bias:has_bias_type bias:AnalysisOpinionOrPersuasion ;
+   bias:has_bias_based_on_political_orientation actor:RightLeaningOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:Forbes bias:has_bias_details bias:ForbesAdFontesDetails ;
+   rdfs:label "Forbes" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:ForbesAdFontesDetails bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:ForeignPolicy a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "Foreign Policy" ;
+   bias:has_bias_details bias:ForeignPolicyAdFontesDetails .
+bias:ForeignPolicyAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:RightLeaningOrientation ;
+   bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts .
+
+bias:Fortune bias:has_bias_details bias:FortuneAdFontesDetails ;
+   rdfs:label "Fortune" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:FortuneAdFontesDetails bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:ForwardProgressive bias:has_bias_details bias:ForwardProgressiveAdFontesDetails ;
+   rdfs:label "Forward Progressives" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:ForwardProgressiveAdFontesDetails bias:has_bias_type bias:InclusionOfMisleadingInformation ;
+   bias:has_bias_based_on_political_orientation actor:FarLeftOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:Fox a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "Fox" ;
+   bias:has_bias_details bias:FoxAdFontesDetails .
+bias:FoxAdFontesDetails bias:has_bias_type bias:SelectionBias ;
+   bias:has_bias_based_on_political_orientation actor:FarRightOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:FreeSpeechTV bias:has_bias_details bias:FreeSpeechTVAdFontesDetails ;
+   rdfs:label "FreeSpeech TV" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:FreeSpeechTVAdFontesDetails bias:has_bias_type bias:AnalysisOpinionOrPersuasion ;
+   bias:has_bias_based_on_political_orientation actor:FarLeftOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:Guacamoley bias:has_bias_details bias:GuacamoleyAdFontesDetails ;
+   rdfs:label "Guacamoley" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:GuacamoleyAdFontesDetails bias:has_bias_type bias:SelectionBias ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:HuffingtonPost a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "Huffington Post" ;
+   bias:has_bias_details bias:HuffingtonPostAdFontesDetails .
+bias:HuffingtonPostAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   bias:has_bias_type bias:SelectionBias .
+
+bias:IndependentJournalReview a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "IndependentJournalReview or IJR" ;
+   bias:has_bias_details bias:IndependentJournalReviewAdFontesDetails .
+bias:IndependentJournalReviewAdFontesDetails bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:InfoWars a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "InfoWars" ;
+   bias:has_bias_details bias:InfoWarsAdFontesDetails .
+bias:InfoWarsAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:FarRightOrientation ;
+   bias:has_bias_type bias:InclusionOfInaccurateInformation .
+
+bias:Intercept a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "Intercept" ;
+   bias:has_bias_details bias:InterceptAdFontesDetails .
+bias:InterceptAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   bias:has_bias_type bias:UnbiasedFactReporting .
+
+bias:Jacobin bias:has_bias_details bias:JacobinAdFontesDetails ;
+   rdfs:label "Jacobin" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:JacobinAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:FarLeftOrientation ;
+   bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts .
+
+bias:LATimes a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "LA Times" ;
+   bias:has_bias_details bias:LATimesAdFontesDetails .
+bias:LATimesAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   bias:has_bias_type bias:UnbiasedFactReporting .
+
+bias:MSNBC a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "MSNBC" ;
+   bias:has_bias_details bias:MSNBCAdFontesDetails .
+bias:MSNBCAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   bias:has_bias_type bias:AnalysisOpinionOrPersuasion .
+
+bias:Marketwatch bias:has_bias_details bias:MarketwatchAdFontesDetails ;
+   rdfs:label "Marketwatch" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:MarketwatchAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   bias:has_bias_type bias:UnbiasedFactReporting .
+
+bias:Mic bias:has_bias_details bias:MicAdFontesDetails ;
+   rdfs:label "Mic" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:MicAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   bias:has_bias_type bias:AnalysisOpinionOrPersuasion .
+
+bias:MotherJones bias:has_bias_details bias:MotherJonesAdFontesDetails ;
+   rdfs:label "Mother Jones" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:MotherJonesAdFontesDetails bias:has_bias_type bias:AnalysisOpinionOrPersuasion ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:NBC bias:has_bias_details bias:NBCAdFontesDetails ;
+   rdfs:label "NBC" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:NBCAdFontesDetails bias:has_bias_type bias:UnbiasedFactReporting ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:NPR bias:has_bias_details bias:NPRAdFontesDetails ;
+   rdfs:label "National Public Radio or NPR" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:NPRAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   bias:has_bias_type bias:UnbiasedFactReporting .
+
+bias:NationalEnquirer a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "National Enquirer" ;
+   bias:has_bias_details bias:NationalEnquirerAdFontesDetails .
+bias:NationalEnquirerAdFontesDetails bias:has_bias_type bias:InclusionOfInaccurateInformation ;
+   bias:has_bias_based_on_political_orientation actor:RightLeaningOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:NationalReview a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "National Review" ;
+   bias:has_bias_details bias:NationalReviewAdFontesDetails .
+bias:NationalReviewAdFontesDetails bias:has_bias_type bias:UnbiasedFactReporting ;
+   bias:has_bias_based_on_political_orientation actor:RightLeaningOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:NewRepublic a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "New Republic" ;
+   bias:has_bias_details bias:NewRepublicAdFontesDetails .
+bias:NewRepublicAdFontesDetails bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:NewYorkPost bias:has_bias_details bias:NewYorkPostAdFontesDetails ;
+   rdfs:label "New York Post" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:NewYorkPostAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:RightLeaningOrientation ;
+   bias:has_bias_type bias:SelectionBias .
+
+bias:NewYorkTimes a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "New York Times" ;
+   bias:has_bias_details bias:NewYorkTimesAdFontesDetails .
+bias:NewYorkTimesAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   bias:has_bias_type bias:UnbiasedFactReporting .
+
+bias:NewsAndGuts bias:has_bias_details bias:NewsAndGutsAdFontesDetails ;
+   rdfs:label "News and Guts" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:NewsAndGutsAdFontesDetails bias:has_bias_type bias:AnalysisOpinionOrPersuasion ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:NewsMax bias:has_bias_details bias:NewsMaxAdFontesDetails ;
+   rdfs:label "NewsMax" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:NewsMaxAdFontesDetails bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts ;
+   bias:has_bias_based_on_political_orientation actor:FarLeftOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:OZY bias:has_bias_details bias:OZYAdFontesDetails ;
+   rdfs:label "OZY" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:OZYAdFontesDetails bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:OccupyDemocrats a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "Occupy Democrats" ;
+   bias:has_bias_details bias:OccupyDemocratsAdFontesDetails .
+bias:OccupyDemocratsAdFontesDetails bias:has_bias_type bias:InclusionOfMisleadingInformation ;
+   bias:has_bias_based_on_political_orientation actor:FarLeftOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:OneAmericaNews bias:has_bias_details bias:OneAmericaNewsAdFontesDetails ;
+   rdfs:label "One America News or OAN" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:OneAmericaNewsAdFontesDetails bias:has_bias_type bias:SelectionBias ;
+   bias:has_bias_based_on_political_orientation actor:FarRightOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:PBS a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "PBS" ;
+   bias:has_bias_details bias:PBSAdFontesDetails .
+bias:PBSAdFontesDetails bias:has_bias_type bias:UnbiasedFactReporting ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:PJMedia bias:has_bias_details bias:PJMediaAdFontesDetails ;
+   rdfs:label "PJ Media" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:PJMediaAdFontesDetails bias:has_bias_type bias:SelectionBias ;
+   bias:has_bias_based_on_political_orientation actor:FarRightOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:PalmerReport a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "Palmer Report" ;
+   bias:has_bias_details bias:PalmerReportAdFontesDetails .
+bias:PalmerReportAdFontesDetails bias:has_bias_type bias:InclusionOfInaccurateInformation ;
+   bias:has_bias_based_on_political_orientation actor:FarLeftOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:Patribotics bias:has_bias_details bias:PatriboticsAdFontesDetails ;
+   rdfs:label "Patribotics" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:PatriboticsAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:FarLeftOrientation ;
+   bias:has_bias_type bias:InclusionOfInaccurateInformation .
+
+bias:Politico bias:has_bias_details bias:PoliticoAdFontesDetails ;
+   rdfs:label "Politico" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:PoliticoAdFontesDetails bias:has_bias_type bias:UnbiasedFactReporting ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:ProPublica a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "ProPublica" ;
+   bias:has_bias_details bias:ProPublicaAdFontesDetails .
+bias:ProPublicaAdFontesDetails bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:Quartz bias:has_bias_details bias:QuartzAdFontesDetails ;
+   rdfs:label "Quartz" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:QuartzAdFontesDetails bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:Reason bias:has_bias_details bias:ReasonAdFontesDetails ;
+   rdfs:label "Reason" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:ReasonAdFontesDetails bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts ;
+   bias:has_bias_based_on_political_orientation actor:RightLeaningOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:RedState bias:has_bias_details bias:RedStateAdFontesDetails ;
+   rdfs:label "RedState" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:RedStateAdFontesDetails bias:has_bias_type bias:InclusionOfMisleadingInformation ;
+   bias:has_bias_based_on_political_orientation actor:FarRightOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:Reuters a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "Reuters" ;
+   bias:has_bias_details bias:ReutersAdFontesDetails .
+bias:ReutersAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   bias:has_bias_type bias:UnbiasedFactReporting .
+
+bias:SecondNexus a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "Second Nexus" ;
+   bias:has_bias_details bias:SecondNexusAdFontesDetails .
+bias:SecondNexusAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   bias:has_bias_type bias:SelectionBias .
+
+bias:ShareBlue a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "ShareBlue" ;
+   bias:has_bias_details bias:ShareBlueAdFontesDetails .
+bias:ShareBlueAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   bias:has_bias_type bias:AnalysisOpinionOrPersuasion .
+
+bias:Slate a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "Slate" ;
+   bias:has_bias_details bias:SlateAdFontesDetails .
+bias:SlateAdFontesDetails bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:TalkingPointsMemo bias:has_bias_details bias:TalkingPointsMemoAdFontesDetails ;
+   rdfs:label "Talking Points Memo" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:TalkingPointsMemoAdFontesDetails bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:TheAdvocate bias:has_bias_details bias:TheAdvocateAdFontesDetails ;
+   rdfs:label "The Advocate" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:TheAdvocateAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   bias:has_bias_type bias:AnalysisOpinionOrPersuasion .
+
+bias:TheAmericanConservative a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "The American Conservative" ;
+   bias:has_bias_details bias:TheAmericanConservativeAdFontesDetails .
+bias:TheAmericanConservativeAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:FarRightOrientation ;
+   bias:has_bias_type bias:AnalysisOpinionOrPersuasion .
+
+bias:TheAtlantic bias:has_bias_details bias:TheAtlanticAdFontesDetails ;
+   rdfs:label "The Atlantic" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:TheAtlanticAdFontesDetails bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:TheBlaze bias:has_bias_details bias:TheBlazeAdFontesDetails ;
+   rdfs:label "The Blaze" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:TheBlazeAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:FarRightOrientation ;
+   bias:has_bias_type bias:InclusionOfInaccurateInformation .
+
+bias:TheEconomist bias:has_bias_details bias:TheEconomistAdFontesDetails ;
+   rdfs:label "The Economist" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:TheEconomistAdFontesDetails bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:TheFederalist bias:has_bias_details bias:TheFederalistAdFontesDetails ;
+   rdfs:label "The Federalist" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:TheFederalistAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:FarRightOrientation ;
+   bias:has_bias_type bias:AnalysisOpinionOrPersuasion .
+
+bias:TheGatewayPundit a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "The Gateway Pundit" ;
+   bias:has_bias_details bias:TheGatewayPunditAdFontesDetails .
+bias:TheGatewayPunditAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:FarRightOrientation ;
+   bias:has_bias_type bias:InclusionOfMisleadingInformation .
+
+bias:TheGuardian a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "The Guardian" ;
+   bias:has_bias_details bias:TheGuardianAdFontesDetails .
+bias:TheGuardianAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts .
+
+bias:TheHill bias:has_bias_details bias:TheHillAdFontesDetails ;
+   rdfs:label "The Hill" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:TheHillAdFontesDetails bias:has_bias_type bias:UnbiasedFactReporting ;
+   bias:has_bias_based_on_political_orientation actor:RightLeaningOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:TheNation a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "The Nation" ;
+   bias:has_bias_details bias:TheNationAdFontesDetails .
+bias:TheNationAdFontesDetails bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:TheNewYorker bias:has_bias_details bias:TheNewYorkerAdFontesDetails ;
+   rdfs:label "The New Yorker" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:TheNewYorkerAdFontesDetails bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:TheSkimm bias:has_bias_details bias:TheSkimmAdFontesDetails ;
+   rdfs:label "The Skimm" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:TheSkimmAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   bias:has_bias_type bias:UnbiasedFactReporting .
+
+bias:TheWeek bias:has_bias_details bias:TheWeekAdFontesDetails ;
+   rdfs:label "The Week" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:TheWeekAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts .
+
+bias:TheWeeklyStandard a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "The Weekly Standard" ;
+   bias:has_bias_details bias:TheWeeklyStandardAdFontesDetails .
+bias:TheWeeklyStandardAdFontesDetails bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts ;
+   bias:has_bias_based_on_political_orientation actor:RightLeaningOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:TheYoungTurks bias:has_bias_details bias:TheYoungTurksAdFontesDetails ;
+   rdfs:label "The Young Turks" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:TheYoungTurksAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   bias:has_bias_type bias:AnalysisOpinionOrPersuasion .
+
+bias:ThinkProgress bias:has_bias_details bias:ThinkProgressAdFontesDetails ;
+   rdfs:label "Think Progress" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:ThinkProgressAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts .
+
+bias:Time bias:has_bias_details bias:TimeAdFontesDetails ;
+   rdfs:label "Time" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:TimeAdFontesDetails bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:Truthout a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "Truthout" ;
+   bias:has_bias_details bias:TruthoutAdFontesDetails .
+bias:TruthoutAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   bias:has_bias_type bias:AnalysisOpinionOrPersuasion .
+
+bias:Twitchy bias:has_bias_details bias:TwitchyAdFontesDetails ;
+   rdfs:label "Twitchy" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:TwitchyAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:FarRightOrientation ;
+   bias:has_bias_type bias:InclusionOfMisleadingInformation .
+
+bias:USAToday bias:has_bias_details bias:USATodayAdFontesDetails ;
+   rdfs:label "USA Today" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:USATodayAdFontesDetails bias:has_bias_type bias:UnbiasedFactReporting ;
+   bias:has_bias_based_on_political_orientation actor:Centrist ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:VanityFair a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "Vanity Fair" ;
+   bias:has_bias_details bias:VanityFairAdFontesDetails .
+bias:VanityFairAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   bias:has_bias_type bias:AnalysisOpinionOrPersuasion .
+
+bias:Vice a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "Vice" ;
+   bias:has_bias_details bias:ViceAdFontesDetails .
+bias:ViceAdFontesDetails bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:Vox a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "Vox" ;
+   bias:has_bias_details bias:VoxAdFontesDetails .
+bias:VoxAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts .
+
+bias:WallStreetJournal a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "Wall Street Journal or WSJ" ;
+   bias:has_bias_details bias:WallStreetJournalAdFontesDetails .
+bias:WallStreetJournalAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:RightLeaningOrientation ;
+   bias:has_bias_type bias:UnbiasedFactReporting .
+
+bias:WashingtonExaminer a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "Washington Examiner" ;
+   bias:has_bias_details bias:WashingtonExaminerAdFontesDetails .
+bias:WashingtonExaminerAdFontesDetails bias:has_bias_type bias:AnalysisOpinionOrPersuasion ;
+   bias:has_bias_based_on_political_orientation actor:RightLeaningOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:WashingtonFreeBeacon bias:has_bias_details bias:WashingtonFreeBeaconAdFontesDetails ;
+   rdfs:label "Washington Free Beacon" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:WashingtonFreeBeaconAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:RightLeaningOrientation ;
+   bias:has_bias_type bias:ComplexAnalysisWithUnbiasedFacts .
+
+bias:WashingtonMonthly bias:has_bias_details bias:WashingtonMonthlyAdFontesDetails ;
+   rdfs:label "Washington Monthly" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:WashingtonMonthlyAdFontesDetails bias:has_bias_type bias:AnalysisOpinionOrPersuasion ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   a bias:BiasDetails ;
+   data-prov:generated_by bias:AdFontesMediaAnalysis .
+
+bias:WashingtonPost bias:has_bias_details bias:WashingtonPostAdFontesDetails ;
+   rdfs:label "Washington Post" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:WashingtonPostAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:LeftLeaningOrientation ;
+   bias:has_bias_type bias:UnbiasedFactReporting .
+
+bias:WashingtonTimes bias:has_bias_details bias:WashingtonTimesAdFontesDetails ;
+   rdfs:label "Washington Times" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:WashingtonTimesAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:RightLeaningOrientation ;
+   bias:has_bias_type bias:AnalysisOpinionOrPersuasion .
+
+bias:Wonkette bias:has_bias_details bias:WonketteAdFontesDetails ;
+   rdfs:label "Wonkette" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:WonketteAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:FarLeftOrientation ;
+   bias:has_bias_type bias:InclusionOfMisleadingInformation .
+
+bias:WorldNetDaily a actor:MediaOrganization , owl:NamedIndividual ;
+   rdfs:label "WorldNetDaily or WND" ;
+   bias:has_bias_details bias:WorldNetDailyAdFontesDetails .
+bias:WorldNetDailyAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:FarRightOrientation ;
+   bias:has_bias_type bias:InclusionOfInaccurateInformation .
+
+bias:WorldTruthTV bias:has_bias_details bias:WorldTruthTVAdFontesDetails ;
+   rdfs:label "WorldTruth.Tv" ;
+   a owl:NamedIndividual , actor:MediaOrganization .
+bias:WorldTruthTVAdFontesDetails data-prov:generated_by bias:AdFontesMediaAnalysis ;
+   a bias:BiasDetails ;
+   bias:has_bias_based_on_political_orientation actor:RightLeaningOrientation ;
+   bias:has_bias_type bias:InclusionOfInaccurateInformation .

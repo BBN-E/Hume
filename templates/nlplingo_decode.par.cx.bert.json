@@ -1,0 +1,174 @@
+{
+    "trigger.restrict_none_examples_using_keywords": false,
+     "data":
+     {
+        "test": {
+                    "features": "",
+                    "_filelist": "+filelist_input+"
+                }
+            },
+    "embeddings": {
+        "type": "word_embeddings",
+        "embedding_file": "/nfs/raid87/u10/shared/Hume/common/nlplingo/EN-wform.w.5.cbow.neg10.400.subsmpl.txt.spaceSep.utf8",
+        "missing_token": "the",
+        "none_token": ".",
+        "none_token_index": 0,
+        "vector_size": 400,
+        "vocab_size": 251236
+    },
+    "extractors": [
+        {
+            "extractor_name": "CX_trigger",
+            "embeddings": {
+                "vector_size": 768
+            },
+            "domain_ontology": "/nfs/raid87/u10/shared/Hume/cx/nlplingo/cx_models/010520/domain_ontology.txt",
+            "hyper-parameters": {
+                "batch_size": 35,
+                "dropout": 0.5,
+                "epoch": 40,
+                "decode_mode": true,
+                "fine-tune_epoch": 0,
+                "hidden_layers": [
+                     768,768
+                ],
+                "neighbor_distance": 0,
+                "position_embedding_vector_length": 5,
+                "positive_weight": 1,
+                "max_sentence_length": 200
+            },
+            "model_file": "/nfs/raid87/u10/shared/Hume/cx/nlplingo/cx_models/010520/trigger.hdf",
+            "int_type": "int32",
+            "output_vectors": false,
+            "features": [
+                "unary_window_vector"
+            ],
+            "loss_function": "masked_bce",
+            "activation_function": "sigmoid",
+            "trigger.positive_keywords": "/nfs/raid87/u10/shared/Hume/cx/nlplingo/cx_models/010520/positive_triggers.json",
+            "model_type": "event-trigger_multilayer-embedded",
+            "trigger.use_safelist": true
+        },
+        {
+            "extractor_name": "ICM_trigger",
+            "embeddings": {
+                "vector_size": 768
+            },
+            "domain_ontology": "/nfs/raid87/u10/shared/Hume/cx/nlplingo/icm_trigger.20200730/domain_ontology.txt",
+            "features": [
+                "unary_window_vector"
+            ],
+            "hyper-parameters": {
+                "_number_of_feature_maps": 200,
+                "_positive_weight": 5,
+                "batch_size": 15,
+                "decode_mode": true,
+                "dropout": 0.5,
+                "early_stopping": true,
+                "entity_embedding_vector_length": 50,
+                "epoch": 30,
+                "fine_tune_epoch": 0,
+                "hidden_layers": [
+                    768
+                ],
+                "max_sentence_length": 200,
+                "neighbor_distance": 0,
+                "position_embedding_vector_length": 50,
+                "train_embeddings": false
+            },
+            "model_file": "/nfs/raid87/u10/shared/Hume/cx/nlplingo/icm_trigger.20200730/trigger.hdf",
+            "optimizer": {
+                "name": "Adam",
+                "lr": 0.0001
+            },
+            "int_type": "int32",
+            "output_vectors": false,
+            "model_type": "event-trigger_multilayer-embedded",
+            "loss_function": "binary_crossentropy",
+            "activation_function": "sigmoid",
+            "_trigger.positive_keywords": "/nfs/raid87/u10/shared/Hume/cx/nlplingo/icm_trigger.20200730/positive_triggers.json",
+            "class_thresholds": "/nfs/raid87/u10/shared/Hume/cx/nlplingo/icm_trigger.20200730/class_thresholds.55_60.npz",
+            "trigger.allow_entity_mention_as_anchor": false,
+            "trigger.use_safelist": false
+        },
+        {
+            "extractor_name": "ACE_argument",
+            "embeddings": {
+                "vector_size": 768
+            },
+            "domain_ontology": "/nfs/raid87/u10/shared/Hume/cx/nlplingo/generic_argument_embedded_112419/role_mappings.ace.txt",
+            "hyper-parameters": {
+                "batch_size": 20,
+                "cnn_filter_lengths": [
+                    3
+                ],
+                "hidden_layers": [
+                    768,768
+                ],
+                "decode_mode": true,
+                "dropout": 0.5,
+                "entity_embedding_vector_length": 50,
+                "epoch": 120,
+                "fine-tune_epoch": 0,
+                "neighbor_distance": 1,
+                "number_of_feature_maps": 300,
+                "position_embedding_vector_length": 50,
+                "positive_weight": 3,
+                "train_embeddings": false,
+                "max_sentence_length": 200
+            },
+            "int_type": "int32",
+            "output_vectors": false,
+            "model_file": "/nfs/raid87/u10/shared/Hume/cx/nlplingo/generic_argument_embedded_112419/argument_multilayer_embedded.hdf",
+            "features": [
+                "arg0_arg1_window_vector"
+            ],
+            "loss_function": "categorical_crossentropy",
+            "activation_function": "softmax",
+            "model_type": "event-argument_multilayer-embedded",
+            "optimizer": {
+                "name": "Adam",
+                "lr": 0.0001
+            }
+        },
+        {
+            "extractor_name": "BBN_argument",
+            "embeddings": {
+                "vector_size": 768
+            },
+            "domain_ontology": "/nfs/raid87/u10/shared/Hume/common/generic_argument_bbn/domain_ontology.txt",
+            "hyper-parameters": {
+                "batch_size": 20,
+                "hidden_layers": [
+                    768,768
+                ],
+                "decode_mode": true,
+                "dropout": 0.5,
+                "entity_embedding_vector_length": 50,
+                "epoch": 40,
+                "fine-tune_epoch": 0,
+                "neighbor_distance": 0,
+                "position_embedding_vector_length": 50,
+                "positive_weight": 3,
+                "train_embeddings": false,
+                "max_sentence_length": 200
+            },
+            "loss_function": "categorical_crossentropy",
+            "activation_function": "softmax",
+            "int_type": "int32",
+            "output_vectors": false,
+            "model_file": "/nfs/raid87/u10/shared/Hume/common/generic_argument_bbn/argument.hdf",
+            "features": [
+                "arg0_arg1_window_vector"
+            ],
+            "model_type": "event-argument_multilayer-embedded",
+            "optimizer": {
+                "name": "Adam",
+                "lr": 0.00001
+            }
+        }
+    ],
+    "trigger.negative_words": "/nfs/raid87/u10/shared/Hume/common/nlplingo/negative_words",
+    "_predictions_npz_dir": "+vector_dir+",
+    "_predictions_file": "+output_dir+/prediction.json"
+}

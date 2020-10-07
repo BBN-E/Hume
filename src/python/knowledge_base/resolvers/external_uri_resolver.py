@@ -1,7 +1,7 @@
 
 from knowledge_base import KnowledgeBase
-from kb_resolver import KBResolver
-from utilities.awake_db import AwakeDB
+from resolvers.kb_resolver import KBResolver
+from resolvers.utilities.awake_db import AwakeDB
 
 class ExternalURIResolver(KBResolver):
     
@@ -9,7 +9,7 @@ class ExternalURIResolver(KBResolver):
         pass
 
     def resolve(self, kb, awake_db):
-        print "ExternalURIResolver RESOLVE"
+        print("ExternalURIResolver RESOLVE")
         resolved_kb = KnowledgeBase()
         
         super(ExternalURIResolver, self).copy_all(resolved_kb, kb)
@@ -22,7 +22,7 @@ class ExternalURIResolver(KBResolver):
                 kb_entity_to_entity_group[kb_entity] = kb_entity_group
         
         AwakeDB.initialize_awake_db(awake_db)
-        for entid, kb_entity in resolved_kb.entid_to_kb_entity.iteritems():
+        for entid, kb_entity in resolved_kb.entid_to_kb_entity.items():
             kb_entity_group = kb_entity_to_entity_group[kb_entity]
             source_string = AwakeDB.get_source_string(kb_entity_group.actor_id)
             if source_string is not None and source_string.find("dbpedia.org") != -1:

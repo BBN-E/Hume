@@ -1,6 +1,6 @@
 import sys, os, re, codecs
 from knowledge_base import KnowledgeBase
-from kb_resolver import KBResolver
+from resolvers.kb_resolver import KBResolver
 
 class CountryCodePropertyResolver(KBResolver):
     
@@ -14,6 +14,8 @@ class CountryCodePropertyResolver(KBResolver):
         # common country code, and only want to assign ethnicity
         # if the most common code has a related ethnicity 
         self.ethnicities = dict() 
+        # ISO country code (from AWAKE DB) to cameo country code
+        self.iso_country_codes = dict()
         
         country_code_and_ethnicity_re = re.compile(r"^(.*?)([A-Z]{3}) (\w+)\s*$")
         country_code_re = re.compile(r"^(.*?)([A-Z]{3})$")
@@ -33,28 +35,43 @@ class CountryCodePropertyResolver(KBResolver):
             if m is not None:
                 self.country_codes[m.group(1).strip()] = m.group(2)
                 continue
-
         cc.close()
-    
+        
+        iso_code_to_cameo_file = os.path.join(script_dir, "..", "data_files", "awake_iso_country_code_to_cameo.txt")
+        iso = codecs.open(iso_code_to_cameo_file, 'r', encoding='utf8')
+        for line in iso:
+            line = line.strip()
+            pieces = line.split()
+            self.iso_country_codes[pieces[0]] = pieces[1]
+        iso.close()
+        
     def resolve(self, kb):
-        print "CountryCodeResolver RESOLVE"
+        print("CountryCodeResolver RESOLVE")
         resolved_kb = KnowledgeBase()
 
-        
         super(CountryCodePropertyResolver, self).copy_all(resolved_kb, kb)
 
-        # cameo_country_code properties for GPE kb_entity
-        for entid, kb_entity in resolved_kb.entid_to_kb_entity.iteritems():
+        for entgroupid, kb_entity_group in resolved_kb.get_entity_groups():
+            # Awake ISO code for geoname's country to cameo_code for geoname's country
+            # This is for when the KB entity group is a city/geoname
+            if ("country_iso_code" in kb_entity_group.properties and 
+                kb_entity_group.properties["country_iso_code"] in self.iso_country_codes):
+                geonames_country_code = self.iso_country_codes[kb_entity_group.properties["country_iso_code"]]
+                kb_entity_group.properties["geonames_country_code"] = geonames_country_code 
+
+        for entid, kb_entity in resolved_kb.entid_to_kb_entity.items():
+            # cameo_country_code properties for GPE kb_entity
+            # This is for when the KB entity is a country
             cameo_country_code = self.country_codes.get(kb_entity.canonical_name)
             if cameo_country_code is not None:
                 kb_entity.properties["cameo_country_code"] = cameo_country_code
-        
+
         # Reliable (entity, country_code) pairs
         reliable_country_codes = set()
 
         # citizenship_cameo_country_code property for PER kb_entity
         kb_entity_to_country_code_count = dict()
-        for relid, kb_relation in resolved_kb.relid_to_kb_relation.iteritems():
+        for relid, kb_relation in resolved_kb.relid_to_kb_relation.items():
             if kb_relation.relation_type != "GEN-AFF.Citizen-Resident-Religion-Ethnicity":
                 continue
 
@@ -86,10 +103,10 @@ class CountryCodePropertyResolver(KBResolver):
                     reliable_country_codes.add((left_entity, country_code,))
             
         # Take most common country_code in dictionary
-        for kb_entity, country_code_count in kb_entity_to_country_code_count.iteritems():
+        for kb_entity, country_code_count in kb_entity_to_country_code_count.items():
             most_common_country_code = None
             most_common_country_code_count = 0
-            for country_code, count in country_code_count.iteritems():
+            for country_code, count in country_code_count.items():
                 if count > most_common_country_code_count:
                     most_common_country_code = country_code
                     most_common_country_code_count = count

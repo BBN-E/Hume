@@ -15,7 +15,7 @@ end_stage:          output
 experiment_dir:     +experiment_dir+
 batch_file:         +batch_file+
 
-INCLUDE +par_dir+/master.english.par
+INCLUDE +project_specific_serif_data_root+/master.english.par
 INCLUDE +par_dir+/master.awake.english.par
 
 # Used for listing a manifest of serif data files so a
@@ -29,6 +29,7 @@ OVERRIDE max_parser_seconds: 5
 input_type: sgm
 OVERRIDE sentence_breaker_dateline_mode: very_aggressive
 OVERRIDE use_dateline_mode_on_whole_document: true
+break_on_footnote_numbers: true
 
 OVERRIDE actor_match_require_exact_entity_type_match: true
 OVERRIDE actor_match_only_match_names: true
@@ -84,3 +85,11 @@ OVERRIDE full_name_subtypes: +project_specific_serif_data_root+/subtypes/causeex
 OVERRIDE name_word_subtypes: +project_specific_serif_data_root+/subtypes/causeex-name-word-mappings.txt
 
 OVERRIDE run_fact_finder: false
+
+license_file: +project_specific_serif_data_root+/license/WM.lic
+tokenizer_maximum_tokens_per_sentence: +max_number_of_tokens_per_sentence+
+
+OVERRIDE run_fact_finder: false
+limited_actor_match: true
++fast_mode_pars+
+

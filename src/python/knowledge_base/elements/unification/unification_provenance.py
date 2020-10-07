@@ -1,4 +1,4 @@
-from unification_element import UnificationElement
+from elements.unification.unification_element import UnificationElement
 
 class UnificationProvenance(UnificationElement):
     

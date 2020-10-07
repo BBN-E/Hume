@@ -1,0 +1,13 @@
+job_name: fuzzy_small.50doc.50.phrase.cosine.101119.v2
+
+
+input_corpus_serif_list: /home/hqiu/tmp/collab_corpus_50.list
+#input_corpus_serif_list: /home/hqiu/ld100/Hume_pipeline/Hume/expts/causeex_collab2_0913a_m24_shaved_dataset/event_consolidation_serifxml_out.list
+#input_corpus_serif_list: /home/hqiu/tmp/collab_corpus_2000.list
+input_serif_npz_list: /home/hqiu/ld100/Hume_pipeline/Hume/expts/causeex_collab2_110819/bert/bert_npz.list
+input_query_serif_list: /nfs/raid83/u12/criley/rj/expts/Hume/causeex_collab2.whiteboard.wb_icms.day_1.20191030/event_consolidation_serifxml_out.list
+input_query_npz_list: /home/hqiu/ld100/Hume_pipeline/Hume/expts/causeex_collab2.whiteboard.wb_icms.day_1.20191030/bert/bert_npz.list
+
+#metric: euclidean
+metric:sklearn.cosine_similarity
+n_trees: 50

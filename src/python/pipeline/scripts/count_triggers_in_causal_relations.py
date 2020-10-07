@@ -4,7 +4,7 @@
 import sys, os, codecs, json, operator
 
 if len(sys.argv) != 3:
-    print "Usage: input-learnit-relations-json-file output-counts-file"
+    print("Usage: input-learnit-relations-json-file output-counts-file")
     sys.exit(1)
 
 input_file, output_file = sys.argv[1:]

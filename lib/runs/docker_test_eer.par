@@ -1,0 +1,73 @@
+
+job_name: causeex.120719.v1
+
+###########
+# Pipeline
+###########
+stages_to_run: pyserif
+mode: CauseEx
+ANACONDA_ROOT: /usr/local/
+use_neural_net: true
+use_bert: true
+only_cpu_available: true
+use_basic_cipher_stream: true
+track_serif_files_read: false
+max_number_of_tokens_per_sentence: 128
+breaking_point: 10000
+num_of_batches_global: 1
+single_bert_thread_mode: true
+
+################
+# CDR digestion
+################
+input_cdr_list: /extra/tmp/ben_sentence.list
+
+
+metadata_file: /extra/tmp/metadata_all.txt
+########
+# Serif
+########
+serif_input_sgm_list: GENERATED
+serif_input_awake_db: /nfs/raid87/u10/shared/Hume/common/serif/causeex_dbpedia_20170308_collab2.sqlite
+serif_fast_mode: false
+
+#######
+## BERT
+########
+bert_input_serifxml_list: GENERATED
+bert_layers: -1
+
+######
+# KBP
+######
+kbp_input_serifxml_list: GENERATED
+
+
+####################################
+## LearnIt  Decoder
+#####################################
+learnit_decoder_input_serifxml_list: GENERATED
+learnit_event_and_event_arg_pattern_dir: DEFAULT
+learnit_event_event_relation_pattern_dir: DEFAULT
+input_serif_cause_effect_relations_dir:GENERATED
+generic_event_noun_whitelist: GENERATED
+generic_event_blacklist: GENERATED
+
+######################
+# PySerif
+######################
+pyserif_input_serifxml_list: /extra/tmp/test_serifxml.list
+copyArgumentSentenceWindow: 1
+bert_npz_filelist: GENERATED
+grounding_mode: centroids_only
+
+################
+# Serialization
+################
+serialization_input_awake_db: /nfs/raid87/u10/shared/Hume/common/serif/causeex_dbpedia_20170308_collab2.sqlite
+serialization_input_serifxml_list: GENERATED
+serialization_input_factfinder_json_file: GENERATED
+serialization_input_learnit_triple_file: GENERATED
+serialization_input_learnit_event_count_file: GENERATED
+serialization_do_event_uploading: False
+

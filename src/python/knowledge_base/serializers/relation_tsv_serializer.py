@@ -1,14 +1,13 @@
 import codecs
-from elements.kb_event_mention import KBEventMention
-from elements.kb_relation import KBRelation
-from elements.kb_relation_mention import KBRelationMention
+import json
+
 
 class RelationTSVSerializer:
     def __init__(self):
         pass
 
     def serialize(self, kb, output_tsv_file):
-        print "RelationTSVSerializer SERIALIZE"
+        print("RelationTSVSerializer SERIALIZE")
 
         o = codecs.open(output_tsv_file, 'w', encoding='utf8')
         
@@ -46,10 +45,14 @@ class RelationTSVSerializer:
             o.write(relation_mention.id + "\t" +
                     relation.relation_type + "\t" +
                     model + "\t" +
-                    left_event_mention.event_type + "\t" +
+                    json.dumps({
+                        k: v for k, v in
+                        left_event_mention.external_ontology_sources}) + "\t" +
                     left_event_mention.model + "\t" +
                     self.clean_string(left_trigger) + "\t" +
-                    right_event_mention.event_type + "\t" +
+                    json.dumps({
+                        k: v for k, v in
+                        right_event_mention.external_ontology_sources}) + "\t" +
                     right_event_mention.model + "\t" +
                     self.clean_string(right_trigger) + "\t" +
                     relation_mention.document.id + "\t" +

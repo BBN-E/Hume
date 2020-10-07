@@ -1,0 +1,77 @@
+
+
+############
+## Pipeline
+############
+job_name: wm_thanksgiving.121019.v1
+stages_to_run: serif,bert,generic-events,learnit-decoding-event-and-eventarg,nn-events,event-consolidation,event-event-relations,serialization,probabilistic-grounding,pipeline-statistics
+mode: WorldModelers
+
+batch_size: 50
+
+########
+# Serif
+########
+serif_input_sgm_list: /nfs/raid88/u10/users/hqiu/sgm_corpus/wm/wm_thanksgiving_all_121019/sgms.list
+serif_input_awake_db: /nfs/raid87/u10/shared/Hume/common/serif/wm_eval_before_060119.sqlite
+
+#######
+## BERT
+########
+bert_input_serifxml_list: GENERATED
+bert_layers: -1
+bert_batch_size: 200
+
+##################
+## Generic events
+##################
+generic_events_input_serifxml_list: GENERATED
+
+####################################
+## LearnIt  UnaryEvent and EventArg
+#####################################
+
+learnit_decoding_event_and_event_arg_input_serifxml_list: GENERATED
+learnit_event_and_event_arg_pattern_dir: DEFAULT
+
+#######################
+## NN event extraction
+#######################
+nn_events_input_serifxml_list: GENERATED
+nn_events_model_list: DEFAULT
+nn_events_bert_npz_filelist: GENERATED
+
+######################
+# Event consolidation
+######################
+event_consolidation_input_serifxml_list: GENERATED
+event_consolidation_input_metadata_file: /nfs/raid88/u10/users/hqiu/sgm_corpus/wm/wm_thanksgiving_all_121019/metadata.txt
+copyArgumentSentenceWindow: 1
+
+##########################
+# Probabilistic grounding
+##########################
+grounding_input: GENERATED
+grounding_bert_npz_filelist: GENERATED
+
+################
+# Event-Event relations
+################
+eer_input_serifxml_list: GENERATED
+eer_input_serif_cause_effect_relations_dir: GENERATED
+learnit_pattern_dir: DEFAULT
+learnit_min_freq_event_pairs: 1
+
+################
+# Serialization
+################
+serialization_input_awake_db: /nfs/raid87/u10/shared/Hume/common/serif/wm_eval_before_060119.sqlite
+serialization_input_serifxml_list: GENERATED
+serialization_input_metadata_file: /nfs/raid88/u10/users/hqiu/sgm_corpus/wm/wm_thanksgiving_all_121019/metadata.txt
+serialization_input_trigger_finder_file: NA
+serialization_input_factfinder_json_file: /nfs/mercury-04/u42/bmin/projects/WM/m12/empty.json
+serialization_input_learnit_triple_file: GENERATED
+serialization_input_learnit_event_count_file: GENERATED
+serialization_do_event_uploading: False
+
+dump_extraction: True

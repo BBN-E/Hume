@@ -1,0 +1,16 @@
+stages_to_run: event-event-relations
+
+job_name: eer_test.092919.before
+
+
+mode: WorldModelers
+batch_size: 5
+
+################
+# Event-Event relations
+################
+eer_input_serifxml_list: /home/hqiu/tmp/oldserif.list
+eer_input_serif_cause_effect_relations_dir: GENERATED
+learnit_pattern_dir: DEFAULT
+learnit_min_freq_event_pairs: 1
+

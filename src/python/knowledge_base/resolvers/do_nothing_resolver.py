@@ -1,5 +1,5 @@
 from knowledge_base import KnowledgeBase
-from kb_resolver import KBResolver
+from resolvers.kb_resolver import KBResolver
 
 class DoNothingResolver(KBResolver):
 
@@ -7,7 +7,7 @@ class DoNothingResolver(KBResolver):
         pass
 
     def resolve(self, kb, parameter):
-        print "Resolving KB with parameter: " + parameter
+        print("Resolving KB with parameter: " + parameter)
 
         resolved_kb = KnowledgeBase()
 

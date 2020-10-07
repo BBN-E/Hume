@@ -1,0 +1,14 @@
+
+job_name: fuzzy_test.012320.trigger.bert
+
+input_serif_list: /home/hqiu/ld100/Hume_pipeline_2/Hume/expts/nlplingo_decode.estonia.012320/nn_events_serifxml.list
+input_serif_npz_dir: /home/hqiu/ld100/Hume_pipeline_2/Hume/expts/nlplingo_decode.estonia.012320/nn_events/embeddings
+input_bert_npz_list: /home/hqiu/ld100/Hume_pipeline_2/Hume/expts/causeex_sams_estonia.120719.121419/bert/bert_npz.list
+key_getter_str: triggers.bert
+annoy_metric: angular
+n_trees: 100
+threshold: 999999
+cutoff: 100
+serif_batch_size: 50
+
+pairwise_batch_size: 75

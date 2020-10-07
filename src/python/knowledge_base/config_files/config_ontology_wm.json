@@ -82,6 +82,193 @@
         "sub_types": {}
       }
     },
+    "entity-compositional": {
+      "default_type": "/wm_compositional/entity",
+      "PER": {
+        "default_type": "/wm_compositional/entity/person_or_group",
+        "sub_types": {}
+      },
+      "ORG": {
+        "default_type": "/wm_compositional/entity/organization",
+        "sub_types": {}
+      },
+      "GPE": {
+        "default_type": "/wm_compositional/entity/geo-political_entity",
+        "sub_types": {}
+      },
+      "LOC": {
+        "default_type": "/wm_compositional/entity/geo-location",
+        "sub_types": {}
+      },
+      "ART": {
+        "default_type": "/wm_compositional/entity/artifact",
+        "sub_types": {}
+      },
+      "MONEY": {
+        "default_type": "/wm_compositional/concept/humanitarian_assistance/voucher_or_cash",
+        "sub_types": {}
+      },
+      "FERTILIZER": {
+        "default_type": "/wm_compositional/concept/goods/agricultural/fertilizer",
+        "sub_types": {}
+      },
+      "IRRIGATION_EQUIPMENT": {
+        "default_type": "/wm_compositional/concept/goods/agricultural/irrigation_equipment",
+        "sub_types": {}
+      },
+      "PESTICIDE": {
+        "default_type": "/wm_compositional/concept/goods/agricultural/pesticide",
+        "sub_types": {}
+      },
+      "SEED": {
+        "default_type": "/wm_compositional/concept/goods/agricultural/seed",
+        "sub_types": {}
+      },
+      "FARM_EQUIPMENT": {
+        "default_type": "/wm_compositional/concept/goods/agricultural/farm_equipment",
+        "sub_types": {}
+      },
+      "PEST": {
+        "default_type": "/wm_compositional/concept/agriculture/pest",
+        "sub_types": {}
+      },
+      "ARMY_WORM": {
+        "default_type": "/wm_compositional/concept/agriculture/pest/army_worm",
+        "sub_types": {}
+      },
+      "LOCUST": {
+        "default_type": "/wm_compositional/concept/agriculture/pest/locust",
+        "sub_types": {}
+      },
+      "CROP": {
+        "default_type": "/wm_compositional/concept/agriculture/crop",
+        "sub_types": {}
+      },
+      "LIVESTOCK": {
+        "default_type": "/wm_compositional/concept/agriculture/livestock",
+        "sub_types": {}
+      },
+      "PRODUCTION_STORAGE": {
+        "default_type": "/wm_compositional/concept/storage/agricultural_storage",
+        "sub_types": {}
+      },
+      "LIVESTOCK_FEED": {
+        "default_type": "/wm_compositional/concept/goods/agricultural/livestock_feed",
+        "sub_types": {}
+      },
+      "STORAGE_INFRASTRUCTURE": {
+        "default_type": "/wm_compositional/concept/storage/agricultural_storage",
+        "sub_types": {}
+      },
+      "CASH": {
+        "default_type": "/wm_compositional/concept/humanitarian_assistance/voucher_or_cash",
+        "sub_types": {}
+      },
+      "FOSSIL_FUELS": {
+        "default_type": "/wm_compositional/concept/goods/fuel",
+        "sub_types": {}
+      },
+      "LAND": {
+        "default_type": "/wm_compositional/concept/environment/natural_resources/land",
+        "sub_types": {}
+      },
+      "PASTURE": {
+        "default_type": "/wm_compositional/concept/environment/natural_resources/pasture",
+        "sub_types": {}
+      },
+      "SOIL": {
+        "default_type": "/wm_compositional/concept/environment/natural_resources/soil",
+        "sub_types": {}
+      },
+      "WATER_BODIES": {
+        "default_type": "/wm_compositional/concept/environment/natural_resources/water_bodies",
+        "sub_types": {}
+      },
+      "FOOD": {
+        "default_type": "/wm_compositional/concept/goods/food",
+        "sub_types": {}
+      },
+      "NON_FOOD_ITEMS": {
+        "default_type": "/wm_compositional/concept/humanitarian_assistance/nonfood_items",
+        "sub_types": {}
+      },
+      "INFRASTRUCTURE": {
+        "default_type": "/wm_compositional/concept/infrastructure",
+        "sub_types": {}
+      },
+      "BRIDGE": {
+        "default_type": "/wm_compositional/concept/infrastructure/bridge",
+        "sub_types": {}
+      },
+      "CONSTRUCTION_MATERIALS": {
+        "default_type": "/wm_compositional/concept/infrastructure/construction_materials",
+        "sub_types": {}
+      },
+      "ELECTRICAL": {
+        "default_type": "/wm_compositional/concept/infrastructure/electrical_infrastucture",
+        "sub_types": {}
+      },
+      "ENERGY": {
+        "default_type": "/wm_compositional/concept/infrastructure/energy_infrastucture",
+        "sub_types": {}
+      },
+      "FARM": {
+        "default_type": "/wm_compositional/concept/infrastructure/agriculture/farm_infrastructure",
+        "sub_types": {}
+      },
+      "HUMANITARIAN": {
+        "default_type": "/wm_compositional/concept/infrastructure/humanitarian_infrastucture",
+        "sub_types": {}
+      },
+      "IRRIGATION": {
+        "default_type": "/wm_compositional/concept/infrastructure/irrigation_infrastucture",
+        "sub_types": {}
+      },
+      "MEDICAL": {
+        "default_type": "/wm_compositional/concept/infrastructure/medical_facilities",
+        "sub_types": {}
+      },
+      "FACILITY": {
+        "default_type": "/wm_compositional/concept/infrastructure/medical_facilities",
+        "sub_types": {}
+      },
+      "ROAD": {
+        "default_type": "/wm_compositional/concept/infrastructure/road_and_rail_infrastucture",
+        "sub_types": {}
+      },
+      "WASH": {
+        "default_type": "/wm_compositional/concept/infrastructure/WASH",
+        "sub_types": {}
+      },
+      "SANITATION": {
+        "default_type": "/wm_compositional/concept/infrastructure/WASH/sanitation_infrastucture",
+        "sub_types": {}
+      },
+      "WATER_INFRASTRUCTURE": {
+        "default_type": "/wm_compositional/concept/infrastructure/WASH/water_facilities",
+        "sub_types": {}
+      },
+      "COMMUNICATION_INFRASTRUCTURE": {
+        "default_type": "/wm_compositional/concept/infrastructure/communication",
+        "sub_types": {}
+      },
+      "WATER": {
+        "default_type": "/wm_compositional/concept/water",
+        "sub_types": {}
+      },
+      "EDUCATION_SUPPLIES": {
+        "default_type": "/wm_compositional/concept/goods/education_supplies",
+        "sub_types": {}
+      },
+      "EDUCATION_INFRASTRUCTURE": {
+        "default_type": "/wm_compositional/concept/infrastructure/education_facilities",
+        "sub_types": {}
+      },
+      "EDUCATION_FACILITIES": {
+        "default_type": "/wm_compositional/concept/infrastructure/education_facilities",
+        "sub_types": {}
+      }
+    },
     "event": {
     },
     "event-event-relation": {
@@ -108,6 +295,20 @@
       "temporallyPrecedes": { 
         "left_predicate": "source",
         "right_predicate": "destination"
+      }
+    },
+    "property": {
+      "default_type": "/wm/concept/causal_factor",
+      "PRICE": {
+        "default_type": "/wm/concept/causal_factor/economic_and_commerce/economic_activity/market/price_or_cost",
+        "sub_types": {}
+      }
+    },
+    "property-compositional": {
+      "default_type": "/wm_compositional/property",
+      "PRICE": {
+        "default_type": "/wm_compositional/property/price_or_cost",
+        "sub_types": {}
       }
     }
   }

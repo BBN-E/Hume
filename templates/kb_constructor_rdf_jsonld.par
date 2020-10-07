@@ -35,9 +35,6 @@ RESOLVER EventMappingResolver
 
 +event_uploader+
 
-RESOLVER EventCacheLookupGrounder
-+grounding_cache_dir+
-
 RESOLVER EntityGroupEntityTypeResolver
 
 SERIALIZER RelationTSVSerializer

@@ -1,0 +1,214 @@
+@prefix : <http://ontology.causeex.com/ontology/odps/GeneralConcepts#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix general: <http://ontology.causeex.com/ontology/odps/GeneralConcepts#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ontology.causeex.com/ontology/odps/GeneralConcepts-Time> rdf:type owl:Ontology ;
+    dcterms:description "Ontology defining time-related general concepts used in the Causal Exploration program."@en ;
+    dcterms:created "January 7, 2019"^^xsd:string ;
+    dcterms:modified "May 12, 2019"^^xsd:string ;
+    rdfs:comment """May 12th 2019 revisions:
+                      Added value restrictions to day_of_month and week_of_month.
+                      owl:members should have been owl:distinctMembers.
+                      Added a 'Seasonally' recurrence interval (individual) and updated the description/comment for RecurrencePattern
+                        to discuss its use.
+                    January 29th 2019 revision:
+                      Updated the import statememnt for GeneralConcepts to correct typo.
+                      All changes prior to January 7th 2019 are documented in the GeneralConcepts ontology."""@en ;
+    owl:imports <http://purl.org/dc/terms> ;
+    owl:imports <http://ontology.causeex.com/ontology/odps/GeneralConcepts> ;
+    owl:versionInfo "Version 1.3"^^xsd:string .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+:has_day_of_week a owl:ObjectProperty ;
+    rdfs:label "has day of week"@en ;
+    rdfs:comment "Indicates a specific day of the week (Sunday, Monday, ..., Saturday) for a RecurrencePattern individual."@en ;
+    rdfs:domain :RecurrencePattern ;
+    rdfs:range :DayOfWeek .
+
+:has_recurrence_interval a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "has recurrence interval"@en ;
+    rdfs:comment "Indicates a specific interval (minutes, hourly, daily, weekly, monthly or yearly) for a RecurrencePattern individual."@en ;
+    rdfs:domain :RecurrencePattern ;
+    rdfs:range :RecurrenceInterval .
+
+:recurs a owl:ObjectProperty, owl:IrreflexiveProperty ;
+    rdfs:label "recurs"@en ;
+    rdfs:comment "Relates an individual, which may have earliest/latest_possible_start/end_time properties, with an instance of RecurrencePattern. The latter refines the definition of time from anything between the earliest and latest times, to a specific pattern within that timeframe. The pattern is based on a closed enumeration identifying either minutes, hourly, daily, weekly, monthly or yearly recurrence (indicated by the RecurrenceInterval), further constrained by the has_day_of_week, beginning/ending_month_and_day, beginning/ending_hour_and_minute, day/week_of_month, and/or separation_interval properties."@en ;
+    rdfs:range :RecurrencePattern .
+
+
+#################################################################
+#    Data Properties
+#################################################################
+
+:beginning_hour_and_minute a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "beginning hour and minute"@en ;
+    rdfs:comment "String defining the 2 digit hour and 2 digit minute (within a day) that is the beginning of a RecurrencePattern interval. The value must conform to the format, hh:mm, and use a 24 hour clock. This restriction will be validated using a constraint."@en ;
+    rdfs:domain :RecurrencePattern ;
+    rdfs:range [ a rdfs:Datatype ;
+                 owl:onDatatype xsd:string ;
+                 owl:withRestrictions ( [ xsd:pattern "^([01][0-9]|2[0123]):[0-5][0-9]$" ] ) ] .
+
+:beginning_month_and_day a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "beginning month and day"@en ;
+    rdfs:comment "String defining the 2 digit month and 2 digit day (within a year) that is the beginning of a RecurrencePattern interval. The value must conform to the format, mm-dd. This restriction will be validated using a constraint."@en ;
+    rdfs:domain :RecurrencePattern ;
+    rdfs:range [ a rdfs:Datatype ;
+                 owl:onDatatype xsd:string ;
+                 owl:withRestrictions ( [ xsd:pattern "^(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$" ] ) ] .
+
+:day_of_month a owl:DatatypeProperty ;
+    rdfs:label "day_of_month"@en ;
+    rdfs:comment "day_of_month indicates occurrences that happen on a particular day of the month. For example, workers may be paid on the 15th and the last day of a month. Those days can be indicated by declaring two day_of_month property values for a RecurrencePattern individual. The values would be set to 15 and -1 (where a positive number counts from the beginning of the month and a negative number counts back from the end)."@en ;
+    rdfs:domain :RecurrencePattern ;
+    rdfs:range [ a rdfs:Datatype ;
+                 owl:onDatatype xsd:integer ;
+                 owl:withRestrictions ( [ xsd:minInclusive "-31"^^xsd:integer ]
+                                        [ xsd:maxInclusive "31"^^xsd:integer ] ) ] .
+
+:earliest_possible_end_time a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "earliest possible end time"@en ;
+    rdfs:comment "A dateTime specifying the earliest end time of an individual."@en ;
+    rdfs:range xsd:dateTime .
+
+:earliest_possible_start_time a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "earliest possible start time"@en ;
+    rdfs:comment "A dateTime specifying the earliest start time of an individual."@en ;
+    rdfs:range xsd:dateTime .
+
+:ending_hour_and_minute a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "ending hour and minute"@en ;
+    rdfs:comment "String defining the 2 digit hour and 2 digit minute (within a day) that is the end bound of a RecurrencePattern interval. The value must conform to the format, hh:mm, and use a 24 hour clock. This restriction will be validated using a constraint."@en ;
+    rdfs:domain :RecurrencePattern ;
+    rdfs:range [ a rdfs:Datatype ;
+                 owl:onDatatype xsd:string ;
+                 owl:withRestrictions ( [ xsd:pattern "^([01][0-9]|2[0123]):[0-5][0-9]$" ] ) ] .
+
+:ending_month_and_day a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "ending month and day"@en ;
+    rdfs:comment "String defining the 2 digit month and 2 digit day (within a year) that is the end bound of a RecurrencePattern interval. The value must conform to the format, mm-dd. This restriction will be validated using a constraint."@en ;
+    rdfs:domain :RecurrencePattern ;
+    rdfs:range [ a rdfs:Datatype ;
+                 owl:onDatatype xsd:string ;
+                 owl:withRestrictions ( [ xsd:pattern "^(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$" ] ) ] .
+
+:latest_possible_end_time a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "latest possible end time"@en ;
+    rdfs:comment "A dateTime specifying the latest end time of an individual."@en ;
+    rdfs:range xsd:dateTime .
+
+:latest_possible_start_time a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "latest possible start time"@en ;
+    rdfs:comment "A dateTime specifying the latest start time of an individual."@en ;
+    rdfs:range xsd:dateTime .
+
+:longest_possible_duration_milliseconds a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "longest possible duration in milliseconds"@en ;
+    rdfs:comment "An unsigned long specifying the longest time extent/duration of an individual."@en ;
+    rdfs:range xsd:unsignedLong .
+
+:separation_interval a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "separation interval"@en ;
+    rdfs:comment "A decimal specifying the time between occurrences for a RecurrencePattern individual. This time is relative to the individual's RecurrenceInterval. For example, if the RecurrenceInterval is minutes, and the separation interval is 10, then something occurs/recurs every 10 minutes. If a separation_interval is not specified, then a value of 1 is assumed."@en ;
+    rdfs:domain :RecurrencePattern ;
+    rdfs:range xsd:decimal .
+
+:shortest_possible_duration_milliseconds a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "shortest possible duration in milliseconds"@en ;
+    rdfs:comment "An unsigned long specifying the shortest time extent/duration of an individual."@en ;
+    rdfs:range xsd:unsignedLong .
+
+:time a owl:DatatypeProperty ;
+    rdfs:label "time "@en ;
+    rdfs:comment "A string specifying a time or interval related to an individual. This is a different technique for defining time than using the earlist/lastest_possible_xxx properties. When parsing text, it may be valuable to simply capture the text related to the time (for example, a reference to the 'Elizabethan era' or to the 'time before the death of the president')."@en ;
+    rdfs:range xsd:string .
+
+:week_of_month a owl:DatatypeProperty ;
+    rdfs:label "week_of_month"@en ;
+    rdfs:comment "week_of_month indicates occurrences that happen in a particular week of the month. For example, a meeting may occur on the first and last Fridays of a month. That can be indicated by setting a RecurrencePattern individual's has_day_of_week to Friday and also declaring two week_of_month property values, 1 and -1 (where a positive number counts from the beginning of the month and a negative number counts back from the end)."@en ;
+    rdfs:domain :RecurrencePattern ;
+    rdfs:range [ a rdfs:Datatype ;
+                 owl:onDatatype xsd:integer ;
+                 owl:withRestrictions ( [ xsd:minInclusive "1"^^xsd:integer ]
+                                        [ xsd:maxInclusive "5"^^xsd:integer ] ) ] .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+:DayOfWeek a owl:Class ;
+    rdfs:label "Day of Week"@en ;
+    rdfs:comment "An enumeration indicating the day of week (Sunday, Monday, ..., Saturday). This class is used with a RecurrencePattern individual to indicate a pattern that involves a specific day of the week. That day is associated with the RecurrencePattern individual using the has_day_of_week property."@en ;
+    owl:equivalentClass [ a owl:Class ;
+                          owl:oneOf ( :Sunday :Monday :Tuesday :Wednesday :Thursday :Friday :Saturday ) ] .
+
+:RecurrencePattern a owl:Class ;
+    rdfs:label "Recurrence Pattern"@en ;
+    rdfs:comment "Reifies information defining a recurring time interval. The recurrence pattern is fundamentally based on a closed enumeration identifying the time frame of recurrence as minutes, hourly, daily, weekly, monthly, seasonally or yearly (as indicated by RecurrenceInterval and the has_recurrence_interval property). The pattern is further constrained/defined by the beginning/ending_month_and_day, beginning/ending_hour_and_minute, has_day_of_week, week/day_of_month and/or separation_interval properties. Use of these semantics is best illustrated by examples: (1) An Event recurs every other Saturday from June 1 to September 1, every year starting in 2016: The Event individual would be created with an earliest_possible_start_time of '2016-06-01T00:00:00', and would also associate (via the 'recurs' property) a RecurrencePattern instance. The latter would use the property, has_recurrence_interval, to indicate general:Weekly recurrence, and would set separation_interval to 2 (e.g., 2 weeks between occurrences), has_day_of_week to general:Saturday, beginning_month_and_day to '06-01', and ending_month_and_day to '09-01'. (2) Another Event recurs on the first and last Friday of every month: The Event individual would associate (via recurs) a RecurrencePattern instance with has_recurrence_interval set to general:Monthly, has_day_of_week set to general:Friday, week_of_month set to 1, and another week_of_month property set to -1 (negative indicates that the Friday is determined from the end of the month). (3) An Event recurs on Dec 25th: The Event would have a RecurrencePattern individual defined with the following properties and values ... has_recurrence_interval general:Yearly, beginning_month_and_day '12-25' and ending_month_and_day '12-25'. (4) An Event recurs every 15 minutes, from 8am to 5pm, Monday-Friday: The Event individual would associate (via recurs) a RecurrencePattern instance with has_recurrence_interval set to general:Minutes, beginning_hour_and_minute set to '8:00', ending_hour_and_minute set to '17:00', separation_interval set to 15, and 5 has_day_of_week properties defined referencing general:Monday to general:Friday, respectively. (5) A Factor tracks some detail for the 'rainy season' in a region (such as Somalia which has 2 rainy seasons): The Factor individual would associate (via recurs) a RecurrencePattern instance classified as a general:Collection and a general:RecurrencePattern. The Collection would reference two 'sub-patterns' using the general:has_member property. (These sub-patterns would not be needed for only a single/yearly season.) The sub-RecurrencePatterns would have these properties and values ... one Pattern with beginning_month_and_day set '04-01' and ending_month_and_day set to '06-30' (gu), and another with beginning_month_and_day set to '10-01' and the ending_month_and_day set to '12-31' (dayr)."@en ;
+    rdfs:comment "Note that if the time of a Seasonal recurrence is not known, the RecurrencePattern individual can be defined with only an rdfs:label giving its name (e.g., 'Somalia Rainy Season' in the 5th example above) and indicating that it has a recurrence interval of general:Seasonally. Additional detail/triples could be added later when they become known."@en .
+
+:RecurrenceInterval a owl:Class ;
+    rdfs:label "Recurrence Interval"@en ;
+    rdfs:comment "An enumeration indicating whether something occurs/recurs on an interval of Minutes, Hourly, Daily, Weekly, Monthly, Seasonally or Yearly. A RecurrenceInterval individual is associated with a RecurrencePattern instance using the has_recurrence_interval property. Note that a value of Seasonally is usually equivalent to Yearly, but it is worth distinguishing the semantics of a 'season' (a specifically identified timeframe)."@en ;
+    owl:equivalentClass [ a owl:Class ;
+                          owl:oneOf ( :Minutes :Hourly :Daily :Weekly :Monthly :Seasonally :Yearly ) ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+:Daily a owl:NamedIndividual, :RecurrenceInterval ;
+    rdfs:label "Daily"@en .
+
+:Friday a owl:NamedIndividual, :DayOfWeek ;
+    rdfs:label "Friday"@en .
+
+:Hourly a owl:NamedIndividual, :RecurrenceInterval ;
+    rdfs:label "Hourly"@en .
+
+:Minutes a owl:NamedIndividual, :RecurrenceInterval ;
+    rdfs:label "Minutes"@en .
+
+:Monday a owl:NamedIndividual, :DayOfWeek ;
+    rdfs:label "Monday"@en .
+
+:Monthly a owl:NamedIndividual, :RecurrenceInterval ;
+    rdfs:label "Monthly"@en .
+
+:Saturday a owl:NamedIndividual, :DayOfWeek ;
+    rdfs:label "Saturday"@en .
+
+:Seasonally a owl:NamedIndividual, :RecurrenceInterval ;
+    rdfs:label "Seasonally"@en .
+
+:Sunday a owl:NamedIndividual, :DayOfWeek ;
+    rdfs:label "Sunday"@en .
+
+:Thursday a owl:NamedIndividual, :DayOfWeek ;
+    rdfs:label "Thursday"@en .
+
+:Tuesday a owl:NamedIndividual, :DayOfWeek ;
+    rdfs:label "Tuesday"@en .
+
+:Wednesday a owl:NamedIndividual, :DayOfWeek ;
+    rdfs:label "Wednesday"@en .
+
+:Weekly a owl:NamedIndividual, :RecurrenceInterval ;
+    rdfs:label "Weekly"@en .
+
+:Yearly a owl:NamedIndividual, :RecurrenceInterval ;
+    rdfs:label "Yearly"@en .
+
+_:diff1 rdf:type owl:AllDifferent ; 
+    owl:distinctMembers ( :Minutes :Hourly :Daily :Weekly :Monthly :Seasonally :Yearly 
+                  :Sunday :Monday :Tuesday :Wednesday :Thursday :Friday :Saturday ) .

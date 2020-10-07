@@ -20,7 +20,7 @@ class StructuredDocument:
     def serialize(self, graph):
 
 
-        print 'serializing', self.file_id
+        print('serializing', self.file_id)
 
 
 
@@ -74,12 +74,12 @@ class Worksheet:
     def serialize(self, graph):
 
 
-        print 'serializing', self.sheet_id
-        print 'with {} tabs, '.format(len(self.tab_refs)) + \
+        print('serializing', self.sheet_id)
+        print('with {} tabs, '.format(len(self.tab_refs)) + \
               '{} timeseries, '.format(len(self.time_series)) +  \
               '{} events, '.format(len(self.events)) +  \
               '{} entities, '.format(len(self.entities)) +  \
-              '{} relations'.format(len(self.relations))
+              '{} relations'.format(len(self.relations)))
 
 
 

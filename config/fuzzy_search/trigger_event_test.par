@@ -1,0 +1,11 @@
+
+job_name: fuzzy_test.012220.trigger.ICM_trigger
+
+input_serif_list: /home/hqiu/ld100/Hume_pipeline_2/Hume/expts/nlplingo_decoder.012020.modified/nn_events_serifxml.filtered.list
+input_serif_npz_dir: /home/hqiu/ld100/Hume_pipeline_2/Hume/expts/nlplingo_decoder.012020.modified/nn_events/embeddings
+input_bert_npz_list: /home/hqiu/ld100/Hume_pipeline_2/Hume/expts/causeex_sams_estonia.120719.121419/bert/bert_npz.list
+key_getter_str: triggers.ICM_trigger
+annoy_metric: angular
+n_trees: 100
+threshold: 999999
+cutoff: 100

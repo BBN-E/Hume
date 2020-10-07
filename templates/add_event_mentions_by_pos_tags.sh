@@ -1,6 +1,6 @@
 #!/bin/bash
 
-bin=+JSERIF_ROOT+/serif-util/target/appassembler/bin/AddEventMentionByPOSTags
+bin=+bin+
 
 strListSerifXmlFiles=+strListSerifXmlFiles+
 strOutputDir=+strOutputDir+

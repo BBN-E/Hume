@@ -6,22 +6,30 @@
 # Use Java 8 -- export JAVA_HOME="/opt/jdk1.8.0_20-x86_64"
 # environment variable SVN_PROJECT_ROOT (in .bashrc) should point to Active/Projects where SERIF/python, SERIF/par, W-ICEWS/lib are checked out
 # If you have a "# Stop here for an non-interactive shell." section in your .bashrc file, make sure the relevant environment variables (above) are above that section to make sure runjobs can see them
-# git clone jserif (branch: 364-add-event-from-json) 
-# cd jserif/serif-util; mvn clean install
-# git clone and mvn clean install learnit
+#
+# git clone text-open
+# cd text-open/src/java/serif ; mvn clean install
+# 
+# git clone jserif
+# cd jserif ; mvn clean install
+# 
+# cd Hume/src/java/serif-util ; mvn clean install -DskipTests
+#
+# git clone learnit
+# cd learnit ; mvn clean install
+#
 # git clone kbp
 # git clone deepinsight
-# pip install rdflib-jsonld --user
-# create a ~/.keras/keras.json file that matches: /d4m/home/azamania/.keras/keras.json
-# 
+# git clone nlplingo
+#
 
 use strict;
-use warnings;
+use warnings FATAL => 'all';
 
-use lib "/d4m/ears/releases/runjobs4/R2019_03_29/lib";
-use runjobs4;
 
-use Cwd 'abs_path';
+# This should be used at first, due to we want to use a new enough runjobs4
+use FindBin qw($Bin $Script);
+use Cwd;
 
 use File::Basename;
 use File::Path;
@@ -29,137 +37,275 @@ use File::Copy;
 
 package main;
 
+my $textopen_root;
+my $hume_repo_root;
+my $learnit_root;
+my $nlplingo_root;
 
+my $jserif_event_jar;
+BEGIN{
+    $textopen_root = "/d4m/nlp/releases/text-open/R2020_08_21";
+    $hume_repo_root = "/d4m/nlp/releases/Hume/R2020_09_29_3";
+    # $hume_repo_root = Cwd::abs_path(__FILE__ . "/../..");
+    $learnit_root = "/d4m/nlp/releases/learnit/R2020_08_28";
+    $nlplingo_root = "/d4m/nlp/releases/nlplingo/R2020_08_23";
+    $jserif_event_jar = "/d4m/nlp/releases/jserif/serif-event/serif-events-8.10.3-SNAPSHOT-pg.jar"; # For kbp
+    unshift(@INC, "/d4m/ears/releases/runjobs4/R2019_03_29/lib");
+    unshift(@INC, "$textopen_root/src/perl/text_open/lib");
+    unshift(@INC, "$learnit_root/lib/perl_lib/");
+}
+
+use runjobs4;
+use Utils;
+use LearnItDecoding;
 
 my $QUEUE_PRIO = '5'; # Default queue priority
-my ($exp_root, $exp) = startjobs("queue_mem_limit" => '8G', "max_memory_over" => '0.5G');
+my ($exp_root, $exp) = startjobs("queue_mem_limit" => '7G', "max_memory_over" => '0.5G', "queue_priority" => $QUEUE_PRIO);
 
 # Parameter loading
-if (scalar(@ARGV) != 1) {
+my $params = {};
+my @stages = ();
+if (scalar(@ARGV) < 1) {
+    print "Input args that we got is EMPTY!!!!!!!!!";
     die "run.pl takes in one argument -- a config file";
 }
-my $config_file = $ARGV[0];
-my $params = load_params($config_file); # $params is a hash reference
-my @stages = split(/,/, get_param($params, "stages_to_run"));
-@stages = grep (s/\s*//g, @stages); # remove leading/trailing whitespaces from stage names
+else {
+    print "Input args that we got is :";
+    print join(" ", @ARGV), "\n";
+    my $config_file = $ARGV[0];
+    $params = load_params($config_file); # $params is a hash reference
+    @stages = split(/,/, get_param($params, "stages_to_run"));
+    @stages = grep (s/\s*//g, @stages); # remove leading/trailing whitespaces from stage names
+}
 
 my %stages = map {$_ => 1} @stages;
 my $JOB_NAME = get_param($params, "job_name");
 
 my $LINUX_QUEUE = get_param($params, "cpu_queue", "nongale-sl6");
-my $SINGULARITY_GPU_QUEUE = get_param($params, "singularity_gpu_queue", "allGPUs-sl69-non-k10s");
+#my $SINGULARITY_GPU_QUEUE = get_param($params, "singularity_gpu_queue", "allGPUs-sl69-non-k10s");
+my $SINGULARITY_GPU_QUEUE = get_param($params, "singularity_gpu_queue", "allGPUs-sl610");
 
-my $git_repo = abs_path("$exp_root/..");
-my $hume_repo_root = abs_path("$exp_root");
-my $learnit_root = "$git_repo/learnit";
-my $deepinsight_root = "$git_repo/deepinsight";
 my $dependencies_root = "$hume_repo_root/resource/dependencies";
 my $external_dependencies_root = "/nfs/raid87/u10/shared/Hume";
 my $unmanaged_external_dependencies_root = "/nfs/raid87/u11/users/hqiu/external_dependencies_unmanaged";
 
+my $learnit_jar_path = "$learnit_root/neolearnit/target/neolearnit-2.0-SNAPSHOT-jar-with-dependencies.jar";
+my $hume_serif_util_jar_path = "$hume_repo_root/src/java/serif-util/target/causeex-serif-util-1.0.0-jar-with-dependencies.jar";
 # Location of all the output of this sequence
-my $processing_dir = make_output_dir("$exp_root/expts/$JOB_NAME");
+(my $processing_dir, undef) = Utils::make_output_dir("$exp_root/expts/$JOB_NAME", "$JOB_NAME/mkdir_job_directory", []);
 
 # Make copy of config file for debugging purposes
-copy($config_file, $processing_dir . "/" . get_current_time() . "-" . basename($config_file));
+# copy($config_file, $processing_dir . "/" . get_current_time() . "-" . basename($config_file));
 
 # Python commands
-my $PYTHON2 = "/opt/Python-2.7.8-x86_64/bin/python -u";
 my $PYTHON3 = "/opt/Python-3.5.2-x86_64/bin/python3.5 -u";
 my $ANACONDA_ROOT = "";
-if (get_param($params, "nn_events_use_pre_installed_anaconda_path", "None") eq "None") {
-    $ANACONDA_ROOT = "$unmanaged_external_dependencies_root/anaconda";
+if (get_param($params, "ANACONDA_ROOT", "None") eq "None") {
+    $ANACONDA_ROOT = "/nfs/raid87/u11/users/hqiu/miniconda_prod";
 }
 else {
-    $ANACONDA_ROOT = get_param($params, "nn_events_use_pre_installed_anaconda_path");
+    $ANACONDA_ROOT = get_param($params, "ANACONDA_ROOT");
 }
-my $CONDA_ENV_NAME_FOR_NLPLINGO = "tensorflow-1.5";
 
-my $ANACONDA_PY2_ROOT_FOR_NN_EVENT_TYPING = "$unmanaged_external_dependencies_root/nn_event_typing/anaconda2";
+my $CONDA_ENV_NAME_FOR_DOC_RESOLVER = "py3-jni";
+my $CONDA_ENV_NAME_FOR_BERT_CPU = "py3-jni";
+my $CONDA_ENV_NAME_FOR_BERT_GPU = "p3-bert-gpu";
 my $CONDA_ENV_NAME_FOR_NN_EVENT_TYPING = "python-tf0.11-cpu";
 
-my $NLPLINGO_ROOT = "$dependencies_root/nlplingo/nlplingo_bert";
+my $ANACONDA_PY2_ROOT_FOR_NN_EVENT_TYPING = "$unmanaged_external_dependencies_root/nn_event_typing/anaconda2";
+
 
 # Scripts
+my $CONVERT_CDR_TO_HUME_CORPUS = "$hume_repo_root/src/python/data_digestion/cdr_converter.py";
+my $CREATE_FILELIST_PY_PATH = "$textopen_root/src/python/util/common/create_filelist_with_batch_size.py";
 my $COPY_FILES_SCRIPT = "$hume_repo_root/src/python/pipeline/scripts/copy_serifxml_by_document_type.py";
 my $KB_CONSTRUCTOR_SCRIPT = "$hume_repo_root/src/python/knowledge_base/kb_constructor.py";
 my $COMBINE_NN_EVENTS_JSON_SCRIPT = "$hume_repo_root/src/python/pipeline/scripts/merge_event_mentions_in_json.py";
-my $LEARNIT_JSON_AGGREGATOR_SCRIPT = "$learnit_root/scripts/decoder_learnit_output_aggregator.py";
-my $LEARNIT_DECODER_SCRIPT = "$learnit_root/scripts/run_EventEventRelationPatternDecoder.sh";
-my $LEARNIT_SCORER_SCRIPT = "$learnit_root/scripts/score_extracted_event_event_relations.py";
-my $NNEVENT_DECODE_SCRIPT = "$NLPLINGO_ROOT/nlplingo/event/train_test.py";
+my $LEARNIT_JSON_AGGREGATOR_SCRIPT = "$learnit_root/scripts/decoder_list_of_json_output_aggregator.py";
+my $NNEVENT_DECODE_SCRIPT = "$nlplingo_root/nlplingo/tasks/train_test.py";
 my $FACTFINDER_TO_JSON_SCRIPT = "$hume_repo_root/src/python/pipeline/scripts/factfinder_output_to_json.py";
 my $EVENT_COUNT_SCRIPT = "$hume_repo_root/src/python/pipeline/scripts/count_triggers_in_causal_relations.py";
+my $VALIDATE_JSON_SCRIPT = "$hume_repo_root/src/python/pipeline/scripts/validate_json.py";
 my $PROB_GROUNDING_SCRIPT = "$hume_repo_root/src/python/misc/ground_serifxml.py";
+my $ADD_BERT_TO_FILELIST_SCRIPT = "$hume_repo_root/src/python/pipeline/scripts/add_bert_to_filelist.py";
+##my $NN_MAPPING_SCRIPT = "$hume_repo_root/src/python/misc/map_nn_output.py";
 my $CREATE_FILE_LIST_SCRIPT = "$PYTHON3 $hume_repo_root/src/python/pipeline/scripts/create_filelist.py";
+my $PREPARE_SERIF_EMBEDDING_FILELIST_SCRIPT = "$hume_repo_root/src/python/pipeline/scripts/prepare_serif_embedding_filelist.py";
 
-my $NRE_JSON_AGGREGATOR_SCRIPT = "$learnit_root/scripts/decoder_nre_output_aggregator.py";
-my $NEURAL_RELATION_DECODER_SCRIPT = "$learnit_root/scripts/run_EventEventRelationNeuralDecoder.sh";
+my $NEURAL_RELATION_DECODER_SCRIPT_LDC = "$hume_repo_root/scripts/run_EventEventRelationNeuralDecoder_ldc.sh";
+my $NEURAL_RELATION_DECODER_SCRIPT_OLD = "$hume_repo_root/scripts/run_EventEventRelationNeuralDecoder_old.sh";
 
 my $nre_model_root = "$external_dependencies_root/common/event_event_relation/models/042219";
-my $NRE_POSTPROCESSING = "$deepinsight_root/relations/src/postprocess.py";
-my $NRE_RESCALE_FREQ = "$deepinsight_root/relations/src/rescale_freq.py";
-my $NRE_STRIP_LOW_CONF = "$deepinsight_root/relations/src/strip_low_conf.py";
+my $ldc_model_root = "$external_dependencies_root/common/event_event_relation/models/ckpt_train_ldc-unified_E82_E70_E61_E48_20191206_07_39_27";
+
 
 # my $SINGULARITY_WRAPPER = "$hume_repo_root/scripts/run-in-singularity-container.sh";
-
-my $CAUSEEX_RELEASE_SCRIPT = "$hume_repo_root/src/python/pipeline/scripts/causeex_release.py";
 
 my $SERIF_SERVER_MODE_CLIENT_SCRIPT = "$hume_repo_root/experiments/service_mode/serif_client.py";
 my $NLPLINGO_SERVER_MODE_CLIENT_SCRIPT = "$hume_repo_root/experiments/service_mode/nlplingo_client.py";
 my $GROUP_EVENTMENTION_IN_TIMELINE_BUCKET_SCRIPT = "$hume_repo_root/src/python/util/group_event_mention_in_timeline_bucket.py";
 
+
 # Exes
 my $BASH = "/bin/bash";
 my $SERIF_EXE = "$hume_repo_root/bin/Serif";
-my $JSERIF_ROOT = "$git_repo/jserif/";
-my $STRIP_EVENTS_EXE = "$JSERIF_ROOT/serif-core-bin/target/appassembler/bin/stripEvents";
-my $KBP_EVENT_FINDER_EXE = "$JSERIF_ROOT/serif-events-graveyard/target/appassembler/bin/eventFinderHighMem";
-my $EVENT_EVENT_RELATION_EXE = "$JSERIF_ROOT/serif-util/target/appassembler/bin/EventEventRelationCreator";
-my $LEARNIT_INSTANCE_EXTRACTOR_EXE = "$learnit_root/neolearnit/target/appassembler/bin/InstanceExtractor";
-my $PROB_GROUNDING_INJECTION_EXE = "$JSERIF_ROOT/serif-util/target/appassembler/bin/GroundEventTypeFromJson";
-my $EVENT_EVENT_RELATION_SCORE_CALIBRATE_EXE = "$JSERIF_ROOT/serif-util/target/appassembler/bin/CalibrateConfidences";
-my $EXTRACT_TIMELINE_FROM_SERIFXML_EXE = "$JSERIF_ROOT/serif-util/target/appassembler/bin/DumpEventMentionForEventTimeline";
 
+my $KBP_EVENT_FINDER_EXE = "java -cp $jserif_event_jar com.bbn.serif.events.EventFinderBin";
+my $LEARNIT_INSTANCE_EXTRACTOR_EXE = "java -cp $learnit_jar_path com.bbn.akbc.neolearnit.exec.InstanceExtractor";
+my $STRIP_EVENTS_EXE = "java -cp $hume_serif_util_jar_path com.bbn.serif.util.StripEvents2";
+my $EVENT_EVENT_RELATION_EXE = "java -cp $hume_serif_util_jar_path com.bbn.serif.util.EventEventRelationCreator";
+my $EVENT_EVENT_RELATION_SCORE_CALIBRATE_EXE = "java -cp $hume_serif_util_jar_path com.bbn.serif.util.CalibrateConfidences";
+my $EXTRACT_TIMELINE_FROM_SERIFXML_EXE = "java -cp $hume_serif_util_jar_path com.bbn.serif.util.DumpEventMentionForEventTimeline";
+my $ADD_EVENT_MENTION_BY_POS_TAGS_EXE = "java -cp $hume_serif_util_jar_path com.bbn.serif.util.AddEventMentionByPOSTags";
+my $ADD_EVENT_MENTION_FROM_JSON_EXE = "java -cp $hume_serif_util_jar_path com.bbn.serif.util.AddEventMentionFromJson";
+my $DOCTHEORY_RESOLVER_EXE = "java -cp $hume_serif_util_jar_path com.bbn.serif.util.resolver.DocTheoryResolver";
 # Libraries
-my $NNEVENT_PYTHON_PATH = "$dependencies_root/nlplingo/serifxml_py3_tmp:" . "$NLPLINGO_ROOT";
+my $NNEVENT_PYTHON_PATH = "$textopen_root/src/python:" . "$nlplingo_root";
+my $BERT_REPO_PATH = "$external_dependencies_root/common/bert/repo/bert";
+my $BERT_PYTHON_PATH = "$nlplingo_root:$BERT_REPO_PATH:$textopen_root/src/python";
+my $BERT_TOKENIZER_PATH = "$hume_repo_root/src/python/bert/do_bert_tokenization.py";
+my $BERT_EXTRACT_BERT_FEATURES_PATH = "$hume_repo_root/src/python/bert/extract_bert_features.py";
+my $BERT_NPZ_EMBEDDING = "$hume_repo_root/src/python/bert/do_npz_embeddings.py";
+my $BERT_GENERATE_FILE_LIST_BY_NUMBER_OF_TOKENS = "$hume_repo_root/src/python/bert/generate_bert_input_by_num_of_bert_tokens_with_reverse_order.py";
+my $AFFINITY_SCHEDULER = "$hume_repo_root/src/python/pipeline/affinity_scheduler/scheduler.py";
+my $AGGREGATE_WORD_PAIR_COUNTS = "$hume_repo_root/src/python/misc/aggregate_word_pair_count_dicts.py";
+
+my $only_cpu_available = (get_param($params, "only_cpu_available", "false") eq "true");
+if ($only_cpu_available) {
+    $CONDA_ENV_NAME_FOR_BERT_GPU = $CONDA_ENV_NAME_FOR_BERT_CPU
+}
+
+my $BERT_MODEL_PATH = "$external_dependencies_root/common/bert/bert_model/uncased_L-12_H-768_A-12";
+my $BERT_VOCAB_FILE = "$BERT_MODEL_PATH/vocab.txt";
 
 # Please let @hqiu know if you want to change $SERIF_DATA
 my $SERIF_DATA = "/d4m/serif/data";
 
-my $BATCH_SIZE = get_param($params, "batch_size", 100);
-my $NN_EVENTS_BATCH_SIZE = get_param($params, "nn_events_batch_size", 150);
+my $NUM_OF_BATCHES_GLOBAL = get_param($params, "num_of_batches_global", 1);
+my $NUM_OF_SCHEDULING_JOBS_FOR_NN = get_param($params, "num_of_scheduling_jobs_for_nn", "unknown");
+
 my $mode = get_param($params, "mode");
 my $internal_ontology_dir;
+my $open_ontology_dir = "$hume_repo_root/resource/ontologies/open/";
+my $external_ontology_dir;
 if ($mode eq "CauseEx") {
     $internal_ontology_dir = "$hume_repo_root/resource/ontologies/internal/causeex/";
+    $external_ontology_dir = "";
 }
 elsif ($mode eq "WorldModelers") {
     $internal_ontology_dir = "$hume_repo_root/resource/ontologies/internal/hume/";
+    $external_ontology_dir = "$hume_repo_root/resource/dependencies/probabilistic_grounding/WM_Ontologies/";
+}
+elsif ($mode eq "BBN") {
+    $internal_ontology_dir = "$hume_repo_root/resource/ontologies/internal/bbn";
+    $external_ontology_dir = "";
 }
 else {
     die "mode has to be CauseEx or WorldModelers";
 }
 
-# Batch files
-my $batch_file_directory = make_output_dir("$processing_dir/batch_files");
+my $internal_event_ontology_yaml_filename = "event_ontology.yaml";
+my $use_compositional_ontology = get_param($params, "use_compositional_ontology", "true");
+if ($mode eq "WorldModelers" && $use_compositional_ontology eq "true") {
+    $internal_event_ontology_yaml_filename = "compositional_event_ontology.yaml";
+}
 
-die "check_requirements failed!\n" unless check_requirements();
+# Batch files
+# my $batch_file_directory = make_output_dir("$processing_dir/batch_files");
+
+check_requirements();
 
 # Max jobs setting
 max_jobs("$JOB_NAME/serif" => 200,);
+max_jobs("$JOB_NAME/bert" => 100,);
 max_jobs("$JOB_NAME/kbp" => 200,);
-max_jobs("$JOB_NAME/generic_events" => 200,);
-max_jobs("$JOB_NAME/learnit" => 200,);
-max_jobs("$JOB_NAME/nn_events" => 300,);
-max_jobs("$JOB_NAME/probabilistic_grounding" => 300,);
-max_jobs("$JOB_NAME/event_consolidation" => 200,);
-max_jobs("$JOB_NAME/learnit" => 200,);
-max_jobs("$JOB_NAME/grounding_serialize" => 200,);
+max_jobs("$JOB_NAME/learnit_decoder" => 100,);
+max_jobs("$JOB_NAME/pyserif" => 100,);
+max_jobs("$JOB_NAME/serialize" => 500,);
+
+my $use_bert = (get_param($params, "use_bert", "true") eq "true");
+my $max_number_of_tokens_per_sentence_global = int(get_param($params, "max_number_of_tokens_per_sentence", 250));
+
+
+################
+# CDR ingestion
+################
+my $input_metadata_file = "";
+my $input_sgm_list = "";
+if (exists $stages{"cdr-ingestion"}) {
+    print "CDR ingestion stage\n";
+    my $input_cdr_list = get_param($params, "input_cdr_list");
+    my $breaking_point = int(get_param($params, "breaking_point", 30000));
+    my $stage_name = "cdr_ingestion";
+
+    (my $cdr_ingestion_output_dir, undef) = Utils::make_output_dir("$processing_dir/$stage_name", "$JOB_NAME/$stage_name/mkdir_stage_processing", []);
+    (my $cdr_ingestion_batch_output_dir, my $mkdir_batch_jobids) = Utils::make_output_dir("$processing_dir/$stage_name/batch_file", "$JOB_NAME/$stage_name/mkdir_stage_processing_batch", []);
+    my ($split_jobid, undef) = Utils::split_file_list_with_num_of_batches(
+        PYTHON                  => $PYTHON3,
+        CREATE_FILELIST_PY_PATH => $CREATE_FILELIST_PY_PATH,
+        num_of_batches          => $NUM_OF_BATCHES_GLOBAL,
+        suffix                  => "",
+        output_file_prefix      => "$cdr_ingestion_batch_output_dir/",
+        list_file_path          => $input_cdr_list,
+        job_prefix              => "$JOB_NAME/$stage_name/",
+        dependant_job_ids       => $mkdir_batch_jobids,
+    );
+
+    my @cdr_ingestion_jobs = ();
+    for (my $n = 0; $n < $NUM_OF_BATCHES_GLOBAL; $n++) {
+        (my $batch_processing_dir, my $mkdir_batch_jobid) = Utils::make_output_dir("$cdr_ingestion_output_dir/$n", "$JOB_NAME/$stage_name/$n/mkdir_batch_processing_" . $n, $split_jobid);
+        my $batch_file = "$cdr_ingestion_batch_output_dir/$n";;
+        my $cdr_ingestion_batch_jobid = runjobs(
+            $mkdir_batch_jobid, "$JOB_NAME/$stage_name/$n/convert_cdr_to_corpus",
+            {
+                BATCH_QUEUE => $LINUX_QUEUE,
+            },
+            [ "$PYTHON3 $CONVERT_CDR_TO_HUME_CORPUS --input_cdr_list $batch_file --output_folder $batch_processing_dir --breaking_point $breaking_point" ]
+        );
+        push(@cdr_ingestion_jobs, $cdr_ingestion_batch_jobid);
+    }
+    $input_metadata_file = "$cdr_ingestion_output_dir/metadata_all.txt";
+    $input_sgm_list = "$cdr_ingestion_output_dir/sgms_all.list";
+    my $list_results_metadata_jobid = runjobs(
+        \@cdr_ingestion_jobs, "$JOB_NAME/$stage_name/list-metadata-results",
+        {
+            BATCH_QUEUE => $LINUX_QUEUE,
+            SCRIPT      => 1
+        },
+        [ "find $cdr_ingestion_output_dir -type f -name 'metadata.txt' -exec cat {} \\; > $input_metadata_file" ]
+    );
+    my $list_results_sgms_list_jobid = runjobs(
+        \@cdr_ingestion_jobs, "$JOB_NAME/$stage_name/list-sgms-list-results",
+        {
+            BATCH_QUEUE => $LINUX_QUEUE,
+            SCRIPT      => 1
+        },
+        [ "find $cdr_ingestion_output_dir -type f -name 'sgms.list' -exec cat {} \\; | shuf > $input_sgm_list" ]
+    );
+    dojobs();
+    # if (is_run_mode()) {
+    #     open(FILE, "<$input_sgm_list") or die "Could not open file: $!";
+    #     my $lines = 0;
+    #     while (<FILE>) {
+    #         $lines++;
+    #     }
+    #     if ($lines < 1) {
+    #         die "Empty corpus folder detected!";
+    #     }
+    #     elsif ($lines < $NUM_OF_BATCHES_GLOBAL) {
+    #         die "NUM_OF_BATCHES must be less than or equal to $lines";
+    #     }
+    #     close(FILE);
+    # }
+}
+dojobs();
+
 
 ########
 # Serif
 ########
+
+
 my $GENERATED_SERIF_SERIFXML = "$processing_dir/serif_serifxml.list";
 my $GENERATED_SERIF_CAUSE_EFFECT_JSON_DIR = "$processing_dir/serif_cause_effect_json";
 my $GENERATED_FACTFINDER_JSON_FILE = "$processing_dir/serif/facts.json";
@@ -167,41 +313,78 @@ if (exists $stages{"serif"}) {
     print "Serif stage\n";
 
     # Run Serif in parallel
-    my $input_sgm_list = get_param($params, "serif_input_sgm_list");
-    my ($NUM_JOBS, $split_serif_jobid) = split_file_for_processing("make_serif_batch_files", $input_sgm_list, "$batch_file_directory/serif_batch_file_", $BATCH_SIZE);
+    my $mkdir_jobid;
+    $input_sgm_list = get_param($params, "serif_input_sgm_list") eq "GENERATED" ? $input_sgm_list : get_param($params, "serif_input_sgm_list");
+
+    my $serif_fast_mode = (get_param($params, "serif_fast_mode", "false") eq "true");
+
+    my $gpe_pseudonym = (get_param($params, "gpe_pseudonym", "false") eq "true");
+
+    my $stage_name = "serif";
+    (my $master_serif_output_dir, $mkdir_jobid) = Utils::make_output_dir("$processing_dir/serif", "$JOB_NAME/$stage_name/mkdir_stage_processing", []);
+    (my $batch_file_dir, $mkdir_jobid) = Utils::make_output_dir("$master_serif_output_dir/batch_files", "$JOB_NAME/$stage_name/mkdir_stage_processing_batch", []);
+
+    my ($split_serif_jobid, undef) = Utils::split_file_list_with_num_of_batches(
+        PYTHON                  => $PYTHON3,
+        CREATE_FILELIST_PY_PATH => $CREATE_FILELIST_PY_PATH,
+        num_of_batches          => $NUM_OF_BATCHES_GLOBAL,
+        suffix                  => "",
+        output_file_prefix      => "$batch_file_dir/",
+        list_file_path          => $input_sgm_list,
+        job_prefix              => "$JOB_NAME/$stage_name/",
+        dependant_job_ids       => [],
+    );
     my $par_dir = $ENV{"SVN_PROJECT_ROOT"} . "/SERIF/par";
-    my $master_serif_output_dir = make_output_dir("$processing_dir/serif");
+
     my $should_track_files_read = get_param($params, "track_serif_files_read", "true");
     my $use_basic_cipher_stream = get_param($params, "use_basic_cipher_stream", "false");
+    my $serif_cause_effect_patterns_dir = "$hume_repo_root/resource/serif_cause_effect_patterns";
+    my $fast_mode_pars = "";
+    if ($serif_fast_mode) {
+        $fast_mode_pars = "
+OVERRIDE run_icews: false
+OVERRIDE run_fact_finder: false
+OVERRIDE max_parser_seconds: 5
+    ";
+    }
+
     my @serif_jobs = ();
-    for (my $n = 0; $n < $NUM_JOBS; $n++) {
-        my $job_batch_num = sprintf("%05d", $n);
-        my $serif_job_name = "$JOB_NAME/serif/$job_batch_num";
+    for (my $n = 0; $n < $NUM_OF_BATCHES_GLOBAL; $n++) {
+        my $job_batch_num = $n;
+        my $serif_job_name = "$JOB_NAME/$stage_name/$job_batch_num";
         my $experiment_dir = "$master_serif_output_dir/$job_batch_num";
-        my $batch_file = "$batch_file_directory/serif_batch_file_$job_batch_num";
-        my $serif_cause_effect_patterns_dir = "$hume_repo_root/resource/serif_cause_effect_patterns";
+        my $batch_file = "$batch_file_dir/$job_batch_num";
+
         if (get_param($params, "serif_server_mode_endpoint", "None") eq "None") {
             if ($mode eq "CauseEx") {
                 my $serif_par = "serif_causeex.par";
                 my $icews_lib_dir = $ENV{"SVN_PROJECT_ROOT"} . "/W-ICEWS/lib";
                 my $project_specific_serif_data_root = "$hume_repo_root/resource/serif_data_causeex";
+                my $gpe_pseudonym_pars = "";
+                if ($gpe_pseudonym) {
+                    $gpe_pseudonym_pars = "
+OVERRIDE tokenizer_subst: $project_specific_serif_data_root/tokenization/token-subst.data
+";
+                }
                 my $serif_jobid =
                     runjobs(
-                        [ $split_serif_jobid ], $serif_job_name,
+                        $split_serif_jobid, $serif_job_name,
                         {
-                            par_dir                          => $par_dir,
-                            experiment_dir                   => $experiment_dir,
-                            batch_file                       => $batch_file,
-                            icews_lib_dir                    => $icews_lib_dir,
-                            bbn_actor_db                     => get_param($params, "serif_input_awake_db"),
-                            project_specific_serif_data_root => $project_specific_serif_data_root,
-                            cause_effect_output_dir          => $GENERATED_SERIF_CAUSE_EFFECT_JSON_DIR,
-                            SERIF_DATA                       => $SERIF_DATA,
-                            SGE_VIRTUAL_FREE                 => "16G",
-                            BATCH_QUEUE                      => $LINUX_QUEUE,
-                            serif_cause_effect_patterns_dir  => $serif_cause_effect_patterns_dir,
-                            should_track_files_read          => $should_track_files_read,
-                            use_basic_cipher_stream          => $use_basic_cipher_stream
+                            par_dir                           => $par_dir,
+                            experiment_dir                    => $experiment_dir,
+                            batch_file                        => $batch_file,
+                            icews_lib_dir                     => $icews_lib_dir,
+                            bbn_actor_db                      => get_param($params, "serif_input_awake_db"),
+                            project_specific_serif_data_root  => $project_specific_serif_data_root,
+                            cause_effect_output_dir           => $GENERATED_SERIF_CAUSE_EFFECT_JSON_DIR,
+                            SERIF_DATA                        => $SERIF_DATA,
+                            BATCH_QUEUE                       => $LINUX_QUEUE,
+                            serif_cause_effect_patterns_dir   => $serif_cause_effect_patterns_dir,
+                            should_track_files_read           => $should_track_files_read,
+                            use_basic_cipher_stream           => $use_basic_cipher_stream,
+                            max_number_of_tokens_per_sentence => $max_number_of_tokens_per_sentence_global,
+                            fast_mode_pars                    => $fast_mode_pars,
+                            gpe_pseudonym_pars                => $gpe_pseudonym_pars
                         },
                         [ "$SERIF_EXE", $serif_par ]
                     );
@@ -212,20 +395,21 @@ if (exists $stages{"serif"}) {
                 my $project_specific_serif_data_root = "$hume_repo_root/resource/serif_data_wm";
                 my $serif_jobid =
                     runjobs(
-                        [ $split_serif_jobid ], $serif_job_name,
+                        $split_serif_jobid, $serif_job_name,
                         {
-                            par_dir                          => $par_dir,
-                            experiment_dir                   => $experiment_dir,
-                            batch_file                       => $batch_file,
-                            bbn_actor_db                     => get_param($params, "serif_input_awake_db"),
-                            project_specific_serif_data_root => $project_specific_serif_data_root,
-                            cause_effect_output_dir          => $GENERATED_SERIF_CAUSE_EFFECT_JSON_DIR,
-                            SERIF_DATA                       => $SERIF_DATA,
-                            SGE_VIRTUAL_FREE                 => "16G",
-                            BATCH_QUEUE                      => $LINUX_QUEUE,
-                            serif_cause_effect_patterns_dir  => $serif_cause_effect_patterns_dir,
-                            should_track_files_read          => $should_track_files_read,
-                            use_basic_cipher_stream          => $use_basic_cipher_stream
+                            par_dir                           => $par_dir,
+                            experiment_dir                    => $experiment_dir,
+                            batch_file                        => $batch_file,
+                            bbn_actor_db                      => get_param($params, "serif_input_awake_db"),
+                            project_specific_serif_data_root  => $project_specific_serif_data_root,
+                            cause_effect_output_dir           => $GENERATED_SERIF_CAUSE_EFFECT_JSON_DIR,
+                            SERIF_DATA                        => $SERIF_DATA,
+                            BATCH_QUEUE                       => $LINUX_QUEUE,
+                            serif_cause_effect_patterns_dir   => $serif_cause_effect_patterns_dir,
+                            should_track_files_read           => $should_track_files_read,
+                            use_basic_cipher_stream           => $use_basic_cipher_stream,
+                            max_number_of_tokens_per_sentence => $max_number_of_tokens_per_sentence_global,
+                            fast_mode_pars                    => $fast_mode_pars
                         },
                         [ "$SERIF_EXE", $serif_par ]
                     );
@@ -239,10 +423,9 @@ if (exists $stages{"serif"}) {
                 runjobs(
                     [ $split_serif_jobid ], $serif_job_name,
                     {
-                        SGE_VIRTUAL_FREE => "1G",
-                        BATCH_QUEUE      => $LINUX_QUEUE,
+                        BATCH_QUEUE => $LINUX_QUEUE,
                     },
-                    [ "env PYTHONPATH=$NNEVENT_PYTHON_PATH $PYTHON3 $SERIF_SERVER_MODE_CLIENT_SCRIPT --file_list_path $batch_file --output_directory_path $experiment_dir --server_http_endpoint $serif_uri" ]
+                    [ "$PYTHON3 $SERIF_SERVER_MODE_CLIENT_SCRIPT --file_list_path $batch_file --output_directory_path $experiment_dir --server_http_endpoint $serif_uri" ]
                 );
             push(@serif_jobs, $serif_jobid);
         }
@@ -251,30 +434,216 @@ if (exists $stages{"serif"}) {
     # convert factfinder results into json file that the
     # serialize stage will use
     if ((get_param($params, "serif_server_mode_endpoint", "None") eq "None") and ($mode eq "CauseEx")) {
-        my $process_factfinder_results_job_name = "$JOB_NAME/serif/process_factfinder_results";
+        my $process_factfinder_results_job_name = "$JOB_NAME/$stage_name/process_factfinder_results";
         my $process_factfinder_results_jobid =
             runjobs(
                 \@serif_jobs, $process_factfinder_results_job_name,
                 {
                     BATCH_QUEUE => $LINUX_QUEUE,
                 },
-                [ "$PYTHON2 $FACTFINDER_TO_JSON_SCRIPT $master_serif_output_dir $GENERATED_FACTFINDER_JSON_FILE" ]
+                [ "$PYTHON3 $FACTFINDER_TO_JSON_SCRIPT $master_serif_output_dir $GENERATED_FACTFINDER_JSON_FILE" ]
             );
     }
     else {
         # @hqiu: Logic here is convoluted !!!
-        make_output_dir($GENERATED_SERIF_CAUSE_EFFECT_JSON_DIR);
+        Utils::make_output_dir($GENERATED_SERIF_CAUSE_EFFECT_JSON_DIR, "$JOB_NAME/$stage_name/mkdir_dummy_fact_finder", []);
     }
     # Compine results into one list
-    my $list_results_job_name = "$JOB_NAME/list-serif-results";
-    my $list_results_jobid =
-        runjobs(
-            \@serif_jobs, $list_results_job_name,
-            {
-                SCRIPT => 1
-            },
-            [ "$CREATE_FILE_LIST_SCRIPT --unix_style_pathname \"$master_serif_output_dir/*/output/*.xml\" --output_list_path $GENERATED_SERIF_SERIFXML" ]
+    my $list_results_jobid = generate_file_list(\@serif_jobs, "$JOB_NAME/$stage_name/list-serif-results", "$master_serif_output_dir/*/output/*.xml", $GENERATED_SERIF_SERIFXML);
+}
+
+dojobs();
+
+#######
+# BERT
+#######
+my $GENERATED_BERT_NPZ_LIST = "NONE";
+if ((exists $stages{"bert"}) && $use_bert) {
+    print "bert stage\n";
+
+    my $input_serifxml_list =
+        get_param($params, "bert_input_serifxml_list") eq "GENERATED"
+            ? $GENERATED_SERIF_SERIFXML
+            : get_param($params, "bert_input_serifxml_list");
+    my $BERT_layers =
+        get_param($params, "bert_layers") eq "DEFAULT"
+            ? "-1"
+            : get_param($params, "bert_layers");
+    my $stage_name = "bert";
+    (my $stage_processing_dir, undef) = Utils::make_output_dir("$processing_dir/bert", "$JOB_NAME/$stage_name/mkdir_stage_processing", []);
+
+    my $single_bert_thread_mode = get_param($params, "single_bert_thread_mode", "false") eq "true";
+    my $number_of_processes_bert_io = int(get_param($params, "number_of_batches_bert_io", $NUM_OF_BATCHES_GLOBAL));
+    my $number_of_processes_bert_cpu = int(get_param($params, "number_of_batches_bert_cpu", $NUM_OF_BATCHES_GLOBAL));
+    $GENERATED_BERT_NPZ_LIST = "$stage_processing_dir/bert_npz.list";
+
+    my $bert_nn_batch_size = 32;
+    my $bucket_size = 128;
+    my $maximum_allowed_bert_tokens_per_sentence = 1.5 * $max_number_of_tokens_per_sentence_global; # Maximum is 512 from @ychan
+
+    my $token_map_dir;
+
+    my $token_map_list = "$stage_processing_dir/token_map.list";
+    my $sent_info_list_by_docid_for_s1 = "$stage_processing_dir/sent_info_list_by_docid_for_s1.list";
+
+    my $list_token_map_jobid;
+    my $list_sent_info_list_by_docid_for_s1_jobid;
+    {
+        # Stage 1. Got alignment map in between serif and bert token. Get pure serif token
+        my @extract_token_map_and_serif_token_jobs = ();
+        my $mini_stage = "extract_token_map_and_serif_tokens";
+        (my $batch_file_directory, my $mkdir_batch_jobid) = Utils::make_output_dir("$stage_processing_dir/$mini_stage/batch_files", "$JOB_NAME/$stage_name/$mini_stage/mkdir_stage_processing_batch", []);
+        $token_map_dir = "$stage_processing_dir/$mini_stage/token_map";
+
+        my ($split_bert_jobid, undef) = Utils::split_file_list_with_num_of_batches(
+            PYTHON                  => $PYTHON3,
+            CREATE_FILELIST_PY_PATH => $CREATE_FILELIST_PY_PATH,
+            num_of_batches          => $number_of_processes_bert_io,
+            suffix                  => "",
+
+            output_file_prefix      => "$batch_file_directory/bert_batch_file_",
+            list_file_path          => $input_serifxml_list,
+            job_prefix              => "$JOB_NAME/$stage_name/$mini_stage/",
+            dependant_job_ids       => $mkdir_batch_jobid,
         );
+        for (my $n = 0; $n < $number_of_processes_bert_io; $n++) {
+            my $batch_file = "$batch_file_directory/bert_batch_file_$n";
+            (my $token_map_dir_batch, undef) = Utils::make_output_dir("$token_map_dir/$n", "$JOB_NAME/$stage_name/$mini_stage/$n/mkdir_token_map_batch", []);
+            my $add_prefix_to_serifxml_in_list_jobid =
+                runjobs(
+                    $split_bert_jobid, "$JOB_NAME/$stage_name/$mini_stage/$n/make_bert_batch_files_add_prefix",
+                    {
+                        BATCH_QUEUE => $LINUX_QUEUE,
+                        SCRIPT      => 1
+                    },
+                    [ "cat $batch_file | awk '{print \"SERIF:\"\$0}' > $batch_file\.with_type" ]
+                );
+            my $producing_bert_tokens = runjobs(
+                [ $add_prefix_to_serifxml_in_list_jobid ], "$JOB_NAME/$stage_name/$mini_stage/$n/bert_tokens",
+                {
+                    BATCH_QUEUE => $LINUX_QUEUE
+                },
+                [ "env PYTHONPATH=$BERT_PYTHON_PATH MKL_NUM_THREADS=1 $ANACONDA_ROOT/envs/$CONDA_ENV_NAME_FOR_BERT_CPU/bin/python $BERT_TOKENIZER_PATH --filelist $batch_file\.with_type --bert_vocabfile $BERT_VOCAB_FILE --outdir $token_map_dir_batch --maximum_allowed_bert_tokens_per_sentence $maximum_allowed_bert_tokens_per_sentence --do_lower_case True" ]
+            );
+            push(@extract_token_map_and_serif_token_jobs, $producing_bert_tokens);
+        }
+        $list_token_map_jobid = generate_file_list(\@extract_token_map_and_serif_token_jobs, "$JOB_NAME/$stage_name/$mini_stage/list-token_map-results", "$token_map_dir/*/*.token_map", $token_map_list);
+        $list_sent_info_list_by_docid_for_s1_jobid = generate_file_list(\@extract_token_map_and_serif_token_jobs, "$JOB_NAME/$stage_name/$mini_stage/list-input_token-results", "$token_map_dir/*/sent_info.info", $sent_info_list_by_docid_for_s1);
+
+    }
+
+    my $batch_prefix_for_sorted_sentences = "sorted_sentences_";
+    my $output_sorted_sentences_dir;
+    my $generate_token_num_reverse_list_jobid;
+    my $bert_job_list_path = "$stage_processing_dir/bert_job_list.list";
+    my $number_of_batches_modified = $number_of_processes_bert_cpu;
+    if ($single_bert_thread_mode) {
+        $number_of_batches_modified = int($number_of_processes_bert_cpu * $NUM_OF_BATCHES_GLOBAL);
+    }
+    {
+        # Stage 2. Sort Sentences list by their number of tokens
+        my $mini_stage = "sort_sentence_list_by_number_of_tokens";
+        $output_sorted_sentences_dir = "$stage_processing_dir/$mini_stage";
+
+        $generate_token_num_reverse_list_jobid = runjobs(
+            [ $list_sent_info_list_by_docid_for_s1_jobid ], "$JOB_NAME/$stage_name/$mini_stage",
+            {
+                BATCH_QUEUE => $LINUX_QUEUE
+            },
+            [ "env MKL_NUM_THREADS=1 $PYTHON3 $BERT_GENERATE_FILE_LIST_BY_NUMBER_OF_TOKENS --input_sent_info_list $sent_info_list_by_docid_for_s1 --number_of_batches $number_of_batches_modified --batch_prefix $batch_prefix_for_sorted_sentences --output_path $output_sorted_sentences_dir --bert_job_list_path $bert_job_list_path" ]
+        );
+    }
+
+    my $bert_output_dir = "$stage_processing_dir/bert_embs";
+    my $bert_output_prefix = "bert_emb_";
+    my @run_bert_jobs = ();
+    {
+        # Stage 3. Run bert
+
+        my $mini_stage = "run_bert";
+
+        (my $batch_file_directory, my $mkdir_bert_batch_jobids) = Utils::make_output_dir("$stage_processing_dir/$mini_stage/run_bert_batch", "$JOB_NAME/$stage_name/$mini_stage/mkdir_batch_folder", [ $generate_token_num_reverse_list_jobid ]);
+
+        my ($split_bert_jobid, undef) = Utils::split_file_list_with_num_of_batches(
+            PYTHON                  => $PYTHON3,
+            CREATE_FILELIST_PY_PATH => $CREATE_FILELIST_PY_PATH,
+            num_of_batches          => $number_of_processes_bert_cpu,
+            suffix                  => "",
+            output_file_prefix      => "$batch_file_directory/bert_batch_file_",
+            list_file_path          => $bert_job_list_path,
+            job_prefix              => "$JOB_NAME/$stage_name/$mini_stage/split_batch",
+            dependant_job_ids       => $mkdir_bert_batch_jobids,
+        );
+
+        for (my $n = 0; $n < $number_of_processes_bert_cpu; $n++) {
+            my $input_batch_file = "$batch_file_directory/bert_batch_file_$n";
+            my $runjob_conf = {};
+            $runjob_conf->{BATCH_QUEUE} = $SINGULARITY_GPU_QUEUE;
+            $runjob_conf->{SGE_VIRTUAL_FREE} = "12G";
+
+            if ($single_bert_thread_mode) {
+                $runjob_conf->{SCRIPT} = 1;
+                $runjob_conf->{SGE_VIRTUAL_FREE} = "28G";
+                $runjob_conf->{max_memory_over} = "228G";
+            }
+
+            if ($single_bert_thread_mode) {
+                (my $scratch_file_directory, my $mkdir_scratch_batch_jobids) = Utils::make_output_dir("$stage_processing_dir/$mini_stage/$n/run_bert_scratch", "$JOB_NAME/$stage_name/$mini_stage/$n/mkdir_scratch_folder", $mkdir_bert_batch_jobids);
+                my $run_bert_jobid = runjobs(
+                    $split_bert_jobid, "$JOB_NAME/$stage_name/$mini_stage/$n/run_bert",
+                    $runjob_conf,
+                    [ "$ANACONDA_ROOT/envs/$CONDA_ENV_NAME_FOR_DOC_RESOLVER/bin/python $AFFINITY_SCHEDULER --input_list_path $input_batch_file --batch_id $n --number_of_batches $NUM_OF_BATCHES_GLOBAL --command_prefix \"env PYTHONPATH=$BERT_PYTHON_PATH MKL_NUM_THREADS=1 $ANACONDA_ROOT/envs/$CONDA_ENV_NAME_FOR_BERT_GPU/bin/python $BERT_EXTRACT_BERT_FEATURES_PATH \-\-input_batch_file BBN_INPUT_BATCH_FILE \-\-output_dir $bert_output_dir \-\-output_prefix $bert_output_prefix \-\-current_bert_batch_id BBN_PASS_IN_BATCH_ID_FIELD \-\-BERT_BASE_DIR $BERT_MODEL_PATH \-\-layers $BERT_layers \-\-batch_size $bert_nn_batch_size \-\-bucket_size $bucket_size \-\-do_lower_case True \-\-max_seq_length $maximum_allowed_bert_tokens_per_sentence\" --batch_arg_name BBN_INPUT_BATCH_FILE --scratch_space $scratch_file_directory --pass_in_batch_id_field BBN_PASS_IN_BATCH_ID_FIELD --number_of_jobs_from_user $NUM_OF_SCHEDULING_JOBS_FOR_NN" ]
+                );
+                push(@run_bert_jobs, $run_bert_jobid);
+            }
+            else {
+                my $run_bert_jobid = runjobs(
+                    $split_bert_jobid, "$JOB_NAME/$stage_name/$mini_stage/$n/run_bert",
+                    $runjob_conf,
+                    [ "env PYTHONPATH=$BERT_PYTHON_PATH MKL_NUM_THREADS=1 $ANACONDA_ROOT/envs/$CONDA_ENV_NAME_FOR_BERT_GPU/bin/python $BERT_EXTRACT_BERT_FEATURES_PATH --input_batch_file $input_batch_file --output_dir $bert_output_dir --output_prefix $bert_output_prefix --current_bert_batch_id $n --BERT_BASE_DIR $BERT_MODEL_PATH --layers $BERT_layers --batch_size $bert_nn_batch_size --bucket_size $bucket_size --do_lower_case True --max_seq_length $maximum_allowed_bert_tokens_per_sentence" ]
+
+                );
+                push(@run_bert_jobs, $run_bert_jobid);
+            }
+
+        }
+
+    }
+
+    my $generated_npz_dir;
+
+    {
+        # Stage 4. Generate NPZ
+        my $mini_stage = "generate_npz";
+        my @generate_npz_jobid = ();
+        $generated_npz_dir = "$stage_processing_dir/$mini_stage/npzs";
+        for (my $n = 0; $n < $number_of_batches_modified; $n++) {
+            my $batch_dir = "$bert_output_dir/$bert_output_prefix" . $n;
+            (undef, my $mkdir_minijob_id) = Utils::make_output_dir("$batch_dir", "$JOB_NAME/$stage_name/$mini_stage/$n/mkdir", []);
+            my $batch_out_dir = "$generated_npz_dir/$n";
+            my $generate_npz_jobid = runjobs(
+                \@run_bert_jobs, "$JOB_NAME/$stage_name/$mini_stage/$n/generate_npz",
+                {
+                    BATCH_QUEUE => $LINUX_QUEUE
+                },
+                [ "env MKL_NUM_THREADS=1 $ANACONDA_ROOT/envs/$CONDA_ENV_NAME_FOR_BERT_CPU/bin/python $BERT_NPZ_EMBEDDING --batch_dir $batch_dir --token_map_list $token_map_list --outdir $batch_out_dir" ]
+
+            );
+            push(@generate_npz_jobid, $generate_npz_jobid);
+        }
+        my $list_results_jobid = generate_file_list(\@generate_npz_jobid, "$JOB_NAME/$stage_name/$mini_stage/list-bert-results", "$generated_npz_dir/*/*.npz", $GENERATED_BERT_NPZ_LIST);
+
+        my $clean_up_jobid = runjobs(
+            $list_results_jobid, "$JOB_NAME/$stage_name/$mini_stage/cleanup",
+            {
+                BATCH_QUEUE => $LINUX_QUEUE,
+                SCRIPT      => 1
+            },
+            [ "rm -rf $token_map_dir" ],
+            [ "rm -rf $output_sorted_sentences_dir" ],
+            [ "rm -rf $bert_output_dir" ]
+        );
+    }
 }
 
 dojobs();
@@ -285,143 +654,220 @@ dojobs();
 my $GENERATED_KBP_SERIFXML = $GENERATED_SERIF_SERIFXML;
 if (exists $stages{"kbp"}) {
     print "KBP stage\n";
+    my $mkdir_jobid;
     $GENERATED_KBP_SERIFXML = "$processing_dir/kbp_serifxml.list";
-    # Strip events
+
     my $input_serifxml_list =
         get_param($params, "kbp_input_serifxml_list") eq "GENERATED"
             ? $GENERATED_SERIF_SERIFXML
             : get_param($params, "kbp_input_serifxml_list");
-
-    my $strip_events_job_name = "$JOB_NAME/strip_events";
-    my $stripped_events_serifxml_dir = "$processing_dir/stripped/output";
-    my $stripped_events_serifxml_list = "$processing_dir/stripped_serifxml.list";
-    my $strip_events_jobid =
-        runjobs(
-            [], $strip_events_job_name,
-            {
-                input_file_list  => $input_serifxml_list,
-                output_dir       => $stripped_events_serifxml_dir,
-                output_file_list => $stripped_events_serifxml_list,
-                BATCH_QUEUE      => $LINUX_QUEUE,
-            },
-            [ "$STRIP_EVENTS_EXE", "strip_events.par" ]
-        );
-    dojobs();
-
+    my $stage_name = "kbp";
+    (my $master_kbp_output_dir, $mkdir_jobid) = Utils::make_output_dir("$processing_dir/kbp", "$JOB_NAME/$stage_name/mkdir_stage_processing", []);
+    (my $batch_file_directory, $mkdir_jobid) = Utils::make_output_dir("$master_kbp_output_dir/batch_files", "$JOB_NAME/$stage_name/mkdir_stage_processing_batch", []);
     # Run KBP event finding in parallel
-    my ($NUM_JOBS, $split_kbp_jobid) = split_file_for_processing("make_kbp_batch_files", $stripped_events_serifxml_list, "$batch_file_directory/kbp_batch_file_", $BATCH_SIZE);
-    my $master_kbp_output_dir = make_output_dir("$processing_dir/kbp");
+
+
+    my ($split_kbp_jobid, undef) = Utils::split_file_list_with_num_of_batches(
+        PYTHON                  => $PYTHON3,
+        CREATE_FILELIST_PY_PATH => $CREATE_FILELIST_PY_PATH,
+        num_of_batches          => $NUM_OF_BATCHES_GLOBAL,
+        suffix                  => "",
+
+        output_file_prefix      => "$batch_file_directory/kbp_batch_file_",
+        list_file_path          => $input_serifxml_list,
+        job_prefix              => "$JOB_NAME/$stage_name/",
+        dependant_job_ids       => [],
+    );
+
     my @kbp_jobs = ();
-    for (my $n = 0; $n < $NUM_JOBS; $n++) {
-        my $job_batch_num = sprintf("%05d", $n);
+    for (my $n = 0; $n < $NUM_OF_BATCHES_GLOBAL; $n++) {
+        my $job_batch_num = $n;
+        (my $batch_processing_dir, $mkdir_jobid) = Utils::make_output_dir("$master_kbp_output_dir/$job_batch_num", "$JOB_NAME/$stage_name/$job_batch_num/mkdir_batch_processing_" . $job_batch_num, []);
+        (my $strip_event_serif_out_dir, $mkdir_jobid) = Utils::make_output_dir("$batch_processing_dir/strip_events/", "$JOB_NAME/$stage_name/$job_batch_num/mkdir_batch_processing_strip_" . $job_batch_num, []);
+        my $batch_input_file = "$batch_file_directory/kbp_batch_file_$job_batch_num";
+        my $stripped_events_serifxml_list = "$batch_file_directory/stripped_$job_batch_num.list";
+        my $strip_events_jobid =
+            runjobs(
+                $split_kbp_jobid, "$JOB_NAME/$stage_name/$job_batch_num/strip_events-$job_batch_num",
+                {
+                    input_file_list  => $batch_input_file,
+                    output_dir       => $strip_event_serif_out_dir,
+                    output_file_list => $stripped_events_serifxml_list,
+                    BATCH_QUEUE      => $LINUX_QUEUE,
+                },
+                [ "$STRIP_EVENTS_EXE", "strip_events.par" ]
+            );
+
         my $kbp_output_dir = "$master_kbp_output_dir/$job_batch_num/output";
         my $kbp_output_serifxml_list = "$master_kbp_output_dir/$job_batch_num/serifxml.list";
-        my $kbp_job_name = "$JOB_NAME/kbp/$job_batch_num";
-        my $batch_file = "$batch_file_directory/kbp_batch_file_$job_batch_num";
+        my $kbp_job_name = "$JOB_NAME/$stage_name/$job_batch_num/kbp-$job_batch_num";
         my $kbp_jobid =
             runjobs(
-                [ $split_kbp_jobid ], $kbp_job_name,
+                [ $strip_events_jobid ], $kbp_job_name,
                 {
-                    git_repo                   => $git_repo,
                     output_file_list           => $kbp_output_serifxml_list,
-                    input_file_list            => $batch_file,
+                    input_file_list            => $stripped_events_serifxml_list,
                     output_directory           => $kbp_output_dir,
                     SERIF_DATA                 => $SERIF_DATA,
                     BATCH_QUEUE                => $LINUX_QUEUE,
-                    SGE_VIRTUAL_FREE           => "16G",
                     dependencies_root          => $dependencies_root,
-                    external_dependencies_root => $external_dependencies_root
+                    external_dependencies_root => $external_dependencies_root,
+                    SGE_VIRTUAL_FREE           => [ "24G", "32G", "48G" ],
+                    job_retries                => 3
                 },
-                [ "$KBP_EVENT_FINDER_EXE", "kbp_event_finder.par" ]
+                [ "env JAVA_OPTS=\"-Xmx48G\" $KBP_EVENT_FINDER_EXE", "kbp_event_finder.par" ]
             );
         push(@kbp_jobs, $kbp_jobid);
     }
 
     # Compine results into one list
-    my $list_results_job_name = "$JOB_NAME/list-kbp-results";
-    my $list_results_jobid =
-        runjobs(
-            \@kbp_jobs, $list_results_job_name,
-            {
-                SCRIPT => 1,
-            },
-            [ "$CREATE_FILE_LIST_SCRIPT --unix_style_pathname \"$master_kbp_output_dir/*/output/*.xml\" --output_list_path $GENERATED_KBP_SERIFXML" ]
-        );
+    my $list_results_jobid = generate_file_list(\@kbp_jobs, "$JOB_NAME/$stage_name/list-kbp-results", "$master_kbp_output_dir/*/output/*.xml", $GENERATED_KBP_SERIFXML);
 }
 
 dojobs();
 
-##################
-## Generic events
-##################
-my $GENERATED_GENERIC_EVENTS_SERIFXML = $GENERATED_KBP_SERIFXML;
-if (exists $stages{"generic-events"}) {
-    print "Generic events stage\n";
+###################################
+# LearnIt  UnaryEvent and EventArg
+###################################
+my $LEARNIT_DECODER_SERIFXML = $GENERATED_KBP_SERIFXML;
+if (exists $stages{"learnit-decoder"}) {
+    print "LearnIt decoder stage\n";
+    my $mkdir_jobid;
+    my $learnit_decoder_jobids;
+    my $output_learnit_seriflist_path;
+    my $cserif_causal_json_stage_processing_dir;
+    {
+        my $stage_name = "learnit_decoder/learnit";
+        my $generic_event_noun_whitelist = get_param($params, "generic_event_noun_whitelist", "GENERATED") eq "GENERATED" ? "$hume_repo_root/resource/generic_events/generic_event.whitelist.wn-fn.variants" : get_param($params, "generic_event_noun_whitelist");
+        my $generic_event_blacklist = get_param($params, "generic_event_blacklist", "GENERATED") eq "GENERATED" ? "$hume_repo_root/resource/generic_events/modal_aux.verbs.list" : get_param($params, "generic_event_blacklist");
+        my $learnit_event_and_event_arg_pattern_dir = "DUMMY";
+        my $learnit_unary_entity_extractors = "DUMMY";
+        my $stage_to_run;
+        if ($mode eq "CauseEx") {
+            $stage_to_run = "generic_event,unary_event_and_binary_event_argument_decoding,binary_event_event_decoding";
+            $learnit_event_and_event_arg_pattern_dir = get_param($params, "learnit_event_and_event_arg_pattern_dir") eq "DEFAULT"
+                ? "$hume_repo_root/resource/domains/CX_ICM/learnit/unary_event.legacy,$hume_repo_root/resource/domains/CX_ICM/learnit/unary_event"
+                : get_param("learnit_event_and_event_arg_pattern_dir");
+        }
+        elsif ($mode eq "BBN") {
+            $stage_to_run = "generic_event,unary_event_and_binary_event_argument_decoding,binary_event_event_decoding";
+            $learnit_event_and_event_arg_pattern_dir = get_param($params, "learnit_event_and_event_arg_pattern_dir") eq "DEFAULT"
+                ? "$hume_repo_root/resource/domains/BBN/learnit/unary_event"
+                : get_param("learnit_event_and_event_arg_pattern_dir");
+        }
+        else {
+            $stage_to_run = "generic_event,unary_entity,unary_event_and_binary_event_argument_decoding,binary_event_event_decoding";
+            $learnit_event_and_event_arg_pattern_dir = get_param($params, "learnit_event_and_event_arg_pattern_dir") eq "DEFAULT"
+                ? "$hume_repo_root/resource/domains/WM/learnit/unary_event.legacy,$hume_repo_root/resource/domains/WM/learnit/unary_event"
+                : get_param("learnit_event_and_event_arg_pattern_dir");
+            $learnit_unary_entity_extractors = get_param($params, "learnit_unary_entity_pattern_dir") eq "DEFAULT" ?
+                "$hume_repo_root/resource/domains/WM/learnit/unary_entity" : get_param($params, "learnit_unary_entity_pattern_dir");
+        }
+        my $learnit_event_event_relation_pattern_dir = get_param($params, "learnit_event_event_relation_pattern_dir") eq "DEFAULT" ? "$hume_repo_root/resource/domains/common/learnit/binary_event.legacy,$hume_repo_root/resource/domains/common/learnit/binary_event" : get_param($params, "learnit_event_event_relation_pattern_dir");
 
-    my $input_serifxml_list =
-        get_param($params, "generic_events_input_serifxml_list") eq "GENERATED"
-            ? $GENERATED_KBP_SERIFXML
-            : get_param($params, "generic_events_input_serifxml_list");
+        my $input_serifxml_list =
+            get_param($params, "learnit_decoder_input_serifxml_list") eq "GENERATED"
+                ? $GENERATED_KBP_SERIFXML
+                : get_param($params, "learnit_decoder_input_serifxml_list");
 
-    my $output_serifxml_dir = "$processing_dir/generic_events_serifxml_out/";
-    my $output_serifxml_list = "$processing_dir/generic_events_serifxml_out.list";
-    my ($NUM_JOBS, $split_generic_events_jobid) = split_file_for_processing("make_generic_events_batch_files", $input_serifxml_list, "$batch_file_directory/generic_events_batch_file_", $BATCH_SIZE);
-    $output_serifxml_dir = make_output_dir($output_serifxml_dir);
-    my @generic_events_split_jobs = ();
+        my $learnit_decoding_obj = LearnItDecoding->new(
+            TEXT_OPEN   => $textopen_root,
+            PYTHON3     => $PYTHON3,
+            BATCH_QUEUE => $LINUX_QUEUE,
+            MEM_LIMIT   => "16G"
+        );
+        ($learnit_decoder_jobids, $output_learnit_seriflist_path) = $learnit_decoding_obj->LearnItDecoding(
+            dependant_job_ids                 => [],
+            job_prefix                        => "$JOB_NAME/$stage_name",
+            runjobs_template_path             => "learnit_decoding_pipeline.par",
+            runjobs_template_hash             => {
+                stages_to_run                                    => $stage_to_run,
+                max_number_of_tokens_per_sentence                => $max_number_of_tokens_per_sentence_global,
+                generic_event_noun_whitelist                     => $generic_event_noun_whitelist,
+                generic_event_blacklist                          => $generic_event_blacklist,
+                unary_event_and_binary_event_argument_extractors => $learnit_event_and_event_arg_pattern_dir,
+                binary_event_event_extractors                    => $learnit_event_event_relation_pattern_dir,
+                unary_entity_extractors                          => $learnit_unary_entity_extractors
 
-    for (my $n = 0; $n < $NUM_JOBS; $n++) {
-        my $job_batch_num = sprintf("%05d", $n);
-        my $batch_file = "$batch_file_directory/generic_events_batch_file_$job_batch_num";
-        my $add_event_mentions_from_propositions_jobid =
-            runjobs(
-                [ $split_generic_events_jobid ], "$JOB_NAME/generic_events/add_event_mentions_from_propositions_$job_batch_num",
-                {
-                    JSERIF_ROOT          => $JSERIF_ROOT,
-                    strListSerifXmlFiles => $batch_file,
-                    strOutputDir         => $output_serifxml_dir,
-                    file_whitelist       => "$hume_repo_root/resource/generic_events/generic_event.whitelist.wn-fn.variants",
-                    file_blacklist       => "$hume_repo_root/resource/generic_events/modal_aux.verbs.list",
-                    SGE_VIRTUAL_FREE     => "32G",
-                    BATCH_QUEUE          => $LINUX_QUEUE,
-                },
-                [ "sh", "add_event_mentions_by_pos_tags.sh" ]
-            );
-        push(@generic_events_split_jobs, $add_event_mentions_from_propositions_jobid);
+            },
+            input_serifxml_list               => $input_serifxml_list,
+            num_of_jobs                       => $NUM_OF_BATCHES_GLOBAL,
+            stage_processing_dir              => "$processing_dir/$stage_name",
+            should_output_incomplete_examples => "false"
+        );
     }
 
-    my $list_results_job_name = "$JOB_NAME/list-generic-events-results";
-    my $list_results_jobid =
-        runjobs(
-            \@generic_events_split_jobs, $list_results_job_name,
-            {
-                SCRIPT => 1,
-            },
-            [ "$CREATE_FILE_LIST_SCRIPT --unix_style_pathname \"$output_serifxml_dir/*\" --output_list_path $output_serifxml_list" ]
-        );
-    $GENERATED_GENERIC_EVENTS_SERIFXML = $output_serifxml_list;
-}
+    # {
+    #     #### Code block for adding CSerif causal json back
+    #     my $stage_name = "learnit_decoder/cserif_causal_json";
+    #     ($cserif_causal_json_stage_processing_dir, undef) = Utils::make_output_dir("$processing_dir/$stage_name", "$JOB_NAME/$stage_name/mkdir_stage_processing", []);
+    #     (my $batch_file_dir, undef) = Utils::make_output_dir("$cserif_causal_json_stage_processing_dir/batch_files", "$JOB_NAME/$stage_name/mkdir_staging_processing_batch_files", []);
+    #
+    #     my $input_json_list = get_param($params, "input_serif_cause_effect_relations_dir") eq "GENERATED"
+    #         ? $GENERATED_SERIF_CAUSE_EFFECT_JSON_DIR
+    #         : get_param($params, "input_serif_cause_effect_relations_dir");
+    #
+    #     my ($split_cserif_causal_json_jobid, undef) = Utils::split_file_list_with_num_of_batches(
+    #         PYTHON                  => $PYTHON3,
+    #         CREATE_FILELIST_PY_PATH => $CREATE_FILELIST_PY_PATH,
+    #         num_of_batches          => $NUM_OF_BATCHES_GLOBAL,
+    #         suffix                  => "",
+    #
+    #         output_file_prefix      => "$batch_file_dir/",
+    #         list_file_path          => $output_learnit_seriflist_path,
+    #         job_prefix              => "$JOB_NAME/$stage_name/",
+    #         dependant_job_ids       => $learnit_decoder_jobids,
+    #     );
+    #
+    #     my @create_event_event_relations_split_jobs = ();
+    #
+    #     for (my $n = 0; $n < $NUM_OF_BATCHES_GLOBAL; $n++) {
+    #         my $job_batch_num = $n;
+    #         (my $batch_processing_folder, $mkdir_jobid) = Utils::make_output_dir("$cserif_causal_json_stage_processing_dir/$job_batch_num/serifxml_uncalibrated", "$JOB_NAME/$stage_name/$job_batch_num/mkdir_uncalibrated_" . $job_batch_num, []);
+    #         my $input_batch_file = "$batch_file_dir/$job_batch_num";
+    #
+    #         my $create_event_event_relations_jobid =
+    #             runjobs(
+    #                 $split_cserif_causal_json_jobid, "$JOB_NAME/$stage_name/add_causal_relations_$job_batch_num",
+    #                 {
+    #                     input_serifxml_list       => $input_batch_file,
+    #                     output_serifxml_directory => $batch_processing_folder,
+    #                     input_json_list           => $input_json_list,
+    #                     BATCH_QUEUE               => $LINUX_QUEUE,
+    #                 },
+    #                 [ "$EVENT_EVENT_RELATION_EXE", "event_event_relations.par" ],
+    #             );
+    #         push(@create_event_event_relations_split_jobs, $create_event_event_relations_jobid);
+    #     }
+    #
+    #     my $list_uncalibrate_eer_serif_jobid = generate_file_list(\@create_event_event_relations_split_jobs, "$JOB_NAME/$stage_name/list_uncalibrate_serifxml", "$cserif_causal_json_stage_processing_dir/*/serifxml_uncalibrated/*.xml", "$cserif_causal_json_stage_processing_dir/cserif_causal_json_serif.list");
+    #     ## End code boundary for OpenNRE
+    # }
 
+
+    #### End code block
+    $LEARNIT_DECODER_SERIFXML = "$output_learnit_seriflist_path";
+}
 dojobs();
 
-
-###################
+##################
 # NN Event Typing 
-###################
-my $GENERATED_NN_EVENT_SERIFXML = $GENERATED_GENERIC_EVENTS_SERIFXML;
+##################
+my $GENERATED_NN_EVENT_SERIFXML = $LEARNIT_DECODER_SERIFXML;
 
 if (exists $stages{"nn-event-typing"}) {
     print "NN Event Typing stage\n";
-
+    my $mkdir_jobid;
     my $input_serifxml_list =
         get_param($params, "nn_event_typing_input_serifxml_list") eq "GENERATED"
-            ? $GENERATED_GENERIC_EVENTS_SERIFXML
+            ? $LEARNIT_DECODER_SERIFXML
             : get_param($params, "nn_event_typing_input_serifxml_list");
 
-    my $nn_event_typing_processing_dir = make_output_dir("$processing_dir/nn_event_typing");
+    (my $nn_event_typing_processing_dir, $mkdir_jobid) = Utils::make_output_dir("$processing_dir/nn_event_typing", "$JOB_NAME/nn_event_typing/mkdir_stage_processing", []);
     my $nn_event_typing_prefix = "nn_event_typing";
 
     # create_nn_decoder_input
-    my $nn_type_decoder_output_dir = make_output_dir("$nn_event_typing_processing_dir/nn_type_decoder_output/");
+    (my $nn_type_decoder_output_dir, $mkdir_jobid) = Utils::make_output_dir("$nn_event_typing_processing_dir/nn_type_decoder_output/", "$JOB_NAME/nn_event_typing/mkdir_stage_processing_output", []);
     my $serif_instances = "$nn_type_decoder_output_dir/serif_instances.tsv";
     my $serif_instances_mapper = "$nn_type_decoder_output_dir/serif_instances_mapper.tsv";
     my $nn_type_decoding_dataset = "$nn_type_decoder_output_dir/decoding_dataset.pkl";
@@ -436,7 +882,6 @@ if (exists $stages{"nn-event-typing"}) {
                 nn_typing_code_root       => "$hume_repo_root/util/python/nn_entity_typing",
                 ANACONDA_ROOT             => $ANACONDA_PY2_ROOT_FOR_NN_EVENT_TYPING,
                 CONDA_ENV_NAME            => $CONDA_ENV_NAME_FOR_NN_EVENT_TYPING,
-                SGE_VIRTUAL_FREE          => "75G",
                 BATCH_QUEUE               => $LINUX_QUEUE,
                 model_dir                 => "$dependencies_root/nn_event_typing/nn_entity_models/m15_20181115/model"
             },
@@ -455,7 +900,6 @@ if (exists $stages{"nn-event-typing"}) {
                 nn_typing_code_root     => "$hume_repo_root/util/python/nn_entity_typing",
                 ANACONDA_ROOT           => $ANACONDA_PY2_ROOT_FOR_NN_EVENT_TYPING,
                 CONDA_ENV_NAME          => $CONDA_ENV_NAME_FOR_NN_EVENT_TYPING,
-                SGE_VIRTUAL_FREE        => "128G",
                 BATCH_QUEUE             => $LINUX_QUEUE,
                 model_dir               => "$dependencies_root/nn_event_typing/nn_entity_models/m15_20181115/model"
             },
@@ -470,13 +914,11 @@ if (exists $stages{"nn-event-typing"}) {
         runjobs(
             [ $run_nn_type_decoding_job_id ], "$JOB_NAME/nn_event_typing/2_update_serif/update_serifxml_with_event_typing",
             {
-                jserif_root           => $JSERIF_ROOT,
                 serifxml_list         => $input_serifxml_list,
                 output_dir            => $nn_event_typing_serifxml_dir,
                 output_list           => $nn_event_typing_serifxml_list,
                 serif_instance_mapper => $serif_instances_mapper,
                 nn_type_predictions   => $nn_type_predictions,
-                SGE_VIRTUAL_FREE      => "32G",
                 BATCH_QUEUE           => $LINUX_QUEUE,
             },
             [ "sh", "update_serifxml_with_event_typing.sh" ]
@@ -490,562 +932,550 @@ if (exists $stages{"nn-event-typing"}) {
 dojobs();
 
 
+# # genericity has been turned off for the moment. Will need to turn it back later
+# if (exists $stages{"kbp"}) {
+#     print "kbp genericity stage\n";
+#     my $stage_name = "kbp_genericity";
+#     my $input_serifxml_list = $GENERATED_NN_DECODER_SERIFXML;
+#     # run genericity classifier
+#     my ($stage_processing_dir, undef) = Utils::make_output_dir("$processing_dir/$stage_name", "$JOB_NAME/$stage_name/mkdir_stage_processing", []);
+#     my ($batch_file_directory, undef) = Utils::make_output_dir("$stage_processing_dir/batch_file", "$JOB_NAME/$stage_name/mkdir_stage_processing_batch", []);
+#
+#     my ($split_nn_kbp_genericity_jobid, undef) = Utils::split_file_list_with_num_of_batches(
+#         PYTHON                  => $PYTHON3,
+#         CREATE_FILELIST_PY_PATH => $CREATE_FILELIST_PY_PATH,
+#         num_of_batches          => $NUM_OF_BATCHES_GLOBAL,
+#         suffix                  => "",
+#
+#         output_file_prefix      => "$batch_file_directory/kbp_genericity_batch_file_",
+#         list_file_path          => $input_serifxml_list,
+#         job_prefix              => "$JOB_NAME/$stage_name/",
+#         dependant_job_ids       => [],
+#     );
+#
+#     my @kbp_genericity_jobs = ();
+#
+#     for (my $n = 0; $n < $NUM_OF_BATCHES_GLOBAL; $n++) {
+#         my $job_batch_num = $n;
+#         my $batch_file = "$batch_file_directory/kbp_genericity_batch_file_$job_batch_num";
+#         my $nn_event_genericity_job_name = "$JOB_NAME/$stage_name/$job_batch_num/genericity_$job_batch_num";
+#         my ($batch_processing_dir, undef) = Utils::make_output_dir("$stage_processing_dir/$job_batch_num/genericity_output", "$JOB_NAME/$stage_name/$job_batch_num/mkdir_stage_processing", []);
+#         my $nn_events_genericity_output_list = "$batch_processing_dir/nn_events_genericity.DONOTUSE"; # DO NOT USE THIS JUST A PLACEHOLDER
+#         my $nn_event_genericity_jobid =
+#             runjobs(
+#                 $split_nn_kbp_genericity_jobid, $nn_event_genericity_job_name,
+#                 {
+#                     dependencies_root          => $dependencies_root,
+#                     external_dependencies_root => $external_dependencies_root,
+#                     output_file_list           => $nn_events_genericity_output_list,
+#                     input_file_list            => $batch_file,
+#                     output_directory           => $batch_processing_dir,
+#                     SERIF_DATA                 => $SERIF_DATA,
+#                     BATCH_QUEUE                => $LINUX_QUEUE,
+#                     SGE_VIRTUAL_FREE           => "20G"
+#
+#                 },
+#                 [ "$KBP_EVENT_FINDER_EXE", "kbp_genericity_only.par" ]
+#             );
+#         push(@kbp_genericity_jobs, $nn_event_genericity_jobid);
+#     }
+#     my $output_serif_list = "$processing_dir/$stage_name.list";
+#     my $list_results_jobid = generate_file_list(\@kbp_genericity_jobs, "$JOB_NAME/$stage_name/list-kbp-genericity-results", "$stage_processing_dir/*/genericity_output/*.xml", $output_serif_list);
+#     $GENERATED_NN_DECODER_SERIFXML = $output_serif_list;
+# }
+#
+# dojobs();
+
 ######################
-# NN event extraction
+# Bias/Reliability/Credibility
 ######################
-my $GENERATED_NN_EVENTS_SERIFXML = $GENERATED_NN_EVENT_SERIFXML;
-if (exists $stages{"nn-events"}) {
-    print "NN events stage\n";
-    # NN models directory path for nlplingo
-    $GENERATED_NN_EVENTS_SERIFXML = "$processing_dir/nn_events_serifxml.list";
-    my $nn_events_model_list = get_param($params, "nn_events_model_list");
+if (exists $stages{"bias"}) {
+    print "Bias/Reliability stage\n";
 
     my $input_serifxml_list =
-        get_param($params, "nn_events_input_serifxml_list") eq "GENERATED"
+        get_param($params, "bias_input_serifxml_list") eq "GENERATED"
             ? $GENERATED_NN_EVENT_SERIFXML
-            : get_param($params, "nn_events_input_serifxml_list");
+            : get_param($params, "bias_input_serifxml_list");
+    my $bias_host_name = get_param($params, "bias_host");
+    my $bias_metadata = get_param($params, "bias_input_metadata_file");
 
-    # Run NN event finding in parallel
-    my ($NUM_JOBS, $split_nn_events_jobid) = split_file_for_processing("make_nn_events_batch_files", $input_serifxml_list, "$batch_file_directory/nn_events_batch_file_", $NN_EVENTS_BATCH_SIZE);
-    my $master_nn_events_output_dir = make_output_dir("$processing_dir/nn_events");
+    my $stage_name = "bias";
+    my $mkdir_jobid;
+    (my $stage_processing_dir, $mkdir_jobid) = Utils::make_output_dir("$processing_dir/$stage_name", "$JOB_NAME/$stage_name/mkdir_stage_processing", []);
+    (my $batch_file_directory, $mkdir_jobid) = Utils::make_output_dir("$stage_processing_dir/batch_file", "$JOB_NAME/$stage_name/mkdir_stage_processing_batch", []);
 
-    my @nn_add_events_jobs = ();
+    # Run bias/reliability modeling in parallel
 
-    for (my $n = 0; $n < $NUM_JOBS; $n++) {
-        my $job_batch_num = sprintf("%05d", $n);
-        my $batch_file = "$batch_file_directory/nn_events_batch_file_$job_batch_num";
+    my ($split_bias_jobid, undef) = Utils::split_file_list_with_num_of_batches(
+        PYTHON                  => $PYTHON3,
+        CREATE_FILELIST_PY_PATH => $CREATE_FILELIST_PY_PATH,
+        num_of_batches          => $NUM_OF_BATCHES_GLOBAL,
+        suffix                  => "",
 
-        my $nn_events_batch_dir = make_output_dir("$master_nn_events_output_dir/$job_batch_num");
-        my $nn_events_batch_output = make_output_dir("$master_nn_events_output_dir/$job_batch_num/output");
-        my $genericity_added_batch_output = make_output_dir("$master_nn_events_output_dir/$job_batch_num/genericity_output");
-        my $nn_events_batch_output_list = "$batch_file_directory/nn_events_genericity_batch_file_$job_batch_num";
-        my $nn_events_genericity_output_list = "$master_nn_events_output_dir/$job_batch_num/nn_events_genericity.list";
+        output_file_prefix      => "$batch_file_directory/bias_batch_file_",
+        list_file_path          => $input_serifxml_list,
+        job_prefix              => "$JOB_NAME/$stage_name/",
+        dependant_job_ids       => [],
+    );
 
-        make_output_dir($nn_events_batch_output);
+    my @bias_jobs = ();
+    for (my $n = 0; $n < $NUM_OF_BATCHES_GLOBAL; $n++) {
+        my $job_batch_num = $n;
+        my $batch_file = "$batch_file_directory/bias_batch_file_$job_batch_num";
 
-        my $batch_predictions_file = "$nn_events_batch_dir/predictions.json";
-        my $merge_nn_output_jobid;
+        (my $batch_processing_dir, $mkdir_jobid) = Utils::make_output_dir(
+            "$stage_processing_dir/$job_batch_num", "$JOB_NAME/$stage_name/$job_batch_num/mkdir_batch_processing_" . $job_batch_num, []);
 
-        if (get_param($params, "nn_event_server_mode_endpoint", "None") eq "None") {
-            my $add_prefix_to_serifxml_in_list =
-                runjobs(
-                    [ $split_nn_events_jobid ], "$JOB_NAME/nn_events/add_prefix_$job_batch_num",
-                    {
-                        BATCH_QUEUE      => $LINUX_QUEUE,
-                        SGE_VIRTUAL_FREE => "4G",
-                        SCRIPT           => 1,
-                    },
-                    [ "cat $batch_file | awk '{print \"SERIF:\"\$0}' > $batch_file\.with_type" ]
-                );
+        # assume CDRs are already in bias data dir
 
-            open my $handle, '<', $nn_events_model_list or die "Cannot open $nn_events_model_list: $!";;
-            chomp(my @nn_models = <$handle>);
-            close $handle;
-
-            my @nn_events_jobs = ();
-            my @nn_prediction_files = ();
-            foreach my $nn_model (@nn_models) {
-                my ($nn_model_name, $nn_model_path) = ($nn_model =~ m/([^\0\ \/]+)\ ([^\0]+)/);
-
-                my $nn_events_batch_model_dir = "$nn_events_batch_dir/$nn_model_name";
-                my $nn_events_batch_model_output_dir = "$nn_events_batch_model_dir/output";
-
-                make_output_dir($nn_events_batch_model_dir);
-                make_output_dir($nn_events_batch_model_output_dir);
-
-                my $nn_events_job_name = "$JOB_NAME/nn_events/$job_batch_num" . "_" . $nn_model_name;
-                my $bash_file = "$nn_events_batch_model_output_dir/run.sh";
-                my $main_command = "PYTHONPATH=$NNEVENT_PYTHON_PATH " .
-                    "KERAS_BACKEND=tensorflow " .
-                    "$ANACONDA_ROOT/envs/$CONDA_ENV_NAME_FOR_NLPLINGO/bin/python " .
-                    "$NNEVENT_DECODE_SCRIPT --params \$1 --mode decode_trigger_argument";
-                open OUT, ">$bash_file";
-                print OUT $main_command . "\n";
-                print OUT "exit \$status\n";
-                close OUT;
-
-                my $cmd = "chmod +x $bash_file";
-                `$cmd`;
-
-                $cmd = "$bash_file";
-                if ($mode eq "CauseEx") {
-                    my $nn_events_jobid =
-                        runjobs(
-                            [ $add_prefix_to_serifxml_in_list ], $nn_events_job_name,
-                            {
-                                filelist_input             => "$batch_file\.with_type",
-                                output_dir                 => $nn_events_batch_model_output_dir,
-                                nn_model_dir               => $nn_model_path,
-                                job_retries                => 1,
-                                BATCH_QUEUE                => $LINUX_QUEUE,
-                                SGE_VIRTUAL_FREE           => "32G",
-                                ATOMIC                     => 1,
-                                dependencies_root          => $dependencies_root,
-                                external_dependencies_root => $external_dependencies_root
-                            },
-                            [ "/bin/bash $bash_file", "nlplingo_decode.par.cx.json" ]
-                        );
-                    push(@nn_events_jobs, $nn_events_jobid);
-                }
-                elsif ($mode eq "WorldModelers") {
-                    my $nn_events_jobid =
-                        runjobs(
-                            [ $add_prefix_to_serifxml_in_list ], $nn_events_job_name,
-                            {
-                                filelist_input             => "$batch_file\.with_type",
-                                output_dir                 => $nn_events_batch_model_output_dir,
-                                nn_model_dir               => $nn_model_path,
-                                job_retries                => 1,
-                                BATCH_QUEUE                => $LINUX_QUEUE,
-                                SGE_VIRTUAL_FREE           => "32G",
-                                ATOMIC                     => 1,
-                                dependencies_root          => $dependencies_root,
-                                external_dependencies_root => $external_dependencies_root
-                            },
-                            [ "/bin/bash $bash_file", "nlplingo_decode.par.wm.json" ]
-                        );
-                    push(@nn_events_jobs, $nn_events_jobid);
-                }
-                else {
-                    die "Not supported mode";
-                }
-                my $nn_prediction_file = $nn_events_batch_model_output_dir . "/prediction.json";
-                push(@nn_prediction_files, $nn_prediction_file);
-            }
-            my $batch_predictions_list = "$nn_events_batch_dir/predictions.list";
-
-            open my $fh, '>', $batch_predictions_list or die "Cannot open $batch_predictions_list: $!";
-            print $fh join("\n", @nn_prediction_files);
-            close $fh;
-
-            $merge_nn_output_jobid = runjobs(
-                \@nn_events_jobs, "$JOB_NAME/nn_events/merge_nn_output_$job_batch_num",
-                {
-                    BATCH_QUEUE => $LINUX_QUEUE,
-                },
-                [ "$PYTHON2 $COMBINE_NN_EVENTS_JSON_SCRIPT $batch_predictions_list $batch_predictions_file" ]
-            );
-        }
-        else {
-            die "Nlplingo online decoding mode is broken";
-            #			@hqiu. We have to update this later.
-            #				my $nn_event_uri = get_param($params,"nn_event_server_mode_endpoint");
-            #				my $nn_events_job_name = "$JOB_NAME/nn_events/$job_batch_num";
-            #				my @nn_events_jobs = ();
-            #				my $nn_events_jobid =
-            #				$merge_nn_output_jobid = runjobs(
-            #					[$split_nn_events_jobid], $nn_events_job_name,
-            #					{
-            #						SGE_VIRTUAL_FREE => "2G",
-            #						BATCH_QUEUE => $LINUX_QUEUE,
-            #					},
-            #					["env PYTHONPATH=$NNEVENT_PYTHON_PATH $PYTHON3 $NLPLINGO_SERVER_MODE_CLIENT_SCRIPT --file_list_path $batch_file --output_json_path $nn_events_batch_dir/predictions.json --server_http_endpoint $nn_event_uri"]
-            #				);
-            #				push(@nn_events_jobs, $nn_events_jobid);
-        }
-
-
-        # dojobs();
-
-        # add decoded events from JSON to SerifXmls (as EventMentions)
-        my $add_event_mentions_in_json_to_serifxmls_jobid =
-            runjobs(
-                [ $merge_nn_output_jobid ], "$JOB_NAME/nn_events/add_em_$job_batch_num",
-                {
-                    JSERIF_ROOT        => $JSERIF_ROOT,
-                    inputFileJson      => $batch_predictions_file,
-                    inputListSerifXmls => $batch_file,
-                    outputDir          => $nn_events_batch_output,
-                    BATCH_QUEUE        => $LINUX_QUEUE,
-                    SGE_VIRTUAL_FREE   => "16G",
-                    ATOMIC             => 1,
-                },
-                [ "sh", "add_event_mentions_in_json_to_serifxmls.sh" ]
-            );
-        push(@nn_add_events_jobs, $add_event_mentions_in_json_to_serifxmls_jobid);
-
-        my $list_nn_batch_results_job_name = "$JOB_NAME/nn_events/list_results_$job_batch_num";
-        my $list_nn_batch_results_jobid =
-            runjobs(
-                [ $add_event_mentions_in_json_to_serifxmls_jobid ], $list_nn_batch_results_job_name,
-                {
-                    SCRIPT => 1,
-                },
-                [ "$CREATE_FILE_LIST_SCRIPT --unix_style_pathname \"$nn_events_batch_output/*.serifxml\" --output_list_path $nn_events_batch_output_list" ]
-            );
-        push(@nn_add_events_jobs, $list_nn_batch_results_jobid);
-
-        if (exists $stages{"kbp"}) {
-            # run genericity classifier
-            my $nn_event_genericity_job_name = "$JOB_NAME/nn_events/genericity_$job_batch_num";
-            my $nn_event_genericity_jobid =
-                runjobs(
-                    [ $list_nn_batch_results_jobid ], $nn_event_genericity_job_name,
-                    {
-                        git_repo                   => $git_repo,
-                        dependencies_root          => $dependencies_root,
-                        external_dependencies_root => $external_dependencies_root,
-                        output_file_list           => $nn_events_genericity_output_list,
-                        input_file_list            => $nn_events_batch_output_list,
-                        output_directory           => $genericity_added_batch_output,
-                        SERIF_DATA                 => $SERIF_DATA,
-                        BATCH_QUEUE                => $LINUX_QUEUE,
-                        SGE_VIRTUAL_FREE           => "8G",
-                    },
-                    [ "$KBP_EVENT_FINDER_EXE", "kbp_genericity_only.par" ]
-                );
-            push(@nn_add_events_jobs, $nn_event_genericity_jobid);
-        }
-    }
-
-    # Combine results into one list
-    my $list_results_job_name = "$JOB_NAME/list-nn-events-results";
-    if (exists $stages{"kbp"}) {
-        my $list_results_jobid =
-            runjobs(
-                \@nn_add_events_jobs, $list_results_job_name,
-                {
-                    SCRIPT => 1
-                },
-                [ "$CREATE_FILE_LIST_SCRIPT --unix_style_pathname \"$master_nn_events_output_dir/*/genericity_output/*.serifxml\" --output_list_path $GENERATED_NN_EVENTS_SERIFXML" ]
-            );
-    }
-    else {
-        my $list_results_jobid =
-            runjobs(
-                \@nn_add_events_jobs, $list_results_job_name,
-                {
-                    SCRIPT => 1
-                },
-                [ "$CREATE_FILE_LIST_SCRIPT --unix_style_pathname \"$master_nn_events_output_dir/*/output/*.serifxml\" --output_list_path $GENERATED_NN_EVENTS_SERIFXML" ]
-            );
-    }
-}
-
-dojobs();
-
-###################
-# Probabilistic grounding
-###################
-
-my $GENERATED_GROUNDING_SERIFXML = $GENERATED_NN_EVENTS_SERIFXML;
-if (exists $stages{"probabilistic-grounding"}) {
-    print "Probabilistic Grounding stage\n";
-    my $GENERATED_GROUNDING_DIR = "$processing_dir/probabilistic-grounding";
-    $GENERATED_GROUNDING_SERIFXML = "$processing_dir/grounded_serifxml.list";
-    my $input_serifxml_list =
-        get_param($params, "grounding_input") eq "GENERATED"
-            ? $GENERATED_NN_EVENTS_SERIFXML
-            : get_param($params, "grounding_input");
-
-    my ($NUM_JOBS, $split_probabilistic_grounding_jobid) = split_file_for_processing("make_probabilistic_grounding_batch_files", $input_serifxml_list, "$batch_file_directory/probabilistic_grounding_batch_file_", $BATCH_SIZE);
-    my $master_probabilistic_grounding_output_dir = make_output_dir($GENERATED_GROUNDING_DIR);
-    my @probabilistic_grounding_split_jobs = ();
-
-    my $event_ontology = "$internal_ontology_dir/event_ontology.yaml";
-    my $exemplars = "$internal_ontology_dir/data_example_events.json";
-    my $embeddings = "$external_dependencies_root/common/glove.6B.50d.p";
-    my $lemmas = "$external_dependencies_root/common/lemma.nv";
-    my $stopwords = "$internal_ontology_dir/stopwords.list";
-    my $threshold = "0.7";
-    my $which_ontology = "";
-    if ($mode eq "CauseEx") {
-        $which_ontology = "CAUSEEX";
-    }
-    else {
-        $which_ontology = "HUME";
-    }
-
-    for (my $n = 0; $n < $NUM_JOBS; $n++) {
-        my $job_batch_num = sprintf("%05d", $n);
-        my $batch_file = "$batch_file_directory/probabilistic_grounding_batch_file_$job_batch_num";
-        my $GENERATED_GROUNDING_CACHE = "$GENERATED_GROUNDING_DIR/$job_batch_num.json";
-        # 1. run grounder over input to produce cache
-        my $grounding_generation_jobid =
-            runjobs(
-                [ $split_probabilistic_grounding_jobid ],
-                "$JOB_NAME/probabilistic_grounding/generate_cache_$job_batch_num",
-                {
-                    BATCH_QUEUE      => $LINUX_QUEUE,
-                    SGE_VIRTUAL_FREE => "32G"
-                },
-                [ "$PYTHON2 $PROB_GROUNDING_SCRIPT "
-                    . "--event_ontology $event_ontology "
-                    . "--exemplars $exemplars "
-                    . "--embeddings $embeddings "
-                    . "--lemmas $lemmas "
-                    . "--stopwords $stopwords "
-                    . "--threshold $threshold "
-                    . "--which_ontology $which_ontology "
-                    . "--serifxmls $batch_file "
-                    . "--output $GENERATED_GROUNDING_CACHE" ]
-            );
-
-        # 2. inject groundings into new serifxmls
-        my $grounding_injection_jobid =
-            runjobs(
-                [ $grounding_generation_jobid ],
-                "$JOB_NAME/probabilistic_grounding/add_grounded_types_from_cache_$job_batch_num",
-                {
-                    BATCH_QUEUE      => $LINUX_QUEUE,
-                    SGE_VIRTUAL_FREE => "32G"
-                },
-                [ "$PROB_GROUNDING_INJECTION_EXE "
-                    . "$GENERATED_GROUNDING_CACHE "
-                    . "$batch_file "
-                    . "$GENERATED_GROUNDING_DIR" ]
-            );
-        push(@probabilistic_grounding_split_jobs, $grounding_injection_jobid);
-    }
-
-    # 3. save new serifxmls as filelist
-    my $list_grounding_results_jobid =
-        runjobs(
-            \@probabilistic_grounding_split_jobs,
-            "$JOB_NAME/list_grounding_serifxml",
+        # run curl and pipe to json in output dir
+        my $bias_job = runjobs(
+            $split_bias_jobid,
+            "$JOB_NAME/$stage_name/run_bias_$job_batch_num",
             {
-                SCRIPT => 1,
+                BATCH_QUEUE      => $LINUX_QUEUE,
+                batch_file       => $batch_file,
+                bias_metadata    => $bias_metadata,
+                bias_host        => $bias_host_name,
+                batch_output_dir => $batch_processing_dir
             },
-            [ "$CREATE_FILE_LIST_SCRIPT --unix_style_pathname \"$GENERATED_GROUNDING_DIR/*.xml\" --output_list_path $GENERATED_GROUNDING_SERIFXML" ]
+            [ "/bin/bash", "run_bias.sh" ]
         );
+        push(@bias_jobs, $bias_job);
 
+        # validate output
+        my $validate_bias_job = runjobs(
+            [ $bias_job ],
+            "$JOB_NAME/$stage_name/validate_bias_$job_batch_num",
+            {
+                BATCH_QUEUE => $LINUX_QUEUE,
+                SCRIPT      => 1,
+            },
+            [ "$PYTHON3 $VALIDATE_JSON_SCRIPT $batch_processing_dir" ]
+        );
+        push(@bias_jobs, $validate_bias_job);
+    }
 }
 
 dojobs();
+
 
 ######################
 # Event consolidation
 ######################
-my $GENERATED_EVENT_CONSOLIDATION_SERIFXML = $GENERATED_GROUNDING_SERIFXML;
-if (exists $stages{"event-consolidation"}) {
-    print "Event consolidation stage\n";
+my $GENERATED_PYSERIF_SERIFXML = $GENERATED_NN_EVENT_SERIFXML;
+if (exists $stages{"pyserif"}) {
+    print "PySerif consolidation stage\n";
 
     my $input_serifxml_list =
-        get_param($params, "event_consolidation_input_serifxml_list") eq "GENERATED"
-            ? $GENERATED_EVENT_CONSOLIDATION_SERIFXML
-            : get_param($params, "event_consolidation_input_serifxml_list");
+        get_param($params, "pyserif_input_serifxml_list") eq "GENERATED"
+            ? $GENERATED_NN_EVENT_SERIFXML
+            : get_param($params, "pyserif_input_serifxml_list");
 
-    my $compatibleEventFile = "$hume_repo_root/resource/event_consolidation/causeex/compatible_events.txt";
-    my $argumentRoleEntityTypeFile = "$hume_repo_root/resource/event_consolidation/causeex/event_role.entity_type.constraints";
-    my $lemmaFile = "$external_dependencies_root/common/lemma.nv";
-    my $keywordFile = "";
-    my $blacklistFile = "";
-    my $kbpEventMappingFile = "";
-    if ($mode eq "CauseEx") {
-        $keywordFile = "$hume_repo_root/resource/event_consolidation/causeex/event_type.keywords";
-        $blacklistFile = "$hume_repo_root/resource/event_consolidation/causeex/event_type.blacklist";
-        $kbpEventMappingFile = "$hume_repo_root/resource/event_consolidation/causeex/KBP_events.json";
+    # "NONE" acceptable for when not using BERT
+    my $bert_npz_file_list =
+        get_param($params, "bert_npz_filelist") eq "GENERATED"
+            ? $GENERATED_BERT_NPZ_LIST
+            : get_param($params, "bert_npz_filelist");
+
+    my $stage_name = "pyserif";
+    my $single_bert_thread_mode = get_param($params, "single_bert_thread_mode", "false") eq "true";
+    my $number_of_batches_pyserif = int(get_param($params, "number_of_batches_pyserif", $NUM_OF_BATCHES_GLOBAL));
+
+    my $output_pyserif_eer_doc_list;
+    my $pyserif_eer_list_collector_job_id;
+
+    my $output_pyserif_main_doc_list;
+    my $pyserif_main_list_collector_job_id;
+    my $pyserif_main_list_count_collector_job_id;
+    my $word_pair_count_list;
+
+    {
+        my $mini_stage_name = "pyserif_eer";
+        (my $ministage_processing_dir, undef) = Utils::make_output_dir("$processing_dir/$stage_name/$mini_stage_name", "$JOB_NAME/$stage_name/$mini_stage_name/mkdir_stage_processing", []);
+        (my $ministage_batch_dir, my $mkdir_batch_jobs) = Utils::make_output_dir("$processing_dir/$stage_name/$mini_stage_name/batch_file", "$JOB_NAME/$stage_name/$mini_stage_name/mkdir_stage_batch_processing", []);
+
+        (my $create_filelist_jobid, undef
+        ) = Utils::split_file_list_with_num_of_batches(
+            PYTHON                  => $PYTHON3,
+            CREATE_FILELIST_PY_PATH => $CREATE_FILELIST_PY_PATH,
+            dependant_job_ids       => $mkdir_batch_jobs,
+            job_prefix              => "$JOB_NAME/$stage_name/$mini_stage_name/",
+            num_of_batches          => $number_of_batches_pyserif,
+            list_file_path          => $input_serifxml_list,
+            output_file_prefix      => $ministage_batch_dir . "/batch_",
+            suffix                  => ".list",
+        );
+
+        my $eer_template;
+        if ($mode eq "BBN") {
+            $eer_template = "pyserif_eer_bbn.par";
+        }
+        else {
+            $eer_template = "pyserif_eer.par";
+        }
+
+        my $pyserif_template = {
+            BATCH_QUEUE                       => $LINUX_QUEUE,
+            SGE_VIRTUAL_FREE                  => "8G",
+            textopen_root                     => $textopen_root,
+            hume_root                         => $hume_repo_root,
+            bert_npz_file_list                => $bert_npz_file_list,
+            max_number_of_tokens_per_sentence => $max_number_of_tokens_per_sentence_global,
+        };
+        if ($single_bert_thread_mode) {
+            $pyserif_template->{SCRIPT} = 1;
+            $pyserif_template->{SGE_VIRTUAL_FREE} = "28G";
+            $pyserif_template->{max_memory_over} = "228G";
+        }
+        my @split_jobs = ();
+        for (my $batch = 0; $batch < $number_of_batches_pyserif; $batch++) {
+            my $batch_file = "$ministage_batch_dir/batch_$batch.list";
+            my $batch_output_folder = "$ministage_processing_dir/$batch/output";
+
+            if ($single_bert_thread_mode) {
+                (my $ministage_scratch_dir, undef) = Utils::make_output_dir("$processing_dir/$stage_name/$mini_stage_name/scratch_file/$batch", "$JOB_NAME/$stage_name/$mini_stage_name/$batch/mkdir_stage_scratch_processing", []);
+                (my $basic_file_name, undef) = fileparse($eer_template);
+                my $expanded_template_path = "$exp_root/etemplates/$JOB_NAME/$stage_name/$mini_stage_name/$exp-pyserif_$batch.$basic_file_name";
+                my $pyserif_dep_jobid = runjobs4::runjobs(
+                    $create_filelist_jobid, "$JOB_NAME/$stage_name/$mini_stage_name/pyserif_$batch",
+                    $pyserif_template,
+                    [ "awk '{print \"serifxml\t\"\$0}' $batch_file > $batch_file\.with_type" ],
+                    [ "mkdir -p $batch_output_folder" ],
+                    [ "$PYTHON3 -c pass", $eer_template ],
+                    [ "$ANACONDA_ROOT/envs/$CONDA_ENV_NAME_FOR_DOC_RESOLVER/bin/python $AFFINITY_SCHEDULER --input_list_path $batch_file\.with_type --batch_id $batch --number_of_batches $NUM_OF_BATCHES_GLOBAL --command_prefix \"env PYTHONPATH=$nlplingo_root:$textopen_root/src/python MKL_NUM_THREADS=1 KERAS_BACKEND=tensorflow $ANACONDA_ROOT/envs/$CONDA_ENV_NAME_FOR_DOC_RESOLVER/bin/python $textopen_root/src/python/serif/driver/pipeline_sequence.py $expanded_template_path BBN_INPUT_BATCH_FILE $batch_output_folder\" --batch_arg_name BBN_INPUT_BATCH_FILE --scratch_space $ministage_scratch_dir --number_of_jobs_from_user $NUM_OF_SCHEDULING_JOBS_FOR_NN" ]
+                );
+                push(@split_jobs, $pyserif_dep_jobid);
+            }
+            else {
+                my $pyserif_dep_jobid = runjobs4::runjobs(
+                    $create_filelist_jobid, "$JOB_NAME/$stage_name/$mini_stage_name/pyserif_$batch",
+                    $pyserif_template,
+                    [ "awk '{print \"serifxml\t\"\$0}' $batch_file > $batch_file\.with_type" ],
+                    [ "mkdir -p $batch_output_folder" ],
+                    [ "env PYTHONPATH=$nlplingo_root:$textopen_root/src/python " .
+                        "MKL_NUM_THREADS=1 KERAS_BACKEND=tensorflow " .
+                        "$ANACONDA_ROOT/envs/$CONDA_ENV_NAME_FOR_DOC_RESOLVER/bin/python $textopen_root/src/python/serif/driver/pipeline_sequence.py", $eer_template, "$batch_file\.with_type $batch_output_folder" ]
+                );
+                push(@split_jobs, $pyserif_dep_jobid);
+            }
+
+        }
+        $output_pyserif_eer_doc_list = "$ministage_processing_dir/pyserif_serifxmls_uncalibrated.list";
+        $pyserif_eer_list_collector_job_id = generate_file_list(\@split_jobs, "$JOB_NAME/$stage_name/$mini_stage_name/list_uncalibrate_serifxml", "$ministage_processing_dir/*/output/*.xml", $output_pyserif_eer_doc_list);
     }
-    else {
-        $keywordFile = "$hume_repo_root/resource/event_consolidation/wm/event_type.keywords";
-        $blacklistFile = "$hume_repo_root/resource/event_consolidation/wm/event_type.blacklist";
-        $kbpEventMappingFile = "$hume_repo_root/resource/event_consolidation/wm/KBP_events.json";
+    {
+
+        my $mini_stage_name = "pyserif_main";
+
+        # EC config
+        $input_metadata_file = get_param($params, "metadata_file") eq "GENERATED" ? $input_metadata_file : get_param($params, "metadata_file");
+        my $copyArgumentSentenceWindow = get_param($params, "copyArgumentSentenceWindow");
+        my $lemmaFile = "$external_dependencies_root/common/lemma.nv";
+
+        my $ec_resource_dir;
+        my $dc_template;
+        if ($mode eq "CauseEx") {
+            $ec_resource_dir = "$hume_repo_root/resource/event_consolidation/causeex";
+            $dc_template = "pyserif_main_cx.par";
+        }
+        elsif ($mode eq "BBN") {
+            $ec_resource_dir = "$hume_repo_root/resource/event_consolidation/bbn";
+            $dc_template = "pyserif_main_bbn.par";
+        }
+        else {
+            $ec_resource_dir = "$hume_repo_root/resource/event_consolidation/wm";
+            $dc_template = "pyserif_main_wm.par";
+            if ($use_compositional_ontology eq "true") {
+                $dc_template = "pyserif_main_wm_compositional.par"
+            }
+        }
+
+
+        # my $dc_template = "pyserif_eer.par";
+
+        my $eventOntologyYAMLFilePath = "$internal_ontology_dir/$internal_event_ontology_yaml_filename";
+        my $adverbFile = "$hume_repo_root/resource/event_consolidation/adverb.list";
+        my $prepositionFile = "$hume_repo_root/resource/event_consolidation/prepositions.list";
+        my $verbFile = "$hume_repo_root/resource/event_consolidation/verbs.wn-fn.variants.filtered";
+        my $lightVerbFile = "$hume_repo_root/resource/event_consolidation/common/light_verbs.txt";
+        my $interventionJson = "$hume_repo_root/resource/event_consolidation/wm/intervention.json";
+        my $roleOntologyFile = "$hume_repo_root/resource/ontologies/internal/common/role_ontology.yaml";
+        my $themeIllegalTypes = "$ec_resource_dir/theme-invalid_entity_types.txt";
+        my $themeFactors = "$ec_resource_dir/theme-factor_types.txt";
+        my $themeConstraints = "$ec_resource_dir/theme-selection_constraints.txt";
+        my $propertyProcessTypes = "$ec_resource_dir/property-process_types.txt";
+        my $propertyPropertyTypes = "$ec_resource_dir/property-property_types.txt";
+
+        # End EC config
+
+        # PG config
+        my $event_ontology = "$internal_ontology_dir/$internal_event_ontology_yaml_filename";
+        my $exemplars = "$internal_ontology_dir/data_example_events.json";
+        my $embeddings = "$external_dependencies_root/common/glove.6B.50d.p";
+        my $stopwords = "$internal_ontology_dir/stopwords.list";
+        my $threshold = "0.7";
+        my $n_best = 5;
+        my $grounding_mode;
+        if ($use_bert) {
+            $grounding_mode = get_param($params, "grounding_mode", "full");
+        }
+        else {
+            $grounding_mode = get_param($params, "grounding_mode", "medium");
+        }
+
+        # End PG config
+
+        # Nlplingo config
+        my $nlplingo_decode_embedding;
+        if (-e $bert_npz_file_list) {
+            $nlplingo_decode_embedding = "bert";
+        }
+        else {
+            $nlplingo_decode_embedding = "baroni";
+        }
+        # End Nlplingo config
+
+        my $internal_causal_factor_ontology = "NONE";
+        my $internal_causal_factor_ontology_bert_centroids = "NONE";
+        my $internal_causal_factor_examplars = "NONE";
+        my $internal_ontology_yaml = "NONE";
+        my $internal_ontology_bert_centroids = "$internal_ontology_dir/event_centroid.json";
+        my $grounding_blacklist = "NONE";
+        my $grounding_icm_blacklist = "NONE";
+        my $keywords = "$internal_ontology_dir/keywords-anchor_annotation.txt";
+        my $pendingflip = "";
+
+        if ($mode eq "CauseEx") {
+            $internal_causal_factor_ontology = "$internal_ontology_dir/icms/$internal_event_ontology_yaml_filename";
+            $internal_causal_factor_ontology_bert_centroids = "$internal_ontology_dir/icms/causal_factor_centroid.json";
+            $internal_causal_factor_examplars = "$internal_ontology_dir/icms/data_example_events.bae.json";
+            $grounding_icm_blacklist = "$internal_ontology_dir/icms/bae.blacklist.json";
+        }
+        else {
+            $internal_ontology_yaml = $event_ontology;
+            $event_ontology = "$external_ontology_dir/wm_flat_metadata.yml";
+            if ($use_compositional_ontology eq "true") {
+                $event_ontology = "$external_ontology_dir/CompositionalOntology_v2.1_metadata.yml"
+            }
+            $grounding_blacklist = "$external_dependencies_root/wm/wm.blacklist.interventions_20200305.json";
+            $pendingflip = "$hume_repo_root/resource/event_consolidation/wm/pending_flip_typelist.json";
+        }
+
+        $threshold = # replace default threshold if specified
+            get_param($params, "grounding_threshold", "DEFAULT") eq "DEFAULT"
+                ? $threshold
+                : get_param($params, "grounding_threshold");
+        $n_best = # replace default n_best if specified
+            get_param($params, "grounding_n_best", "DEFAULT") eq "DEFAULT"
+                ? $n_best
+                : get_param($params, "grounding_n_best");
+
+        my $pyserif_template = {
+            BATCH_QUEUE                        => $LINUX_QUEUE,
+            SGE_VIRTUAL_FREE                   => "8G",
+            textopen_root                      => $textopen_root,
+            doc_resolver_jar_path              => $hume_serif_util_jar_path,
+            probabilictic_grounding_main_entry => $PROB_GROUNDING_SCRIPT,
+            hume_root                          => $hume_repo_root,
+            bert_npz_file_list                 => $bert_npz_file_list,
+            max_number_of_tokens_per_sentence  => $max_number_of_tokens_per_sentence_global,
+            nlplingo_embedding_name            => $nlplingo_decode_embedding,
+            roleOntologyFile                   => $roleOntologyFile,
+            ontologyFile                       => $eventOntologyYAMLFilePath,
+            argumentRoleEntityTypeFile         => "$ec_resource_dir/event_typerole.entity_type.constraints",
+            keywordFile                        => "$ec_resource_dir/event_type.keywords",
+            lemmaFile                          => $lemmaFile,
+            blacklistFile                      => "$ec_resource_dir/event_type.blacklist",
+            cfOntologyFile                     => "$internal_ontology_dir/icms/$internal_event_ontology_yaml_filename",
+            cfArgumentRoleEntityTypeFile       => "$ec_resource_dir/icms/event_typerole.entity_type.constraints",
+            cfKeywordFile                      => "$ec_resource_dir/icms/event_type.keywords",
+            cfBlacklistFile                    => "$ec_resource_dir/icms/event_type.blacklist",
+            kbpEventMappingFile                => "$ec_resource_dir/KBP_events.json",
+            propertyProcessTypes               => $propertyProcessTypes,
+            propertyPropertyTypes              => $propertyPropertyTypes,
+            themeFactors                       => $themeFactors,
+            themeIllegalTypes                  => $themeIllegalTypes,
+            themeConstraints                   => $themeConstraints,
+            accentEventMappingFile             => "$hume_repo_root/resource/event_consolidation/accent_event_mapping.json",
+            accentCodeToEventTypeFile          => "$hume_repo_root/resource/event_consolidation/cameo_code_to_event_type.txt",
+            adverbFile                         => $adverbFile,
+            prepositionFile                    => $prepositionFile,
+            verbFile                           => $verbFile,
+            kbpEventMappingFile                => "$ec_resource_dir/KBP_events.json",
+            strInputMetadataFile               => $input_metadata_file,
+            lightVerbFile                      => $lightVerbFile,
+            interventionJson                   => $interventionJson,
+            copyArgumentSentenceWindow         => $copyArgumentSentenceWindow,
+            propertiesFile                     => "$hume_repo_root/resource/event_consolidation/common/event_mention_properties.json",
+            causalRelationNegationFile         => "$hume_repo_root/resource/causal_relation_word_lists/negation.txt",
+            causalRelationDirectory            => "$hume_repo_root/resource/causal_relation_word_lists/relations/",
+            reverseFactorTypesFile             => "$hume_repo_root/resource/event_consolidation/common/event_properties_need_reverse_words_phrases.txt",
+            factorKeywordWeightFile            => "$hume_repo_root/resource/event_consolidation/common/factor_properties_downweight_words_phrases.txt",
+            keywords                           => $keywords,
+            stopwords                          => $stopwords,
+            grounding_mode                     => $grounding_mode,
+            embeddings                         => $embeddings,
+            event_exemplars                    => $exemplars,
+            event_centroid_file                => $internal_ontology_bert_centroids,
+            n_best                             => $n_best,
+            event_blacklist                    => $grounding_blacklist,
+            threshold                          => $threshold,
+            icm_exemplars                      => $internal_causal_factor_examplars,
+            icm_centroid_file                  => $internal_causal_factor_ontology_bert_centroids,
+            icm_blacklist                      => $grounding_icm_blacklist,
+            external_ontology                  => $event_ontology,
+            pendingflip                        => $pendingflip,
+            lightWordFile                      => "$hume_repo_root/resource/event_consolidation/common/light_words_coref.txt",
+            ATOMIC                             => 1
+        };
+        if ($single_bert_thread_mode) {
+            $pyserif_template->{SCRIPT} = 1;
+            $pyserif_template->{SGE_VIRTUAL_FREE} = "28G";
+            $pyserif_template->{max_memory_over} = "228G";
+        }
+        (my $ministage_processing_dir, undef) = Utils::make_output_dir("$processing_dir/$stage_name/$mini_stage_name", "$JOB_NAME/$stage_name/$mini_stage_name/mkdir_stage_processing", []);
+        (my $ministage_batch_dir, my $mkdir_batch_jobs) = Utils::make_output_dir("$processing_dir/$stage_name/$mini_stage_name/batch_file", "$JOB_NAME/$stage_name/$mini_stage_name/mkdir_stage_batch_processing", [ $pyserif_eer_list_collector_job_id ]);
+
+        (my $create_filelist_jobid, undef
+        ) = Utils::split_file_list_with_num_of_batches(
+            PYTHON                  => $PYTHON3,
+            CREATE_FILELIST_PY_PATH => $CREATE_FILELIST_PY_PATH,
+            dependant_job_ids       => $mkdir_batch_jobs,
+            job_prefix              => "$JOB_NAME/$stage_name/$mini_stage_name/",
+            num_of_batches          => $number_of_batches_pyserif,
+            list_file_path          => $output_pyserif_eer_doc_list,
+            output_file_prefix      => $ministage_batch_dir . "/batch_",
+            suffix                  => ".list",
+        );
+
+        my @split_jobs = ();
+        for (my $batch = 0; $batch < $number_of_batches_pyserif; $batch++) {
+            my $batch_file = "$ministage_batch_dir/batch_$batch.list";
+            my $batch_output_folder = "$ministage_processing_dir/$batch/output";
+
+            if ($single_bert_thread_mode) {
+                (my $ministage_scratch_dir, undef) = Utils::make_output_dir("$processing_dir/$stage_name/$mini_stage_name/scratch_file/$batch", "$JOB_NAME/$stage_name/$mini_stage_name/$batch/mkdir_stage_scratch_processing", []);
+                (my $basic_file_name, undef) = fileparse($dc_template);
+                my $expanded_template_path = "$exp_root/etemplates/$JOB_NAME/$stage_name/$mini_stage_name/$exp-pyserif_$batch.$basic_file_name";
+                my $pyserif_dep_jobid = runjobs4::runjobs(
+                    $create_filelist_jobid, "$JOB_NAME/$stage_name/$mini_stage_name/pyserif_$batch",
+                    $pyserif_template,
+                    [ "awk '{print \"serifxml\t\"\$0}' $batch_file > $batch_file\.with_type" ],
+                    [ "mkdir -p $batch_output_folder" ],
+                    [ "$PYTHON3 -c pass", $dc_template ],
+                    [ "$ANACONDA_ROOT/envs/$CONDA_ENV_NAME_FOR_DOC_RESOLVER/bin/python $AFFINITY_SCHEDULER --input_list_path $batch_file\.with_type --batch_id $batch --number_of_batches $NUM_OF_BATCHES_GLOBAL --command_prefix \"env PYTHONPATH=$nlplingo_root:$textopen_root/src/python MKL_NUM_THREADS=1 KERAS_BACKEND=tensorflow $ANACONDA_ROOT/envs/$CONDA_ENV_NAME_FOR_DOC_RESOLVER/bin/python $textopen_root/src/python/serif/driver/pipeline_sequence.py $expanded_template_path BBN_INPUT_BATCH_FILE $batch_output_folder\" --batch_arg_name BBN_INPUT_BATCH_FILE --scratch_space $ministage_scratch_dir --number_of_jobs_from_user $NUM_OF_SCHEDULING_JOBS_FOR_NN" ]
+                );
+                push(@split_jobs, $pyserif_dep_jobid);
+            }
+            else {
+                my $pyserif_dep_jobid = runjobs4::runjobs(
+                    $create_filelist_jobid, "$JOB_NAME/$stage_name/$mini_stage_name/pyserif_$batch",
+                    $pyserif_template,
+                    [ "awk '{print \"serifxml\t\"\$0}' $batch_file > $batch_file\.with_type" ],
+                    [ "mkdir -p $batch_output_folder" ],
+                    [ "env PYTHONPATH=$nlplingo_root:$textopen_root/src/python " .
+                        "KERAS_BACKEND=tensorflow MKL_NUM_THREADS=1 " .
+                        "$ANACONDA_ROOT/envs/$CONDA_ENV_NAME_FOR_DOC_RESOLVER/bin/python $textopen_root/src/python/serif/driver/pipeline_sequence.py", $dc_template, "$batch_file\.with_type $batch_output_folder" ]
+                );
+                push(@split_jobs, $pyserif_dep_jobid);
+            }
+
+        }
+        $output_pyserif_main_doc_list = "$ministage_processing_dir/pyserif_serifxmls_uncalibrated.list";
+        $pyserif_main_list_collector_job_id = generate_file_list(\@split_jobs, "$JOB_NAME/$stage_name/$mini_stage_name/list_uncalibrate_serifxml", "$ministage_processing_dir/*/output/*.xml", $output_pyserif_main_doc_list);
+        my @count_collector_jobs = ();
+        push(@count_collector_jobs, $pyserif_main_list_collector_job_id);
+        $word_pair_count_list = "$ministage_processing_dir/word_pair_counts.list";
+        $pyserif_main_list_count_collector_job_id = generate_file_list(\@count_collector_jobs, "$JOB_NAME/$stage_name/$mini_stage_name/list_word_pair_counts", "$ministage_processing_dir/*/output/*.pkl", $word_pair_count_list);
     }
 
-    my $input_metadata_file = get_param($params, "event_consolidation_input_metadata_file");
-    my $eventOntologyYAMLFilePath = "$internal_ontology_dir/event_ontology.yaml";
-    my $copyArgumentSentenceWindow = get_param($params, "copyArgumentSentenceWindow");
+    my $output_pyserif_calibration_list;
+    my $generate_aggregate_count_jobid;
+    my $aggregate_count_processing_dir;
+    {
+        my $mini_stage_name = "generate_aggregate_count";
+        ($aggregate_count_processing_dir, undef) = Utils::make_output_dir("$processing_dir/$stage_name/$mini_stage_name", "$JOB_NAME/$stage_name/$mini_stage_name/mkdir_stage_processing", []);
 
-    my $output_serifxml_dir = "$processing_dir/event_consolidation_serifxml_out/";
-    my $output_serifxml_list = "$processing_dir/event_consolidation_serifxml_out.list";
-
-    my ($NUM_JOBS, $split_event_consolidation_jobid) = split_file_for_processing("make_event_consolidation_batch_files", $input_serifxml_list, "$batch_file_directory/event_consolidation_batch_file_", $BATCH_SIZE);
-    $output_serifxml_dir = make_output_dir($output_serifxml_dir);
-    my @event_consolidation_split_jobs = ();
-
-    for (my $n = 0; $n < $NUM_JOBS; $n++) {
-        my $job_batch_num = sprintf("%05d", $n);
-        my $batch_file = "$batch_file_directory/event_consolidation_batch_file_$job_batch_num";
-        my $event_consolidation_jobid = runjobs(
-            [ $split_event_consolidation_jobid ], "$JOB_NAME/event_consolidation/run_event_consolidation_$job_batch_num",
+        $generate_aggregate_count_jobid = runjobs(
+            [ $pyserif_main_list_count_collector_job_id ], "$JOB_NAME/$stage_name/$mini_stage_name",
             {
-                JSERIF_ROOT                => $JSERIF_ROOT,
-                strListSerifXmlFiles       => $batch_file,
-                strOutputDir               => $output_serifxml_dir,
-                strInputMetadataFile       => $input_metadata_file,
-                compatibleEventFile        => $compatibleEventFile,
-                ontologyFile               => $eventOntologyYAMLFilePath,
-                argumentRoleEntityTypeFile => $argumentRoleEntityTypeFile,
-                mode                       => $mode,
-                keywordFile                => $keywordFile,
-                blacklistFile              => $blacklistFile,
-                lemmaFile                  => $lemmaFile,
-                copyArgumentSentenceWindow => $copyArgumentSentenceWindow,
-                BATCH_QUEUE                => $LINUX_QUEUE,
-                SGE_VIRTUAL_FREE           => "32G",
-                wordnetDir                 => "$SERIF_DATA/english/Software/WN16/DICT",
-                sieveResourceDir           => "$dependencies_root/event_consolidation/sieve",
-                geonamesFile               => "$dependencies_root/event_consolidation/geoNames.db",
-                polarityFile               => "$hume_repo_root/resource/event_consolidation/common/polarity_modifiers.txt",
-                kbpEventMappingFile        => $kbpEventMappingFile,
-                accentEventMappingFile     => "$hume_repo_root/resource/event_consolidation/accent_event_mapping.json",
-                accentCodeToEventTypeFile  => "$hume_repo_root/resource/event_consolidation/cameo_code_to_event_type.txt"
+                BATCH_QUEUE => $LINUX_QUEUE
             },
-            [ "sh", "run_event_consolidation.sh" ]
+            [ "$PYTHON3 $AGGREGATE_WORD_PAIR_COUNTS --input_list $word_pair_count_list --output_dir $aggregate_count_processing_dir" ]
         );
-        push(@event_consolidation_split_jobs, $event_consolidation_jobid)
     }
 
-    my $generate_event_consolidation_serifxml_list_jobid =
-        runjobs(
-            \@event_consolidation_split_jobs, "$JOB_NAME/event_consolidation/list-event-consolidation-results",
-            {
-                SCRIPT => 1
-            },
-            [ "$CREATE_FILE_LIST_SCRIPT --unix_style_pathname \"$output_serifxml_dir/*\" --output_list_path $output_serifxml_list" ]
-        );
-    $GENERATED_EVENT_CONSOLIDATION_SERIFXML = $output_serifxml_list;
-}
+    my $aggregate_counts = $aggregate_count_processing_dir . '/aggregate_counts.pkl';
+    {
+        my $mini_stage_name = "pyserif_confidence_calibration";
+        my $confidence_calibrate_template = "pyserif_confidence_calibrate.par";
 
-dojobs();
+        my $pyserif_template = {
+            BATCH_QUEUE               => $LINUX_QUEUE,
+            SGE_VIRTUAL_FREE          => "8G",
+            textopen_root             => $textopen_root,
+            aggregate_word_pair_count => $aggregate_counts,
+            ATOMIC                    => 1
+        };
+        if ($single_bert_thread_mode) {
+            $pyserif_template->{SCRIPT} = 1;
+            $pyserif_template->{SGE_VIRTUAL_FREE} = "28G";
+            $pyserif_template->{max_memory_over} = "228G";
+        }
+        (my $ministage_processing_dir, undef) = Utils::make_output_dir("$processing_dir/$stage_name/$mini_stage_name", "$JOB_NAME/$stage_name/$mini_stage_name/mkdir_stage_processing", []);
+        (my $ministage_batch_dir, my $mkdir_batch_jobs) = Utils::make_output_dir("$processing_dir/$stage_name/$mini_stage_name/batch_file", "$JOB_NAME/$stage_name/$mini_stage_name/mkdir_stage_batch_processing", [ $pyserif_main_list_collector_job_id, $generate_aggregate_count_jobid ]);
 
-#################################
-# Event timeline
-#################################
-
-if (exists $stages{"event-timeline"}){
-    my $event_timeline_input_serifxml_list = get_param($params,"event_timeline_input_serifxml_list") eq "GENERATED"?$GENERATED_EVENT_CONSOLIDATION_SERIFXML:get_param($params,"event_timeline_input_serifxml_list");
-    my $output_event_timeline_dir = make_output_dir("$processing_dir/event_timeline_output");
-    my $extract_event_timestamp_info_jobid = runjobs(
-        [],"$JOB_NAME/event_timeline/1_extract_event_timestamp",
-        {
-            BATCH_QUEUE      => $LINUX_QUEUE,
-            SGE_VIRTUAL_FREE => "32G"
-        },
-        ["$EXTRACT_TIMELINE_FROM_SERIFXML_EXE $event_timeline_input_serifxml_list $output_event_timeline_dir/event_timeline.ljson"]
-    );
-    my $group_eventmention_in_timeline_bucket = runjobs(
-        [$extract_event_timestamp_info_jobid],"$JOB_NAME/event_timeline/2_group_into_bucket",
-        {
-            BATCH_QUEUE      => $LINUX_QUEUE,
-            SGE_VIRTUAL_FREE => "2G"
-        },
-        ["$PYTHON3 $GROUP_EVENTMENTION_IN_TIMELINE_BUCKET_SCRIPT $output_event_timeline_dir/event_timeline.ljson > $output_event_timeline_dir/event_timeline.table"]
-    );
-}
-
-dojobs();
-
-########################
-# Event-Event Relations
-########################
-my $GENERATED_LEARNIT_TRIPLE_FILE = "$processing_dir/event_event_relations/relation_and_event_pairs_freq.txt";
-my $GENERATED_LEARNIT_EVENT_COUNT_FILE = "$processing_dir/event_event_relations/event_triggers_in_causal_relations.txt";
-my $GENERATED_EVENT_EVENT_RELATION_SERIFXML = $GENERATED_EVENT_CONSOLIDATION_SERIFXML;
-
-if (exists $stages{"event-event-relations"}) {
-    print "Event-Event relations stage\n";
-    $GENERATED_EVENT_EVENT_RELATION_SERIFXML = "$processing_dir/event_event_relations_serifxml.list";
-    my $input_serifxml_list =
-        get_param($params, "eer_input_serifxml_list") eq "GENERATED"
-            ? (exists $stages{"event-consolidation"}
-            ? $GENERATED_EVENT_CONSOLIDATION_SERIFXML
-            : $GENERATED_GROUNDING_SERIFXML)
-            : get_param($params, "eer_input_serifxml_list");
-
-    my $input_serif_cause_effect_json_dir =
-        get_param($params, "eer_input_serif_cause_effect_relations_dir") eq "GENERATED"
-            ? $GENERATED_SERIF_CAUSE_EFFECT_JSON_DIR
-            : get_param($params, "eer_input_serif_cause_effect_relations_dir");
-
-    # resources for filtering bad triples
-    # @hqiu. We should remove this to only run regular learnit
-    my $MIN_FREQ_EVENT_PAIRS = get_param($params, "learnit_min_freq_event_pairs");
-
-    my $stage_processing_dir = $processing_dir . "/event_event_relations/";
-
-    # use high-prec prop patterns; do not use whilte list of relational triples
-    run_learnit_and_nre_extractors($stage_processing_dir, $input_serifxml_list, $batch_file_directory, "all", $MIN_FREQ_EVENT_PAIRS, "na", "na");
-    dojobs();
-
-    # generate triple file
-    my $generate_triple_file_job_name = "$JOB_NAME/event_event_relations/generate_triple_file";
-    my $generate_triple_file_jobid =
-        runjobs(
-            [], $generate_triple_file_job_name,
-            {
-                expt_dir    => $stage_processing_dir,
-                triple_file => $GENERATED_LEARNIT_TRIPLE_FILE,
-                BATCH_QUEUE => $LINUX_QUEUE,
-            },
-            [ "sh", "generate_triple_file.sh" ]
+        (my $create_filelist_jobid, undef
+        ) = Utils::split_file_list_with_num_of_batches(
+            PYTHON                  => $PYTHON3,
+            CREATE_FILELIST_PY_PATH => $CREATE_FILELIST_PY_PATH,
+            dependant_job_ids       => $mkdir_batch_jobs,
+            job_prefix              => "$JOB_NAME/$stage_name/$mini_stage_name/",
+            num_of_batches          => $number_of_batches_pyserif,
+            list_file_path          => $output_pyserif_main_doc_list,
+            output_file_prefix      => $ministage_batch_dir . "/batch_",
+            suffix                  => ".list",
         );
 
-    dojobs();
+        my @confidence_split_jobs = ();
+        for (my $batch = 0; $batch < $number_of_batches_pyserif; $batch++) {
+            my $batch_file = "$ministage_batch_dir/batch_$batch.list";
+            my $batch_output_folder = "$ministage_processing_dir/$batch/output";
 
-    my $learnit_relations_file = "$stage_processing_dir/learnit_event_event_relations_file.json";
-    my $nre_relations_file = "$stage_processing_dir/nre_event_event_relations_file.json";
-
-    # generate event count file
-    my $generate_event_count_file_job_name = "$JOB_NAME/event_event_relations/generate_event_count_file";
-    my $generate_event_count_file_jobid =
-        runjobs(
-            [], $generate_event_count_file_job_name,
-            {
-                BATCH_QUEUE => $LINUX_QUEUE,
-            },
-            [ "$PYTHON2 $EVENT_COUNT_SCRIPT $learnit_relations_file $GENERATED_LEARNIT_EVENT_COUNT_FILE" ],
-        );
-    dojobs();
-
-    # Add causal relations to serifxml
-
-
-    my $input_json_list = "$input_serif_cause_effect_json_dir,$learnit_relations_file,$nre_relations_file";
-
-    my ($NUM_JOBS, $split_create_event_event_relations_jobid) = split_file_for_processing("make_create_event_event_relations_batch_files", $input_serifxml_list, "$batch_file_directory/create_event_event_relations_batch_file_", $BATCH_SIZE);
-
-    my @create_event_event_relations_split_jobs = ();
-    my $uncalibrated_eer_processing_dir = make_output_dir("$stage_processing_dir/uncalibrated_serif_folder");
-
-    for (my $n = 0; $n < $NUM_JOBS; $n++) {
-        my $job_batch_num = sprintf("%05d", $n);
-        my $batch_file = "$batch_file_directory/create_event_event_relations_batch_file_$job_batch_num";
-
-        my $create_event_event_relations_jobid =
-            runjobs(
-                [ $split_create_event_event_relations_jobid ], "$JOB_NAME/event_event_relations/add_causal_relations_$job_batch_num",
-                {
-                    input_serifxml_list       => $batch_file,
-                    output_serifxml_directory => $uncalibrated_eer_processing_dir,
-                    input_json_list           => $input_json_list,
-                    BATCH_QUEUE               => $LINUX_QUEUE,
-                },
-                [ "$EVENT_EVENT_RELATION_EXE", "event_event_relations.par" ],
-            );
-
-        push(@create_event_event_relations_split_jobs, $create_event_event_relations_jobid);
+            if ($single_bert_thread_mode) {
+                (my $ministage_scratch_dir, undef) = Utils::make_output_dir("$processing_dir/$stage_name/$mini_stage_name/scratch_file/$batch", "$JOB_NAME/$stage_name/$mini_stage_name/$batch/mkdir_stage_scratch_processing", []);
+                (my $basic_file_name, undef) = fileparse($confidence_calibrate_template);
+                my $expanded_template_path = "$exp_root/etemplates/$JOB_NAME/$stage_name/$mini_stage_name/$exp-pyserif_$batch.$basic_file_name";
+                my $pyserif_dep_jobid = runjobs4::runjobs(
+                    $create_filelist_jobid, "$JOB_NAME/$stage_name/$mini_stage_name/pyserif_$batch",
+                    $pyserif_template,
+                    [ "awk '{print \"serifxml\t\"\$0}' $batch_file > $batch_file\.with_type" ],
+                    [ "mkdir -p $batch_output_folder" ],
+                    [ "$PYTHON3 -c pass", $confidence_calibrate_template ],
+                    [ "$ANACONDA_ROOT/envs/$CONDA_ENV_NAME_FOR_DOC_RESOLVER/bin/python $AFFINITY_SCHEDULER --input_list_path $batch_file\.with_type --batch_id $batch --number_of_batches $NUM_OF_BATCHES_GLOBAL --command_prefix \"env PYTHONPATH=$nlplingo_root:$textopen_root/src/python MKL_NUM_THREADS=1 KERAS_BACKEND=tensorflow $ANACONDA_ROOT/envs/$CONDA_ENV_NAME_FOR_DOC_RESOLVER/bin/python $textopen_root/src/python/serif/driver/pipeline_sequence.py $expanded_template_path BBN_INPUT_BATCH_FILE $batch_output_folder\" --batch_arg_name BBN_INPUT_BATCH_FILE --scratch_space $ministage_scratch_dir --number_of_jobs_from_user $NUM_OF_SCHEDULING_JOBS_FOR_NN" ]
+                );
+                push(@confidence_split_jobs, $pyserif_dep_jobid);
+            }
+            else {
+                my $pyserif_dep_jobid = runjobs4::runjobs(
+                    $create_filelist_jobid, "$JOB_NAME/$stage_name/$mini_stage_name/pyserif_$batch",
+                    $pyserif_template,
+                    [ "awk '{print \"serifxml\t\"\$0}' $batch_file > $batch_file\.with_type" ],
+                    [ "mkdir -p $batch_output_folder" ],
+                    [ "env PYTHONPATH=$nlplingo_root:$textopen_root/src/python " .
+                        "KERAS_BACKEND=tensorflow MKL_NUM_THREADS=1 " .
+                        "$ANACONDA_ROOT/envs/$CONDA_ENV_NAME_FOR_DOC_RESOLVER/bin/python $textopen_root/src/python/serif/driver/pipeline_sequence.py", $confidence_calibrate_template, "$batch_file\.with_type $batch_output_folder" ]
+                );
+                push(@confidence_split_jobs, $pyserif_dep_jobid);
+            }
+        }
+        $output_pyserif_calibration_list = "$ministage_processing_dir/pyserif_serifxmls_uncalibrated.list";
+        my $list_collector_job_id = generate_file_list(\@confidence_split_jobs, "$JOB_NAME/$stage_name/$mini_stage_name/list_uncalibrate_serifxml", "$ministage_processing_dir/*/output/*.xml", $output_pyserif_calibration_list);
     }
-    my $uncalibrated_eer_serif_list = "$stage_processing_dir/uncalibrated_serif.list";
-    my $output_event_event_relations_dir = make_output_dir("$stage_processing_dir/serifxml_output");
-    my $list_uncalibrate_eer_serif_jobid =
-        runjobs(
-            \@create_event_event_relations_split_jobs, "$JOB_NAME/event_event_relations/list_uncalibrate_serifxml",
-            {
-                SCRIPT => 1
-            },
-            [ "$CREATE_FILE_LIST_SCRIPT --unix_style_pathname \"$uncalibrated_eer_processing_dir/*.xml\" --output_list_path $uncalibrated_eer_serif_list" ]
-        );
-    my $calibrate_eer_score_jobid = runjobs(
-        [ $list_uncalibrate_eer_serif_jobid ], "$JOB_NAME/event_event_relations/calibrate_causal_relations",
-        {
-            BATCH_QUEUE      => $LINUX_QUEUE,
-            SGE_VIRTUAL_FREE => "32G",
-        },
-        [ "$EVENT_EVENT_RELATION_SCORE_CALIBRATE_EXE $uncalibrated_eer_serif_list $output_event_event_relations_dir" ]
-    );
 
-    my $list_eer_results_job_name = "$JOB_NAME/event_event_relations/list_eer_serifxml";
-    my $list_eer_results_jobid =
-        runjobs(
-            [ $calibrate_eer_score_jobid ], $list_eer_results_job_name,
-            {
-                SCRIPT => 1
-            },
-            [ "$CREATE_FILE_LIST_SCRIPT --unix_style_pathname \"$output_event_event_relations_dir/*.xml\" --output_list_path $GENERATED_EVENT_EVENT_RELATION_SERIFXML" ]
-        );
+    $GENERATED_PYSERIF_SERIFXML = $output_pyserif_calibration_list;
 
-    dojobs();
 }
 
 dojobs();
@@ -1059,25 +1489,15 @@ if (exists $stages{"serialization"}) {
 
     my $input_serifxml_list =
         get_param($params, "serialization_input_serifxml_list") eq "GENERATED"
-            ? $GENERATED_EVENT_EVENT_RELATION_SERIFXML
+            ? $GENERATED_PYSERIF_SERIFXML
             : get_param($params, "serialization_input_serifxml_list");
 
     my $input_factfinder_json_file =
         get_param($params, "serialization_input_factfinder_json_file") eq "GENERATED"
             ? $GENERATED_FACTFINDER_JSON_FILE
             : get_param($params, "serialization_input_factfinder_json_file");
-
-    my $learnit_relation_triple_file =
-        get_param($params, "serialization_input_learnit_triple_file") eq "GENERATED"
-            ? $GENERATED_LEARNIT_TRIPLE_FILE
-            : get_param($params, "serialization_input_learnit_triple_file");
-
-    my $learnit_event_head_count_file =
-        get_param($params, "serialization_input_learnit_event_count_file") eq "GENERATED"
-            ? $GENERATED_LEARNIT_EVENT_COUNT_FILE
-            : get_param($params, "serialization_input_learnit_event_count_file");
-
-    my $metadata_file = get_param($params, "serialization_input_metadata_file");
+    my $mkdir_jobid;
+    $input_metadata_file = get_param($params, "metadata_file") eq "GENERATED" ? $input_metadata_file : get_param($params, "metadata_file");
     my $awake_db = get_param($params, "serialization_input_awake_db", "NA");
 
     my $template_filename;
@@ -1088,12 +1508,19 @@ if (exists $stages{"serialization"}) {
         if (get_param($params, "serialization_also_output_jsonld", "NA") eq "True") {
             $template_filename = "kb_constructor_rdf_jsonld.par";
         }
+        elsif (get_param($params,"serialization_to_unification_json","False") eq "True"){
+            $template_filename = "kb_constructor_unification_json.par";
+        }
         else {
             $template_filename = "kb_constructor_rdf.par";
         }
         $ontology_flags = "CAUSEEX";
         $should_go_up_instead_of_using_backup_namespaces = "false";
         $bbn_namespace = "http://graph.causeex.com/bbn#";
+    }
+    elsif ($mode eq "BBN") {
+        $template_filename = "kb_constructor_bbn.par";
+        $ontology_flags = "BBN";
     }
     elsif ($mode eq "WorldModelers") {
         $template_filename = "kb_constructor_json_ld.par";
@@ -1102,56 +1529,48 @@ if (exists $stages{"serialization"}) {
         $bbn_namespace = "DO_NOT_USE_BACKUP_NAMESPACE,DO_NOT_USE_BACKUP_NAMESPACE";
     }
 
-    # KBConstructor call 2 -- use grounding cache and serialize
-    my $serifxml_dir = "$processing_dir/final_serifxml";
-    my $copy_serifxml_jobname = "$JOB_NAME/serialize/copy_final_serifxml";
+    my $batch_job_dir = "$processing_dir/serialization_batch";
+    my $copy_serifxml_jobname = "$JOB_NAME/serialize/generate_serialization_batch";
     my $copy_serifxml_jobid =
         runjobs(
             [], $copy_serifxml_jobname,
             {
                 BATCH_QUEUE => $LINUX_QUEUE,
             },
-            [ "$PYTHON2 $COPY_FILES_SCRIPT $input_serifxml_list $serifxml_dir \"$metadata_file\"" ]
+            [ "$PYTHON3 $COPY_FILES_SCRIPT --input_serif_list $input_serifxml_list --output_dir $batch_job_dir --input_metadata_file $input_metadata_file" ]
         );
     dojobs();
 
     # Serialize!
-    opendir(my $dh, $serifxml_dir);
-    my @document_types = grep {-d "$serifxml_dir/$_" && !/^\.{1,2}$/} readdir($dh);
-    make_output_dir($GENERATED_SERIALIZATION_DIR);
-    foreach my $document_type (@document_types) {
-        my $serializer_output_dir = make_output_dir("$GENERATED_SERIALIZATION_DIR/$document_type");
+    my @serialization_batches = ();
+    if (is_run_mode()) {
+        opendir(my $dh, $batch_job_dir);
+        @serialization_batches = grep {-d "$batch_job_dir/$_" && !/^\.{1,2}$/} readdir($dh);
+    }
 
-        my $input_serifxml_dir = "$serifxml_dir/$document_type";
-        my $ttl_output_file = "$serializer_output_dir/$JOB_NAME";
-        my $nt_output_file = "$serializer_output_dir/$JOB_NAME";
-        my $jsonld_output_file = "$serializer_output_dir/$JOB_NAME";
+    foreach my $batch_id (@serialization_batches) {
+        my $serializer_output_dir = "$GENERATED_SERIALIZATION_DIR/$batch_id";
+
+        my $input_batch_file_dir = "$batch_job_dir/$batch_id";
+        my $ttl_output_file = "$serializer_output_dir/output";
+        my $nt_output_file = "$serializer_output_dir/output";
+        my $jsonld_output_file = "$serializer_output_dir/output";
         if ($mode eq "WorldModelers") {
             $jsonld_output_file = $jsonld_output_file . ".json-ld";
         }
-        my $json_output_file = "$serializer_output_dir/$JOB_NAME.json";
-        my $pickle_output_file = "$serializer_output_dir/$JOB_NAME.p";
-        my $json_graph_file = "$serializer_output_dir/$JOB_NAME.graph.json";
-        my $tabular_output_file = "$serializer_output_dir/$JOB_NAME.tsv";
-        my $relation_tsv_file = "$serializer_output_dir/$JOB_NAME.relations.tsv";
-        my $unification_output_dir = "$serializer_output_dir/unification_json";
-        my $serialize_job_name = "$JOB_NAME/serialize/kb-$document_type";
+        my $json_output_file = "$serializer_output_dir/output.json";
+        my $pickle_output_file = "$serializer_output_dir/output.p";
+        my $json_graph_file = "$serializer_output_dir/output.graph.json";
+        my $tabular_output_file = "$serializer_output_dir/output.tsv";
+        my $relation_tsv_file = "$serializer_output_dir/output.relations.tsv";
+        my $unification_output_dir = "$serializer_output_dir";
+        my $serialize_job_name = "$JOB_NAME/serialize/kb-$batch_id";
 
         #	my $grounding_cache_dir = make_output_dir("$processing_dir/grounding_cache");
 
         # Use robust settings for serialization
         my $batch_queue = "gale-nongale-sl6";
-        my $mem = "128G";
-
-        if ($document_type eq "abstract" || $document_type eq "intel" || $document_type eq "strategicguidance") {
-            # Less memory required
-            $mem = "32G";
-        }
-
-        if ($document_type eq "analytic") {
-            # Less memory required
-            $mem = "64G";
-        }
+        my $mem = "4G";
 
         my $serialize_jobid =
             runjobs(
@@ -1159,10 +1578,7 @@ if (exists $stages{"serialization"}) {
                 {
                     serif_accent_event_type                         => "$hume_repo_root/resource/serif_data_causeex/accent/event_types.txt",
                     event_coreference_file                          => "NULL",
-                    serifxml_dir                                    => $input_serifxml_dir,
-                    metadata_file                                   => $metadata_file,
-                    learnit_relation_triple_file                    => $learnit_relation_triple_file,
-                    learnit_event_head_count_file                   => $learnit_event_head_count_file,
+                    batch_file_dir                                  => $input_batch_file_dir,
                     factfinder_json_file                            => $input_factfinder_json_file,
                     awake_db                                        => $awake_db,
                     pickle_output_file                              => $pickle_output_file,
@@ -1174,257 +1590,134 @@ if (exists $stages{"serialization"}) {
                     ttl_output_file                                 => $ttl_output_file,
                     nt_output_file                                  => $nt_output_file,
                     unification_output_dir                          => $unification_output_dir,
-                    event_yaml                                      => "$internal_ontology_dir/event_ontology.yaml",
+                    event_yaml                                      => "$internal_ontology_dir/$internal_event_ontology_yaml_filename",
                     external_ontology_flags                         => $ontology_flags,
                     should_go_up_instead_of_using_backup_namespaces => $should_go_up_instead_of_using_backup_namespaces,
                     bbn_namespace                                   => $bbn_namespace,
                     mode                                            => $mode,
-                    seed_milestone                                  => "m17",
-                    seed_type                                       => $document_type,
-                    seed_version                                    => "v1",
-                    SGE_VIRTUAL_FREE                                => $mem,
+                    use_compositional_ontology                      => "$use_compositional_ontology",
+                    seed_milestone                                  => "SAMS",
+                    seed_type                                       => "4",
+                    seed_version                                    => "NEWS",
                     BATCH_QUEUE                                     => $batch_queue,
-                    ua_geoid_txt_file_path                          => "$external_dependencies_root/wm/geo_dict_with_population_SOUTH_SUDAN.txt",
-                    ontology_turtle_folder                          => "$hume_repo_root/resource/ontologies/causeex/190206"
+                    geoname_with_gdam_woredas                       => "$external_dependencies_root/wm/geoname_with_gdam_woredas.txt",
+                    ontology_turtle_folder                          => "$hume_repo_root/resource/ontologies/causeex/200915",
+                    intervention_whitelist                          => "$hume_repo_root/resource/wm/intervention_whitelist_030920.txt"
                 },
-                [ "$PYTHON2 $KB_CONSTRUCTOR_SCRIPT", $template_filename ]
+                [ "mkdir -p $serializer_output_dir" ],
+                [ "env PYTHONPATH=$textopen_root/src/python $PYTHON3 $KB_CONSTRUCTOR_SCRIPT", $template_filename ]
             );
     }
 }
 
 dojobs();
 
-##################
-# CauseEx Release 
-##################
+if (exists $stages{"pipeline-statistics"}) {
+    my $dump_extraction =
+        get_param($params, "dump_extraction", "False");
+    my $dump_serialization = get_param($params, "dump_serialization", "False");
+    my $Dumper_root = "$hume_repo_root/src/python/pipeline/dumper";
+    print "Pipeline Statistics stage\n";
+    my $stage_name = "pipeline_statistics";
+    my $mkdir_jobid;
+    (my $stage_processing_dir, $mkdir_jobid) = Utils::make_output_dir("$processing_dir/$stage_name", "$JOB_NAME/$stage_name/mkdir_staging_processing", []);
 
-# Creates directory for release, currently only unstructured data
-if (exists $stages{"causeex-release"}) {
-    print "CauseEx release stage\n";
-
-    my $serialization_dir =
-        get_param($params, "causeex_release_serialization_dir") eq "GENERATED"
-            ? $GENERATED_SERIALIZATION_DIR
-            : get_param($params, "causeex_release_serialization_dir");
-
-    my $release_dir = get_param($params, "causeex_release_dir");
-    my $all_directory = make_output_dir("$release_dir/all");
-    opendir(my $dh, $serialization_dir);
-    my @document_types = grep {-d "$serialization_dir/$_" && !/^\.{1,2}$/} readdir($dh);
-
-    my @release_jobs = ();
-    foreach my $document_type (@document_types) {
-        my $document_type_dir = "$serialization_dir/$document_type";
-        my $causeex_release_job_name = "$JOB_NAME/causeex_release/$document_type";
-        my $causeex_release_job_id =
-            runjobs(
-                [], $causeex_release_job_name,
-                {
-                    BATCH_QUEUE => $LINUX_QUEUE,
-                },
-                [ "$PYTHON2 $CAUSEEX_RELEASE_SCRIPT $document_type_dir $release_dir" ],
-                [ "cp $release_dir/$document_type/*.nt $all_directory" ]
-            );
-        push @release_jobs, $causeex_release_job_id;
+    my $print_numeric_statistics_jobid = runjobs(
+        [], "$JOB_NAME/$stage_name/numeric_statistics",
+        {
+            BATCH_QUEUE => $LINUX_QUEUE,
+        },
+        [ "env PYTHONPATH=$textopen_root/src/python:\$PYTHONPATH $PYTHON3 $Dumper_root/get_event_and_event_arg_cnt.py --expt_root $processing_dir > $stage_processing_dir/numeric_statistics.log" ]
+    );
+    if ($dump_extraction eq "True") {
+        my $dump_grounding_jobid = runjobs(
+            [], "$JOB_NAME/$stage_name/dump_grounding",
+            {
+                BATCH_QUEUE => $LINUX_QUEUE,
+            },
+            [ "env PYTHONPATH=$textopen_root/src/python:\$PYTHONPATH $PYTHON3 $Dumper_root/get_all_event_groundings.py --expt_root $processing_dir > $stage_processing_dir/grounding.log" ]
+        );
+        my $dump_event_arg_jobid = runjobs(
+            [], "$JOB_NAME/$stage_name/dump_event_args",
+            {
+                BATCH_QUEUE => $LINUX_QUEUE,
+            },
+            [ "env PYTHONPATH=$textopen_root/src/python:\$PYTHONPATH $PYTHON3 $Dumper_root/get_all_event_argument.py --expt_root $processing_dir > $stage_processing_dir/event_arg.log" ]
+        );
+        my $dump_event_event_relation_jobid = runjobs(
+            [], "$JOB_NAME/$stage_name/dump_event_event_relation",
+            {
+                BATCH_QUEUE => $LINUX_QUEUE,
+            },
+            [ "env PYTHONPATH=$textopen_root/src/python:\$PYTHONPATH $PYTHON3 $Dumper_root/get_all_event_event_relation.py --expt_root $processing_dir > $stage_processing_dir/event_event_relation.log" ]
+        );
     }
-
+    if ($dump_serialization eq "True") {
+        my $serialization_dumper_script = "";
+        if ($mode eq "CauseEx") {
+            $serialization_dumper_script = "$hume_repo_root/src/python/misc/print_causal_relation_from_unification_json.py";
+        }
+        else {
+            $serialization_dumper_script = "$hume_repo_root/src/python/misc/print_causal_relation_from_jsonld.py";
+        }
+        my $print_serialization_jobid = runjobs(
+            [], "$JOB_NAME/$stage_name/dump_serialization",
+            {
+                BATCH_QUEUE => $LINUX_QUEUE,
+            },
+            [ "$PYTHON3 $serialization_dumper_script --serialization_root $GENERATED_SERIALIZATION_DIR > $stage_processing_dir/serialization_dump.log" ]
+        );
+    }
 }
 
 dojobs();
 
-sub run_learnit_and_nre_extractors {
-    my $processing_dir = $_[0];
-    my $input_serifxml_list = $_[1];
-    my $batch_file_directory = $_[2];
-    my $useOnlyPropPatterns = $_[3];
-    my $MIN_FREQ_EVENT_PAIRS = $_[4];
-    my $USE_TRIPLE_WHITE_LIST = $_[5];
-    my $str_file_triple_relation_event_pairs = $_[6];
+if (exists $stages{"visualization"}) {
+    my $input_serialization_root = get_param($params, "serialization_root") eq "GENERATED"
+        ? $GENERATED_SERIALIZATION_DIR
+        : get_param($params, "serialization_root");;
+    my $stage_name = "visualization";
+    my $mkdir_jobid;
+    (my $stage_processing_dir, $mkdir_jobid) = Utils::make_output_dir("$processing_dir/$stage_name", "$JOB_NAME/$stage_name/mkdir_staging_processing", []);
+    my $merge_eer_graph = runjobs(
+        [], "$JOB_NAME/$stage_name/merge_eer_graph",
+        {
+            BATCH_QUEUE => $LINUX_QUEUE,
+        },
+        [ "$PYTHON3 $learnit_root/HAT/new_backend/utils/aggr_ui_data_from_kb_constructor.py --dir_of_serialization $input_serialization_root --output_path $stage_processing_dir/eer_graph.json" ]
+    );
 
-    my $learnit_relations_file = "$processing_dir/learnit_event_event_relations_file.json";
-    my $nre_relations_file = "$processing_dir/nre_event_event_relations_file.json";
-    my $extractor_target = get_param($params, "extractor_target", "binary_event_event");
-    my ($NUM_JOBS, $split_learnit_jobid) = split_file_for_processing("make_run_learnit_batch_files", $input_serifxml_list, "$batch_file_directory/learnit_serif_batch_file_", $BATCH_SIZE);
-    my $master_learnit_output_dir = make_output_dir("$processing_dir/");
-    my $mappings_output_dir = make_output_dir("$master_learnit_output_dir/mappings");
-    my $decoding_output_dir = make_output_dir("$master_learnit_output_dir/decoding");
-    my $source_lists_dir = make_output_dir("$master_learnit_output_dir/source_lists");
-
-    my $learnit_pattern_dir = get_param($params, "learnit_pattern_dir") eq "DEFAULT"
-        ? "$hume_repo_root/resource/learnit_patterns"
-        : get_param("learnit_input_pattern_dir");
-
-    # copy $input_serifxml_list to source_lists_dir
-    my $copy_serif_lists =
-        runjobs([ $split_learnit_jobid ], "$JOB_NAME/event_event_relations/copy_serif_lists",
-            { SCRIPT => 1 },
-            [ "cp $input_serifxml_list $source_lists_dir" ]
-        );
-    my @learnit_decoding_jobs = ();
-    my @nre_decoding_jobs = ();
-    my @mappings_output_files = ();
-    # Trick runjobs into expanding Serif parameter file
-    my $expand_learnit_template_job_id =
-        runjobs([ $copy_serif_lists ], "$JOB_NAME/event_event_relations/expand_template",
+    # Event timeline data generation has been turn off
+    if (0) {
+        my $event_timeline_input_serifxml_list =
+            get_param($params, "event_timeline_input_serifxml_list") eq "GENERATED"
+                ? $GENERATED_PYSERIF_SERIFXML
+                : get_param($params, "event_timeline_input_serifxml_list");
+        (my $output_event_timeline_dir, undef) = Utils::make_output_dir("$processing_dir/event_timeline_output", "$JOB_NAME/event_timeline/mkdir_staging_processing", []);
+        my $extract_event_timestamp_info_jobid = runjobs(
+            [], "$JOB_NAME/event_timeline/1_extract_event_timestamp",
             {
-                learnit_root => $learnit_root,
-                source_lists => $source_lists_dir,
-                SERIF_DATA   => $SERIF_DATA,
-                BATCH_QUEUE  => $LINUX_QUEUE,
-                SCRIPT       => 1,
+                BATCH_QUEUE => $LINUX_QUEUE,
             },
-            [ "$PYTHON2 -c pass", "learnit.par" ]
+            [ "$EXTRACT_TIMELINE_FROM_SERIFXML_EXE $event_timeline_input_serifxml_list $output_event_timeline_dir/event_timeline.ljson" ]
         );
-    dojobs();
-    my $learnit_params = "$exp_root/etemplates/$JOB_NAME/event_event_relations/$exp-expand_template.learnit.par";
-    #print $learnit_params;
-    #texit 1;
-    for (my $n = 0; $n < $NUM_JOBS; $n++) {
-        my $job_batch_num = sprintf("%05d", $n);
-        my $learnit_job_name = "$JOB_NAME/event_event_relations/mappings/$job_batch_num";
-        my $input_batch_file = "$batch_file_directory/learnit_serif_batch_file_$job_batch_num";
-        my $mappings_output_file = "$mappings_output_dir/$job_batch_num.sjson";
-        # mappings creation
-        my $learnit_mappings_jobid =
-            runjobs(
-                [ $expand_learnit_template_job_id ], $learnit_job_name,
-                {
-                    SGE_VIRTUAL_FREE => "25G",
-                    BATCH_QUEUE      => $LINUX_QUEUE,
-                },
-                [ "$LEARNIT_INSTANCE_EXTRACTOR_EXE $learnit_params $extractor_target $input_batch_file $mappings_output_file" ]
-            );
-        # LearnIt decoding
-        $learnit_job_name = "$JOB_NAME/event_event_relations/decoding/$job_batch_num";
-        my $decoding_output_file = "$decoding_output_dir/$job_batch_num.json";
-        my $decoding_log_file = "$decoding_output_dir/$job_batch_num.log";
-
-        my $learnit_decoding_jobid =
-            runjobs(
-                [ $learnit_mappings_jobid ], $learnit_job_name,
-                {
-                    SGE_VIRTUAL_FREE => "25G",
-                    BATCH_QUEUE      => $LINUX_QUEUE,
-                },
-                [ "$LEARNIT_DECODER_SCRIPT $learnit_params $mappings_output_file $learnit_root $decoding_output_file $useOnlyPropPatterns $MIN_FREQ_EVENT_PAIRS $USE_TRIPLE_WHITE_LIST $str_file_triple_relation_event_pairs $learnit_pattern_dir $decoding_log_file" ]
-            );
-        # Apply NRE models
-        $learnit_job_name = "$JOB_NAME/event_event_relations/nre/$job_batch_num";
-        my $nreOutputPrefix = $mappings_output_file . ".NRE/";
-        my $neural_relation_decoding_jobid =
-            runjobs(
-                [ $learnit_mappings_jobid ], $learnit_job_name,
-                {
-                    SGE_VIRTUAL_FREE => "25G",
-                    BATCH_QUEUE      => $LINUX_QUEUE,
-                    job_retries      => 1,
-                    ATOMIC           => 1,
-                },
-                [ "$NEURAL_RELATION_DECODER_SCRIPT $learnit_params $mappings_output_file $nreOutputPrefix $learnit_root $deepinsight_root $nre_model_root $ANACONDA_ROOT py2-tf1" ]
-            );
-
-        push(@learnit_decoding_jobs, $learnit_decoding_jobid);
-        push(@nre_decoding_jobs, $neural_relation_decoding_jobid);
-        push(@mappings_output_files, $mappings_output_file);
+        my $group_eventmention_in_timeline_bucket = runjobs(
+            [ $extract_event_timestamp_info_jobid ], "$JOB_NAME/event_timeline/2_group_into_bucket",
+            {
+                BATCH_QUEUE => $LINUX_QUEUE,
+            },
+            [ "$PYTHON3 $GROUP_EVENTMENTION_IN_TIMELINE_BUCKET_SCRIPT $output_event_timeline_dir/event_timeline.ljson > $output_event_timeline_dir/event_timeline.table" ]
+        );
     }
-
-    # Combine decoding results into one json file.
-    my $combine_results_job_name = "$JOB_NAME/event_event_relations/combine_learnit_decoding_results";
-    my $combine_results_jobid =
-        runjobs(
-            \@learnit_decoding_jobs, $combine_results_job_name,
-            {
-                BATCH_QUEUE => $LINUX_QUEUE,
-            },
-            [ "$PYTHON2 $LEARNIT_JSON_AGGREGATOR_SCRIPT $decoding_output_dir $learnit_relations_file" ]
-        );
-
-    # Combine NRE decoding results into one json file.
-    my $list_nre_dir = $mappings_output_dir . "/list_nre_dir";
-    my $list_nre_job_name = "$JOB_NAME/event_event_relations/list_nre_json";
-    my $list_nre_dir_jobid =
-        runjobs(
-            \@nre_decoding_jobs, $list_nre_job_name,
-            {
-                BATCH_QUEUE => $LINUX_QUEUE,
-                SCRIPT      => 1
-            },
-            [ "$CREATE_FILE_LIST_SCRIPT --unix_style_pathname \"$mappings_output_dir/*.NRE\" --output_list_path $list_nre_dir" ]
-        );
-
-    my $combine_nre_results_job_name = "$JOB_NAME/event_event_relations/combine_nre_decoding_results";
-    my $combine_nre_results_jobid =
-        runjobs(
-            [ $list_nre_dir_jobid ], $combine_nre_results_job_name,
-            {
-                BATCH_QUEUE => $LINUX_QUEUE,
-            },
-            [ "$PYTHON2 $NRE_JSON_AGGREGATOR_SCRIPT $list_nre_dir $nre_relations_file.aggr" ]
-        );
-
-    my $nre_postprocessing_job_name = "$JOB_NAME/event_event_relations/nre_postprocessing";
-    my $nre_postprocessing_job_id =
-        runjobs(
-            [ $combine_nre_results_jobid ], $nre_postprocessing_job_name,
-            {
-                BATCH_QUEUE => $LINUX_QUEUE,
-            },
-            [ "$PYTHON2 $NRE_POSTPROCESSING $nre_relations_file.aggr $nre_relations_file.filtered" ]
-        );
-
-    my $nre_rescale_freq_job_name = "$JOB_NAME/event_event_relations/nre_rescale_freq";
-    my $nre_rescale_freq_job_id =
-        runjobs(
-            [ $nre_postprocessing_job_id ], $nre_rescale_freq_job_name,
-            {
-                BATCH_QUEUE => $LINUX_QUEUE,
-            },
-            [ "$PYTHON2 $NRE_RESCALE_FREQ $nre_relations_file.filtered $nre_relations_file.rescaled" ]
-        );
-
-    my $nre_strip_low_conf_job_name = "$JOB_NAME/event_event_relations/nre_strip_low_conf";
-    my $nre_strip_low_conf_job_id =
-        runjobs(
-            [ $nre_rescale_freq_job_id ], $nre_strip_low_conf_job_name,
-            {
-                BATCH_QUEUE => $LINUX_QUEUE,
-            },
-            [ "$PYTHON2 $NRE_STRIP_LOW_CONF $nre_relations_file.rescaled $nre_relations_file" ]
-        );
-
-    # Run scorer on decoding results.
-    my $learnit_scoring_job_name = "$JOB_NAME/event_event_relations/learnit-scoring";
-    my $learnit_scoring_jobid =
-        runjobs(
-            \@learnit_decoding_jobs, $learnit_scoring_job_name,
-            {
-                BATCH_QUEUE => $LINUX_QUEUE,
-            },
-            [ "$PYTHON2 $LEARNIT_SCORER_SCRIPT $decoding_output_dir $decoding_output_dir/event_event_relations.decoder.score" ]
-        );
-
-    # make copies of causal json and decoder output directory
-    my $copy_decoder_output_path = "$master_learnit_output_dir/decoding_copy";
-    my $copy_learnit_decoder_output =
-        runjobs([ $learnit_scoring_jobid ], "$JOB_NAME/event_event_relations/copy_decoder_output",
-            { SCRIPT => 1 },
-            [ "cp -r $decoding_output_dir $copy_decoder_output_path" ]
-        );
-    dojobs();
-
-    # create a mappings list file
-    my $mappings_file_list = "$master_learnit_output_dir/mappings_list_file";
-    open my $fh, '>', $mappings_file_list or die "Cannot open $mappings_file_list: $!";
-    print $fh join("\n", @mappings_output_files);
-    close $fh;
-
-    return($learnit_params, $mappings_file_list);
 }
 
+dojobs();
+
+endjobs();
 
 sub load_params {
     my %params = ();
-    $config_file = $_[0];
+    my $config_file = $_[0];
 
     open(my $fh, '<', $config_file) or die "Could not open config file: $config_file";
     while (my $line = <$fh>) {
@@ -1468,99 +1761,38 @@ sub get_param {
     return $params_ref->{$param_key};
 }
 
-sub make_output_dir {
-    my $dir = $_[0];
-    mkpath($dir);
-    return abs_path($dir);
-}
 
-
-sub split_file_for_processing {
-    my $split_jobname = $_[0];
-    my $bf = $_[1];
-    my $bp = $_[2];
-    my $bs = $_[3];
-    open my $fh, "<", $bf or die "could not open $bf: $!";
-    my $num_files = 0;
-    $num_files++ while <$fh>;
-    my $njobs = int($num_files / $bs) + 1;
-    if ($num_files % $bs == 0) {
-        $njobs--;
-    }
-    print "File $bf will be broken into $njobs batches of approximate size $bs\n";
-    my $jobid = runjobs([], "$JOB_NAME/$split_jobname",
-        {
-            BATCH_QUEUE => $LINUX_QUEUE,
-            SCRIPT      => 1,
-        },
-        "/usr/bin/split -d -a 5 -l $bs $bf $bp");
-
-    return($njobs, $jobid);
-}
 
 sub check_requirements {
-    my $rv = 1;
+
     my @required_git_repos = ();
-    if (exists $stages{"kbp"}) {
-        push(@required_git_repos, "$git_repo/kbp");
-    }
-    if (exists $stages{"event-event-relations"}) {
-        push(@required_git_repos, "$git_repo/learnit");
-        push(@required_git_repos, "$git_repo/deepinsight");
-    }
-    push(@required_git_repos, "$git_repo/jserif");
 
     for my $git_repo (@required_git_repos) {
         if (!-e $git_repo) {
-            print "You must have the git repo: " . $git_repo . " cloned\n";
-            $rv = 0;
-        }
-        # get the required branch name for this repo
-        # my $repo_name = substr $git_repo, (rindex($git_repo,'/')+1) ;
-        # my $expected_branch_name = get_param($params, $repo_name."_branch", "master");
+            die "You must have the git repo: " . $git_repo . " cloned\n";
 
-        # verify that the branch is correct
-        # read the repo-name from .git/HEAD file
-        # open(my $headFile, '<', $git_repo."/.git/HEAD") or die "Cannot verify branch of $repo_name; .git/HEAD file not found";
-        # my @lines = <$headFile>;
-        # my $branch_name = substr $lines[0], (rindex($lines[0],'/')+1) , -1;
-        #if ($branch_name ne $expected_branch_name){
-        #    die "The current branch of repo $repo_name ($branch_name) does not match the expected branch ($expected_branch_name)"
-        # }
+        }
+
     }
 
     my @required_git_files = ();
     if (exists $stages{"nn-event-typing"}) {
-        push(@required_git_files, "$git_repo/jserif/serif-util/target/appassembler/bin/NeuralNamesModelInputOutputMapper");
-    }
-    if (exists $stages{"kbp"}) {
-        push(@required_git_files, "$STRIP_EVENTS_EXE");
-        push(@required_git_files, "$KBP_EVENT_FINDER_EXE");
-    }
-
-    if (exists $stages{"nn-events"}) {
-
-    }
-    if (exists $stages{"event-event-relations"}) {
-        push(@required_git_files, "$git_repo/learnit/neolearnit/target/appassembler/bin/InstanceExtractor");
-        push(@required_git_files, "$git_repo/learnit/neolearnit/target/appassembler/bin/EventEventRelationPatternDecoder");
-        push(@required_git_files, "$EVENT_EVENT_RELATION_SCORE_CALIBRATE_EXE");
+        push(@required_git_files, "$hume_repo_root/src/java/serif-util/target/appassembler/bin/NeuralNamesModelInputOutputMapper");
     }
 
     for my $git_file (@required_git_files) {
         if (!-e $git_file) {
-            print "You must have the file: " . $git_file . " . You may need to mvn install a git repo\n";
-            $rv = 0;
+            die "You must have the file: " . $git_file . " . You may need to mvn install a git repo\n";
+
         }
     }
 
     if (!defined $ENV{'SVN_PROJECT_ROOT'}) {
-        print "You must set the environment variable SVN_PROJECT_ROOT in .bashrc to a Projects directory in an svn checkout\n";
-        return 0;
+        die "You must set the environment variable SVN_PROJECT_ROOT in .bashrc to a Projects directory in an svn checkout\n";
+
     }
 
     my @required_svn_files = (
-        $ENV{'SVN_PROJECT_ROOT'} . "/SERIF/python/serifxml.py",
         $ENV{'SVN_PROJECT_ROOT'} . "/SERIF/par"
     );
     if ($mode eq "CauseEx") {
@@ -1568,13 +1800,10 @@ sub check_requirements {
     }
     for my $svn_file (@required_svn_files) {
         if (!-e $svn_file) {
-            print "You must have $svn_file checked out from svn\n";
-            $rv = 0;
+            die "You must have $svn_file checked out from svn\n";
+
         }
     }
-
-    return $rv;
-
 }
 
 sub get_current_time {
@@ -1583,3 +1812,18 @@ sub get_current_time {
         $year + 1900, $mon + 1, $mday, $hour, $min, $sec);
     return $nice_timestamp;
 }
+
+sub generate_file_list {
+    my @job_dependencies = @{$_[0]};
+    my $create_list_job_name = $_[1];
+    my $unix_path_str = $_[2];
+    my $output_file_path = $_[3];
+    return runjobs(
+        \@job_dependencies, $create_list_job_name,
+        {
+            SCRIPT => 1
+        },
+        [ "$CREATE_FILE_LIST_SCRIPT --unix_style_pathname \"$unix_path_str\" --output_list_path $output_file_path" ]
+    );
+}
+

@@ -62,7 +62,7 @@ Increase diminish
 Increase freefall
 Increase reduce
 LegalEvent case
-MospitalAvailable health
+HospitalAvailable health
 Nomination name
 OathTaking rent
 Peacekeeping democracy

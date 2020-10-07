@@ -1,0 +1,60 @@
+[ "com.bbn.akbc.neolearnit.scoring.TargetAndScoreTables", {
+  "startDate" : [ "java.util.Date", 1586552598648 ],
+  "seedScores" : [ "com.bbn.akbc.neolearnit.scoring.tables.SeedScoreTable", {
+    "data" : [ "com.bbn.akbc.neolearnit.storage.EfficientMapDataStore", {
+      "keyList" : [ "java.util.ArrayList", [ ] ],
+      "valList" : [ "java.util.ArrayList", [ ] ],
+      "entries" : [ "java.util.ArrayList", [ ] ]
+    } ],
+    "iteration" : 185
+  } ],
+  "patternScores" : [ "com.bbn.akbc.neolearnit.scoring.tables.PatternScoreTable", {
+    "data" : [ "com.bbn.akbc.neolearnit.storage.EfficientMapDataStore", {
+      "keyList" : [ "java.util.ArrayList", [ ] ],
+      "valList" : [ "java.util.ArrayList", [ ] ],
+      "entries" : [ "java.util.ArrayList", [ ] ]
+    } ],
+    "iteration" : 131
+  } ],
+  "tripleScores" : [ "com.bbn.akbc.neolearnit.scoring.tables.TripleScoreTable", {
+    "data" : [ "com.bbn.akbc.neolearnit.storage.EfficientMapDataStore", {
+      "keyList" : [ "java.util.ArrayList", [ ] ],
+      "valList" : [ "java.util.ArrayList", [ ] ],
+      "entries" : [ "java.util.ArrayList", [ ] ]
+    } ],
+    "iteration" : 0
+  } ],
+  "iteration" : 185,
+  "goodSeedPrior" : 0.001,
+  "totalConfidenceDenominator" : 1000.0,
+  "stage" : "initial",
+  "params" : [ "java.util.HashMap", {
+    "serif_data" : "/nfs/mercury-04/u60/DEFT/users/msrivast/Active/Data/SERIF/",
+    "corpus_name" : "cx_16_rdf_sentences.params",
+    "loader_concurrency" : "5",
+    "domain_root" : "/home/hqiu/ld100/learnit/inputs/domains/CX_ICM",
+    "max_regexp_pattern_words" : "5",
+    "mappings_lists_dir" : "/nfs/raid88/u10/users/hqiu/learnit_data/cx_16_rdf_sentences/source_mappings_lists",
+    "max_binary_prop_depth" : "2",
+    "mappings_dir" : "/nfs/raid88/u10/users/hqiu/learnit_data/cx_16_rdf_sentences/source_mappings",
+    "queue_priority" : "5",
+    "mappings_list_batches" : "20",
+    "min_pattern_frequency_per_batch" : "1",
+    "source_lists" : "/nfs/raid88/u10/users/hqiu/learnit_data/cx_16_rdf_sentences/source_lists",
+    "max_prop_depth" : "2",
+    "stopwords" : "/home/hqiu/ld100/learnit/inputs/resources/stopwords/english_causal_relationships.txt",
+    "aggregated_frequency_filter_pattern_min" : "1",
+    "max_unary_prop_depth" : "1",
+    "languages" : "English",
+    "linux_queue" : "nongale-sl6",
+    "debug_extraction" : "true",
+    "corpus_dir" : "/nfs/raid88/u10/users/hqiu/learnit_data/cx_16_rdf_sentences/source_lists",
+    "similarities_dir" : "/nfs/raid88/u10/users/hqiu/learnit_data/cx_16_rdf_sentences/learnit_similarity_data",
+    "learnit_expt_suffix" : "default",
+    "source_root" : "/home/hqiu/ld100/learnit/neolearnit",
+    "min_seed_frequency_per_batch" : "1",
+    "learnit_root" : "/home/hqiu/ld100/learnit",
+    "learnit_data_dir" : "/nfs/raid88/u10/users/hqiu/learnit_data/cx_16_rdf_sentences"
+  } ],
+  "experimentName" : "default"
+} ]

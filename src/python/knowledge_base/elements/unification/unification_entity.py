@@ -1,8 +1,8 @@
 from elements.kb_mention import KBMention
 from elements.kb_value_mention import KBValueMention
-from unification_provenance import UnificationProvenance
-from unification_element import UnificationElement
-from unification_span import UnificationSpan
+from elements.unification.unification_provenance import UnificationProvenance
+from elements.unification.unification_element import UnificationElement
+from elements.unification.unification_span import UnificationSpan
 
 class UnificationEntity(UnificationElement):
     entity_type_map = { "PER": "http://ontology.causeex.com/ontology/odps/Actor#Person",

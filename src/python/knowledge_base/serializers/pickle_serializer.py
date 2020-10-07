@@ -9,6 +9,7 @@ class KBPickleSerializer:
         pass
 
     def serialize(self, kb, output_pickle_file):
+        print("KBPickleSerializer SERIALIZE")
         dir_path = os.path.dirname(os.path.realpath(output_pickle_file))
         if not os.path.isdir(dir_path):
             os.makedirs(dir_path)

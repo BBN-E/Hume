@@ -1,1 +1,4 @@
 GPE	China
+GPE	Baltics
+GPE	the Baltics
+GPE	Baltic

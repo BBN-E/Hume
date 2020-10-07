@@ -1,0 +1,916 @@
+- Factor:
+  - _source: [
+      'ICM: http://ontology.causeex.com/ontology/odps/ICM#Factor'
+    ]
+  - PhysicalEnvironment:
+    - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#PhysicalEnvironment'
+        ]
+    - Climate:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#Climate'
+        ]
+      - ClimatologicalEffectOnOperations:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#ClimatologicalEffectOnOperations'
+          ]
+      - ClimatologicalEffectOnPopulace:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#ClimatalogicalEffectOnPopulace'
+          ]
+    - Geography:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#Geography'
+        ]
+      - Habitable:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#Habitable'
+          ]
+      - TraversableMounted:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#TraversableMounted'
+          ]
+      - TraversableDismounted:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#TraversableDismounted'
+          ]
+      - NavigableWaterways:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#NavigableWaterways'
+          ]
+    - Habitability:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#Habitability'
+        ]
+      - SoilContaminationLevels:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#SoilContaminationLevels'
+          ]
+      - AirPollutionLevels:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#AirPollutionLevels'
+          ]
+      - WaterPollutionLevels:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#WaterPollutionLevels'
+          ]
+    - ManMadeStructures:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#ManMadeStructures'
+        ]
+      - Commercial:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#Commercial'
+          ]
+      - CommercialSocioEconomicLevel:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#CommercialSocioEconomicLevel'
+          ]
+      - EnvironmentalShaping:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#EnvironmentalShaping'
+          ]
+      - Gatherings:
+        - _source: []
+        - PoliticalGathering:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#PoliticalGathering'
+            ]
+        - RecreationalSocialGathering:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#RecreationalSocialGathering'
+            ]
+        - ReligiousGathering:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#ReligiousGathering'
+            ]
+      - Industrial:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#Industrial'
+          ]
+      - InfrastructureSupport:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#InfrastructureSupport'
+          ]
+      - Residential:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#Residential'
+          ]
+      - ResidentialSocioEconomicLevel:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#ResidentialSocioEconomicLevel'
+          ]
+    - Weather:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#Weather'
+        ]
+      - SeasonalEffectOnOperations:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#SeasonalEffectonOperations'
+          ]
+      - SeasonalEffectOnPopulace:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#SeasonalEffectonPopulace'
+          ]
+  - Economic:
+    - _source: [
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#Economic'
+      ]
+    - Consumption:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#Consumption'
+        ]
+      - ProvisionOfAidOrSupport:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#ProvisionOfAidOrSupport'
+          ]
+        - ForeignAid:
+          - _source: [
+              'ICM.deprecated: http://ontology.causeex.com/ontology/odps/ICM#ForeignAid'
+            ]
+      - ForeignInvestment:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#ForeignInvestment'
+          ]
+      - IndustrialResourceAvailability:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#IndustrialResourceAvailability'
+          ]
+    - Distribution:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#Distribution'
+        ]
+      - InternationalTrade:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#InternationalTrade'
+          ]
+    - Informal:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#Informal'
+        ]
+      - HumanTrafficking:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#HumanTrafficking'
+          ]
+      - IllicitTrade:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#IllicitTrade'
+          ]
+      - InformalCulturalFinancialTransactionInfluence:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#InformalCulturalFinancialTransactionInfluence'
+          ]
+      - TerrorismFinancing:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#TerrorismFinancing'
+          ]
+      - UnregulatedLabor:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#UnregulatedLabor'
+          ]
+    - Production:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#Production'
+        ]
+      - EconomicCapability:
+        - _source: []
+        - EconomicAgriculturalCapability:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#EconomicAgriculturalCapability'
+            ]
+        - EconomicIndustrialCapability:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#EconomicIndustrialCapability'
+            ]
+        - EconomicServicesCapability:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#EconomicServicesCapability'
+            ]
+      - EconomicProduction:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#EconomicProduction'
+          ]
+      - NationalEconomicModelInfluence:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#NationalEconomicModelInfluence'
+          ]
+    - EmploymentLevel:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#EmploymentLevel'
+        ]
+    - DomesticMarketHealth:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#DomesticMarketHealth'
+        ]
+    - Sanctions:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#Sanctions'
+        ]
+  - Information:
+    - _source: [
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#Information'
+      ]
+    - DefenseInformation:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#DefenseInformation'
+        ]
+      - DefenseNationalCommunications:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#DefenseNationalCommunications'
+          ]
+      - DefenseRegionalCommunications:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#DefenseRegionalCommunications'
+          ]
+      - DefenseStrategicCommunications:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#DefenseStrategicCommunications'
+          ]
+    - GlobalInformation:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#GlobalInformation'
+        ]
+      - InformationAvailability:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#InformationAvailability'
+          ]
+    - NationalInformation:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#NationalInformation'
+        ]
+      - CommunicationRestrictions:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#CommunicationRestrictions'
+          ]
+      - MassCommunication:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#MassCommunication'
+          ]
+      - InformationOperation:
+        - _source: []
+        - FactualInformationOperation:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#FactualInformationOperation'
+            ]
+        - Propaganda:
+          # propaganda could be a child of all of the other InformationOperation classes
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#Propaganda'
+            ]
+        - MisinformationOperation:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#MisinformationOperation'
+            ]
+          - DisinformationOperation:
+            - _source: [
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#DisinformationOperation'
+              ]
+        - NationalOrganizationInfoOps:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#NationalOrganizationInfoOps'
+            ]
+      - OrgCommunicationResilience:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#OrgCommunicationResilience'
+          ]
+      - SocialMediaCommunications:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#SocialMediaCommunications'
+          ]
+  - Infrastructure:
+    - _source: [
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#Infrastructure'
+      ]
+    - Industry:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#Industry'
+        ]
+      - AgriculturalIndustry:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#AgriculturalIndustry'
+          ]
+      - AlternativeEnergyIndustry:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#AlternativeEnergyIndustry'
+          ]
+      - ManufacturingIndustry:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#ManufacturingIndustry'
+          ]
+      - MiningIndustry:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#MiningIndustry'
+          ]
+      - NuclearIndustry:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#NuclearIndustry'
+          ]
+      - PetroleumIndustry:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#PetroleumIndustry'
+          ]
+      - ServicesIndustry:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#ServicesIndustry'
+          ]
+    - PublicFacilities:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#PublicFacilities'
+        ]
+      - EmergencyFacilityAvailability:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#EmergencyFacilityAvailability'
+          ]
+      - GovernmentBuildings:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentBuildings'
+          ]
+      - NonGovernmentBuildings:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#NonGovernmentBuildings'
+          ]
+      - PlacesOfWorship:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#PlacesOfWorship'
+          ]
+      - PublicGatheringPlaces:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#PublicGatheringPlaces'
+          ]
+      - InfrastructureDamage:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#InfrastructureDamage'
+          ]
+    - Transportation:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#Transportation'
+        ]
+      - AirTransportation:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#AirTransportation'
+          ]
+      - GroundTransportation:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#GroundTransportation'
+          ]
+      - TransportationInfrastructure:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#TransportationInfrastructure'
+          ]
+      - WaterTransportation:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#WaterTransportation'
+          ]
+    - Utilities:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#Utilities'
+        ]
+      - GasAvailability:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#GasAvailability'
+          ]
+      - PowerAvailability:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#PowerAvailability'
+          ]
+      - UtilitiesInfrastructure:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#UtilitiesInfrastructure'
+          ]
+      - WasteServices:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#WasteServices'
+          ]
+  - Military:
+    - _source: [
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#Military'
+      ]
+    - ArmedForces:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#ArmedForces'
+        ]
+      - MilitaryCapability:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryCapability'
+          ]
+        - MilitaryAirCapability:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryAirCapability'
+            ]
+        - MilitaryCBRNECapability:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryCBRNECapability'
+            ]
+        - MilitaryCyberCapability:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryCyberCapability'
+            ]
+        - MilitaryGroundCapability:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryGroundCapability'
+            ]
+        - MilitaryLogisticsCapability:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryLogisticsCapability'
+            ]
+        - MilitaryNavalCapability:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryNavalCapability'
+            ]
+        - MilitarySOFCapability:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitarySOFCapability'
+            ]
+      - MilitaryReadiness:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryReadiness'
+          ]
+        - MilitaryAirReadiness:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryAirReadiness'
+            ]
+        - MilitaryCBRNEReadiness:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryCBRNEReadiness'
+            ]
+        - MilitaryCyberReadiness:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryCyberReadiness'
+            ]
+        - MilitaryGroundReadiness:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryGroundReadiness'
+            ]
+        - MilitaryNavalReadiness:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryNavalReadiness'
+            ]
+        - MilitarySOFReadiness:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitarySOFReadiness'
+            ]
+      - MilitaryDeployment:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryDeployment'
+          ]
+      - MilitaryActivity:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryActivity'
+          ]
+        - MilitaryJointOperation:
+          - _source: [
+            ]
+        - MilitaryAirActivity:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryAirActivity'
+            ]
+        - MilitaryCyberActivity:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryCyberActivity'
+            ]
+        - MilitaryGroundActivity:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryGroundActivity'
+            ]
+        - MilitaryMaritimeActivity:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryMaritimeActivity'
+            ]
+          - MilitaryNavalActivity:
+            - _source: [
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryNavalActivity'
+              ]
+        - MilitaryInformationEnvironmentActivity:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryInformationEnvironmentActivity'
+            ]
+        - MilitarySOFActivity:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitarySOFActivity'
+            ]
+        - MilitarySpaceActivity:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitarySpaceActivity'
+            ]
+        - MilitaryWMDActivity:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryWMDActivity'
+            ]
+      - PopulaceSupportForMilitary:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#PopulaceSupportForMilitary'
+          ]
+    - MilitaryConflict:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryConflict'
+        ]
+    - AggressiveActions:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#AggressiveActions'
+        ]
+    - MilitarySpending:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitarySpending'
+        ]
+    - InternalSecurity:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#InternalSecurity'
+        ]
+      - WMDActivity:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#DefenseAgainstWMDActivity'
+          ]
+      - MilitaryIntelligence:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryIntelligence'
+          ]
+      - InfluenceOnMilitary:
+        - _source: []
+        - NationalBorderPoliceInfluence:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#NationalBorderPoliceInfluence'
+            ]
+        - NationalPoliceInfluence:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#NationalPoliceInfluence'
+            ]
+        - ParamilitaryInfluence:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#ParamilitaryInfluence'
+            ]
+      - PopulaceSupportForPolice:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#PopulaceSupportForPolice'
+          ]
+      - PeacekeepingActivity:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#PeacekeepingActivity'
+          ]
+      - MilitaryLawEnforcement:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryLawEnforcement'
+          ]
+    - Leadership:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#Leadership'
+        ]
+      - MilitaryCoercionOrIntimidation:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryCoercionOrIntimidation'
+          ]
+      - MilitaryInfluenceOnGovernment:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryInfluenceOnGovernment'
+          ]
+      - MilitaryLeadershipStrength:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryLeadershipStrength'
+          ]
+      - RealAndPotentialThreatsInfluence:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#RealAndPotentialThreatsInfluence'
+          ]
+    - MilitaryIndustrialComplex:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#Military-IndustrialBase'
+        ]
+      - ForeignArmsTrade:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#ForeignArmsTrade'
+          ]
+      - MilitaryResearchAndDevelopment:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryResearchAndDevelopment'
+          ]
+      - NationalArmsProduction:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#NationalArmsProduction'
+          ]
+      - WMDCapabilityPursuit:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#WMDCapabilityPursuit'
+          ]
+    - Sustainment:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#Sustainment'
+        ]
+      - LogisticsReadiness:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#LogisticsReadiness'
+          ]
+      - MilitaryRecruitment:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryRecruitment'
+          ]
+      - MilitaryTraining:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryTraining'
+          ]
+  - Political:
+    - _source: [
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#Political'
+      ]
+    - CentralOrLocalGovernment:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#CentralOrLocalGovernment'
+        ]
+      - GovernmentPerformance:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentPerformance'
+          ]
+      - PopulaceSupportForGovernment:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#PopulaceSupportForGovernment'
+          ]
+      - GovernmentInfluence:
+        - _source: []
+        - BusinessAndIndustryInfluence:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#BusinessAndIndustryInfluence'
+            ]
+        - GovernmentInfluenceOnMilitary:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentInfluenceOnMilitary'
+            ]
+        - GovernmentInfluenceOnPolice:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentInfluenceOnPolice'
+            ]
+      - GovernmentActivity:
+        - _source: []
+        - ExecutiveGovernmentActivity:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#ExecutiveGovernmentActivity'
+            ]
+        - JudicialActivity:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#JudicialActivity'
+            ]
+        - LegislativeActivity:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#LegislativeActivity'
+            ]
+      - Corruption:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#Corruption'
+          ]
+      - ExtraJudicialActivity:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#ExtraJudicialActivity'
+          ]
+      - GovernmentSeparationOfPowers:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentSeparationOfPowers'
+          ]
+      - GovernmentStability:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentStability'
+          ]
+      - GovernmentTransparency:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentTransparency'
+          ]
+    - PoliticalOrganizations:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#PoliticalOrganizations'
+        ]
+      - GroupInfluenceInGovt:
+        - _source: []
+        - EthnicInfluenceInGovt:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#EthnicInfluenceinGovt'
+            ]
+        - ReligiousInfluenceInGovt:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#ReligiousInfluenceInGovt'
+            ]
+        - SecurityElementInfluence:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#SecurityElementInfluence'
+            ]
+      - GroupPresenceInGovt:
+        - _source: []
+        - EthnicGroupsInGovt:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#EthnicGroupsinGovt'
+            ]
+        - ReligiousGroupsInGovt:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#ReligiousGroupsInGovt'
+            ]
+      - GroupTensionsInGovt:
+        - _source: []
+        - EthnicTensionsInGovt:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#EthnicTensionsinGovt'
+            ]
+        - ReligiousTensionsInGovt:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#ReligiousTensionsInGovt'
+            ]
+    - RegionalOrInternational:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#RegionalOrInternational'
+        ]
+      - InternationalDefenseAlliance:
+        - _source: []
+        - DefenseAllianceInfluence:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#DefenseAllianceInfluence'
+            ]
+        - DefenseAllianceStrength:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#DefenseAllianceStrength'
+            ]
+      - InternationalPoliticalAlliance:
+        - _source: []
+        - PoliticalAllianceParticipation:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#PoliticalAllianceParticipation'
+            ]
+        - PoliticalAllianceStrength:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#PoliticalAllianceStrength'
+            ]
+      - MultiNationalCorporationInfluence:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#MultiNationalCorporationInfluence'
+          ]
+    - PoliticalFrictionOrTension:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#PoliticalFrictionOrTension'
+        ]
+  - Social:
+    - _source: [
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#Social'
+      ]
+    - AffinityGroups:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#AffinityGroups'
+        ]
+      - DiasporaInfluence:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#DiasporaInfluence'
+          ]
+      - DisplacedPersons:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#DisplacedPersons'
+          ]
+        - Refugees:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#Refugees'
+            ]
+      - GangsOrCriminalOrganizationsActivities:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#GangsOrCriminalOrganizationsActivities'
+          ]
+      - InsurgentsOrSeparatistsActivities:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#InsurgentsOrSeparatistsActivities'
+          ]
+      - TerroristActivities:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#TerroristActivities'
+          ]
+      - UnionInfluence:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#UnionInfluence'
+          ]
+    - BasicNeeds:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#BasicNeeds'
+        ]
+      - AbilityToAddressBasicNeeds:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#AbilityToAddressBasicNeeds'
+          ]
+        - AbilityToAddressIdentityBasedBasicNeeds:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#AbilityToAddressIdentityBasedBasicNeeds'
+            ]
+        - SustenanceManagement:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#SustenanceManagement'
+            ]
+          - FoodAndNutritionLevel:
+            - _source: [
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#FoodAndNutritionLevel'
+              ]
+          - WaterAvailability:
+            - _source: [
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#WaterAvailability'
+              ]
+        - SanitaryConditions:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#SanitaryConditions'
+            ]
+        - ShelterAvailability:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#ShelterAvailability'
+            ]
+      - CriminalActivities:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#CriminalActivities'
+          ]
+      - CriticalResources:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#CriticalResources'
+          ]
+        - NaturalResourcesAvailability:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#NaturalResourcesAvailability'
+            ]
+      - EnvironmentConditions:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#EnvironmentConditions'
+          ]
+        - NaturalDisaster:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#NaturalDisaster'
+            ]
+      - FreedomOfExpression:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#FreedomOfExpression'
+          ]
+        - FreedomOfCulturalExpression:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#FreedomOfCulturalExpression'
+            ]
+        - FreedomOfReligiousExpression:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#FreedomOfReligiousExpression'
+            ]
+      - SecuritySafetyLevel:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#SecuritySafetyLevel'
+          ]
+      - SocioeconomicTendencies:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#SocioeconomicTendencies'
+          ]
+        - EconomicEquality:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#EconomicEquality'
+            ]
+    - Institutions:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#Institutions'
+        ]
+      - SocialInfluenceByInstitutions:
+        - _source: []
+        - CBOInfluence:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#CBOInfluence'
+            ]
+        - NGOInfluence:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#NGOInfluence'
+            ]
+        - PVOInfluence:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#PVOInfluence'
+            ]
+        - ReligiousOrgInfluence:
+          - _source: [
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#ReligiousOrgInfluence'
+            ]
+      - EducationAvailability:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#EducationAvailability'
+          ]
+      - HealthcareAvailability:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#HealthcareAvailability'
+          ]
+      - LeisureActivities:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#LeisureActivities'
+          ]
+      - PopulaceEducationLevel:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#PopulaceEducationLevel'
+          ]
+      - ReligiousOrgSuppression:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#ReligiousOrgSuppression'
+          ]
+    - EthnicRelations:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#EthnicRelations'
+        ]
+    - HumanitarianCrisis:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#HumanitarianCrisis'
+        ]
+    - PopulaceMood:
+      - _source: [
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#PopulaceMood'
+        ]
+      - PopulaceMorale:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#PopulaceMorale'
+          ]
+      - PopulaceMotivation:
+        - _source: [
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#PopulaceMotivation'
+          ]

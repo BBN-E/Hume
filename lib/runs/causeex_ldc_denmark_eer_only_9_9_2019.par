@@ -1,0 +1,66 @@
+
+job_name: causeex_ldc_denmark.v082819_12_6_2019_eer_only_9_9_2019_unified
+
+###########
+# Pipeline
+###########
+stages_to_run: event-event-relations
+jserif_branch: 364-add-event-from-json
+mode: CauseEx
+
+########
+# Serif
+########
+serif_input_sgm_list: /nfs/raid88/u10/users/hqiu/sgm_corpus/cx/ldc_denmark/sgms.list
+serif_input_awake_db: /nfs/raid87/u10/shared/Hume/common/serif/causeex_scs_awake.sqlite
+
+######
+# KBP
+######
+kbp_input_serifxml_list: GENERATED
+
+##################
+## Generic events
+##################
+generic_events_input_serifxml_list: GENERATED
+
+#######################
+## NN event extraction
+#######################
+nn_events_input_serifxml_list: GENERATED
+nn_events_model_list: /nfs/raid87/u10/shared/Hume/cx/nlplingo/nn_models.list
+
+
+######################
+# Event consolidation
+######################
+event_consolidation_input_serifxml_list: GENERATED
+event_consolidation_input_metadata_file: /nfs/raid88/u10/users/hqiu/sgm_corpus/cx/ldc_denmark/metadata.txt
+copyArgumentSentenceWindow: 1
+
+########################
+# Event-Event relations
+########################
+
+
+eer_input_serifxml_list: /nfs/raid88/u10/users/jcai/expts/Hume/causeex_ldc_denmark.v082819_9_9_11_52_AM/event_event_relations_serifxml.list
+eer_input_serif_cause_effect_relations_dir: /nfs/raid87/u15/users/jcai/empty_folder
+learnit_pattern_dir: DEFAULT
+learnit_min_freq_event_pairs: 1
+
+##########################
+# Probabilistic grounding
+##########################
+grounding_input: GENERATED
+grounding_bert_npz_filelist: GENERATED
+
+################
+# Serialization
+################
+serialization_input_serifxml_list: GENERATED
+serialization_input_metadata_file: /nfs/raid88/u10/users/hqiu/sgm_corpus/cx/ldc_denmark/metadata.txt
+serialization_input_factfinder_json_file: GENERATED
+serialization_input_learnit_triple_file: GENERATED
+serialization_input_learnit_event_count_file: GENERATED
+serialization_input_awake_db: /nfs/raid87/u10/shared/Hume/common/serif/causeex_scs_awake.sqlite
+serialization_do_event_uploading: False

@@ -1,11 +1,12 @@
 READER SerifXMLReader
-+serifxml_dir+
-+metadata_file+
++batch_file_dir+
 +mode+
 +event_coreference_file+
 
 READER FactReader
 +factfinder_json_file+
++event_yaml+
++external_ontology_flags+
 
 RESOLVER CountryCodePropertyResolver
 
@@ -14,34 +15,34 @@ RESOLVER ExternalURIResolver
 
 RESOLVER BadRelationResolver
 
-RESOLVER RedundantEventResolver
-
 RESOLVER RedundantRelationResolver
 
 RESOLVER PrecisionResolver
++event_yaml+
++external_ontology_flags+
 
 RESOLVER AdditionalEntityTypeResolver
++event_yaml+
++external_ontology_flags+
 
-RESOLVER EventDirectionResolver
-
-RESOLVER EventTypeChangeResolver
+RESOLVER AdditionalAffiliationResolver
 
 RESOLVER EntityGroupEntityTypeResolver
 
-RESOLVER ExternalEventURIResolver
-+event_yaml+
-+external_ontology_flags+
-+should_go_up_instead_of_using_backup_namespaces+
-+bbn_namespace+
+RESOLVER RelevantKBEntityMentionResolver
 
-SERIALIZER RelationTSVSerializer
-+relation_tsv_file+
+RESOLVER AddGenericEventTypeIfOnlyCausalFactorTypeAvailableResolver
 
-SERIALIZER KBPickleSerializer
-+pickle_output_file+
+RESOLVER FactorRelationTrendResolver
 
-SERIALIZER UnificationSerializer
-+unification_output_dir+
+#SERIALIZER KBPickleSerializer
+#+pickle_output_file+
+
+#SERIALIZER RelationTSVSerializer
+#+relation_tsv_file+
+
+#SERIALIZER UnificationSerializer
+#+unification_output_dir+
 
 SERIALIZER RDFSerializer
 UNSTRUCTURED
@@ -52,3 +53,5 @@ UNSTRUCTURED
 +ttl_output_file+
 +nt_output_file+
 
+#SERIALIZER VisualizationSerializer
+#+json_graph_file+

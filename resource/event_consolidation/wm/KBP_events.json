@@ -2,7 +2,9 @@
   "mappings": {
     "event": {
       "Business.Declare-Bankruptcy" : "Business",
+      "Business.Declare.Bankruptcy" : "Business",
       "Business.Merge-Org" : "Business",
+      "Business.Merge.Org" : "Business",
       "Conflict.Attack" : "Attack",
       "Conflict.Demonstrate" : "Demonstrate",
       "Contact.Broadcast" : "Communication",
@@ -10,52 +12,62 @@
       "Contact.Correspondence" : "Communication",
       "Contact.Meet" : "Communication",
       "Contact.Phone-Write" : "Communication",
+      "Contact.Phone.Write" : "Communication",
       "Justice.Appeal" : "Legal",
       "Justice.Acquit" : "Legal",
       "Justice.Arrest-Jail" : "Legal",
+      "Justice.Arrest.Jail" : "Legal",
       "Justice.Charge-Indict" : "Legal",
+      "Justice.Charge.Indict" : "Legal",
       "Justice.Convict" : "Legal",
       "Justice.Execute" : "Legal",
       "Justice.Extradite" : "Legal",
       "Justice.Fine" : "Legal",
       "Justice.Pardon" : "Legal",
       "Justice.Release-Parole" : "Legal",
+      "Justice.Release.Parole" : "Legal",
       "Justice.Sentence" : "Legal",
       "Justice.Sue" : "Legal",
       "Justice.Trial-Hearing" : "Legal",
+      "Justice.Trial.Hearing" : "Legal",
       "Life.Be-Born" : "Personal",
+      "Life.Be.Born" : "Personal",
       "Life.Die" : "Death",
       "Life.Divorce" : "MarriageOrDivorce",
       "Life.Injure" : "Personal",
       "Life.Marry" : "MarriageOrDivorce",
-      "Manufacture.Artifact" : "Generic",
+      "Manufacture.Artifact" : "Event",
       "Movement.Transport" : "Movement",
       "Movement.Transport-Artifact" : "Movement",
+      "Movement.Transport.Artifact" : "Movement",
       "Movement.Transport-Person" : "Movement",
+      "Movement.Transport.Person" : "Movement",
       "Personnel.Elect" : "Personnel",
       "Personnel.Nominate" : "Personnel",
       "Transaction.Transaction" : "Transaction",
       "Transaction.Transfer-Money" : "Transaction",
+      "Transaction.Transfer.Money" : "Transaction",
       "Transaction.Transfer-Ownership" : "Transaction",
+      "Transaction.Transfer.Ownership" : "Transaction",
       "Business.Start-Org" : "Business",
-      "Business.Start-Org" : "Business",
+      "Business.Start.Org" : "Business",
       "Business.End-Org" : "Business",
-      "Business.End-Org" : "Business",
+      "Business.End.Org" : "Business",
       "Personnel.End-Position" : "Personnel",
-      "Personnel.End-Position" : "Personnel",
+      "Personnel.End.Position" : "Personnel",
       "Personnel.Start-Position" : "Personnel",
-      "Personnel.Start-Position" : "Personnel"
+      "Personnel.Start.Position" : "Personnel"
     },
     "event-role": {
       "default": {
-        "Source": { "default": "has_active_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-        "Target": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-        "active": { "default": "has_active_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-        "affected": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-        "provider": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-        "recipient": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-        "Place": { "default": "located_at" },
-        "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
+        "Source": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+        "Target": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+        "active": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+        "affected": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+        "provider": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+        "recipient": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+        "Place": { "default": "has_location" },
+        "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
 	"Speaker" : { "default": "has_active_actor" }
       },
       "byEventType": {
@@ -64,53 +76,52 @@
         "Business.End-Org": {},
         "Business.Merge-Org": {},
         "Conflict.Attack": {
-          "Attacker": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-          "Instrument": { "default": "has_instrument" },
-          "Target": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-          "Place": { "default": "located_at" },
-          "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+          "Attacker": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+          "Instrument": { "default": "has_artifact" },
+          "Target": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+          "Place": { "default": "has_location" },
+          "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
         },
         "Conflict.Demonstrate":
         {
-            "Entity": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Place": { "default": "located_at" },
-            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+            "Entity": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
         },
         "Contact.Broadcast":
         {
-            "Audience": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Entity": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Place": { "default": "located_at" },
-            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+            "Audience": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Entity": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
         },
         "Contact.Contact":
         {
-            "Entity": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Place": { "default": "located_at" },
-            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+            "Entity": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
         },
         "Contact.Correspondence":
         {
-            "Entity": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Place": { "default": "located_at" },
-            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+            "Entity": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
         },
         "Contact.Meet":
         {
-            "Entity": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Place": { "default": "located_at" },
-            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+            "Entity": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
         },
         "Contact.Phone-Write": {},
         "Justice.Appeal": {},
         "Justice.Acquit": {},
         "Justice.Arrest-Jail":
         {
-            "Agent": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Crime": { "default": "has_topic" },
-            "Person": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Place": { "default": "located_at" },
-            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+            "Agent": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Person": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
         },
         "Justice.Charge-Indict": {},
         "Justice.Convict": {},
@@ -125,110 +136,110 @@
         "Life.Be-Born": {},
         "Life.Die":
         {
-            "Agent": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Instrument": { "default": "has_instrument" },
-            "Victim": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Place": { "default": "located_at" },
-            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+            "Agent": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Instrument": { "default": "has_artifact" },
+            "Victim": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
         },
         "Life.Divorce": {},
         "Life.Injure":
         {
-            "Agent": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Instrument": { "default": "has_instrument" },
-            "Victim": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Place": { "default": "located_at" },
-            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+            "Agent": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Instrument": { "default": "has_artifact" },
+            "Victim": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
         },
         "Life.Marry": {},
         "Manufacture.Artifact":
         {
-            "Agent": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Artifact": { "default": "involves_goods_or_property", "ORG": "has_actor" },
-            "Instrument": { "default": "has_instrument" },
-            "Place": { "default": "located_at" },
-            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+            "Agent": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Artifact": { "default": "has_artifact", "ORG": "has_actor" },
+            "Instrument": { "default": "has_artifact" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
         },
         "Movement.Transport":
         {
-            "Agent": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Artifact": { "default": "involves_goods_or_property", "ORG": "has_actor" },
-            "Destination": { "default": "has_destination" },
-            "Instrument": { "default": "has_instrument" },
-            "Origin": { "default": "has_origin" },
-            "Place": { "default": "located_at" },
-            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+            "Agent": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Artifact": { "default": "has_artifact", "ORG": "has_actor" },
+            "Destination": { "default": "has_destination_location" },
+            "Instrument": { "default": "has_artifact" },
+            "Origin": { "default": "has_origin_location" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
         },
         "Movement.Transport-Artifact":
         {
-            "Agent": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Artifact": { "default": "involves_goods_or_property", "ORG": "has_actor" },
-            "Destination": { "default": "has_destination" },
-            "Instrument": { "default": "has_instrument" },
-            "Origin": { "default": "has_origin" },
-            "Place": { "default": "located_at" },
-            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+            "Agent": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Artifact": { "default": "has_artifact", "ORG": "has_actor" },
+            "Destination": { "default": "has_destination_location" },
+            "Instrument": { "default": "has_artifact" },
+            "Origin": { "default": "has_origin_location" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
         },
         "Movement.Transport-Person":
         {
-            "Agent": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Destination": { "default": "has_destination" },
-            "Instrument": { "default": "has_instrument" },
-            "Origin": { "default": "has_origin" },
-            "Person": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Place": { "default": "located_at" },
-            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+            "Agent": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Destination": { "default": "has_destination_location" },
+            "Instrument": { "default": "has_artifact" },
+            "Origin": { "default": "has_origin_location" },
+            "Person": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
         },
         "Personnel.Elect":
         {
-            "Agent": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Person": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Position": { "default": "position_or_role" },
-            "Place": { "default": "located_at" },
-            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+            "Agent": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Person": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Position": { "default": "has_actor" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
         },
         "Personnel.End-Position":
         {
-            "Entity": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Person": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Position": { "default": "position_or_role" },
-            "Place": { "default": "located_at" },
-            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+            "Entity": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Person": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Position": { "default": "has_actor" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
         },
         "Personnel.Nominate": {},
         "Personnel.Start-Position":
         {
-            "Entity": { "default": "has_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Person": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Position": { "default": "position_or_role" },
-            "Place": { "default": "located_at" },
-            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+            "Entity": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Person": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Position": { "default": "has_actor" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
         },
         "Transaction.Transaction":
         {
-            "Beneficiary": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Giver": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Recipient": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Place": { "default": "located_at" },
-            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+            "Beneficiary": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Giver": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Recipient": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
         },
         "Transaction.Transfer-Money":
         {
-            "Beneficiary": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Giver": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Money": { "default": "associated_monetary_amount" },
-            "Recipient": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Place": { "default": "located_at" },
-            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+            "Beneficiary": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Giver": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Money": { "default": "has_artifact" },
+            "Recipient": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
         },
         "Transaction.Transfer-Ownership":
         {
-            "Beneficiary": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Giver": { "default": "has_active_actor", "VEH": "has_instrument", "WEA": "has_instrument", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Recipient": { "default": "has_affected_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" },
-            "Thing": { "default": "involves_goods_or_property", "ORG": "has_actor" },
-            "Place": { "default": "located_at" },
-            "Actor": { "default": "has_actor", "VEH": "involves_goods_or_property", "WEA": "involves_goods_or_property", "FAC": "involves_goods_or_property", "LOC": "involves_goods_or_property", "GPE.Continent": "involves_goods_or_property" }
+            "Beneficiary": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Giver": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Recipient": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Thing": { "default": "has_artifact", "ORG": "has_actor" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
         }
       }
     }

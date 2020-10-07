@@ -1,0 +1,53 @@
+- Entity:
+  - _source: []
+  - {_description: NA}
+  - _examples: [NA]
+  - agriculture:
+    - _source: []
+    - {_description: NA}
+    - _examples: [NA]
+    - crop:
+      - _source: []
+      - {_description: NA}
+      - _examples: ["wheat", "corn", "maize", "rice", "sorghum", "barley", "flax", "grain"]
+    - fruit:
+      - _source: []
+      - {_description: NA}
+      - _examples: ["fruit"]
+  - disease:
+    - _source: []
+    - {_description: NA}
+    - _examples: [NA]
+    - human disease:
+      - _source: []
+      - {_description: NA}
+      - _examples: ["HIV"]
+  - organism:
+    - _source: []
+    - {_description: NA}
+    - _examples: [NA]
+    - animal:
+      - _source: []
+      - {_description: NA}
+      - _examples: ["ox", "sheep", "donkey"]
+  - Person:
+    - _source: []
+    - {_description: NA}
+    - _examples: [NA]
+  - Organization:
+    - _source: []
+    - {_description: NA}
+    - _examples: [NA]
+  - GeoPoliticalEntity:
+    - _source: []
+    - {_description: NA}
+    - _examples: [NA]
+  - Location:
+    - _source: []
+    - {_description: NA}
+    - _examples: [NA]
+    - water body:
+      - river:
+        - _source: []
+        - {_description: NA}
+        - _examples: ["ox", "sheep", "donkey"]

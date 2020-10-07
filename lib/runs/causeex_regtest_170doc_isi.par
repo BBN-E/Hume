@@ -1,0 +1,84 @@
+
+job_name: causeex_sams_expt1.120419.regtest.170doc.120519.v1
+
+###########
+# Pipeline
+###########
+stages_to_run: serif,bert,kbp,generic-events,learnit-decoding-event-and-eventarg,nn-events,event-consolidation,event-event-relations,probabilistic-grounding,serialization
+mode: CauseEx
+batch_size: 2
+
+########
+# Serif
+########
+serif_input_sgm_list: /nfs/raid88/u10/users/hqiu/sgm_corpus/cx/cx_sams_expt_1.120419.separate/sgms.list.170doc
+serif_input_awake_db: /nfs/raid87/u11/CauseEx_Datasets/Collab2/awake_dbs/causeex_dbpedia_20170308_collab2.sqlite
+
+
+#######
+## BERT
+########
+bert_input_serifxml_list: GENERATED
+bert_layers: -1
+
+
+######
+# KBP
+######
+kbp_input_serifxml_list: GENERATED
+
+##################
+## Generic events
+##################
+generic_events_input_serifxml_list: GENERATED
+
+####################################
+## LearnIt  UnaryEvent and EventArg
+#####################################
+
+learnit_decoding_event_and_event_arg_input_serifxml_list: GENERATED
+learnit_event_and_event_arg_pattern_dir: DEFAULT
+
+#######################
+## NN event extraction
+#######################
+nn_events_input_serifxml_list: GENERATED
+nn_events_model_list: DEFAULT
+
+#######################
+## NN factor extraction
+#######################
+nn_factors_input_bert_npz_list: GENERATED
+nn_factors_input_serifxml_list: GENERATED
+nn_factors_model_list: DEFAULT
+
+######################
+# Event consolidation
+######################
+event_consolidation_input_serifxml_list: GENERATED
+event_consolidation_input_metadata_file: /nfs/raid88/u10/users/hqiu/sgm_corpus/cx/cx_sams_expt_1.120419.separate/metadata.txt
+copyArgumentSentenceWindow: 1
+
+########################
+# Event-Event relations
+########################
+eer_input_serifxml_list: GENERATED
+eer_input_serif_cause_effect_relations_dir: GENERATED
+learnit_pattern_dir: DEFAULT
+learnit_min_freq_event_pairs: 1
+
+##########################
+# Probabilistic grounding
+##########################
+grounding_input: GENERATED
+grounding_bert_npz_filelist: GENERATED
+
+################
+# Serialization
+################
+serialization_input_serifxml_list: GENERATED
+serialization_input_metadata_file: /nfs/raid88/u10/users/hqiu/sgm_corpus/cx/cx_sams_expt_1.120419.separate/metadata.txt
+serialization_input_factfinder_json_file: GENERATED
+serialization_input_learnit_triple_file: GENERATED
+serialization_input_learnit_event_count_file: GENERATED
+serialization_input_awake_db: /nfs/raid87/u11/CauseEx_Datasets/Collab2/awake_dbs/causeex_dbpedia_20170308_collab2.sqlite

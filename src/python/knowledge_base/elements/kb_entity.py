@@ -1,4 +1,4 @@
-from kb_element import KBElement
+from elements.kb_element import KBElement
 
 class KBEntity(KBElement):
         
@@ -16,7 +16,7 @@ class KBEntity(KBElement):
     def get_best_entity_type(self):
         best = None
         best_score = None
-        for entity_type, confidence in self.entity_type_to_confidence.iteritems():
+        for entity_type, confidence in self.entity_type_to_confidence.items():
             if best is None or confidence > best_score or (confidence == best_score and entity_type < best):
                 best = entity_type
                 best_score = confidence
@@ -24,4 +24,10 @@ class KBEntity(KBElement):
     
     # add_mention() must be handled by KnowledgeBase
     # because it needs to update the mention to entity id map
-    
+    @property
+    def is_referred_in_kb(self):
+        return self.properties.get("is_referred_in_kb",True)
+
+    @is_referred_in_kb.setter
+    def is_referred_in_kb(self, is_referred_in_kb):
+        self.properties["is_referred_in_kb"] = is_referred_in_kb

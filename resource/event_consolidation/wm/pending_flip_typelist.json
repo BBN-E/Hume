@@ -1,0 +1,11 @@
+{
+  "/wm/concept/causal_factor/food_insecurity/food_unavailability": "/wm/concept/causal_factor/food_security/food_availability",
+  "/wm/concept/causal_factor/food_insecurity/food_nonutilization": "/wm/concept/causal_factor/food_security/food_utilization",
+  "/wm/concept/causal_factor/food_insecurity/food_nonaccess": "/wm/concept/causal_factor/food_security/food_access",
+  "/wm/concept/causal_factor/food_insecurity/food_instability": "/wm/concept/causal_factor/food_security/food_stability",
+  "/wm/concept/causal_factor/food_insecurity": "/wm/concept/causal_factor/food_security",
+  "/wm_compositional/property/insecurity": "/wm_compositional/property/security",
+  "/wm_compositional/property/nonutilization": "/wm_compositional/property/utilization",
+  "/wm_compositional/property/unavailability": "/wm_compositional/property/availability",
+  "/wm_compositional/property/instability": "/wm_compositional/property/instability"
+}

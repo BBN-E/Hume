@@ -1,0 +1,57 @@
+READER SerifXMLReader
++batch_file_dir+
++mode+
++event_coreference_file+
+
+READER FactReader
++factfinder_json_file+
++event_yaml+
++external_ontology_flags+
+
+RESOLVER CountryCodePropertyResolver
+
+RESOLVER ExternalURIResolver
++awake_db+
+
+RESOLVER BadRelationResolver
+
+RESOLVER RedundantRelationResolver
+
+RESOLVER PrecisionResolver
++event_yaml+
++external_ontology_flags+
+
+RESOLVER AdditionalEntityTypeResolver
++event_yaml+
++external_ontology_flags+
+
+RESOLVER AdditionalAffiliationResolver
+
+RESOLVER EntityGroupEntityTypeResolver
+
+RESOLVER RelevantKBEntityMentionResolver
+
+RESOLVER AddGenericEventTypeIfOnlyCausalFactorTypeAvailableResolver
+
+RESOLVER FactorRelationTrendResolver
+
+#SERIALIZER KBPickleSerializer
+#+pickle_output_file+
+
+#SERIALIZER RelationTSVSerializer
+#+relation_tsv_file+
+
+SERIALIZER UnificationSerializer
++unification_output_dir+
+
+#SERIALIZER RDFSerializer
+#UNSTRUCTURED
+#+ontology_turtle_folder+
+#+seed_milestone+
+#+seed_type+
+#+seed_version+
+#+ttl_output_file+
+#+nt_output_file+
+
+#SERIALIZER VisualizationSerializer
+#+json_graph_file+

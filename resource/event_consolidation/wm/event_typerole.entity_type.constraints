@@ -1,0 +1,13 @@
+SexualViolenceManagement	has_artifact	SEXUAL_VIOLENCE
+VectorControl	has_artifact	INSECT_CONTROL
+CapacityBuildingHumanRights	has_artifact	HUMAN_RIGHT
+ProvideHygieneTool	has_artifact	HYGIENE_TOOL
+ProvideFarmingTool	has_artifact	FARMING_TOOL
+ProvideDeliveryKit	has_artifact	DELIVERY_KIT
+ProvideLivestockFeed	has_artifact	LIVESTOCK_FEED
+ProvideVeterinaryService	has_artifact	VETERINARY_SERVICE
+ProvideFishingTool	has_artifact	FISHING_TOOL
+ProvideStationary	has_artifact	STATIONARY
+ProvideFood	has_artifact	FOOD
+ProvideSeed	has_artifact	SEED
+TherapeuticFeedingOrTreating	has_artifact	THERAPEUTIC_FEEDING

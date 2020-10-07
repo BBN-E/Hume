@@ -23,6 +23,7 @@ class SharedIDManager:
         "RelationMention": 0,
         "EventMention": 0,
         "ValueMention": 0,
+        "CausalFactor": 0,
         }
 
     # Load country name to CAMEO code mappings
@@ -44,8 +45,8 @@ class SharedIDManager:
     @classmethod
     def get_in_document_id(cls, object_type, docid):
         if not cls.is_in_document_type(object_type):
-            print "IDManager could not find in-document object type: ",
-            print object_type
+            print("IDManager could not find in-document object type: ",)
+            print(object_type)
             sys.exit(1)
             
         current_id = (object_type + "-" + docid + "-" +

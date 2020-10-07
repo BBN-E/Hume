@@ -1,51 +1,49 @@
-import sys, os, codecs
+import os
+import sys
+import logging
 
 from knowledge_base import KnowledgeBase
 
-from readers.serifxml_reader import SerifXMLReader
-from readers.fact_reader import FactReader
-from readers.generic_event_reader import GenericEventReader
 from readers.causal_relation_reader import CausalRelationReader
-from readers.structured_data_reader import StructuredDataReader
+from readers.fact_reader import FactReader
+from readers.serifxml_reader import SerifXMLReader
 
-from resolvers.do_nothing_resolver import DoNothingResolver
-from resolvers.country_code_property_resolver import CountryCodePropertyResolver
-from resolvers.factor_event_generic_genericity_resolver import FactorEventGenericGenericityResolver
-from resolvers.entity_add_properties_resolver import EntityAddPropertyResolver
-from resolvers.kb_unification_resolver import KbUnificationResolver
-from resolvers.redundant_relation_resolver import RedundantRelationResolver
-from resolvers.redundant_event_resolver import RedundantEventResolver
-from resolvers.event_removal_resolver import EventRemovalResolver
-from resolvers.precision_resolver import PrecisionResolver
-from resolvers.confidence_resolver import ConfidenceResolver
-from resolvers.removal_by_type_resolver import RemovalByTypeResolver
 from resolvers.additional_entity_type_resolver import AdditionalEntityTypeResolver
-from resolvers.event_direction_resolver import EventDirectionResolver
-from resolvers.bad_relation_resolver import BadRelationResolver
-from resolvers.extraction_grounder import ExtractionGrounder
-from resolvers.external_ontology_grounder import ExternalOntologyGrounder
-from resolvers.event_uploader import EventUploader
-from resolvers.structured_resolver import StructuredResolver
-from resolvers.external_ontology_cache_grounder import ExternalOntologyCacheGrounder
-from resolvers.event_type_change_resolver import EventTypeChangeResolver
-from resolvers.entity_group_entity_type_resolver import EntityGroupEntityTypeResolver
-from resolvers.event_cache_lookup_grounder import EventCacheLookupGrounder
-from resolvers.event_grounder import EventGrounder
-from resolvers.external_uri_resolver import ExternalURIResolver
-from resolvers.external_event_uri_resolver import ExternalEventURIResolver
 from resolvers.attach_geoname_resolver import AttachGeoNameResolver
+from resolvers.bad_relation_resolver import BadRelationResolver
+from resolvers.confidence_resolver import ConfidenceResolver
+from resolvers.country_code_property_resolver import CountryCodePropertyResolver
+from resolvers.do_nothing_resolver import DoNothingResolver
+from resolvers.entity_add_properties_resolver import EntityAddPropertyResolver
+from resolvers.entity_group_entity_type_resolver import EntityGroupEntityTypeResolver
+from resolvers.event_direction_resolver import EventDirectionResolver
+from resolvers.event_polarity_resolver import EventPolarityResolver
+from resolvers.event_removal_resolver import EventRemovalResolver
+from resolvers.event_type_change_resolver import EventTypeChangeResolver
+from resolvers.external_uri_resolver import ExternalURIResolver
+from resolvers.factor_event_generic_genericity_resolver import FactorEventGenericGenericityResolver
+from resolvers.kb_unification_resolver import KbUnificationResolver
 from resolvers.mention_numeric_resolver import EntityMentionNumericResolver
+from resolvers.precision_resolver import PrecisionResolver
+from resolvers.redundant_event_resolver import RedundantEventResolver
+from resolvers.redundant_relation_resolver import RedundantRelationResolver
+from resolvers.removal_by_type_resolver import RemovalByTypeResolver
+from resolvers.relevant_kb_entity_mention_resolver import RelevantKBEntityMentionResolver
+from resolvers.add_generic_event_type_if_only_causal_factor_type_available import AddGenericEventTypeIfOnlyCausalFactorTypeAvailableResolver
+from resolvers.additional_affiliation_resolver import AdditionalAffiliationResolver
+from resolvers.factor_relation_trend_resolver import FactorRelationTrendResolver
+from resolvers.drop_negative_polarity_causal_assertion_resolver import DropNegativePolarityCausalAssertionResolver
 
-from serializers.json_serializer import JSONSerializer
-from serializers.pickle_serializer import KBPickleSerializer
-from serializers.jsonld_serializer import JSONLDSerializer
-from serializers.visualization_serializer import VisualizationSerializer
-from serializers.wm_tabular_format_serializer import WMTabularFormatSerializer
-from serializers.relation_tsv_serializer import RelationTSVSerializer
 from serializers.event_tsv_serializer import EventTSVSerializer
-from serializers.rdf_serializer import RDFSerializer
-from serializers.external_ontology_cache_serializer import ExternalOntologyCacheSerializer
+from serializers.json_serializer import JSONSerializer
+from serializers.jsonld_serializer import JSONLDSerializer
+from serializers.pickle_serializer import KBPickleSerializer
+from serializers.relation_tsv_serializer import RelationTSVSerializer
+from serializers.wm_tabular_format_serializer import WMTabularFormatSerializer
+from serializers.event_tsv_serializer import EventTSVSerializer
 from serializers.unification_serializer import UnificationSerializer
+from serializers.visualization_serializer import VisualizationSerializer
+from serializers.rdf_serializer import RDFSerializer
 
 class KBConstructor:
     
@@ -94,7 +92,7 @@ class KBConstructor:
                     current_component = getattr(sys.modules[__name__], component_name)()
                     readers.append(current_component)
                 except AttributeError:
-                    print "Unknown READER: " + component_name
+                    print("Unknown READER: " + component_name)
                     sys.exit(1)
                     
             elif line.startswith("RESOLVER"):
@@ -103,7 +101,7 @@ class KBConstructor:
                     current_component = getattr(sys.modules[__name__], component_name)()
                     resolvers.append(current_component)
                 except AttributeError as e:
-                    print "Unknown RESOLVER: " + component_name
+                    print("Unknown RESOLVER: " + component_name)
                     sys.exit(1)
                     
             elif line.startswith("SERIALIZER"):
@@ -112,7 +110,7 @@ class KBConstructor:
                     current_component = getattr(sys.modules[__name__], component_name)()
                     serializers.append(current_component)
                 except AttributeError:
-                    print "Unknown SERIALIZER: " + component_name
+                    print("Unknown SERIALIZER: " + component_name)
                     sys.exit(1)
             
             else:
@@ -124,8 +122,15 @@ class KBConstructor:
         return readers, resolvers, serializers, parameters
 
 if __name__ == "__main__":
+    log_format = '[%(asctime)s] {%(module)s:%(lineno)d} %(levelname)s - %(message)s'
+    try:
+        logging.basicConfig(level=logging.getLevelName(os.environ.get('LOGLEVEL', 'WARNING').upper()),format=log_format)
+    except ValueError as e:
+        logging.error("Unparseable level {}, will use default {}.".format(os.environ.get('LOGLEVEL', 'WARNING').upper(),
+                                                                          logging.root.level))
+        logging.basicConfig(format=log_format)
     if len(sys.argv) != 2:
-        print "Usage: python " + os.path.basename(sys.argv[0]) + " config_file"
+        print("Usage: python " + os.path.basename(sys.argv[0]) + " config_file")
         sys.exit(1)
 
     config_file = sys.argv[1]

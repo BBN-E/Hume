@@ -1,8 +1,12 @@
-import sys, os, codecs
-from knowledge_base import KnowledgeBase
-from kb_resolver import KBResolver
-from elements.kb_group import KBEventGroup
+import codecs
+import os
 import re
+
+from elements.kb_group import KBEventGroup
+from internal_ontology import OntologyMapper
+from resolvers.kb_resolver import KBResolver
+from knowledge_base import KnowledgeBase
+
 
 class PrecisionResolver(KBResolver):
     def __init__(self):
@@ -24,21 +28,41 @@ class PrecisionResolver(KBResolver):
         self.load_data_file(bad_trigger_word_file, self.bad_trigger_words)
         self.load_data_file(bad_trigger_word_pairs_file, self.bad_trigger_word_pairs)
         self.load_data_file(bad_relation_patterns_file, self.bad_relation_patterns)
-        self.load_data_file(bad_type_and_trigger_pairs_file, self.bad_type_and_trigger_pairs)
+        self.load_data_file(bad_type_and_trigger_pairs_file, self.bad_type_and_trigger_pairs, lower_first=False)
         self.load_data_file(bad_relation_triples_file, self.bad_relation_triples)
 
-    def load_data_file(self, file_to_load_from, s):               
+    def load_data_file(self, file_to_load_from, s, lower_first=True):
         stream = codecs.open(file_to_load_from, 'r', encoding='utf8')
         for line in stream:
             line = line.strip()
             if line.startswith("#") or len(line) == 0:
                 continue
-            line = re.sub( '[ ]+', ' ', line).lower() # collapse contiguous space chars to one space char
+            line = re.sub( '[ ]+', ' ', line) # collapse contiguous space chars to one space char
+            if lower_first:
+                line = line.lower()
+            else:
+                head, tail = line.split(' ', 1)
+                line = " ".join([head, tail.lower()])
             s.add(str(line))
         stream.close()
 
-    def resolve(self, kb):
-        print "PrecisionResolver RESOLVE"
+    def resolve(self, kb, event_ontology_yaml, ontology_flags):
+        print("PrecisionResolver RESOLVE")
+
+        ontology_mapper = OntologyMapper()
+        ontology_mapper.load_ontology(event_ontology_yaml)
+        tmp_bad_type_and_trigger_pairs = set()
+        while self.bad_type_and_trigger_pairs:
+            line = self.bad_type_and_trigger_pairs.pop()
+            internal_type, trigger = line.split(' ', 1)
+            for flag in ontology_flags.split(','):
+                grounded_types = ontology_mapper.look_up_external_types(
+                    internal_type, flag)
+                # print(grounded_types, internal_type)
+                for grounded_type in grounded_types:
+                    tmp_bad_type_and_trigger_pairs.add(
+                        " ".join([grounded_type, trigger]))
+        self.bad_type_and_trigger_pairs = tmp_bad_type_and_trigger_pairs
 
         resolved_kb = KnowledgeBase()
         super(PrecisionResolver, self).copy_all(resolved_kb, kb)
@@ -60,10 +84,18 @@ class PrecisionResolver(KBResolver):
         for evid, event in kb.get_events():
             found_good_event_mention = False
             for event_mention in event.event_mentions:
-                if (event_mention.trigger is None or
-                    event_mention.event_type.lower() + " " + event_mention.trigger.lower() not in self.bad_type_and_trigger_pairs):
+
+                # Events can be created that have no types/external_ontology_sources,
+                # but they should have causal factors
+                if len(event_mention.external_ontology_sources) == 0 and len(event_mention.causal_factors) > 0:
                     found_good_event_mention = True
                     break
+                
+                for event_type, score in event_mention.external_ontology_sources:
+                    if (event_mention.trigger is None or
+                            event_type + " " + event_mention.trigger.lower() not in self.bad_type_and_trigger_pairs):
+                        found_good_event_mention = True
+                        break
 
             if not found_good_event_mention:
                 #print "Removing event of type: " + event_mention.event_type + " and trigger: "  + event_mention.trigger.lower()
@@ -110,7 +142,7 @@ class PrecisionResolver(KBResolver):
 
             if not found_good_relation_mention_triggers or not found_good_relation_mention_pattern or not found_good_relation_triple:
                 bad_relation_ids.add(relid)
-                
+
         # Add in non-bad events to resolved KB
         for evid, event in kb.get_events():
             if evid not in bad_event_ids:

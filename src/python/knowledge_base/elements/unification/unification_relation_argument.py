@@ -1,12 +1,11 @@
-from elements.kb_event_mention import KBEventMention
-from unification_event_frame import UnificationEventFrame
-from unification_element import UnificationElement
+from elements.unification.unification_element import UnificationElement
+
 
 class UnificationRelationArgument(UnificationElement):
-    def __init__(self, role, kb_event_mention, kb):
+    def __init__(self, role, event_frame, confidence):
         self.role = role
-        self.confidence = kb_event_mention.confidence
-        self.frame = UnificationEventFrame(kb_event_mention, kb)
+        self.confidence = confidence
+        self.frame = event_frame
         
     def is_duplicate_of(self, other):
         if self.role != other.role: 

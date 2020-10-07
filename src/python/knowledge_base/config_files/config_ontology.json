@@ -20,7 +20,8 @@
     "DATAPROV": "http://ontology.causeex.com/ontology/odps/DataProvenance#",
     "RDF": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "RDFS": "http://www.w3.org/2000/01/rdf-schema#",
-    "DOCSOURCE": "http://graph.causeex.com/documents/sources#"
+    "DOCSOURCE": "http://graph.causeex.com/documents/sources#",
+    "ICM": "http://ontology.causeex.com/ontology/odps/ICM#"
   },
   "template": {
     "structured_inference":{
@@ -466,6 +467,11 @@
         },
         {
           "s": "VAR:instance",
+          "p": "DATAPROV:author",
+          "o": "VAR:author"
+        },
+        {
+          "s": "VAR:instance",
           "p": "DATAPROV:seed_milestone",
           "o": "VAR:seed_milestone"
         },
@@ -478,6 +484,11 @@
           "s": "VAR:instance",
           "p": "DATAPROV:seed_version",
           "o": "VAR:seed_version"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "DATAPROV:time_completed",
+          "o": "VAR:time_completed"
         }
       ]
     },
@@ -485,18 +496,8 @@
       "default": [
         {
           "s": "VAR:instance",
-          "p": "RDF:type",
-          "o": "DATAPROV:Document"
-        },
-        {
-          "s": "VAR:instance",
           "p": "GCONCEPT:numeric_credibility",
           "o": "VAR:credibility"
-        },
-	{
-          "s": "VAR:instance",
-          "p": "DATAPROV:has_document_type",
-          "o": "DATAPROV:Unstructured"
         }
       ],
       "optional": { 
@@ -570,13 +571,6 @@
         }
       ], 
       "optional": {
-         "instance": [
-           {
-             "s": "VAR:instance",
-             "p": "DATAPROV:sourced_from",
-             "o": "VAR:spanInstance"
-           }
-         ],
 	 "trigger_words": [
 	   {
 	     "s": "VAR:spanInstance",
@@ -593,6 +587,7 @@
 	 ]
       }
     },
+
     "entity-mention-span": {
       "default": [
         {
@@ -642,8 +637,9 @@
         }
       ]
     },
-    "entity_group": {
+    "entity-group": {
       "default": [
+
       ],
       "optional": {
         "canonical_name": [
@@ -652,30 +648,105 @@
             "p": "GCONCEPT:canonical_label",
             "o": "VAR:canonical_name"
           }
+        ],
+        "entity_type_location": [
+          {
+            "s": "VAR:instance",
+            "p": "RDF:type",
+            "o": "GCONCEPT:PhysicalLocation"
+          }
+        ],
+        "entity_type": [
+          {
+            "s": "VAR:instance",
+            "p": "RDF:type",
+            "o": "VAR:ontology_class"
+          }
+        ],
+        "latitude": [
+          {
+            "s": "VAR:instance",
+            "p": "GCONCEPT:latitude",
+            "o": "VAR:latitude"
+          }
+        ],
+        "longitude": [
+          {
+            "s": "VAR:instance",
+            "p": "GCONCEPT:longitude",
+            "o": "VAR:longitude"
+          }
+        ],
+	"additional_entity_type": [
+          {
+            "s": "VAR:instance",
+            "p": "RDF:type",
+            "o": "VAR:secondary_ontology_class"
+          }
+        ],
+        "citizenship": [
+          {
+            "s": "VAR:citizenship_details_instance",
+            "p": "RDF:type",
+            "o": "ACTOR:CitizenshipDetails"
+          },
+          {
+            "s": "VAR:instance",
+            "p": "ACTOR:has_citizenship",
+            "o": "VAR:citizenship_details_instance"
+          },
+          {
+            "s": "VAR:citizenship_details_instance",
+            "p": "ACTOR:related_country_code",
+            "o": "VAR:cameo_country_code"
+          }
+        ],
+	"ethnicity": [
+          {
+            "s": "VAR:ethnicity_details_instance",
+            "p": "RDF:type",
+            "o": "ACTOR:EthnicityDetails"
+          },
+          {
+            "s": "VAR:instance",
+            "p": "ACTOR:has_ethnicity",
+            "o": "VAR:ethnicity_details_instance"
+          },
+          {
+            "s": "VAR:ethnicity_details_instance",
+            "p": "ACTOR:related_ethnicity",
+            "o": "VAR:ethnicity"
+          }
+        ],
+	"geoname_country": [
+	  {
+            "s": "VAR:geoname_country_cameo_code",
+	    "p": "GCONCEPT:has_component",
+	    "o": "VAR:instance"
+	  }
+        ],
+	"component_of": [
+	  {
+            "s": "VAR:containing_entity_group",
+            "p": "GCONCEPT:has_component",
+            "o": "VAR:instance"
+          }
         ]
       }
     },
-    "entity_group-unification": {
+    "entity-group-unification": {
       "default": [
         {
           "s": "VAR:instance",
           "p": "GCONCEPT:unifies",
-          "o": "VAR:member"
-        },
-        {
-          "s": "VAR:instance",
-          "p": "RDF:type",
-          "o": "VAR:ontology_class"
+          "o": "VAR:entity_instance"
         }
-      ],
-      "optional": {
-      }
+      ]
     },
     "entity": {
-      "default": [
-      ],
+      "default": [],
       "optional": {
-        "canonical_name": [
+         "canonical_name": [
           {
             "s": "VAR:instance",
             "p": "GCONCEPT:canonical_label",
@@ -757,11 +828,6 @@
       "default": [
         {
           "s": "VAR:instance",
-          "p": "GCONCEPT:unifies",
-          "o": "VAR:member"
-        },
-        {
-          "s": "VAR:instance",
           "p": "RDF:type",
           "o": "VAR:ontology_class"
         }
@@ -769,7 +835,16 @@
       "optional": {
       }
     },
-    "event": {
+    "event_group-unification-unify": {
+      "default": [
+                {
+          "s": "VAR:instance",
+          "p": "GCONCEPT:unifies",
+          "o": "VAR:member"
+        }
+      ]
+    },
+    "event-grounding": {
       "default": [
         {
           "s": "VAR:instance",
@@ -785,6 +860,69 @@
             "s": "VAR:instance",
             "p": "GCONCEPT:numeric_confidence",
             "o": "VAR:confidence"
+        }
+      ],
+      "optional": {
+        "extra_event_type" : [
+          {
+            "s": "VAR:instance",
+            "p": "RDF:type",
+            "o": "VAR:extra_ontology_class"
+          }
+        ]
+      }
+    },
+    "icm-factor-grounding": {
+      "default": [
+        {
+          "s": "VAR:instance",
+          "p": "ICM:has_factor",
+          "o": "VAR:factor_id"
+        },
+        {
+          "s": "VAR:factor_id",
+          "p": "RDF:type",
+          "o": "ICM:FactorLink"
+        },
+        {
+          "s": "VAR:factor_id",
+          "p": "ICM:has_effect_magnitude",
+          "o": "VAR:magnitude"
+        },
+        {
+          "s": "VAR:factor_id",
+          "p": "ICM:has_factor_type",
+          "o": "VAR:factor_type"
+        },
+        {
+          "s": "VAR:factor_id",
+          "p": "ICM:has_relevance",
+          "o": "VAR:relevance"
+        },
+        {
+          "s": "VAR:factor_id",
+          "p": "ICM:has_trend",
+          "o": "VAR:trend"
+        }
+      ],
+      "optional": {}
+    },
+    "event": {
+      "default": [
+        {
+          "s": "VAR:instance",
+          "p": "GCONCEPT:description",
+          "o": "VAR:marked_sentence"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "DATAPROV:sourced_from",
+          "o": "VAR:spanInstance"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "EVENT:communicated_in",
+          "o": "VAR:docInstance"
         }
       ],
       "optional": {
@@ -812,22 +950,15 @@
         "polarity": [
           {
             "s": "VAR:instance",
-            "p": "EVENT:has_polarity",
+            "p": "GCONCEPT:has_polarity",
             "o": "VAR:polarity"
           }
         ],
-        "extra_event_type" : [
+        "trend": [
           {
-            "s": "VAR:instance",
-            "p": "RDF:type",
-            "o": "VAR:extra_ontology_class"
-          }
-        ],
-        "event_topic" : [
-          {
-            "s": "VAR:instance",
-            "p": "EVENT:has_topic",
-            "o": "VAR:topic_event_instance"
+          "s": "VAR:instance",
+          "p": "ICM:has_trend",
+          "o": "VAR:trend"
           }
         ],
         "event_shortage_artifact": [
@@ -856,6 +987,15 @@
         ]
       }
     },
+    "event_topic" : {
+  "default":
+    {
+      "s": "VAR:instance",
+      "p": "EVENT:has_topic",
+      "o": "VAR:topic_event_instance"
+    }
+    },
+
     "event-arg": {
       "default": [
       ],
@@ -889,13 +1029,29 @@
             "o": "VAR:latest_possible_end_time"
           }
         ],
-        "time_tuple": [
+        "earliest_start_time": [
           {
             "s": "VAR:instance",
             "p": "GCONCEPT:earliest_possible_start_time",
             "o": "VAR:earliest_possible_start_time"
-          },
+          }
+        ],
+        "earliest_end_time": [	  
+	  {
+            "s": "VAR:instance",
+            "p": "GCONCEPT:earliest_possible_end_time",
+            "o": "VAR:earliest_possible_end_time"
+          }
+        ],
+	"latest_start_time": [
           {
+            "s": "VAR:instance",
+            "p": "GCONCEPT:latest_possible_start_time",
+            "o": "VAR:latest_possible_start_time"
+          }
+        ],
+        "latest_end_time": [
+	  {
             "s": "VAR:instance",
             "p": "GCONCEPT:latest_possible_end_time",
             "o": "VAR:latest_possible_end_time"
@@ -962,6 +1118,30 @@
           }
         ]
       }
+    },
+    "event-arg-location-with-location-details": {
+      "default": [
+        {
+          "s": "VAR:instance",
+          "p": "VAR:pred",
+          "o": "VAR:location_details_id"
+        },
+        {
+          "s": "VAR:location_details_id",
+          "p": "RDF:type",
+          "o": "GCONCEPT:LocationDetails"
+        },
+        {
+          "s": "VAR:location_details_id",
+          "p": "GCONCEPT:related_location",
+          "o": "VAR:entity_instance"
+        },
+        {
+          "s": "VAR:location_details_id",
+          "p": "GCONCEPT:numeric_confidence",
+          "o": "VAR:confidence"
+        }
+      ]
     },
     "value-crime": {
       "default": [
@@ -1089,6 +1269,21 @@
           "s": "VAR:instance",
           "p": "GCONCEPT:numeric_confidence",
           "o": "VAR:confidence"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "CX:strength",
+          "o": "VAR:strength"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "GCONCEPT:description",
+          "o": "VAR:eer_marked_up_string"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "GCONCEPT:has_polarity",
+          "o": "VAR:polarity"
         }
       ],
       "optional": {
@@ -1100,6 +1295,11 @@
           "s": "VAR:instance",
           "p": "DATAPROV:sourced_from",
           "o": "VAR:sentenceSpanInstance"
+        },
+        {
+          "s": "VAR:instance",
+          "p": "EVENT:communicated_in",
+          "o": "VAR:docInstance"
         }
       ],
       "optional": {
@@ -1774,10 +1974,13 @@
 	"Thing": { "default": "GCONCEPT:involves_goods_or_property", "ORG": "EVENT:has_actor" },
 	"Money": { "default": "GCONCEPT:associated_monetary_amount" },
 	"has_origin": { "default": "EVENT:has_origin" },
+        "has_origin_location": {"default": "EVENT:has_origin"},
+        "has_destination_location": {"default": "EVENT:has_destination"},
+        "has_location": {"default": "GCONCEPT:located_at"},
+        "has_intermediate_location": {"default": "GCONCEPT:located_near"},
 	"has_active_actor": { "default": "EVENT:has_active_actor" },
 	"has_affected_actor": { "default": "EVENT:has_affected_actor" },
 	"has_instrument": { "default": "EVENT:has_instrument" },
-	"has_location": { "default": "GCONCEPT:located_at" },
 	"has_destination": { "default": "EVENT:has_destination" },
 	"located_at": { "default": "GCONCEPT:located_at" },
 	"has_recipient": { "default": "EVENT:has_recipient" },
@@ -1808,78 +2011,106 @@
       "current": "EVENT:Past",
       "ongoing": "EVENT:Present"
     },
+    "icm-property": {
+      "Increase": "ICM:Increase",
+      "Decrease": "ICM:Decrease",
+      "Stable": "ICM:Stable",
+      "Unknown": "ICM:Unknown"
+    },
+    "general-concepts-property": {
+      "Positive": "GCONCEPT:Positive",
+      "Negative": "GCONCEPT:Negative"
+    },
     "entity-relation": {
       "ART.User-Owner-Inventor-Manufacturer": {
         "type": "ACTOR:has_affiliation",
-        "reverse": false
+        "reverse": true,
+	"use_group_for_source": false
       },
       "GEN-AFF.Citizen-Resident-Religion-Ethnicity": {
         "type": "ACTOR:has_affiliation",
-        "reverse": false
+        "reverse": false,
+	"use_group_for_source": false
       },
       "GEN-AFF.Org-Location": {
         "type": "GCONCEPT:located_at",
-        "reverse": false
+        "reverse": false,
+	"use_group_for_source": false
       },
       "ORG-AFF.Employment": {
         "type": "ACTOR:has_affiliation",
-        "reverse": false
+        "reverse": false,
+	"use_group_for_source": false
       },
       "ORG-AFF.Founder": {
         "type": "ACTOR:has_affiliation",
-        "reverse": false
+        "reverse": false,
+	"use_group_for_source": false
       },
       "ORG-AFF.Investor-Shareholder": {
         "type": "ACTOR:has_affiliation",
-        "reverse": false
+        "reverse": false,
+	"use_group_for_source": false
       },
       "ORG-AFF.Membership": {
         "type": "ACTOR:has_affiliation",
-        "reverse": false
+        "reverse": false,
+	"use_group_for_source": false
       },
       "ORG-AFF.Ownership": {
         "type": "ACTOR:has_affiliation",
-        "reverse": false
+        "reverse": false,
+	"use_group_for_source": false
       },
       "ORG-AFF.Sports-Affiliation": {
         "type": "ACTOR:has_affiliation",
-        "reverse": false
+        "reverse": false,
+	"use_group_for_source": false
       },
       "ORG-AFF.Student-Alum": {
         "type": "ACTOR:has_affiliation",
-        "reverse": false
+        "reverse": false,
+	"use_group_for_source": false
       },
       "PART-WHOLE.Artifact": {
         "type": "GCONCEPT:has_component",
-        "reverse": true
+        "reverse": true,
+	"use_group_for_source": true
       },
       "PART-WHOLE.Subsidiary": {
         "type": "GCONCEPT:has_component",
-        "reverse": true
+        "reverse": true,
+	"use_group_for_source": true
       },
       "PART-WHOLE.Geographical": {
         "type": "GCONCEPT:has_component",
-        "reverse": true
+        "reverse": true,
+	"use_group_for_source": true
       },
       "PER-SOC.Business": {
         "type": "ACTOR:has_affiliation",
-        "reverse": false
+        "reverse": false,
+	"use_group_for_source": false
       },
       "PER-SOC.Family": {
         "type": "ACTOR:has_familial_relationship",
-        "reverse": false
+        "reverse": false,
+	"use_group_for_source": false
       },
       "PER-SOC.Lasting-Personal": {
         "type": "ACTOR:has_affiliation",
-        "reverse": false
+        "reverse": false,
+	"use_group_for_source": false
       },
       "PHYS.Located": {
         "type": "GCONCEPT:located_at",
-        "reverse": false
+        "reverse": false,
+	"use_group_for_source": false
       },
       "PHYS.Near": {
         "type": "GCONCEPT:located_near",
-        "reverse": false
+        "reverse": false,
+	"use_group_for_source": false
       }
     },
     "entity-relation-arg-details": {

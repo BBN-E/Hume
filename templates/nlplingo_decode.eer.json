@@ -1,0 +1,66 @@
+{
+    "extractors": [
+        {
+            "model_type": "event-event-relation_two_models_with_postprocessing" ,
+            "domain_ontology": "/nfs/raid87/u10/shared/Hume/common/event_event_relation/models/opennre-data/ldc_ontology.txt",
+            "hyper-parameters": {
+                    "decode_mode":  true
+            },
+            "engine": "pytorch",
+            "seed": 1234,
+            "cpu": true,
+            "model_file": "", 
+            "features": [
+            ], 
+            "sub_extractors": [
+                {
+                    "domain_ontology": "/nfs/raid87/u10/shared/Hume/common/event_event_relation/models/opennre-data/ldc_ontology.txt",
+                    "hyper-parameters": {
+                        "batch_size": 8, 
+                        "max_sentence_length": 128,
+                        "decode_mode":  true,
+                        "encoder": "bert_mention",
+                        "absolute_ckpt": true,
+                        "mention_pool": true,
+                        "opennre_dataset": "ldc", 
+                        "opennre_rootpath" : "/nfs/raid87/u10/shared/Hume/common/event_event_relation/models/opennre-data/",
+                        "opennre_ckpt": "/nfs/raid87/u10/shared/Hume/common/event_event_relation/models/opennre-data/pretrain/bert-base-uncased/epoch_5_5_14_20_ldc_dart_merge"
+                    },
+                    "model_file": "", 
+                    "features": [], 
+                    "load_from_disk": false,
+                    "model_type": "event-event-relation_within-sentence", 
+                    "engine": "pytorch",
+                    "seed": 1234,
+                    "cpu": true 
+            },
+            {
+                "domain_ontology": "/nfs/raid87/u10/shared/Hume/common/event_event_relation/models/opennre-data/lg_ontology.txt",
+                "hyper-parameters": {
+                    "batch_size": 8, 
+                    "dropout": 0.5, 
+                    "position_embedding_vector_length": 5,
+                    "max_sentence_length": 128,
+                    "decode_mode":  true,
+                    "encoder": "cnn",
+                    "mention_pool": false,
+                    "opennre_dataset": "learnit-gigaword", 
+                    "opennre_rootpath" : "/nfs/raid87/u10/shared/Hume/common/event_event_relation/models/opennre-data/",
+                    "absolute_ckpt": true,
+                    "opennre_ckpt": "/nfs/raid87/u10/shared/Hume/common/event_event_relation/models/opennre-data/benchmark/learnit-gigaword/ckpt/causality_large_cnn_softmax.pth.tar_6"
+                },
+                "embeddings": {
+                    "vector_size": 50 
+                },
+                "model_file": "", 
+                "features": [], 
+                "load_from_disk": false,
+                "model_type": "event-event-relation_within-sentence", 
+                "engine": "pytorch",
+                "seed": 1234,
+                "cpu": true 
+            }
+        ]
+        }
+    ]
+}

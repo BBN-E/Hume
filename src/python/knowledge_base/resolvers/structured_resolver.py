@@ -1,6 +1,6 @@
 from __future__ import print_function
 from knowledge_base import KnowledgeBase
-from kb_resolver import KBResolver
+from resolvers.kb_resolver import KBResolver
 from shared_id_manager.shared_id_manager import SharedIDManager
 from elements.structured.structured_documents import StructuredDocument, Worksheet, TabRef
 from elements.structured.structured_events import Actor, Event
@@ -16,7 +16,12 @@ import json
 from rdflib import Literal, Graph, XSD, URIRef
 import math
 from datetime import datetime
-from urllib import quote_plus
+try:
+    from urllib import quote  # Python 2.X
+    from urllib import quote_plus
+except ImportError:
+    from urllib.parse import quote  # Python 3+
+    from urllib.parse import quote_plus
 
 
 class StructuredResolver(KBResolver):

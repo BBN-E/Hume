@@ -11,7 +11,7 @@ class Property:
         self.property_label = property_label
         self.tab_ref = tab_ref
         self.optional_properties = dict()
-        self.internal_ontology_class = None  # points to OntologyClass
+        # self.internal_ontology_class = None  # points to OntologyClass
         self.external_ontology_sources = []
         self.event_hierarchy_grounding = []
 
@@ -21,12 +21,12 @@ class Property:
     def serialize(self, graph):
 
         if self.external_ontology_sources:
-            print '---'
-            print self.property_id, "with label `", self.property_label, \
-                "` was provided with type", self.property_type
+            print('---')
+            print(self.property_id, "with label `", self.property_label, \
+                "` was provided with type", self.property_type)
             for (_, source), similarity in self.external_ontology_sources:
-                print similarity, ':', source
-            print '---'
+                print(similarity, ':', source)
+            print('---')
             best_source = self.external_ontology_sources[0][0][1]
             graph.add((ns_lookup['BBNTA1'][self.property_id],
                        RDF.type, URIRef(best_source)))

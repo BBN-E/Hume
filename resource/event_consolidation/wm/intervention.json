@@ -1,0 +1,429 @@
+[
+    {
+        "event_type": "ProvideAgricultureInputs",
+        "argument_triggers": [ "delivery", "delivered", "provision", "provided", "provide", "provides", "providing", "distribute", "distribution", "distributions" ],
+        "argument_values": [ "agricultural inputs" ],
+        "keywords": []
+    },
+    {
+        "event_type": "ProvideLivestockProduction",
+        "argument_triggers": [ "marketing", "slaughter", "destocking", "purchase", "restocking", "redistribution", "replacing", "replacement", "rebuilding" ],
+        "argument_values": [ "livestock", "poultry", "sheep", "bovine", "goats", "horses", "swine", "pigs" ],
+        "keywords": [ "livestock <marketing>", "livestock <slaughter>", "livestock <destocking>", "livestock <purchase>", "livestock <restocking>", "livestock <redistribution>", "livestock <replacing>", "livestock <rebuilding>" ]
+    },
+    {
+        "event_type": "ProvideLivestockFeed",
+        "argument_triggers": [ "delivery", "delivered", "provision", "provided", "provide", "provides", "providing", "distribute", "distribution", "distributions" ],
+        "argument_values": [ "livestock feed", "animal feed", "fodder", "forage", "hay" ],
+        "keywords": []
+    },
+    {
+        "event_type": "ProvideVeterinaryService",
+        "argument_triggers": [ "delivery", "delivered", "provision", "provided", "provide", "provides", "providing" ],
+        "argument_values": [ "veterinary service", "veterinary services", "livestock service", "livestock services", "animal service", "animal services", "veterinary medicine", "veterinary medicines", "veterinary appliances", "veterinary exam", "veterinary exams", "veterinary antibiotics", "veterinary vaccination" ],
+        "keywords": []
+    },
+    {
+        "event_type": "ProvisionOfWaterForLivestock",
+        "argument_triggers": [ "provision", "provided", "provide", "provides", "providing" ],
+        "argument_values": [ "water for livestock", "livestock water" ],
+        "keywords": []
+    },
+    {
+        "event_type": "ProvideFarmingTool",
+        "argument_triggers": [ "delivery", "delivered", "provision", "provided", "provide", "provides", "providing", "distribute", "distribution", "distributions" ],
+        "argument_values": [ "farm equipment", "farm machinery", "tractor", "power tiller", "row planter", "plow", "winnower" ],
+        "keywords": []
+    },
+    {
+        "event_type": "ProvideHarvestingEquipment",
+        "argument_triggers": [ "delivery", "delivered", "provision", "provided", "provide", "provides", "providing", "distribute", "distribution", "distributions" ],
+        "argument_values": [ "pickers", "clippers", "harvester", "sickle", "mower", "rake", "swather" ],
+        "keywords": []
+    },
+    {
+        "event_type": "ProvideWaterSource",
+        "argument_triggers": [],
+        "argument_values": [ "wells", "irrigation ditch", "canal" ],
+        "keywords": []
+    },
+    {
+        "event_type": "ProvidePumps",
+        "argument_triggers": [ "delivery", "delivered", "provision", "provided", "provide", "provides", "providing", "distribute", "distribution", "distributions" ],
+        "argument_values": [ "pumps", "treadle" ],
+        "keywords": []
+    },
+    {
+        "event_type": "ProvideFieldIrrigation",
+        "argument_triggers": [ "delivery", "delivered", "provision", "provided", "provide", "provides", "providing", "distribute", "distribution", "distributions" ],
+        "argument_values": [ "drips", "sprinklers" ],
+        "keywords": []
+    },
+    {
+        "event_type": "ProvideFertilizer",
+        "argument_triggers": [ "delivery", "delivered", "provision", "provided", "provide", "provides", "providing", "distribute", "distribution", "distributions" ],
+        "argument_values": [ "fertilizer", "fertilizers", "compost" ],
+        "keywords": []
+    },
+    {
+        "event_type": "FertilizerSubsidy",
+        "argument_triggers": [ "provision", "provided", "provide", "provides", "providing", "distribute", "distribution" ],
+        "argument_values": [ "fertilizer voucher", "fertilizer coupon", "fertilizer subsidy" ],
+        "keywords": []
+    },
+    {
+        "event_type": "ProvideSeed",
+        "argument_triggers": [ "delivery", "delivered", "provision", "provided", "provide", "provides", "providing" ],
+        "argument_values": [ "seed", "seeds" ],
+        "keywords": []
+    },
+    {
+        "event_type": "ProvideBiologicalControl",
+        "argument_triggers": [],
+        "argument_values": [],
+        "keywords": [ "crop <rotation>", "<cover> crop", "integrated pest <management>", "companion <planting>" ]
+    },
+    {
+        "event_type": "ProvideChemicalControl",
+        "argument_triggers": [ "provision", "provided", "provide", "provides", "providing", "distribute", "distribution", "distributions" ],
+        "argument_values": [ "glysophate", "round-up", "dicamba" ],
+        "keywords": []
+    },
+    {
+        "event_type": "ProvideOrganicControl",
+        "argument_triggers": [],
+        "argument_values": [],
+        "keywords": []
+    },
+    {
+        "event_type": "ProvideProcessingEquipment",
+        "argument_triggers": [],
+        "argument_values": [],
+        "keywords": []
+    },
+    {
+        "event_type": "ProvidePackaging",
+        "argument_triggers": [],
+        "argument_values": [],
+        "keywords": []
+    },
+    {
+        "event_type": "ProvideWarehousing",
+        "argument_triggers": [],
+        "argument_values": [],
+        "keywords": [ "<harvest> storage", "<harvest> warehouse" ]
+    },
+    {
+        "event_type": "ProvideSurveillanceSystem",
+        "argument_triggers": [],
+        "argument_values": [],
+        "keywords": [ "disease <surveillance>", "awd <surveillance>", "meningitis <surveillance>", "measles <surveillance>", "cholera <surveillance>", "famine early <warning> systems", "<locust> control", "epidemiological <surveillance>", "disaster <monitoring>", "earthquake <monitoring>", "food security <monitoring>" ]
+    },
+    {
+        "event_type": "ProvideVictimsMonitoring",
+        "argument_triggers": [ "report", "reporting", "investigate", "investigation", "verification", "monitoring", "monitor" ],
+        "argument_values": [ "refugee", "refugees", "IDP", "IDPs", "victim", "victims" ],
+        "keywords": []
+    },
+    {
+        "event_type": "ProvidePerpetratorsMonitoring",
+        "argument_triggers": [ "report", "reporting", "investigate", "investigation", "verification", "monitoring", "monitor" ],
+        "argument_values": [ "militias", "gangs", "terrorist", "terrorists" ],
+        "keywords": []
+    },
+    {
+        "event_type": "ProvideViolationsMonitoring",
+        "argument_triggers": [ "report", "reporting", "investigate", "investigation", "verification", "monitoring", "monitor" ],
+        "argument_values": [ "war crime", "war crimes", "gender violence", "gender based violence" ],
+        "keywords": []
+    },
+    {
+        "event_type": "ProvideNationalSurvey",
+        "argument_triggers": [ "report", "reporting", "provision", "provided", "provide", "provides", "providing", "conduct" ],
+        "argument_values": [ "census", "survey", "surveys" ],
+        "keywords": []
+    },
+    {
+        "event_type": "ProvideWeatherMonitoring",
+        "argument_triggers": [ "monitor", "monitoring" ],
+        "argument_values": [ "weather" ],
+        "keywords": []
+    },
+    {
+        "event_type": "ProvidePriceMonitoring",
+        "argument_triggers": [ "monitor", "monitoring" ],
+        "argument_values": [ "price", "prices" ],
+        "keywords": []
+    },
+    {
+        "event_type": "ProvideFood",
+        "argument_triggers": [ "delivery", "delivered", "provision", "provided", "provide", "provides", "providing", "distribute", "distribution", "distributions" ],
+        "argument_values": [ "food", "rations", "vegetable oils", "beverages", "vegetables", "nuts", "eggs", "coffee", "tea", "meat", "dairy products", "butter", "fruits", "cheese", "cereals", "food voucher", "food vouchers" ],
+        "keywords": [ "food <distribution>", "school <feeding>", "food for <assets>", "food for <training>", "food for <work>" ]
+    },
+    {
+        "event_type": "ProvideNutritionSupport",
+        "argument_triggers": [],
+        "argument_values": [],
+        "keywords": [ "food <fortification>", "food <enrichment>", "foodstuffs <fortification>", "foodstuffs <enrichment>",  "infant <feeding>", "infant <nutrition>", "young child <nutrition>", "IYCF", "micronutrient <supplementation>", "multimicronutrient <supplementation>", "supplementary <feeding>", "complementary <feeding>", "nutrition <supplements>" ]
+    },
+    {
+        "event_type": "ProvideWater",
+        "argument_triggers": [ "trucking" ],
+        "argument_values": [ "water" ],
+        "keywords": [ "water <trucking>" ]
+    },
+    {
+        "event_type": "HouseholdReliefNonFoodItemPackage",
+        "argument_triggers": [ "delivery", "delivered", "provision", "provided", "provide", "provides", "providing", "distribute", "distribution", "distributions" ],
+        "argument_values": [ "delivery kit", "delivery kits", "birth kit", "birth kits", "stationary", "education kit", "education materials", "education kits", "blanket", "bucket", "mattress", "plastic sheets", "containers", "utensils", "matches", "candles", "lighting equipment", "torches", "lanterns", "carpets", "footwear", "textile", "bed linen", "table linen", "toilet linen", "kitchen linen", "soap", "cooking fuel", "cooking pots", "mat", "jerry can", "sanitary pads" ],
+        "keywords": [ "<provide> non-food item" ]
+    },
+    {
+        "event_type": "ProvideShelter",
+        "argument_triggers": [ "delivery", "delivered", "provision", "provided", "provide", "provides", "providing", "distribute", "distribution", "distributions" ],
+        "argument_values": [ "tent", "tents", "shelter", "awnings", "sunblinds", "twine", "rope", "cables", "furniture" ],
+        "keywords": [ "shelter <assistance>", "housing <provision>", "housing <leasing>", "housing <rental>" ]
+    },
+    {
+        "event_type": "ProvideFinancialAssistance",
+        "argument_triggers": [ "provision", "provided", "provide", "provides", "providing", "distribute", "distribution", "distributions" ],
+        "argument_values": [ "cash", "loans", "grants", "remittances" ],
+        "keywords": [ "cash <assistance>", "financial <assistance>", "cash <transfer>", "<assistance> for assets", "<assistance> for work", "<repatriation> grant", "<cash> for assets", "<cash> for work" ]
+    },
+    {
+        "event_type": "ProvideLivelihoodAssets",
+        "argument_triggers": [ "delivery", "delivered", "provision", "provided", "provide", "provides", "providing", "distribute", "distribution", "distributions" ],
+        "argument_values": [ "fishing boat", "fishing boats", "fishing net", "fishing nets", "fishing gear", "fishing asset", "fishing assets", "fishing support", "fishing_tool", "fishing tools", "fishing supplies", "fishing equipment" ],
+        "keywords": []
+    },
+    {
+        "event_type": "ProvideVaccine",
+        "argument_triggers": [],
+        "argument_values": [],
+        "keywords": [ "vaccination", "immunization", "disease <control>", "disease <management>", "epidemic <prevention>", "outbreak <control>", "vaccinated", "immunization <services>", "immunization" ]
+    },
+    {
+        "event_type": "ProvideMedicalTreatment",
+        "argument_triggers": [ "care", "management" ],
+        "argument_values": [ "childhood illnesses" ],
+        "keywords": [ "anti-retroviral", "antiretrovirals", "antiretrovirals", "HIV <treatment>", "therapeutic <feeding>", "nutrition <services>", "nutrition <assistance>", "first <aid>", "medical <care>", "health <care>", "healthcare <services>", "health care <services>", "medical <services>", "health <services>", "medical <assistance>", "health <assistance>", "health <interventions>", "obstetric <care>", "newborn <care>", "young child <feeding>", "antenatal <care>", "<management> of childhood illnesses", "injury <rehabilitation>", "physical <rehabilitation>", "trauma <rehabilitation>", "post-surgical <rehabilitation>", "polytrauma <rehabilitation>", "post-operative <care>", "post-operative <rehabilitation>", "physiotherapeutic services", "trauma <surgical> care", "humanitarian <surgery>", "emergency <surgery>" ]
+    },
+    {
+        "event_type": "ProvidePrevention",
+        "argument_triggers": [ "delivery", "delivered", "provision", "provided", "provide", "provides", "providing", "distribute", "distribution", "distributions" ],
+        "argument_values": [ "mosquito net", "bed nets", "insecticidal net", "insecticidal nets", "insecticide-treated nets", "window screen", "window screens", "insecticide", "insecticides", "larvicide", "larvicides", "rodenticide", "rodenticides", "ovitrap", "ovitraps", "repellent", "repellents" ],
+        "keywords": [ "vector <control>", "vector <management>", "mosquito <control>", "space <spraying>", "malnutrition <screening>", "malnutrition <assessment>", "nutrition <assessment>", "<screening> of acute malnutrition", "<management> of acute malnutrition", "nutritional <assessment>", "nutrition <screening>", "nutritional <surveillance>", "<screening> for malnutrition" ]
+    },
+    {
+        "event_type": "PsychologicalSupport",
+        "argument_triggers": [],
+        "argument_values": [],
+        "keywords": [ "prophylaxis", "post-rape", "<management> of rape", "social <services>", "psychosocial support <services>", "psychosocial <services>", "psychological therapy" ]
+    },
+    {
+        "event_type": "SanitationServices",
+        "argument_triggers": [ "delivery", "delivered", "provision", "provided", "provide", "provides", "providing", "distribute", "distribution", "distributions", "desludging", "cleaning", "emptying", "management", "treatment", "storage" ], 
+        "argument_values": [ "hygiene kit", "hygiene kits", "hygiene supplies", "sanitation supplies", "sanitation kit", "sanitation kits", "soap", "shampoo", "toothbrush", "detergent", "diaper", "diapers", "water kit", "water kits", "sanitary cloth", "sanitary cloths", "sanitary towels", "washing powder", "WASH packages", "water containers", "razors", "razor blades", "brooms", "brushes", "toilet paper", "tissues", "napkins", "latrine", "toilet", "septic tank", "septic tanks", "excreta" ],
+        "keywords": [ "communal <shower>", "emergency <laundry>", "emergency <handwashing>", "communal <sanitation>", "communal <WASH>", "waste <disposal>", "waste <treatment>", "waste <collection>", "solid waste <management>", "wash <services>", "sanitation <services>", "hygiene <services>", "wash <assistance>", "wash <interventions>", "sewage <treatment>", "household water <management>", "household water <treatment>", "household water <intervention>", "<treatment> of water supplies" ]
+    },
+    {
+        "event_type": "LivestockShelterAndSettlement",
+        "argument_triggers": [ "rehabilitate", "rehabilitation", "maintenance", "repair", "reconstruction", "modernise", "building", "constructing", "build", "built", "restoration", "refurbishment", "construct" ],
+        "argument_values": [ "livestock shelter", "barn", "livestock enclosure" ],
+        "keywords": [ "livestock <shelter>", "livestock <settlement>", "livestock <housing>", "livestock <infrastructure>" ]
+    },
+    {
+        "event_type": "BuildIrrigationInfrastructure",
+        "argument_triggers": [ "rehabilitate", "rehabilitation", "maintenance", "repair", "reconstruction", "modernise", "building", "constructing", "build", "built", "restoration", "refurbishment", "construct" ],
+        "argument_values": [ "irrigation", "canal", "drainage", "canal", "reservoir", "water tower" ],
+        "keywords": []
+    },
+    {
+        "event_type": "BuildExtensionOffices",
+        "argument_triggers": [ "rehabilitate", "rehabilitation", "maintenance", "repair", "reconstruction", "modernise", "building", "constructing", "build", "built", "restoration", "refurbishment", "construct" ],
+        "argument_values": [ "extension offices", "farmer training centers", "demonstration plots" ],
+        "keywords": []
+    },
+    {
+        "event_type": "BuildGreenhouse",
+        "argument_triggers": [ "rehabilitate", "rehabilitation", "maintenance", "repair", "reconstruction", "modernise", "building", "constructing", "build", "built", "restoration", "refurbishment", "construct" ],
+        "argument_values": [ "nursery", "nurseries", "green house" ],
+        "keywords": []
+    },
+    {
+        "event_type": "BuildPostHarvest",
+        "argument_triggers": [ "rehabilitate", "rehabilitation", "maintenance", "repair", "reconstruction", "modernise", "building", "constructing", "build", "built", "restoration", "refurbishment", "construct" ],
+        "argument_values": [ "silos", "harvest storage", "packing house" ],
+        "keywords": []
+    },
+    {
+        "event_type": "BuildTradeInfrastructure",
+        "argument_triggers": [ "rehabilitate", "rehabilitation", "maintenance", "repair", "reconstruction", "modernise", "building", "constructing", "build", "built", "restoration", "refurbishment", "construct" ],
+        "argument_values": [ "factory", "factories", "industrial park", "industrial parks", "storage facilities", "warehouse", "warehouses", "processing facilities" ],
+        "keywords": []
+    },
+    {
+        "event_type": "BuildEducationalInfrastructure",
+        "argument_triggers": [ "rehabilitate", "rehabilitation", "maintenance", "repair", "reconstruction", "modernise", "building", "constructing", "build", "built", "restoration", "refurbishment", "improve", "construct" ],
+        "argument_values": [ "school", "schools", "classroom", "educational infrastructure", "community centers" ],
+        "keywords": [ "child friendly <spaces>", "child friendly learning <spaces>" ]
+    },
+    {
+        "event_type": "BuildShelter",
+        "argument_triggers": [ "rehabilitate", "rehabilitation", "maintenance", "repair", "reconstruction", "modernise", "building", "constructing", "build", "built", "restoration", "refurbishment", "improve", "construct" ],
+        "argument_values": [ "shelter", "housing", "refugee camps", "communal settlement" ],
+        "keywords": []
+    },
+    {
+        "event_type": "BuildWASHInfrastructure",
+        "argument_triggers": [ "rehabilitate", "rehabilitation", "maintenance", "repair", "reconstruction", "modernise", "building", "constructing", "build", "built", "restoration", "refurbishment", "improve", "construct", "drilling" ],
+        "argument_values": [ "well", "wells", "hand pump", "hand pumps", "toilet", "latrine", "sanitation facilities", "latrines", "washing facilities", "bathing facilities" ],
+        "keywords": [ "temporary <water> point", "temporary <water> service" ]
+    },
+    {
+        "event_type": "BuildMedicalInfrastructure",
+        "argument_triggers": [ "deploy", "deployable", "mobilize", "rehabilitate", "rehabilitation", "maintenance", "repair", "reconstruction", "modernise", "building", "constructing", "build", "built", "restoration", "refurbishment", "improve", "construct" ],
+        "argument_values": [ "mobile hospital", "mobile hospitals", "field hospital", "field hospitals", "mobile clinic", "mobile clinics" ],
+        "keywords": [ "<mobile> medical unit", "<portable> surgical hospitals", "<deploying> mobile field hospitals", "<deploy> mobile field hospitals", "field <hospital>", "field <hospitals>", "mobile <hospital>", "mobile <hospitals>" ]
+    },
+    {
+        "event_type": "BuildTransportationInfrastructure",
+        "argument_triggers": [ "building", "constructing", "building", "constructing", "paving", "rehabilitate", "rehabilitation", "repair", "improve", "restoration" ],
+        "argument_values": [ "bridge", "bridges", "highways", "streets", "road", "roads", "railway", "railways", "railroad", "railroads", "rail", "rails" ],
+        "keywords": []
+    },
+    {
+        "event_type": "BuildCommunicationInfrastructure",
+        "argument_triggers": [ "building", "constructing", "building", "constructing", "paving", "rehabilitate", "rehabilitation", "repair", "improve", "restoration", "installing", "install" ],
+        "argument_values": [ "cell-phone towers", "cell-phone tower", "phone towers", "phone tower", "landlines" ],
+        "keywords": []
+    },
+    {
+        "event_type": "BuildEnergyInfrastructure",
+        "argument_triggers": [ "building", "constructing", "building", "constructing", "paving", "rehabilitate", "rehabilitation", "repair", "improve", "restoration", "installing", "install" ],
+        "argument_values": [ "dams", "electricity grids", "micro-grids", "solar panels", "wind turbines", "wind farms", "solar farms" ],
+        "keywords": []
+    },
+    {
+        "event_type": "TrainPlanting",
+        "argument_triggers": [ "train", "training", "teach", "teaching", "taught", "educate", "educating" ],
+        "argument_values": [ "crop spacing", "planting times", "seed depth", "watering", "crop rotation", "cover cropping", "composting", "perennial planting", "low till", "no till", "conservation agriculture" ],
+        "keywords": []
+    },
+    {
+        "event_type": "TrainPestWeedControl",
+        "argument_triggers": [ "train", "training", "teach", "teaching", "taught", "educate", "educating" ],
+        "argument_values": [ "IPM practices", "pest management" ],
+        "keywords": []
+    },
+    {
+        "event_type": "TrainPostHarvestPractices",
+        "argument_triggers": [ "train", "training", "teach", "teaching", "taught", "educate", "educating" ],
+        "argument_values": [ "harvest storage", "harvest processing", "harvest safety", "harvest hygiene", "harvest certifications" ],
+        "keywords": []
+    },
+    {
+        "event_type": "TrainAgricultureInformation",
+        "argument_triggers": [],
+        "argument_values": [],
+        "keywords": []
+    },
+    {
+        "event_type": "AssessmentAndTriageOfHealthFacilities",
+        "argument_triggers": [ "train", "training", "teach", "teaching", "taught", "educate", "educating" ],
+        "argument_values": [],
+        "keywords": [ "triage <course>", "triage <training>" ]
+    },
+    {
+        "event_type": "CapacityBuildingOfMedicalStaff",
+        "argument_triggers": [ "train", "training", "teach", "teaching", "taught", "educate", "educating" ],
+        "argument_values": [ "medical staff", "nurse", "doctor", "healthcare provider", "health professionals" ],
+        "keywords": []
+    },
+    {
+        "event_type": "CapacityBuildingHumanRights",
+        "argument_triggers": [ "<engaging> on", "<engagement> of", "promote", "protect", "integrate", "<cooperation> on", "<assistance> on", "<dialogue> on", "<committed> to", "respect", "develop" ],
+        "argument_values": [ "human rights", "child protection <services>" ],
+        "keywords": []
+    },
+    {
+        "event_type": "TrainFinancialManagement",
+        "argument_triggers": [ "train", "training", "teach", "teaching", "taught", "educate", "educating" ],
+        "argument_values": [ "finances", "finance", "financial management" ],
+        "keywords": []
+    },
+    {
+        "event_type": "TrainEducationSystems",
+        "argument_triggers": [ "training", "development", "building" ],
+        "argument_values": [ "teacher", "teachers", "para-teachers", "teaching competencies" ],
+        "keywords": [ "<education> in emergencies", "emergency <education>", "refugee <education>", "non-formal <education>" ]
+    },
+    {
+        "event_type": "PublicHealthInformationCampaign",
+        "argument_triggers": [],
+        "argument_values": [],
+        "keywords": [ "hygiene <promotion>", "hygiene <messages>", "hygiene <education>", "hygiene <campaign>", "health communication <campaign>", "health communication <intervention>" ]
+    },
+    {
+        "event_type": "TrainPublicSafetyCampaigns",
+        "argument_triggers": [ "campaigns" ],
+        "argument_values": [ "explosives", "hazardous materials", "hazardous substances" ],
+        "keywords": []
+    },
+    {
+        "event_type": "TrainEmergencyPreparednessTraining",
+        "argument_triggers": [],
+        "argument_values": [],
+        "keywords": [ "disaster risk <management>", "resilience <building>" ]
+    },
+    {
+        "event_type": "TrainSurveillanceSystemStrengthening",
+        "argument_triggers": [],
+        "argument_values": [],
+        "keywords": []
+    },
+    {
+        "event_type": "TrainHumanitarianCertifications",
+        "argument_triggers": [],
+        "argument_values": [],
+        "keywords": []
+    },
+    {
+        "event_type": "SecureLivelihoodProtections",
+        "argument_triggers": [ "protect", "stabilize", "defend", "conserve", "neutralize", "preserve" ],
+        "argument_values": [ "agricultural assets", "cattle raids", "supply chains" ],
+        "keywords": []
+    },
+    {
+        "event_type": "SecureMineClearance",
+        "argument_triggers": [],
+        "argument_values": [],
+        "keywords": [ "mine risk <education>" ]
+    },
+    {
+        "event_type": "PolicingServices",
+        "argument_triggers": [],
+        "argument_values": [],
+        "keywords": [ "policing", "border <patrol>", "border <security>", "border <protection>" ]
+    },
+    {
+        "event_type": "ConflictMediationAndPoliticalDialogue",
+        "argument_triggers": [ "resolution", "reconcilation", "mediation", "healing", "recovery", "rehabilitation" ],
+        "argument_values": [ "conflict", "child soldiers" ],
+        "keywords": [ "family <separation>", "child <separation>", "children <separation>", "family <reunification>", "disarmament", "demobilization", "reintegration", "political <dialogue>" ]
+    },
+    {
+        "event_type": "SecureNaturalResources",
+        "argument_triggers": [ "protect", "stabilize", "defend", "conserve", "neutralize", "preserve" ],
+        "argument_values": [ "water rights", "land rights", "land deeds" ],
+        "keywords": []
+    },
+    {
+        "event_type": "SecureCulturalResources",
+        "argument_triggers": [],
+        "argument_values": [],
+        "keywords": []
+    }
+]
+

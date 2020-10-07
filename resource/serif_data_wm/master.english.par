@@ -1,0 +1,394 @@
+########################################################################
+# master.english.par:                                                  #
+#   This is a Serif parameter file designed to run our current         #
+#   best models in English.                                            #
+########################################################################
+
+modules: English
+
+ignore_errors: true
+dump_theories: false
+
+use_sentence_level_relation_finding: true
+use_sentence_level_event_finding: false
+
+######### Global Configuration Parameters ####################
+
+# we expand the beam to width 10 for parsing, and then condense again after mentions
+token_branch: 1
+name_branch:  1
+nested_name_branch: 1
+value_branch: 1
+pos_branch:   1
+parse_branch: 10
+desc_branch:  1
+link_branch:  1
+mentions_beam_width: 1
+beam_width:   10
+
+entity_type_set:    %serif_data%/ace/ace_2004_entity_types.txt
+entity_subtype_set: %serif_data%/ace/entity-subtypes-2005.txt
+value_type_set:     %serif_data%/ace/ace_2005_value_types.txt
+
+word_net_dictionary_path:        %serif_data%/english/Software/WN16/DICT
+word_net_backup_dictionary_path: %serif_data%/english/Software/WN16/DICT
+wordnet_word_list:               %serif_data%/english/misc/wordnetWord.list
+
+word_cluster_bits_file:    %serif_data%/english/clusters/ace2005.hBits
+lc_word_cluster_bits_file: %serif_data%/english/clusters/ace2005.lowercase.hBits
+
+symbol_table_initialization_file: %serif_data%/english/misc/Most_Common_Words_Gutenberg_1-10000.txt
+
+nationality_certain_list: %serif_data%/english/misc/nationalities-certain.txt
+nationality_likely_list:  %serif_data%/english/misc/nationalities-likely.txt
+
+check_memory: false
+
+use_value_finding_patterns: true
+
+######### Module-specific params #############################
+
+# ----- Document Reader -----
+
+doc_reader_calculate_edt_offsets: false
+doc_reader_offsets_start_at_first_tag: true
+doc_reader_regions_to_process: TEXT,TURN,SPEAKER,POSTER,POSTDATE,SUBJECT
+doc_reader_datetime_tags:      DATE_TIME,DATETIME
+doc_reader_region_breaks:      TURN,P,QUOTE
+
+# ----- Sentence Breaker -----
+
+sentence_breaker_dateline_mode:		   aggressive
+use_itea_sentence_break_heuristics:        false
+sentence_break_on_double_carriage_returns: true
+
+sentence_breaker_dateline_parentheticals:  %serif_data%/english/sentences/dateline_parentheticals.list
+lowercase_headline_words: %serif_data%/english/sentences/lowercase_headline_words.list
+
+# This is not used unless the  mode is set to very_aggressive
+sentence_breaker_rarely_capitalized_words: %serif_data%/english/sentences/rarely_capitalized_words.list
+
+# ----- Tokenizer -----
+
+tokenizer_params:             %serif_data%/english/tokenization/default.params
+tokenizer_subst:              %serif_data%/english/tokenization/token-subst.data
+tokenizer_short_words:        %serif_data%/english/tokenization/short-words.data
+tokenizer_non_final_abbrevs:  %serif_data%/english/tokenization/non-final-abbrevs.data
+tokenizer_no_split_abbrevs:   %serif_data%/english/tokenization/no-split-abbrevs.data
+tokenizer_hyphenated_endings: %serif_data%/english/tokenization/hyphenated-endings.data
+tokenizer_hyphenated_tokens:  %serif_data%/english/tokenization/hyphenated-tokens.data
+tokenizer_hyphenated_prefixes:%serif_data%/english/tokenization/hyphenated-prefixes.data
+split_hyphenated_names:      true
+downcase_all_uppercase_docs: true
+use_GALE_tokenization:       true
+
+# ----- Names/IdentiFinder -----
+
+name_finder: pidf
+
+pidf_model_file:           %serif_data%/english/names/pidf/january2011.mc.all.weights
+lowercase_pidf_model_file: %serif_data%/english/names/pidf/january2011.lc.all.weights
+
+select_pidf_decoder_case_by_sentence: true
+
+#pidf_features_file:     %serif_data%/english/names/pidf/ace2011.features
+pidf_features_file:     /nfs/raid87/u10/shared/Hume/serif/ace2011.features
+pidf_tag_set_file:      %serif_data%/english/names/pidf/ace2004.tags
+pidf_interleave_tags:   false
+pidf_learn_transitions: false
+
+# ----- Values -----
+
+timex_features_file:        %serif_data%/english/values/pidf/ace2004-trigrams.features
+timex_tag_set_file:         %serif_data%/english/values/pidf/just-timex.tags
+timex_model_file:           %serif_data%/english/values/pidf/all-timex-ace2007.weights
+timex_vocab_file:           %serif_data%/english/values/pidf/all-timex-ace2007.vocab
+lowercase_timex_model_file: %serif_data%/english/values/pidf/all-timex-ace2007.lc.weights
+lowercase_timex_vocab_file: %serif_data%/english/values/pidf/all-timex-ace2007.lc.vocab
+
+other_value_features_file:  %serif_data%/english/values/pidf/ace2004-bigrams.features
+other_value_tag_set_file:   %serif_data%/english/values/pidf/no-timex.tags
+other_value_model_file:     %serif_data%/english/values/pidf/all-other-values-ace2007.weights
+other_value_vocab_file:     %serif_data%/english/values/pidf/all-other-values-ace2007.vocab
+lowercase_other_value_model_file: %serif_data%/english/values/pidf/all-other-values-ace2007.lc.weights
+lowercase_other_value_vocab_file: %serif_data%/english/values/pidf/all-other-values-ace2007.lc.vocab
+
+timex_indicator_words:  %serif_data%/english/values/timex-words.txt
+value_pattern_set_list:  %serif_data%/english/values/patterns/value_patterns.list
+
+# ----- Parser -----
+
+primary_parse: full_parse
+
+parser_model:		 %serif_data%/english/parser/wsj_02_to_21.withdates.50
+lowercase_parser_model:	 %serif_data%/english/parser/wsj_02_to_21.withdates.lc.50
+
+###### parser for cts data (trained on switchboard and wsj data)
+#parser_model: %serif_data%/english/parser/512k-sb_wsj.50
+
+inventory: %serif_data%/english/parser/parser-desc-inventory
+bigrams:   %serif_data%/english/parser/parser-bigrams
+parser_frag_prob: 0
+use_hyphen_constraints_in_parser: true
+
+probs_cache_type: simple
+probs_cache_max_k_entries: 1000
+
+# ----- Mention Recognizer / Descriptor Classifier -----
+
+desc_classify_model_type: P1
+do_desc_recognition:      true
+use_whq_mentions:         true
+use_nominal_premods:      true
+unify_appositives:        false
+
+p1_desc_tag_set_file:        %serif_data%/english/nominals/p1/desc.tags
+
+## nominal premod model
+p1_nom_premod_model_file:    %serif_data%/english/nominals/p1/all-ace2007.nominal-premods.weights.p1
+p1_nom_premod_features_file: %serif_data%/english/nominals/p1/nompre.2005.features
+p1_nom_premod_tag_set_file:  %serif_data%/english/nominals/p1/nompre.tags
+adjectival_nominal_premods:  %serif_data%/english/nominals/adjectival-nominal-premods
+
+## regular descriptor model
+p1_desc_model_file:       %serif_data%/english/nominals/p1/all-ace2007.2009-04-17.descriptors.weights.p1
+p1_desc_features_file:    %serif_data%/english/nominals/p1/desc.2009.default.features
+pdesc_rare_hw_list:       %serif_data%/english/nominals/p1/rare_hws.txt
+p1_desc_use_propositions: true
+p1_desc_use_wordnet:      true
+p1_desc_use_alt_models:   false
+
+desc_types:              %serif_data%/english/nominals/descHeadWords.txt
+temporal_headword_list:  %serif_data%/english/misc/temporal_headwords.txt
+partitive_headword_list: %serif_data%/english/misc/english_partitive_headwords.txt
+
+## subtype
+wordnet_subtypes:    %serif_data%/english/subtypes/wordnet-mappings-2005-tokenized.txt
+wikipedia_subtypes:  %serif_data%/english/subtypes/wikipedia-mappings-2007-tokenized.txt
+desc_head_subtypes:  %serif_data%/english/subtypes/unfair-desc-head-mappings-2007-tokenized.txt
+name_word_subtypes:  %serif_data%/english/subtypes/unfair-name-word-mappings-2007.txt
+full_name_subtypes:  %serif_data%/english/subtypes/unfair-full-name-mappings-2007-tokenized.txt
+
+# ----- Proposition Finder -----
+
+make_partitive_props: true
+treat_nominal_premods_like_names_in_props: false
+proposition_status_patterns: %serif_data%/english/misc/proposition-status-patterns.txt
+
+# ----- Metonymy / Roles -----
+
+use_metonymy: true
+metonymy_dir: %serif_data%/english/metonymy
+use_gpe_roles: true
+
+# ----- Entities (Reference Resolution) -----
+
+create_partitive_entities: true
+use_itea_linking: true
+
+# ----- Name Linker -----
+
+name_link_mode: DT
+
+### Discriminative name linker
+
+dt_name_coref_link_only_to_names: false
+dt_name_coref_use_metonymy: true
+dt_name_coref_model_type: P1_RANKING
+
+dt_name_coref_model_file:        %serif_data%/english/coref/names/p1/name19-wo-subtypes-epoch8-ByType_true-P1_RANKING-wk-full.model
+dt_name_coref_tag_set_file:  %serif_data%/english/coref/link.tags
+dt_name_coref_features_file:  %serif_data%/english/coref/names/p1/name-link-26.features
+edt_capital_to_country_file:     %serif_data%/english/coref/names/p1/capitals-to-countries.txt
+dtnamelink_per_wk_file: %serif_data%/english/coref/names/p1/wk_per_sorted.txt
+dtnamelink_org_wk_file: %serif_data%/english/coref/names/p1/wk_org_sorted.txt
+
+do_coref_name_gpe_filtering: true
+dt_coref_nationalities: %serif_data%/english/coref/names/p1/nationalities_countries.txt
+dt_coref_name_gpe_affiliations: %serif_data%/english/coref/names/p1/gpe_aff_likely.txt
+
+
+### Rule_based Name Linker:
+
+use_simple_rule_namelink: false
+
+linker_alt_spellings:        %serif_data%/english/coref/names/rules/alt-spellings.txt
+linker_designators:          %serif_data%/english/coref/names/rules/designators.txt
+linker_nations:              %serif_data%/english/coref/names/rules/nations.txt
+linker_noise:                %serif_data%/english/coref/names/rules/noise.txt
+linker_suffixes:             %serif_data%/english/coref/names/rules/suffixes.txt
+linker_capitals_and_countries: %serif_data%/english/coref/names/rules/capitals-and-countries.txt
+
+### Statistical Name Linker:
+
+abbrev_maker_file:          %serif_data%/english/coref/names/ace2007.all-abbreviations.txt
+specific_unseen_weights:    %serif_data%/english/coref/names/stat/ace2004.specificUnseenWeights
+generic_unseen_weights:     %serif_data%/english/coref/names/stat/ace2004.genericUnseenWeights
+generic_model_file:         %serif_data%/english/coref/names/stat/genericmodel
+namelink_newold_model_file: %serif_data%/english/coref/names/stat/newoldmodel
+
+namelink_use_edit_distance: true
+namelink_edit_distance_threshold: 5
+
+# ----- Descriptor Linker -----
+
+desc_link_mode:                  DT
+do_strategic_linking:            false
+do_strategic_linking_to_name:    false
+singleton_descriptor_percentage: 100
+
+dt_coref_model_type:             P1_RANKING
+dt_coref_rank_overgen_threshold: 900000
+
+dt_coref_tag_set_file:   %serif_data%/english/coref/link.tags
+dt_coref_features_file:  %serif_data%/english/coref/nominals/p1/desclink.ace2005.features
+dt_coref_model_file:     %serif_data%/english/coref/nominals/p1/p1-desc-coref-ace2008-all.model
+
+# ----- Pronoun Linker -----
+
+pronoun_link_mode:          DT
+dt_pron_model_type:         P1_RANKING
+dt_pron_tag_set_file:       %serif_data%/english/coref/link.tags
+dt_pron_features_file:      %serif_data%/english/coref/pronouns/p1/pronlink-20100125.features
+dt_pron_model_file:         %serif_data%/english/coref/pronouns/p1/dt-pron-20100125.all.model
+
+guesser_female_names:       %serif_data%/english/coref/pronouns/female.names
+guesser_male_names:         %serif_data%/english/coref/pronouns/male.names
+guesser_female_descriptors: %serif_data%/english/coref/pronouns/female.descriptors
+guesser_male_descriptors:   %serif_data%/english/coref/pronouns/male.descriptors
+guesser_plural_descriptors: %serif_data%/english/coref/pronouns/plural.descriptors
+hobbs_do_step_8:            false
+
+xdoc_pronoun_coref_enable: true
+guesser_xdoc_male_names: %serif_data%/english/coref/pronouns/xdoc_male_names.txt
+guesser_xdoc_female_names: %serif_data%/english/coref/pronouns/xdoc_female_names.txt
+
+
+# ----- Doc Entities -----
+
+singleton_merge_size: 2
+
+# ----- Relation Finder -----
+
+relation_finder_type: ACE2005
+
+## main relation model
+relation_model_type:          COMBO
+p1_relation_model_file:       %serif_data%/english/relations/p1/ace2007-relation-p1-all.model
+maxent_relation_model_file:   %serif_data%/english/relations/maxent/ace2007-relation-maxent-filter-all.model
+relation_tag_set_file:        %serif_data%/english/relations/relation.ace2005.tags
+relation_features_file:       %serif_data%/english/relations/relation.ace2007.features
+maxent_relation_tag_set_file: %serif_data%/english/relations/maxent/relation.filter.tags
+p1_relation_undergen_percentage: 0.05
+p1_relation_overgen_percentage:  0
+
+relation_skip_special_case_answer: true
+
+relation_finder_use_alt_models:  true
+alternative_relation_model_file: %serif_data%/english/relations/alt-models/ace2007-alt-model-params
+
+## vector/tree model used to correct main model and provide argument ordering
+vector_tree_relation_model_file: %serif_data%/english/relations/vector-tree/ace2007-vt-all.model
+relation_type_list:              %serif_data%/english/relations/vector-tree/relation.vt.ace2005.tags
+
+wordnet_level_start: 1
+wordnet_level_interval: 3
+
+relation_mention_dist_cutoff: 0
+
+## timex attachments
+do_relation_time_attachment:    true
+relation_time_model_file:       %serif_data%/english/relations/timex/ace2007-relation-timex-all.model
+relation_time_tag_set_file:     %serif_data%/english/relations/timex/relation.ta.ace2005.tags
+relation_time_features_file:    %serif_data%/english/relations/timex/relation.ta.verb-dist.features
+relation_time_recall_threshold: 0.6
+
+add_imaginary_relations:      false
+ignore_relations_with_matching_heads: true
+relation_validation_str:      2005
+
+enable_raw_relations:         false
+find_itea_document_relations: false
+
+# ----- Events -----
+
+event_model_type: BOTH
+
+## PATTERNS
+
+#BPL Pattern pars
+event_pattern_set: %serif_data%/english/events/rules/ace2007-bpl-event-patterns.txt
+blocked_proposition_types: Alleged,Modal,If,Negative,Unreliable
+
+#BPL Event Value Patterns
+crime_value_pattern_file: %serif_data%/english/events/rules/ace2005-bpl-value-crime.txt
+position_value_pattern_file: %serif_data%/english/events/rules/ace2005-bpl-value-position.txt
+sentence_value_pattern_file: %serif_data%/english/events/rules/ace2005-bpl-value-sentence.txt
+certain_sentences_value_pattern_file: %serif_data%/english/rulse/ace2005-bpl-value-certain-sentences-ace2005.txt
+
+coerce_types_for_events_and_relations: false
+event_patterns:      %serif_data%/english/events/rules/ace2007-event-patterns.txt
+generic_event_slots: %serif_data%/english/events/rules/ace2005-generic-event-slots.txt
+
+## trigger finding
+event_trigger_model_file:    %serif_data%/english/events/triggers/ace2007-retrained2013-trigger-all.model
+event_trigger_tag_set_file:  %serif_data%/english/events/triggers/ace2005-event.types
+event_trigger_features_file: %serif_data%/english/events/triggers/trigger.ace2007.features
+event_topic_set:             %serif_data%/english/events/triggers/event-topics-ace2005.txt
+event_trigger_recall_threshold: .7
+et_p1_recall_threshold:         .2
+use_word_model:                 false
+use_obj_model:                  true
+use_sub_model:                  true
+use_wordnet_model:              false
+use_cluster16_model:            false
+use_cluster1216_model:          false
+use_cluster81216_model:         false
+et_use_p1_model:                true
+et_use_maxent_model:            false
+use_word_prior_model:           false
+
+## argument attachment
+event_aa_model_file:     %serif_data%/english/events/arguments/ace2007-retrained2013-aa-all.model.maxent
+event_aa_tag_set_file:   %serif_data%/english/events/arguments/ace2005-event-argument.types
+event_aa_features_file:  %serif_data%/english/events/arguments/aa.ace2005.features
+event_aa_recall_threshold: .5
+use_two_pass_aa_model:   false
+
+non_asserted_event_indicators: %serif_data%/english/events/non-asserted-indicators.txt
+
+event_linking_style:      DOCUMENT
+event_link_model_file:    %serif_data%/english/events/link/ace2007-retrained2013-link-all.model
+event_link_tag_set_file:  %serif_data%/english/events/link/ace2005-event-link.types
+event_link_features_file: %serif_data%/english/events/link/link.ace2007.features
+event_link_threshold:     .7
+event_value_patterns:     %serif_data%/english/events/rules/value-patterns-ace2005.txt
+
+allow_events_to_be_mentions:                              false
+allow_events_to_subsume_relations:                        false
+allow_multiple_events_of_different_type_with_same_anchor: false
+allow_multiple_events_of_same_type_with_same_anchor:	  false
+
+# ----- Generics -----
+
+filter_generics: true
+
+# ----- FactFinder (not used by default) -----
+
+canonical_gpe_names: %serif_data%/english/misc/canonical_gpe_names.list
+future_employment_status_words: %serif_data%/english/misc/future_employment_status_words.list
+current_employment_status_words: %serif_data%/english/misc/current_employment_status_words.list
+past_employment_status_words: %serif_data%/english/misc/past_employment_status_words.list
+
+# ----- Output -----
+
+merge_rel_mentions_across_type: false
+output_format: APF7,SERIFXML
+
+output_name_words:    %serif_data%/english/misc/output-name-words.txt
+output_nominal_words: %serif_data%/english/misc/output-nominal-words.txt
+output_pronoun_words: %serif_data%/english/misc/output-pronoun-words.txt
+
+# ----- Scoring -----
+
+score_script: %serif_score%/ace-all-do-quick-score-v01.pl

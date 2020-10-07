@@ -1,6 +1,6 @@
 import sys, os, re, codecs
 from knowledge_base import KnowledgeBase
-from kb_resolver import KBResolver
+from resolvers.kb_resolver import KBResolver
 import collections
 
 
@@ -17,15 +17,15 @@ class EntityAddPropertyResolver(KBResolver):
             if kb_mention.mention_type == "desc" or kb_mention.mention_type == "part":
                 names.append(kb_mention.mention_text)
         if collections.Counter(names).most_common(1):
-            kb_entity.canonical_name = collections.Counter(names).most_common(1)[0][0].encode('utf-8').replace("\n", "")
+            kb_entity.canonical_name = collections.Counter(names).most_common(1)[0][0].replace("\n", "")
 
     def resolve(self, kb):
-        print "EntityAddPropertyResolver RESOLVE"
+        print("EntityAddPropertyResolver RESOLVE")
         resolved_kb = KnowledgeBase()
 
         super(EntityAddPropertyResolver, self).copy_all(resolved_kb, kb)
 
-        for entid, kb_entity in resolved_kb.entid_to_kb_entity.iteritems():
+        for entid, kb_entity in resolved_kb.entid_to_kb_entity.items():
             if kb_entity.canonical_name is None:
                 self.pick_canonical_name(kb_entity)
 

@@ -1,4 +1,4 @@
-from kb_element import KBElement
+from elements.kb_element import KBElement
 
 class KBDocument(KBElement):
     def __init__(self, id, properties):

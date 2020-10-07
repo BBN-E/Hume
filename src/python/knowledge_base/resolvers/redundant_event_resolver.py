@@ -1,6 +1,6 @@
 import sys, os, codecs
 from knowledge_base import KnowledgeBase
-from kb_resolver import KBResolver
+from resolvers.kb_resolver import KBResolver
 from elements.kb_group import KBEventGroup
 
 class RedundantEventResolver(KBResolver):
@@ -8,7 +8,7 @@ class RedundantEventResolver(KBResolver):
         pass
     
     def resolve(self, kb): 
-        print "RedundantEventResolver RESOLVE"
+        print("RedundantEventResolver RESOLVE")
 
         resolved_kb = KnowledgeBase()
         super(RedundantEventResolver, self).copy_all(resolved_kb, kb)
@@ -28,7 +28,7 @@ class RedundantEventResolver(KBResolver):
                 sentence_to_event_mention_list[sentence].append(event_mention)
 
         event_mentions_to_remove = set()
-        for sentence, event_mention_list in sentence_to_event_mention_list.iteritems():
+        for sentence, event_mention_list in sentence_to_event_mention_list.items():
             # Looking at event mentions for a particular sentence
             for em1 in event_mention_list:
                 for em2 in event_mention_list:

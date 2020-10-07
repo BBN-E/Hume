@@ -1,0 +1,83 @@
+JAVA_CLASSPATH
++doc_resolver_jar_path+
+
+IMPLEMENTATIONS
++textopen_root+/src/python/serif/model/impl/nlplingo_decoder.py
+
+IMPLEMENTATIONS
++textopen_root+/src/python/serif/model/impl/java_doc_resolver.py
+
+IMPLEMENTATIONS
++textopen_root+/src/python/serif/model/impl/event_mention/probabilistic_grounding.py
+
+IMPLEMENTATIONS
++textopen_root+/src/python/serif/model/impl/word_pair_count.py
+
+BASE_MODEL NLPLingoDecoder
+params_path +hume_root+/templates/nlplingo_decode.par.wm.+nlplingo_embedding_name+.json
+npz_filelist +bert_npz_file_list+
+max_number_of_tokens_per_sentence +max_number_of_tokens_per_sentence+
+
+
+# Original EC
+JAVA_BASE_MODEL JavaDocResolverModel
+# Object parameters
+persistentObjects EventOntologyHierarchy
+EventOntologyHierarchy.roleOntologyFile +roleOntologyFile+
+EventOntologyHierarchy.yamlOntologyFile +ontologyFile+
+EventOntologyHierarchy.argumentRoleEntityTypeFile +argumentRoleEntityTypeFile+
+EventOntologyHierarchy.keywordFile +keywordFile+
+EventOntologyHierarchy.lemmaFile +lemmaFile+
+EventOntologyHierarchy.blacklistFile +blacklistFile+
+resolvers ClearEventsResolver,PropertyAsValueMentionResolver,EventMentionAnchorPhraseResolver,LabelEventMentionWithModelResolver,KeywordEventMentionRemover,KBPEventMentionConverter,NNEventMentionConverter,InterventionEventResolver,GenericEventMentionConverter,KeywordEventMentionAdder,AccentEventMentionMerger,KBPEventMentionMerger,NNEventMentionMerger,GenericEventMentionMerger,AllEventMentionMerger,TimeArgumentAdder,PlaceArgumentAdder,ActorArgumentAdder,ArtifactArgumentAdder,PruneOverlappingArgumentResolver,PruneBlacklistResolver,PruneArgumentsByEntityTypeResolver,LightVerbsEventMentionAdder,EventMentionSemanticPhraseGrouper,AttachCorefLightAnchorResolver,ThemeArgumentAdder,PropertyArgumentAdder,ConstrainToEventOntologyResolver,PropagateEventMentionArgumentResolver,MoveAllEventTypesToCausalFactorTypesResolver,SimpleEventCreator,EventEventRelationReAttachResolver
+# Resolver parameters
+LabelEventMentionWithModelResolver.kbpEventMappingFile +kbpEventMappingFile+
+KeywordEventMentionRemover.adverbsFile +adverbFile+
+KeywordEventMentionRemover.prepositionsFile +prepositionFile+
+KeywordEventMentionRemover.verbsFile +verbFile+
+KBPEventMentionConverter.kbpEventMappingFile +kbpEventMappingFile+
+InterventionEventResolver.interventionJson +interventionJson+
+ActorArgumentAdder.metadataFile +strInputMetadataFile+
+ArtifactArgumentAdder.subtypes Oil,Natural-Gas
+LightVerbsEventMentionAdder.lightVerbsFile +lightVerbFile+
+PropagateEventMentionArgumentResolver.copyArgumentSentenceWindow +copyArgumentSentenceWindow+
+AttachCorefLightAnchorResolver.lightWordsFile +lightWordFile+
+ThemeArgumentAdder.selectionConstraints +themeConstraints+
+ThemeArgumentAdder.validFactorTypes +themeFactors+
+ThemeArgumentAdder.invalidThemeTypes +themeIllegalTypes+
+PropertyArgumentAdder.propertyTypes +propertyPropertyTypes+
+PropertyArgumentAdder.processTypes +propertyProcessTypes+
+
+# PG CausalFactor
+BASE_MODEL ProbabilisticGrounding
+probabilictic_grounding_main_entry +probabilictic_grounding_main_entry+
+max_number_of_tokens_per_sentence +max_number_of_tokens_per_sentence+
+which_ontology WM
+keywords +keywords+
+stopwords +stopwords+
+event_ontology_yaml +external_ontology+
+internal_ontology_yaml +ontologyFile+
+grounding_mode +grounding_mode+
+embeddings +embeddings+
+exemplars +event_exemplars+
+bert_centroids +event_centroid_file+
+bert_npz_file_list +bert_npz_file_list+
+n_best +n_best+
+only_use_bert_from_root false
+blacklist +event_blacklist+
+event_mention_typing_field factor_types
+threshold +threshold+
+
+# EC Magnitude
+JAVA_BASE_MODEL JavaDocResolverModel
+# Resolvers
+resolvers ClearEventsResolver,FlipOppositeCFToPositiveResolver,EventFactorMagnitudeResolver,EventDirectionOfChangeAndCFTrendResolver,EventEventRelationReAttachResolver,EventEventRelationPolarityResolver,EventEventRelationRationaleResolver,StandaloneGenericEventPruner,SimpleEntityCreator,SimpleEventCreator
+EventFactorMagnitudeResolver.propertiesFile  +propertiesFile+
+EventDirectionOfChangeAndCFTrendResolver.propertiesFile +propertiesFile+
+EventFactorMagnitudeResolver.reverseFactorTypesFile  +reverseFactorTypesFile+
+FlipOppositeCFToPositiveResolver.pendingFlippingOppositeTypeMap  +pendingflip+
+EventEventRelationPolarityResolver.negation_file +causalRelationNegationFile+
+EventEventRelationRationaleResolver.word_list +causalRelationDirectory+
+
+# Count word pairs for EER confidence rescaling stage
+BASE_MODEL WordPairCount BARRIER

@@ -1,0 +1,114 @@
+{
+    "trigger.restrict_none_examples_using_keywords": false,
+     "data":
+     {
+        "test": {
+                    "features": "",
+                    "_filelist": "+filelist_input+"
+                }
+            },
+    "embeddings": {
+        "type": "word_embeddings",
+        "embedding_file": "/nfs/raid87/u10/shared/Hume/common/nlplingo/EN-wform.w.5.cbow.neg10.400.subsmpl.txt.spaceSep.utf8",
+        "missing_token": "the",
+        "none_token": ".",
+        "none_token_index": 0,
+        "vector_size": 400,
+        "vocab_size": 251236
+    },
+    "extractors": [
+        {
+            "extractor_name": "CX_ICM_baroni",
+            "embeddings": {
+                "vector_size": 400
+            },
+            "domain_ontology": "/nfs/raid87/u10/shared/Hume/cx/nlplingo/cx_models/032420-icms-static-keras_2.2.4/domain_ontology.txt",
+            "hyper-parameters": {
+                "batch_size": 20,
+                "dropout": 0.5,
+                "epoch": 20,
+                "fine-tune_epoch": 0,
+                "cnn_filter_lengths": [
+                     3
+                ],
+                "neighbor_distance": 2,
+                "position_embedding_vector_length": 5,
+                "positive_weight": 1,
+                "entity_embedding_vector_length": 5,
+                "number_of_feature_maps": 512,
+                "max_sentence_length": 200
+            },
+            "model_type": "event-trigger_cnn_single",
+            "model_file": "/nfs/raid87/u10/shared/Hume/cx/nlplingo/cx_models/032420-icms-static-keras_2.2.4/trigger.hdf",
+            "features": [
+                "sentence_word_embedding","trigger_window","trigger_word_position"
+            ],
+            "output_vectors": false,
+            "int_type": "int32",
+            "allow_entity_mention_as_anchor": false,
+            "use_trigger_whitelist": false
+        },
+        {
+            "extractor_name": "ACE_argument_baroni",
+            "output_vectors": false,
+            "hyper-parameters": {
+                "batch_size": 20,
+                "cnn_filter_lengths": [
+                    3
+                ],
+                "dropout": 0.5,
+                "entity_embedding_vector_length": 50,
+                "epoch": 20,
+                "fine-tune_epoch": 0,
+                "neighbor_distance": 3,
+                "number_of_feature_maps": 300,
+                "position_embedding_vector_length": 50,
+                "positive_weight": 3,
+                "train_embeddings": false,
+                "max_sentence_length": 200
+            },
+            "embeddings": {
+                "vector_size": 400
+            },
+            "int_type": "int32",
+            "features": [
+                "sentence_word_embedding","trigger_argument_window","trigger_word_position","argument_word_position"
+            ],
+            "domain_ontology": "/nfs/raid87/u10/shared/Hume/common/ace_arg_model-static-keras_2.2.4/domain_ontology.txt",
+            "model_type": "event-argument_cnn",
+            "model_file": "/nfs/raid87/u10/shared/Hume/common/ace_arg_model-static-keras_2.2.4/argument.hdf"
+        },
+        {
+            "extractor_name": "BBN_argument_baroni",
+            "embeddings": {
+                "vector_size": 400
+            },
+            "domain_ontology": "/nfs/raid87/u10/shared/Hume/common/generic_argument_bbn-static-keras_2.2.4/domain_ontology.txt",
+            "hyper-parameters": {
+                "batch_size": 100,
+                "cnn_filter_lengths": [
+                    3
+                ],
+                "dropout": 0.5,
+                "entity_embedding_vector_length": 5,
+                "epoch": 10,
+                "fine-tune_epoch": 0,
+                "neighbor_distance": 3,
+                "number_of_feature_maps": 300,
+                "position_embedding_vector_length": 10,
+                "max_sentence_length": 201,
+                "positive_weight": 10
+            },
+            "int_type": "int32",
+            "output_vectors": false,
+            "model_file": "/nfs/raid87/u10/shared/Hume/common/generic_argument_bbn-static-keras_2.2.4/argument.hdf",
+            "features": [
+                "sentence_word_embedding","trigger_word_position","argument_word_position","trigger_argument_window"
+            ],
+            "model_type": "event-argument_cnn"
+        }
+    ],
+    "negative_trigger_words": "/nfs/raid87/u10/shared/Hume/common/nlplingo/negative_words",
+    "_predictions_npz_dir": "+vector_dir+",
+    "_predictions_file": "+output_dir+/prediction.json"
+}

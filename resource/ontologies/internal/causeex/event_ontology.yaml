@@ -1,389 +1,628 @@
 - Event:
-#  - {_id: Event_001}
   - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Event']
   - {_description: NA}
   - _examples: [NA]
-  - Conflict:
-#    - {_id: Conflict_001}
-    - _source: ['BBNBAE', 'CAUSEEX: http://graph.causeex.com/bbn#Conflict']
+  - DisagreementOrDispute:
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DisagreementOrDispute']
     - {_description: NA}
     - _examples: [NA]
+    - Conflict:
+      - _source: [
+          'BBNBAE',
+          'CAUSEEX: http://graph.causeex.com/bbn#PhysicalConflict']
+      - {_description: NA}
+      - _examples: [NA]
+      - ArmedConflict:
+        - _source: [
+              'NN',
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ArmedConflict']
+        - {_description: NA}
+        - _examples: [NA]
+        - War:
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#War']
+          - {_description: NA}
+          - _examples: [NA]
+        - Battle:
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Battle']
+          - {_description: NA}
+          - _examples: [NA]
+        - Raid:
+          - _source: [
+                  'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Raid']
+          - {_description: NA}
+          - _examples: [NA]
+        - Ambush:
+          - _source: [
+                  'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Ambush']
+          - {_description: NA}
+          - _examples: [NA]
   - Deterrence:
-    - _source: ['CAUSEEX: http://graph.causeex.com/bbn#Deterrence']
+    - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Deterrence']
     - {_description: NA}
     - _examples: [NA]
   - Consumption:
-#    - {_id: Consumption_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Consumption']
-    - {_description: NA}
-    - _examples: [NA]
-  - ExploitationOfNaturalResources:
-#    - {_id: ExploitationOfNaturalResources_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ExploitationOfNaturalResources']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Consumption']
     - {_description: NA}
     - _examples: [NA]
   - AmassingAndStockpiling:
-#    - {_id: AmassingAndStockpiling_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#AmassingAndStockpiling']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#AmassingAndStockpiling',
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryForcesReadiness']
     - {_description: NA}
     - _examples: [NA]
   - ConfiscationDamageOrDestruction:
-#    - {_id: ConfiscationDamageOrDestruction_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ConfiscationDamageOrDestruction']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ConfiscationDamageOrDestruction']
     - {_description: NA}
     - _examples: [NA]
   - GeopoliticalTension:
-#    - {_id: GeopoliticalTension_001}
-    - _source: ['KSD','NN', 'CAUSEEX: http://graph.causeex.com/bbn#GeopoliticalTension']
+    - _source: [
+        'KSD',
+        'NN',
+        'CAUSEEX: http://graph.causeex.com/bbn#GeopoliticalTension']
     - {_description: 'Tension between GPEs'}
     - _examples: [NA]
     - EconomicTension:
-#      - {_id: EconomicTension_001}
-      - _source: ['KSD','NN', 'CAUSEEX: http://graph.causeex.com/bbn#EconomicTension']
+      - _source: [
+            'KSD',
+            'NN',
+            'CAUSEEX: http://graph.causeex.com/bbn#EconomicTension']
       - {_description: NA}
       - _examples: [NA]
     - MilitaryTension:
-#      - {_id: MilitaryTension_001}
-      - _source: ['KSD','NN', 'CAUSEEX: http://graph.causeex.com/bbn#MilitaryTension']
+      - _source: [
+            'KSD',
+            'NN',
+            'CAUSEEX: http://graph.causeex.com/bbn#MilitaryTension']
       - {_description: NA}
       - _examples: [NA]
     - PoliticalTension:
-#      - {_id: PoliticalTension_001}
-      - _source: ['KSD','NN', 'CAUSEEX: http://graph.causeex.com/bbn#PoliticalTension']
+      - _source: [
+            'KSD',
+            'NN',
+            'CAUSEEX: http://graph.causeex.com/bbn#PoliticalTension']
+      - {_description: NA}
+      - _examples: [NA]
+  - GovernmentActivity:
+    - _source: [
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#GovernmentActivity'
+      ]
+    - {_description: NA}
+    - _examples: [NA]
+    - ExecutiveGovernmentActivity:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ExecutiveGovernmentActivity'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+    - JudicialGovernmentActivity:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#JudicialGovernmentActivity'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+      - LegalFinding:
+        - _source: [
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LegalFinding',
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#JudicialActivity']
+        - {_description: NA}
+        - _examples: [NA]
+    - LegislativeGovernmentActivity:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LegislativeGovernmentActivity'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+  - Secrecy:
+    - _source: [
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Secrecy'
+      ]
+    - {_description: NA}
+    - _examples: [NA]
+    - EconomicSecrecy:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicSecrecy'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+    - PoliticalSecrecy:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PoliticalSecrecy'
+        ]
       - {_description: NA}
       - _examples: [NA]
   - EmotionalResponse:
-#    - {_id: EmotionalResponse_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EmotionalResponse']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EmotionalResponse']
     - {_description: NA}
     - _examples: [NA]
     - Sadness:
-#      - {_id: Sadness_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Sadness']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Sadness']
       - {_description: NA}
       - _examples: [NA]
+    - ApprehensionAnxietyFearOrWorry:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ApprehensionAnxietyFearOrWorry'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+      - ApprehensionAnxietyOrWorry:
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ApprehensionAnxietyOrWorry']
+        - {_description: NA}
+        - _examples: [NA]
+      - Fear:
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Fear']
+        - {_description: NA}
+        - _examples: [NA]
+      - Paranoia:
+        - _source: [
+              'KSD',
+              'CAUSEEX: http://graph.causeex.com/bbn#Paranoia']
+        - {_description: NA}
+        - _examples: [NA]
+    - Confidence:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Confidence'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+    - Confusion:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Confusion'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+    - ContemptOrDisgust:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ContemptOrDisgust'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+      - Contempt:
+        - _source: [
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Contempt']
+        - {_description: NA}
+        - _examples: [NA]
+      - Disgust:
+        - _source: [
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Disgust']
+        - {_description: NA}
+        - _examples: [NA]
+    - Curiosity:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Curiosity'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+    - DistrustOrSuspicion:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DistrustOrSuspicion'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+      - Distrust:
+        - _source: [
+              'BBNBAE',
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Distrust']
+        - {_description: NA}
+        - _examples: [NA]
+      - Suspicion:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Suspicion'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
     - FeelingSafeOrSecure:
-#      - {_id: FeelingSafeOrSecure_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FeelingSafeOrSecure']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FeelingSafeOrSecure',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#PopulaceMood',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#SecuritySafetyLevel']
+      - {_description: NA}
+      - _examples: [NA]
+    - FeelingUnsafeOrInsecure:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FeelingUnsafeOrInsecure'
+        ]
       - {_description: NA}
       - _examples: [NA]
     - Goodwill:
-#      - {_id: Goodwill_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Goodwill']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Goodwill',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#PopulaceMood']
       - {_description: NA}
       - _examples: [NA]
     - Compassion:
-#      - {_id: Compassion_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Compassion']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Compassion',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#PopulaceMood']
       - {_description: NA}
       - _examples: [NA]
     - TensionOrStress:
-#      - {_id: TensionOrStress_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#TensionOrStress']
-      - {_description: NA}
-      - _examples: [NA]
-    - Fear:
-#      - {_id: Fear_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ApprehensionAnxietyFearOrWorry']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#TensionOrStress']
       - {_description: NA}
       - _examples: [NA]
     - Anger:
-#      - {_id: Anger_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Anger']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Anger']
       - {_description: NA}
       - _examples: [NA]
     - Grief:
-#      - {_id: Grief_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Grief']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Grief']
       - {_description: NA}
       - _examples: [NA]
     - Contentment:
-#      - {_id: Contentment_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Contentment']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Contentment',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#PopulaceMood']
       - {_description: NA}
       - _examples: [NA]
     - Jealousy:
-#      - {_id: Jealousy_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Jealousy']
-      - {_description: NA}
-      - _examples: [NA]
-    - ApprehensionAnxietyOrWorry:
-#      - {_id: ApprehensionAnxietyOrWorry_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ApprehensionAnxietyFearOrWorry']
-      - {_description: NA}
-      - _examples: [NA]
-    - Paranoia:
-#      - {_id: Paranoia_001}
-      - _source: ['KSD', 'CAUSEEX: http://graph.causeex.com/bbn#Paranoia']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Jealousy']
       - {_description: NA}
       - _examples: [NA]
     - Pride:
-#      - {_id: Pride_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Pride']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Pride',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#PopulaceMood']
       - {_description: NA}
       - _examples: [NA]
     - Happiness:
-#      - {_id: Happiness_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Happiness']
-      - {_description: NA}
-      - _examples: [NA]
-    - Disgust:
-#      - {_id: Disgust_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ContemptOrDisgust']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Happiness',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#PopulaceMood']
       - {_description: NA}
       - _examples: [NA]
     - Desperation:
-#      - {_id: Desperation_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Desperation']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Desperation']
       - {_description: NA}
       - _examples: [NA]
     - Amusement:
-#      - {_id: Amusement_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Amusement']
       - {_description: NA}
       - _examples: [NA]
     - Inspiration:
-#      - {_id: Inspiration_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Inspiration']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Inspiration']
       - {_description: NA}
       - _examples: [NA]
     - Frustration:
-#      - {_id: Frustration_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Frustration']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Frustration']
       - {_description: NA}
       - _examples: [NA]
     - Hope:
-#      - {_id: Hope_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Hope']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Hope',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#PopulaceMood']
       - {_description: NA}
       - _examples: [NA]
     - Hatred:
-#      - {_id: Hatred_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Hatred']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Hatred']
       - {_description: NA}
       - _examples: [NA]
     - Shame:
-#      - {_id: Shame_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Shame']
       - {_description: NA}
       - _examples: [NA]
     - Annoyance:
-#      - {_id: Annoyance_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Annoyance']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Annoyance']
       - {_description: NA}
       - _examples: [NA]
-    - Contempt:
-#      - {_id: Contempt_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ContemptOrDisgust']
+    - Trust:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Trust'
+        ]
       - {_description: NA}
       - _examples: [NA]
+  - UnexpectedAct:
+    - _source: [
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#UnexpectedAct'
+      ]
+    - {_description: NA}
+    - _examples: [NA]
   - UnintentionalAct:
-#    - {_id: UnintentionalAct_001}
-    - _source: ['SKIP: ', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#UnintentionalAct']
+    - _source: [
+        'SKIP: ',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#UnintentionalAct']
     - {_description: NA}
     - _examples: [NA]
   - Cooperation:
-#    - {_id: Cooperation_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Cooperation']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Cooperation',
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#PoliticalAllianceStrength']
     - {_description: NA}
     - _examples: [NA]
     - EconomicCooperation:
-#      - {_id: EconomicCooperation_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicCooperation']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicCooperation',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#DomesticMarketHealth']
       - {_description: NA}
       - _examples: [NA]
     - DiplomaticCooperation:
-#      - {_id: DiplomaticCooperation_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DiplomaticCooperation']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DiplomaticCooperation']
       - {_description: NA}
       - _examples: [NA]
     - SharingOfInformation:
-#      - {_id: SharingOfInformation_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SharingOfInformation']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SharingOfInformation',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentTransparency',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#FactualInformationCampaign']
       - {_description: NA}
       - _examples: [NA]
     - MilitaryCooperation:
-#      - {_id: MilitaryCooperation_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MilitaryCooperation']
       - {_description: NA}
       - _examples: [NA]
     - JudicialCooperation:
-#      - {_id: JudicialCooperation_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#JudicialCooperation']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#JudicialCooperation',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#JudicialActivity']
       - {_description: NA}
       - _examples: [NA]
   - ExpansionOrDevelopment:
-#    - {_id: ExpansionOrDevelopment_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ExpansionOrDevelopment']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ExpansionOrDevelopment']
     - {_description: NA}
     - _examples: [NA]
     - EconomicDevelopment:
-#      - {_id: EconomicDevelopment_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicDevelopment']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicDevelopment']
       - {_description: NA}
       - _examples: [NA]
       - RuralDevelopment:
-#        - {_id: RuralDevelopment_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RuralDevelopment']
         - {_description: NA}
         - _examples: [NA]
-  - Peacekeeping:
-#    - {_id: Peacekeeping_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PeacekeepingActivity']
-    - {_description: NA}
-    - _examples: [NA]
   - ArrestOrDetention:
-#    - {_id: ArrestOrDetention_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ArrestOrDetention']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ArrestOrDetention',
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#CriminalActivities']
     - {_description: NA}
     - _examples: [NA]
   - Receipt:
-#    - {_id: Receipt_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Receipt']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Receipt']
     - {_description: NA}
     - _examples: [NA]
+    - ReceiptOfAid:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ReceiptOfAid'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
   - MaritimeSupply:
-#    - {_id: MaritimeSupply_001}
-    - _source: ['NN', 'KSD', 'CAUSEEX: http://graph.causeex.com/bbn#MaritimeSupply']
+    - _source: [
+        'NN',
+        'KSD',
+        'CAUSEEX: http://graph.causeex.com/bbn#MaritimeSupply']
     - {_description: 'Statements related to shipping goods by sea.'}
     - _examples: [NA]
   - LocationChange:
-#    - {_id: LocationChange_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LocationChange']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LocationChange',
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#Refugees']
     - {_description: NA}
     - _examples: [NA]
+    - Visit:
+      - _source: [
+          'NN',
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Visit']
+      - {_description: NA}
+      - _examples: [NA]
     - Escape:
-#      - {_id: Escape_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Escape']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Escape',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#DisplacedPersons']
       - {_description: NA}
       - _examples: [NA]
     - ForcedMove:
-#      - {_id: ForcedMove_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ForcedMove']
       - {_description: NA}
       - _examples: [NA]
       - Extradition:
-#        - {_id: Extradition_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Extradition']
-        - {_description: NA}
-        - _examples: [NA]
-      - Deportation:
-#        - {_id: Deportation_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Deportation']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Extradition',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#JudicialActivity',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#DisplacedPersons']
         - {_description: NA}
         - _examples: [NA]
       - Evacuation:
-#        - {_id: Evacuation_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Evacuation']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Evacuation',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#DisplacedPersons']
         - {_description: NA}
         - _examples: [NA]
       - ExpulsionDeportationOrWithdrawal:
-#        - {_id: ExpulsionDeportationOrWithdrawal_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Withdrawal']
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ExpulsionDeportationOrWithdrawal']
         - {_description: NA}
         - _examples: [NA]
+        - Deportation:
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Deportation']
+          - {_description: NA}
+          - _examples: [NA]
+        - Expulsion:
+          - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Expulsion',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#DisplacedPersons']
+          - {_description: NA}
+          - _examples: [NA]
+        - Withdrawal:
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Withdrawal']
+          - {_description: NA}
+          - _examples: [NA]
     - ChangeOfResidence:
-#      - {_id: ChangeOfResidence_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ChangeOfResidence']
       - {_description: NA}
       - _examples: [NA]
+      - Immigration:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Immigration'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
     - TrespassOrIncursion:
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#TrespassOrIncursion']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#TrespassOrIncursion']
       - {_description: NA}
       - _examples: [NA]
-    - CargoTransportation:
-#      - {_id: CargoTransportation_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CargoTransportation']
+    - TransportationOfPeopleOrCargo:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#TransportationOfPeopleOrCargo'
+        ]
       - {_description: NA}
       - _examples: [NA]
-    - PersonalTransportation:
-#      - {_id: PersonalTransportation_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PersonalOrPassengerTransportation']
-      - {_description: NA}
-      - _examples: [NA]
-      - Pilgrimage:
-#        - {_id: Pilgrimage_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Pilgrimage']
+      - CargoTransportation:
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CargoTransportation']
         - {_description: NA}
         - _examples: [NA]
-      - Tourism:
-#        - {_id: Tourism_001}
-        - _source: ['KSD', 'CAUSEEX: http://graph.causeex.com/bbn#Tourism']
+      - PersonalTransportation:
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PersonalOrPassengerTransportation']
         - {_description: NA}
         - _examples: [NA]
+        - Pilgrimage:
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Pilgrimage']
+          - {_description: NA}
+          - _examples: [NA]
+        - Tourism:
+          - _source: [
+                  'KSD',
+                  'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Tourism']
+          - {_description: NA}
+          - _examples: [NA]
     - Departure:
-#      - {_id: Departure_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Departure']
       - {_description: NA}
       - _examples: [NA]
     - Arrival:
-#      - {_id: Arrival_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Arrival']
       - {_description: NA}
       - _examples: [NA]
     - Pilgrimage:
-#      - {_id: Pilgrimage_000}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Pilgrimage']
       - {_description: NA}
       - _examples: [NA]
     - Migration:
-#      - {_id: Migration_001}
-      - _source: ['BBNBAE', 'CAUSEEX: http://graph.causeex.com/bbn#Migration']
+      - _source: [
+            'BBNBAE',
+            'CAUSEEX: http://graph.causeex.com/bbn#Migration']
       - {_description: NA}
       - _examples: [NA]
   - EspionageOrTreason:
-#    - {_id: EspionageOrTreason_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EspionageOrTreason']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EspionageOrTreason']
     - {_description: NA}
     - _examples: [NA]
-  - EmploymentRelatedEvent:
-#    - {_id: EmploymentRelatedEvent_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Employment']
+  - Employment:
+    - _source: [
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Employment'
+      ]
     - {_description: NA}
     - _examples: [NA]
-  - Ownership:
-#    - {_id: Ownership_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Ownership']
-    - {_description: NA}
-    - _examples: [NA]
+    - EmploymentRelatedEvent:
+      - _source: [
+          'NN',
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EmploymentRelatedEvent']
+      - {_description: NA}
+      - _examples: [NA]
+    - HighUnemployment:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#HighUnemployment'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+    - LowUnemployment:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LowUnemployment'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
   - Planning:
-#    - {_id: Planning_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Planning']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Planning']
     - {_description: NA}
     - _examples: [NA]
   - AppointmentOrNomination:
-#    - {_id: AppointmentOrNomination_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#AppointmentOrNomination']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#AppointmentOrNomination',
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#ExecutiveGovernmentActivity']
     - {_description: NA}
     - _examples: [NA]
   - OccupationOfTerritory:
-#    - {_id: OccupationOfTerritory_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#OccupationOfTerritory']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#OccupationOfTerritory']
     - {_description: NA}
     - _examples: [NA]
   - FreedomOfAccess:
-#    - {_id: FreedomOfAccess_001}
-    - _source: ['KSD', 'CAUSEEX: http://graph.causeex.com/bbn#FreedomOfAccess']
+    - _source: [
+        'KSD',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Access']
     - {_description: 'Ability to traverse a territorial zone.'}
     - _examples: [NA]
+    - AirAccess:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#AirAccess'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+    - BlockadeOrRestrictionOfMovement:
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#BlockadeOrRestrictionOfMovement']
+      - {_description: NA}
+      - _examples: [NA]
+      - RoadBlocked:
+        - _source: [
+              'NN',
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RoadBlocked']
+        - {_description: NA}
+        - _examples: [NA]
   - Investigation:
-#    - {_id: Investigation_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Investigation']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Investigation']
     - {_description: NA}
     - _examples: [NA]
   - Subversion:
-#    - {_id: Subversion_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Subversion']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Subversion']
     - {_description: NA}
     - _examples: [NA]
-  - Reconnaissance:
-#    - {_id: Reconnaissance_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ReconnaissanceActivity']
+  - ChemicalUse:
+    - _source: [
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ChemicalUse'
+      ]
     - {_description: NA}
     - _examples: [NA]
   - Communication:
-#    - {_id: Communication_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Communication']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Communication']
     - {_description: NA}
     - _examples: [NA]
     - Confirmation:
@@ -391,841 +630,1099 @@
       - {_description: NA}
       - _examples: [NA]
     - CommunicationConveyingEmotion:
-#      - {_id: CommunicationConveyingEmotion_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CommunicationConveyingEmotion']
       - {_description: NA}
       - _examples: [NA]
       - CommunicationConveyingPessimism:
-#        - {_id: CommunicationConveyingPessimism_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CommunicationConveyingPessimism']
         - {_description: NA}
         - _examples: [NA]
         - Complaint:
-#          - {_id: Complaint_001}
-          - _source: ['BBNBAE', 'CAUSEEX: http://graph.causeex.com/bbn#Complaint']
+          - _source: [
+                    'BBNBAE',
+                    'CAUSEEX: http://graph.causeex.com/bbn#Complaint']
           - {_description: NA}
           - _examples: [NA]
       - Threatening:
-#        - {_id: Threatening_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Threatening']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Threatening',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryCoercionOrIntimidation']
         - {_description: NA}
         - _examples: [NA]
         - ThreateningNonForce:
-#          - {_id: ThreateningNonForce_001}
-          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ThreateningNonForce']
+          - _source: [
+                    'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ThreateningNonForce',
+                    'ICM: http://ontology.causeex.com/ontology/odps/ICM#PoliticalFrictionOrTension']
           - {_description: NA}
           - _examples: [NA]
       - CommunicationConveyingOptimism:
-#        - {_id: CommunicationConveyingOptimism_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CommunicationConveyingOptimism']
         - {_description: NA}
         - _examples: [NA]
       - CommunicationConveyingEmpathy:
-#        - {_id: CommunicationConveyingEmpathy_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CommunicationConveyingEmpathy']
         - {_description: NA}
         - _examples: [NA]
         - Forgiving:
-#          - {_id: Forgiving_001}
           - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Forgiving']
           - {_description: NA}
           - _examples: [NA]
           - Pardon:
-#            - {_id: Pardon_001}
-            - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Pardon']
+            - _source: [
+                        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Pardon']
             - {_description: NA}
             - _examples: [NA]
         - Apology:
-#          - {_id: Apology_001}
           - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Apology']
           - {_description: NA}
           - _examples: [NA]
         - Congratulation:
-#          - {_id: Congratulation_001}
           - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Congratulation']
           - {_description: NA}
           - _examples: [NA]
       - Thanking:
-#        - {_id: Thanking_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Thanking']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Thanking']
         - {_description: NA}
         - _examples: [NA]
     - Announcement:
-#      - {_id: Announcement_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Announcement']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Announcement',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentTransparency']
       - {_description: NA}
       - _examples: [NA]
     - DeceptiveCommunication:
-#      - {_id: DeceptiveCommunication_001}
-      - _source: ['NN','CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Deception']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Deception']
       - {_description: NA}
       - _examples: [NA]
       - ReleaseOfPropaganda:
-#        - {_id: ReleaseOfPropaganda_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PropagandaActivity']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PropagandaActivity',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#Propaganda']
         - {_description: NA}
         - _examples: [NA]
     - RepresentativeCommunication:
-#      - {_id: RepresentativeCommunication_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DeclarativeCommunication']
       - {_description: NA}
       - _examples: [NA]
       - Reporting:
-#        - {_id: Reporting_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Reporting']
         - {_description: NA}
         - _examples: [NA]
         - ReportAsMissing:
-#          - {_id: ReportAsMissing_001}
           - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ReportAsMissing']
           - {_description: NA}
           - _examples: [NA]
       - Denial:
-#        - {_id: Denial_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Denial']
         - {_description: NA}
         - _examples: [NA]
         - DenialOfResponsibility:
-#          - {_id: DenialOfResponsibility_001}
           - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DenialOfResponsibility']
           - {_description: NA}
           - _examples: [NA]
       - EvaluationOrAppraisal:
-#        - {_id: EvaluationOrAppraisal_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EvaluationOrAppraisal']
         - {_description: NA}
         - _examples: [NA]
       - Testifying:
-#        - {_id: Testifying_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Testifying']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Testifying',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#JudicialActivity']
         - {_description: NA}
         - _examples: [NA]
       - Identification:
-#        - {_id: Identification_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Identification']
         - {_description: NA}
         - _examples: [NA]
+        - LocatingOrTargeting:
+          - _source: [
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LocatingOrTargeting'
+            ]
+          - {_description: NA}
+          - _examples: [NA]
     - DeclarativeCommunication:
-#      - {_id: DeclarativeCommunication_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DeclarativeCommunication']
       - {_description: NA}
       - _examples: [NA]
       - Accusation:
-#        - {_id: Accusation_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#AccusationOrAssigningOfResponsibility']
         - {_description: NA}
         - _examples: [NA]
         - Indictment:
-#          - {_id: Indictment_001}
-          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Indictment']
+          - _source: [
+                    'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Indictment',
+                    'ICM: http://ontology.causeex.com/ontology/odps/ICM#JudicialActivity']
           - {_description: NA}
           - _examples: [NA]
       - DefenseOrSupport:
-#        - {_id: DefenseOrSupport_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DefenseOrSupport']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DefenseOrSupport',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#SecuritySafetyLevel']
         - {_description: NA}
         - _examples: [NA]
+        - CollectingOrRallying:
+          - _source: [
+              'DEL',
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RallyingSupport',
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#PopulaceSupportForGovernmnent']
+          - {_description: NA}
+          - _examples: [NA]
+          - RecruitmentActivity:
+            - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RecruitmentActivity'
+              ]
+            - {_description: NA}
+            - _examples: [NA]
+          - RecruitmentOperation:
+            - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RecruitmentOperation'
+              ]
+            - {_description: NA}
+            - _examples: [NA]
+        - Pro-Government:
+          - _source: [
+              'SKIP: ',
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Pro-Government',
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#PopulaceSupportForGovernmnent']
+          - {_description: NA}
+          - _examples: [NA]
         - PraisingOrEndorsing:
-#          - {_id: PraisingOrEndorsing_001}
-          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PraisingOrEndorsing']
+          - _source: [
+                    'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PraisingOrEndorsing',
+                    'ICM: http://ontology.causeex.com/ontology/odps/ICM#PopulaceMood']
           - {_description: NA}
           - _examples: [NA]
         - Voting:
-#          - {_id: Voting_001}
-          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Voting']
+          - _source: [
+                    'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Voting',
+                    'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentTransparency']
           - {_description: NA}
           - _examples: [NA]
       - ClaimingOfResponsibility:
-#        - {_id: ClaimingOfResponsibility_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ClaimingOfResponsibility']
         - {_description: NA}
         - _examples: [NA]
         - Confession:
-#          - {_id: Confession_001}
-          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ClaimingOfResponsibility']
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Confession']
           - {_description: NA}
           - _examples: [NA]
       - DisapprovalOrDenunciation:
-#        - {_id: DisapprovalOrDenunciation_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DisapprovalOrDenunciation']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DisapprovalOrDenunciation']
         - {_description: NA}
         - _examples: [NA]
+        - Anti-Government:
+          - _source: [
+              'SKIP',
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Anti-Government']
+          - {_description: NA}
+          - _examples: [NA]
+        - RallyingOpposition:
+          - _source: [
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RallyingOpposition'
+            ]
+          - {_description: NA}
+          - _examples: [NA]
       - Veto:
-#        - {_id: Veto_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Veto']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Veto',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#PoliticalFrictionOrTension',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#ExecutiveGovernmentActivity']
         - {_description: NA}
         - _examples: [NA]
     - IssuingPublishingOrReleasing:
-#      - {_id: IssuingPublishingOrReleasing_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#IssuingPublishingOrReleasing']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#IssuingPublishingOrReleasing',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentTransparency']
       - {_description: NA}
       - _examples: [NA]
     - DirectiveCommunication:
-#      - {_id: DirectiveCommunication_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DirectiveCommunication']
       - {_description: NA}
       - _examples: [NA]
       - RefusalOrRejection:
-#        - {_id: RefusalOrRejection_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RefusalOrRejection']
         - {_description: NA}
         - _examples: [NA]
         - DeclineToComment:
-#          - {_id: DeclineToComment_001}
           - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DeclineToComment']
           - {_description: NA}
           - _examples: [NA]
       - RequestOrAppeal:
-#        - {_id: RequestOrAppeal_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RequestOrAppeal']
         - {_description: NA}
         - _examples: [NA]
         - Invitation:
-#          - {_id: Invitation_001}
           - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Invitation']
           - {_description: NA}
           - _examples: [NA]
         - RequestOrAppealForAsylum:
-#          - {_id: RequestOrAppealForAsylum_001}
           - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RequestOrAppealForAsylum']
           - {_description: NA}
           - _examples: [NA]
       - BanOrProhibition:
-#        - {_id: BanOrProhibition_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#BanOrProhibition']
         - {_description: NA}
         - _examples: [NA]
         - BoycottOrEmbargo:
-#          - {_id: BoycottOrEmbargo_001}
-          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#BoycottOrEmbargo']
+          - _source: [
+                    'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#BoycottOrEmbargo']
           - {_description: NA}
           - _examples: [NA]
       - Commanding:
-#        - {_id: Commanding_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Commanding']
         - {_description: NA}
         - _examples: [NA]
       - Advising:
-#        - {_id: Advising_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Advising']
         - {_description: NA}
         - _examples: [NA]
       - Permission:
-#        - {_id: Permission_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Permission']
         - {_description: NA}
         - _examples: [NA]
       - Warning:
-#        - {_id: Warning_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Warning']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Warning',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryCoercionOrIntimidation']
         - {_description: NA}
         - _examples: [NA]
       - Demand:
-#        - {_id: Demand_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Demand']
         - {_description: NA}
         - _examples: [NA]
         - Ultimatum:
-#          - {_id: Ultimatum_001}
-          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Ultimatum']
+          - _source: [
+                    'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Ultimatum',
+                    'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryCoercionOrIntimidation']
           - {_description: NA}
           - _examples: [NA]
     - CommissiveCommunication:
-#      - {_id: CommissiveCommunication_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CommissiveCommunication']
       - {_description: NA}
       - _examples: [NA]
       - AgreementOrPromise:
-#        - {_id: AgreementOrPromise_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#AgreementOrPromise']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#AgreementOrPromise',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentTransparency',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#PoliticalAllianceStrength']
         - {_description: NA}
         - _examples: [NA]
         - Volunteering:
-#          - {_id: Volunteering_001}
           - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Volunteering']
           - {_description: NA}
           - _examples: [NA]
         - OathTaking:
-#          - {_id: OathTaking_001}
           - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#OathTaking']
           - {_description: NA}
           - _examples: [NA]
         - SettlementOfDisagreementOrDispute:
-#          - {_id: SettlementOfDisagreementOrDispute_001}
           - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SettlementOfDisagreementOrDispute']
           - {_description: NA}
           - _examples: [NA]
         - FormalAgreement:
-#          - {_id: FormalAgreement_001}
-          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FormalAgreement']
+          - _source: [
+                    'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FormalAgreement',
+                    'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentTransparency']
           - {_description: NA}
           - _examples: [NA]
           - ContractRelatedEvent:
-#            - {_id: ContractRelatedEvent_001}
             - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ContractRelatedEvent']
             - {_description: NA}
             - _examples: [NA]
           - SurrenderOrYielding:
-#            - {_id: SurrenderOrYielding_001}
             - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SurrenderOrYielding']
             - {_description: NA}
             - _examples: [NA]
           - CeasefireOrTruce:
-#            - {_id: CeasefireOrTruce_001}
-            - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CeasefireOrTruce']
+            - _source: [
+                        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CeasefireOrTruce',
+                        'ICM: http://ontology.causeex.com/ontology/odps/ICM#PoliticalAllianceStrength']
             - {_description: NA}
             - _examples: [NA]
       - ExpressionOfIntent:
-#        - {_id: ExpressionOfIntent_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ExpressionOfIntent']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ExpressionOfIntent',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentTransparency']
         - {_description: NA}
         - _examples: [NA]
     - ExpressionOfCondolenceOrSympathy:
-#      - {_id: ExpressionOfCondolenceOrSympathy_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ExpressionOfCondolenceOrSympathy']
       - {_description: NA}
       - _examples: [NA]
   - BoycottEmbargoSanctionsOrStrike:
-#    - {_id: BoycottEmbargoSanctionsOrStrike_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#BoycottEmbargoSanctionsOrStrike']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#BoycottEmbargoSanctionsOrStrike']
     - {_description: NA}
     - _examples: [NA]
+    - BoycottOrEmbargo:
+      - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#BoycottOrEmbargo']
+      - {_description: NA}
+      - _examples: [NA]
+    - Sanctions:
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Sanctions']
+      - {_description: NA}
+      - _examples: [NA]
+      - EconomicSanctions:
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicSanctions']
+        - {_description: NA}
+        - _examples: [NA]
+      - DiplomaticSanctions:
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DiplomaticSanctions',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#PoliticalFrictionOrTension']
+        - {_description: NA}
+        - _examples: [NA]
+      - TariffOrTradeSanctions:
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#TariffOrTradeSanctions']
+        - {_description: NA}
+        - _examples: [NA]
+      - AdministrativeSanctions:
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#AdministrativeSanctions']
+        - {_description: NA}
+        - _examples: [NA]
+    - Strike:
+      - _source: [
+          'NN',
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Strike']
+      - {_description: NA}
+      - _examples: [NA]
+      - HungerStrike:
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#HungerStrike']
+        - {_description: NA}
+        - _examples: [NA]
   - TransferOfLeadershipOrPolicyChange:
-#    - {_id: TransferOfLeadershipOrPolicyChange_001}
-    - _source: ['NN']
-    - {_description: NA}
-    - _examples: [NA]
-  - CollectingOrRallying:
-#    - {_id: CollectingOrRallying_001}
-    - _source: ['DEL', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RallyingSupport']
-    - {_description: NA}
-    - _examples: [NA]
-  - Pro-Government:
-#    - {_id: Pro-Government_001}
-    - _source: ['SKIP: ', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Pro-Government']
-    - {_description: NA}
-    - _examples: [NA]
-  - PoliticalRevolution:
-#    - {_id: PoliticalRevolution_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PoliticalRevolution']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#TransferOfLeadershipOrPolicyChange']
     - {_description: NA}
     - _examples: [NA]
   - PolicyChange:
-#    - {_id: PolicyChange_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PolicyChange']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PolicyChange',
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentTransparency']
     - {_description: NA}
     - _examples: [NA]
   - Collision:
-#    - {_id: Collision_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Collision']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Collision']
     - {_description: NA}
     - _examples: [NA]
   - DemonstrationOrProtest:
-#    - {_id: DemonstrationOrProtest_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DemonstrationOrProtest']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DemonstrationOrProtest']
     - {_description: NA}
     - _examples: [NA]
     - Riot:
-#      - {_id: Riot_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Riot']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Riot']
       - {_description: NA}
       - _examples: [NA]
+    - Strike:
+      - _source: [
+          'NN',
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Strike']
+      - {_description: NA}
+      - _examples: [NA]
+      - HungerStrike:
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#HungerStrike']
+        - {_description: NA}
+        - _examples: [NA]
   - HumanRightsAbuse:
-#    - {_id: HumanRightsAbuse_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#HumanRightsAbuse']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#HumanRightsAbuse']
     - {_description: NA}
     - _examples: [NA]
+  - Influence:
+    - _source: [
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Influence'
+      ]
+    - {_description: NA}
+    - _examples: [NA]
+    - DisinformationCampaign:
+       - _source: [
+                'KSD',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DisinformationOperation',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#MisinformationOperation']
+       - {_description: NA}
+       - _examples: [NA]
+    - IntimidationAndCoercion:
+      - _source: [
+          'NN',
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#IntimidationAndCoercion',
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryCoercionOrIntimidation']
+      - {_description: NA}
+      - _examples: [NA]
+    - ReleaseOfPropaganda:
+      - _source: [
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PropagandaActivity',
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#Propaganda']
+      - {_description: NA}
+      - _examples: [NA]
   - SymbolicAct:
-#    - {_id: SymbolicAct_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SymbolicAct']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SymbolicAct']
     - {_description: NA}
     - _examples: [NA]
     - HungerStrike:
-#      - {_id: HungerStrike_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#HungerStrike']
       - {_description: NA}
       - _examples: [NA]
-  - PriceGouging:
-#    - {_id: PriceGouging_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PriceGouging']
-    - {_description: NA}
-    - _examples: [NA]
-  - PoliticalReform:
-#    - {_id: PoliticalReform_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PoliticalReform']
-    - {_description: NA}
-    - _examples: [NA]
   - ProvisionOfInspectorsOrObservers:
-#    - {_id: ProvisionOfInspectorsOrObservers_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ProvisionOfInspectorsOrObservers']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ProvisionOfInspectorsOrObservers',
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#SecuritySafetyLevel']
     - {_description: NA}
     - _examples: [NA]
   - HumanitarianCrisis:
-#    - {_id: HumanitarianCrisis_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#HumanitarianCrisis']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#HumanitarianCrisis']
     - {_description: NA}
     - _examples: [NA]
   - RetreatSurrenderOrYielding:
-#    - {_id: RetreatSurrenderOrYielding_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RetreatSurrenderOrYielding']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RetreatSurrenderOrYielding']
     - {_description: NA}
     - _examples: [NA]
   - ProvisionOfAid:
-#    - {_id: ProvisionOfAid_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ProvisionOfAid']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ProvisionOfAid']
     - {_description: NA}
     - _examples: [NA]
     - ProvisionOfMilitaryAid:
-#      - {_id: ProvisionOfMilitaryAid_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ProvisionOfMilitaryAid']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ProvisionOfMilitaryAid',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryTraining']
       - {_description: NA}
       - _examples: [NA]
     - ProvisionOfHumanitarianAid:
-#      - {_id: ProvisionOfHumanitarianAid_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ProvisionOfHumanitarianAid']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ProvisionOfHumanitarianAid',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#HealthcareAvailability',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#ForeignAid']
       - {_description: NA}
       - _examples: [NA]
     - ProvisionOfEconomicAid:
-#      - {_id: ProvisionOfEconomicAid_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ProvisionOfEconomicAid']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ProvisionOfEconomicAid',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#ForeignAid']
       - {_description: NA}
       - _examples: [NA]
     - GrantingOfAsylum:
-#      - {_id: GrantingOfAsylum_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#GrantingOfAsylum']
       - {_description: NA}
       - _examples: [NA]
   - ConsiderationOrExploration:
-#    - {_id: ConsiderationOrExploration_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ConsiderationOrExploration']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ConsiderationOrExploration']
     - {_description: NA}
     - _examples: [NA]
-  - Election:
-#    - {_id: Election_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Election']
+  - Counteraction:
+    - _source: [
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Counteraction'
+      ]
     - {_description: NA}
     - _examples: [NA]
+  - ProtectionOrPreservation:
+    - _source: [
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ProtectionOrPreservation'
+      ]
+    - {_description: NA}
+    - _examples: [NA]
+    - ConservationLandUse:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ConservationLandUse'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+    - EnvironmentalProtection:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EnvironmentalProtection'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
   - ProvisionOfProtectionOrPeacekeepers:
-#    - {_id: ProvisionOfProtectionOrPeacekeepers_001}
-    - _source: ['NN: ProvisionOfInspectorsOrObservers', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ProvisionOfProtectionOrPeacekeepers']
+    - _source: [
+        'NN: ProvisionOfInspectorsOrObservers',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ProvisionOfProtectionOrPeacekeepers']
     - {_description: NA}
     - _examples: [NA]
   - Sabotage:
-#    - {_id: Sabotage_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Sabotage']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Sabotage']
     - {_description: NA}
     - _examples: [NA]
   - ReturnOrRelease:
-#    - {_id: ReturnOrRelease_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ReturnOrRelease']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ReturnOrRelease']
     - {_description: NA}
     - _examples: [NA]
     - Restoration:
-#      - {_id: Restoration_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Restoration']
       - {_description: NA}
       - _examples: [NA]
     - ReleaseOrParole:
-#      - {_id: ReleaseOrParole_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ReleaseOrParole']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ReleaseOrParole']
       - {_description: NA}
       - _examples: [NA]
       - Parole:
-#        - {_id: Parole_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Parole']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Parole']
         - {_description: NA}
         - _examples: [NA]
   - SponsorOrHost:
-#    - {_id: SponsorOrHost_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SponsorOrHost']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SponsorOrHost']
     - {_description: NA}
     - _examples: [NA]
   - AggregateEvent:
-#    - {_id: AggregateEvent_001}
-    - _source: ['SKIP', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CollectionOfEventsOrFactors']
+    - _source: [
+        'SKIP',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CollectionOfEventsOrFactors']
     - {_description: NA}
     - _examples: [NA]
   - DecisionOrRecommendation:
-#    - {_id: DecisionOrRecommendation_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DecisionOrRecommendation']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DecisionOrRecommendation']
     - {_description: NA}
     - _examples: [NA]
   - Transaction:
-#    - {_id: Transaction_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Transaction']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Transaction']
     - {_description: NA}
     - _examples: [NA]
   - FinancialEvent:
-#    - {_id: FinancialEvent_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FinancialEvent']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FinancialEvent']
     - {_description: NA}
     - _examples: [NA]
     - TransferOfFunds:
-#      - {_id: TransferOfFunds_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#TransferOfFunds']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#TransferOfFunds',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#ForeignInvestment']
       - {_description: NA}
       - _examples: [NA]
     - FinancialDeposit:
-#      - {_id: FinancialDeposit_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FinancialDeposit']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FinancialDeposit',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#ForeignInvestment']
       - {_description: NA}
       - _examples: [NA]
     - Investment:
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Investment']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Investment',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#ForeignInvestment']
       - {_description: NA}
       - _examples: [NA]
     - Bankruptcy:
-#      - {_id: Bankruptcy_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Bankruptcy']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Bankruptcy']
       - {_description: NA}
       - _examples: [NA]
     - FinancialWithdrawal:
-#      - {_id: FinancialWithdrawal_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FinancialWithdrawal']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FinancialWithdrawal']
       - {_description: NA}
       - _examples: [NA]
-  - ManufacturingOrBuilding:
-#    - {_id: ManufacturingOrBuilding_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ManufacturingCreatingOrBuilding']
+  - ManufacturingCreatingOrBuilding:
+    - _source: [
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ManufacturingCreatingOrBuilding'
+      ]
     - {_description: NA}
     - _examples: [NA]
+    - ManufacturingOrBuilding:
+      - _source: [
+          'NN',
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ManufacturingOrBuilding']
+      - {_description: NA}
+      - _examples: [NA]
   - ResistanceRebellionOrUprising:
-#    - {_id: ResistanceRebellionOrUprising_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ResistanceRebellionOrUprising']
-    - {_description: NA}
-    - _examples: [NA]
-  - Terrorism:
-#    - {_id: Terrorism_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Terrorism']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ResistanceRebellionOrUprising',
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#PoliticalFrictionOrTension']
     - {_description: NA}
     - _examples: [NA]
   - InitiationOrStart:
-#    - {_id: InitiationOrStart_001}
-    - _source: ['SKIP', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#InitiationOrStart']
+    - _source: [
+        'SKIP',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#InitiationOrStart']
     - {_description: NA}
     - _examples: [NA]
   - ExploratoryCommunication:
-#    - {_id: ExploratoryCommunication_001}
     - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ExploratoryCommunication']
     - {_description: NA}
     - _examples: [NA]
     - Interview:
-#      - {_id: Interview_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Interview']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Interview']
       - {_description: NA}
       - _examples: [NA]
     - Negotiation:
-#      - {_id: Negotiation_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Negotiation']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Negotiation']
       - {_description: NA}
       - _examples: [NA]
       - Mediation:
-#        - {_id: Mediation_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Mediation']
         - {_description: NA}
         - _examples: [NA]
   - AgriculturalEvent:
-#    - {_id: AgriculturalEvent_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#AgriculturalEvent']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#AgriculturalEvent',
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#EconomicAgriculturalCapability']
     - {_description: NA}
     - _examples: [NA]
   - StrongOrIntense:
-#    - {_id: StrongOrIntense_001}
-    - _source: ['SKIP', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#StrongOrIntense']
+    - _source: [
+        'SKIP',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#StrongOrIntense']
     - {_description: NA}
     - _examples: [NA]
   - LegalEvent:
-#    - {_id: LegalEvent_001}
-    - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LegalEvent']
+    - _source: [
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LegalEvent',
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#JudicialActivity']
     - {_description: NA}
     - _examples: [NA]
     - FilingOfLawsuit:
-#      - {_id: FilingOfLawsuit_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FilingOfLawsuit']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FilingOfLawsuit',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#JudicialActivity']
       - {_description: NA}
       - _examples: [NA]
     - Merger:
-#      - {_id: Merger_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Merger']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Merger',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#PoliticalAllianceStrength']
       - {_description: NA}
       - _examples: [NA]
     - LegalProceedingsOrTrial:
-#      - {_id: LegalProceedingsOrTrial_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LegalProceedingsOrTrial']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LegalProceedingsOrTrial',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#JudicialActivity']
       - {_description: NA}
       - _examples: [NA]
     - LegalFinding:
-#      - {_id: LegalFinding_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LegalFinding']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LegalFinding',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#JudicialActivity']
       - {_description: NA}
       - _examples: [NA]
-      - FindingOfInnocent:
-#        - {_id: FindingOfInnocent_001}
-        - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FindingOfNotGuilty']
+      - FindingOfNotGuilty:
+        - _source: [
+                'NN',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FindingOfNotGuilty',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#JudicialActivity']
         - {_description: NA}
         - _examples: [NA]
+        - FindingOfInnocent:
+          - _source: [
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FindingOfInnocent'
+            ]
+          - {_description: NA}
+          - _examples: [NA]
       - LegalSentence:
-#        - {_id: LegalSentence_001}
-        - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LegalSentence']
+        - _source: [
+                'NN',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LegalSentence']
         - {_description: NA}
         - _examples: [NA]
+        - Execution:
+          - _source: [
+              'NN',
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Execution']
+          - {_description: NA}
+          - _examples: [NA]
+        - Imprisonment:
+          - _source: [
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Imprisonment'
+            ]
+          - {_description: NA}
+          - _examples: [NA]
       - FindingOfGuilty:
-#        - {_id: FindingOfGuilty_001}
-        - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FindingOfGuilty']
+        - _source: [
+                'NN',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FindingOfGuilty',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#JudicialActivity']
         - {_description: NA}
         - _examples: [NA]
       - LegalFine:
-#        - {_id: LegalFine_001}
-        - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LegalFine']
+        - _source: [
+                'NN',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LegalFine']
         - {_description: NA}
         - _examples: [NA]
     - Bankruptcy:
-#      - {_id: Bankruptcy_000}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Bankruptcy']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Bankruptcy']
       - {_description: NA}
       - _examples: [NA]
     - JuryDeliberation:
-#      - {_id: JuryDeliberation_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#JuryDeliberation']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#JuryDeliberation',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#JudicialActivity']
       - {_description: NA}
       - _examples: [NA]
   - EntertainmentEvent:
-#    - {_id: EntertainmentEvent_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EntertainmentEvent']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EntertainmentEvent',
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#LeisureActivities']
     - {_description: NA}
     - _examples: [NA]
     - ShowOrExhibit:
-#      - {_id: ShowOrExhibit_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ShowOrExhibit']
       - {_description: NA}
       - _examples: [NA]
     - Performance:
-#      - {_id: Performance_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Performance']
       - {_description: NA}
       - _examples: [NA]
   - TheftOrRobbery:
-#    - {_id: TheftOrRobbery_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#TheftOrRobbery']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#TheftOrRobbery',
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#CriminalActivities']
     - {_description: NA}
     - _examples: [NA]
     - Looting:
-#      - {_id: Looting_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Looting']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Looting',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#CriminalActivities']
       - {_description: NA}
       - _examples: [NA]
     - TheftOfAid:
-#      - {_id: TheftOfAid_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#TheftOfAid']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#TheftOfAid',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#CriminalActivities',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#IllicitTrade']
       - {_description: NA}
       - _examples: [NA]
   - Attempt:
-#    - {_id: Attempt_001}
-    - _source: ['SKIP: ', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Attempt']
+    - _source: [
+        'SKIP: ',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Attempt']
     - {_description: NA}
     - _examples: [NA]
   - DefyingLawsNormsDirectives:
-#    - {_id: DefyingLawsNormsDirectives_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DefyingLawsNormsDirectives']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DefyingLawsNormsDirectives',
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#GangsOrCriminalOrganizationsActivities']
     - {_description: NA}
     - _examples: [NA]
     - CriminalAct:
-#      - {_id: CriminalAct_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CriminalAct']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CriminalAct',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#CriminalActivities',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#GangsOrCriminalOrganizationsActivities']
+      - {_description: NA}
+      - _examples: [NA]
+    - Lawlessness:
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Lawlessness',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#CriminalActivities']
       - {_description: NA}
       - _examples: [NA]
   - Violence:
-#    - {_id: Violence_001}
-    - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Violence']
+    - _source: [
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Violence']
     - {_description: NA}
     - _examples: [NA]
     - Attack:
-#      - {_id: Attack_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Attack']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Attack']
       - {_description: NA}
       - _examples: [NA]
       - PsychologicalAttack:
-#        - {_id: PsychologicalAttack_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PsychologicalAttack']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PsychologicalAttack',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#TerroristActivities']
         - {_description: NA}
         - _examples: [NA]
       - CyberAttack:
-#        - {_id: CyberAttack_001}
-        - _source: ['NN','CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CyberAttack']
+        - _source: [
+                'NN',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CyberAttack']
         - {_description: NA}
         - _examples: [NA]
       - Battle:
-#        - {_id: Battle_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Battle']
         - {_description: NA}
         - _examples: [NA]
       - PhysicalAssault:
-#        - {_id: PhysicalAssault_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PhysicalAssault']
         - {_description: NA}
         - _examples: [NA]
         - SexualAssault:
-#          - {_id: SexualAssault_001}
           - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SexualAssault']
           - {_description: NA}
           - _examples: [NA]
         - Stoning:
-#          - {_id: Stoning_001}
           - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Stoning']
           - {_description: NA}
           - _examples: [NA]
       - Raid:
-#        - {_id: Raid_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Raid']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Raid']
         - {_description: NA}
         - _examples: [NA]
       - Ambush:
-#        - {_id: Ambush_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Ambush']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Ambush']
         - {_description: NA}
         - _examples: [NA]
     - Torture:
-#      - {_id: Torture_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Torture']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Torture']
       - {_description: NA}
       - _examples: [NA]
     - Riot:
-#      - {_id: Riot_000}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Riot']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Riot']
       - {_description: NA}
       - _examples: [NA]
     - Looting:
-#      - {_id: Looting_000}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Looting']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Looting']
       - {_description: NA}
       - _examples: [NA]
     - MurderOrHomicide:
-#      - {_id: MurderOrHomicide_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MurderOrHomicide']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MurderOrHomicide',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#CriminalActivities']
       - {_description: NA}
       - _examples: [NA]
       - MassKilling:
-#        - {_id: MassKilling_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MassKilling']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MassKilling',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#CriminalActivities']
         - {_description: NA}
         - _examples: [NA]
       - Assassination:
-#        - {_id: Assassination_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Assassination']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Assassination',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#CriminalActivities']
         - {_description: NA}
         - _examples: [NA]
       - EthnicCleansing:
-#        - {_id: EthnicCleansing_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EthnicCleansing']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EthnicCleansing',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#EthnicRelations']
         - {_description: NA}
         - _examples: [NA]
       - ExtraJudicialExecution:
-#        - {_id: ExtraJudicialExecution_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ExtraJudicialExecution']
         - {_description: NA}
         - _examples: [NA]
     - Bombing:
-#      - {_id: Bombing_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Bombing']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Bombing',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryAirActivity']
       - {_description: NA}
       - _examples: [NA]
       - SuicideBombing:
-#        - {_id: SuicideBombing_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SuicideBombing']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SuicideBombing',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#TerroristActivities']
         - {_description: NA}
         - _examples: [NA]
       - RoadsideBombing:
-#        - {_id: RoadsideBombing_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RoadsideBombing']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RoadsideBombing',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#TerroristActivities']
         - {_description: NA}
         - _examples: [NA]
   - Loan:
-#    - {_id: Loan_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Loan']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Loan',
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#ForeignInvestment']
     - {_description: NA}
     - _examples: [NA]
   - InspectionOrObservation:
-#    - {_id: InspectionOrObservation_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#InspectionOrObservation']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#InspectionOrObservation']
     - {_description: NA}
     - _examples: [NA]
   - Anti-Government:
-#    - {_id: Anti-Government_001}
-    - _source: ['SKIP', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Anti-Government']
+    - _source: [
+        'SKIP',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Anti-Government']
     - {_description: NA}
     - _examples: [NA]
-  - IntelligenceGathering:
-#    - {_id: IntelligenceGathering_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#IntelligenceGathering']
+  - InformationHandling:
+    - _source: [
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#InformationHandling'
+      ]
     - {_description: NA}
     - _examples: [NA]
+    - CyberAttack:
+      - _source: [
+              'NN',
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CyberAttack']
+      - {_description: NA}
+      - _examples: [NA]
+    - ElectromagneticActivity:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ElectromagneticActivity'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+    - InformationCampaign:
+      - _source: [
+            'NN',
+            'KSD',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#InformationOperation']
+      - {_description: NA}
+      - _examples: [NA]
+      - CyberDefense:
+        - _source: [
+              'NN',
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CyberDefense']
+        - {_description: NA}
+        - _examples: [NA]
+      - IntelligenceOperation:
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#IntelligenceOperation']
+        - {_description: NA}
+        - _examples: [NA]
+      - MisinformationOperation:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MisinformationOperation'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+        - DisinformationCampaign:
+           - _source: [
+                    'KSD',
+                    'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DisinformationOperation',
+                    'ICM: http://ontology.causeex.com/ontology/odps/ICM#MisinformationOperation']
+           - {_description: NA}
+           - _examples: [NA]
+    - IntelligenceGathering:
+      - _source: [
+          'NN',
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#IntelligenceGathering']
+      - {_description: NA}
+      - _examples: [NA]
+    - Reconnaissance:
+      - _source: [
+          'NN',
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Reconnaissance']
+      - {_description: NA}
+      - _examples: [NA]
+    - ReconnaissanceOperation:
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ReconnaissanceOperation',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryAirActivity']
+      - {_description: NA}
+      - _examples: [NA]
   - Purchasing:
-#    - {_id: Purchasing_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Purchasing']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Purchasing']
     - {_description: NA}
     - _examples: [NA]
   - PaymentOrRepayment:
-#    - {_id: PaymentOrRepayment_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PaymentOrRepayment']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PaymentOrRepayment']
     - {_description: NA}
     - _examples: [NA]
   - RequestAppealOrDemand:
-#    - {_id: RequestAppealOrDemand_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RequestAppealOrDemand']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RequestAppealOrDemand']
     - {_description: NA}
     - _examples: [NA]
   - Competition:
-#    - {_id: Competition_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Competition']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Competition']
     - {_description: NA}
     - _examples: [NA]
   - TerminationOrEnd:
-#    - {_id: TerminationOrEnd_001}
-    - _source: ['SKIP', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#TerminationOrEnd']
+    - _source: [
+        'SKIP',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#TerminationOrEnd']
     - {_description: NA}
     - _examples: [NA]
-  - DisagreementOrDispute:
-#    - {_id: DisagreementOrDispute_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DisagreementOrDispute']
-    - {_description: NA}
-    - _examples: [NA]
-    - ArmedConflict:
-#      - {_id: ArmedConflict_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ArmedConflict']
-      - {_description: NA}
-      - _examples: [NA]
-      - War:
-#        - {_id: War_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#War']
-        - {_description: NA}
-        - _examples: [NA]
   - Mobilization:
-#    - {_id: Mobilization_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Mobilization']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Mobilization',
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryForcesReadiness']
     - {_description: NA}
     - _examples: [NA]
   - TransferOfOwnership:
-#    - {_id: TransferOfOwnership_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#TransferOfOwnership']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#TransferOfOwnership']
     - {_description: NA}
     - _examples: [NA]
   - PersonalCommunication:
-#    - {_id: PersonalCommunication_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PersonalCommunication']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PersonalCommunication']
     - {_description: NA}
     - _examples: [NA]
     - CommunicationViaPhone:
-#      - {_id: CommunicationViaPhone_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CommunicationViaPhone']
       - {_description: NA}
       - _examples: [NA]
     - CommunicationViaLetterOrPersonalMail:
-#      - {_id: CommunicationViaLetterOrPersonalMail_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CommunicationViaLetterOrPersonalMail']
       - {_description: NA}
       - _examples: [NA]
     - CommunicationViaInstantOrTextMessage:
-#      - {_id: CommunicationViaInstantOrTextMessage_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CommunicationViaInstantOrTextMessage']
       - {_description: NA}
       - _examples: [NA]
@@ -1233,1016 +1730,1819 @@
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CommunicationViaConferencing']
       - {_description: NA}
       - _examples: [NA]
+      - CommunicationViaVideo:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CommunicationViaVideo'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
   - Accident:
-#    - {_id: Accident_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Accident']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Accident']
     - {_description: NA}
     - _examples: [NA]
   - WarCrime:
-#    - {_id: WarCrime_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#WarCrime']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#WarCrime']
     - {_description: NA}
     - _examples: [NA]
     - PlacementAsHumanShield:
-#      - {_id: PlacementAsHumanShield_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PlacementAsHumanShield']
       - {_description: NA}
       - _examples: [NA]
-  - MilitaryAction:
-#    - {_id: MilitaryAction_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MilitaryAction']
+  - MilitaryFactor:
+    - _source: [
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MilitaryFactor'
+      ]
     - {_description: NA}
     - _examples: [NA]
-  - MilitaryBuildup:
-#    - {_id: MilitaryBuildup_001}
-    - _source: ['NN','KSD', 'CAUSEEX: http://graph.causeex.com/bbn#MilitaryBuildup']
-    - {_description: NA}
-    - _examples: [NA]
-    - MilitaryDeployment:
-#      - {_id: MilitaryDeployment_001}
-      - _source: ['KSD', 'CAUSEEX: http://graph.causeex.com/bbn#MilitaryDeployment']
-      - {_description: 'Specific deployment of a piece of materiel to a region.'}
+    - MilitaryAction:
+      - _source: [
+          'NN',
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MilitaryAction']
+      - {_description: NA}
       - _examples: [NA]
-  - Strike:
-#    - {_id: Strike_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Strike']
-    - {_description: NA}
-    - _examples: [NA]
-    - HungerStrike:
-#      - {_id: HungerStrike_000}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#HungerStrike']
+      - DefensiveManeuver:
+        - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DefensiveManeuver']
+        - {_description: NA}
+        - _examples: [NA]
+      - MilitaryCampaignOrOperation:
+        - _source: [
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MilitaryCampaignOrOperation']
+        - {_description: NA}
+        - _examples: [NA]
+        - MilitaryExercise:
+          - _source: [
+                  'BBNBAE',
+                  'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MilitaryExercise',
+                  'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryForcesCapability',
+                  'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryTraining']
+          - {_description: NA}
+          - _examples: [NA]
+        - PeacekeepingOperation:
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PeacekeepingOperation']
+          - {_description: NA}
+          - _examples: [NA]
+        - ReconnaissanceOperation:
+          - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ReconnaissanceOperation',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryAirActivity']
+          - {_description: NA}
+          - _examples: [NA]
+      - Peacekeeping:
+        - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Peacekeeping']
+        - {_description: NA}
+        - _examples: [NA]
+      - Reconnaissance:
+        - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Reconnaissance']
+        - {_description: NA}
+        - _examples: [NA]
+    - MilitaryBuildup:
+      - _source: [
+          'NN',
+          'KSD',
+          'CAUSEEX: http://graph.causeex.com/bbn#MilitaryBuildup']
+      - {_description: NA}
+      - _examples: [NA]
+      - MilitaryDeployment:
+        - _source: [
+              'KSD',
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Deployment']
+        - {_description: 'Specific deployment of a piece of materiel to a region.'}
+        - _examples: [NA]
+    - MilitaryCapability:
+      - _source: [
+          'NN',
+          'BBNBAE',
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MilitaryCapability',
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#SecuritySafetyLevel',
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryForcesCapability',
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryForcesReadiness']
+      - {_description: NA}
+      - _examples: [NA]
+    - MilitaryCooperation:
+      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MilitaryCooperation']
+      - {_description: NA}
+      - _examples: [NA]
+    - MilitaryDeescalation:
+      - _source: [
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MilitaryDeescalation']
+      - {_description: NA}
+      - _examples: [NA]
+    - MilitaryOccupation:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MilitaryOccupation'
+        ]
       - {_description: NA}
       - _examples: [NA]
   - CriminalActOrCorruption:
-#    - {_id: CriminalActOrCorruption_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CriminalActOrCorruption']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CriminalActOrCorruption',
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#CriminalActivities',
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentCorruption']
     - {_description: NA}
     - _examples: [NA]
-  - AbductionHostageTakingOrHijacking:
-#    - {_id: AbductionHostageTakingOrHijacking_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#AbductionHostageTakingOrHijacking']
-    - {_description: NA}
-    - _examples: [NA]
-  - Affiliation:
-#    - {_id: Affiliation_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Affiliation']
-    - {_description: NA}
-    - _examples: [NA]
-  - HeadquartersOrBaseEstablished:
-#    - {_id: HeadquartersOrBaseEstablished_001}
-    - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#HeadquartersOrBaseEstablished']
-    - {_description: NA}
-    - _examples: [NA]
-  - DiplomaticRecognition:
-#    - {_id: DiplomaticRecognition_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DiplomaticRecognition']
-    - {_description: NA}
-    - _examples: [NA]
-  - Repression:
-#    - {_id: Repression_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Repression']
-    - {_description: NA}
-    - _examples: [NA]
-  - TransferOfLeadership:
-#    - {_id: TransferOfLeadership_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#TransferOfLeadership']
-    - {_description: NA}
-    - _examples: [NA]
-  - Factor:
-#    - {_id: Factor_001}
-    - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Factor']
-    - {_description: NA}
-    - _examples: [NA]
-    - Democracy:
-#      - {_id: Democracy_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Democracy']
-      - {_description: NA}
-      - _examples: [NA]
-    - WaterSecurity:
-#      - {_id: WaterSecurity_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#WaterSecurity']
-      - {_description: NA}
-      - _examples: [NA]
-    - EnvironmentalDegradation:
-#      - {_id: EnvironmentalDegradation_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EnvironmentalFactor', 'HUME: hume/event/environment']
-      - {_description: NA}
-      - _examples: [NA]
-      - CropFailure:
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CropFailure']
-        - {_description: NA}
-        - _examples: [NA]
-      - InsectInfestation:
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#InsectInfestation']
-        - {_description: NA}
-        - _examples: [NA]
-      - EnvironmentalHazard:
-#        - {_id: EnvironmentalHazard_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EnvironmentalHazard']
-        - {_description: NA}
-        - _examples: [NA]
-        - Pollution:
-#          - {_id: Pollution_001}
-          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Pollution']
-          - {_description: NA}
-          - _examples: [NA]
-        - BiologicalHazard:
-          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#BiologicalHazard']
-          - {_description: NA}
-          - _examples: [NA]
-        - ChemicalHazard:
-          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ChemicalHazard']
-          - {_description: NA}
-          - _examples: [NA]
-        - ElectromagneticRadiationHazard:
-          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ElectromagneticRadiationHazard']
-          - {_description: NA}
-          - _examples: [NA]
-        - ExplosiveHazard:
-          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ExplosiveHazard']
-          - {_description: NA}
-          - _examples: [NA]
-        - NuclearHazard:
-          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#NuclearHazard']
-          - {_description: NA}
-          - _examples: [NA]
-        - RadiologicalHazard:
-          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RadiologicalHazard']
-          - {_description: NA}
-          - _examples: [NA]
-    - PoliticalInstability:
-#      - {_id: PoliticalInstability_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PoliticalInstability']
-      - {_description: NA}
-      - _examples: [NA]
-    - UnsanitaryConditions:
-#      - {_id: UnsanitaryConditions_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#UnsanitaryConditions']
-      - {_description: NA}
-      - _examples: [NA]
-    - Excess:
-#      - {_id: Excess_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Excess']
-      - {_description: NA}
-      - _examples: [NA]
-    - Fire:
-#      - {_id: Fire_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Fire']
-      - {_description: NA}
-      - _examples: [NA]
-    - Debt:
-#      - {_id: Debt_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Debt']
-      - {_description: NA}
-      - _examples: [NA]
-    - GoverningDirective:
-#      - {_id: GoverningDirective_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#GoverningDirective']
+    - CriminalAct:
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CriminalAct',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#CriminalActivities',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#GangsOrCriminalOrganizationsActivities']
       - {_description: NA}
       - _examples: [NA]
     - Corruption:
-#      - {_id: Corruption_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Corruption']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Corruption',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentCorruption']
       - {_description: NA}
       - _examples: [NA]
       - PoliticalCorruption:
-#        - {_id: PoliticalCorruption_001}
-        - _source: ['BBNBAE', 'CAUSEEX: http://graph.causeex.com/bbn#PoliticalCorruption']
+        - _source: [
+                'BBNBAE',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Corruption']
         - {_description: NA}
         - _examples: [NA]
-    - EarthquakeAndAftershock:
-#      - {_id: EarthquakeAndAftershock_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EarthquakeAndAftershock']
+  - AbductionHostageTakingOrHijacking:
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#AbductionHostageTakingOrHijacking',
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#CriminalActivities']
+    - {_description: NA}
+    - _examples: [NA]
+  - Affiliation:
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Affiliation']
+    - {_description: NA}
+    - _examples: [NA]
+  - HeadquartersOrBaseEstablished:
+    - _source: [
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#HeadquartersOrBaseEstablished',
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryForcesCapability']
+    - {_description: NA}
+    - _examples: [NA]
+  - DiplomaticRecognition:
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DiplomaticRecognition']
+    - {_description: NA}
+    - _examples: [NA]
+  - Repression:
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Repression']
+    - {_description: NA}
+    - _examples: [NA]
+  - TransferOfLeadership:
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#TransferOfLeadership']
+    - {_description: NA}
+    - _examples: [NA]
+    - Election:
+      - _source: [
+          'NN',
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Election',
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentTransparency']
       - {_description: NA}
       - _examples: [NA]
-    - LandslideOrMudslide:
-#      - {_id: LandslideOrMudslide_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LandslideOrMudslide']
+  - Factor:
+    - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Factor']
+    - {_description: NA}
+    - _examples: [NA]
+    - ArtsAndCulture:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ArtsAndCulture'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+      - CultureTransformationOrLoss:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CultureTransformationOrLoss'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+    - AwarenessOrUnderstanding:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#AwarenessOrUnderstanding'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+      - MaritimeDomainAwareness:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MaritimeDomainAwareness'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+      - SpaceSituationalAwareness:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SpaceSituationalAwareness'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+    - EnergyRelatedFactor:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EnergyRelatedFactor'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+    - InfrastructureAndUtilities:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#InfrastructureAndUtilities'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+      - CommunicationFactor:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CommunicationFactor'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+      - PublicTransportation:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PublicTransportation'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+    - Innovation:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Innovation'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+    - JailsAndPrisoners:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#JailsAndPrisoners'
+        ]
       - {_description: NA}
       - _examples: [NA]
     - NeedOrRequirement:
-#      - {_id: NeedOrRequirement_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Dependence']
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#NeedOrRequirement'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+    - PowerBalance:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PowerBalance'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+    - RelevanceOrImportance:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RelevanceOrImportance'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+    - SocialServices:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SocialServices'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+    - environment:
+      - _source: [
+          'HUME: hume/event/environment',
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EnvironmentalFactor']
+      - {_description: NA}
+      - _examples: [pollution]
+      - EnvironmentalDegradation:
+        - _source: [
+              'NN',
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EnvironmentalFactor',
+              'HUME: hume/event/environment']
+        - {_description: NA}
+        - _examples: [NA]
+        - CropFailure:
+          - _source: [
+                  'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CropFailure']
+          - {_description: NA}
+          - _examples: [NA]
+        - InsectInfestation:
+          - _source: [
+                  'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#InsectInfestation']
+          - {_description: NA}
+          - _examples: [NA]
+        - EnvironmentalHazard:
+          - _source: [
+                  'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EnvironmentalHazard']
+          - {_description: NA}
+          - _examples: [NA]
+          - Pollution:
+            - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Pollution']
+            - {_description: NA}
+            - _examples: [NA]
+          - BiologicalHazard:
+            - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#BiologicalHazard']
+            - {_description: NA}
+            - _examples: [NA]
+          - ChemicalHazard:
+            - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ChemicalHazard']
+            - {_description: NA}
+            - _examples: [NA]
+          - ElectromagneticRadiationHazard:
+            - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ElectromagneticRadiationHazard']
+            - {_description: NA}
+            - _examples: [NA]
+          - ExplosiveHazard:
+            - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ExplosiveHazard']
+            - {_description: NA}
+            - _examples: [NA]
+          - NuclearHazard:
+            - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#NuclearHazard']
+            - {_description: NA}
+            - _examples: [NA]
+          - RadiologicalHazard:
+            - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RadiologicalHazard']
+            - {_description: NA}
+            - _examples: [NA]
+      - EnvironmentalProtection:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EnvironmentalProtection'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+      - NaturalDisaster:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#NaturalDisaster'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+        - Avalanche:
+          - _source: [
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Avalanche'
+            ]
+          - {_description: NA}
+          - _examples: [NA]
+        - Drought:
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Drought',
+                      'HUME: hume/event/weather/drought']
+          - {_description: NA}
+          - _examples: [drought]
+        - EarthquakeAndAftershock:
+          - _source: [
+                'NN',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EarthquakeAndAftershock']
+          - {_description: NA}
+          - _examples: [NA]
+        - Flood:
+          - _source: [
+                  'NN',
+                  'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Flood',
+                  'HUME: hume/event/weather/flooding']
+          - {_description: NA}
+          - _examples: [flood, flash flood]
+        - GroundCollapse:
+          - _source: [
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#GroundCollapse'
+            ]
+          - {_description: NA}
+          - _examples: [NA]
+        - LandslideOrMudslide:
+          - _source: [
+                'NN',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LandslideOrMudslide']
+          - {_description: NA}
+          - _examples: [NA]
+        - LimnicEruption:
+          - _source: [
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LimnicEruption'
+            ]
+          - {_description: NA}
+          - _examples: [NA]
+        - Tornado:
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Tornado']
+          - {_description: NA}
+          - _examples: [NA]
+        - TropicalStorm:
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#TropicalStorm']
+          - {_description: NA}
+          - _examples: [NA]
+          - Hurricane:
+            - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#HurricaneOrTyphoon']
+            - {_description: NA}
+            - _examples: [NA]
+        - Tsunami:
+          - _source: [
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Tsunami'
+            ]
+          - {_description: NA}
+          - _examples: [NA]
+        - VolcanicEruption:
+          - _source: [
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#VolcanicEruption'
+            ]
+          - {_description: NA}
+          - _examples: [NA]
+        - Wildfire:
+          - _source: [
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Wildfire'
+            ]
+          - {_description: NA}
+          - _examples: [NA]
+      - NaturalResources:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#NaturalResources'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+        - ExploitationOfNaturalResources:
+          - _source: [
+              'NN',
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ExploitationOfNaturalResources']
+          - {_description: NA}
+          - _examples: [NA]
+        - LandUse:
+          - _source: [
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LandUse'
+            ]
+          - {_description: NA}
+          - _examples: [NA]
+          - AgriculturalLandUse:
+            - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#AgriculturalLandUse'
+              ]
+            - {_description: NA}
+            - _examples: [NA]
+          - ConservationLandUse:
+            - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ConservationLandUse'
+              ]
+            - {_description: NA}
+            - _examples: [NA]
+          - ReforestationLandUse:
+            - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ReforestationLandUse'
+              ]
+            - {_description: NA}
+            - _examples: [NA]
+          - WaterManagement:
+            - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#WaterManagement'
+              ]
+            - {_description: NA}
+            - _examples: [NA]
+    - Excess:
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Excess']
+      - {_description: NA}
+      - _examples: [NA]
+    - Fire:
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Fire']
+      - {_description: NA}
+      - _examples: [NA]
+      - Wildfire:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Wildfire'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+    - Debt:
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Debt']
+      - {_description: NA}
+      - _examples: [NA]
+    - PoliticalFactor:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PoliticalFactor'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+      - GoverningDirective:
+        - _source: [
+              'NN',
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#GoverningDirective',
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentTransparency']
+        - {_description: NA}
+        - _examples: [NA]
+        - Curfew:
+          - _source: [
+                'NN',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Curfew']
+          - {_description: NA}
+          - _examples: [NA]
+      - GovernmentalFactor:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#GovernmentalFactor'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+        - Autocracy:
+          - _source: [
+                'NN',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Autocracy']
+          - {_description: NA}
+          - _examples: [NA]
+        - Democracy:
+          - _source: [
+                'NN',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Democracy',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentTransparency']
+          - {_description: NA}
+          - _examples: [NA]
+        - Oligarchy:
+          - _source: [
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Oligarchy'
+            ]
+          - {_description: NA}
+          - _examples: [NA]
+      - PoliticalDissent:
+        - _source: [
+              'NN',
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PoliticalDissent',
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#PoliticalFrictionOrTension']
+        - {_description: NA}
+        - _examples: [NA]
+      - PoliticalInstability:
+        - _source: [
+              'NN',
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PoliticalInstability']
+        - {_description: NA}
+        - _examples: [NA]
+      - PoliticalReform:
+        - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PoliticalReform']
+        - {_description: NA}
+        - _examples: [NA]
+      - PoliticalRevolution:
+        - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PoliticalRevolution']
+        - {_description: NA}
+        - _examples: [NA]
+      - PoliticalSecrecy:
+        - _source: [
+              'NN',
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PoliticalSecrecy',
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentCorruption']
+        - {_description: NA}
+        - _examples: [NA]
+      - PoliticalStability:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PoliticalStability'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+      - PoliticalTransparency:
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PoliticalTransparency',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentTransparency',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentStability']
+        - {_description: NA}
+        - _examples: [NA]
+      - Taxation:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Taxation'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+    - Corruption:
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Corruption',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentCorruption']
+      - {_description: NA}
+      - _examples: [NA]
+    - NeedOrRequirement:
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#NeedOrRequirement']
       - {_description: NA}
       - _examples: [NA]
     - UnstableStructure:
-#      - {_id: UnstableStructure_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#UnstableStructure']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#UnstableStructure']
       - {_description: NA}
       - _examples: [NA]
     - FoodSecurity:
-#      - {_id: FoodSecurity_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FoodSecurity']
-      - {_description: NA}
-      - _examples: [NA]
-    - Autocracy:
-#      - {_id: Autocracy_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Autocracy']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FoodSecurity',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#SecuritySafetyLevel',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#FoodAndNutritionLevel',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#CriticalResources']
       - {_description: NA}
       - _examples: [NA]
     - AdequateSupply:
-#      - {_id: AdequateSupply_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#AdequateSupply']
-      - {_description: NA}
-      - _examples: [NA]
-    - Lawlessness:
-#      - {_id: Lawlessness_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Lawlessness']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#AdequateSupply',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#WaterAvailability',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#FoodAndNutritionLevel']
       - {_description: NA}
       - _examples: [NA]
     - Change:
-#      - {_id: Change_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Change']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Change']
       - {_description: NA}
       - _examples: [NA]
       - Decrease:
-#        - {_id: Decrease_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Decrease']
         - {_description: NA}
         - _examples: [NA]
       - Increase:
-#        - {_id: Increase_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Increase']
         - {_description: NA}
         - _examples: [NA]
     - Malnutrition:
-#      - {_id: Malnutrition_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Malnutrition']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Malnutrition']
       - {_description: NA}
       - _examples: [NA]
     - Heritage:
-#      - {_id: Heritage_001}
-      - _source: ['NN','KSD', 'CAUSEEX: http://graph.causeex.com/bbn#Heritage']
+      - _source: [
+            'NN',
+            'KSD',
+            'CAUSEEX: http://graph.causeex.com/bbn#Heritage']
       - {_description: 'Statements that describe the nationality of a group.'}
       - _examples: [NA]
-    - PoliticalDissent:
-#      - {_id: PoliticalDissent_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PoliticalDissent']
-      - {_description: NA}
-      - _examples: [NA]
     - EconomicSecrecy:
-#      - {_id: EconomicSecrecy_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicSecrecy']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicSecrecy',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#IllicitTrade']
       - {_description: NA}
       - _examples: [NA]
     - EconomicTransparency:
-#      - {_id: EconomicTransparency_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicTransparency']
-      - {_description: NA}
-      - _examples: [NA]
-    - PoliticalSecrecy:
-#      - {_id: PoliticalSecrecy_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PoliticalSecrecy']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicTransparency',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#DomesticMarketHealth',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentTransparency']
       - {_description: NA}
       - _examples: [NA]
     - MissingPersons:
-#      - {_id: MissingPersons_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MissingPerson']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MissingPersons']
       - {_description: NA}
       - _examples: [NA]
     - RespectForRightsFreedoms:
-#      - {_id: RespectForRightsFreedoms_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RespectForRightsFreedoms']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RespectForRightsFreedoms',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#FreedomOfReligiousExpression',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#FreedomOfCulturalExpression']
       - {_description: NA}
       - _examples: [NA]
       - SeekingPoliticalIndependence:
-#        - {_id: SeekingPoliticalIndependence_001}
-        - _source: ['KSD', 'CAUSEEX: http://graph.causeex.com/bbn#SeekingPoliticalIndependence']
+        - _source: [
+            'KSD',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Independence'
+          ]
         - {_description: NA}
         - _examples: [NA]
     - EconomicFactor:
-#      - {_id: EconomicFactor_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicFactor']
       - {_description: NA}
       - _examples: [NA]
       - Pricing:
-#        - {_id: Pricing_001}
-        - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Pricing']
+        - _source: [
+                'NN',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Pricing']
         - {_description: NA}
         - _examples: [NA]
+        - PriceGouging:
+          - _source: [
+              'NN',
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PriceGouging']
+          - {_description: NA}
+          - _examples: [NA]
+      - DomesticTrade:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DomesticTrade'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+        - BlackMarketTrade:
+          - _source: [
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#BlackMarketTrade'
+            ]
+          - {_description: NA}
+          - _examples: [NA]
+          - DrugTrade:
+            - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DrugTrade'
+              ]
+            - {_description: NA}
+            - _examples: [NA]
       - EconomicCondition:
-#        - {_id: EconomicCondition_001}
-        - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicCondition']
+        - _source: [
+                'NN',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicCondition',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#DomesticMarketHealth']
         - {_description: NA}
         - _examples: [NA]
         - EconomicCrisis:
-#          - {_id: EconomicCrisis_001}
-          - _source: ['BBNBAE', 'CAUSEEX: http://graph.causeex.com/bbn#EconomicCrisis']
+          - _source: [
+                    'BBNBAE',
+                    'CAUSEEX: http://graph.causeex.com/bbn#EconomicCrisis']
           - {_description: NA}
           - _examples: [NA]
         - EconomicRecession:
-#          - {_id: EconomicRecession_001}
-          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicRecession']
+          - _source: [
+                    'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicRecession',]
           - {_description: NA}
           - _examples: [NA]
         - EconomicEquality:
-#          - {_id: EconomicEquality_001}
-          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicEquality']
+          - _source: [
+                    'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicEquality',
+                    'ICM: http://ontology.causeex.com/ontology/odps/ICM#DomesticMarketHealth']
           - {_description: NA}
           - _examples: [NA]
         - EconomicInflation:
-#          - {_id: EconomicInflation_001}
-          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicInflation']
+          - _source: [
+                    'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicInflation']
           - {_description: NA}
           - _examples: [NA]
         - LowUnemployment:
-#          - {_id: LowUnemployment_001}
           - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LowUnemployment']
           - {_description: NA}
           - _examples: [NA]
         - EconomicOpportunity:
-#          - {_id: EconomicOpportunity_001}
-          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicOpportunity']
+          - _source: [
+                    'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicOpportunity',
+                    'ICM: http://ontology.causeex.com/ontology/odps/ICM#DomesticMarketHealth']
           - {_description: NA}
           - _examples: [NA]
         - EconomicInequality:
-#          - {_id: EconomicInequality_001}
-          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicInequality']
+          - _source: [
+                    'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicInequality']
           - {_description: NA}
           - _examples: [NA]
         - Poverty:
-#          - {_id: Poverty_001}
-          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Poverty']
+          - _source: [
+                    'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Poverty']
           - {_description: NA}
           - _examples: [NA]
         - EconomicDevelopment:
-#          - {_id: EconomicDevelopment_000}
-          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicDevelopment']
+          - _source: [
+                    'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicDevelopment',
+                    'ICM: http://ontology.causeex.com/ontology/odps/ICM#DomesticMarketHealth']
           - {_description: NA}
           - _examples: [NA]
           - RuralDevelopment:
-#            - {_id: RuralDevelopment_000}
-            - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RuralDevelopment']
+            - _source: [
+                        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RuralDevelopment']
             - {_description: NA}
             - _examples: [NA]
         - EconomicDepression:
-#          - {_id: EconomicDepression_001}
-          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicDepression']
+          - _source: [
+                    'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicDepression']
           - {_description: NA}
           - _examples: [NA]
         - HighUnemployment:
-#          - {_id: HighUnemployment_001}
           - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#HighUnemployment']
           - {_description: NA}
           - _examples: [NA]
+      - EconomicGrowth:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicGrowth'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+      - GrossDomesticProduct:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#GrossDomesticProduct'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+      - GrossNationalIncome:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#GrossNationalIncome'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+      - ExportImport:
+        - _source: [
+            'NN',
+            'BBNBAE',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ImportAndExport',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#InternationalTrade']
+        - {_description: NA}
+        - _examples: [NA]
+        - Export:
+          - _source: [
+                'NN',
+                'BBNBAE',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Export',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#InternationalTrade']
+          - {_description: NA}
+          - _examples: [NA]
+        - Import:
+          - _source: [
+                'NN',
+                'BBNBAE',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Import',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#InternationalTrade']
+          - {_description: NA}
+          - _examples: [NA]
+        - TradeBalance:
+          - _source: [
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#TradeBalance'
+            ]
+          - {_description: NA}
+          - _examples: [NA]
+      - IncomeAndExpense:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#IncomeAndExpense'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+      - Productivity:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Productivity'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+      - ProfitAndLoss:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ProfitAndLoss'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+      - Revenue:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Revenue'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+      - Savings:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Savings'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+      - Spending:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Spending'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+        - ConsumerSpending:
+          - _source: [
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ConsumerSpending'
+            ]
+          - {_description: NA}
+          - _examples: [NA]
+      - Taxation:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Taxation'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+      - Wages:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Wages'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
     - LackOfRespectForRightsFreedoms:
-#      - {_id: LackOfRespectForRightsFreedoms_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LackOfRespectForRightsFreedoms']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LackOfRespectForRightsFreedoms']
       - {_description: NA}
       - _examples: [NA]
     - SocialCondition:
-#      - {_id: SocialCondition_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SocialCondition']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SocialCondition']
       - {_description: NA}
       - _examples: [NA]
+      - LivingCondition:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LivingCondition'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+        - FoodWaterAndNutrition:
+          - _source: [
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FoodWaterAndNutrition'
+            ]
+          - {_description: NA}
+          - _examples: [NA]
+        - Lawlessness:
+          - _source: [
+                'NN',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Lawlessness',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#CriminalActivities']
+          - {_description: NA}
+          - _examples: [NA]
+        - Peace:
+          - _source: [
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Peace'
+            ]
+          - {_description: NA}
+          - _examples: [NA]
+        - SanitaryConditions:
+          - _source: [
+                'NN',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SanitaryConditions',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#HealthcareAvailability',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#SanitaryConditions']
+          - {_description: NA}
+          - _examples: [NA]
+        - UnsanitaryConditions:
+          - _source: [
+                'NN',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#UnsanitaryConditions']
+          - {_description: NA}
+          - _examples: [NA]
       - SystemicDiscrimination:
-#        - {_id: SystemicDiscrimination_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SystemicDiscrimination']
         - {_description: NA}
         - _examples: [NA]
       - SystemicExploitation:
-#        - {_id: SystemicExploitation_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SystemicExploitation']
         - {_description: NA}
         - _examples: [NA]
     - WeatherIssue:
-#      - {_id: WeatherIssue_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#WeatherIssue',
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#WeatherIssue',
                   'HUME: hume/event/weather']
       - {_description: NA}
       - _examples: [deforestation, wind, extreme winds]
       - RainfallAndRunoff:
-#        - {_id: RainfallAndRunoff_001}
         - _source: ['HUME: hume/event/weather/precipitation',
                     'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RainfallAndRunoff']
         - {_description: NA}
         - _examples: [precipitation, rain, rainfall]
+      - SnowSleetAndWinterConditions:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SnowSleetAndWinterConditions'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
       - Flood:
-#        - {_id: Flood_001}
-        - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Flood','HUME: hume/event/weather/flooding']
+        - _source: [
+                'NN',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Flood',
+                'HUME: hume/event/weather/flooding']
         - {_description: NA}
         - _examples: [flood, flash flood]
       - ColdTemperature:
-#        - {_id: ColdTemperature_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ColdTemperature']
         - {_description: NA}
         - _examples: [NA]
       - Drought:
-#        - {_id: Drought_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Drought',
                     'HUME: hume/event/weather/drought']
         - {_description: NA}
         - _examples: [drought]
       - HighTemperature:
-#        - {_id: HighTemperature_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#HighTemperature']
         - {_description: NA}
         - _examples: [NA]
       - HighWind:
-#        - {_id: HighWind_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#HighWind']
         - {_description: NA}
         - _examples: [NA]
-      - Storm:
-#        - {_id: Storm_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Storm',
-                    'HUME: hume/event/weather/storm']
-        - {_description: NA}
-        - _examples: [hurricane, cyclone, tornado]
-        - TropicalStorm:
-#          - {_id: TropicalStorm_000}
-          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#TropicalStorm']
+        - Storm:
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Storm',
+                      'HUME: hume/event/weather/storm']
           - {_description: NA}
-          - _examples: [NA]
-        - Hurricane:
-#          - {_id: Hurricane_000}
-          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#HurricaneOrTyphoon']
-          - {_description: NA}
-          - _examples: [NA]
+          - _examples: [hurricane, cyclone, tornado]
+          - TropicalStorm:
+            - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#TropicalStorm']
+            - {_description: NA}
+            - _examples: [NA]
+            - Hurricane:
+              - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#HurricaneOrTyphoon']
+              - {_description: NA}
+              - _examples: [NA]
         - Tornado:
-#          - {_id: Tornado_000}
           - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Tornado']
           - {_description: NA}
           - _examples: [NA]
-    - ContaminatedWater:
-#      - {_id: ContaminatedWater_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ContaminatedWater']
-      - {_description: NA}
-      - _examples: [NA]
     - Incompetency:
-#      - {_id: Incompetency_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Incompetency']
-      - {_description: NA}
-      - _examples: [NA]
-    - WaterInsecurity:
-#      - {_id: WaterInsecurity_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#WaterInsecurity']
-      - {_description: NA}
-      - _examples: [NA]
-    - SolarFlare:
-#      - {_id: SolarFlare_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SolarFlare']
-      - {_description: NA}
-      - _examples: [NA]
-    - RoadBlocked:
-#      - {_id: RoadBlocked_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RoadBlocked']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Incompetency']
       - {_description: NA}
       - _examples: [NA]
     - Transparency:
-#      - {_id: Transparency_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Transparency']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Transparency',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentTransparency',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#FactualInformationCampaign']
       - {_description: NA}
       - _examples: [NA]
       - PoliticalTransparency:
-#        - {_id: PoliticalTransparency_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PoliticalTransparency']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PoliticalTransparency',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentTransparency',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentStability']
         - {_description: NA}
         - _examples: [NA]
     - FoodInsecurity:
-#      - {_id: FoodInsecurity_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FoodInsecurity']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FoodInsecurity']
       - {_description: NA}
       - _examples: [NA]
-    - SanitaryConditions:
-#      - {_id: SanitaryConditions_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SanitaryConditions']
+      - Famine:
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Famine']
+        - {_description: NA}
+        - _examples: [NA]
+      - Starvation:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Starvation'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+    - CapacityOrStorage:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CapacityOrStorage'
+        ]
       - {_description: NA}
       - _examples: [NA]
-    - ConcentrationOfDisplacedPersons:
-#      - {_id: ConcentrationOfDisplacedPersons_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ConcentrationOfDisplacedPersons']
+    - Demographic:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Demographic'
+        ]
       - {_description: NA}
       - _examples: [NA]
+      - AgeDemographic:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#AgeDemographic'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+      - BirthsAndFertility:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#BirthsAndFertility'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+      - ConcentrationOfDisplacedPersons:
+        - _source: [
+              'NN',
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ConcentrationOfDisplacedPersons',
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#DisplacedPersons']
+        - {_description: NA}
+        - _examples: [NA]
+      - DisabilityDemographic:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DisabilityDemographic'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+      - EthnicityDemographic:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EthnicityDemographic'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+      - LifeExpectancy:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LifeExpenctancy'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+      - Mortality:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Mortality'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
     - Stasis:
-#      - {_id: Stasis_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Stasis']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Stasis']
       - {_description: NA}
       - _examples: [NA]
     - MedicalEmergency:
-#      - {_id: MedicalEmergency_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MedicalEmergency']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MedicalEmergency']
       - {_description: NA}
       - _examples: [NA]
       - InfectiousHumanDisease:
-#        - {_id: InfectiousHumanDisease_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#InfectiousHumanDisease']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#InfectiousHumanDisease']
         - {_description: NA}
         - _examples: [NA]
       - AnimalIllnessOrDeath:
-#        - {_id: AnimalIllnessOrDeath_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#AnimalIllnessOrDeath']
         - {_description: NA}
         - _examples: [NA]
     - AlertStatus:
-#      - {_id: AlertStatus_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#AlertStatus']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#AlertStatus']
       - {_description: NA}
       - _examples: [NA]
       - StateOfEmergencyOrMartialLaw:
-#        - {_id: StateOfEmergencyOrMartialLaw_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#StateOfEmergencyOrMartialLaw']
         - {_description: NA}
         - _examples: [NA]
     - Risk:
-#      - {_id: Risk_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Risk']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Risk']
       - {_description: NA}
       - _examples: [NA]
     - Shortage:
-#      - {_id: Shortage_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Shortage']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Shortage']
       - {_description: NA}
       - _examples: [NA]
       - Famine:
-#        - {_id: Famine_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Famine']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Famine']
         - {_description: NA}
         - _examples: [NA]
     - ReligiousOrPoliticalBeliefs:
-#      - {_id: ReligiousOrPoliticalBeliefs_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ReligiousOrPoliticalBeliefs']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ReligiousOrPoliticalBeliefs']
       - {_description: NA}
       - _examples: [NA]
     - StructuralDamage:
-#      - {_id: StructuralDamage_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#StructuralDamage']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#StructuralDamage']
       - {_description: NA}
       - _examples: [NA]
       - CollapsedStructure:
-#        - {_id: CollapsedStructure_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CollapsedStructure']
         - {_description: NA}
         - _examples: [NA]
-  - ExhibitionOfPower:
-#    - {_id: ExhibitionOfPower_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ExhibitionOfPower']
+  - EducationAndTraining:
+    - _source: [
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EducationAndTraining'
+      ]
     - {_description: NA}
     - _examples: [NA]
-  - ProvisionOfTrainingSchooling:
-#    - {_id: ProvisionOfTrainingSchooling_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ProvisionOfTrainingSchooling']
-    - {_description: NA}
-    - _examples: [NA]
-    - ProvisionOfTerroristTrainingSchooling:
-#      - {_id: ProvisionOfTerroristTrainingSchooling_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ProvisionOfTerroristTrainingSchooling']
+    - ProvisionOfTrainingSchooling:
+      - _source: [
+          'NN',
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ProvisionOfTrainingSchooling']
       - {_description: NA}
       - _examples: [NA]
-    - ProvisionOfVocationalTrainingSchooling:
-#      - {_id: ProvisionOfVocationalTrainingSchooling_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ProvisionOfVocationalTrainingSchooling']
-      - {_description: NA}
-      - _examples: [NA]
-    - ProvisionOfMilitaryTrainingSchooling:
-#      - {_id: ProvisionOfMilitaryTrainingSchooling_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ProvisionOfMilitaryTrainingSchooling']
-      - {_description: NA}
-      - _examples: [NA]
-    - ProvisionOfReligiousTrainingSchooling:
-#      - {_id: ProvisionOfReligiousTrainingSchooling_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ProvisionOfReligiousTrainingSchooling']
-      - {_description: NA}
-      - _examples: [NA]
+      - ProvisionOfTerroristTrainingSchooling:
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ProvisionOfTerroristTrainingSchooling']
+        - {_description: NA}
+        - _examples: [NA]
+      - ProvisionOfVocationalTrainingSchooling:
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ProvisionOfVocationalTrainingSchooling']
+        - {_description: NA}
+        - _examples: [NA]
+      - ProvisionOfMilitaryTrainingSchooling:
+        - _source: [
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ProvisionOfMilitaryTrainingSchooling']
+        - {_description: NA}
+        - _examples: [NA]
+      - ProvisionOfReligiousTrainingSchooling:
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ProvisionOfReligiousTrainingSchooling']
+        - {_description: NA}
+        - _examples: [NA]
   - MeetingEncounterOrNegotiation:
-#    - {_id: MeetingEncounterOrNegotiation_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MeetingOrEncounter']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MeetingEncounterOrNegotiation']
     - {_description: NA}
     - _examples: [NA]
     - MeetingOrEncounter:
-#      - {_id: MeetingOrEncounter_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MeetingOrEncounter']
       - {_description: NA}
       - _examples: [NA]
-  - Execution:
-#    - {_id: Execution_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Execution']
-    - {_description: NA}
-    - _examples: [NA]
-  - Visit:
-#    - {_id: Visit_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Visit']
-    - {_description: NA}
-    - _examples: [NA]
+      - Visit:
+        - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Visit']
+        - {_description: NA}
+        - _examples: [NA]
+    - Negotiation:
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Negotiation']
+      - {_description: NA}
+      - _examples: [NA]
   - Operation:
-#    - {_id: Operation_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Operation']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Operation']
     - {_description: NA}
     - _examples: [NA]
     - EspionageOperation:
-#      - {_id: EspionageOperation_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EspionageOperation']
       - {_description: NA}
       - _examples: [NA]
     - MilitaryCampaignOrOperation:
-#      - {_id: MilitaryCampaignOrOperation_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MilitaryCampaignOrOperation']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MilitaryCampaignOrOperation']
       - {_description: NA}
       - _examples: [NA]
       - MilitaryExercise:
-#        - {_id: MilitaryExercise_001}
-        - _source: ['BBNBAE', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MilitaryExercise']
+        - _source: [
+                'BBNBAE',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MilitaryExercise',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryForcesCapability',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryTraining']
         - {_description: NA}
         - _examples: [NA]
-    - IntelligenceOperation:
-#      - {_id: IntelligenceOperation_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#IntelligenceOperation']
-      - {_description: NA}
-      - _examples: [NA]
+      - PeacekeepingOperation:
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PeacekeepingOperation']
+        - {_description: NA}
+        - _examples: [NA]
+      - ReconnaissanceOperation:
+        - _source: [
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ReconnaissanceOperation',
+              'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryAirActivity']
+        - {_description: NA}
+        - _examples: [NA]
     - InformationCampaign:
-#      - {_id: InformationCampaign_001}
-      - _source: ['NN','KSD', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#InformationOperation']
+      - _source: [
+            'NN',
+            'KSD',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#InformationOperation']
       - {_description: NA}
       - _examples: [NA]
-      - DisinformationCampaign:
-#         - {_id: DisinformationCampaign_001}
-         - _source: ['KSD', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DisinformationOperation']
-         - {_description: NA}
-         - _examples: [NA]
     - CivilCampaign:
-#      - {_id: CivilCampaign_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CivilCampaign']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CivilCampaign']
       - {_description: NA}
       - _examples: [NA]
       - PromotionOfWaterSanitationAndHygiene:
-#        - {_id: PromotionOfWaterSanitationAndHygiene_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PromotionOfWaterSanitationAndHygiene']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PromotionOfWaterSanitationAndHygiene',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#HealthcareAvailability',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#WaterAvailability']
+        - {_description: NA}
+        - _examples: [NA]
+      - VaccinationProgram:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#VaccinationProgram'
+          ]
         - {_description: NA}
         - _examples: [NA]
     - CounterOperation:
-#      - {_id: CounterOperation_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CounterOperation']
       - {_description: NA}
       - _examples: [NA]
       - CounterTerrorismOperation:
-#        - {_id: CounterTerrorismOperation_001}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CounterTerrorismOperation']
         - {_description: NA}
         - _examples: [NA]
-    - PeacekeepingOperation:
-#      - {_id: PeacekeepingOperation_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PeacekeepingOperation']
-      - {_description: NA}
-      - _examples: [NA]
     - SearchAndRescue:
-#      - {_id: SearchAndRescue_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SearchAndRescue']
       - {_description: NA}
       - _examples: [NA]
-    - ReconnaissanceOperation:
-#      - {_id: ReconnaissanceOperation_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ReconnaissanceOperation']
-      - {_description: NA}
-      - _examples: [NA]
     - CommercialOperation:
-#      - {_id: CommercialOperation_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CommercialOperation']
       - {_description: NA}
       - _examples: [NA]
     - ElectionCampaign:
-#      - {_id: ElectionCampaign_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ElectionCampaign']
-      - {_description: NA}
-      - _examples: [NA]
-    - CyberDefense:
-#      - {_id: CyberDefense_001}
-      - _source: ['NN','CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#CyberDefense']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ElectionCampaign',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#GovernmentTransparency']
       - {_description: NA}
       - _examples: [NA]
     - JointOperation:
-#      - {_id: JointOperation_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#JointOperation']
       - {_description: NA}
       - _examples: [NA]
   - DamageOrDestruction:
-#    - {_id: DamageOrDestruction_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DamageOrDestruction']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DamageOrDestruction']
     - {_description: NA}
     - _examples: [NA]
   - WeakOrLimited:
-#    - {_id: WeakOrLimited_001}
-    - _source: ['SKIP', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#WeakOrLimited']
+    - _source: [
+        'SKIP',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#WeakOrLimited']
     - {_description: NA}
     - _examples: [NA]
-  - Possession:
-#    - {_id: Possession_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Possession']
+  - PhysicalMeasurement:
+    - _source: [
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PhysicalMeasurement'
+      ]
     - {_description: NA}
     - _examples: [NA]
+  - PhysicalSeparation:
+    - _source: [
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PhysicalSeparation'
+      ]
+    - {_description: NA}
+    - _examples: [NA]
+  - PossessionOrOwnership:
+    - _source: []
+    - {_description: NA}
+    - _examples: [NA]
+    - Ownership:
+      - _source: [
+          'NN',
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Ownership']
+      - {_description: NA}
+      - _examples: [NA]
+    - Possession:
+      - _source: [
+          'NN',
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Possession']
+      - {_description: NA}
+      - _examples: [NA]
   - ReductionRestrictionOrRemoval:
-#    - {_id: ReductionRestrictionOrRemoval_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ReductionRestrictionOrRemoval']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ReductionRestrictionOrRemoval']
     - {_description: NA}
     - _examples: [NA]
     - Withdrawal:
-#      - {_id: Withdrawal_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Withdrawal']
       - {_description: NA}
       - _examples: [NA]
       - FinancialWithdrawal:
-#        - {_id: FinancialWithdrawal_000}
         - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FinancialWithdrawal']
         - {_description: NA}
         - _examples: [NA]
     - Deescalation:
-#      - {_id: Deescalation_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Deescalation']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Deescalation']
       - {_description: NA}
       - _examples: [NA]
       - MilitaryDeescalation:
-#        - {_id: MilitaryDeescalation_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MilitaryDeescalation']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MilitaryDeescalation']
         - {_description: NA}
         - _examples: [NA]
     - Confiscation:
-#      - {_id: Confiscation_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Confiscation']
       - {_description: NA}
       - _examples: [NA]
     - BlockadeOrRestrictionOfMovement:
-#      - {_id: BlockadeOrRestrictionOfMovement_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#BlockadeOrRestrictionOfMovement']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#BlockadeOrRestrictionOfMovement']
       - {_description: NA}
       - _examples: [NA]
     - Demobilization:
-#      - {_id: Demobilization_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Demobilization']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Demobilization']
       - {_description: NA}
       - _examples: [NA]
     - Sanctions:
-#      - {_id: Sanctions_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Sanctions']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Sanctions']
       - {_description: NA}
       - _examples: [NA]
       - EconomicSanctions:
-#        - {_id: EconomicSanctions_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicSanctions']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#EconomicSanctions']
         - {_description: NA}
         - _examples: [NA]
       - DiplomaticSanctions:
-#        - {_id: DiplomaticSanctions_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DiplomaticSanctions']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DiplomaticSanctions',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#PoliticalFrictionOrTension']
         - {_description: NA}
         - _examples: [NA]
       - TariffOrTradeSanctions:
-#        - {_id: TariffOrTradeSanctions_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#TariffOrTradeSanctions']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#TariffOrTradeSanctions']
         - {_description: NA}
         - _examples: [NA]
       - AdministrativeSanctions:
-#        - {_id: AdministrativeSanctions_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#AdministrativeSanctions']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#AdministrativeSanctions']
         - {_description: NA}
         - _examples: [NA]
-    - Retreat:
-#      - {_id: Retreat_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Retreat']
+    - Neutralization:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Neutralization'
+        ]
       - {_description: NA}
       - _examples: [NA]
-    - Expulsion:
-#      - {_id: Expulsion_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Expulsion']
+    - Retreat:
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Retreat']
       - {_description: NA}
       - _examples: [NA]
     - Curfew:
-#      - {_id: Curfew_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Curfew']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Curfew']
       - {_description: NA}
       - _examples: [NA]
   - Aggression:
-#    - {_id: Aggression_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Aggression']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Aggression']
     - {_description: NA}
     - _examples: [NA]
   - Ceremony:
-#    - {_id: Ceremony_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Ceremony']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Ceremony']
     - {_description: NA}
     - _examples: [NA]
     - Funeral:
-#      - {_id: Funeral_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Funeral']
       - {_description: NA}
       - _examples: [NA]
     - BusinessCeremony:
-#      - {_id: BusinessCeremony_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#BusinessCeremony']
       - {_description: NA}
       - _examples: [NA]
     - GovernmentCeremony:
-#      - {_id: GovernmentCeremony_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#GovernmentCeremony']
       - {_description: NA}
       - _examples: [NA]
     - LegalProceedingsOrTrial:
-#      - {_id: LegalProceedingsOrTrial_000}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LegalProceedingsOrTrial']
       - {_description: NA}
       - _examples: [NA]
     - Wedding:
-#      - {_id: Wedding_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Wedding']
       - {_description: NA}
       - _examples: [NA]
     - ReligiousCeremonyOrWorship:
-#      - {_id: ReligiousCeremonyOrWorship_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ReligiousCeremonyOrWorship']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ReligiousCeremonyOrWorship']
       - {_description: NA}
       - _examples: [NA]
     - Commemoration:
-#      - {_id: Commemoration_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Commemoration']
       - {_description: NA}
       - _examples: [NA]
     - Graduation:
-#      - {_id: Graduation_001}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Graduation']
       - {_description: NA}
       - _examples: [NA]
   - IntimidationAndCoercion:
-#    - {_id: IntimidationAndCoercion_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#IntimidationAndCoercion']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#IntimidationAndCoercion',
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryCoercionOrIntimidation']
     - {_description: NA}
     - _examples: [NA]
     - ApplicationOfMilitaryOrPoliticalPressure:
-#      - {_id: ApplicationOfMilitaryOrPoliticalPressure_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ApplicationOfMilitaryOrPoliticalPressure']
+      - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ApplicationOfMilitaryOrPoliticalPressure',
+            'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryCoercionOrIntimidation']
+      - {_description: NA}
+      - _examples: [NA]
+    - ExhibitionOfPower:
+      - _source: [
+          'NN',
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ExhibitionOfPower',
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryCoercionOrIntimidation']
+      - {_description: NA}
+      - _examples: [NA]
+    - Terrorism:
+      - _source: [
+          'NN',
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Terrorism',
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#TerroristActivities',
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#TerrorismFinancing']
       - {_description: NA}
       - _examples: [NA]
   - Donation:
-#    - {_id: Donation_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Donation']
-    - {_description: NA}
-    - _examples: [NA]
-  - DefensiveManeuver:
-#    - {_id: DefensiveManeuver_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DefensiveManeuver']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Donation']
     - {_description: NA}
     - _examples: [NA]
   - GuardingOrPatrolling:
-#    - {_id: GuardingOrPatrolling_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#GuardingOrPatrolling']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#GuardingOrPatrolling']
     - {_description: NA}
     - _examples: [NA]
   - ViolationOfAgreement:
-#    - {_id: ViolationOfAgreement_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ViolationOfAgreement']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ViolationOfAgreement',
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#PoliticalFrictionOrTension']
     - {_description: NA}
     - _examples: [NA]
-    - ViolationOfCeasefire:
-#      - {_id: ViolationOfCeasefire_001}
+    - ViolationOfCeasefireOrTruce:
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ViolationOfCeasefireOrTruce']
       - {_description: NA}
       - _examples: [NA]
-    - ViolationOfTruce:
-#      - {_id: ViolationOfTruce_001}
-      - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ViolationOfCeasefireOrTruce']
-      - {_description: NA}
-      - _examples: [NA]
+      - ViolationOfCeasefire:
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ViolationOfCeasefire']
+        - {_description: NA}
+        - _examples: [NA]
+      - ViolationOfTruce:
+        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ViolationOfTruce']
+        - {_description: NA}
+        - _examples: [NA]
   - RecoveryOrRescue:
-#    - {_id: RecoveryOrRescue_001}
-    - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RecoveryOrRescue']
+    - _source: [
+        'NN',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#RecoveryOrRescue']
     - {_description: NA}
     - _examples: [NA]
     - SearchAndRescue:
-#      - {_id: SearchAndRescue_000}
       - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SearchAndRescue']
       - {_description: NA}
       - _examples: [NA]
   - PersonalLifeEvent:
-#    - {_id: PersonalLifeEvent_001}
     - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PersonalLifeEvent']
     - {_description: NA}
     - _examples: [NA]
     - Death:
-#      - {_id: Death_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Death']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Death']
       - {_description: NA}
       - _examples: [NA]
     - Marriage:
-#      - {_id: Marriage_000}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Wedding']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Wedding']
       - {_description: NA}
       - _examples: [NA]
     - Birth:
-#      - {_id: Birth_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Birth']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Birth']
       - {_description: NA}
       - _examples: [NA]
     - Graduation:
-#      - {_id: Graduation_000}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Graduation']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Graduation']
       - {_description: NA}
       - _examples: [NA]
     - Suicide:
-#      - {_id: Suicide_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Suicide']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Suicide']
       - {_description: NA}
       - _examples: [NA]
       - SuicideBombing:
-#        - {_id: SuicideBombing_000}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SuicideBombing']
+        - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SuicideBombing',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#TerroristActivities']
         - {_description: NA}
         - _examples: [NA]
     - HealthAndDisease:
-#      - {_id: HealthAndDisease_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#HealthAndDisease']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#HealthAndDisease']
       - {_description: NA}
       - _examples: [NA]
-    - IllnessOrWounding:
-#      - {_id: IllnessOrWounding_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#IllnessOrInjury']
-      - {_description: NA}
-      - _examples: [NA]
-      - Illness:
-#        - {_id: Illness_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Illness']
+      - AlcoholDrugAndSubstanceAbuse:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#AlcoholDrugAndSubstanceAbuse'
+          ]
         - {_description: NA}
         - _examples: [NA]
-      - Injury:
-#        - {_id: Injury_001}
-        - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Injury']
+      - FoodWaterAndNutrition:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FoodWaterAndNutrition'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+        - ContaminatedWater:
+          - _source: [
+                'NN',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ContaminatedWater']
+          - {_description: NA}
+          - _examples: [NA]
+        - FoodInsecurity:
+          - _source: [
+                'NN',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FoodInsecurity']
+          - {_description: NA}
+          - _examples: [NA]
+        - FoodSecurity:
+          - _source: [
+                'NN',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#FoodSecurity',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#SecuritySafetyLevel',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#FoodAndNutritionLevel',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#CriticalResources']
+          - {_description: NA}
+          - _examples: [NA]
+        - Malnutrition:
+          - _source: [
+                'NN',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Malnutrition']
+          - {_description: NA}
+          - _examples: [NA]
+        - PromotionOfWaterSanitationAndHygiene:
+          - _source: [
+                  'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PromotionOfWaterSanitationAndHygiene',
+                  'ICM: http://ontology.causeex.com/ontology/odps/ICM#HealthcareAvailability',
+                  'ICM: http://ontology.causeex.com/ontology/odps/ICM#WaterAvailability']
+          - {_description: NA}
+          - _examples: [NA]
+        - WaterInsecurity:
+          - _source: [
+                'NN',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#WaterInsecurity']
+          - {_description: NA}
+          - _examples: [NA]
+        - WaterSecurity:
+          - _source: [
+                'NN',
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#WaterSecurity',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#SecuritySafetyLevel',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#WaterAvailability',
+                'ICM: http://ontology.causeex.com/ontology/odps/ICM#CriticalResources']
+          - {_description: NA}
+          - _examples: [NA]
+      - IllnessOrWounding:
+        - _source: [
+              'NN',
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#IllnessOrInjury']
+        - {_description: NA}
+        - _examples: [NA]
+        - Illness:
+          - _source: [
+                  'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Illness']
+          - {_description: NA}
+          - _examples: [NA]
+        - Injury:
+          - _source: ['CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Injury']
+          - {_description: NA}
+          - _examples: [NA]
+          - Wounding:
+            - _source: [
+                'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Wounding'
+              ]
+            - {_description: NA}
+            - _examples: [NA]
+      - Vaccination:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Vaccination'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+      - VaccinationProgram:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#VaccinationProgram'
+          ]
         - {_description: NA}
         - _examples: [NA]
     - SeparationOrDivorce:
-#      - {_id: SeparationOrDivorce_001}
-      - _source: ['NN', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SeparationOrDivorce']
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SeparationOrDivorce']
       - {_description: NA}
       - _examples: [NA]
-  - environment:
-#    - {_id: environment_001}
-    - _source: ['HUME: hume/event/environment']
-    - {_description: NA}
-    - _examples: [pollution]
   - Sentiment:
-#    - {_id: Sentiment_001}
-    - _source: ['NN','BBNBAE', 'CAUSEEX: http://graph.causeex.com/bbn#Sentiment']
+    - _source: [
+        'NN',
+        'BBNBAE',
+        'CAUSEEX: http://graph.causeex.com/bbn#Sentiment']
     - {_description: NA}
     - _examples: [NA]
     - Belief:
-#      - {_id: Belief_001}
-      - _source: ['BBNBAE', 'CAUSEEX: http://graph.causeex.com/bbn#Belief']
-      - {_description: NA}
-      - _examples: [NA]
-    - Distrust:
-#      - {_id: Distrust_001}
-      - _source: ['BBNBAE', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DistrustOrSuspicion']
+      - _source: [
+            'BBNBAE',
+            'CAUSEEX: http://graph.causeex.com/bbn#Belief']
       - {_description: NA}
       - _examples: [NA]
     - Concern:
-#      - {_id: Concern_001}
-      - _source: ['BBNBAE', 'CAUSEEX: http://graph.causeex.com/bbn#Concern']
+      - _source: [
+            'BBNBAE',
+            'CAUSEEX: http://graph.causeex.com/bbn#Concern']
       - {_description: NA}
       - {_alternative_id: ApprehensionAnxietyOrWorry_001}
       - _examples: [NA]
+    - DistrustOrSuspicion:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DistrustOrSuspicion'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+      - Distrust:
+        - _source: [
+              'BBNBAE',
+              'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Distrust']
+        - {_description: NA}
+        - _examples: [NA]
+      - Suspicion:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Suspicion'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+    - LackOfOrNegativeSupport:
+      - _source: [
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LackOfOrNegativeSupport'
+        ]
+      - {_description: NA}
+      - _examples: [NA]
+      - LackOfSupportOrDissatisfaction:
+        - _source: [
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#LackOfSupportOrDissatisfaction'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
     - Support:
-#      - {_id: Support_001}
-      - _source: ['BBNAE']
+      - _source: [
+            'BBNAE',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#DefenseOrSupport']
       - {_description: NA}
       - {_alternative_id: DefenseOrSupport_001}
       - _examples: [NA]
   - Dependance:
-#    - {_id: Dependance_001}
-    - _source: ['NN', 'BBNBAE', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Dependence']
+    - _source: [
+        'NN',
+        'BBNBAE',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Dependence']
     - {_description: NA}
     - _examples: [NA]
   - CostOfActionOrGoods:
-#    - {_id: CostOfActionOrGoods_001}
-    - _source: ['NN','BBNBAE','CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Pricing']
+    - _source: [
+        'NN',
+        'BBNBAE',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Pricing']
     - {_description: NA}
     - _examples: [NA]
-  - ExportImport:
-#    - {_id: ExportImport_001}
-    - _source: ['NN','BBNBAE', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ImportAndExport']
+  - PreparednessOrCapability:
+    - _source: [
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PreparednessOrCapability'
+      ]
     - {_description: NA}
     - _examples: [NA]
-    - Export:
-#      - {_id: Export_001}
-      - _source: ['NN','BBNBAE', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Export']
+    - MilitaryCapability:
+      - _source: [
+          'NN',
+          'BBNBAE',
+          'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#MilitaryCapability',
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#SecuritySafetyLevel',
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryForcesCapability',
+          'ICM: http://ontology.causeex.com/ontology/odps/ICM#MilitaryForcesReadiness']
       - {_description: NA}
       - _examples: [NA]
-    - Import:
-#      - {_id: Import_001}
-      - _source: ['NN','BBNBAE', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Import']
-      - {_description: NA}
-      - _examples: [NA]
-  - MilitaryCapability:
-#    - {_id: MilitaryCapability_001}
-    - _source: ['NN','BBNBAE', 'CAUSEEX: http://graph.causeex.com/bbn#MilitaryCapability']
-    - {_description: NA}
-    - _examples: [NA]
   - PhysicalSecurity:
-#    - {_id: PhysicalSecurity_001}
-    - _source: ['BBNBAE', 'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PhysicalSecurity']
+    - _source: [
+        'BBNBAE',
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#PhysicalSecurity',
+        'ICM: http://ontology.causeex.com/ontology/odps/ICM#SecuritySafetyLevel']
     - {_description: NA}
     - _examples: [NA]
   - NationalSecurity:
-#    - {_id: NationalSecurity_001}
-    - _source: ['BBNBAE', 'CAUSEEX: http://graph.causeex.com/bbn#NationalSecurity']
+    - _source: [
+        'BBNBAE',
+        'CAUSEEX: http://graph.causeex.com/bbn#NationalSecurity']
     - {_description: NA}
     - _examples: [NA]
   - InternationalSecurity:
-#    - {_id: InternationalSecurity_001}
-    - _source: ['BBNBAE', 'CAUSEEX: http://graph.causeex.com/bbn#InternationalSecurity']
+    - _source: [
+        'BBNBAE',
+        'CAUSEEX: http://graph.causeex.com/bbn#InternationalSecurity']
+    - {_description: NA}
+    - _examples: [NA]
+  - ExperimentOrTest:
+    - _source: [
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#ExperimentOrTest'
+      ]
+    - {_description: NA}
+    - _examples: [NA]
+  - Maintenance:
+    - _source: [
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#Maintenance'
+      ]
+    - {_description: NA}
+    - _examples: [NA]
+  - SpaceEvent:
+    - _source: [
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SpaceEvent'
+      ]
+    - {_description: NA}
+    - _examples: [NA]
+    - SolarFlare:
+      - _source: [
+            'NN',
+            'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#SolarFlare']
+      - {_description: NA}
+      - _examples: [NA]
+  - WasteManagement:
+    - _source: [
+        'CAUSEEX: http://ontology.causeex.com/ontology/odps/Event#WasteManagement'
+      ]
     - {_description: NA}
     - _examples: [NA]

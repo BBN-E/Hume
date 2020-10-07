@@ -1,0 +1,1242 @@
+247983 RUS # Carnegie Endowment for International Peace affiliated_with Russian Federation
+283240 RUS # Security Council of Russia affiliated_with Russian Federation
+298895 RUS # RIA Novosti affiliated_with Russian Federation
+233635 RUS # Rosneft affiliated_with Russian Federation
+595785 RUS # Pavel Baev affiliated_with Russian Federation
+199466 RUS # RusHydro affiliated_with Russian Federation
+254016 FIN # University of Helsinki affiliated_with Republic of Finland
+285948 LTU # Amber Grid affiliated_with Republic of Lithuania
+167442 RUS # State Courier Service (Russia) affiliated_with Russian Federation
+203161 RUS # Sozvezdie affiliated_with Russian Federation
+694239 DNK # Margrethe II of Denmark affiliated_with Kingdom of Denmark
+285214 LTU # Lithuanian Armed Forces affiliated_with Republic of Lithuania
+288380 POL # PGNiG affiliated_with Republic of Poland
+161385 EST # Ministry of Foreign Affairs (Estonia) affiliated_with Republic of Estonia
+263584 RUS # Bashneft affiliated_with Russian Federation
+492274 RUS # Nikolay Skvortsov affiliated_with Russian Federation
+302319 RUS # Pavel Durov affiliated_with Russian Federation
+363052 RUS # Julia Ioffe affiliated_with Russian Federation
+226121 RUS # Rostec affiliated_with Russian Federation
+132786 DEU # Siemens affiliated_with Federal Republic of Germany
+259970 LTU # Homeland Union affiliated_with Republic of Lithuania
+157930 RUS # Ilyushin affiliated_with Russian Federation
+585262 LVA # Vaira Vīķe-Freiberga affiliated_with Republic of Latvia
+291989 RUS # NTV (Russia) affiliated_with Russian Federation
+236291 DEU # George C. Marshall European Center for Security Studies affiliated_with Federal Republic of Germany
+242950 RUS # Institute for US and Canadian Studies affiliated_with Russian Federation
+188665 RUS # Transneft affiliated_with Russian Federation
+506323 DEU # Nikolaus Blome affiliated_with Federal Republic of Germany
+227341 RUS # National Research University – Higher School of Economics affiliated_with Russian Federation
+742364 FIN # Martti Ahtisaari affiliated_with Republic of Finland
+480727 DEU # Robert Bosch affiliated_with Federal Republic of Germany
+175175 RUS # Voice of Russia affiliated_with Russian Federation
+299130 LVA # Harmony Centre affiliated_with Republic of Latvia
+236144 RUS # Kamov affiliated_with Russian Federation
+142379 ALB # ABC News Albania affiliated_with Republic of Albania
+221281 RUS # Pacific Fleet (Russia) affiliated_with Russian Federation
+672083 RUS # Ramzan Kadyrov affiliated_with Russian Federation
+253358 RUS # Gazprom affiliated_with Russian Federation
+148464 DEU # Max Planck Institute for Comparative Public Law and International Law affiliated_with Federal Republic of Germany
+176446 DEU # NewYorker affiliated_with Federal Republic of Germany
+124937 DEU # Commerzbank affiliated_with Federal Republic of Germany
+141301 DEU # Institute for European Politics affiliated_with Federal Republic of Germany
+641742 RUS # Konstantin Sonin affiliated_with Russian Federation
+185072 SWE # Swedish Navy affiliated_with Kingdom of Sweden
+718401 POL # Witold Waszczykowski affiliated_with Republic of Poland
+567515 DEU # Hans Delbrück affiliated_with Federal Republic of Germany
+677818 RUS # Denis Manturov affiliated_with Russian Federation
+197284 RUS # Russian Presidential Academy of National Economy and Public Administration affiliated_with Russian Federation
+606460 SWE # Carl Bildt affiliated_with Kingdom of Sweden
+386678 DEU # Alexander Gauland affiliated_with Federal Republic of Germany
+288686 RUS # Sevmash affiliated_with Russian Federation
+141594 RUS # Ministry of Internal Affairs (Russia) affiliated_with Russian Federation
+180021 RUS # Novolipetsk Steel affiliated_with Russian Federation
+403899 DEU # Heiko Maas affiliated_with Federal Republic of Germany
+172671 DEU # Munich Security Conference affiliated_with Federal Republic of Germany
+246614 RUS # Institute of International Relations Yekaterinburg affiliated_with Russian Federation
+229137 SWE # Swedish Air Force affiliated_with Kingdom of Sweden
+704874 RUS # Igor Sechin affiliated_with Russian Federation
+562760 SWE # Erik Berglund affiliated_with Kingdom of Sweden
+133762 RUS # Sukhoi affiliated_with Russian Federation
+347631 RUS # Anna Politkovskaya affiliated_with Russian Federation
+193009 RUS # Foreign Intelligence Service (Russia) affiliated_with Russian Federation
+355635 EST # Urmas Reinsalu affiliated_with Republic of Estonia
+175542 DEU # Wintershall affiliated_with Federal Republic of Germany
+569972 RUS # Sergey Shishkarev affiliated_with Russian Federation
+157295 RUS # Gazprom Neft affiliated_with Russian Federation
+273765 RUS # Alfa-Bank affiliated_with Russian Federation
+562506 DEU # Reinhard Selten affiliated_with Federal Republic of Germany
+193175 POL # Ministry of Foreign Affairs (Poland) affiliated_with Republic of Poland
+525037 RUS # Vladimir Shamanov affiliated_with Russian Federation
+418683 LVA # Nils Ušakovs affiliated_with Republic of Latvia
+187963 DEU # Deutsche Bank affiliated_with Federal Republic of Germany
+614764 EST # Rein Taagepera affiliated_with Republic of Estonia
+141626 FIN # Centre Party (Finland) affiliated_with Republic of Finland
+126702 RUS # Naval Infantry (Russia) affiliated_with Russian Federation
+140461 RUS # Lenta affiliated_with Russian Federation
+135253 EST # Statistics Estonia affiliated_with Republic of Estonia
+243368 DEU # Euro am Sonntag affiliated_with Federal Republic of Germany
+202953 LVA # National Alliance (Latvia) affiliated_with Republic of Latvia
+191675 DEU # Der Spiegel affiliated_with Federal Republic of Germany
+432358 RUS # Igor Sergeyev affiliated_with Russian Federation
+417728 RUS # James Franklin Collins affiliated_with Russian Federation
+300768 RUS # Komitet Gosudarstvennoy Bezopasnosti affiliated_with Russian Federation
+329299 RUS # Alexei Bogaturov affiliated_with Russian Federation
+127715 DEU # Deutsche Presse-Agentur affiliated_with Federal Republic of Germany
+679076 RUS # Vitaly Churkin affiliated_with Russian Federation
+425680 RUS # Dmitry Kobylkin affiliated_with Russian Federation
+313096 LVA # Valdis Dombrovskis affiliated_with Republic of Latvia
+401460 DEU # Carl Becker affiliated_with Federal Republic of Germany
+162848 RUS # United Aircraft Corporation affiliated_with Russian Federation
+457968 RUS # Roman Abramovich affiliated_with Russian Federation
+130173 DEU # Friedrich Ebert Foundation affiliated_with Federal Republic of Germany
+183696 RUS # Okhrana affiliated_with Russian Federation
+172920 RUS # Main Intelligence Directorate (Russia) affiliated_with Russian Federation
+216226 SWE # Swedish Armed Forces affiliated_with Kingdom of Sweden
+591239 EST # Edgar Savisaar affiliated_with Republic of Estonia
+511952 RUS # Vladimir Putin affiliated_with Russian Federation
+700369 RUS # Mikhail Gorbachev affiliated_with Russian Federation
+607470 EST # Taavi Rõivas affiliated_with Republic of Estonia
+202221 RUS # Tupolev affiliated_with Russian Federation
+702905 RUS # Oleg Grigoryevich Makarov affiliated_with Russian Federation
+245402 LVA # University of Latvia affiliated_with Republic of Latvia
+189434 RUS # AvtoVAZ affiliated_with Russian Federation
+155366 RUS # Moscow Institute of Physics and Technology affiliated_with Russian Federation
+447006 RUS # Vitaliy Zakharchenko affiliated_with Russian Federation
+501777 RUS # Margarita Simonyan affiliated_with Russian Federation
+240262 SWE # Volvo affiliated_with Kingdom of Sweden
+242744 DNK # University of Southern Denmark affiliated_with Kingdom of Denmark
+677522 DEU # Gerd Gigerenzer affiliated_with Federal Republic of Germany
+219456 RUS # Moscow State Institute of International Relations affiliated_with Russian Federation
+468423 LVA # Jānis Polis affiliated_with Republic of Latvia
+336622 RUS # Alena V. Ledeneva affiliated_with Russian Federation
+402372 RUS # Vladimir Zhirinovsky affiliated_with Russian Federation
+326167 RUS # Alexander Lebed affiliated_with Russian Federation
+692173 EST # Jüri Luik affiliated_with Republic of Estonia
+167830 RUS # Russia-24 affiliated_with Russian Federation
+224588 RUS # Progress Publishers affiliated_with Russian Federation
+271034 DEU # Bayerische Motoren Werke affiliated_with Federal Republic of Germany
+190094 RUS # Levada Center affiliated_with Russian Federation
+141511 DEU # Foreign Office (Germany) affiliated_with Federal Republic of Germany
+284861 RUS # Novatek affiliated_with Russian Federation
+562345 DEU # Max Planck affiliated_with Federal Republic of Germany
+582086 EST # Sven Mikser affiliated_with Republic of Estonia
+436428 RUS # Garry Kasparov affiliated_with Russian Federation
+551932 LTU # Linas Antanas Linkevičius affiliated_with Republic of Lithuania
+285354 SWE # Sveriges Radio affiliated_with Kingdom of Sweden
+743843 RUS # Sergey Donskoy affiliated_with Russian Federation
+222915 RUS # Russian Ground Forces affiliated_with Russian Federation
+434751 SWE # Lars E. O. Svensson affiliated_with Kingdom of Sweden
+283417 RUS # Western Military District affiliated_with Russian Federation
+405546 DEU # Joschka Fischer affiliated_with Federal Republic of Germany
+292784 RUS # Dozhd affiliated_with Russian Federation
+289823 RUS # Russian News Agency TASS affiliated_with Russian Federation
+459765 SWE # Toomas Hendrik Ilves affiliated_with Kingdom of Sweden
+169611 FIN # Finnish Army affiliated_with Republic of Finland
+147379 RUS # RTR-Planeta affiliated_with Russian Federation
+270566 RUS # Rosoboronexport affiliated_with Russian Federation
+183432 RUS # Cityline (ISP) affiliated_with Russian Federation
+678181 RUS # Vladimir Solovyov affiliated_with Russian Federation
+136337 RUS # State Duma affiliated_with Russian Federation
+553899 LTU # Valdemar Tomaševski affiliated_with Republic of Lithuania
+345346 LVA # Alexei Kudrin affiliated_with Republic of Latvia
+539363 DEU # Alexander Gläser affiliated_with Federal Republic of Germany
+502652 LVA # Andris Ameriks affiliated_with Republic of Latvia
+144350 EST # Riigikogu affiliated_with Republic of Estonia
+191381 DEU # Globus affiliated_with Federal Republic of Germany
+292495 LVA # ABLV Bank affiliated_with Republic of Latvia
+142349 RUS # Alpha Group affiliated_with Russian Federation
+254145 RUS # Sputnik affiliated_with Russian Federation
+273068 RUS # Rossiya Bank affiliated_with Russian Federation
+192431 RUS # Black Sea Fleet affiliated_with Russian Federation
+428578 RUS # Mikhail Khodorkovsky affiliated_with Russian Federation
+483254 RUS # Natalya Kaspersky affiliated_with Russian Federation
+183235 RUS # Surgutneftegas affiliated_with Russian Federation
+247728 RUS # Northern Fleet affiliated_with Russian Federation
+263493 RUS # World Without Nazism affiliated_with Russian Federation
+151606 LVA # Ministry of Economics (Latvia) affiliated_with Republic of Latvia
+441422 DEU # Hannah Arendt affiliated_with Federal Republic of Germany
+285479 RUS # Kamaz affiliated_with Russian Federation
+324085 FIN # Sauli Niinistö affiliated_with Republic of Finland
+604437 RUS # Eugene Kaspersky affiliated_with Russian Federation
+227883 RUS # Ministry of Foreign Affairs (Russia) affiliated_with Russian Federation
+136362 RUS # Severstal affiliated_with Russian Federation
+245948 RUS # Yukos affiliated_with Russian Federation
+263173 LVA # Saeima affiliated_with Republic of Latvia
+502530 EST # Andrus Ansip affiliated_with Republic of Estonia
+217174 RUS # Nord Stream AG affiliated_with Russian Federation
+165995 RUS # Russian Air Force affiliated_with Russian Federation
+239876 RUS # Russian Machines affiliated_with Russian Federation
+190449 LVA # Ministry of Defence (Latvia) affiliated_with Republic of Latvia
+366119 RUS # Boris Sergeyevich Sokolov affiliated_with Russian Federation
+276597 DEU # Transparency International affiliated_with Federal Republic of Germany
+175226 RUS # RT (TV network) affiliated_with Russian Federation
+239801 SWE # Swedbank affiliated_with Kingdom of Sweden
+548612 EST # Paul Keres affiliated_with Republic of Estonia
+127681 EST # Estonian Greens affiliated_with Republic of Estonia
+537258 RUS # Konstantin Malofeev affiliated_with Russian Federation
+217738 DEU # Rheinmetall affiliated_with Federal Republic of Germany
+685032 LVA # Tatjana Ždanoka affiliated_with Republic of Latvia
+167559 RUS # Expert affiliated_with Russian Federation
+567359 EST # Jaak Aaviksoo affiliated_with Republic of Estonia
+217825 DNK # Folketing affiliated_with Kingdom of Denmark
+348430 EST # Herman Simm affiliated_with Republic of Estonia
+288868 RUS # Russian Airborne Troops affiliated_with Russian Federation
+674494 EST # Marina Kaljurand affiliated_with Republic of Estonia
+179074 LTU # Raduga affiliated_with Republic of Lithuania
+652095 RUS # Dmitry Yazov affiliated_with Russian Federation
+439291 EST # Urmas Paet affiliated_with Republic of Estonia
+537604 RUS # Dmitri Soloviev affiliated_with Russian Federation
+193188 RUS # Zvezda (TV channel) affiliated_with Russian Federation
+199218 RUS # Strategic Missile Troops affiliated_with Russian Federation
+258763 RUS # Night Wolves affiliated_with Russian Federation
+467430 RUS # Alexei Arbatov affiliated_with Russian Federation
+267844 RUS # Moscow Aviation Institute affiliated_with Russian Federation
+214360 DEU # Wagner & Co Solar Technology affiliated_with Federal Republic of Germany
+614588 DNK # Anders Fogh Rasmussen affiliated_with Kingdom of Denmark
+165943 EST # Estonian Internal Security Service affiliated_with Republic of Estonia
+153367 RUS # Ministry of Education and Science (Russia) affiliated_with Russian Federation
+269918 DEU # Uniper affiliated_with Federal Republic of Germany
+156385 RUS # Polar Star (Decembrist journal) affiliated_with Russian Federation
+153456 RUS # Ministry of Transport (Russia) affiliated_with Russian Federation
+271521 POL # Solidarity (Polish trade union) affiliated_with Republic of Poland
+132878 RUS # REN TV affiliated_with Russian Federation
+376853 DEU # Wolfgang Leonhard affiliated_with Federal Republic of Germany
+345514 DEU # Friedrich Geiger affiliated_with Federal Republic of Germany
+275804 DEU # Volkswagen affiliated_with Federal Republic of Germany
+283147 RUS # Rossotrudnichestvo affiliated_with Russian Federation
+200965 RUS # LifeNews affiliated_with Russian Federation
+205169 RUS # Caspian Flotilla affiliated_with Russian Federation
+310240 RUS # Gennady Timchenko affiliated_with Russian Federation
+249023 RUS # All-Russia State Television and Radio Broadcasting Company affiliated_with Russian Federation
+139698 DEU # Federal Office for Information Security affiliated_with Federal Republic of Germany
+741387 DEU # Annegret Kramp-Karrenbauer affiliated_with Federal Republic of Germany
+600258 RUS # Eduard Limonov affiliated_with Russian Federation
+434807 FIN # Ari Puheloinen affiliated_with Republic of Finland
+223989 RUS # Ministry of Finance (Russia) affiliated_with Russian Federation
+292445 FIN # Finnish Defence Forces affiliated_with Republic of Finland
+253696 RUS # Ministry of Emergency Situations (Russia) affiliated_with Russian Federation
+310426 SWE # Anders Åslund affiliated_with Kingdom of Sweden
+280374 RUS # Russian Navy affiliated_with Russian Federation
+176006 RUS # Russia-1 affiliated_with Russian Federation
+397496 RUS # Anatoly Kulikov affiliated_with Russian Federation
+389050 DNK # Lars Løkke Rasmussen affiliated_with Kingdom of Denmark
+176292 RUS # TsNIITochMash affiliated_with Russian Federation
+574799 RUS # Alexander Litvinenko affiliated_with Russian Federation
+129245 SWE # Danske Bank (Sweden) affiliated_with Kingdom of Sweden
+333294 RUS # Pavel Grachev affiliated_with Russian Federation
+195681 RUS # Kaspersky Lab affiliated_with Russian Federation
+147488 DEU # Deutsche Welle affiliated_with Federal Republic of Germany
+640664 RUS # Peter Carl Fabergé affiliated_with Russian Federation
+697959 DEU # Ursula von der Leyen affiliated_with Federal Republic of Germany
+378025 LVA # Raimonds Bergmanis affiliated_with Republic of Latvia
+149488 EST # Estonian Defence League affiliated_with Republic of Estonia
+168149 RUS # Russian Railways affiliated_with Russian Federation
+671715 LTU # Petras Auštrevičius affiliated_with Republic of Lithuania
+128764 EST # Port of Tallinn affiliated_with Republic of Estonia
+189931 LTU # Ministry of National Defence (Lithuania) affiliated_with Republic of Lithuania
+252641 RUS # Yuganskneftegaz affiliated_with Russian Federation
+193059 RUS # Ministry of Energy (Russia) affiliated_with Russian Federation
+300031 LVA # New Centre (Latvia) affiliated_with Republic of Latvia
+604586 FIN # Erkki Tuomioja affiliated_with Republic of Finland
+278825 SWE # Swedish Defence University affiliated_with Kingdom of Sweden
+225143 DNK # Maersk affiliated_with Kingdom of Denmark
+638094 SWE # Fredrik Reinfeldt affiliated_with Kingdom of Sweden
+641426 SWE # Rolf Ekéus affiliated_with Kingdom of Sweden
+240173 RUS # Sberbank of Russia affiliated_with Russian Federation
+141550 RUS # Russian Armed Forces affiliated_with Russian Federation
+549611 RUS # Sergey Shoygu affiliated_with Russian Federation
+237317 RUS # Fox affiliated_with Russian Federation
+686219 RUS # Maria Petrova affiliated_with Russian Federation
+176894 RUS # Moscow State University affiliated_with Russian Federation
+259619 RUS # Rossiya Segodnya affiliated_with Russian Federation
+255489 RUS # United Shipbuilding Corporation affiliated_with Russian Federation
+294432 RUS # Rusal affiliated_with Russian Federation
+161119 RUS # Ministry of Economic Development (Russia) affiliated_with Russian Federation
+161775 RUS # Russian National Unity affiliated_with Russian Federation
+205765 RUS # Ministry of Defence (Russia) affiliated_with Russian Federation
+742364 RUS # Martti Ahtisaari affiliated_with Russian Federation
+152042 LVA # Latvian Russian Union affiliated_with Republic of Latvia
+444099 LVA # Artis Pabriks affiliated_with Republic of Latvia
+368138 LVA # Sarmīte Ēlerte affiliated_with Republic of Latvia
+245772 RUS # Lukoil affiliated_with Russian Federation
+401341 RUS # Sergei Ivanov affiliated_with Russian Federation
+201842 RUS # Channel One Russia affiliated_with Russian Federation
+399368 SWE # Johan Norberg affiliated_with Kingdom of Sweden
+229593 DEU # Daimler AG affiliated_with Federal Republic of Germany
+205144 RUS # Baltic Fleet affiliated_with Russian Federation
+287538 LTU # Social Democratic Party of Lithuania affiliated_with Republic of Lithuania
+148720 DEU # Stasi affiliated_with Federal Republic of Germany
+237481 RUS # Oboronprom affiliated_with Russian Federation
+589829 LTU # Vilija Blinkevičiūtė affiliated_with Republic of Lithuania
+212703 USA # University of California affiliated_with United States
+276656 NOR # Norwegian Defence Research Establishment affiliated_with Kingdom of Norway
+159659 NLD # Royal Netherlands Air Force affiliated_with Kingdom of the Netherlands
+564501 USA # Nathan Glazer affiliated_with United States
+540059 USA # Daniel Henninger affiliated_with United States
+692819 USA # Ben Jones (Georgia congressman) affiliated_with United States
+186334 USA # Internal Revenue Service affiliated_with United States
+142376 USA # Broadcom affiliated_with United States
+152514 HUN # Jobbik affiliated_with Hungary
+247983 USA # Carnegie Endowment for International Peace affiliated_with United States
+496843 USA # R. Nicholas Burns affiliated_with United States
+198454 USA # International Assessment and Strategy Center affiliated_with United States
+243223 USA # Democratic National Committee affiliated_with United States
+233820 USA # University Press of Kansas affiliated_with United States
+553094 USA # George Washington affiliated_with United States
+204751 USA # Foursquare affiliated_with United States
+209027 GBR # Oxford University Press affiliated_with United Kingdom of Great Britain and Northern Ireland
+265872 GBR # Direct Line affiliated_with United Kingdom of Great Britain and Northern Ireland
+148801 CZE # Ministry of Industry and Trade (Czech Republic) affiliated_with Czech Republic
+127534 USA # National Endowment for Democracy affiliated_with United States
+584868 USA # J. William Fulbright affiliated_with United States
+281393 USA # Justice Party (United States) affiliated_with United States
+618678 USA # Kevin P. Chilton affiliated_with United States
+162283 USA # Republican National Committee affiliated_with United States
+272058 NLD # Royal Dutch Shell affiliated_with Kingdom of the Netherlands
+294977 USA # Office of Children's Issues affiliated_with United States
+194054 USA # Bureau of European and Eurasian Affairs affiliated_with United States
+168014 TUR # Yandex affiliated_with Republic of Turkey
+127510 USA # Pantheon Books affiliated_with United States
+352012 FRA # Jean-Marie Le Pen affiliated_with Republic of France
+287538 LTU # Social Democratic Party of Lithuania affiliated_with Republic of Lithuania
+141032 GBR # Euromonitor International affiliated_with United Kingdom of Great Britain and Northern Ireland
+564948 GBR # Andrew Marshall affiliated_with United Kingdom of Great Britain and Northern Ireland
+264056 USA # Caterpillar Inc. affiliated_with United States
+433789 GBR # John Stevenson (British politician) affiliated_with United Kingdom of Great Britain and Northern Ireland
+222809 USA # Foreign Policy Research Institute affiliated_with United States
+472441 USA # David Axe affiliated_with United States
+259925 USA # National Aeronautics and Space Administration affiliated_with United States
+641546 USA # George Marshall affiliated_with United States
+294075 LUX # Intelsat affiliated_with Grand Duchy of Luxembourg
+234507 USA # Symantec affiliated_with United States
+272058 GBR # Royal Dutch Shell affiliated_with United Kingdom of Great Britain and Northern Ireland
+209854 GBR # Bloomberg News affiliated_with United Kingdom of Great Britain and Northern Ireland
+198131 ESP # European Council on Foreign Relations affiliated_with Kingdom of Spain
+133077 GBR # Economist Intelligence Unit affiliated_with United Kingdom of Great Britain and Northern Ireland
+256711 GBR # Palgrave Macmillan affiliated_with United Kingdom of Great Britain and Northern Ireland
+571386 GBR # Michael Fallon affiliated_with United Kingdom of Great Britain and Northern Ireland
+613071 USA # Adrian Chen affiliated_with United States
+246515 USA # United States Department of the Army affiliated_with United States
+252878 USA # National Ground Intelligence Center affiliated_with United States
+312048 USA # Donald Rumsfeld affiliated_with United States
+142379 ALB # ABC News Albania affiliated_with Republic of Albania
+437202 USA # Michael S. Rogers affiliated_with United States
+276826 USA # Ami affiliated_with United States
+167833 NOR # Norwegian Police Security Service affiliated_with Kingdom of Norway
+379495 USA # John Haltiwanger affiliated_with United States
+175542 DEU # Wintershall affiliated_with Federal Republic of Germany
+146251 USA # Center for Naval Analyses affiliated_with United States
+276652 USA # United States Institute of Peace affiliated_with United States
+281935 USA # Gallup affiliated_with United States
+130202 USA # National Guard of the United States affiliated_with United States
+132960 GBR # Ernst & Young affiliated_with United Kingdom of Great Britain and Northern Ireland
+209515 GRC # European Union Agency for Network and Information Security affiliated_with Hellenic Republic
+180501 GBR # European Bank for Reconstruction and Development affiliated_with United Kingdom of Great Britain and Northern Ireland
+222121 USA # EastWest Institute affiliated_with United States
+141432 GBR # Penguin Group affiliated_with United Kingdom of Great Britain and Northern Ireland
+259975 USA # Chronicle Publishing Company affiliated_with United States
+346704 USA # Dan Flynn affiliated_with United States
+191675 DEU # Der Spiegel affiliated_with Federal Republic of Germany
+367834 USA # Michael H. O'Brien affiliated_with United States
+229116 USA # California State University affiliated_with United States
+218908 USA # Organization for Security and Co-operation in Europe affiliated_with United States
+242744 DNK # University of Southern Denmark affiliated_with Kingdom of Denmark
+486405 GBR # Isabel Kershner affiliated_with United Kingdom of Great Britain and Northern Ireland
+249551 HUN # Centre Party (Hungary) affiliated_with Hungary
+241350 GBR # Impact affiliated_with United Kingdom of Great Britain and Northern Ireland
+483858 USA # Mariette DiChristina affiliated_with United States
+544074 USA # Donald Trump affiliated_with United States
+204954 USA # Microsoft affiliated_with United States
+196065 USA # North American Aerospace Defense Command affiliated_with United States
+291372 USA # Academic Press affiliated_with United States
+444099 LVA # Artis Pabriks affiliated_with Republic of Latvia
+603976 USA # Maurice Obstfeld affiliated_with United States
+248619 USA # Twitter affiliated_with United States
+190385 FRA # Airbus affiliated_with Republic of France
+234191 USA # Basic Books affiliated_with United States
+148464 DEU # Max Planck Institute for Comparative Public Law and International Law affiliated_with Federal Republic of Germany
+177415 USA # National Archives and Records Administration affiliated_with United States
+140278 USA # School of International and Public Affairs, Columbia University affiliated_with United States
+217247 USA # United States Department of the Interior affiliated_with United States
+151606 LVA # Ministry of Economics (Latvia) affiliated_with Republic of Latvia
+474212 USA # Matt Bevin affiliated_with United States
+190449 LVA # Ministry of Defence (Latvia) affiliated_with Republic of Latvia
+195783 USA # Federal Election Commission affiliated_with United States
+187776 USA # Gatestone Institute affiliated_with United States
+300302 TUR # Turkish Military Academy affiliated_with Republic of Turkey
+670037 USA # Mark Thompson affiliated_with United States
+581347 USA # Robert Joseph affiliated_with United States
+532409 USA # Karim Sadjadpour affiliated_with United States
+274725 USA # Carnegie Corporation of New York affiliated_with United States
+269359 USA # Points of Light affiliated_with United States
+318966 FRA # David Beauchard affiliated_with Republic of France
+216392 USA # Overseas Private Investment Corporation affiliated_with United States
+228046 USA # ExxonMobil affiliated_with United States
+553899 LTU # Valdemar Tomaševski affiliated_with Republic of Lithuania
+502772 USA # Jimmy Carter affiliated_with United States
+237317 ROM # Fox affiliated_with România
+579302 USA # Henry L. Stimson affiliated_with United States
+227851 USA # United States Agency for International Development affiliated_with United States
+269399 GBR # University College London affiliated_with United Kingdom of Great Britain and Northern Ireland
+147801 USA # Hudson Institute affiliated_with United States
+217914 USA # United States Government Publishing Office affiliated_with United States
+631604 USA # George Soros affiliated_with United States
+210429 USA # University of North Carolina at Chapel Hill affiliated_with United States
+287663 USA # Millennium Challenge Corporation affiliated_with United States
+135501 HRV # Alliance of Primorje-Gorski Kotar affiliated_with Republic of Croatia
+585370 USA # Robert F. Kennedy affiliated_with United States
+183012 LUX # European Investment Bank affiliated_with Grand Duchy of Luxembourg
+230323 GBR # Enterprise plc affiliated_with United Kingdom of Great Britain and Northern Ireland
+235437 USA # New Directions Publishing affiliated_with United States
+143185 GBR # Special Air Service affiliated_with United Kingdom of Great Britain and Northern Ireland
+130173 DEU # Friedrich Ebert Foundation affiliated_with Federal Republic of Germany
+239855 USA # Nielsen N.V. affiliated_with United States
+245913 GBR # National Power affiliated_with United Kingdom of Great Britain and Northern Ireland
+240223 ITA # Institute for Artist Management affiliated_with Repubblica Italiana
+418954 USA # Alissa J. Rubin affiliated_with United States
+242379 GBR # Newcastle University affiliated_with United Kingdom of Great Britain and Northern Ireland
+255769 FRA # Thales Group affiliated_with Republic of France
+484217 USA # David Ignatius affiliated_with United States
+196096 USA # SEAL Team Six affiliated_with United States
+180080 FRA # Dia affiliated_with Republic of France
+181354 USA # National Security Agency affiliated_with United States
+217738 DEU # Rheinmetall affiliated_with Federal Republic of Germany
+487659 USA # Robert Blackwill affiliated_with United States
+289668 ITA # Eni affiliated_with Repubblica Italiana
+285387 NLD # ABN AMRO affiliated_with Kingdom of the Netherlands
+272136 USA # Farmers Insurance Group affiliated_with United States
+281776 USA # Facebook affiliated_with United States
+267351 USA # American Enterprise Institute affiliated_with United States
+254535 NLD # Elsevier affiliated_with Kingdom of the Netherlands
+126495 GBR # Ebury Publishing affiliated_with United Kingdom of Great Britain and Northern Ireland
+298443 USA # National Reconnaissance Office affiliated_with United States
+495624 USA # Ari Shapiro affiliated_with United States
+258086 ESP # Instituto Nacional de Estadística (Spain) affiliated_with Kingdom of Spain
+487420 USA # William C. Potter affiliated_with United States
+161861 USA # University of North Carolina Press affiliated_with United States
+326164 USA # Jeremy Shapiro affiliated_with United States
+413008 GBR # Niall Ferguson affiliated_with United Kingdom of Great Britain and Northern Ireland
+249577 USA # John D. and Catherine T. MacArthur Foundation affiliated_with United States
+254605 FRA # TV5Monde affiliated_with Republic of France
+525423 USA # Gerald Ford affiliated_with United States
+572235 USA # David Childs affiliated_with United States
+128764 EST # Port of Tallinn affiliated_with Republic of Estonia
+243867 USA # HP Autonomy affiliated_with United States
+232458 GBR # SOAS, University of London affiliated_with United Kingdom of Great Britain and Northern Ireland
+563442 USA # Mike Mansfield affiliated_with United States
+264399 USA # Google affiliated_with United States
+412386 USA # Dan Gouré affiliated_with United States
+340050 USA # John F. Kelly affiliated_with United States
+163904 USA # World Affairs affiliated_with United States
+230312 USA # Strategy& affiliated_with United States
+149488 EST # Estonian Defence League affiliated_with Republic of Estonia
+713410 USA # Tim Arango affiliated_with United States
+153729 USA # Aviation Week & Space Technology affiliated_with United States
+161385 EST # Ministry of Foreign Affairs (Estonia) affiliated_with Republic of Estonia
+649380 USA # Timothy D. Snyder affiliated_with United States
+289022 USA # Intel affiliated_with United States
+734057 GBR # Alison Smale affiliated_with United Kingdom of Great Britain and Northern Ireland
+211234 FRA # Eurosam affiliated_with Republic of France
+376853 DEU # Wolfgang Leonhard affiliated_with Federal Republic of Germany
+259023 USA # Council on Foreign Relations affiliated_with United States
+297964 GBR # Air International affiliated_with United Kingdom of Great Britain and Northern Ireland
+215419 USA # University of California Press affiliated_with United States
+141301 DEU # Institute for European Politics affiliated_with Federal Republic of Germany
+158682 ITA # Ministry of Foreign Affairs (Italy) affiliated_with Repubblica Italiana
+271521 POL # Solidarity (Polish trade union) affiliated_with Republic of Poland
+259532 LUX # European Parliament affiliated_with Grand Duchy of Luxembourg
+284832 GBR # Pergamon Press affiliated_with United Kingdom of Great Britain and Northern Ireland
+293971 USA # Open Society Foundations affiliated_with United States
+287428 FRA # BNP Paribas affiliated_with Republic of France
+308796 USA # Mike Pompeo affiliated_with United States
+481536 GBR # Brian Taylor affiliated_with United Kingdom of Great Britain and Northern Ireland
+518777 USA # Charles Moore affiliated_with United States
+436428 HRV # Garry Kasparov affiliated_with Republic of Croatia
+129066 BGR # Alfa TV (Bulgaria) affiliated_with Republic of Bulgaria
+452410 USA # James L. Jones affiliated_with United States
+158619 USA # Fletcher School of Law and Diplomacy affiliated_with United States
+193027 USA # Alphabet Inc. affiliated_with United States
+184539 ITA # Diesel affiliated_with Repubblica Italiana
+153185 USA # Lookout affiliated_with United States
+288032 USA # Center for Public Integrity affiliated_with United States
+245605 USA # YouTube affiliated_with United States
+258210 FRA # Morgan affiliated_with Republic of France
+198131 ITA # European Council on Foreign Relations affiliated_with Repubblica Italiana
+641962 USA # Sam Greene affiliated_with United States
+147164 GBR # Royal Navy affiliated_with United Kingdom of Great Britain and Northern Ireland
+171495 USA # Dodge affiliated_with United States
+401584 GBR # Theresa May affiliated_with United Kingdom of Great Britain and Northern Ireland
+292495 LVA # ABLV Bank affiliated_with Republic of Latvia
+263050 USA # Lynne Rienner Publishers affiliated_with United States
+177339 USA # The Jamestown Foundation affiliated_with United States
+177222 USA # Titan affiliated_with United States
+229102 USA # Shape affiliated_with United States
+141511 DEU # Foreign Office (Germany) affiliated_with Federal Republic of Germany
+172671 DEU # Munich Security Conference affiliated_with Federal Republic of Germany
+259456 GBR # Sophos affiliated_with United Kingdom of Great Britain and Northern Ireland
+130009 ESP # Spanish Navy affiliated_with Kingdom of Spain
+510455 USA # Stephen Watt affiliated_with United States
+198131 BGR # European Council on Foreign Relations affiliated_with Republic of Bulgaria
+599506 USA # Mark Smith affiliated_with United States
+368138 LVA # Sarmīte Ēlerte affiliated_with Republic of Latvia
+152042 LVA # Latvian Russian Union affiliated_with Republic of Latvia
+238425 USA # Ballantine Books affiliated_with United States
+285948 LTU # Amber Grid affiliated_with Republic of Lithuania
+559832 GBR # Paul Kennedy (English judge) affiliated_with United Kingdom of Great Britain and Northern Ireland
+211452 USA # Johns Hopkins University Press affiliated_with United States
+266756 USA # Netflix affiliated_with United States
+359812 USA # Philip J. Crowley affiliated_with United States
+209598 FRA # L'Obs affiliated_with Republic of France
+290860 USA # Globe affiliated_with United States
+276115 USA # The Walt Disney Company affiliated_with United States
+178775 GBR # Tank affiliated_with United Kingdom of Great Britain and Northern Ireland
+264909 USA # Forbes affiliated_with United States
+148343 USA # SIUE School of Engineering affiliated_with United States
+175869 USA # United States Department of Justice affiliated_with United States
+126660 USA # Helsinki Watch affiliated_with United States
+663829 GBR # Ian Cobain affiliated_with United Kingdom of Great Britain and Northern Ireland
+496843 GRC # R. Nicholas Burns affiliated_with Hellenic Republic
+160452 NLD # Wolters Kluwer affiliated_with Kingdom of the Netherlands
+563105 GBR # Julian Cooper affiliated_with United Kingdom of Great Britain and Northern Ireland
+206851 GRC # International Centre for Black Sea Studies affiliated_with Hellenic Republic
+288380 POL # PGNiG affiliated_with Republic of Poland
+746200 USA # George H. W. Bush affiliated_with United States
+210992 USA # Director of National Intelligence affiliated_with United States
+200080 USA # Virginia Tech College of Natural Resources and Environment affiliated_with United States
+417969 ESP # Pablo Iglesias Posse affiliated_with Kingdom of Spain
+191548 FRA # European Union Institute for Security Studies affiliated_with Republic of France
+254419 USA # Washington University Medical Center affiliated_with United States
+240728 USA # Tiger Men's Magazine affiliated_with United States
+160921 USA # General Motors affiliated_with United States
+524572 USA # Mark Hosenball affiliated_with United States
+216618 FRA # French Army affiliated_with Republic of France
+400418 ITA # Carlo M. Cipolla affiliated_with Repubblica Italiana
+617959 USA # Bruce Riedel affiliated_with United States
+203679 GBR # Whitehall (Sutton) affiliated_with United Kingdom of Great Britain and Northern Ireland
+214360 DEU # Wagner & Co Solar Technology affiliated_with Federal Republic of Germany
+174098 GBR # Opera affiliated_with United Kingdom of Great Britain and Northern Ireland
+164596 HRV # Ministry of Tourism (Croatia) affiliated_with Republic of Croatia
+188621 SVN # Slovenian Armed Forces affiliated_with Republic of Slovenia
+146381 USA # Harvard University Press affiliated_with United States
+234675 USA # Army Science Board affiliated_with United States
+251466 USA # The Weekly Standard affiliated_with United States
+179382 USA # Free Press affiliated_with United States
+272353 NOR # Norwegian University of Science and Technology affiliated_with Kingdom of Norway
+271929 GBR # Aegis the Union affiliated_with United Kingdom of Great Britain and Northern Ireland
+189131 USA # Center for a New American Security affiliated_with United States
+295921 USA # IEEE Spectrum affiliated_with United States
+198540 USA # Globe Pequot Press affiliated_with United States
+286126 USA # Paramount Home Media Distribution affiliated_with United States
+132201 USA # The New Yorker affiliated_with United States
+723020 GBR # Rigor Mortis affiliated_with United Kingdom of Great Britain and Northern Ireland
+128727 USA # Modern Library affiliated_with United States
+271473 USA # The New York Review of Books affiliated_with United States
+157788 ITA # UniCredit affiliated_with Repubblica Italiana
+366128 USA # Adi Ignatius affiliated_with United States
+157343 USA # Westview Press affiliated_with United States
+207448 USA # National Science Foundation affiliated_with United States
+283164 USA # Qualcomm affiliated_with United States
+221755 GBR # Granta affiliated_with United Kingdom of Great Britain and Northern Ireland
+376237 USA # Colin Powell affiliated_with United States
+296417 USA # Stryker Corporation affiliated_with United States
+165091 USA # Institute for the Study of War affiliated_with United States
+737621 GBR # David Bond affiliated_with United Kingdom of Great Britain and Northern Ireland
+286376 USA # O'Reilly Media affiliated_with United States
+137166 USA # Conoco affiliated_with United States
+187440 NOR # Home Guard (Norway) affiliated_with Kingdom of Norway
+143704 USA # Joint Chiefs of Staff affiliated_with United States
+643814 GBR # Tim Judah affiliated_with United Kingdom of Great Britain and Northern Ireland
+275804 DEU # Volkswagen affiliated_with Federal Republic of Germany
+124136 USA # United States Army Europe affiliated_with United States
+286124 USA # BuzzFeed affiliated_with United States
+217825 DNK # Folketing affiliated_with Kingdom of Denmark
+323279 USA # Michael Reilly affiliated_with United States
+328318 USA # Carl Shapiro affiliated_with United States
+224179 USA # Norton (Security) affiliated_with United States
+269918 DEU # Uniper affiliated_with Federal Republic of Germany
+257244 USA # The Trump Organization affiliated_with United States
+407938 USA # Chuck Hagel affiliated_with United States
+695432 USA # James Miller affiliated_with United States
+239819 USA # Lenovo affiliated_with United States
+499756 USA # John F. Kennedy affiliated_with United States
+208066 USA # System Planning Corporation affiliated_with United States
+699828 GBR # Ewen MacAskill affiliated_with United Kingdom of Great Britain and Northern Ireland
+284980 GBR # PricewaterhouseCoopers affiliated_with United Kingdom of Great Britain and Northern Ireland
+673727 USA # Jake Tapper affiliated_with United States
+463309 USA # William Baumol affiliated_with United States
+677522 DEU # Gerd Gigerenzer affiliated_with Federal Republic of Germany
+693003 USA # Tom Cotton affiliated_with United States
+212682 USA # Aspen Institute affiliated_with United States
+253873 USA # University of Maryland University College affiliated_with United States
+242663 USA # PR Newswire affiliated_with United States
+199989 USA # Global Partners affiliated_with United States
+697959 DEU # Ursula von der Leyen affiliated_with Federal Republic of Germany
+279421 GBR # Royal Air Force affiliated_with United Kingdom of Great Britain and Northern Ireland
+351722 USA # John R. Bolton affiliated_with United States
+257266 USA # U.S. Securities and Exchange Commission affiliated_with United States
+211939 GBR # Durham University affiliated_with United Kingdom of Great Britain and Northern Ireland
+149677 USA # Insight (Adventist magazine) affiliated_with United States
+250613 GBR # University of Birmingham affiliated_with United Kingdom of Great Britain and Northern Ireland
+195295 USA # Doubleday affiliated_with United States
+260335 USA # United States Air Force affiliated_with United States
+276616 USA # United States Department of Energy affiliated_with United States
+131202 USA # Texas A&M University affiliated_with United States
+260854 FRA # Suez affiliated_with Republic of France
+189216 USA # Centers for Disease Control and Prevention affiliated_with United States
+209854 USA # Bloomberg News affiliated_with United States
+749171 USA # Richard Nixon affiliated_with United States
+138331 GBR # BP Plc affiliated_with United Kingdom of Great Britain and Northern Ireland
+217848 USA # Claremont Institute affiliated_with United States
+296842 CZE # Aero Vodochody affiliated_with Czech Republic
+286879 USA # Georgetown University Press affiliated_with United States
+287408 USA # Princeton University Press affiliated_with United States
+577939 NLD # Geert Wilders affiliated_with Kingdom of the Netherlands
+235363 USA # Sony Pictures Entertainment affiliated_with United States
+188097 USA # 4th Infantry Division (United States) affiliated_with United States
+309559 GBR # Ben Judah affiliated_with United Kingdom of Great Britain and Northern Ireland
+274510 USA # United States Army affiliated_with United States
+549520 USA # Rowan Scarborough affiliated_with United States
+172531 USA # University of South Florida St. Petersburg affiliated_with United States
+243867 GBR # HP Autonomy affiliated_with United Kingdom of Great Britain and Northern Ireland
+535143 USA # Douglas Lute affiliated_with United States
+437316 USA # Daniel Morgan affiliated_with United States
+497145 USA # Michael Johnson affiliated_with United States
+221810 USA # United States House Committee on Armed Services affiliated_with United States
+132786 DEU # Siemens affiliated_with Federal Republic of Germany
+186273 USA # Broadway Books affiliated_with United States
+297538 TUR # Justice and Development Party (Turkey) affiliated_with Republic of Turkey
+65249 USA # University of California, Berkeley affiliated_with United States
+694521 USA # Herbert Simon affiliated_with United States
+206894 USA # Small Wars Journal affiliated_with United States
+189931 LTU # Ministry of National Defence (Lithuania) affiliated_with Republic of Lithuania
+621355 USA # Ellen Barry affiliated_with United States
+183365 USA # Thomson Reuters affiliated_with United States
+373847 USA # George P. Shultz affiliated_with United States
+471265 GBR # Ian Black affiliated_with United Kingdom of Great Britain and Northern Ireland
+257818 FRA # Groupe Flammarion affiliated_with Republic of France
+127618 USA # Hoover Institution affiliated_with United States
+203641 USA # Atlantic Council affiliated_with United States
+219888 USA # Stratfor affiliated_with United States
+187963 DEU # Deutsche Bank affiliated_with Federal Republic of Germany
+124446 USA # American Federation of Labor affiliated_with United States
+154727 USA # United States Senate affiliated_with United States
+468896 USA # John Kerry affiliated_with United States
+162086 NLD # Renault–Nissan Alliance affiliated_with Kingdom of the Netherlands
+277621 USA # United States European Command affiliated_with United States
+174454 NLD # Réseaux IP Européens Network Coordination Centre affiliated_with Kingdom of the Netherlands
+155241 GBR # Osprey Publishing affiliated_with United Kingdom of Great Britain and Northern Ireland
+284862 USA # Center on Global Interests affiliated_with United States
+229562 USA # Westinghouse Electric Company affiliated_with United States
+260947 USA # United States Department of Education affiliated_with United States
+127715 DEU # Deutsche Presse-Agentur affiliated_with Federal Republic of Germany
+274583 USA # Center for Strategic and International Studies affiliated_with United States
+741387 DEU # Annegret Kramp-Karrenbauer affiliated_with Federal Republic of Germany
+269664 USA # Association of the United States Army affiliated_with United States
+288162 GBR # Penguin Books affiliated_with United Kingdom of Great Britain and Northern Ireland
+240872 USA # Bureau of Industry and Security affiliated_with United States
+276650 USA # Executive Intelligence Review affiliated_with United States
+266078 GBR # Macmillan Publishers affiliated_with United Kingdom of Great Britain and Northern Ireland
+424832 USA # Robert Kagan affiliated_with United States
+548612 EST # Paul Keres affiliated_with Republic of Estonia
+151480 TUR # Turkish Air Force affiliated_with Republic of Turkey
+236941 USA # Washington Office on Latin America affiliated_with United States
+170484 GBR # Crisis affiliated_with United Kingdom of Great Britain and Northern Ireland
+259077 USA # Smith Richardson Foundation affiliated_with United States
+200800 USA # Yankee affiliated_with United States
+285240 FRA # Republican Guard (France) affiliated_with Republic of France
+155974 GBR # Ministry of Defence (United Kingdom) affiliated_with United Kingdom of Great Britain and Northern Ireland
+275522 USA # Boeing affiliated_with United States
+167950 USA # PublicAffairs affiliated_with United States
+296045 CZE # Radio Free Europe/Radio Liberty affiliated_with Czech Republic
+180909 USA # Esquire affiliated_with United States
+494183 USA # William Taubman affiliated_with United States
+285766 USA # United States Department of State affiliated_with United States
+154578 HUN # Central European University affiliated_with Hungary
+145370 USA # Bloomberg L.P. affiliated_with United States
+324823 USA # Caspar Weinberger affiliated_with United States
+466446 USA # Herbert A. Simon affiliated_with United States
+139354 USA # Human Rights Watch affiliated_with United States
+269137 FRA # Renault affiliated_with Republic of France
+160964 NOR # Royal Norwegian Navy affiliated_with Kingdom of Norway
+191381 DEU # Globus affiliated_with Federal Republic of Germany
+356042 USA # James E. Miller affiliated_with United States
+245402 LVA # University of Latvia affiliated_with Republic of Latvia
+575557 USA # Mark A. Smith affiliated_with United States
+376184 USA # Rex Tillerson affiliated_with United States
+219243 GBR # Spartan Cars affiliated_with United Kingdom of Great Britain and Northern Ireland
+280979 USA # United States House Permanent Select Committee on Intelligence affiliated_with United States
+631830 USA # George W. Bush affiliated_with United States
+260910 USA # Belfer Center for Science and International Affairs affiliated_with United States
+177494 USA # Air National Guard affiliated_with United States
+147123 USA # Yale affiliated_with United States
+300003 USA # Benchmark affiliated_with United States
+159690 USA # Golf Channel affiliated_with United States
+523879 GBR # Paul Reynolds (BBC journalist) affiliated_with United Kingdom of Great Britain and Northern Ireland
+202953 LVA # National Alliance (Latvia) affiliated_with Republic of Latvia
+180080 ESP # Dia affiliated_with Kingdom of Spain
+191981 GBR # Minerva Press affiliated_with United Kingdom of Great Britain and Northern Ireland
+154354 FRA # Société Générale affiliated_with Republic of France
+221944 CZE # Security Information Service affiliated_with Czech Republic
+231078 USA # Alfred A. Knopf affiliated_with United States
+201613 USA # University of Florida Center for Latin American Studies affiliated_with United States
+632496 GBR # Sam Gardiner affiliated_with United Kingdom of Great Britain and Northern Ireland
+221102 USA # George Washington University affiliated_with United States
+141841 USA # United States Special Operations Command affiliated_with United States
+332693 USA # David Floyd affiliated_with United States
+213773 USA # United States Navy affiliated_with United States
+287737 USA # University of Chicago Press affiliated_with United States
+415542 USA # Dexter Filkins affiliated_with United States
+374890 USA # William Safire affiliated_with United States
+276842 USA # The American Conservative affiliated_with United States
+159158 USA # Janus affiliated_with United States
+247717 USA # United States House of Representatives affiliated_with United States
+185349 NOR # Royal Norwegian Air Force affiliated_with Kingdom of Norway
+260308 USA # Booz Allen Hamilton affiliated_with United States
+263173 LVA # Saeima affiliated_with Republic of Latvia
+151477 USA # Thomson Corporation affiliated_with United States
+148592 GBR # Electoral Reform Society affiliated_with United Kingdom of Great Britain and Northern Ireland
+272319 USA # VII Corps (United States) affiliated_with United States
+142714 USA # Lattice Semiconductor affiliated_with United States
+142244 USA # 1st Cavalry Division (United States) affiliated_with United States
+267161 USA # National Bureau of Asian Research affiliated_with United States
+176446 DEU # NewYorker affiliated_with Federal Republic of Germany
+229593 DEU # Daimler AG affiliated_with Federal Republic of Germany
+191553 GBR # Parliament of the United Kingdom affiliated_with United Kingdom of Great Britain and Northern Ireland
+689733 GBR # Jamie Shea affiliated_with United Kingdom of Great Britain and Northern Ireland
+225143 DNK # Maersk affiliated_with Kingdom of Denmark
+238887 USA # Intel Security affiliated_with United States
+429544 USA # Simon Ostrovsky affiliated_with United States
+179827 USA # University of California, San Diego affiliated_with United States
+176163 GBR # Army Reserve (United Kingdom) affiliated_with United Kingdom of Great Britain and Northern Ireland
+370945 USA # John McCain affiliated_with United States
+148164 USA # Barnes & Noble affiliated_with United States
+186738 USA # Northern Virginia Community College affiliated_with United States
+135253 EST # Statistics Estonia affiliated_with Republic of Estonia
+542916 GBR # Robert Hackett affiliated_with United Kingdom of Great Britain and Northern Ireland
+154643 USA # Cable News Network affiliated_with United States
+673035 GBR # Mark Laity affiliated_with United Kingdom of Great Britain and Northern Ireland
+561468 USA # Joseph Nye affiliated_with United States
+433343 GBR # James Meade affiliated_with United Kingdom of Great Britain and Northern Ireland
+280049 USA # Gnip affiliated_with United States
+173854 USA # Air War College affiliated_with United States
+124937 DEU # Commerzbank affiliated_with Federal Republic of Germany
+127681 EST # Estonian Greens affiliated_with Republic of Estonia
+645277 USA # Moses Abramovitz affiliated_with United States
+165943 EST # Estonian Internal Security Service affiliated_with Republic of Estonia
+148720 DEU # Stasi affiliated_with Federal Republic of Germany
+257181 USA # Fortune affiliated_with United States
+144236 USA # Green Party of the United States affiliated_with United States
+238883 USA # University of Illinois Press affiliated_with United States
+249286 USA # United States Africa Command affiliated_with United States
+628646 USA # Jonathan Karl affiliated_with United States
+494864 GBR # Peter Beaumont affiliated_with United Kingdom of Great Britain and Northern Ireland
+224902 USA # LaCrosse Footwear affiliated_with United States
+704895 USA # Robert O. Work affiliated_with United States
+176165 USA # Georgia Department of Defense affiliated_with United States
+263365 USA # Defense Intelligence Agency affiliated_with United States
+397818 GBR # Vasili Mitrokhin affiliated_with United Kingdom of Great Britain and Northern Ireland
+224047 USA # Delta Force affiliated_with United States
+171405 FRA # Ipsos affiliated_with Republic of France
+214506 USA # United States Department of the Treasury affiliated_with United States
+167122 USA # Bureau of Economic Analysis affiliated_with United States
+259970 LTU # Homeland Union affiliated_with Republic of Lithuania
+236609 USA # Portland State University College of Liberal Arts and Sciences affiliated_with United States
+223524 USA # Stanford University Press affiliated_with United States
+232357 USA # World Vision International affiliated_with United States
+374154 FRA # Marine Le Pen affiliated_with Republic of France
+285214 LTU # Lithuanian Armed Forces affiliated_with Republic of Lithuania
+126511 HUN # Fidesz affiliated_with Hungary
+145848 USA # Barnard College affiliated_with United States
+188467 GBR # Borders (UK) affiliated_with United Kingdom of Great Britain and Northern Ireland
+236291 DEU # George C. Marshall European Center for Security Studies affiliated_with Federal Republic of Germany
+194859 USA # Adobe Systems affiliated_with United States
+134176 USA # Columbia University Press affiliated_with United States
+562345 DEU # Max Planck affiliated_with Federal Republic of Germany
+242243 USA # Office of the Secretary of Defense affiliated_with United States
+363405 USA # Robert Mercer affiliated_with United States
+157229 GBR # British Army affiliated_with United Kingdom of Great Britain and Northern Ireland
+290684 USA # CRC Press affiliated_with United States
+191524 TUR # Star TV (Turkey) affiliated_with Republic of Turkey
+269391 USA # United States Southern Command affiliated_with United States
+150969 USA # Equifax affiliated_with United States
+601599 USA # AnnaLee Saxenian affiliated_with United States
+300031 LVA # New Centre (Latvia) affiliated_with Republic of Latvia
+251769 USA # Times Books affiliated_with United States
+325017 GBR # Peter Foster affiliated_with United Kingdom of Great Britain and Northern Ireland
+155859 USA # Institute of Modern Russia affiliated_with United States
+274067 USA # NeXT affiliated_with United States
+167703 USA # Center for Strategic and Budgetary Assessments affiliated_with United States
+297744 USA # Broadcasting & Cable affiliated_with United States
+353945 USA # Warren Christopher affiliated_with United States
+38676 USA # Pentagon affiliated_with United States
+176926 USA # Hamilton College (Iowa) affiliated_with United States
+312618 GBR # Simon Johnson affiliated_with United Kingdom of Great Britain and Northern Ireland
+300730 NOR # Norwegian Coast Guard affiliated_with Kingdom of Norway
+730785 USA # Greg Myre affiliated_with United States
+720636 USA # John Boehner affiliated_with United States
+167632 LUX # Volga Group affiliated_with Grand Duchy of Luxembourg
+280513 USA # Wikimedia Foundation affiliated_with United States
+149821 CZE # Radio Prague affiliated_with Czech Republic
+193517 USA # Special Forces (United States Army) affiliated_with United States
+294133 USA # Alabama Department of Homeland Security affiliated_with United States
+326884 USA # Robert Mueller affiliated_with United States
+287583 USA # United States Coast Guard affiliated_with United States
+207453 USA # International Business Machines affiliated_with United States
+200164 USA # FireEye affiliated_with United States
+168237 USA # Random House affiliated_with United States
+243368 DEU # Euro am Sonntag affiliated_with Federal Republic of Germany
+162599 USA # University of Pittsburgh Press affiliated_with United States
+276907 USA # Federal Bureau of Investigation affiliated_with United States
+487384 USA # John Shimkus affiliated_with United States
+274718 NOR # Norwegian Army affiliated_with Kingdom of Norway
+263244 USA # Government Accountability Office affiliated_with United States
+227648 USA # United States Department of Defense affiliated_with United States
+413360 FRA # Emmanuel Macron affiliated_with Republic of France
+274991 USA # Middle East Media Research Institute affiliated_with United States
+645763 USA # Dwight D. Eisenhower affiliated_with United States
+251296 USA # Cornell University Press affiliated_with United States
+157567 USA # Citgo affiliated_with United States
+130973 USA # United States Department of Homeland Security affiliated_with United States
+137508 GBR # Vintage Books affiliated_with United Kingdom of Great Britain and Northern Ireland
+182586 USA # National Counterterrorism Center affiliated_with United States
+128372 USA # 82nd Airborne Division affiliated_with United States
+169342 USA # University at Buffalo affiliated_with United States
+175101 GBR # Sage Group affiliated_with United Kingdom of Great Britain and Northern Ireland
+193175 POL # Ministry of Foreign Affairs (Poland) affiliated_with Republic of Poland
+600258 FRA # Eduard Limonov affiliated_with Republic of France
+215264 TUR # ASELSAN affiliated_with Republic of Turkey
+211783 USA # Defense Advanced Research Projects Agency affiliated_with United States
+420193 USA # James Jones affiliated_with United States
+625529 USA # James Glanz affiliated_with United States
+141697 FRA # Agence France-Presse affiliated_with Republic of France
+271034 DEU # Bayerische Motoren Werke affiliated_with Federal Republic of Germany
+131077 USA # Federal Trade Commission affiliated_with United States
+580751 USA # Matthew Bryza affiliated_with United States
+134826 USA # Lockheed Martin affiliated_with United States
+308096 USA # George Kennan affiliated_with United States
+284105 USA # Associated Press affiliated_with United States
+195956 GBR # House of Commons of the United Kingdom affiliated_with United Kingdom of Great Britain and Northern Ireland
+180080 PRT # Dia affiliated_with Portuguese Republic
+317316 USA # Michael J. Flynn affiliated_with United States
+195768 USA # Financial Crimes Enforcement Network affiliated_with United States
+645702 USA # Michael Sheehan (archbishop of Santa Fe) affiliated_with United States
+478736 USA # Naftali Bendavid affiliated_with United States
+470034 GBR # Joseph Slater affiliated_with United Kingdom of Great Britain and Northern Ireland
+729287 BGR # Volen Siderov affiliated_with Republic of Bulgaria
+148152 USA # Citadel LLC affiliated_with United States
+153713 USA # Foreign Policy Association affiliated_with United States
+179074 LTU # Raduga affiliated_with Republic of Lithuania
+147488 DEU # Deutsche Welle affiliated_with Federal Republic of Germany
+168443 USA # Planned Parenthood affiliated_with United States
+177456 USA # Rowman & Littlefield affiliated_with United States
+144350 EST # Riigikogu affiliated_with Republic of Estonia
+240710 USA # Analytica affiliated_with United States
+168853 USA # Bloomberg Businessweek affiliated_with United States
+294069 USA # Cisco Systems affiliated_with United States
+266647 USA # New York University Press affiliated_with United States
+284634 GBR # Aberystwyth University affiliated_with United Kingdom of Great Britain and Northern Ireland
+240061 USA # Naval History affiliated_with United States
+139698 DEU # Federal Office for Information Security affiliated_with Federal Republic of Germany
+298127 CZE # CEVRO Institute affiliated_with Czech Republic
+184922 USA # United States Congress affiliated_with United States
+130361 USA # Public Policy Institute of California affiliated_with United States
+165060 USA # United States Army Reserve affiliated_with United States
+314166 USA # James White (New Mexico politician) affiliated_with United States
+386980 USA # David Petraeus affiliated_with United States
+170354 USA # Energy Information Administration affiliated_with United States
+125156 PRT # Casal affiliated_with Portuguese Republic
+276597 DEU # Transparency International affiliated_with Federal Republic of Germany
+615157 USA # Ronald Reagan affiliated_with United States
+198131 FRA # European Council on Foreign Relations affiliated_with Republic of France
+129659 USA # United States Army Special Operations Command affiliated_with United States
+233183 USA # Pew Research Center affiliated_with United States
+188794 GBR # Atlantic Books affiliated_with United Kingdom of Great Britain and Northern Ireland
+245240 USA # Inland Type Foundry affiliated_with United States
+212239 FRA # Snecma affiliated_with Republic of France
+238543 USA # Citrix Systems affiliated_with United States
+294797 USA # United States Strategic Command affiliated_with United States
+225564 GBR # Reuters affiliated_with United Kingdom of Great Britain and Northern Ireland
+177861 CZE # Charles University in Prague affiliated_with Czech Republic
+239019 LUX # European Court of Auditors affiliated_with Grand Duchy of Luxembourg
+652813 USA # Thomas Schelling affiliated_with United States
+255841 USA # A&E Networks affiliated_with United States
+170489 USA # Mandiant affiliated_with United States
+161967 USA # MIT Technology Review affiliated_with United States
+230062 USA # New Jersey Devils affiliated_with United States
+604817 USA # Michael Russell affiliated_with United States
+223598 USA # Newsweek affiliated_with United States
+452571 USA # Robert Gates affiliated_with United States
+171826 USA # Gentleman's Quarterly affiliated_with United States
+168666 GRC # Syriza affiliated_with Hellenic Republic
+567515 DEU # Hans Delbrück affiliated_with Federal Republic of Germany
+338047 USA # Gary Shteyngart affiliated_with United States
+248645 USA # Armed Forces Journal affiliated_with United States
+287368 USA # Congressional Research Service affiliated_with United States
+275288 USA # University of Nebraska–Lincoln affiliated_with United States
+562506 DEU # Reinhard Selten affiliated_with Federal Republic of Germany
+241155 GBR # British Armed Forces affiliated_with United Kingdom of Great Britain and Northern Ireland
+239839 USA # Harvard College affiliated_with United States
+593955 GBR # Keir Giles affiliated_with United Kingdom of Great Britain and Northern Ireland
+204168 USA # United States Central Command affiliated_with United States
+264527 USA # The American Interest affiliated_with United States
+208616 CHN # Huawei affiliated_with People’s Republic of China
+230217 CHN # Silk Road Fund affiliated_with People’s Republic of China
+473691 CHN # Xi Jinping affiliated_with People’s Republic of China
+239819 CHN # Lenovo affiliated_with People’s Republic of China
+149474 CHN # People's Liberation Army Navy affiliated_with People’s Republic of China
+199436 CHN # National Development and Reform Commission affiliated_with People’s Republic of China
+124054 CHN # Confucius Institute affiliated_with People’s Republic of China
+194023 CHN # Exim Bank of China affiliated_with People’s Republic of China
+135257 CHN # People's Liberation Army Air Force affiliated_with People’s Republic of China
+346393 CHN # Chang Wanquan affiliated_with People’s Republic of China
+190517 CHN # China Institute of International Studies affiliated_with People’s Republic of China
+180314 CHN # People's Liberation Army Rocket Force affiliated_with People’s Republic of China
+354342 CHN # Xiong Xianghui affiliated_with People’s Republic of China
+267969 CHN # China Development Bank affiliated_with People’s Republic of China
+195993 CHN # Xinhua News Agency affiliated_with People’s Republic of China
+153902 CHN # China Investment Corporation affiliated_with People’s Republic of China
+297300 CHN # Coolpad affiliated_with People’s Republic of China
+299541 CHN # China National Petroleum Corporation affiliated_with People’s Republic of China
+211287 USA # United States Fifth Fleet
+271161 DEU # 24th Army (Wehrmacht)
+161561 USA # United States Army Air Forces
+143674 HRV # Croatian Defence Forces
+263909 MNE # Military of Montenegro
+277621 USA # United States European Command
+245722 GBR # 7th Armoured Division (United Kingdom)
+145193 NOR # Forsvarets Spesialkommando
+300768 RUS # Komitet Gosudarstvennoy Bezopasnosti
+179553 POL # 1st Independent Parachute Brigade (Poland)
+242948 LVA # Latvian Air Force
+151796 GBR # No. 617 Squadron RAF
+249286 USA # United States Africa Command
+267690 GBR # Special Operations Executive
+259103 USA # 25th Infantry Division (United States)
+134920 GBR # Welsh Guards
+188221 GBR # Parachute Regiment (United Kingdom)
+290045 NOR # Nordic Battlegroup
+192431 RUS # Black Sea Fleet
+154395 ITA # Italian Air Force
+262961 GBR # Force H
+141275 SWE # Västerbotten Regiment
+277043 TUR # Turkish Stars
+299603 NOR # Hans Majestet Kongens Garde
+292967 USA # Michigan State Treasurer
+176163 GBR # Army Reserve (United Kingdom)
+293064 NLD # Netherlands Marine Corps
+234608 USA # Joint Special Operations Command
+248879 ESP # Spanish Army
+280313 NLD # Royal Netherlands Army
+230461 GBR # RAF Fighter Command
+137107 USA # United States Joint Forces Command
+160385 SWE # Swedish Security Service
+292173 EST # Estonian Land Forces
+149488 EST # Estonian Defence League
+162711 GBR # British Army of the Rhine
+259873 USA # Strategic Air Command
+155249 GBR # Grand Fleet
+201281 POL # JW GROM
+228066 FRA # Lafayette Escadrille
+290045 FIN # Nordic Battlegroup
+294797 USA # United States Strategic Command
+142725 ESP # Grupo Especial de Operaciones
+222668 GBR # Jewish Brigade
+241155 GBR # British Armed Forces
+190204 USA # Eighth Air Force
+230972 DNK # Royal Danish Air Force
+145201 ALB # Albanian Naval Force
+150875 PRT # Portuguese Army
+279421 GBR # Royal Air Force
+128372 USA # 82nd Airborne Division
+196065 USA # North American Aerospace Defense Command
+224047 USA # Delta Force
+188097 USA # 4th Infantry Division (United States)
+190243 USA # First United States Army Group
+259800 SWE # Team 60
+202349 GBR # Directorate of Military Intelligence
+167305 RUS # Cheka
+258558 GRC # Military of Greece
+206694 USA # Michigan Department of Transportation
+185307 PRT # Portuguese Navy
+155974 GBR # Ministry of Defence (United Kingdom)
+193517 USA # Special Forces (United States Army)
+280702 GRC # Hellenic Army
+286342 FRA # Normandie-Niemen
+251101 GBR # Special Reconnaissance Regiment
+161951 USA # First United States Army
+203701 ESP # Civil Guard (Spain)
+221689 GBR # Coldstream Guards
+174122 USA # I Corps (United States)
+156661 USA # 7th Infantry Division (United States)
+181841 RUS # Otryad Militsii Osobogo Naznacheniya
+257652 GBR # Creative Assembly
+185349 NOR # Royal Norwegian Air Force
+149474 CHN # People's Liberation Army Navy
+206316 POL # 1st Armoured Division (Poland)
+188918 MNE # Montenegrin Navy
+273788 USA # 160th Special Operations Aviation Regiment (Airborne)
+143849 GBR # 1st (United Kingdom) Division
+256835 ITA # Italian Army
+145423 HRV # Croatian Army
+199081 CHN # People's Liberation Army Ground Force
+178849 USA # Defense Logistics Agency
+290045 LTU # Nordic Battlegroup
+182389 ALB # Albanian Air Force
+229409 RUS # North Caucasus Military District
+260305 GBR # The Pokémon Company
+166991 GBR # Sports Interactive
+270920 ALB # Albanian Armed Forces
+253728 DEU # Nachtigall Battalion
+154833 USA # United States Army North
+247220 CHN # Nanjing Automobile
+230847 USA # Supreme Headquarters Allied Expeditionary Force
+156234 GBR # XXX Corps (United Kingdom)
+290780 DEU # 25th Army (Wehrmacht)
+221249 DEU # Marinebrigade Ehrhardt
+213773 USA # United States Navy
+188279 ITA # Italian Navy
+279001 GBR # Ulster Defence Regiment
+283978 DEU # German Navy
+207252 POL # Polish Armed Forces
+287583 USA # United States Coast Guard
+148427 USA # Turn 10 Studios
+141017 DEU # SS-Totenkopfverbände
+300175 ESP # Spanish Legion
+285240 FRA # Republican Guard (France)
+174981 USA # 1st Armored Division (United States)
+161469 USA # Oklahoma State Treasurer
+230847 POL # Supreme Headquarters Allied Expeditionary Force
+230847 NLD # Supreme Headquarters Allied Expeditionary Force
+274842 LVA # Latvian Naval Forces
+129659 USA # United States Army Special Operations Command
+293408 GRC # Dimitrov Battalion
+130906 PRT # Portuguese Air Force
+250406 ITA # European Maritime Force
+230847 NOR # Supreme Headquarters Allied Expeditionary Force
+222678 FRA # French Navy
+215478 DEU # 18th SS Volunteer Panzergrenadier Division Horst Wessel
+244067 USA # Afghanistan-Pakistan Center of Excellence
+205144 RUS # Baltic Fleet
+166789 HRV # Croatian Navy
+250066 ITA # Carabinieri
+300289 FRA # 2nd Foreign Parachute Regiment
+257621 ROM # Romanian Naval Forces
+268387 ESP # Requetés
+197163 USA # XVIII Airborne Corps
+290045 EST # Nordic Battlegroup
+263365 USA # Defense Intelligence Agency
+167083 DEU # Schutzstaffel
+271784 ESP # Spanish Royal Guard
+244489 DEU # Joint Medical Service (Germany)
+260305 USA # The Pokémon Company
+200100 USA # 7th Cavalry Regiment
+145195 USA # 75th Ranger Regiment (United States)
+272319 USA # VII Corps (United States)
+232581 HRV # Croatian Air Force and Air Defence
+204168 USA # United States Central Command
+288868 RUS # Russian Airborne Troops
+130202 USA # National Guard of the United States
+205169 RUS # Caspian Flotilla
+229004 GBR # Household Cavalry
+172920 RUS # Main Intelligence Directorate (Russia)
+279796 USA # Sixth United States Army
+199218 RUS # Strategic Missile Troops
+211325 USA # Federal Communications Commission
+169611 FIN # Finnish Army
+222915 RUS # Russian Ground Forces
+266721 HUN # Hungarian Air Force
+285214 LTU # Lithuanian Armed Forces
+148643 USA # United States Pacific Fleet
+148987 DEU # German Air Force
+234650 GBR # Secret Intelligence Service
+130009 ESP # Spanish Navy
+218486 ITA # Corps of the Port Captaincies – Coast Guard
+142125 USA # Air Force Special Operations Command
+245925 ROM # Romanian Air Force
+192298 DNK # Schalburg Corps
+152248 DEU # Sturmabteilung
+148460 TUR # Turkish Land Forces
+192678 ITA # Alpini
+250330 GBR # Yeomen Warders
+169963 USA # Tuskegee Airmen
+290045 LVA # Nordic Battlegroup
+226097 USA # United States Army Command and General Staff College
+286396 DEU # 18th Army (Wehrmacht)
+180497 DEU # Reichsarbeitsdienst
+185508 ESP # Regulares
+292445 FIN # Finnish Defence Forces
+295844 SVN # Slovenian Air Force and Air Defence
+198760 USA # Lieutenant Governor of Oklahoma
+283417 RUS # Western Military District
+286211 RUS # Leningrad Military District
+170496 USA # United States Army Corps of Engineers
+249303 USA # 343 Industries
+141550 RUS # Russian Armed Forces
+212846 USA # Army of the Cumberland
+168774 TUR # Turkish Armed Forces
+209972 PRT # National Republican Guard (Portugal)
+171534 CZE # Czech Air Force
+211293 GBR # 1st Airborne Division (United Kingdom)
+232263 GBR # Eighth Army (United Kingdom)
+224844 BGR # Bulgarian Air Force
+235369 GRC # Hellenic Air Force
+137928 SWE # Swedish Army
+233762 HRV # Wings of Storm
+218634 ESP # Spanish Armed Forces
+130528 POL # Polish Navy
+157891 GBR # Special Boat Service
+248004 NLD # Royal Netherlands Navy
+298634 RUS # Swifts
+289137 USA # Seabee
+199063 TUR # Turkish Naval Forces
+142244 USA # 1st Cavalry Division (United States)
+276337 GBR # Red Arrows
+145281 USA # United States Department of the Navy
+195881 USA # 442nd Infantry Regiment (United States)
+298595 GBR # First Army (United Kingdom)
+287349 NOR # Norwegian Armed Forces
+133471 USA # Eighth United States Army
+145506 USA # Internet Engineering Task Force
+224078 TUR # Coast Guard Command
+224662 GBR # Costa Coffee
+248602 USA # Flying Tigers
+157229 GBR # British Army
+124136 USA # United States Army Europe
+162147 USA # United States Navy SEALs
+198557 USA # Air Force Space Command
+269391 USA # United States Southern Command
+176295 USA # Army of the Potomac
+143819 FIN # Finnish Navy
+192938 NOR # Emergency Response Unit (Norway)
+141841 USA # United States Special Operations Command
+126702 RUS # Naval Infantry (Russia)
+297133 DNK # Free Corps Denmark
+244850 POL # Polish Land Forces
+293408 BGR # Dimitrov Battalion
+233480 TUR # Gendarmerie General Command
+259799 GRC # Hellenic Navy
+233340 GBR # Home Fleet
+215854 USA # United States Fleet Forces Command
+202100 USA # Army of Virginia
+144010 LTU # Lithuanian Naval Force
+260335 USA # United States Air Force
+128163 GBR # Mediterranean Fleet
+211839 USA # Oklahoma Superintendent of Public Instruction
+147164 GBR # Royal Navy
+271046 USA # 1st Marine Division (United States)
+249776 SVN # Slovene Home Guard
+293560 DNK # Royal Danish Army
+168405 ITA # Blackshirts
+164601 ITA # Agenzia Informazioni e Sicurezza Esterna
+274510 USA # United States Army
+160964 NOR # Royal Norwegian Navy
+161010 DEU # Militärischer Abschirmdienst
+192139 GBR # British Commandos
+130324 USA # I Marine Expeditionary Force
+239219 USA # United States Pacific Command
+289189 DEU # German Army
+137383 DEU # Kommando Spezialkräfte
+159659 NLD # Royal Netherlands Air Force
+298443 USA # National Reconnaissance Office
+177664 USA # United States Army Central
+143704 USA # Joint Chiefs of Staff
+165060 USA # United States Army Reserve
+130074 USA # Air Combat Command
+194754 LTU # Lithuanian Air Force
+151480 TUR # Turkish Air Force
+290101 LUX # Luxembourg Army
+296600 USA # NOAA Commissioned Officer Corps
+148720 DEU # Stasi
+257131 GBR # Royal Military Academy Sandhurst
+216618 FRA # French Army
+210810 EST # Estonian Navy
+293408 ESP # Dimitrov Battalion
+183696 RUS # Okhrana
+244958 USA # Washington Headquarters Services
+198589 FRA # Research, Assistance, Intervention, Deterrence
+257574 GRC # Evzones
+131197 USA # 2nd Infantry Division (United States)
+151463 GBR # Military Aviation Authority
+199650 USA # Microsoft Studios
+129337 POL # Polish Air Force
+280374 RUS # Russian Navy
+221281 RUS # Pacific Fleet (Russia)
+173832 GBR # Royal Military Academy, Woolwich
+254344 USA # Drug Enforcement Administration
+179501 DNK # Royal Danish Navy
+270244 USA # Army of the Tennessee
+157813 USA # United States Army Air Corps
+286977 GBR # Royal Artillery
+174361 DNK # Danish Defence IT Agency
+257717 USA # United States Cyber Command
+151806 USA # Twelfth United States Army Group
+211783 USA # Defense Advanced Research Projects Agency
+198913 SVK # Slovak Air Force
+132704 GBR # Naval Intelligence Division
+274454 GBR # 6th Airborne Division (United Kingdom)
+183674 FIN # Finnish Air Force
+258432 USA # Nintendo Software Technology
+203378 EST # Estonian Air Force
+281090 ROM # Romanian Armed Forces
+276213 USA # 3rd Infantry Division (United States)
+237607 USA # Naval Supply Systems Command
+165995 RUS # Russian Air Force
+272228 USA # 1st Infantry Division (United States)
+239603 FRA # 1st Foreign Cavalry Regiment
+155603 USA # Merrill's Marauders
+185072 SWE # Swedish Navy
+143185 GBR # Special Air Service
+166955 FRA # Paris Fire Brigade
+196096 USA # SEAL Team Six
+270741 RUS # Russian Naval Aviation
+237747 HUN # Hungarian Defence Force
+177494 USA # Air National Guard
+216226 SWE # Swedish Armed Forces
+187440 NOR # Home Guard (Norway)
+286864 ESP # Spanish Air Force
+267235 FRA # French Revolutionary Army
+204585 FRA # National Gendarmerie Intervention Group
+290045 SWE # Nordic Battlegroup
+180314 CHN # People's Liberation Army Rocket Force
+135025 USA # National Geospatial-Intelligence Agency
+254103 USA # Oklahoma Secretary of State
+135257 CHN # People's Liberation Army Air Force
+191858 USA # United States Second Fleet
+134534 USA # American Expeditionary Forces
+220514 FRA # National Gendarmerie
+257495 RUS # Russian Space Forces
+157880 USA # Buffalo Soldier
+196642 USA # United States Seventh Fleet
+229137 SWE # Swedish Air Force
+292320 ITA # Frecce Tricolori
+230847 GBR # Supreme Headquarters Allied Expeditionary Force
+139828 USA # Rough Riders
+163766 GBR # Royal Marines
+188621 SVN # Slovenian Armed Forces
+229546 USA # Military Assistance Command, Vietnam
+296469 USA # United States Transportation Command
+213431 GBR # Scots Guards
+202336 USA # Retro Studios
+250406 PRT # European Maritime Force
+150863 FIN # Finnish Border Guard
+215383 ISL # Military of Iceland
+171972 ITA # National Republican Guard (Italy)
+245056 GBR # 21st Army Group
+193009 RUS # Foreign Intelligence Service (Russia)
+217935 GBR # United Kingdom Special Forces
+142349 RUS # Alpha Group
+274718 NOR # Norwegian Army
+293355 POL # Polish Special Forces
+131478 ESP # Spanish Republican Army
+150636 HRV # Croatian National Guard
+215583 FRA # 13th Demi-Brigade of the Foreign Legion
+140035 USA # New Jersey Attorney General
+131740 GRC # National Liberation Front (Macedonia)
+169892 USA # V Corps (United States)
+275102 BGR # Bulgarian Navy
+300730 NOR # Norwegian Coast Guard
+247728 RUS # Northern Fleet
+256478 FRA # French Air Force
+162402 ALB # Sigurimi
+125041 FRA # French Foreign Legion

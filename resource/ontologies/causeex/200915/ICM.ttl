@@ -1,0 +1,183 @@
+@prefix : <http://ontology.causeex.com/ontology/odps/ICM#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix icm: <http://ontology.causeex.com/ontology/odps/ICM#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ontology.causeex.com/ontology/odps/ICM> rdf:type owl:Ontology ;
+    dcterms:description "Ontology defining the concept of a Factor in a Causal Model and mechanisms to define how the events and situational factors extracted from text support/refute it."@en ;
+    dcterms:created "May 8, 2018"^^xsd:string ;
+    rdfs:comment """Nov 11th 2019 revisions:
+                    Minimum ontology defined to convey the Factor hierarchy and how event:EventOrFactor classes provide
+                      supporting/refuting evidence."""@en ;
+    owl:imports <http://purl.org/dc/terms> ;
+    owl:versionInfo "Version 0.93"^^xsd:string .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+:has_event_class_ref a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "has Event Ontology class reference"@en ;
+    rdfs:comment "An IRI referencing a sub-class of event:EventOrFactor (defined in the Event and Event-Hierarchy ontologies). This property is used in a RelatedEventDetails definition to determine which Event individuals are relevant as evidence supporting/refuting a particular Factor. Whether the instances support or refute the Factor is indicated by the value of the relevance property (-1 for strongly refuting and 1 for strongly supporting). For example, consider the use case of finding evidence for the level of a MilitaryConflict Factor. Two different types of refuting evidence Event types could be defined, event:MilitaryDeescalation and event:Peacekeeping. On the other hand, supporting evidence would be instances of event:Attack involving military forces. Note that the default assumption is that instances of the specified Event Ontology class provide either supporting or refuting evidence (based on the sign of the relevance value). However, if the event:EventOrFactor individual is also classified using the types, icm:Decrease, icm:TerminationOrEnd or icm:WeakOrLimited, then the individual is assumed to provide the reverse."@en ;
+    rdfs:comment "EventOrFactor sub-class IRIs are provided using this property, and OWL puning is assumed (meaning that the class IRI is treated as a individual of the 'metaconcept' of the event:EventOrFactor sub-class)."@en ;
+    rdfs:domain :RelatedEventDetails .
+
+:has_related_event a owl:ObjectProperty ;
+    rdfs:label "has related event"@en ;
+    rdfs:comment "Association from a Factor class to a RelatedEventDetails individual which provides all the information defining how Event Ontology classes are used as evidence supporting/refuting the Factor. The RelatedEventDetails individual is needed to capture the Event class reference (via has_event_class_ref), whether Actor/Location information may/must be specified (via allowed/required_actor_constraint and location_allowed/required), and also the class' relevance (via the relevance datatype property)."@en ;
+    rdfs:comment "Factor sub-class IRIs are used as the domain of this property, and OWL puning is assumed (meaning that the class IRI is treated as a individual of the 'metaconcept' of the icm:Factor sub-class)."@en ;
+    rdfs:range :RelatedEventDetails .
+
+:has_factor_class_exception a owl:ObjectProperty;
+    rdfs:label "has factor class exception"@en ;
+    rdfs:comment "Factor classes excepted from a cause effect rule."@en ;
+    rdfs:domain :CauseEffectRule .	
+	
+:has_cause_rule a owl:ObjectProperty;
+	rdfs:label "has cause rule"@en ;
+	rdfs:comment "Cause Effect rule applied to a factor class in which an instance of this class would be a cause in a causal relationshp"@en;
+	rdfs:range :CauseEffectRule.
+	
+:has_effect_rule a owl:ObjectProperty;
+	rdfs:label "has effect rule"@en ;
+	rdfs:comment "Cause Effect rule applied to a factor class in which an instance of this class would be an effect in a causal relationshp"@en;
+	rdfs:range :CauseEffectRule.
+#################################################################
+#    Data Properties
+#################################################################
+
+:intervention_possible a owl:AnnotationProperty, owl:FunctionalProperty ;
+    rdfs:label "intervention possible"@en ;
+    rdfs:comment "Boolean value indicating whether the Factor supports intervention."@en ;
+    rdfs:range xsd:boolean .
+	
+:can_instantiate a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "can instantiate"@en ;
+    rdfs:comment "Boolean value indicating whether the Factor Class can be used as the factor class for an ICM factor (value=true) or whether the factor class is only used for creating a type hierarchy, but not meant to be instantiated (value=false)."@en ;
+    rdfs:range xsd:boolean .
+	
+:has_collapse_priority a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "collapse priority"@en ;
+    rdfs:comment "The collapse priority is used by system algorithms for suggesting factors. When the system identifies two suggested factors that are very similar in both semantics and structure, the system combines the two factors into one, using the collapse priority to determine which suggested factor to keep."@en ;
+    rdfs:domain :Factor ;
+    rdfs:range [ a rdfs:Datatype ;
+                 owl:onDatatype xsd:integer ;
+                 owl:withRestrictions ( [ xsd:minInclusive "0"^^xsd:integer ]
+                                        [ xsd:maxInclusive "100"^^xsd:integer ] ) ] .
+
+:has_active_actor_constraint a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "active actor constraint"@en ;
+    rdfs:comment "indicates a constraint on system-generated factors of an icm:Factor class."@en ;
+    rdfs:range :factor_guide .
+
+:has_affected_actor_constraint a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "affected actor constraint"@en ;
+    rdfs:comment "indicates a constraint on system-generated factors of an icm:Factor class."@en ;
+    rdfs:range :factor_guide .
+
+:has_location_constraint a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "location constraint"@en ;
+    rdfs:comment "indicates a constraint on system-generated factors of an icm:Factor class."@en ;
+    rdfs:domain :Factor ;
+    rdfs:range :factor_guide .
+	
+:has_neutral_value a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "neutral value"@en ;
+    rdfs:comment "The neutral value is the most normal value for a factor and is typically either 0 or 50 for a factor specified with a 0-100 unitless index. 50 indicates an average value with values below 50 being below average and above 50 above average. Populace Mood is a good example. A 0 neutral value is used for factors in which the normal state of the factor is 0 and 0-100 range indicates a fraction of a maximum value. Sanctions would be a good example of a 0 neutral value. "@en ;
+    rdfs:domain :Factor ;
+    rdfs:range [ a rdfs:Datatype ;
+                 owl:onDatatype xsd:integer ;
+                 owl:withRestrictions ( [ xsd:minInclusive "0"^^xsd:integer ]
+                                        [ xsd:maxInclusive "100"^^xsd:integer ] ) ] .
+
+:has_min_actors_locs a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "minimum number of actors and locations"@en ;
+    rdfs:comment "Indicates the number of actors and/or locations that MUST/MAY be supplied as part of the Actor constraints for a Factor or RelatedEventDetails. The overall constraints are specified using has_active_actor_constraint, has_affected_actor_constraint, and has_location_constraint."@en ;
+    rdfs:domain :Factor ;
+    rdfs:range [ a rdfs:Datatype ;
+                 owl:onDatatype xsd:integer ;
+                 owl:withRestrictions ( [ xsd:minInclusive "0"^^xsd:integer ]
+                                        [ xsd:maxInclusive "3"^^xsd:integer ] ) ] .
+
+:has_trend a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:label "has trend"@en ;
+    rdfs:comment "Indicates the trend of a Factor. The value is one of :Increase, :Decrease, :Stable, and :Unknown. If not specified, then \"Unknown\" should be assumed. Trend indicates the trend of a Factor overall (e.g., the :Increase trend in 'increased food production') or the trend of a factor with respect to the impact of another factor through a CausalAssertion - for example, the trend for 'food production' is 'Decrease' in 'The drought prevented food production', due to the impact of 'drought'."@en;
+    owl:oneOf ( :Decrease :Increase :Unknown :Stable ) .
+
+
+:relevance a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "relevance"@en ;
+    rdfs:comment "A decimal value between -1.0 and 1.0 indicating the how strongly/weakly connected an Event Ontology class is to a Factor and whether the instances of the Event Ontology class support or refute the Factor. A value of -1.0 indicates a strongly associated but refuting Event class type, while -0.25 indicates a weakly associated but refuting type. A value of 1.0 indicates a strongly associated and supporting class type, and 0.25 indicates a weakly associated and supporting type. Possible values are -1.0, -0.75, -0.5, -0.25, 0.25, 0.5, 0.75 and 1.0. Note that the relevance property has a domain of RelatedEventDetails, which also references the Event Ontology class via the has_event_class_ref property."@en ;
+    rdfs:domain :RelatedEventDetails ;
+    rdfs:range [ a rdfs:Datatype ;
+                 owl:onDatatype xsd:decimal ;
+                 owl:withRestrictions ( [ xsd:minInclusive "-1.00"^^xsd:decimal ]
+                                        [ xsd:maxInclusive "1.00"^^xsd:decimal ] ) ] .
+
+:default_rule a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "default rule"@en ;
+    rdfs:comment "Boolean value indicating the default state of a cause effect rule."@en ;
+    rdfs:range xsd:boolean .
+	
+:pertains_to_international a owl:DatatypeProperty, owl:FunctionalProperty ;
+    rdfs:label "is international"@en ;
+    rdfs:comment "Boolean value indicating the whether a cause-effect rule applies only to international causal relationships (i.e., relationships in which the locations of the causal factors are in different countries)."@en ;
+    rdfs:range xsd:boolean .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+:Factor a owl:Class ;
+    rdfs:label "Factor"@en ;
+    rdfs:comment "Factors are the semantics/concepts involved in Causal Models. For example, increases in corruption may be correlated with increases in criminal activity, and modeled as Factors describing the situation in an area. Whether or not a Factor supports intervention is indicated by the intervention_possible annotation property. Factor is sub-classed in the ICMMapping.ttl ontology file. Also in that file, the Factor classes are related to specific Event Ontology classes via the has_related_event property and instances of RelatedEventDetails. The RelatedEventDetails individual defines how specific event:EventOrFactor classes provide evidence supporting/refuting the Factor. Continuing the example of the CriminalActivity Factor, Event individuals classified as event:MurderOrHomicide, event:TheftOrRobbery, event:Attack, etc. could all be used to indicate the level of criminal activity in area. Therefore, the CriminalActivity Factor would be related to each of those Event classes, and a relevance value would be defined to indicate how strongly/weakly connected the concepts were."@en ;
+    rdfs:comment "Beyond simply relating an Event Ontology class to a Factor, it may be necessary to further refine the Event based on its actor(s) or location. To indicate that there are Actor or Location constraints (or that these constraints are overridden), the properties, has_actor_constraint, actor_ignored and location_allowed/required/ignored, are used. A few things should be noted. (1) A level of indirection/reification is needed to associate the Factor and Event Ontology classes. The Factor must be associated with a RelatedEventDetails individual, which then references the actual Event Ontology class (via has_event_class_ref), possibly overrides default actor/location constraints and also has the relevance property. (2) Factor class IRIs are used as the domain of the has_related_event property, event:EventOrFactor class IRIs are defined as the range of has_event_class_ref, and event:Actor class IRIs are defined as the range of has_actor_class_ref. Although not previously supported in OWL, class IRIs may be referenced as domains/ranges of properties via OWL 2 punning."@en .
+
+:RelatedEventDetails a owl:Class ;
+    rdfs:label "Related Event Details"@en ;
+    rdfs:comment "Instances of this class reify the details defining how Event individuals are used as evidence supporting/refuting a Factor. For example, for a CriminalActivity Factor, extracted Events classified as event:MurderOrHomicide, event:TheftOrRobbery, event:Attack, etc. would all indicate the overall level of criminal activity in area. The CriminalActivity Factor would be defined as related to each of those Event classes, and a relevance value (to indicate how strongly/weakly connected the concepts were) and other constraints could also be specified. A level of indirection/reification is needed to capture the Event Ontology class reference (via has_event_class_ref), whether Actor/Location information may/must also be specified or defaults ignored (via allowed/required_actor_constraint, actor_ignored or location_allowed/required/ignored), and also the Event class relevance (via the relevance datatype property)."@en .
+
+:CauseEffectRule a owl:Class ;
+    rdfs:label "Cause Effect Rule"@en;
+	rdfs:comment "This class defines restrictions at the factor class level on how the system can generate suggested causal relationships involving instances of this class. For example, a cause effect rule might indicate factors of a particular class cannot be the cause of a causal relationship. Cause effect rules can also specify exceptions."@en.
+
+#################################################################
+#    Individuals
+#################################################################
+
+:NOT_ALLOWED a owl:NamedIndividual, :owl:class ;
+    rdfs:label "NOT_ALLOWED"@en .
+
+:ALLOWED a owl:NamedIndividual, :owl:class ;
+    rdfs:label "ALLOWED"@en .
+	
+:REQUIRED_1 a owl:NamedIndividual, :owl:class ;
+    rdfs:label "REQUIRED_1"@en .
+	
+:REQUIRED_2 a owl:NamedIndividual, :owl:class ;
+    rdfs:label "REQUIRED_2"@en .
+	
+:REQUIRED_3 a owl:NamedIndividual, :owl:class ;
+    rdfs:label "REQUIRED_3"@en .
+	
+:factor_guide a owl:Class;
+   owl:oneOf ( :NOT_ALLOWED :ALLOWED :REQUIRED_1 :REQUIRED_2 :REQUIRED_3 ).
+	
+## trend values
+
+:Decrease a owl:NamedIndividual, :owl:class ;
+          rdfs:label "Decrease"@en .
+
+:Increase a owl:NamedIndividual, :owl:class ;
+          rdfs:label "Increase"@en .
+
+:Unknown a owl:NamedIndividual, :owl:class ;
+          rdfs:label "Unknown"@en .
+
+:Stable a owl:NamedIndividual, :owl:class ;
+          rdfs:label "Stable"@en .

@@ -1,14 +1,14 @@
 from elements.kb_event_mention import KBEventMention
 from elements.kb_mention import KBMention
 from elements.kb_value_mention import KBValueMention
-from unification_entity import UnificationEntity
-from unification_element import UnificationElement
-from unification_span import UnificationSpan
+from elements.unification.unification_entity import UnificationEntity
+from elements.unification.unification_element import UnificationElement
+from elements.unification.unification_span import UnificationSpan
 
 class UnificationEventArgument(UnificationElement):
-    def __init__(self, role, kb_mention_or_value_mention, kb):
+    def __init__(self, role, kb_mention_or_value_mention, kb, confidence):
         self.role = role
-        self.confidence = 1.0
+        self.confidence = confidence
         if isinstance(kb_mention_or_value_mention, KBMention):
             self.entity = UnificationEntity(kb_mention_or_value_mention, kb)
             self.span = None

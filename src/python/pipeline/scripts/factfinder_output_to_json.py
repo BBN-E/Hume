@@ -283,7 +283,7 @@ class FactfinderOutputToJson:
                     #print("Change fact type: " + returnLabel + " -> " + newReturnLabel)
                     return newReturnLabel
 
-            print ("invalid type: " + returnLabel)
+            print("invalid type: " + returnLabel)
             return None
 
     def to_simplified_relation_json(self, fact_relation_mention, slot):
@@ -308,15 +308,21 @@ class FactfinderOutputToJson:
 
         dirnames = os.listdir(master_input_dir)
         for dirname in dirnames:
+            if "batch_file" in dirname:
+                continue
             batch_dir = os.path.join(master_input_dir, dirname)
             if not os.path.isdir(batch_dir):
                 continue
             factfinder_dir = os.path.join(batch_dir, "factfinder")
-            factfinder_filenames = os.listdir(factfinder_dir)
+
+            factfinder_filenames = []
+            if os.path.isdir(factfinder_dir):
+                factfinder_filenames = os.listdir(factfinder_dir)
+
             for factfinder_filename in factfinder_filenames:
                 if not factfinder_filename.endswith(".kb"):
                     continue
-                print "Processing: " + factfinder_filename
+                print("Processing: " + factfinder_filename)
                 factfinder_file = os.path.join(factfinder_dir, factfinder_filename)
                 with open(factfinder_file, 'r') as f2:
                     for sline in f2:
@@ -346,7 +352,7 @@ class FactfinderOutputToJson:
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print "Usage: " + sys.argv[0] + " master_input_dir output_json_file"
+        print("Usage: " + sys.argv[0] + " master_input_dir output_json_file")
         sys.exit(1)
 
     master_input_dir, output_json_file = sys.argv[1:]

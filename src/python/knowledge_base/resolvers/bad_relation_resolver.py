@@ -1,6 +1,6 @@
 import sys, os, codecs
 from knowledge_base import KnowledgeBase
-from kb_resolver import KBResolver
+from resolvers.kb_resolver import KBResolver
 
 # Remove relation when left arg is same entity as right arg
 class BadRelationResolver(KBResolver):
@@ -8,7 +8,7 @@ class BadRelationResolver(KBResolver):
         pass
 
     def resolve(self, kb):
-        print "BadRelationResolver RESOLVE"
+        print("BadRelationResolver RESOLVE")
 
         resolved_kb = KnowledgeBase()
         super(BadRelationResolver, self).copy_all(resolved_kb, kb)

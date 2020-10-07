@@ -1,0 +1,32 @@
+47190 765182 # Lituania is component of Baltic States
+50848 765182 # Latvia is component of Baltic States
+2231 765182 # Estonia is component of Baltic States
+8644 259563 # Kingdom of Belgium is a component of NATO
+89923 259563 # Canada is a component of NATO
+2858 259563 # Kingdom of Denmark is a component of NATO
+84910 259563 # Republic of France is a component of NATO
+45587 259563 # Republic of Iceland is a component of NATO
+121370 259563 # Repubblica Italiana is a component of NATO
+107818 259563 # Grand Duchy of Luxembourg is a component of NATO
+61008 259563 # Kingdom of the Netherlands is a component of NATO
+9573 259563 # Kingdom of Norway is a component of NATO
+76365 259563 # Portuguese Republic is a component of NATO
+103735 259563 # United Kingdom of Great Britain and Northern Ireland is a component of NATO
+104907 259563 # United States is a component of NATO
+71945 259563 # Hellenic Republic is a component of NATO
+11899 259563 # Republic of Turkey is a component of NATO
+56489 259563 # Federal Republic of Germany is a component of NATO
+80955 259563 # Kingdom of Spain is a component of NATO
+113470 259563 # Czech Republic is a component of NATO
+30537 259563 # Hungary is a component of NATO
+74394 259563 # Republic of Poland is a component of NATO
+23920 259563 # Republic of Bulgaria is a component of NATO
+2231 259563 # Republic of Estonia is a component of NATO
+50848 259563 # Republic of Latvia is a component of NATO
+47190 259563 # Republic of Lithuania is a component of NATO
+75567 259563 # România is a component of NATO
+56277 259563 # Slovak Republic is a component of NATO
+104701 259563 # Republic of Slovenia is a component of NATO
+106181 259563 # Republic of Albania is a component of NATO
+37242 259563 # Republic of Croatia is a component of NATO
+24481 259563 # Montenegro is a component of NATO

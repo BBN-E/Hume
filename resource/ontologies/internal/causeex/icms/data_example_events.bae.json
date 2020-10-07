@@ -1,0 +1,4856 @@
+{
+    "MilitaryCBRNEReadiness": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military CBRN-E readiness"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military chemical biological radiological nuclear explosive readiness"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "nuclear defenses"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "missile defense systems"
+                }
+            }
+        ],
+        "name": "MilitaryCBRNEReadiness"
+    },
+    "MilitaryCBRNECapability": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military chemical biological radiological nuclear explosive capability"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military CBRN-E capability"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "acquiring nuclear bomb"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "able to deploy nuclear weapons"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "biological threat capabilities"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "storing chemical weapons"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "nuclear stockpiles"
+                }
+            }
+        ],
+        "name": "MilitaryCBRNECapability"
+    },
+    "MilitaryAirReadiness": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "flight readiness"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "aerial combat ready"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "air defense systems"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "airbase"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military air readiness"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "air force training operations"
+                }
+            }
+        ],
+        "name": "MilitaryAirReadiness"
+    },
+    "MilitaryAirCapability": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military air capability"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "air to air defense"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "thaad system"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "uas"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "unmanned aerial vehicles"
+                }
+            }
+        ],
+        "name": "MilitaryAirCapability"
+    },
+    "MilitaryCapability": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military capability"
+                }
+            }
+        ],
+        "name": "MilitaryCapability"
+    },
+    "Infrastructure": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "infrastructure"
+                }
+            }
+        ],
+        "name": "Infrastructure"
+    },
+    "Utilities": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "utilities"
+                }
+            }
+        ],
+        "name": "Utilities"
+    },
+    "WasteServices": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "waste services"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "waste disposal services"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "garbage dumps"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "waste management"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "waste management services"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "sewage treatment plants"
+                }
+            }
+        ],
+        "name": "WasteServices"
+    },
+    "UtilitiesInfrastructure": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "utilities infrastructure"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "oil and gas pipelines"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "power and telephone lines"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "sewage systems"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "running water"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "power plants"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "utilities"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "electrical grid"
+                }
+            }
+        ],
+        "name": "UtilitiesInfrastructure"
+    },
+    "PowerAvailability": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "power availability"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "electrical power grid"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "access to electricity"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "electricity production"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "blackouts"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "loss of power"
+                }
+            }
+        ],
+        "name": "PowerAvailability"
+    },
+    "GasAvailability": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "gas availability"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "gas pipelines and delivery"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "natural gas reserves fields and deposits"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "natural gas exploration"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "gas supply"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "demand for natural gas"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "production of gas"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "gas transit"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "imported gas"
+                }
+            }
+        ],
+        "name": "GasAvailability"
+    },
+    "Transportation": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "transportation"
+                }
+            }
+        ],
+        "name": "Transportation"
+    },
+    "WaterTransportation": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "water transportation"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "port"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "seaports"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "docks"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "waterways"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "ferries"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "shipping routes"
+                }
+            }
+        ],
+        "name": "WaterTransportation"
+    },
+    "TransportationInfrastructure": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "transportation infrastructure"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "railway stations"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "port facilities"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "airports and air bases"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "transit routes"
+                }
+            }
+        ],
+        "name": "TransportationInfrastructure"
+    },
+    "GroundTransportation": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "ground transportation"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "road travel"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "ground shipping"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "freight trucking"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "rails"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "roadways"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "gas and service stations"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "railway stations"
+                }
+            }
+        ],
+        "name": "GroundTransportation"
+    },
+    "AirTransportation": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "air transportation"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "airports"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "air travel infrastructure"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "air base"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "airways"
+                }
+            }
+        ],
+        "name": "AirTransportation"
+    },
+    "PublicFacilities": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "public facilities"
+                }
+            }
+        ],
+        "name": "PublicFacilities"
+    },
+    "InfrastructureDamage": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "infrastructure damage"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "destroyed bridges"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "infrastructure destruction"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "damage to buildings and infrastructure"
+                }
+            }
+        ],
+        "name": "InfrastructureDamage"
+    },
+    "PublicGatheringPlaces": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "public gathering places"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "green spaces"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "public space"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "parks"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "commons"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "public square"
+                }
+            }
+        ],
+        "name": "PublicGatheringPlaces"
+    },
+    "PlacesOfWorship": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "temple"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "churches"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "synagogue mosque temple ashram or church"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "places of worship"
+                }
+            }
+        ],
+        "name": "PlacesOfWorship"
+    },
+    "NonGovernmentBuildings": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "office buildings"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "building a plant"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "housing"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "built retail spaces"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "non government buildings"
+                }
+            }
+        ],
+        "name": "NonGovernmentBuildings"
+    },
+    "GovernmentBuildings": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "government buildings"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "capitol"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "legislative chambers"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "government facilities"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "palace"
+                }
+            }
+        ],
+        "name": "GovernmentBuildings"
+    },
+    "EmergencyFacilityAvailability": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "emergency facility availability"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "urgent care facilities"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "emergency departments"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "access to emergency services"
+                }
+            }
+        ],
+        "name": "EmergencyFacilityAvailability"
+    },
+    "Industry": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "industry"
+                }
+            }
+        ],
+        "name": "Industry"
+    },
+    "ServicesIndustry": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "services industry"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "deliver services"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "service industries"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "offering services"
+                }
+            }
+        ],
+        "name": "ServicesIndustry"
+    },
+    "PetroleumIndustry": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "petroleum industry"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "oil exports"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "petroleum"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "oil and gas pipelines"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "oil or gas reserves"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "oil projects"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "oil output"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "energy reserves"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "refined petroleum products"
+                }
+            }
+        ],
+        "name": "PetroleumIndustry"
+    },
+    "NuclearIndustry": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "nuclear industry"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "nuclear power"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "nuclear energy"
+                }
+            }
+        ],
+        "name": "NuclearIndustry"
+    },
+    "MiningIndustry": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "mining industry"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "mining"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "mine"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "quarry"
+                }
+            }
+        ],
+        "name": "MiningIndustry"
+    },
+    "ManufacturingIndustry": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "manufacturing industry"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "manufacturing"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "manufacturers"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "manufacture and production"
+                }
+            }
+        ],
+        "name": "ManufacturingIndustry"
+    },
+    "AlternativeEnergyIndustry": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "alternative energy industry"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "renewable energy"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "renewables"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "solar power"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "wind farms"
+                }
+            }
+        ],
+        "name": "AlternativeEnergyIndustry"
+    },
+    "AgriculturalIndustry": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "agricultural industry"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "producing crops"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "agriculture"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "farming"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "farms"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "harvests"
+                }
+            }
+        ],
+        "name": "AgriculturalIndustry"
+    },
+    "Information": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "information"
+                }
+            }
+        ],
+        "name": "Information"
+    },
+    "NationalInformation": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "national information"
+                }
+            }
+        ],
+        "name": "NationalInformation"
+    },
+    "SocialMediaCommunications": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "social media communications"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "tweeted"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "posted on facebook"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "wrote on twitter"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "social media"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "social media accounts"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "posting on social media"
+                }
+            }
+        ],
+        "name": "SocialMediaCommunications"
+    },
+    "Propaganda": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "propaganda"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "propagandists"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "propaganda campaign"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "government propaganda"
+                }
+            }
+        ],
+        "name": "Propaganda"
+    },
+    "OrgCommunicationResilience": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "organizational communication resilience"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "bypassing the media ban"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "evade censorship"
+                }
+            }
+        ],
+        "name": "OrgCommunicationResilience"
+    },
+    "NationalOrganizationInfoOps": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "national organization information operations"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "organizational information campaign"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "advertisement"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "company public outreach"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "corporate press release"
+                }
+            }
+        ],
+        "name": "NationalOrganizationInfoOps"
+    },
+    "MisinformationOperation": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "misinformation operation"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "misinformation"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "misinformation campaign"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "misinforming"
+                }
+            }
+        ],
+        "name": "MisinformationOperation"
+    },
+    "MassCommunication": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "mass communication"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "broadcast"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "aired"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "broadcasting"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "broadcasts"
+                }
+            }
+        ],
+        "name": "MassCommunication"
+    },
+    "FactualInformationOperation": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "education campaigns"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "public information campaign"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "public service announcement"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "factual information operation"
+                }
+            }
+        ],
+        "name": "FactualInformationOperation"
+    },
+    "DisinformationOperation": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "disinformation operation"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "disinformation campaigns"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "disinformation"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "spreading disinformation"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "counter disinformation"
+                }
+            }
+        ],
+        "name": "DisinformationOperation"
+    },
+    "CommunicationRestrictions": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "communication restrictions"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "silenced dissent"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "media blackout"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "censorship"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "communications ban"
+                }
+            }
+        ],
+        "name": "CommunicationRestrictions"
+    },
+    "GlobalInformation": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "global information"
+                }
+            }
+        ],
+        "name": "GlobalInformation"
+    },
+    "InformationAvailability": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "information availability"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "access to information"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "published data"
+                }
+            }
+        ],
+        "name": "InformationAvailability"
+    },
+    "DefenseInformation": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "defense information"
+                }
+            }
+        ],
+        "name": "DefenseInformation"
+    },
+    "DefenseStrategicCommunications": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "defense strategic communications"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "strategic dialogue"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "strategic communications"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "strategic military planning"
+                }
+            }
+        ],
+        "name": "DefenseStrategicCommunications"
+    },
+    "DefenseRegionalCommunications": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "defense regional communications"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "NATO communique"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "summit on international defense"
+                }
+            }
+        ],
+        "name": "DefenseRegionalCommunications"
+    },
+    "DefenseNationalCommunications": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "defense national communications"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "classified information"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "national security intelligence"
+                }
+            }
+        ],
+        "name": "DefenseNationalCommunications"
+    },
+    "Economic": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "economic"
+                }
+            }
+        ],
+        "name": "Economic"
+    },
+    "Sanctions": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "sanctions"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "imposed sanctions"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "US sanctions"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "economic sanctions"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "slapped sanctions"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "introduced sanctions"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "sanctioned countries and organizations"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "sanctioning"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "sanctions relief"
+                }
+            }
+        ],
+        "name": "Sanctions"
+    },
+    "DomesticMarketHealth": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "boost the economy"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "growing the economy"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "economic growth"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "economic downturn"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "hurt the economy"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "hit the economy"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "domestic markets"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "domestic economic conditions"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "national economy"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "domestic market health"
+                }
+            }
+        ],
+        "name": "DomesticMarketHealth"
+    },
+    "EmploymentLevel": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "employment level"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "unemployment levels"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "full employment"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "high unemployment"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "unemployment rate"
+                }
+            }
+        ],
+        "name": "EmploymentLevel"
+    },
+    "Production": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "production"
+                }
+            }
+        ],
+        "name": "Production"
+    },
+    "NationalEconomicModelInfluence": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "national economic model influence"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "economic policies"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "national economic model"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "macroeconomic policy"
+                }
+            }
+        ],
+        "name": "NationalEconomicModelInfluence"
+    },
+    "EconomicServicesCapability": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "economic services capability"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "providing services"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "service industry"
+                }
+            }
+        ],
+        "name": "EconomicServicesCapability"
+    },
+    "EconomicProduction": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "economic production"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "global or domestic production"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "producing products"
+                }
+            }
+        ],
+        "name": "EconomicProduction"
+    },
+    "EconomicCapability": {
+        "exemplars": [],
+        "name": "EconomicCapability"
+    },
+    "EconomicIndustrialCapability": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "economic industrial capability"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "manufacturing industries"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "industry development"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "industrial production"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "economic industrial capability"
+                }
+            }
+        ],
+        "name": "EconomicIndustrialCapability"
+    },
+    "EconomicAgriculturalCapability": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "economic agricultural capability"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "destroy crops"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "improving production and quality of crops"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "intensive farming"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "organic farming methods"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "crop growing segment"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "trade in agricultural products"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "tariffs on agricultural produce"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "ban on agricultural imports"
+                }
+            }
+        ],
+        "name": "EconomicAgriculturalCapability"
+    },
+    "Informal": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "informal illegal or illicit economy"
+                }
+            }
+        ],
+        "name": "Informal"
+    },
+    "UnregulatedLabor": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "unregulated labor"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "modern slavery"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "undocumented labor"
+                }
+            }
+        ],
+        "name": "UnregulatedLabor"
+    },
+    "TerrorismFinancing": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "terrorism financing"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "funding terrorists"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "financing terrorists"
+                }
+            }
+        ],
+        "name": "TerrorismFinancing"
+    },
+    "InformalCulturalFinancialTransactionInfluence": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "informal cultural financial transaction influence"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "hawala"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "cryptocurrency"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "bitcoin"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "paypal"
+                }
+            }
+        ],
+        "name": "InformalCulturalFinancialTransactionInfluence"
+    },
+    "IllicitTrade": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "illicit trade"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "smugglers"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "smuggling"
+                }
+            }
+        ],
+        "name": "IllicitTrade"
+    },
+    "HumanTrafficking": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "human trafficking"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "human traffickers"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "trafficking in people"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "migrant trafficking"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "smuggled people"
+                }
+            }
+        ],
+        "name": "HumanTrafficking"
+    },
+    "Distribution": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "distribution"
+                }
+            }
+        ],
+        "name": "Distribution"
+    },
+    "InternationalTrade": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "international trade"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "imports"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "exports"
+                }
+            }
+        ],
+        "name": "InternationalTrade"
+    },
+    "Consumption": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "consumption"
+                }
+            }
+        ],
+        "name": "Consumption"
+    },
+    "IndustrialResourceAvailability": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "industrial resource availability"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "raw materials"
+                }
+            }
+        ],
+        "name": "IndustrialResourceAvailability"
+    },
+    "ForeignAid": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "foreign aid"
+                }
+            }
+        ],
+        "name": "ForeignAid"
+    },
+    "ForeignInvestment": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "foreign investment"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "foreign direct investment"
+                }
+            }
+        ],
+        "name": "ForeignInvestment"
+    },
+    "ProvisionOfAidOrSupport": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "provision of aid or support"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "government provides support"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "food aid"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "humanitarian aid"
+                }
+            }
+        ],
+        "name": "ProvisionOfAidOrSupport"
+    },
+    "SecurityElementInfluence": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "security element influence in government"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "government backed forces"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "coup"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "junta"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "military government"
+                }
+            }
+        ],
+        "name": "SecurityElementInfluence"
+    },
+    "ReligiousTensionsInGovt": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "religious tensions in government"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "religious tension in politics"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "government attack on religious freedoms"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "religious pandering"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "official discrimination against religious groups"
+                }
+            }
+        ],
+        "name": "ReligiousTensionsInGovt"
+    },
+    "ReligiousInfluenceInGovt": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "religious influence in government"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "theocracy"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "political religious discrimination"
+                }
+            }
+        ],
+        "name": "ReligiousInfluenceInGovt"
+    },
+    "ReligiousGroupsInGovt": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "religious groups in government"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "religious bloc"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "religious representation in government"
+                }
+            }
+        ],
+        "name": "ReligiousGroupsInGovt"
+    },
+    "EthnicTensionsInGovt": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "ethnic tensions in government"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "racial tension in politics"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "nationalist strain"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "racial or ethnic pandering"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "official discrimination against ethnic groups"
+                }
+            }
+        ],
+        "name": "EthnicTensionsInGovt"
+    },
+    "EthnicInfluenceInGovt": {
+        "exemplars": [
+            {
+                    "trigger": {
+                    "text": "ethnic influence in government"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "nationalist movement"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "political ethnic discrimination"
+                }
+            }
+        ],
+        "name": "EthnicInfluenceInGovt"
+    },
+    "EthnicGroupsInGovt": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "ethnic groups in government"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "ethnic or racial representation in government"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "ethnic bloc"
+                }
+            }
+        ],
+        "name": "EthnicGroupsInGovt"
+    },
+    "CentralOrLocalGovernment": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "central or local government"
+                }
+            }
+        ],
+        "name": "CentralOrLocalGovernment"
+    },
+    "PopulaceSupportForGovernment": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "populace support for government"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "government public opinion"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "waning or growing party support"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "popular government"
+                }
+            }
+        ],
+        "name": "PopulaceSupportForGovernment"
+    },
+    "LegislativeActivity": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "legislative activity"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "passed law"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "legislation"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "legislative session"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "writing and passing laws"
+                }
+            }
+        ],
+        "name": "LegislativeActivity"
+    },
+    "JudicialActivity": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "judicial activity"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "trial"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "sentenced in court"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "judgment or decision handed down by courts"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "court found or ordered"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "judges appointed"
+                }
+            }
+        ],
+        "name": "JudicialActivity"
+    },
+    "GovernmentTransparency": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "government transparency"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "transparent legal processes"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "government accountability"
+                }
+            }
+        ],
+        "name": "GovernmentTransparency"
+    },
+    "GovernmentStability": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "government stability"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "political stability or instability"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "stable or unstable government"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "political crisis"
+                }
+            }
+        ],
+        "name": "GovernmentStability"
+    },
+    "GovernmentSeparationOfPowers": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "government separation of powers"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "separation of judicial and executive powers"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "separate legislative and executive powers"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "separation of powers"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "government checks and balances"
+                }
+            }
+        ],
+        "name": "GovernmentSeparationOfPowers"
+    },
+    "GovernmentPerformance": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "government performance"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "successful or failed government initiatives"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "successful coalition government"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "governance"
+                }
+            }
+        ],
+        "name": "GovernmentPerformance"
+    },
+    "GovernmentInfluenceOnPolice": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "government influence on police"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "law enforcement policy and legislation"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "government pressure on police forces"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "police funding"
+                }
+            }
+        ],
+        "name": "GovernmentInfluenceOnPolice"
+    },
+    "GovernmentInfluenceOnMilitary": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "government influence on military"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "defense policy"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military legislation"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "limiting military power"
+                }
+            }
+        ],
+        "name": "GovernmentInfluenceOnMilitary"
+    },
+    "ExtraJudicialActivity": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "extrajudicial activity"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "torture"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "extrajudicial killings or executions"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "lynching"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "detained without trial"
+                }
+            }
+        ],
+        "name": "ExtraJudicialActivity"
+    },
+    "ExecutiveGovernmentActivity": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "executive government activity"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "veto"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "signed into law"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "signed the treaty"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "enforced the legal statute"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "executive powers"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "nomination and appointment"
+                }
+            }
+        ],
+        "name": "ExecutiveGovernmentActivity"
+    },
+    "BusinessAndIndustryInfluence": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "business and industry influence by government"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "tariffs and tax policy"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "industry incentives"
+                }
+            }
+        ],
+        "name": "BusinessAndIndustryInfluence"
+    },
+    "Corruption": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "corruption"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "corrupt politician"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "government corruption"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "allegations of corruption"
+                }
+            }
+        ],
+        "name": "Corruption"
+    },
+    "Military": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military"
+                }
+            }
+        ],
+        "name": "Military"
+    },
+    "Sustainment": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military sustainment"
+                }
+            }
+        ],
+        "name": "Sustainment"
+    },
+    "MilitaryTraining": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military training"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military drills"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military exercises"
+                }
+            }
+        ],
+        "name": "MilitaryTraining"
+    },
+    "MilitaryRecruitment": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military recruitment"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "recruitment into armed services"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military recruiting"
+                }
+            }
+        ],
+        "name": "MilitaryRecruitment"
+    },
+    "LogisticsReadiness": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "logistics readiness"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military logistics support"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "logistics sustainment"
+                }
+            }
+        ],
+        "name": "LogisticsReadiness"
+    },
+    "MilitaryIndustrialComplex": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military industrial complex"
+                }
+            }
+        ],
+        "name": "MilitaryIndustrialComplex"
+    },
+    "WMDCapabilityPursuit": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "WMD capability or pursuit"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "nuclear weapons tests"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "nuclear weapons development"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "developing nuclear warheads"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "development of military nuclear capabilities"
+                }
+            }
+        ],
+        "name": "WMDCapabilityPursuit"
+    },
+    "NationalArmsProduction": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "weapons manufacturer"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "domestic weapons development"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "produced missiles for the military"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "arms contract with the government"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "national arms production"
+                }
+            }
+        ],
+        "name": "NationalArmsProduction"
+    },
+    "MilitaryResearchAndDevelopment": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "defense research"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military r & d"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military technologies"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "weapons development"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military research and development"
+                }
+            }
+        ],
+        "name": "MilitaryResearchAndDevelopment"
+    },
+    "ForeignArmsTrade": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "arms deals"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "selling weapons to foreign nations"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "international arms sales"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "foreign arms trade"
+                }
+            }
+        ],
+        "name": "ForeignArmsTrade"
+    },
+    "Leadership": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "leadership"
+                }
+            }
+        ],
+        "name": "Leadership"
+    },
+    "RealAndPotentialThreatsInfluence": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "real and potential threats influence"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military response"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military threats"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "perceived defense threats"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "reaction to threats to national security"
+                }
+            }
+        ],
+        "name": "RealAndPotentialThreatsInfluence"
+    },
+    "MilitaryLeadershipStrength": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military leadership strength"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "firm leadership of armed services"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "weakened military leadership"
+                }
+            }
+        ],
+        "name": "MilitaryLeadershipStrength"
+    },
+    "MilitaryInfluenceOnGovernment": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "government defense debate"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "defense legislation"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military government interactions"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military influence on government"
+                }
+            }
+        ],
+        "name": "MilitaryInfluenceOnGovernment"
+    },
+    "MilitaryCoercionOrIntimidation": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military threats"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "intimidated by military forces"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military pressure"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military coercion or intimidation"
+                }
+            }
+        ],
+        "name": "MilitaryCoercionOrIntimidation"
+    },
+    "WMDActivity": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "WMD Activity"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "nuclear activity"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "nuclear testing"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "developing a nuclear bomb"
+                }
+            }
+        ],
+        "name": "WMDActivity"
+    },
+    "InternalSecurity": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "internal security"
+                }
+            }
+        ],
+        "name": "InternalSecurity"
+    },
+    "MilitaryLawEnforcement": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military law enforcement"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military police"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "gendarmerie"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military court"
+                }
+            }
+        ],
+        "name": "MilitaryLawEnforcement"
+    },
+    "PeacekeepingActivity": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "peacekeeping missions"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "peacekeepers"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "peacekeeping forces"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "peacekeeping activity"
+                }
+            }
+        ],
+        "name": "PeacekeepingActivity"
+    },
+    "PopulaceSupportForPolice": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "civilian police support"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "public opinion of law enforcement"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "distrust of cops"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "citizens back the police"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "populace support for police"
+                }
+            }
+        ],
+        "name": "PopulaceSupportForPolice"
+    },
+    "ParamilitaryInfluence": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "paramilitary and military forces"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "paramilitary cooperation with militaries"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "engagement with mercenaries"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "paramilitary influence"
+                }
+            }
+        ],
+        "name": "ParamilitaryInfluence"
+    },
+    "NationalPoliceInfluence": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "militarized national police"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "fbi and military"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "national police influence"
+                }
+            }
+        ],
+        "name": "NationalPoliceInfluence"
+    },
+    "NationalBorderPoliceInfluence": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "national border police influence"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military border security"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "border police effects on military"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "militarized border police"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "national guard on the border"
+                }
+            }
+        ],
+        "name": "NationalBorderPoliceInfluence"
+    },
+    "MilitaryIntelligence": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military intelligence"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "defense intelligence"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military intel"
+                }
+            }
+        ],
+        "name": "MilitaryIntelligence"
+    },
+    "MilitarySpending": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "defense spending"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "spent on defence"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "defense budget"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "global military spending"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "spent on the military"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military spending"
+                }
+            }
+        ],
+        "name": "MilitarySpending"
+    },
+    "MilitaryJointOperation": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military joint operation"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "joint exercises"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "joint military drill"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "joint operations between militaries"
+                }
+            }
+        ],
+        "name": "MilitaryJointOperation"
+    },
+    "MilitaryActivity": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military activity"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military incursion"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military training"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "deployment of armed forces"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military operations"
+                }
+            }
+        ],
+        "name": "MilitaryActivity"
+    },
+    "AggressiveActions": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "aggressive actions"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military aggression"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "aggression"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "international aggressive behavior"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "direct or indirect aggression"
+                }
+            }
+        ],
+        "name": "AggressiveActions"
+    },
+    "MilitaryConflict": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military conflict"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "battle"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "war"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "insurgency"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "armed conflict"
+                }
+            }
+        ],
+        "name": "MilitaryConflict"
+    },
+    "ArmedForces": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "armed forces"
+                }
+            }
+        ],
+        "name": "ArmedForces"
+    },
+    "MilitaryNavalCapability": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "navy"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "navies"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "naval capabilities"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military sea presence"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military naval capability"
+                }
+            }
+        ],
+        "name": "MilitaryNavalCapability"
+    },
+    "MilitarySOFActivity": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "special operations"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "special forces mission"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "special services operation"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military special operations forces activity"
+                }
+            }
+        ],
+        "name": "MilitarySOFActivity"
+    },
+    "PopulaceSupportForMilitary": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "civilian support for armed forces"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "public opinion of military"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "welcoming troops"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "populace support for military"
+                }
+            }
+        ],
+        "name": "PopulaceSupportForMilitary"
+    },
+    "MilitarySOFReadiness": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military special operations forces readiness"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "special forces training operations"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "special ops ready"
+                }
+            }
+        ],
+        "name": "MilitarySOFReadiness"
+    },
+    "MilitarySOFCapability": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military special operations forces capability"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "special ops capabilities"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "special forces"
+                }
+            }
+        ],
+        "name": "MilitarySOFCapability"
+    },
+    "MilitaryNavalReadiness": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military naval readiness"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "protecting naval targets"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "naval drills"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "naval training operations"
+                }
+            }
+        ],
+        "name": "MilitaryNavalReadiness"
+    },
+    "MilitaryNavalActivity": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "naval operation"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "naval missions"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military naval activity"
+                }
+            }
+        ],
+        "name": "MilitaryNavalActivity"
+    },
+    "MilitaryGroundActivity": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "ground offensive"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "ground forces"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military ground activity"
+                }
+            }
+        ],
+        "name": "MilitaryGroundActivity"
+    },
+    "MilitaryLogisticsCapability": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "logistics capabilities"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "logistical command"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "logistics center"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military logistics capability"
+                }
+            }
+        ],
+        "name": "MilitaryLogisticsCapability"
+    },
+    "MilitaryGroundReadiness": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military ground readiness"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "readiness of ground forces"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "troops prepared"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "ground defenses"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "army training operations"
+                }
+            }
+        ],
+        "name": "MilitaryGroundReadiness"
+    },
+    "MilitaryGroundCapability": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military ground capability"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "ground forces"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "standing army"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "army reserves"
+                }
+            }
+        ],
+        "name": "MilitaryGroundCapability"
+    },
+    "MilitaryCyberActivity": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "cyberattacks"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "cyber attack"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "cyber operations"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military cyber activity"
+                }
+            }
+        ],
+        "name": "MilitaryCyberActivity"
+    },
+    "MilitaryWMDActivity": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "nuclear strike"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "nuclear attacks"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "nuclear weapons tests"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military WMD activity"
+                }
+            }
+        ],
+        "name": "MilitaryWMDActivity"
+    },
+    "MilitarySpaceActivity": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military space activity"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "space defense"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military space operations"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "space defence"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "space targets"
+                }
+            }
+        ],
+        "name": "MilitarySpaceActivity"
+    },
+    "MilitaryAirActivity": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "flight missions"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "airstrike"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "aerial bombardment"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "aerial mission"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "military air activity"
+                }
+            }
+        ],
+        "name": "MilitaryAirActivity"
+    },
+    "MilitaryReadiness": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military readiness"
+                }
+            }
+        ],
+        "name": "MilitaryReadiness"
+    },
+    "MilitaryDeployment": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military deployment"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "deploying troops"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "deployed forces"
+                }
+            }
+        ],
+        "name": "MilitaryDeployment"
+    },
+    "MilitaryCyberReadiness": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military cyber readiness"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "cyber defense"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "cyberdefense"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "cyber security"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "prepared for cyber threats"
+                }
+            }
+        ],
+        "name": "MilitaryCyberReadiness"
+    },
+    "MilitaryCyberCapability": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "military cyber capability"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "cyber capabilities"
+                }
+            },
+            {
+                "trigger": {
+                    "text": "cyber warfare thrust"
+                }
+            }
+        ],
+        "name": "MilitaryCyberCapability"
+    },
+    "Factor": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "factor"
+                }
+            }
+        ],
+        "name": "Factor"
+    },
+    "Social": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "social"
+                }
+            }
+        ],
+        "name": "Social"
+    },
+    "PopulaceMotivation": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "populace motivation"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "motivated public"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "public motivation or excitement"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "determined or unwilling populace"
+                }
+            }
+        ],
+        "name": "PopulaceMotivation"
+    },
+    "PopulaceMorale": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "populace morale"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "low morale in the population"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "high public morale"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "public confidence"
+                }
+            }
+        ],
+        "name": "PopulaceMorale"
+    },
+    "PopulaceMood": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "populace mood"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "public opinion"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "public support"
+                }
+            }
+        ],
+        "name": "PopulaceMood"
+    },
+    "HumanitarianCrisis": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "humanitarian crisis"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "humanitarian situation"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "humanitarian disaster"
+                }
+            }
+        ],
+        "name": "HumanitarianCrisis"
+    },
+    "EthnicRelations": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "ethnic relations"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "ethnic conflict"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "race relations"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "ethnic profiling or discrimination"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "ethnic tensions in the community"
+                }
+            }
+        ],
+        "name": "EthnicRelations"
+    },
+    "Institutions": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "institutions"
+                }
+            }
+        ],
+        "name": "Institutions"
+    },
+    "ReligiousOrgSuppression": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "religious organization suppression"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "religious suppression"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "limiting religious freedoms"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "suppresion of religion"
+                }
+            }
+        ],
+        "name": "ReligiousOrgSuppression"
+    },
+    "ReligiousOrgInfluence": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "religious organization influence"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "religious institutions in social life"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "religious community"
+                }
+            }
+        ],
+        "name": "ReligiousOrgInfluence"
+    },
+    "PVOInfluence": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "private volunteer organization influence"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "pvo support"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "social influence of nonprofits"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "private nonprofit programs and outreach"
+                }
+            }
+        ],
+        "name": "PVOInfluence"
+    },
+    "PopulaceEducationLevel": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "populace education level"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "educational attainment"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "education levels"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "level of schooling"
+                }
+            }
+        ],
+        "name": "PopulaceEducationLevel"
+    },
+    "NGOInfluence": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "NGO Influence"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "influence of non-governmental organization"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "ngo social programs and support"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "ngo backing by public"
+                }
+            }
+        ],
+        "name": "NGOInfluence"
+    },
+    "LeisureActivities": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "leisure activities"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "entertainment"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "tourism"
+                }
+            }
+        ],
+        "name": "LeisureActivities"
+    },
+    "HealthcareAvailability": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "healthcare availability"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "health care facilities"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "healthcare"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "clinical care"
+                }
+            }
+        ],
+        "name": "HealthcareAvailability"
+    },
+    "EducationAvailability": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "education availability"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "access to schooling or training"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "educational access"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "ability to attend college or trade school"
+                }
+            }
+        ],
+        "name": "EducationAvailability"
+    },
+    "CBOInfluence": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "community based organization Influence"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "community social initiatives"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "community programs"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "grassroots support"
+                }
+            }
+        ],
+        "name": "CBOInfluence"
+    },
+    "BasicNeeds": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "basic needs"
+                }
+            }
+        ],
+        "name": "BasicNeeds"
+    },
+    "NaturalDisaster": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "natural disaster"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "natural disasters"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "earthquakes"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "flooding"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "hurricanes"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "landslides"
+                }
+            }
+        ],
+        "name": "NaturalDisaster"
+    },
+    "WaterAvailability": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "water availability"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "access to clean water"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "drinkable water"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "drought"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "water rationing"
+                }
+            }
+        ],
+        "name": "WaterAvailability"
+    },
+    "SustenanceManagement": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "sustenance management"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "food stamps"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "school lunch programs"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "food aid programs"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "nutrition initiative"
+                }
+            }
+        ],
+        "name": "SustenanceManagement"
+    },
+    "SocioeconomicTendencies": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "socioeconomic tendencies"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "socioeconomic disparities"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "disparity in social or economic attainment"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "socioeconomic equity or equality"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "achievement gap"
+                }
+            }
+        ],
+        "name": "SocioeconomicTendencies"
+    },
+    "EconomicEquality": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "economic equality"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "income inequality"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "earning disparities"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "economic inequalities"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "economic parity or equity"
+                }
+            }
+        ],
+        "name": "EconomicEquality"
+    },
+    "ShelterAvailability": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "shelter availability"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "roof over heads"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "shelter"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "shelter from elements"
+                }
+            }
+        ],
+        "name": "ShelterAvailability"
+    },
+    "SecuritySafetyLevel": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "security safety level"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "political insecurity"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "physical security"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "regional safety"
+                }
+            }
+        ],
+        "name": "SecuritySafetyLevel"
+    },
+    "SanitaryConditions": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "sanitary conditions"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "basic hygiene"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "sanitation"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "clean or unclean environments"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "hygienic or unhygienic conditions"
+                }
+            }
+        ],
+        "name": "SanitaryConditions"
+    },
+    "NaturalResourcesAvailability": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "natural resources availability"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "natural resource"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "renewable resources"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "depleted natural resources"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "replenished natural resources"
+                }
+            }
+        ],
+        "name": "NaturalResourcesAvailability"
+    },
+    "FreedomOfReligiousExpression": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "freedom of religious expression"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "freedom of religion"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "right to practice religion"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "religious beliefs"
+                }
+            }
+        ],
+        "name": "FreedomOfReligiousExpression"
+    },
+    "FreedomOfExpression": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "freedom of expression"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "free speech"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "freedom of the press"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "censorship"
+                }
+            }
+        ],
+        "name": "FreedomOfExpression"
+    },
+    "FreedomOfCulturalExpression": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "freedom of cultural expression"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "express cultural identity"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "cultural heritage"
+                }
+            }
+        ],
+        "name": "FreedomOfCulturalExpression"
+    },
+    "FoodAndNutritionLevel": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "food and nutrition level"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "malnourishment or malnutrition"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "nutrition levels"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "access to food"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "food scarcity"
+                }
+            }
+        ],
+        "name": "FoodAndNutritionLevel"
+    },
+    "EnvironmentConditions": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "environment conditions"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "storms and seasonal monsoons"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "drought"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "environmental degradation"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "environmental issues and concerns"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "protection of the environment"
+                }
+            }
+        ],
+        "name": "EnvironmentConditions"
+    },
+    "CriticalResources": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "critical resources"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "human resources"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "water resources"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "industrial resources"
+                }
+            }
+        ],
+        "name": "CriticalResources"
+    },
+    "CriminalActivities": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "criminal activities"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "crime or crimes"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "criminal or criminals"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "criminal investigation"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "criminal activity"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "theft espionage corruption murder"
+                }
+            }
+        ],
+        "name": "CriminalActivities"
+    },
+    "AbilityToAddressIdentityBasedBasicNeeds": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "ability to address identity based basic needs"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "cultural identity"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "multiculturalism"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "respect for identities"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "national identity"
+                }
+            }
+        ],
+        "name": "AbilityToAddressIdentityBasedBasicNeeds"
+    },
+    "AbilityToAddressBasicNeeds": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "ability to address basic needs"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "cultural identity"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "basic nutrition"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "malnourished community"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "access to clean water"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "safe drinking water"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "access to shelter"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "acccess to sanitation"
+                }
+            }
+        ],
+        "name": "AbilityToAddressBasicNeeds"
+    },
+    "AffinityGroups": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "affinity groups"
+                }
+            }
+        ],
+        "name": "AffinityGroups"
+    },
+    "UnionInfluence": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "union influence"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "workers unions"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "the trade union vote"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "collective bargaining"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "union involvement"
+                }
+            }
+        ],
+        "name": "UnionInfluence"
+    },
+    "TerroristActivities": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "terrorist activities"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "terrorism"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "terrorist attacks"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "terrorist threats"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "terrorist acts"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "acts of terrorism"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "terror attack"
+                }
+            }
+        ],
+        "name": "TerroristActivities"
+    },
+    "Refugees": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "refugees"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "refugee situation"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "seeking asylum"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "influx of refugees"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "accommodated the refugee population"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "return of refugees"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "refugee camp"
+                }
+            }
+        ],
+        "name": "Refugees"
+    },
+    "InsurgentsOrSeparatistsActivities": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "insurgents or separatists activities"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "insurgents"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "insurgency"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "rebels"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "separatist movement"
+                }
+            }
+        ],
+        "name": "InsurgentsOrSeparatistsActivities"
+    },
+    "GangsOrCriminalOrganizationsActivities": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "gangs or criminal organizations activities"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "gangs"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "mob or mafia ties"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "organized crime"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "criminal organization"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "organised crime connections"
+                }
+            }
+        ],
+        "name": "GangsOrCriminalOrganizationsActivities"
+    },
+    "DisplacedPersons": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "displaced persons"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "people displaced"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "population displacement"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "fleeing the violence"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "displacing millions of people"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "displaced from their homes"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "displaced from the country"
+                }
+            }
+        ],
+        "name": "DisplacedPersons"
+    },
+    "DiasporaInfluence": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "diaspora influence"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "diaspora protection"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "the diaspora vote"
+                }
+            }
+        ],
+        "name": "DiasporaInfluence"
+    },
+    "Political": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "political"
+                }
+            }
+        ],
+        "name": "Political"
+    },
+    "PoliticalFrictionOrTension": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "political friction or tension"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "political conflict"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "upheaval or disagreement in politics"
+                }
+            }
+        ],
+        "name": "PoliticalFrictionOrTension"
+    },
+    "RegionalOrInternational": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "regional or international"
+                }
+            }
+        ],
+        "name": "RegionalOrInternational"
+    },
+    "PoliticalAllianceStrength": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "political alliance strength"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "strengthening the political alliance"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "weakening the political union"
+                }
+            }
+        ],
+        "name": "PoliticalAllianceStrength"
+    },
+    "PoliticalAllianceParticipation": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "political alliance participation"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "supporting NATO"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "political allies"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "economic allies"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "international bloc"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "european union"
+                }
+            }
+        ],
+        "name": "PoliticalAllianceParticipation"
+    },
+    "MultiNationalCorporationInfluence": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "multinational corporation influence in government"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "corporate lobbying"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "international lobby"
+                }
+            }
+        ],
+        "name": "MultiNationalCorporationInfluence"
+    },
+    "DefenseAllianceStrength": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "defense alliance strength"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "projecting NATO power"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "NATO support"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "weakening the defensive coalition"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "strengthening the international security union"
+                }
+            }
+        ],
+        "name": "DefenseAllianceStrength"
+    },
+    "DefenseAllianceInfluence": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "defense alliance influence"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "NATO power"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "defensive coalition or agreement"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "international defense group pressure"
+                }
+            },
+            {
+                    "trigger": {
+                    "text": "international security alliance"
+                }
+            }
+        ],
+        "name": "DefenseAllianceInfluence"
+    },
+    "PoliticalOrganizations": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "text": "political organizations"
+                }
+            }
+        ],
+        "name": "PoliticalOrganizations"
+    },
+    "SocialInfluenceByInstitutions": {
+        "exemplars": [],
+        "name": "SocialInfluenceByInstitutions"
+    },
+    "InternationalPoliticalAlliance": {
+        "exemplars": [],
+        "name": "InternationalPoliticalAlliance"
+    },
+    "InternationalDefenseAlliance": {
+        "exemplars": [],
+        "name": "InternationalDefenseAlliance"
+    },
+    "GroupTensionsInGovt": {
+        "exemplars": [],
+        "name": "GroupTensionsInGovt"
+    },
+    "GroupPresenceInGovt": {
+        "exemplars": [],
+        "name": "GroupPresenceInGovt"
+    },
+    "GroupInfluenceInGovt": {
+        "exemplars": [],
+        "name": "GroupInfluenceInGovt"
+    },
+    "GovernmentActivity": {
+        "exemplars": [],
+        "name": "GovernmentActivity"
+    },
+    "GovernmentInfluence": {
+        "exemplars": [],
+        "name": "GovernmentInfluence"
+    },
+    "InfluenceOnMilitary": {
+        "exemplars": [],
+        "name": "InfluenceOnMilitary"
+    },
+    "InformationOperation": {
+        "exemplars": [],
+        "name": "InformationOperation"
+    }
+}

@@ -1,0 +1,9 @@
+{
+  "embeddings_file": "/nfs/raid87/u10/shared/Hume/common/glove.6B.50d.p",
+  "min_groundings": 5,
+  "threshold": 0.7,
+  "external_ontology_yaml": "/nfs/raid85/u13/users/criley/repos/Hume/resource/ontologies/open/hume_ontology_with_metadata.20191007.yaml",
+  "grounding_list_dir": "/home/hqiu/tmp/grounding_cache_test",
+  "internal_ontology_yaml": "/home/hqiu/ld100/Hume_pipeline/Hume/resource/ontologies/internal/hume/event_ontology.yaml",
+  "exemplars_json": "/home/hqiu/ld100/Hume_pipeline/Hume/resource/ontologies/internal/hume/data_example_events.json"
+}

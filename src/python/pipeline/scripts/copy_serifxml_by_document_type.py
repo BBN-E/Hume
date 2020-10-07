@@ -1,62 +1,55 @@
-import sys, os, codecs, shutil
+import os
+import logging
 
-if len(sys.argv) != 4 and len(sys.argv) != 5:
-    print "Usage input-dir output-dir metadata-file [max_files_per_directory]"
-    sys.exit(1)
 
-input_serifxml_list = sys.argv[1]
-output_dir = sys.argv[2]
-metadata_file = sys.argv[3]
+logger = logging.getLogger(__name__)
 
-max_files_per_directory = None
-if len(sys.argv) == 5:
-    max_files_per_directory = int(sys.argv[4])
+def read_metadata(input_metadata_file):
+    doc_id_to_metadata_line = dict()
+    doc_id_to_bucket_id = dict()
+    with open(input_metadata_file, 'r') as o:
+        for line in o:
+            line = line.strip()
+            pieces = line.split("\t")
+            docid = pieces[0]
+            doc_id_to_metadata_line[docid] = line
+            doc_id_to_bucket_id[docid] = pieces[6] # This is UUID
+    return doc_id_to_metadata_line,doc_id_to_bucket_id
 
-document_types = dict()
-document_type_to_file_count = dict()
-document_type_to_dir_count = dict()
+def read_serif_list(input_serif_list,suffix=".xml"):
+    doc_id_to_path = dict()
+    with open(input_serif_list,'r') as fp:
+        for i in fp:
+            i = i.strip()
+            docid = os.path.basename(i)[:-len(suffix)]
+            doc_id_to_path[docid] = i
+    return doc_id_to_path
 
-o = codecs.open(metadata_file, 'r', encoding='utf8')
-for line in o:
-    line = line.strip()
-    pieces = line.split("\t")
-    docid = pieces[0]
-    document_type = pieces[4]
-    document_types[docid] = document_type
-o.close()
+def main(input_serif_list,input_metadata_file,output_dir):
+    doc_id_to_metadata_line, doc_id_to_bucket_id = read_metadata(input_metadata_file)
+    doc_id_to_path = read_serif_list(input_serif_list)
+    bucket_id_to_doc_ids = dict()
+    for doc_id,bucket_id in doc_id_to_bucket_id.items():
+        if doc_id in doc_id_to_path:
+            bucket_id_to_doc_ids.setdefault(bucket_id,set()).add(doc_id)
+        else:
+            logger.critical("Missing {} in the serif list".format(doc_id))
 
-i = open(input_serifxml_list)
+    for bucket_id,doc_ids in bucket_id_to_doc_ids.items():
+        bucket_dir = os.path.join(output_dir,bucket_id)
+        os.makedirs(bucket_dir,exist_ok=True)
+        with open(os.path.join(bucket_dir,'metadata.txt'),'w') as metadatafp:
+            with open(os.path.join(bucket_dir,'serifxml.list'),'w') as seriflistfp:
+                for doc_id in doc_ids:
+                    seriflistfp.write("{}\n".format(doc_id_to_path[doc_id]))
+                    metadatafp.write("{}\n".format(doc_id_to_metadata_line[doc_id]))
 
-for line in i:
-    line = line.strip()
-    filename = os.path.basename(line)
-    docid = filename
-    if filename.endswith(".serifxml"):
-        docid = filename[0:-(len(".serifxml"))]
-    elif filename.endswith(".xml"):
-        docid = filename[0:-(len(".xml"))]
-    filepath = line
-    document_type = document_types[docid]
-    output_path = os.path.join(output_dir, document_type)
-    if max_files_per_directory is not None:
-        if document_type not in document_type_to_file_count:
-            document_type_to_file_count[document_type] = 0
-        if document_type not in document_type_to_dir_count:
-            document_type_to_dir_count[document_type] = 0
-        
-        modified_max_files_per_directory = max_files_per_directory
-        if document_type == "analytic": # these tend to be large
-            modified_max_files_per_directory = max(modified_max_files_per_directory / 2, 1)
-        if document_type_to_file_count[document_type] >= modified_max_files_per_directory:
-            document_type_to_file_count[document_type] = 0
-            document_type_to_dir_count[document_type] += 1
 
-        document_type_to_file_count[document_type] += 1
-        output_path = os.path.join(output_dir, document_type + "_" + str(document_type_to_dir_count[document_type]))
-
-    if not os.path.isdir(output_path):
-        os.makedirs(output_path)
-
-    shutil.copy(filepath, output_path)
-
-i.close()
+if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--input_serif_list', required=True)
+    parser.add_argument('--input_metadata_file', required=True)
+    parser.add_argument('--output_dir', required=True)
+    args = parser.parse_args()
+    main(args.input_serif_list,args.input_metadata_file,args.output_dir)

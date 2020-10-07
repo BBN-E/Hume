@@ -1,0 +1,33 @@
+{ 
+   "Trend": 
+    { "Decrease": ["decrease", "decreased", "decreasing", "reduction", "decline", "declining", "lower", "downward", "deterioration", "tightening", "poorer", "anomalies", "freezing", "erratic", "limited", "reduced", "declines", "depreciation", "deteriorate", "deteriorated", "downtrend", "downgraded", "fall", "falls", "fell", "falling", "lowered", "shrink", "slowed", "slowing", "weaken", "worsen", "alleviation", "cease", "cessation", "declined", "degradation", "deteriorating", "dropping", "ease", "eradicate", "eradication", "fallen", "reduce", "reducing", "stalled", "weakened", "worsened" ],
+      "Increase": ["increase", "increased", "increasing", "strengthening", "progression", "upward", "strengthening", "improved", "higher", "growing", "enhanced", "rose", "rising", "expansion", "elevated", "enlargement", "expanded", "expanding", "grew", "grow", "growth", "improve", "rise", "rises", "risen", "raise", "raised", "strengthened", "upgraded", "accelerate", "double", "doubled", "enhancing", "escalate", "exceed", "expand", "flourish", "improving", "strengthen", "tripled" ]
+    },
+  "Trend_Lexical_Decrease":
+    { "http://ontology.causeex.com/ontology/odps/ICM#DisplacedPersons": [ "repatriation", "resettlement" ],
+      "http://ontology.causeex.com/ontology/odps/ICM#DomesticMarketHealth": [ "recession", "downturn", "inflation", "crisis", "debt", "slowdown", "recessions", "narrowed", "stagnation" ],
+      "http://ontology.causeex.com/ontology/odps/ICM#Economic": [ "downturn" ], 
+      "http://ontology.causeex.com/ontology/odps/ICM#EmploymentLevel": [ "unemployment" ],
+      "http://ontology.causeex.com/ontology/odps/ICM#EthnicRelations": [ "racism", "segregation" ],
+      "http://ontology.causeex.com/ontology/odps/ICM#FoodAndNutritionLevel": [ "hunger", "famine", "starvation", "malnutrition" ],
+      "http://ontology.causeex.com/ontology/odps/ICM#GovernmentActivity": [ "refuses" ],
+      "http://ontology.causeex.com/ontology/odps/ICM#GovernmentStability": [ "collapse", "turmoil", "upheaval" ], 
+      "http://ontology.causeex.com/ontology/odps/ICM#InternationalTrade": [ "tariffs", "tariff", "war" ],
+      "http://ontology.causeex.com/ontology/odps/ICM#PoliticalAllianceParticipation": [ "leave" ], 
+      "http://ontology.causeex.com/ontology/odps/ICM#PopulaceMood": [ "outcry" ], 
+      "http://ontology.causeex.com/ontology/odps/ICM#PopulaceMorale": [ "discontent" ], 
+      "http://ontology.causeex.com/ontology/odps/ICM#PopulaceSupportForGovernment": [ "anti-government" ],
+      "http://ontology.causeex.com/ontology/odps/ICM#Sanctions": [ "relief" ] 
+    },
+  "Polarity":
+    {
+      "Positive": [],
+      "Negative": ["never", "not", "n't"]
+    },
+  "Magnitude":
+    {
+      "High": [ "high", "peak", "heavy", "above-normal", "above-average", "excessive", "strong", "excess", "prolonged", "abundant", "favorable", "large", "near-record", "maximal", "overvalued", "powerful", "surplus" ],
+      "Medium": [ "average", "median" ],
+      "Low": [ "low", "zero", "below-average", "deficit", "dryness", "scarcity", "shortage", "gap", "weakness", "poor", "drier-than-normal", "lack", "insufficient", "tight", "unfavourable", "lacking", "little", "lower", "minimal", "slow", "small", "weak", "undervalued", "exhausted" ]
+    }
+}

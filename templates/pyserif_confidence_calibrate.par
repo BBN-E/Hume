@@ -1,0 +1,6 @@
+IMPLEMENTATIONS
++textopen_root+/src/python/serif/model/impl/confidence_calibration.py
+
+BASE_MODEL ConfidenceCalibration BARRIER
+aggregate_word_pair_count +aggregate_word_pair_count+
+

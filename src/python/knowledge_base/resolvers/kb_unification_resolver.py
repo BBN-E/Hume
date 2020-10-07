@@ -1,6 +1,6 @@
 import sys, os, re, codecs
 from knowledge_base import KnowledgeBase
-from kb_resolver import KBResolver
+from resolvers.kb_resolver import KBResolver
 import collections
 from elements.kb_group import KBEventGroup, KBEntityGroup, KBRelationGroup
 from elements.kb_relation import KBRelation
@@ -40,7 +40,7 @@ class KbUnificationResolver(KBResolver):
         pass
 
     def resolve(self, kb):
-        print "KbUnificationResolver RESOLVE"
+        print("KbUnificationResolver RESOLVE")
         resolved_kb = KnowledgeBase()
 
         super(KbUnificationResolver, self).copy_all(resolved_kb, kb)
@@ -49,11 +49,11 @@ class KbUnificationResolver(KBResolver):
 
         # event mention to event dict
         self.kb_event_mention_to_kb_event = dict()
-        for kb_event_id, kb_event in self.kb.evid_to_kb_event.iteritems():
+        for kb_event_id, kb_event in self.kb.evid_to_kb_event.items():
             for kb_event_mention in kb_event.event_mentions:
                 self.kb_event_mention_to_kb_event[kb_event_mention] = kb_event
 
-        for kb_relation_id, kb_relation in self.kb.relid_to_kb_relation.iteritems():
+        for kb_relation_id, kb_relation in self.kb.relid_to_kb_relation.items():
             if kb_relation.argument_pair_type == "event-event":
                 relation_type = kb_relation.relation_type
                 for kb_relation_mention in kb_relation.relation_mentions:

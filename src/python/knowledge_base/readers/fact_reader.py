@@ -1,13 +1,14 @@
-import sys, os, codecs, re, json
+import json
 
-from elements.kb_entity import KBEntity
-from elements.kb_mention import KBMention
-from elements.kb_value_mention import KBValueMention
 from elements.kb_event import KBEvent
 from elements.kb_event_mention import KBEventMention
+from elements.kb_mention import KBMention
 from elements.kb_relation import KBRelation
 from elements.kb_relation_mention import KBRelationMention
+from elements.kb_value_mention import KBValueMention
+from internal_ontology import OntologyMapper
 from shared_id_manager.shared_id_manager import SharedIDManager
+
 
 class FactReader:
     # Maps semantic class from facts.json in causeex_pipeline output
@@ -35,8 +36,12 @@ class FactReader:
     def __init__(self):
         pass
 
-    def read(self, kb, factfinder_json_file):
-        print "FactReader READ"
+    def read(self, kb, factfinder_json_file, event_ontology_yaml, ontology_flags
+             ):
+        print("FactReader READ")
+
+        ontology_mapper = OntologyMapper()
+        ontology_mapper.load_ontology(event_ontology_yaml)
 
         docid_to_ff_relations = self.load_docid_to_ff_relations(factfinder_json_file)
 
@@ -47,18 +52,6 @@ class FactReader:
                 if docid not in document_mentions:
                     document_mentions[docid] = []
                 document_mentions[docid].append(kb_mention)
-
-        # Collect known relevant events, relations
-        document_affiliation_events = dict() # docid -> list of Start-Position and End-Position KBEventMentions
-        for kb_event_id, kb_event in kb.get_events():
-            for kb_event_mention in kb_event.event_mentions:
-                if (kb_event_mention.event_type != "Personnel.Start-Position" and
-                    kb_event_mention.event_type != "Personnel.End-Position"):
-                    continue
-                docid = kb_event_mention.document.id
-                if docid not in document_affiliation_events:
-                    document_affiliation_events[docid] = []
-                document_affiliation_events[docid].append(kb_event_mention)
         
         document_relations = dict() # docid -> list of known KBRelations
         for kb_relation_id, kb_relation in kb.get_relations():
@@ -72,7 +65,7 @@ class FactReader:
                 #print "Seen: " + kb_relation.relation_type + " " + kb_relation.left_argument_id + " " + kb_relation.right_argument_id
                 
         # Use Factfinder facts to augment KB info
-        for docid, mention_list in document_mentions.iteritems():
+        for docid, mention_list in document_mentions.items():
             kb_document =  kb.docid_to_kb_document[docid]
             mention_span_to_mention = dict() # (start_char, end_char,) => KBMention
             for kb_mention in mention_list:
@@ -120,7 +113,7 @@ class FactReader:
                         continue
                     kb_sentence = self.get_kb_sentence(kb_document, arg2_span[0], arg2_span[1])
                     if kb_sentence is None:
-                        print "WARNING: could not find KBSentence for " + docid + " " + arg2_span[0] + " " + arg2_span[1]
+                        print("WARNING: could not find KBSentence for " + docid + " " + arg2_span[0] + " " + arg2_span[1])
                         continue
                     # Make a relation from the various pieces we've figured out above
                     relation_id = SharedIDManager.get_in_document_id("Relation", docid)
@@ -151,26 +144,30 @@ class FactReader:
                         value_mention_id = SharedIDManager.get_in_document_id("ValueMention", docid)
                         kb_sentence = self.get_kb_sentence(kb_document, job_title_start_offset, job_title_end_offset)
                         if kb_sentence is None:
-                            print "WARNING: could not find KBSentence for " + docid + " " + str(job_title_start_offset) + " " + str(job_title_end_offset)
+                            print("WARNING: could not find KBSentence for " + docid + " " + str(job_title_start_offset) + " " + str(job_title_end_offset))
                             continue
-                        value_mention = KBValueMention(value_mention_id, "Job-Title", title_text, kb_document, job_title_start_offset, job_title_end_offset, kb_sentence)
-                                
-                        # Check for duplicate with known Start-Position or End-Position event
-                        if self.is_already_known_position(kb_entity1, value_mention, document_affiliation_events.get(docid), kb):
-                            continue
+                        value_mention = KBValueMention(value_mention_id, "Job-Title", title_text, kb_document, job_title_start_offset, job_title_end_offset, kb_sentence,title_text)
 
                         # Make an event from the mention and the value mention
                         event_id = SharedIDManager.get_in_document_id("Event", docid)
                         event_mention_id = SharedIDManager.get_in_document_id("EventMention", docid)
                         snippet = [kb_sentence.text, kb_sentence.start_offset, kb_sentence.end_offset]
-                        event = KBEvent(event_id, "Affiliation")
+                        event = KBEvent(event_id, None)  # event_type deprecated
                         event_mention = KBEventMention(
-                            event_mention_id, kb_document, "Affiliation", title_text, 
+                            event_mention_id, kb_document, title_text,
                             job_title_start_offset, job_title_end_offset, snippet,
-                            kb_sentence, [], "FACTFINDER")
+                            [], [], kb_sentence, [], None, "FACTFINDER",0.5,title_text)
+
+                        for flag in ontology_flags.split(','):
+                            for mapping in (
+                                    ontology_mapper.look_up_external_types(
+                                        'Affiliation', flag)):
+                                event_mention.add_or_change_grounding(
+                                    mapping, 0.5)
+
                         event.add_event_mention(event_mention)
-                        event_mention.add_argument("Person", kb_mention1)
-                        event_mention.add_argument("Position", value_mention)
+                        event_mention.add_argument("Person", kb_mention1,0.5)
+                        event_mention.add_argument("Position", value_mention,0.5)
                         kb.add_event(event)
 
     def get_kb_sentence(self, document, start_offset, end_offset):

@@ -1,0 +1,7 @@
+IMPLEMENTATIONS
++textopen_root+/src/python/serif/model/impl/nlplingo_decoder.py
+
+BASE_MODEL NLPLingoDecoder BARRIER
+params_path +hume_root+/templates/nlplingo_decode.eer.json
+npz_filelist +bert_npz_file_list+
+max_number_of_tokens_per_sentence +max_number_of_tokens_per_sentence+

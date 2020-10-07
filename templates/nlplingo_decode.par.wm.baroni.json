@@ -1,0 +1,122 @@
+{
+    "data": {
+        "test": {
+            "features": "",
+            "filelist": "+filelist_input+"
+        }
+    },
+    "embeddings": {
+        "type": "word_embeddings",
+        "embedding_file": "/nfs/raid87/u10/shared/Hume/common/nlplingo/EN-wform.w.5.cbow.neg10.400.subsmpl.txt.spaceSep.utf8",
+        "missing_token": "the",
+        "none_token": ".",
+        "none_token_index": 0,
+        "vector_size": 400,
+        "vocab_size": 251236
+    },
+    "extractors": [
+        {
+            "extractor_name": "WM_trigger_baroni",
+            "embeddings": {
+                "vector_size": 400
+            },
+            "domain_ontology": "/nfs/raid87/u10/shared/Hume/wm/nlplingo/wm_models/032420-static-keras_2.2.4/domain_ontology.txt",
+            "hyper-parameters": {
+                "batch_size": 80,
+                "cnn_filter_lengths": [
+                    2,3,4
+                ],
+                "decode_mode": true,
+                "dropout": 0.25,
+                "entity_embedding_vector_length": 5,
+                "neighbor_distance": 3,
+                "number_of_feature_maps": 768,
+                "position_embedding_vector_length": 5,
+                "positive_weight": 1,
+                "max_sentence_length": 200
+            },
+            "model_file": "/nfs/raid87/u10/shared/Hume/wm/nlplingo/wm_models/032420-static-keras_2.2.4/trigger.hdf",
+            "features": [
+                "sentence_word_embedding","unary_window","unary_word_position"
+            ],
+            "activation_function": "sigmoid",
+            "loss_function": "binary_crossentropy",
+            "int_type": "int32",
+            "model_type": "event-trigger_cnn",
+            "class_thresholds": "/nfs/raid87/u10/shared/Hume/wm/nlplingo/wm_models/032420-static-keras_2.2.4/class_thresholds.npz",
+            "trigger.positive_keywords": "/nfs/raid87/u10/shared/Hume/wm/nlplingo/wm_models/032420-static-keras_2.2.4/positive_triggers.json",
+            "trigger.allow_entity_mention_as_anchor": false,
+            "trigger.use_safelist": true,
+            "output_vectors": false
+        },
+        {
+            "extractor_name": "ACE_argument_baroni",
+            "output_vectors": false,
+            "hyper-parameters": {
+                "batch_size": 20,
+                "cnn_filter_lengths": [
+                    3
+                ],
+                "decode_mode": true,
+                "dropout": 0.5,
+                "entity_embedding_vector_length": 50,
+                "epoch": 20,
+                "fine-tune_epoch": 0,
+                "neighbor_distance": 3,
+                "number_of_feature_maps": 300,
+                "position_embedding_vector_length": 50,
+                "positive_weight": 3,
+                "train_embeddings": false,
+                "max_sentence_length": 200
+            },
+            "embeddings": {
+                "vector_size": 400
+            },
+            "int_type": "int32",
+            "features": [
+                "arg0_sentence_word_embedding","arg0_arg1_window","arg0_word_position","arg1_word_position"
+            ],
+            "activation_function": "softmax",
+            "loss_function": "categorical_crossentropy",
+            "domain_ontology": "/nfs/raid87/u10/shared/Hume/common/ace_arg_model-static-keras_2.2.4/domain_ontology.txt",
+            "model_type": "event-argument_cnn",
+            "model_file": "/nfs/raid87/u10/shared/Hume/common/ace_arg_model-static-keras_2.2.4/argument.hdf"
+        },
+        {
+            "extractor_name": "BBN_argument_baroni",
+            "embeddings": {
+                "vector_size": 400
+            },
+            "domain_ontology": "/nfs/raid87/u10/shared/Hume/common/generic_argument_bbn-static-keras_2.2.4/domain_ontology.txt",
+            "hyper-parameters": {
+                "batch_size": 100,
+                "cnn_filter_lengths": [
+                    3
+                ],
+                "decode_mode": true,
+                "dropout": 0.5,
+                "entity_embedding_vector_length": 5,
+                "epoch": 10,
+                "fine-tune_epoch": 0,
+                "neighbor_distance": 3,
+                "number_of_feature_maps": 300,
+                "position_embedding_vector_length": 10,
+                "max_sentence_length": 201,
+                "positive_weight": 10
+            },
+            "int_type": "int32",
+            "output_vectors": false,
+            "model_file": "/nfs/raid87/u10/shared/Hume/common/generic_argument_bbn-static-keras_2.2.4/argument.hdf",
+            "features": [
+                "arg0_sentence_word_embedding","arg0_word_position","arg1_word_position","arg0_arg1_window"
+            ],
+            "activation_function": "softmax",
+            "loss_function": "categorical_crossentropy",
+            "model_type": "event-argument_cnn"
+        }
+    ],
+    "trigger.negative_words": "/nfs/raid87/u10/shared/Hume/common/nlplingo/negative_words",
+    "predictions_file": "+output_dir+/prediction.json",
+    "trigger.restrict_none_examples_using_keywords": false,
+    "predictions_npz_dir": "+vector_dir+"
+}

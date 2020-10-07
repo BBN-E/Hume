@@ -1,6 +1,6 @@
 import uuid
 
-from kb_element import KBElement
+from elements.kb_element import KBElement
 
 class KBGroup(KBElement):
     def __init__(self, id):
@@ -23,6 +23,7 @@ class KBEntityGroup(KBGroup):
 
         self.canonical_name = canonical_name
         self.actor_id = actor_id
+        self.properties = dict()
 
     @classmethod
     def generate_id(cls, cross_document_id):
@@ -37,11 +38,26 @@ class KBEntityGroup(KBGroup):
         d["canonical_name"] = self.canonical_name
         d["actor_id"] = self.actor_id
         d["members"] = []
-
+        d["properties"] = self.properties
         for member in self.members:
             d["members"].append(member.id)
 
         return d
+
+    def get_cameo_code_or_id(self):
+        for kb_entity in self.members:
+            if "GPE.Nation" in kb_entity.entity_type_to_confidence and "cameo_country_code" in kb_entity.properties:
+                return True,kb_entity.properties["cameo_country_code"]
+        else:
+            return False,self.id
+
+    @property
+    def is_referred_in_kb(self):
+        return self.properties.get("is_referred_in_kb",True)
+
+    @is_referred_in_kb.setter
+    def is_referred_in_kb(self, is_referred_in_kb):
+        self.properties["is_referred_in_kb"] = is_referred_in_kb
 
 class KBEventGroup(KBGroup):
     def __init__(self, id):

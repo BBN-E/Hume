@@ -1,0 +1,21 @@
+READER SerifXMLReader
++batch_file_dir+
++mode+
++event_coreference_file+
+
+RESOLVER EntityAddPropertyResolver
+
+RESOLVER CountryCodePropertyResolver
+
+RESOLVER BadRelationResolver
+
+RESOLVER RedundantRelationResolver
+
+RESOLVER PrecisionResolver
++event_yaml+
++external_ontology_flags+
+
+RESOLVER EntityMentionNumericResolver
+
+SERIALIZER VisualizationSerializer
++json_graph_file+

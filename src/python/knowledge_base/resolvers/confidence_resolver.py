@@ -1,7 +1,6 @@
 import sys, os, codecs
 from knowledge_base import KnowledgeBase
-from kb_resolver import KBResolver
-from elements.kb_event_mention import KBEventMention
+from resolvers.kb_resolver import KBResolver
 
 class ConfidenceResolver(KBResolver):
 
@@ -17,7 +16,7 @@ class ConfidenceResolver(KBResolver):
         pass
 
     def resolve(self, kb, relation_frequency_file, event_triggers_file):
-        print "ConfidenceResolver RESOLVE"
+        print("ConfidenceResolver RESOLVE")
 
         # Initialize counts from trigger files
         self.event_trigger_counts = dict()
@@ -26,7 +25,7 @@ class ConfidenceResolver(KBResolver):
             line = line.strip()
             pieces = line.split(" ", 1)
             if len(pieces) != 2:
-                print "Malformed line: " + str(line)
+                print("Malformed line: " + str(line))
                 sys.exit(1)
                 
             count = int(pieces[0])
@@ -43,14 +42,14 @@ class ConfidenceResolver(KBResolver):
             line = line.strip()
             pieces = line.split("\t")
             if len(pieces) != 3:
-                print "Malformed line: " + str(line)
+                print("Malformed line: " + str(line))
                 sys.exit(1)
             count_and_relation_type = pieces[0].strip()
             left_trigger = pieces[1].lower().strip()
             right_trigger = pieces[2].lower().strip()
             pieces = count_and_relation_type.split()
             if len(pieces) != 2:
-                print "Malformed count and relation: " + str(count_and_relation_type)
+                print("Malformed count and relation: " + str(count_and_relation_type))
                 sys.exit(1)
             count = int(pieces[0])
             relation_type = pieces[1].strip()
@@ -95,7 +94,7 @@ class ConfidenceResolver(KBResolver):
                 #         event_mention.confidence = 0.2
                 #     else:
                 #         event_mention.confidence = 0.1
-                print "event_mention.confidence 3: " + str(event_mention.confidence)
+                print("event_mention.confidence 3: " + str(event_mention.confidence))
 
         for relid, relation in resolved_kb.get_relations():
             for relation_mention in relation.relation_mentions:

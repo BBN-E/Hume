@@ -1,0 +1,16 @@
+
+job_name: causeex_m21_lcc.121119.121119
+
+###########
+# Pipeline
+###########
+stages_to_run: serif
+mode: CauseEx
+batch_size: 50
+
+########
+# Serif
+########
+serif_input_sgm_list: /nfs/raid88/u10/users/hqiu/sgm_corpus/cx/cx_m21_lcc/sgms.list
+serif_input_awake_db: /nfs/raid87/u11/CauseEx_Datasets/Collab2/awake_dbs/causeex_dbpedia_20170308_collab2.sqlite
+serif_run_fact_finder: false

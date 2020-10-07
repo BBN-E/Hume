@@ -1,0 +1,45 @@
+- Role:
+  - _source: []
+  - {_description: NA}
+  - has_property:
+    - _source: []
+    - {_description: NA}
+  - has_theme:
+    - _source: []
+    - {_description: NA}
+  - has_actor:
+    - _source: []
+    - {_description: NA}
+    - has_active_actor:
+      - _source: []
+      - {_description: NA}
+    - has_affected_actor:
+      - _source: []
+      - {_description: NA}
+  - has_location:
+    - _source: []
+    - {_description: NA}
+    - has_origin_location:
+      - _source: []
+      - {_description: NA}
+    - has_destination_location:
+      - _source: []
+      - {_description: NA}
+    - has_intermediate_location:
+      - _source: []
+      - {_description: NA}
+  - has_artifact:
+    - _source: []
+    - {_description: NA}
+  - has_time:
+    - _source: []
+    - {_description: NA}
+    - has_start_time:
+      - _source: []
+      - {_description: NA}
+    - has_end_time:
+      - _source: []
+      - {_description: NA}
+    - has_duration:
+      - _source: []
+      - {_description: NA}

@@ -1,0 +1,17 @@
+############
+## Pipeline
+############
+job_name: bert_test.091820.after.v6
+
+stages_to_run: bert
+mode: CauseEx
+
+num_of_batches_global: 1
+max_number_of_tokens_per_sentence: 512
+only_cpu_available: false
+
+#######
+## BERT
+########
+bert_input_serifxml_list: /home/hqiu/tmp/104.list
+bert_layers: -1,-2,-3,-4

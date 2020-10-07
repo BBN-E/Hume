@@ -66,6 +66,9 @@ http://ontology.causeex.com/ontology/odps/GeneralConcepts#shortest_possible_dura
 http://ontology.causeex.com/ontology/odps/GeneralConcepts#smallest_possible_amount
 http://ontology.causeex.com/ontology/odps/GeneralConcepts#time
 http://ontology.causeex.com/ontology/odps/GeneralConcepts#url
+http://ontology.causeex.com/ontology/odps/GeneralConcepts#related_location
+http://ontology.causeex.com/ontology/odps/GeneralConcepts#LocationDetails
+http://ontology.causeex.com/ontology/odps/GeneralConcepts#description
 http://ontology.causeex.com/ontology/odps/ICM#classification_probability
 http://ontology.causeex.com/ontology/odps/ICM#classification_value
 http://ontology.causeex.com/ontology/odps/ICM#description
@@ -87,6 +90,12 @@ http://ontology.causeex.com/ontology/odps/ICM#supporting_event
 http://ontology.causeex.com/ontology/odps/ICM#timestamp
 http://ontology.causeex.com/ontology/odps/ICM#time_step
 http://ontology.causeex.com/ontology/odps/ICM#units
+http://ontology.causeex.com/ontology/odps/ICM#has_effect_magnitude
+http://ontology.causeex.com/ontology/odps/ICM#has_trend
+http://ontology.causeex.com/ontology/odps/ICM#has_factor
+http://ontology.causeex.com/ontology/odps/ICM#has_relevance
+http://ontology.causeex.com/ontology/odps/ICM#has_factor_type
+http://ontology.causeex.com/ontology/odps/ICM#FactorLink
 http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#divisor
 http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#enum_value
 http://ontology.causeex.com/ontology/odps/TimeSeriesAndMeasurements#maximum_numeric_value

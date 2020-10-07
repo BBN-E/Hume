@@ -1,0 +1,2221 @@
+{
+   "AbilityToAddressBasicNeeds": {
+      "name": "AbilityToAddressBasicNeeds",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "ability to address basic needs"
+            }
+         },
+         {
+            "trigger": {
+               "text": "access to food water shelter clothing sanitation education healthcare or communications"
+            }
+         },
+         {
+            "trigger": {
+               "text": "basic human needs"
+            }
+         }
+      ]
+   },
+   "Access": {   
+      "name": "Access",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "access"
+            }
+         },
+         {
+            "trigger": {
+               "text": "entrance or approach or proximity"
+            }
+         }
+      ]
+   },
+   "AidOrSupport": {   
+      "name": "AidOrSupport",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "aid or support"
+            }
+         },
+         {
+            "trigger": {
+               "text": "providing or receiving assistance or support"
+            }
+         }
+      ]
+   },
+   "AllianceOrPartnershipStrength": {   
+      "name": "AllianceOrPartnershipStrength",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "alliance or partnership strength"
+            }
+         },
+         {
+            "trigger": {
+               "text": "strength of relationship or agreement between countries"
+            }
+         }
+      ]
+   },
+   "AntiAccessAreaDenialActivity": {   
+      "name": "AntiAccessAreaDenialActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "anti access area denial activity"
+            }
+         },
+         {
+            "trigger": {
+               "text": "preventing entrance of force"
+            }
+         },
+         {
+            "trigger": {
+               "text": "control of area"
+            }
+         }
+      ]
+   },
+   "AntiAccessAreaDenialCapability": {   
+      "name": "AntiAccessAreaDenialCapability",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "anti access area denial capability"
+            }
+         },
+         {
+            "trigger": {
+               "text": "capability to control area"
+            }
+         },
+         {
+            "trigger": {
+               "text": "ability to prevent entrance of a force"
+            }
+         }
+      ]
+   },
+   "Biological": {   
+      "name": "Biological",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "biological"
+            }
+         },
+         {
+            "trigger": {
+               "text": "biological agents or toxins"
+            }
+         }
+      ]
+   },
+   "Capability": {   
+      "name": "Capability",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "capability"
+            }
+         },
+         {
+            "trigger": {
+               "text": "means of enabling or accomplishing"
+            }
+         }
+      ]
+   },
+   "Chemical": {   
+      "name": "Chemical",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "chemical"
+            }
+         },
+         {
+            "trigger": {
+               "text": "chemical agents"
+            }
+         }
+      ]
+   },
+   "CivilSocietyActivity": {   
+      "name": "CivilSocietyActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "civil society activity"
+            }
+         },
+         {
+            "trigger": {
+               "text": "elections protests or political dissent"
+            }
+         },
+         {
+            "trigger": {
+               "text": "civilian interaction with politics and government"
+            }
+         }
+      ]
+   },
+   "CoercionOrIntimidation": {   
+      "name": "CoercionOrIntimidation",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "coercion or intimidation"
+            }
+         },
+         {
+            "trigger": {
+               "text": "use of force or authority to compel or dissuade or induce fear"
+            }
+         }
+      ]
+   },
+   "ConstructionActivity": {   
+      "name": "ConstructionActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "construction activity"
+            }
+         },
+         {
+            "trigger": {
+               "text": "building or creating infrastructure housing or facilities"
+            }
+         }
+      ]
+   },
+   "Conventional": {   
+      "name": "Conventional",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "conventional"
+            }
+         },
+         {
+            "trigger": {
+               "text": "normal or standard approach"
+            }
+         }
+      ]
+   },
+   "CooperativeActivity": {   
+      "name": "CooperativeActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "cooperation"
+            }
+         },
+         {
+            "trigger": {
+               "text": "collaboration to achieve a common goal"
+            }
+         }
+      ]
+   },
+   "Corruption": {   
+      "name": "Corruption",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "corruption"
+            }
+         },
+         {
+            "trigger": {
+               "text": "dishonesty deception or fraud in exchange for advantage"
+            }
+         }
+      ]
+   },
+   "CriminalActivity": {  
+      "name": "CriminalActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "criminal activity"
+            }
+         },
+         {
+            "trigger": {
+               "text": "unlawful crimes"
+            }
+         }
+      ]
+   },
+   "CyberActivity": {   
+      "name": "CyberActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "cyber activity"
+            }
+         },
+         {
+            "trigger": {
+               "text": "information technology infrastructure networks and data"
+            }
+         },
+         {
+            "trigger": {
+               "text": "computers control systems networks and devices"
+            }
+         }
+      ]
+   },
+   "CyberAttack": {   
+      "name": "CyberAttack",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "cyber attack"
+            }
+         },
+         {
+            "trigger": {
+               "text": "targeting manipulation disruption or denial of computer resources"
+            }
+         },
+         {
+            "trigger": {
+               "text": "cyberspace attack or cyberattack"
+            }
+         }
+      ]
+   },
+   "Defensive": {   
+      "name": "Defensive",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "defensive"
+            }
+         },
+         {
+            "trigger": {
+               "text": "protection or defense"
+            }
+         }
+      ]
+   },
+   "Diplomacy": {   
+      "name": "Diplomacy",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "embassy"
+            }
+         },
+         {
+            "trigger": {
+               "text": "ambassador"
+            }
+         },
+         {
+            "trigger": {
+               "text": "diplomatic recognition"
+            }
+         },
+         {
+            "trigger": {
+               "text": "diplomatic negotiations"
+            }
+         },
+         {
+            "trigger": {
+               "text": "treaty"
+            }
+         }
+      ]
+   },
+   "DiplomaticAidOrSupport": {   
+      "name": "DiplomaticAidOrSupport",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "diplomatic aid or support"
+            }
+         },
+         {
+            "trigger": {
+               "text": "providing or receiving diplomatic assistance or support"
+            }
+         }
+      ]
+   },
+   "DiplomaticCooperativeActivity": {   
+      "name": "DiplomaticCooperativeActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "diplomatic cooperation"
+            }
+         },
+         {
+            "trigger": {
+               "text": "collaboration on common goal through diplomacy"
+            }
+         }
+      ]
+   },
+   "DiplomaticDisagreementOrTension": {   
+      "name": "DiplomaticDisagreementOrTension",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "diplomatic disagreement or tension"
+            }
+         },
+         {
+            "trigger": {
+               "text": "strained relations between countries"
+            }
+         }
+      ]
+   },
+   "DiplomaticSanctions": {   
+      "name": "DiplomaticSanctions",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "diplomatic sanctions"
+            }
+         },
+         {
+            "trigger": {
+               "text": "cancel government meetings"
+            }
+         },
+         {
+            "trigger": {
+               "text": "expulsion of diplomats"
+            }
+         }
+      ]
+   },
+   "DisagreementOrTension": {   
+      "name": "DisagreementOrTension",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "disagreement or tension"
+            }
+         },
+         {
+            "trigger": {
+               "text": "strained relations or disputes"
+            }
+         }
+      ]
+   },
+   "DisasterRelief": {   
+      "name": "DisasterRelief",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "disaster relief"
+            }
+         },
+         {
+            "trigger": {
+               "text": "disaster response"
+            }
+         },
+         {
+            "trigger": {
+               "text": "emergency management"
+            }
+         }
+      ]
+   },
+   "DisinformationOperation": {   
+      "name": "DisinformationOperation",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "disinformation operation"
+            }
+         },
+         {
+            "trigger": {
+               "text": "issuing or publishing false information to harm or deceive"
+            }
+         }
+      ]
+   },
+   "DueProcess": {   
+      "name": "DueProcess",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "due process"
+            }
+         },
+         {
+            "trigger": {
+               "text": "fair and lawful criminal legal processes"
+            }
+         }
+      ]
+   },
+   "EconomicAidOrSupport": {   
+      "name": "EconomicAidOrSupport",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "economic aid or support"
+            }
+         },
+         {
+            "trigger": {
+               "text": "providing or receiving economic assistance or support"
+            }
+         }
+      ]
+   },
+   "EconomicCapability": {   
+      "name": "EconomicCapability",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "economic capability"
+            }
+         },
+         {
+            "trigger": {
+               "text": "ability or means of economic activity like available funds"
+            }
+         }
+      ]
+   },
+   "EconomicCooperativeActivity": {   
+      "name": "EconomicCooperativeActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "economic cooperation"
+            }
+         },
+         {
+            "trigger": {
+               "text": "achieving a goal together through cooperative trade"
+            }
+         }
+      ]
+   },
+   "EconomicDisagreementOrTension": {   
+      "name": "EconomicDisagreementOrTension",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "strained trade relations or trade disagreements"
+            }
+         },
+         {
+            "trigger": {
+               "text": "economic disagreement or tension"
+            }
+         }
+      ]
+   },
+   "EconomicFactor": {   
+      "name": "EconomicFactor",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "economic"
+            }
+         },
+         {
+            "trigger": {
+               "text": "economy and market"
+            }
+         },
+         {
+            "trigger": {
+               "text": "trade fiscal or monetary policy"
+            }
+         },
+         {
+            "trigger": {
+               "text": "production and consumption of resources"
+            }
+         }
+      ]
+   },
+   "EconomicHealth": {   
+      "name": "EconomicHealth",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "quality of economy"
+            }
+         },
+         {
+            "trigger": {
+               "text": "economic health"
+            }
+         }
+      ]
+   },
+   "EconomicInequality": {   
+      "name": "EconomicInequality",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "unequal distribution of income opportunity or wealth"
+            }
+         },
+         {
+            "trigger": {
+               "text": "economic inequality"
+            }
+         }
+      ]
+   },
+   "EconomicSanctions": {   
+      "name": "EconomicSanctions",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "embargoes freezing assets and banning trade"
+            }
+         },
+         {
+            "trigger": {
+               "text": "economic sanctions"
+            }
+         }
+      ]
+   },
+   "EducationalFactor": {   
+      "name": "EducationalFactor",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "education teaching and learning"
+            }
+         },
+         {
+            "trigger": {
+               "text": "educational factor"
+            }
+         }
+      ]
+   },
+   "Employment": {   
+      "name": "Employment",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "jobs trades and rofessions"
+            }
+         },
+         {
+            "trigger": {
+               "text": "employment"
+            }
+         }
+      ]
+   },
+   "Espionage": {   
+      "name": "Espionage",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "spying or use of spies to get information"
+            }
+         },
+         {
+            "trigger": {
+               "text": "espionage"
+            }
+         }
+      ]
+   },
+   "EthnicDivision": {   
+      "name": "EthnicDivision",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "ethnic tensions and strife between populations"
+            }
+         },
+         {
+            "trigger": {
+               "text": "ethnic division"
+            }
+         }
+      ]
+   },
+   "ExecutiveGovernmentActivity": {   
+      "name": "ExecutiveGovernmentActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "government leadership activities for executing law"
+            }
+         },
+         {
+            "trigger": {
+               "text": "executive government activity"
+            }
+         }
+      ]
+   },
+   "ExhibitionOfPower": {   
+      "name": "ExhibitionOfPower",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "operation or demonstration of resolve intimidation or warning"
+            }
+         },
+         {
+            "trigger": {
+               "text": "exhibition of power"
+            }
+         }
+      ]
+   },
+   "Factor": {   
+      "name": "Factor",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "factor"
+            }
+         }
+      ]
+   },
+   "FactualInformationOperation": {   
+      "name": "FactualInformationOperation",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "factual summary"
+            }
+         },
+         {
+            "trigger": {
+               "text": "fact checking reports"
+            }
+         },
+         {
+            "trigger": {
+               "text": "factual information operation"
+            }
+         }
+      ]
+   },
+   "FinancialActivity": {   
+      "name": "FinancialActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "financial activity"
+            }
+         },
+         {
+            "trigger": {
+               "text": "funding transfer of money or financial interactions"
+            }
+         }
+      ]
+   },
+   "FinancialAttack": {   
+      "name": "FinancialAttack",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "aggression to cause a financial crisis"
+            }
+         },
+         {
+            "trigger": {
+               "text": "financial attack"
+            }
+         }
+      ]
+   },
+   "FinancialCooperativeActivity": {   
+      "name": "FinancialCooperativeActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "achieving goals together using financial activity like financial agreements"
+            }
+         },
+         {
+            "trigger": {
+               "text": "financial cooperation"
+            }
+         }
+      ]
+   },
+   "ForcePosture": {   
+      "name": "ForcePosture",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "position and maneuverability of military force"
+            }
+         },
+         {
+            "trigger": {
+               "text": "force posture"
+            }
+         }
+      ]
+   },
+   "FreedomOfAssembly": {   
+      "name": "FreedomOfAssembly",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "right to associate and assemble peacefully"
+            }
+         },
+         {
+            "trigger": {
+               "text": "freedom of assembly"
+            }
+         }
+      ]
+   },
+   "FreedomOfExpression": {   
+      "name": "FreedomOfExpression",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "right to hold and express opinions"
+            }
+         },
+         {
+            "trigger": {
+               "text": "freedom of expression"
+            }
+         }
+      ]
+   },
+   "FreedomOfPress": {   
+      "name": "FreedomOfPress",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "free and uncensored publication of print or broadcast media"
+            }
+         },
+         {
+            "trigger": {
+               "text": "freedom of press"
+            }
+         }
+      ]
+   },
+   "GovernmentTransparency": {   
+      "name": "GovernmentTransparency",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "open accessible and transparent government activities"
+            }
+         },
+         {
+            "trigger": {
+               "text": "government transparency"
+            }
+         }
+      ]
+   },
+   "HealthCareActivity": {   
+      "name": "HealthCareActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "healthcare medicine and medical research"
+            }
+         },
+         {
+            "trigger": {
+               "text": "healthcare activity"
+            }
+         }
+      ]
+   },
+   "HumanRightsAbuse": {   
+      "name": "HumanRightsAbuse",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "human rights abuse"
+            }
+         },
+         {
+            "trigger": {
+               "text": "restriction of rights torture or unfair legal proceedings"
+            }
+         }
+      ]
+   },
+   "Humanitarian": {   
+      "name": "Humanitarian",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "related to a humanitarian effort or population assistance"
+            }
+         },
+         {
+            "trigger": {
+               "text": "humanitarian"
+            }
+         }
+      ]
+   },
+   "HumanitarianAidOrSupport": {   
+      "name": "HumanitarianAidOrSupport",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "providing or receiving humanitarian aid or assistance"
+            }
+         },
+         {
+            "trigger": {
+               "text": "humanitarian aid or support"
+            }
+         }
+      ]
+   },
+   "HumanitarianCooperativeActivity": {   
+      "name": "HumanitarianCooperativeActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "collaborative effort to address a humanitarian crisis"
+            }
+         },
+         {
+            "trigger": {
+               "text": "humanitarian cooperation"
+            }
+         }
+      ]
+   },
+   "HumanitarianCrisis": {   
+      "name": "HumanitarianCrisis",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "humanitarian crisis"
+            }
+         },
+         {
+            "trigger": {
+               "text": "threats to health safety or wellbeing of populace"
+            }
+         }
+      ]
+   },
+   "IllegalDrugActivity": {   
+      "name": "IllegalDrugActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "production distribution and consumption of illegal drugs"
+            }
+         },
+         {
+            "trigger": {
+               "text": "illegal drug activity"
+            }
+         }
+      ]
+   },
+   "IllicitFinancialActivity": {   
+      "name": "IllicitFinancialActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "illicit financial activity"
+            }
+         },
+         {
+            "trigger": {
+               "text": "illegal movement of money or funding criminal activity"
+            }
+         }
+      ]
+   },
+   "Information": {   
+      "name": "Information",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "information"
+            }
+         },
+         {
+            "trigger": {
+               "text": "information campaigns public affairs spokespersons media and information resources"
+            }
+         },
+         {
+            "trigger": {
+               "text": "collection and dissemination of information"
+            }
+         }
+      ]
+   },
+   "InformationOperation": {   
+      "name": "InformationOperation",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "influencing or disrupting decisionmaking of adversaries through information campaigns"
+            }
+         },
+         {
+            "trigger": {
+               "text": "information attack and defense"
+            }
+         },
+         {
+            "trigger": {
+               "text": "information operation"
+            }
+         }
+      ]
+   },
+   "InformationRelatedCooperativeActivity": {   
+      "name": "InformationRelatedCooperativeActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "sharing information or joint intelligence operations"
+            }
+         },
+         {
+            "trigger": {
+               "text": "intelligence cooperation"
+            }
+         }
+      ]
+   },
+   "Infrastructure": {   
+      "name": "Infrastructure",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "infrastructure"
+            }
+         },
+         {
+            "trigger": {
+               "text": "facilities services and installations for the functioning of society"
+            }
+         }
+      ]
+   },
+   "InfrastructureCapability": {   
+      "name": "InfrastructureCapability",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "ability to provide infrastructure and means of operation"
+            }
+         },
+         {
+            "trigger": {
+               "text": "infrastructure capabilities"
+            }
+         }
+      ]
+   },
+   "Intelligence": {   
+      "name": "Intelligence",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "intelligence"
+            }
+         },
+         {
+            "trigger": {
+               "text": "collection and analysis of information about nations or hostile forces"
+            }
+         }
+      ]
+   },
+   "InternationalLawEnforcementActivity": {   
+      "name": "InternationalLawEnforcementActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "Interpol"
+            }
+         },
+         {
+            "trigger": {
+               "text": "ICC or International Criminal Court"
+            }
+         },
+         {
+            "trigger": {
+               "text": "enforcement of international legal statutes"
+            }
+         },
+         {
+            "trigger": {
+               "text": "international law enforcement activity"
+            }
+         }
+      ]
+   },
+   "JudicialActivity": {   
+      "name": "JudicialActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "court rulings and trial proceedings"
+            }
+         },
+         {
+            "trigger": {
+               "text": "judicial activity"
+            }
+         }
+      ]
+   },
+   "LackOfDueProcess": {   
+      "name": "LackOfDueProcess",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "human rights abuses infringing on due process"
+            }
+         },
+         {
+            "trigger": {
+               "text": "lack of due process"
+            }
+         }
+      ]
+   },
+   "LawEnforcementActivity": {   
+      "name": "LawEnforcementActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "law enforcement or police"
+            }
+         }
+         {
+            "trigger": {
+               "text": "enforcing laws through deterrence pursuit punishment or rehabilitation of criminal offenders"
+            }
+         },
+         {
+            "trigger": {
+               "text": "law enforcement activity"
+            }
+         }
+      ]
+   },
+   "LawEnforcementCoercionOrIntimidation": {   
+      "name": "LawEnforcementCoercionOrIntimidation",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "use of legal authority ro compel or dissuade action or induce fear"
+            }
+         },
+         {
+            "trigger": {
+               "text": "law enforcement coercion or intimidation"
+            }
+         }
+      ]
+   },
+   "LawEnforcementCooperativeActivity": {   
+      "name": "LawEnforcementCooperativeActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "joint law enforcement operations"
+            }
+         },
+         {
+            "trigger": {
+               "text": "law enforcement cooperation"
+            }
+         }
+      ]
+   },
+   "LegislativeActivity": {   
+      "name": "LegislativeActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "creation modification or repeal of laws by parliament congress or other governing body"
+            }
+         },
+         {
+            "trigger": {
+               "text": "legislation"
+            }
+         }
+      ]
+   },
+   "LogisticsReadiness": {   
+      "name": "LogisticsReadiness",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "military preparedness to plan and execute movement supply and support of troops"
+            }
+         },
+         {
+            "trigger": {
+               "text": "logistics readiness"
+            }
+         }
+      ]
+   },
+   "MilitaryAidOrSupport": {   
+      "name": "MilitaryAidOrSupport",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "providing or receiving military assistance or support"
+            }
+         },
+         {
+            "trigger": {
+               "text": "military aid or support"
+            }
+         }
+      ]
+   },
+   "MilitaryAirActivity": {   
+      "name": "MilitaryAirActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "air force"
+            }
+         },
+         {
+            "trigger": {
+               "text": "activities of military air forces"
+            }
+         }
+      ]
+   },
+   "MilitaryCapability": {   
+      "name": "MilitaryCapability",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "military systems and equipment modernization"
+            }
+         },
+         {
+            "trigger": {
+               "text": "size and composition of defense forces"
+            }
+         },
+         {
+            "trigger": {
+               "text": "military sustainability and logistict"
+            }
+         },
+         {
+            "trigger": {
+               "text": "military readiness"
+            }
+         },
+         {
+            "trigger": {
+               "text": "ability of military force to achieve wartime objectives"
+            }
+         },
+         {
+            "trigger": {
+               "text": "military capability"
+            }
+         }
+      ]
+   },
+   "MilitaryCoercionOrIntimidation": {   
+      "name": "MilitaryCoercionOrIntimidation",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "use of mililtary force or authority to compel or dissuade action or induce fear"
+            }
+         },
+         {
+            "trigger": {
+               "text": "military coercion or intimidation"
+            }
+         }
+      ]
+   },
+   "MilitaryConflict": {   
+      "name": "MilitaryConflict",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "battle or military engagement between armed forces"
+            }
+         },
+         {
+            "trigger": {
+               "text": "military conflict"
+            }
+         }
+      ]
+   },
+   "MilitaryCooperativeActivity": {   
+      "name": "MilitaryCooperativeActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "joint military operation or exercise"
+            }
+         },
+         {
+            "trigger": {
+               "text": "military activities to achieve shared goal"
+            }
+         },
+         {
+            "trigger": {
+               "text": "military cooperation"
+            }
+         }
+      ]
+   },
+   "MilitaryDeployment": {   
+      "name": "MilitaryDeployment",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "movement of armed forces in and out of operational area"
+            }
+         },
+         {
+            "trigger": {
+               "text": "military deployment"
+            }
+         }
+      ]
+   },
+   "MilitaryDisagreementOrTension": {   
+      "name": "MilitaryDisagreementOrTension",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "strained relations or disagreements involving military groups"
+            }
+         },
+         {
+            "trigger": {
+               "text": "military disagreement or tension"
+            }
+         }
+      ]
+   },
+   "MilitaryEngagement": {   
+      "name": "MilitaryEngagement",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "contact and interaction involving armed forces"
+            }
+         }
+      ]
+   },
+   "MilitaryExercise": {   
+      "name": "MilitaryExercise",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "military maneuver or operation for training and evaluation"
+            }
+         },
+         {
+            "trigger": {
+               "text": "military exercise"
+            }
+         }
+      ]
+   },
+   "MilitaryExhibitionOfPower": {   
+      "name": "MilitaryExhibitionOfPower",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "military paramilitary or police warning intimidation or demonstration of resolve"
+            }
+         },
+         {
+            "trigger": {
+               "text": "military show of force"
+            }
+         },
+         {
+            "trigger": {
+               "text": "military exhibition of power"
+            }
+         }
+      ]
+   },
+   "MilitaryFactor": {   
+      "name": "MilitaryFactor",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "military or paramilitary capabilities and operations"
+            }
+         },
+         {
+            "trigger": {
+               "text": "military factor"
+            }
+         }
+      ]
+   },
+   "MilitaryForceActivity": {   
+      "name": "MilitaryForceActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "application of military forces"
+            }
+         },
+         {
+            "trigger": {
+               "text": "military force activities"
+            }
+         }
+      ]
+   },
+   "MilitaryGroundActivity": {   
+      "name": "MilitaryGroundActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "army and ground troops"
+            }
+         },
+         {
+            "trigger": {
+               "text": "activities of military ground forces"
+            }
+         }
+      ]
+   },
+   "MilitaryNavalActivity": {   
+      "name": "MilitaryNavalActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "navy"
+            }
+         },
+         {
+            "trigger": {
+               "text": "activities of military naval forces"
+            }
+         }
+      ]
+   },
+   "MilitarySanctions": {   
+      "name": "MilitarySanctions",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "arms bans"
+            }
+         },
+         {
+            "trigger": {
+               "text": "military embargoes"
+            }
+         },
+         {
+            "trigger": {
+               "text": "military interventions"
+            }
+         },
+         {
+            "trigger": {
+               "text": "military sanctions"
+            }
+         }
+      ]
+   },
+   "MisinformationOperation": {   
+      "name": "MisinformationOperation",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "issuing false inaccurate or misleading information"
+            }
+         },
+         {
+            "trigger": {
+               "text": "misinformation operation"
+            }
+         }
+      ]
+   },
+   "Modifier": {   
+      "name": "Modifier",
+      "exemplars": []
+   },
+   "MovementAndDisplacementOfPersons": {   
+      "name": "MovementAndDisplacementOfPersons",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "moving or transporting people and displacing from homes"
+            }
+         },
+         {
+            "trigger": {
+               "text": "movement and displacement of people"
+            }
+         }
+      ]
+   },
+   "NonState": {   
+      "name": "NonState",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "unsanctioned non-state or terrorist actor"
+            }
+         },
+         {
+            "trigger": {
+               "text": "nonstate"
+            }
+         }
+      ]
+   },
+   "Nuclear": {   
+      "name": "Nuclear",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "atomic"
+            }
+         },
+         {
+            "trigger": {
+               "text": "nuclear"
+            }
+         }
+      ]
+   },
+   "Offensive": {   
+      "name": "Offensive",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "aggressive"
+            }
+         },
+         {
+            "trigger": {
+               "text": "offensive"
+            }
+         }
+      ]
+   },
+   "Oppression": {   
+      "name": "Oppression",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "unjust or unfair treatment through bans prohibitions curfews"
+            }
+         },
+         {
+            "trigger": {
+               "text": "oppression"
+            }
+         }
+      ]
+   },
+   "PeacekeepingActivity": {   
+      "name": "PeacekeepingActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "military operation to monitor and facilitate diplomatic agreement or settlement of dispute"
+            }
+         },
+         {
+            "trigger": {
+               "text": "peacekeeping activity"
+            }
+         }
+      ]
+   },
+   "PhysicalEnvironment": {   
+      "name": "PhysicalEnvironment",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "physical environment"
+            }
+         },
+         {
+            "trigger": {
+               "text": "geography structures climate and weather in an environment"
+            }
+         }
+      ]
+   },
+   "PoliceActivity": {   
+      "name": "PoliceActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "law enforcement"
+            }
+         },
+         {
+            "trigger": {
+               "text": "legitimized use of force to protect citizens and prevent crime and disorder"
+            }
+         },
+         {
+            "trigger": {
+               "text": "police activity"
+            }
+         }
+      ]
+   },
+   "PoliticalAidOrSupport": {   
+      "name": "PoliticalAidOrSupport",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "providing or receiving polidical assistance or support"
+            }
+         },
+         {
+            "trigger": {
+               "text": "political aid or support"
+            }
+         }
+      ]
+   },
+   "PoliticalCoercionOrIntimidation": {   
+      "name": "PoliticalCoercionOrIntimidation",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "use of political force or authority to compel or dissuade action or induce fear"
+            }
+         },
+         {
+            "trigger": {
+               "text": "political coercion or intimidation"
+            }
+         }
+      ]
+   },
+   "PoliticalDisagreementOrTension": {   
+      "name": "PoliticalDisagreementOrTension",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "strained relations between political groups"
+            }
+         },
+         {
+            "trigger": {
+               "text": "disagreements between polities"
+            }
+         },
+         {
+            "trigger": {
+               "text": "political disagreement or tension"
+            }
+         }
+      ]
+   },
+   "PoliticalExhibitionOfPower": {   
+      "name": "PoliticalExhibitionOfPower",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "government warning intimidation or demonstration of resolve"
+            }
+         },
+         {
+            "trigger": {
+               "text": "political exhibition of power"
+            }
+         }
+      ]
+   },
+   "PoliticalFactor": {   
+      "name": "PoliticalFactor",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "government responsibility and power in governance"
+            }
+         },
+         {
+            "trigger": {
+               "text": "governing authorities and political parties"
+            }
+         },
+         {
+            "trigger": {
+               "text": "political factor"
+            }
+         }
+      ]
+   },
+   "PopulationSentiment": {   
+      "name": "PopulationSentiment",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "positive or negative opinion of a population toward a group or entity"
+            }
+         },
+         {
+            "trigger": {
+               "text": "population sentiment"
+            }
+         }
+      ]
+   },
+   "Propaganda": {   
+      "name": "Propaganda",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "encouraging perceptions based on loaded language or selective presentation of facts"
+            }
+         },
+         {
+            "trigger": {
+               "text": "production dissemination and consumption of subjective biased or misleading information used to influence audience or further agenda"
+            }
+         },
+         {
+            "trigger": {
+               "text": "propaganda"
+            }
+         }
+      ]
+   },
+   "Radiological": {   
+      "name": "Radiological",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "radiological or radioactive"
+            }
+         }
+      ]
+   },
+   "RecruitmentActivity": {   
+      "name": "RecruitmentActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "finding and recruiting people to join an organization or cause"
+            }
+         },
+         {
+            "trigger": {
+               "text": "recruitment activity"
+            }
+         }
+      ]
+   },
+   "ResourceDependency": {   
+      "name": "ResourceDependency",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "dependence on others to meet resource requirements"
+            }
+         },
+         {
+            "trigger": {
+               "text": "resource dependency"
+            }
+         }
+      ]
+   },
+   "RestrictionOfFreedoms": {   
+      "name": "RestrictionOfFreedoms",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "human rights abuses through restriction or prevention of exercise of rights or freedoms"
+            }
+         },
+         {
+            "trigger": {
+               "text": "restriction of freedoms"
+            }
+         }
+      ]
+   },
+   "RightsAndFreedoms": {   
+      "name": "RightsAndFreedoms",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "fundamental civil rights"
+            }
+         },
+         {
+            "trigger": {
+               "text": "rights and freedoms"
+            }
+         }
+      ]
+   },
+   "Sanctions": {   
+      "name": "Sanctions",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "imposition and enforcement of sanctions expressing disapproval"
+            }
+         },
+         {
+            "trigger": {
+               "text": "activities to control movement of specific items or people"
+            }
+         },
+         {
+            "trigger": {
+               "text": "sanctions"
+            }
+         }
+      ]
+   },
+   "Security": {   
+      "name": "Security",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "safety from danger"
+            }
+         },
+         {
+            "trigger": {
+               "text": "protective measures"
+            }
+         },
+         {
+            "trigger": {
+               "text": "state of inviolability from hostile acts or influences"
+            }
+         },
+         {
+            "trigger": {
+               "text": "security"
+            }
+         }
+      ]
+   },
+   "Sentiment": {   
+      "name": "Sentiment",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "reactions and opinions"
+            }
+         },
+         {
+            "trigger": {
+               "text": "sentiment"
+            }
+         }
+      ]
+   },
+   "SocialCooperativeActivity": {   
+      "name": "SocialCooperativeActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "social groups working together to achieve a goal"
+            }
+         },
+         {
+            "trigger": {
+               "text": "civil program community engagement and volunteering"
+            }
+         },
+         {
+            "trigger": {
+               "text": "social cooperation"
+            }
+         }
+      ]
+   },
+   "SocialDisagreementOrTension": {   
+      "name": "SocialDisagreementOrTension",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "strained relations or disagreements between social groups"
+            }
+         },
+         {
+            "trigger": {
+               "text": "social disagreement or tension"
+            }
+         }
+      ]
+   },
+   "SocialFactor": {   
+      "name": "SocialFactor",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "society and social factors"
+            }
+         },
+         {
+            "trigger": {
+               "text": "activities values customs culture religion and beliefs of society members"
+            }
+         }
+      ]
+   },
+   "SocioEconomicDivision": {   
+      "name": "SocioEconomicDivision",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "social stratification tensions and divisions along social or economic class lines"
+            }
+         },
+         {
+            "trigger": {
+               "text": "socioeconomic division"
+            }
+         }
+      ]
+   },
+   "SocioEconomicMobility": {   
+      "name": "SocioEconomicMobility",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "upward or downward movement between social or economic classes"
+            }
+         },
+         {
+            "trigger": {
+               "text": "socioeconomic mobility"
+            }
+         }
+      ]
+   },
+   "SupportForDemocraticConcepts": {   
+      "name": "SupportForDemocraticConcepts",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "popular support for open elections or individual or representative voting on issues"
+            }
+         },
+         {
+            "trigger": {
+               "text": "support for democracy"
+            }
+         }
+      ]
+   },
+   "SupportForRadicalIdeologies": {   
+      "name": "SupportForRadicalIdeologies",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "support for radical ideologies"
+            }
+         },
+         {
+            "trigger": {
+               "text": "popular support for extreme and unconventional means for institutional change"
+            }
+         }
+      ]
+   },
+   "Taxation": {   
+      "name": "Taxation",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "imposition and collection of taxes to fund government operations"
+            }
+         },
+         {
+            "trigger": {
+               "text": "taxation"
+            }
+         }
+      ]
+   },
+   "TelecommunicationsInfrastructure": {   
+      "name": "TelecommunicationsInfrastructure",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "assets for transmission broadcast or reception of signals"
+            }
+         },
+         {
+            "trigger": {
+               "text": "telecommunications infrastructure"
+            }
+         }
+      ]
+   },
+   "TerroristActivity": {   
+      "name": "TerroristActivity",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "unlawful use or threat of violence to instill fear"
+            }
+         },
+         {
+            "trigger": {
+               "text": "terrorist activity"
+            }
+         }
+      ]
+   },
+   "Trade": {   
+      "name": "Trade",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "trade"
+            }
+         },
+         {
+            "trigger": {
+               "text": "economic partners"
+            }
+         },
+         {
+            "trigger": {
+               "text": "import export tariff or sanctions"
+            }
+         },
+         {
+            "trigger": {
+               "text": "actions supporting or preventing exchange of goods and services"
+            }
+         }
+      ]
+   },
+   "TradeBalance": {   
+      "name": "TradeBalance",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "balance of imports and exports within or between entities"
+            }
+         },
+         {
+            "trigger": {
+               "text": "trade balance"
+            }
+         }
+      ]
+   },
+   "TransportationInfrastructure": {   
+      "name": "TransportationInfrastructure",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "land water or air routes"
+            }
+         },
+         {
+            "trigger": {
+               "text": "assets for conducting movement of people and goods"
+            }
+         },
+         {
+            "trigger": {
+               "text": "transportation infrastructure"
+            }
+         }
+      ]
+   },
+   "TravelAndTourism": {   
+      "name": "TravelAndTourism",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "travel and tourism"
+            }
+         },
+         {
+            "trigger": {
+               "text": "prohibition of travel for business or pleasure"
+            }
+         },
+         {
+            "trigger": {
+               "text": "promotion of travel for business or pleasure"
+            }
+         }
+      ]
+   },
+   "Unconventional": {   
+      "name": "Unconventional",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "extraordinary unexpected or nonstandard"
+            }
+         },
+         {
+            "trigger": {
+               "text": "unconventional approaches or unconventional warfare"
+            }
+         }
+      ]
+   },
+   "Violence": {   
+      "name": "Violence",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "threatening or harmful actions"
+            }
+         },
+         {
+            "trigger": {
+               "text": "violence"
+            }
+         }
+      ]
+   },
+   "ViolenceRelatedHumanRightsAbuse": {   
+      "name": "ViolenceRelatedHumanRightsAbuse",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "torture or extrajudicial execution"
+            }
+         },
+         {
+            "trigger": {
+               "text": "violent human rights abuses"
+            }
+         }
+      ]
+   },
+   "WMDProliferation": {   
+      "name": "WMDProliferation",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "weapons of mass destruction proliferation"
+            }
+         },
+         {
+            "trigger": {
+               "text": "transfer of WMD technology"
+            }
+         },
+         {
+            "trigger": {
+               "text": "production distribution and assembly of WMDs"
+            }
+         },
+         {
+            "trigger": {
+               "text": "production of controlled nuclear materials"
+            }
+         }
+      ]
+   },
+   "WeaponsProliferation": {   
+      "name": "WeaponsProliferation",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "weapons proliferation"
+            }
+         },
+         {
+            "trigger": {
+               "text": "arms sales"
+            }
+         },
+         {
+            "trigger": {
+               "text": "production distribution or assembly of weapons"
+            }
+         }
+      ]
+   },
+   "WeatherAndClimate": {   
+      "name": "WeatherAndClimate",
+      "exemplars": [
+         {
+            "trigger": {
+               "text": "weather and climate"
+            }
+         },
+         {
+            "trigger": {
+               "text": "wind temperature cloudiness moisture or pressure"
+            }
+         },
+         {
+            "trigger": {
+               "text": "weather conditions"
+            }
+         },
+         {
+            "trigger": {
+               "text": "typical atmospheric conditions"
+            }
+         }
+      ]
+   }
+}

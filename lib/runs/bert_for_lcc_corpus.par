@@ -1,0 +1,9 @@
+stages_to_run: bert
+
+job_name: bert_centroid.cx.icm.LCC.121319
+
+
+batch_size:100
+mode:CauseEx
+bert_input_serifxml_list:/home/hqiu/ld100/Hume_pipeline_2/Hume/expts/causeex_m21_lcc.121119.121119/serif_serifxml.list
+bert_layers: -1

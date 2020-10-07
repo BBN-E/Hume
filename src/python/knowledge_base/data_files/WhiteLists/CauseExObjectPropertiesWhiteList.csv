@@ -28,6 +28,7 @@ http://ontology.causeex.com/ontology/odps/DataProvenance#inferred_from
 http://ontology.causeex.com/ontology/odps/DataProvenance#performed_by
 http://ontology.causeex.com/ontology/odps/DataProvenance#performed_using
 http://ontology.causeex.com/ontology/odps/DataProvenance#sourced_from
+http://ontology.causeex.com/ontology/odps/DataProvenance#trigger_words
 http://ontology.causeex.com/ontology/odps/Event#communicated_by
 http://ontology.causeex.com/ontology/odps/Event#communicated_in
 http://ontology.causeex.com/ontology/odps/Event#defined_by

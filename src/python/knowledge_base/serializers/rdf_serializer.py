@@ -22,17 +22,235 @@ from datetime import timedelta
 from calendar import monthrange
 import uuid
 sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), ".."))
+sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), "..","elements","structured"))
+sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__))))
+from internal_ontology import utility as ontology_utils
 from knowledge_base import KnowledgeBase
 from shared_id_manager.shared_id_manager import SharedIDManager
 from elements.structured.structured_entity import EntityData
 from elements.kb_entity import KBEntity
+from elements.kb_mention import KBMention
+from elements.kb_group import KBEntityGroup
+from elements.kb_relation import KBRelation
+from elements.kb_value_mention import KBValueMention,KBTimeValueMention,KBMoneyValueMention
 from resolvers.structured_resolver import ascii_me
-from internal_ontology.internal_ontology import InternalOntology
 
 import pickle
 
 
+logger = logging.getLogger(__name__)
+
+def get_marked_up_string_for_event(kb_event):
+    marked_up_starting_points_to_cnt = dict()
+    marked_up_ending_points_to_cnt = dict()
+    kb_sentence = None
+    for kb_event_mention in kb_event.event_mentions:
+        if kb_sentence is None:
+            kb_sentence = kb_event_mention.sentence
+        else:
+            # Only within sentence event please
+            assert kb_sentence == kb_event_mention.sentence
+        start_char_off = kb_event_mention.trigger_start-kb_sentence.start_offset
+        end_char_off = kb_event_mention.trigger_end-kb_sentence.start_offset
+        marked_up_starting_points_to_cnt[start_char_off] = marked_up_starting_points_to_cnt.get(start_char_off,0)+1
+        marked_up_ending_points_to_cnt[end_char_off] = marked_up_ending_points_to_cnt.get(end_char_off,0)+1
+
+    ret = ""
+    for c_idx,c in enumerate(kb_sentence.original_text):
+        s = ""
+        for _ in range(marked_up_starting_points_to_cnt.get(c_idx,0)):
+            s = "[[" + s
+        s = s + c
+        for _ in range(marked_up_ending_points_to_cnt.get(c_idx,0)):
+            s = s + "]]"
+        ret = ret + s
+    return ret
+
+# def get_marked_up_string_for_event_event_relation(kb_relation,left_kb_event,right_kb_event):
+#     relation_type = kb_relation.relation_type
+#     left_marked_up_starting_points_to_cnt = dict()
+#     left_marked_up_ending_points_to_cnt = dict()
+#     right_marked_up_starting_points_to_cnt = dict()
+#     right_marked_up_ending_points_to_cnt = dict()
+#     kb_sentence = None
+#     left_trigger = None
+#     right_trigger = None
+#     for left_kb_event_mention in left_kb_event.event_mentions:
+#         if kb_sentence is None:
+#             kb_sentence = left_kb_event_mention.sentence
+#         else:
+#             # Only within sentence event please
+#             assert kb_sentence == left_kb_event_mention.sentence
+#         start_char_off = left_kb_event_mention.trigger_start-kb_sentence.start_offset
+#         end_char_off = left_kb_event_mention.trigger_end-kb_sentence.start_offset
+#         left_marked_up_starting_points_to_cnt[start_char_off] = left_marked_up_starting_points_to_cnt.get(start_char_off,0)+1
+#         left_marked_up_ending_points_to_cnt[end_char_off] = left_marked_up_ending_points_to_cnt.get(end_char_off,0)+1
+#         left_trigger = left_kb_event_mention.trigger
+#     for right_kb_event_mention in right_kb_event.event_mentions:
+#         if kb_sentence is None:
+#             kb_sentence = right_kb_event_mention.sentence
+#         else:
+#             # Only within sentence event please
+#             assert kb_sentence == right_kb_event_mention.sentence
+#         start_char_off = right_kb_event_mention.trigger_start-kb_sentence.start_offset
+#         end_char_off = right_kb_event_mention.trigger_end-kb_sentence.start_offset
+#         right_marked_up_starting_points_to_cnt[start_char_off] = right_marked_up_starting_points_to_cnt.get(start_char_off,0)+1
+#         right_marked_up_ending_points_to_cnt[end_char_off] = right_marked_up_ending_points_to_cnt.get(end_char_off,0)+1
+#         right_trigger = right_kb_event_mention.trigger
+#     ret = ""
+#     for c_idx,c in enumerate(kb_sentence.original_text):
+#         s = ""
+#         for _ in range(left_marked_up_starting_points_to_cnt.get(c_idx,0)):
+#             s = "[[" + s
+#         for _ in range(right_marked_up_starting_points_to_cnt.get(c_idx,0)):
+#             s = "[[" + s
+#         s = s + c
+#         for _ in range(left_marked_up_ending_points_to_cnt.get(c_idx,0)):
+#             s = s + "]]"
+#         for _ in range(right_marked_up_ending_points_to_cnt.get(c_idx,0)):
+#             s = s + "]]"
+#         ret = ret + s
+#     return "left: {} , right: {} , sentence: {}".format(left_trigger,right_trigger,ret)
+
+def get_marked_up_string_for_event_event_relation(kb_relation,left_kb_event,right_kb_event):
+
+    kb_sentence = None
+    left_trigger = None
+    right_trigger = None
+    for left_kb_event_mention in left_kb_event.event_mentions:
+        if kb_sentence is None:
+            kb_sentence = left_kb_event_mention.sentence
+        else:
+            # Only within sentence event please
+            assert kb_sentence == left_kb_event_mention.sentence
+        start_char_off = left_kb_event_mention.trigger_start-kb_sentence.start_offset
+        end_char_off = left_kb_event_mention.trigger_end-kb_sentence.start_offset
+        left_trigger = left_kb_event_mention.trigger_original_text
+    for right_kb_event_mention in right_kb_event.event_mentions:
+        if kb_sentence is None:
+            kb_sentence = right_kb_event_mention.sentence
+        else:
+            # Only within sentence event please
+            assert kb_sentence == right_kb_event_mention.sentence
+        start_char_off = right_kb_event_mention.trigger_start-kb_sentence.start_offset
+        end_char_off = right_kb_event_mention.trigger_end-kb_sentence.start_offset
+        right_trigger = right_kb_event_mention.trigger_original_text
+    return "Cue: '{}' Cause/Prevent: '{}' Effect: '{}'".format(kb_relation.trigger_text,left_trigger,right_trigger)
+
+def get_marked_up_mention(kb_mention):
+    kb_sentence = kb_mention.sentence
+    start_char_off = kb_mention.start_char - kb_sentence.start_offset
+    end_char_off = kb_mention.end_char - kb_sentence.start_offset
+    marked_up_starting_points_to_cnt = dict()
+    marked_up_ending_points_to_cnt = dict()
+    marked_up_starting_points_to_cnt[start_char_off] = marked_up_starting_points_to_cnt.get(start_char_off, 0) + 1
+    marked_up_ending_points_to_cnt[end_char_off] = marked_up_ending_points_to_cnt.get(end_char_off, 0) + 1
+
+    ret = ""
+    for c_idx,c in enumerate(kb_sentence.original_text):
+        s = ""
+        for _ in range(marked_up_starting_points_to_cnt.get(c_idx,0)):
+            s = "[[" + s
+        s = s + c
+        for _ in range(marked_up_ending_points_to_cnt.get(c_idx,0)):
+            s = s + "]]"
+        ret = ret + s
+    return ret
+
 class RDFSerializer:
+
+    def get_info_kb_entity_str(self, kb_entity):
+        assert isinstance(kb_entity,KBEntity)
+        s = ""
+        buf = list()
+        if kb_entity.is_referred_in_kb:
+            s = "Entity id:{} Type:{} canonical_name:{} ".format(kb_entity.id,kb_entity.get_best_entity_type(),kb_entity.canonical_name)
+            for kb_entity_mention in kb_entity.mentions:
+                s_tmp = self.get_info_kb_mention_str(kb_entity_mention)
+                if len(s_tmp) > 0:
+                    buf.append(s_tmp)
+        return s + "\n".join(buf)
+
+
+    def get_info_kb_relation_str(self, kb_relation):
+        assert isinstance(kb_relation,KBRelation)
+        buf = list()
+        if kb_relation.argument_pair_type == "entity-entity":
+            left_kb_entity = self.kb.entid_to_kb_entity[kb_relation.left_argument_id]
+            right_kb_entity = self.kb.entid_to_kb_entity[kb_relation.right_argument_id]
+            if left_kb_entity.is_referred_in_kb and right_kb_entity.is_referred_in_kb:
+                buf.append("Entity-Entity-Relation id:{} type:{}".format(kb_relation.id,kb_relation.relation_type))
+                buf.append("LEFT")
+                buf.append(self.get_info_kb_entity_str(left_kb_entity))
+                buf.append("RIGHT")
+                buf.append(self.get_info_kb_entity_str(right_kb_entity))
+            
+
+        elif kb_relation.argument_pair_type == "event-event":
+            source_events = self.kb_event_to_rdf_event_ids[self.kb.evid_to_kb_event[kb_relation.left_argument_id]]
+            target_events = self.kb_event_to_rdf_event_ids[self.kb.evid_to_kb_event[kb_relation.right_argument_id]]
+            local_id_cnt = 0
+
+            src_kb_event = self.kb.evid_to_kb_event[kb_relation.left_argument_id]
+            tar_kb_event = self.kb.evid_to_kb_event[kb_relation.right_argument_id]
+            for source_event in source_events:
+                for target_event in target_events:
+                    relation_instance_id = kb_relation.id
+                    eer_id = "{}-{}".format(relation_instance_id,local_id_cnt)
+                    buf.append("Event-Event-Relation id: {} type: {}".format(eer_id,kb_relation.relation_type))
+                    buf.append("Sentence:{}".format(get_marked_up_string_for_event_event_relation(kb_relation,src_kb_event,tar_kb_event)).replace("\n"," "))
+                    buf.append("LEFT")
+                    buf.append(self.get_info_kb_event_mention_str(src_kb_event,source_event))
+                    buf.append("RIGHT")
+                    buf.append(self.get_info_kb_event_mention_str(tar_kb_event,target_event))
+                    local_id_cnt += 1
+        return "\n".join(buf)
+
+    def get_info_kb_entity_group_str(self, kb_entity_group, entity_type):
+        assert isinstance(kb_entity_group,KBEntityGroup)
+        s = ""
+        buf = list()
+        if kb_entity_group.is_referred_in_kb:
+            s = "EntityGroup id:{} canonical_name:{} type:{}".format(kb_entity_group.id,kb_entity_group.canonical_name,entity_type)
+            for kb_entity in kb_entity_group.members:
+                s_tmp = self.get_info_kb_entity_str(kb_entity)
+                if len(s_tmp) > 0:
+                    buf.append(s_tmp)
+        return s + "\n".join(buf)
+
+
+    def get_info_kb_mention_str(self, kb_mention):
+        assert isinstance(kb_mention,KBMention)
+        s = ""
+        if kb_mention.is_referred_in_kb:
+            kb_entity = self.kb_mention_to_kb_entity[kb_mention]
+            s = "EntityMention id:{} {}:{}".format(kb_mention.id, kb_mention.entity_type,
+                                               get_marked_up_mention(kb_mention).replace("\n", " "))
+        return s
+
+    def get_info_kb_value_mention_str(self, kb_value_mention):
+        assert isinstance(kb_value_mention,KBValueMention)
+        return "ValueMention id:{} type:{} text:{}".format(kb_value_mention.id,type(kb_value_mention),kb_value_mention.value_mention_text)
+
+    def get_info_kb_event_mention_str(self, kb_event,rdf_type_caring):
+        buf = list()
+        for kb_event_mention in kb_event.event_mentions:
+            for event_type,confidence in kb_event_mention.external_ontology_sources:
+                event_instance_id = self.get_event_instance_id(kb_event, event_type)
+                if rdf_type_caring == event_instance_id :
+                    event_instance_id = self.get_event_instance_id(kb_event,event_type)
+                    bs = "EventMention id:{} type:{}".format(event_instance_id,event_type)
+                    bs += "\nSentence: {}".format(get_marked_up_string_for_event(kb_event).replace("\n"," "))
+                    for kb_causal_factor in kb_event_mention.causal_factors:
+                        bs += "\nICM: {}".format(kb_causal_factor.factor_class)
+                    for kb_arg_role,args in kb_event_mention.arguments.items():
+                        for arg,score in args:
+                            if isinstance(arg,KBMention):
+                                bs += "\n{}: {}".format(kb_arg_role, self.get_info_kb_mention_str(arg))
+                            elif isinstance(arg,KBValueMention):
+                                bs += "\n{}: {}".format(kb_arg_role, self.get_info_kb_value_mention_str(arg))
+                    buf.append(bs)
+        return "\n".join(buf)
 
     def __init__(self):
         logging.basicConfig()
@@ -85,7 +303,7 @@ class RDFSerializer:
     def serialize(self, kb, mode,ontology_turtle_folder,
                   seed_milestone, seed_type, seed_version,
                   output_ttl_file, output_nt_file):
-        print "RDFSerializer SERIALIZE"
+        print("RDFSerializer SERIALIZE")
 
         ### Constructor area
         self._load_odps(ontology_turtle_folder)
@@ -112,11 +330,52 @@ class RDFSerializer:
             from elements.kb_value_mention import KBValueMention, KBTimeValueMention, KBMoneyValueMention
 
             self.kb_event_mention_to_kb_event = dict()
-            for kb_event_id, kb_event in self.kb.evid_to_kb_event.iteritems():
+            for kb_event_id, kb_event in self.kb.evid_to_kb_event.items():
                 for kb_event_mention in kb_event.event_mentions:
                     self.kb_event_mention_to_kb_event[kb_event_mention] = kb_event
+            self.kb_mention_to_kb_entity = dict()
+            for kb_entity_id, kb_entity in self.kb.entid_to_kb_entity.items():
+                for kb_mention in kb_entity.mentions:
+                    self.kb_mention_to_kb_entity[kb_mention] = kb_entity
 
-            self.add_triples_seed_description(seed_milestone, seed_type, seed_version)
+            self.kb_entity_to_kb_entity_group = dict()
+            self.actor_id_to_kb_entity_group = dict()
+            for entgroupid, kb_entity_group in self.kb.entgroupid_to_kb_entity_group.items():
+                for kb_entity in kb_entity_group.members:
+                    self.kb_entity_to_kb_entity_group[kb_entity] = kb_entity_group
+                if kb_entity_group.actor_id is not None:
+                    self.actor_id_to_kb_entity_group[kb_entity_group.actor_id] = kb_entity_group
+
+            self.kb_event_to_rdf_event_ids = dict()
+
+            self.entity_group_in_has_actor = set()
+            self.entity_in_has_actor = set()
+            for kb_event_id,kb_event in self.kb.evid_to_kb_event.items():
+                for kb_event_mention in kb_event.event_mentions:
+                    # Task 1. Identify entity and entity group that link to has_actor
+                    for kb_arg_role,args in kb_event_mention.arguments.items():
+                        for arg,score in args:
+                            if kb_arg_role in {"has_actor","has_active_actor","has_affected_actor"} and isinstance(arg,KBMention):
+                                kb_entity = self.kb_mention_to_kb_entity[arg]
+                                kb_entity_group = self.kb_entity_to_kb_entity_group[kb_entity]
+                                self.entity_group_in_has_actor.add(kb_entity_group)
+                                self.entity_in_has_actor.add(kb_entity)
+                    # Task 2. Add generic event type if an event only have ICM type no event type
+
+                    # Task 3. Calculate event ids in rdf space
+                    for event_type, confidence in kb_event_mention.external_ontology_sources:
+                        event_instance_id = self.get_event_instance_id(kb_event, event_type)
+                        self.kb_event_to_rdf_event_ids.setdefault(kb_event, set()).add(event_instance_id)
+
+
+
+            # self.kb_document_to_kb_sent_offset_to_kb_sent_map = dict()
+            # for doc_id,kb_document in self.kb.docid_to_kb_document:
+            #     for kb_sentence in kb_document.sentences:
+            #         sent_start = kb_sentence.start_offset
+            #         sent_end = kb_sentence.end_offset
+            #         self.kb_document_to_kb_sent_offset_to_kb_sent_map.setdefault(kb_document,dict())[(sent_start,sent_end)] = kb_sentence
+
             self.add_triples_documents_and_sentence_spans()
             self.add_triples_entities()
             self.add_triples_events()
@@ -125,6 +384,10 @@ class RDFSerializer:
             self.add_triples_entity_groups()
             self.add_triples_event_groups()
             self.add_triples_relation_groups()
+
+            time_completed = datetime.utcnow()  # set to now
+            author = "BBN"
+            self.add_triples_seed_description(author, seed_milestone, seed_type, seed_version, time_completed)
 
         # start CRA integration
         elif mode == "STRUCTURED":
@@ -136,7 +399,7 @@ class RDFSerializer:
             # end CRA integration
 
         else:
-            print "ERROR: Unknown mode: " + mode
+            print("ERROR: Unknown mode: " + mode)
             sys.exit(1)
 
         self.discard_subclass_failures()
@@ -163,7 +426,7 @@ class RDFSerializer:
 
     def validate_against_whitelist(self):
         non_whitelisted_rdf_object_to_count = dict()
-        implicitly_whitelisted_namespace_labels = ["BBNTA1", "RDF", "RDFS"]
+        implicitly_whitelisted_namespace_labels = ["BBNTA1", "RDF", "RDFS", "DOCSOURCE"]
         implicitly_whitelisted_namespace_strings = [str(self.namespace[namespace_label]) for namespace_label in implicitly_whitelisted_namespace_labels]
         for subject, predicate, object in self.graph:
             for triple_item in (subject, predicate, object):
@@ -186,21 +449,21 @@ class RDFSerializer:
             print("WARNING non-whitelisted rdf object %s (%d occurences)" % (rdf_object, count))
 
     def save_to_file(self, output_ttl_file, output_nt_file):
-        output_identifier = time.strftime("%Y%m%d-%H%M")
-        self.serialize_to_file("nt", output_nt_file, output_identifier)
-        self.serialize_to_file("turtle", output_ttl_file, output_identifier)
+        self.serialize_to_file("nt", output_nt_file)
+        self.serialize_to_file("turtle", output_ttl_file)
         
-    def serialize_to_file(self, serialization_format, filename, output_identifier):
-        filename = "%s-%s.%s" % (filename, output_identifier, serialization_format)
-        print "RDFSerializer SERIALIZING TO FILE " + filename
-        self.graph.serialize(destination=filename, format=serialization_format)
+    def serialize_to_file(self, serialization_format, filename):
+        filename = "%s.%s" % (filename, serialization_format)
+        print("RDFSerializer SERIALIZING TO FILE " + filename)
+
 
         # Can we get rid of self.triples_from_cdr and import the triples
         # directly into the graph?
-        if serialization_format == "nt" and len(self.triples_from_cdr) > 0:
-            o = codecs.open(filename, "a", encoding='utf8')
-            o.write(self.triples_from_cdr)
-            o.close()
+        with open(filename,'wb') as wfp:
+            self.graph.serialize(destination=wfp, format=serialization_format)
+            if serialization_format == "nt" and len(self.triples_from_cdr) > 0:
+                wfp.write(self.triples_from_cdr.encode("utf-8"))
+
 
     # TODO: Automatically add this type of information 
     #       whenever we come across an entity of a BBN type
@@ -217,9 +480,10 @@ class RDFSerializer:
              self.namespace['RDF']['type'],
              self.namespace['OWL']['Class']))
     ##############
-        
+
     def _get_event_type_label(self, string):
-        return InternalOntology.camel_to_tokens(string)
+        resolve_tokens = ontology_utils.TokenizationMode.CAMELCASE([string])
+        return u" ".join(resolve_tokens)
 
     def add_triples_bbn_event(self, uri):
         uri_a_owl_class = (uri,
@@ -238,70 +502,81 @@ class RDFSerializer:
                        self.namespace['RDFS']['comment'],
                        Literal(comment))
         self.graph.add(uri_a_owl_class)
-        self.graph.add(uri_subclassof_event)
+        self.graph.add(uri_comment)
         self.graph.add(uri_label)
         self.graph.add(uri_subclassof_event)
         self.odps.add(uri_a_owl_class)
         self.odps.add(uri_comment)
         self.odps.add(uri_label)
-        self.odps.add(uri_comment)
+        self.odps.add(uri_subclassof_event)
 
     def add_triples_entities(self):
         entity_length = len(self.kb.entid_to_kb_entity)
         count = 0
-        for entid, kb_entity in self.kb.entid_to_kb_entity.iteritems():
+        for entid, kb_entity in self.kb.entid_to_kb_entity.items():
             if count % 1000 == 0:
-                print "RDFSerializer creating triples from KBEntity (" + str(count) + "/" + str(entity_length) + ")"
+                print("RDFSerializer creating triples from KBEntity (" + str(count) + "/" + str(entity_length) + ")")
             count += 1
-            self.create_triples_from_entity(kb_entity)
+            if kb_entity.is_referred_in_kb:
+                self.create_triples_from_entity(kb_entity)
+            else:
+                print("SKIPPING Entity {}".format(entid))
 
     def add_triples_entity_groups(self):
         entity_group_length = len(self.kb.entgroupid_to_kb_entity_group)
         count = 0
-        for entgroupid, kb_entity_group in self.kb.entgroupid_to_kb_entity_group.iteritems():
+        for entgroupid, kb_entity_group in self.kb.entgroupid_to_kb_entity_group.items():
             if count % 1000 == 0:
-                print "RDFSerializer creating triples from KBEntityGroup (" + str(count) + "/" + str(entity_group_length) + ")"
+                print("RDFSerializer creating triples from KBEntityGroup (" + str(count) + "/" + str(entity_group_length) + ")")
             count += 1
-            self.create_triples_from_entity_group(kb_entity_group)
+            if kb_entity_group.is_referred_in_kb:
+                self.create_triples_from_entity_group(kb_entity_group)
+            else:
+                print("SKIPPING EntityGroup {}".format(entgroupid))
 
     def add_triples_events(self):
         event_length = len(self.kb.evid_to_kb_event)
         count = 0
-        for evid, kb_event in self.kb.evid_to_kb_event.iteritems():
+        for evid, kb_event in self.kb.evid_to_kb_event.items():
             if count % 1000 == 0:
-                print "RDFSerializer creating triples from KBEvent (" + str(count) + "/" + str(event_length) + ")"
+                print("RDFSerializer creating triples from KBEvent (" + str(count) + "/" + str(event_length) + ")")
             count += 1
             self.create_triples_from_event(kb_event)
 
     def add_triples_event_groups(self):
         event_group_length = len(self.kb.evgroupid_to_kb_event_group)
         count = 0
-        for evgroupid, kb_event_group in self.kb.evgroupid_to_kb_event_group.iteritems():
+        for evgroupid, kb_event_group in self.kb.evgroupid_to_kb_event_group.items():
             if count % 1000 == 0:
-                print "RDFSerializer creating triples from KBEventGroup (" + str(count) + "/" + str(
-                    event_group_length) + ")"
+                print("RDFSerializer creating triples from KBEventGroup (" + str(count) + "/" + str(
+                    event_group_length) + ")")
             count += 1
             self.create_triples_from_event_group(kb_event_group)
 
     def add_triples_relations(self):
         rel_length = len(self.kb.relid_to_kb_relation)
         count = 0
-        for relid, kb_relation in self.kb.relid_to_kb_relation.iteritems():
+        for relid, kb_relation in self.kb.relid_to_kb_relation.items():
             if count % 1000 == 0:
-                print "RDFSerializer creating triples from KBRelation (" + str(count) + "/" + str(rel_length) + ")"
+                print("RDFSerializer creating triples from KBRelation (" + str(count) + "/" + str(rel_length) + ")")
             count += 1
             if kb_relation.argument_pair_type == "entity-entity":
-                self.create_triples_from_entity_relation(kb_relation)
+                left_entity = self.kb.entid_to_kb_entity[kb_relation.left_argument_id]
+                right_entity = self.kb.entid_to_kb_entity[kb_relation.right_argument_id]
+                if left_entity.is_referred_in_kb is False or right_entity.is_referred_in_kb is False:
+                    print("SKIPPING entity entity relation {}".format(relid))
+                else:
+                    self.create_triples_from_entity_relation(kb_relation)
             elif kb_relation.argument_pair_type == "event-event":
                 self.create_triples_from_event_relation(kb_relation)
 
     def add_triples_relation_groups(self):
         relation_group_length = len(self.kb.relgroupid_to_kb_relation_group)
         count = 0
-        for relgroupid, kb_relation_group in self.kb.relgroupid_to_kb_relation_group.iteritems():
+        for relgroupid, kb_relation_group in self.kb.relgroupid_to_kb_relation_group.items():
             if count % 1000 == 0:
-                print "RDFSerializer creating triples from KBRelationGroup (" + str(count) + "/" + str(
-                    relation_group_length) + ")"
+                print("RDFSerializer creating triples from KBRelationGroup (" + str(count) + "/" + str(
+                    relation_group_length) + ")")
             count += 1
 
             self.create_triples_from_relation_group(kb_relation_group)
@@ -321,6 +596,7 @@ class RDFSerializer:
                     [namespace_name, ontology_class] = relation_mapping.get("default_relationship",
                                                                             relation_mapping.get("default_type")).split(":")
                     var_mappings["relationship"] = self.namespace[namespace_name][ontology_class]
+                    raise ValueError("kb_relation id is not usable now.")
                     var_mappings["member"] = self.namespace["BBNTA1"][kb_relation.id]
 
                     self.create_triples("relation_group-unification", [], var_mappings=var_mappings)  # group unification ontologies are separate but identical
@@ -372,20 +648,29 @@ class RDFSerializer:
         return True
 
     def create_triples_from_entity_relation(self, kb_relation):
-        source_entity_ontology_object = self.get_entity_ontology_object(
-            self.kb.entid_to_kb_entity[kb_relation.left_argument_id])
+        source_entity = self.kb.entid_to_kb_entity[kb_relation.left_argument_id]
         left_entity_id = kb_relation.left_argument_id
-        target_entity_ontology_object = self.get_entity_ontology_object(
-            self.kb.entid_to_kb_entity[kb_relation.right_argument_id])
+        target_entity = self.kb.entid_to_kb_entity[kb_relation.right_argument_id]
         right_entity_id = kb_relation.right_argument_id
+
         # few cases that flip the argument
         if self.config["mappings"]["entity-relation"][kb_relation.relation_type]["reverse"]:
-            tmp = source_entity_ontology_object
-            source_entity_ontology_object = target_entity_ontology_object
-            target_entity_ontology_object = tmp
+            tmp = source_entity
+            source_entity = target_entity
+            target_entity = tmp
             tmp = left_entity_id
             left_entity_id = right_entity_id
             right_entity_id = tmp
+
+        source_entity_ontology_object = self.get_entity_ontology_object(
+            source_entity)
+        target_entity_ontology_object = self.get_entity_ontology_object(
+            target_entity)
+
+        # Use entity group object instead of entity object
+        if self.config["mappings"]["entity-relation"][kb_relation.relation_type]["use_group_for_source"]:
+            source_entity_ontology_object = self.get_entity_group_ontology_object(
+                self.kb_entity_to_kb_entity_group[source_entity])
 
         [namespace_name, ontology_class] = self.config["mappings"]["entity-relation"][kb_relation.relation_type][
             "type"].split(":")
@@ -430,6 +715,7 @@ class RDFSerializer:
                     kb_relation_mention.right_mention.sentence.id]
                 optional_fields.append("right-sentence")
 
+            logger.debug(self.get_info_kb_relation_str(kb_relation))
             self.create_triples(
                 "entity-relation-arg-details",
                 optional_fields,
@@ -442,6 +728,7 @@ class RDFSerializer:
                 #print('dropping: {}, {}, {}'.format(source_entity_ontology_object, relationship, target_entity_ontology_object))
                 return
 
+            logger.debug(self.get_info_kb_relation_str(kb_relation))
             self.create_triples(
                 "entity-relation",
                 [],
@@ -453,10 +740,14 @@ class RDFSerializer:
             )
 
     def get_entity_ontology_object(self, kb_entity):
-        if "GPE.Nation" in kb_entity.entity_type_to_confidence and "cameo_country_code" in kb_entity.properties:
-            return self.namespace["CAMEOCC"]["CAMEO" + kb_entity.properties["cameo_country_code"].lower()]
+        return self.namespace["BBNTA1"][kb_entity.id]
+
+    def get_entity_group_ontology_object(self,kb_entity_group):
+        is_cameo_country, entity_group_id = kb_entity_group.get_cameo_code_or_id()
+        if is_cameo_country is True:
+            return self.namespace["CAMEOCC"]["CAMEO" + entity_group_id.lower()]
         else:
-            return self.namespace["BBNTA1"][kb_entity.id]
+            return self.namespace["BBNTA1"][entity_group_id]
 
     def create_currency_rdf_double(self, decimal_value):
         # this is necessary because for some large values like 1000000000000, we would output the literal with scientific notation
@@ -468,8 +759,8 @@ class RDFSerializer:
 
     def create_triples_from_event_relation(self, kb_relation):
         relation_type = kb_relation.relation_type
-        source_event = kb_relation.left_argument_id
-        target_event = kb_relation.right_argument_id
+        source_events = self.kb_event_to_rdf_event_ids[self.kb.evid_to_kb_event[kb_relation.left_argument_id]]
+        target_events = self.kb_event_to_rdf_event_ids[self.kb.evid_to_kb_event[kb_relation.right_argument_id]]
 
         if "default_relationship" in self.config["mappings"]["event-causal-relation"][relation_type]:
             # this isn't really a causal relation - but it is something from which we want to create a regular relation
@@ -482,17 +773,18 @@ class RDFSerializer:
             if relation_type != "Before-After":
                 self.text_causal_assertion_count += 1
 
-            self.create_triples(
-                "event-relation",
-                [],
-                var_mappings={
-                    "instance": self.namespace["BBNTA1"][relation_instance_id],
-                    "ontology_class": relation_ontology_class,
-                    "left_arg": self.namespace["BBNTA1"][source_event],
-                    "right_arg": self.namespace["BBNTA1"][target_event],
-                    "relationship": self.namespace[namespace_name][ontology_class]
-                }
-            )
+            for source_event in source_events:
+                for target_event in target_events:
+                    logger.debug(self.get_info_kb_relation_str(kb_relation))
+                    self.create_triples(
+                        "event-relation",
+                        [],
+                        var_mappings={
+                            "left_arg": source_event,
+                            "right_arg": target_event,
+                            "relationship": self.namespace[namespace_name][ontology_class]
+                        }
+                    )
         else:
             # is an bona fide causal relation
             self.text_causal_assertion_count += 1
@@ -504,63 +796,180 @@ class RDFSerializer:
             [namespace_name, ontology_class] = self.config["mappings"]["event-causal-relation"][relation_type][
                 "left_predicate"].split(":")
             left_pred = self.namespace[namespace_name][ontology_class]
-            left_arg = self.namespace["BBNTA1"][source_event]
-
             [namespace_name, ontology_class] = self.config["mappings"]["event-causal-relation"][relation_type][
                 "right_predicate"].split(":")
             right_pred = self.namespace[namespace_name][ontology_class]
-            right_arg = self.namespace["BBNTA1"][target_event]
 
-            self.create_triples(
-                "event-causal-relation",
-                [],
-                var_mappings={
-                    "instance": self.namespace["BBNTA1"][relation_instance_id],
-                    "ontology_class": relation_ontology_class,
-                    "left_pred": left_pred,
-                    "left_arg": left_arg,
-                    "right_pred": right_pred,
-                    "right_arg": right_arg,
-                    "confidence": Literal(format(kb_relation.confidence, '0.2f'), datatype = XSD.decimal)
-                }
-            )
+            local_id_cnt = 0
 
-            for kb_relation_mention in kb_relation.relation_mentions:
-                for kb_sentence in [kb_relation_mention.left_mention.sentence, kb_relation_mention.right_mention.sentence]:
+            eer_marked_up_string = get_marked_up_string_for_event_event_relation(kb_relation,self.kb.evid_to_kb_event[kb_relation.left_argument_id],self.kb.evid_to_kb_event[kb_relation.right_argument_id])
+
+            for source_event in source_events:
+                for target_event in target_events:
+                    left_arg = source_event
+                    right_arg = target_event
+                    logger.debug(self.get_info_kb_relation_str(kb_relation))
                     self.create_triples(
-                        "source-sentence",
+                        "event-causal-relation",
                         [],
                         var_mappings={
-                            "instance": self.namespace["BBNTA1"][relation_instance_id],
-                            "sentenceSpanInstance": self.namespace["BBNTA1"][kb_sentence.id]
+                            "instance": self.namespace["BBNTA1"]["{}-{}".format(relation_instance_id,local_id_cnt)],
+                            "ontology_class": relation_ontology_class,
+                            "left_pred": left_pred,
+                            "left_arg": left_arg,
+                            "right_pred": right_pred,
+                            "right_arg": right_arg,
+                            "confidence": Literal(format(kb_relation.confidence, '0.2f'), datatype=XSD.decimal),
+                            "strength": Literal(1, datatype=XSD.decimal),
+                            "eer_marked_up_string": Literal(re.sub("\n", " ", eer_marked_up_string),
+                                                            datatype=XSD.string),
+                            "polarity": self.config["mappings"]["general-concepts-property"][kb_relation.polarity]
                         }
                     )
 
-    def create_triples_from_entity_group(self, kb_entity_group):
+                    for kb_relation_mention in kb_relation.relation_mentions:
 
-        if len(kb_entity_group.members) > 1:  # don't process singletons
-            # RDF URI for this entity group instance:
-            entity_group_instance = self.namespace["BBNTA1"][kb_entity_group.id]
-            var_mappings = {"instance": entity_group_instance}
-            optional_fields = set([])
+                        for kb_sentence in [kb_relation_mention.left_mention.sentence,
+                                            kb_relation_mention.right_mention.sentence]:
+                            self.create_triples(
+                                "source-sentence",
+                                [],
+                                var_mappings={
+                                    "instance": self.namespace["BBNTA1"]["{}-{}".format(relation_instance_id,local_id_cnt)],
+                                    "sentenceSpanInstance": self.namespace["BBNTA1"][kb_sentence.id],
+                                    "docInstance": self.get_causeex_docid(kb_relation_mention.document)
+                                }
+                            )
+
+                    local_id_cnt += 1
+
+
+
+
+
+
+
+    def create_triples_from_entity_group(self,kb_entity_group):
+        entity_group_instance = self.get_entity_group_ontology_object(kb_entity_group)
+        is_cameo_country, entity_group_id = kb_entity_group.get_cameo_code_or_id()
+
+        var_mappings = {
+            "instance": entity_group_instance
+        }
+        optional_fields = set()
+        # add canonical name
+        
+        if kb_entity_group.canonical_name is not None:
+            optional_fields.add("canonical_name")
+            var_mappings["canonical_name"] = Literal(kb_entity_group.canonical_name.replace("\t"," ").replace("\n"," "), datatype=XSD.string)
+        else:
+            entity_canonical_name = self.get_canonical_name_from_entity(kb_entity_group.members[0])
+            if entity_canonical_name is not None:
+                optional_fields.add("canonical_name")
+                var_mappings["canonical_name"] = Literal(entity_canonical_name.replace("\t"," ").replace("\n"," "), datatype=XSD.string)
+
+        entity_type = None
+        for kb_entity in kb_entity_group.members:
+            if kb_entity.is_referred_in_kb is False:
+                continue
+            entity_instance = self.get_entity_ontology_object(kb_entity)
+
+            entity_type, entity_subtype = kb_entity.get_best_entity_type().split(".")
+
+            # find an ontological type
+            [namespace_name, ontology_class] = self.config["mappings"]["entity"][entity_type]["sub_types"][
+                entity_subtype].split(":")
+            var_mappings["ontology_class"] = self.namespace[namespace_name][ontology_class]
+            optional_fields.add("entity_type")
+
+            if entity_type in ("LOC", "FAC", "GPE"):
+                optional_fields.add("entity_type_location")
+
+            # find secondary type
+
+            if kb_entity_group in self.entity_group_in_has_actor:
+                var_mappings["secondary_ontology_class"] = self.namespace["EVENT"]["Actor"]
+                optional_fields.add("additional_entity_type")
+            else:
+                if (entity_type in self.config["mappings"]["entity_secondary_type"] and
+                        entity_subtype in self.config["mappings"]["entity_secondary_type"][entity_type]):
+                    [namespace_name, ontology_class] = self.config["mappings"]["entity_secondary_type"][
+                        entity_type][entity_subtype].split(":")
+                    var_mappings["secondary_ontology_class"] = self.namespace[namespace_name][ontology_class]
+                    optional_fields.add("additional_entity_type")
 
             # add canonical name
-            if kb_entity_group.canonical_name is not None:
+            if kb_entity.canonical_name is not None and "canonical_name" not in optional_fields:
                 optional_fields.add("canonical_name")
-                var_mappings["canonical_name"] = Literal(kb_entity_group.canonical_name, datatype=XSD.string)
+                var_mappings["canonical_name"] = Literal(kb_entity.canonical_name.replace("\t"," ").replace("\n"," "), datatype=XSD.string)
 
-            # serialize group metadata
-            self.create_triples("entity_group", optional_fields, var_mappings=var_mappings)
+            # add longitude and latitude
+            if entity_group_instance not in self.lat_long_output:
+                if "latitude" in kb_entity.properties:
+                    optional_fields.add("latitude")
+                    var_mappings["latitude"] = Literal(kb_entity.properties["latitude"], datatype=XSD.decimal)
+                    self.lat_long_output.add(entity_group_instance)
+                if "longitude" in kb_entity.properties:
+                    optional_fields.add("longitude")
+                    var_mappings["longitude"] = Literal(kb_entity.properties["longitude"], datatype=XSD.decimal)
+                    self.lat_long_output.add(entity_group_instance)
 
-            # serialize group membership definitions
-            for kb_entity in kb_entity_group.members:
+            # add citizenship country code
+            if "citizenship_cameo_country_code" in kb_entity.properties:
+                cameo_country_code = "CAMEO" + kb_entity.properties["citizenship_cameo_country_code"].lower()
+                var_mappings["citizenship_details_instance"] = self.namespace["BBNTA1"][
+                    "CITIZENSHIPDETAILS-" + cameo_country_code]
+                var_mappings["cameo_country_code"] = self.namespace["CAMEOCC"][cameo_country_code]
+                optional_fields.add("citizenship")
 
-                entity_type, entity_subtype = kb_entity.get_best_entity_type().split(".")
-                namespace_name, ontology_class = self.config["mappings"]["entity"][entity_type]["sub_types"][entity_subtype].split(":")
-                var_mappings["ontology_class"] = self.namespace[namespace_name][ontology_class]
-                var_mappings["member"] = self.get_entity_ontology_object(kb_entity)  # may be more complex than graph lookup
+            # add ethnicity
+            if "ethnicity" in kb_entity.properties:
+                ethnicity = kb_entity.properties["ethnicity"]
+                var_mappings["ethnicity_details_instance"] = self.namespace["BBNTA1"][
+                    "ETHNICITY-DETAILS-" + ethnicity]
+                var_mappings["ethnicity"] = self.namespace["ACTOR"][ethnicity]
+                optional_fields.add("ethnicity")
+            
+            # Create unify edge
+            self.create_triples("entity-group-unification",[],var_mappings={
+                "instance":entity_group_instance,
+                "entity_instance":entity_instance
+            })
 
-                self.create_triples("entity_group-unification", [], var_mappings=var_mappings)
+        # when kb_entity_group is a geoname and we could determine its country
+        if "geonames_country_code" in kb_entity_group.properties and is_cameo_country == False:
+            geoname_country_code = kb_entity_group.properties["geonames_country_code"]
+            var_mappings["geoname_country_cameo_code"] = self.namespace["CAMEOCC"]["CAMEO" + geoname_country_code.lower()]
+            optional_fields.add("geoname_country")
+
+        # When kb_entity_group is a component of another entity_group
+        if "component_of_actor_ids" in kb_entity_group.properties:
+            for containing_actor_id in kb_entity_group.properties["component_of_actor_ids"]:
+                if containing_actor_id in self.actor_id_to_kb_entity_group:
+                    containing_entity_group = self.actor_id_to_kb_entity_group[containing_actor_id]
+                    var_mappings["containing_entity_group"] = self.get_entity_group_ontology_object(containing_entity_group)
+                    optional_fields.add("component_of")
+
+        logger.debug(self.get_info_kb_entity_group_str(kb_entity_group, entity_type))
+        self.create_triples("entity-group", optional_fields, var_mappings=var_mappings)
+
+        # CAMEO affiliation from AWAKE, use AffiliationDetails structure
+        if "awake_affiliated_cameo_code" in kb_entity_group.properties:
+            awake_affiliated_cameo_code = kb_entity_group.properties["awake_affiliated_cameo_code"]
+            var_mappings = {
+                "left_arg": entity_group_instance,
+                "arg_instance": self.namespace["BBNTA1"]["Affiliation-%s-to-%s" % (kb_entity_group.id, awake_affiliated_cameo_code)],
+                "arg_details_concept": self.namespace["ACTOR"]["AffiliationDetails"],
+                "relationship": self.namespace["ACTOR"]["has_affiliation"],
+                "pred": self.namespace["ACTOR"]["related_affiliation"],
+                "arg_entity_instance": self.namespace["CAMEOCC"]["CAMEO" + awake_affiliated_cameo_code.lower()]
+                }
+            optional_fields = ["arg_instance_predicate"]
+            self.create_triples(
+                "entity-relation-arg-details",
+                optional_fields,
+                var_mappings=var_mappings
+            )
 
     def create_triples_from_entity(self, kb_entity):
         entity_instance = self.get_entity_ontology_object(kb_entity)
@@ -568,7 +977,6 @@ class RDFSerializer:
             "instance": entity_instance
         }
         optional_fields = set()
-
         if not str(entity_instance).startswith(self.namespace["CAMEOCC"]):
             entity_type, entity_subtype = kb_entity.get_best_entity_type().split(".")
 
@@ -582,17 +990,22 @@ class RDFSerializer:
                 optional_fields.add("entity_type_location")
 
             # find secondary type
-            if (entity_type in self.config["mappings"]["entity_secondary_type"] and
-                entity_subtype in self.config["mappings"]["entity_secondary_type"][entity_type]):
-                [namespace_name, ontology_class] = self.config["mappings"]["entity_secondary_type"][
-                    entity_type][entity_subtype].split(":")
-                var_mappings["secondary_ontology_class"] = self.namespace[namespace_name][ontology_class]
+            if kb_entity in self.entity_in_has_actor:
+                var_mappings["secondary_ontology_class"] = self.namespace["EVENT"]["Actor"]
                 optional_fields.add("additional_entity_type")
+            else:
+                if (entity_type in self.config["mappings"]["entity_secondary_type"] and
+                        entity_subtype in self.config["mappings"]["entity_secondary_type"][entity_type]):
+                    [namespace_name, ontology_class] = self.config["mappings"]["entity_secondary_type"][
+                        entity_type][entity_subtype].split(":")
+                    var_mappings["secondary_ontology_class"] = self.namespace[namespace_name][ontology_class]
+                    optional_fields.add("additional_entity_type")
 
         # add canonical name
-        if kb_entity.canonical_name is not None:
+        canonical_label = self.get_canonical_name_from_entity(kb_entity)
+        if canonical_label is not None:
             optional_fields.add("canonical_name")
-            var_mappings["canonical_name"] = Literal(kb_entity.canonical_name, datatype=XSD.string)
+            var_mappings["canonical_name"] = Literal(canonical_label.replace("\t"," ").replace("\n"," "), datatype=XSD.string)
 
         # add longitude and latitude
         if entity_instance not in self.lat_long_output:
@@ -604,7 +1017,6 @@ class RDFSerializer:
                 optional_fields.add("longitude")
                 var_mappings["longitude"] = Literal(kb_entity.properties["longitude"], datatype=XSD.decimal)
                 self.lat_long_output.add(entity_instance)
-            
 
         # add citizenship country code
         if "citizenship_cameo_country_code" in kb_entity.properties:
@@ -623,9 +1035,13 @@ class RDFSerializer:
             optional_fields.add("ethnicity")
 
         self.entity_count += 1
+        logger.debug(self.get_info_kb_entity_str(kb_entity))
         self.create_triples("entity", optional_fields, var_mappings=var_mappings)
 
         for kb_mention in kb_entity.mentions:
+            if kb_mention.is_referred_in_kb is False:
+                print("SKIPPING entity mention {}".format(kb_mention.id))
+                continue
             kb_document = kb_mention.document
             docId = kb_document.id
 
@@ -635,11 +1051,21 @@ class RDFSerializer:
                 spanID = SharedIDManager.get_in_document_id("Span", docId)
                 self.span_and_docid_to_id[(kb_mention.start_char, kb_mention.end_char, docId)] = spanID
 
-            if (kb_mention.head_start_char, kb_mention.head_end_char, kb_mention.mention_type, docId) in self.mention_span_and_docid_to_id:
-                mentionSpanID = self.mention_span_and_docid_to_id[(kb_mention.head_start_char, kb_mention.head_end_char, kb_mention.mention_type, docId)]
+            mention_span_start = kb_mention.head_start_char
+            mention_span_end = kb_mention.head_end_char
+            mention_span_text = kb_mention.mention_original_head_text
+
+            # For non-names, use full text for mention span
+            if kb_mention.mention_type != "name" and kb_mention.mention_text.count(" ") < 10:
+                mention_span_start = kb_mention.start_char
+                mention_span_end = kb_mention.end_char
+                mention_span_text = kb_mention.mention_original_text
+            
+            if (mention_span_start, mention_span_end, kb_mention.mention_type, docId) in self.mention_span_and_docid_to_id:
+                mentionSpanID = self.mention_span_and_docid_to_id[(mention_span_start, mention_span_end, kb_mention.mention_type, docId)]
             else:
                 mentionSpanID = SharedIDManager.get_in_document_id("MentionSpan", docId)
-                self.mention_span_and_docid_to_id[(kb_mention.head_start_char, kb_mention.head_end_char, kb_mention.mention_type, docId)] = mentionSpanID
+                self.mention_span_and_docid_to_id[(mention_span_start, mention_span_end, kb_mention.mention_type, docId)] = mentionSpanID
 
             self.create_triples(
                 "span",
@@ -648,35 +1074,33 @@ class RDFSerializer:
                     "spanInstance": self.namespace["BBNTA1"][spanID],
                     "startOffset": Literal(self.adjust_offset(kb_mention.start_char, kb_mention.document), datatype=XSD.long),
                     "textLength": Literal(kb_mention.end_char - kb_mention.start_char + 1, datatype=XSD.long),
-                    "text": Literal(re.sub("\n", " ", kb_mention.mention_text), datatype=XSD.string),
+                    "text": Literal(re.sub("\n", " ", kb_mention.mention_original_text), datatype=XSD.string),
                     "docInstance": self.get_causeex_docid(kb_document),
                     "sentenceInstance": self.namespace["BBNTA1"][kb_mention.sentence.id]
                 }
             )
+            logger.debug(self.get_info_kb_mention_str(kb_mention))
             self.create_triples(
                 "entity-mention-span",
                 [],
                 var_mappings={
                     "mentionSpanInstance": self.namespace["BBNTA1"][mentionSpanID],
-                    "startOffset": Literal(self.adjust_offset(kb_mention.head_start_char, kb_mention.document), datatype=XSD.long),
-                    "textLength": Literal(kb_mention.head_end_char - kb_mention.head_start_char + 1, datatype=XSD.long),
-                    "mention_text": Literal(re.sub("\n", " ", kb_mention.mention_head_text), datatype=XSD.string),
+                    "startOffset": Literal(self.adjust_offset(mention_span_start, kb_mention.document), datatype=XSD.long),
+                    "textLength": Literal(mention_span_end - mention_span_start + 1, datatype=XSD.long),
+                    "mention_text": Literal(re.sub("\n", " ", mention_span_text), datatype=XSD.string),
                     "mention_type": self.get_entity_mention_ontology_type_object(kb_mention.mention_type),
                     "docInstance": self.get_causeex_docid(kb_document),
                     "sentenceInstance": self.namespace["BBNTA1"][kb_mention.sentence.id],
                     "spanInstance": self.namespace["BBNTA1"][spanID],
-                    "entityInstance": var_mappings["instance"]
+                    "entityInstance": entity_instance
                 }
             )
+    
 
     def _grounded_event_type_is_bbnta1(self, event_type_string):
         bbn_ns = str(self.config.get("namespace", {}).get("BBNTA1", "_INVALID"))
         return event_type_string.startswith(bbn_ns)
 
-    def _event_type_is_grounded(self, event_type_string):
-        evt_ns = str(self.config.get("namespace", {}).get("EVENT", "_INVALID"))
-        return (event_type_string.startswith(evt_ns) 
-                or self._grounded_event_type_is_bbnta1)
 
     def create_triples_from_event_group(self, kb_event_group):
 
@@ -685,149 +1109,205 @@ class RDFSerializer:
             event_group_instance = self.namespace["BBNTA1"][kb_event_group.id]
             var_mappings = {"instance": event_group_instance}
 
+            self.create_triples("event_group-unification", [],
+                                var_mappings=var_mappings)  # group unification ontologies are separate but identical
+
             # serialize group membership definitions
             for kb_event in kb_event_group.members:
+                for rdf_event_ids in self.kb_event_to_rdf_event_ids[kb_event]:
+                    event_type = list(kb_event.event_type_to_confidence.keys())[0]
 
-                event_type = kb_event.event_type_to_confidence.keys()[0]
-                
-                # already grounded?
-                if self._event_type_is_grounded(event_type):
                     var_mappings["ontology_class"] = URIRef(event_type)
-                    
-                # not already grounded.
-                else:
-                    if event_type in self.config["mappings"]["event"]:
-                        [namespace_name, ontology_class] = self.config["mappings"]["event"][event_type].split(":")
-                    else:
-                        [namespace_name, ontology_class] = self.config["mappings"]["event"]["default"].split(":")
-                    var_mappings["ontology_class"] = self.namespace[namespace_name][ontology_class]
-                    
-                var_mappings["member"] = self.namespace["BBNTA1"][kb_event.id]  # reset "member" variable each loop
 
-                self.create_triples("event_group-unification", [], var_mappings=var_mappings)  # group unification ontologies are separate but identical
+                    var_mappings["member"] = rdf_event_ids  # reset "member" variable each loop
+                    self.create_triples("event_group-unification-unify", [],
+                                        var_mappings=var_mappings)  # group unification ontologies are separate but identical
+
+
+    def create_triples_for_event_grounding(self,instance_id,event_type,confidence):
+        type_assignment = URIRef(event_type)
+        event_basename = event_type.split('/')[-1].split('#')[-1]
+        var_mappings = {
+            "instance": instance_id,
+            "label": Literal(re.sub("\n", " ", event_type), datatype=XSD.string),
+            "ontology_class": type_assignment,
+            "confidence": Literal(format(confidence, '0.2f'), datatype = XSD.decimal),
+        }
+        optional_fields = []
+        if self._grounded_event_type_is_bbnta1(event_type):
+            # hack to make sure that events with type BBNTA1:[...] also have an ODP event type
+            # this indicates that we need to find a suitable ODP type to use instead
+            self.add_triples_bbn_event(type_assignment)
+            # unclear why this is done instead of using the old function above
+            second_event_type = self.namespace["EVENT"]["Event"]
+            ontology_class = event_basename
+            print("WARNING: Adding second event type %s to an event mapped to type %s" % (
+            str(second_event_type), str(self.namespace["BBNTA1"][ontology_class])))
+            optional_fields.append("extra_event_type")
+            var_mappings["extra_ontology_class"] = second_event_type
+        self.create_triples(
+            "event-grounding",
+            optional_fields,
+            var_mappings=var_mappings
+        )
+
+    def create_triples_for_icm_factor_grounding(self,instance_id,kb_causal_factor):
+        icm_factor_type = kb_causal_factor.factor_class
+        relevance = kb_causal_factor.relevance
+        trend = kb_causal_factor.trend
+        magnitude = kb_causal_factor.magnitude
+        factor_id = kb_causal_factor.id
+        self.create_triples("icm-factor-grounding",[],var_mappings={
+            "instance":instance_id,
+            "factor_id":self.namespace["BBNTA1"][factor_id],
+            "magnitude":Literal(format(magnitude, '0.2f'), datatype = XSD.decimal),
+            "factor_type":URIRef(icm_factor_type),
+            "relevance":Literal(format(relevance, '0.2f'), datatype = XSD.decimal),
+            "trend": self.config["mappings"]["icm-property"][trend]
+        })
+
+    def create_triples_for_event_arg_time(self,kb_event,event_type,kb_event_mention,role_type,args_for_role):
+        kb_document = kb_event.get_document()
+        document_date = None
+        if "date_created" in kb_document.properties and kb_document.properties["date_created"] != "UNKNOWN":
+            document_date = kb_document.properties["date_created"]
+        for kb_argument,score in args_for_role:
+            assert isinstance(kb_argument, KBValueMention)
+            mention_text = kb_argument.value_mention_original_text
+            optional_fields = []
+            time_text = Literal(re.sub("\n", " ", mention_text), datatype=XSD.string)
+            var_mappings = {
+                "instance":self.get_event_instance_id(kb_event,event_type)
+            }
+            var_mappings["time_text"] = time_text
+            optional_fields.append("time_text")
+
+            if kb_argument.normalized_date is not None:
+                earliestStartTime, earliestEndTime, latestStartTime, latestEndTime\
+                    = self.time_matcher.match_time(kb_argument.normalized_date, kb_argument.value_mention_text, document_date)
+
+                if earliestStartTime is not None:
+                    var_mappings["earliest_possible_start_time"] = Literal(
+                        earliestStartTime.replace(microsecond=0).isoformat(), datatype=XSD.dateTime)
+                    optional_fields.append("earliest_start_time")
+
+                if earliestEndTime is not None:
+                    var_mappings["earliest_possible_end_time"] = Literal(
+                        earliestEndTime.replace(microsecond=0).isoformat(), datatype=XSD.dateTime)
+                    optional_fields.append("earliest_end_time")
+
+                if latestStartTime is not None:
+                    var_mappings["latest_possible_start_time"] = Literal(
+                        latestStartTime.replace(microsecond=0).isoformat(), datatype=XSD.dateTime)
+                    optional_fields.append("latest_start_time")
+
+                if latestEndTime is not None:
+                    var_mappings["latest_possible_end_time"] = Literal(
+                        latestEndTime.replace(microsecond=0).isoformat(), datatype=XSD.dateTime)
+                    optional_fields.append("latest_end_time")
+
+            logger.debug(self.get_info_kb_value_mention_str(kb_argument))
+            self.create_triples(
+                "event-arg",
+                optional_fields,
+                var_mappings
+            )
+    def create_triples_for_event_arg_location(self,kb_event,event_type,kb_event_mention,role_type,args_for_role):
+
+        predicate_mappings = self.config["mappings"]["event-role"]["default"][role_type]
+        [namespace_name, ontology_class] = predicate_mappings["default"].split(":")
+        mpred = self.namespace[namespace_name][ontology_class]
+
+        shrinked_event_type = event_type.split("#")[-1]
+
+        for role_idx,(kb_argument,score) in enumerate(args_for_role):
+            kb_entity = self.kb_mention_to_kb_entity[kb_argument]
+            arg_instance = self.get_entity_ontology_object(kb_entity)
+            self.create_triples(
+                "event-arg-location-with-location-details",
+                [],
+                {
+                    "instance":self.get_event_instance_id(kb_event,event_type),
+                    "entity_instance":arg_instance,
+                    "location_details_id":self.namespace["BBNTA1"]["LocationDetails-{}-{}-{}-{}".format(kb_event.id,shrinked_event_type,role_type,role_idx)],
+                    "confidence":Literal(format(score, '0.2f'), datatype = XSD.decimal),
+                    "pred": mpred
+                }
+            )
+
+    def create_triples_for_event_arg_other(self,kb_event,event_type,kb_event_mention,role_type,args_for_role):
+        predicate_mappings = self.config["mappings"]["event-role"]["default"][role_type]
+
+        for kb_argument,score in args_for_role:
+            if isinstance(kb_argument,KBMention):
+                instance_argument_as_entity = self.kb_mention_to_kb_entity[kb_argument]
+                arg_instance = self.get_entity_ontology_object(instance_argument_as_entity)
+
+                if instance_argument_as_entity is not None:
+                    # argument will be linked in RDF directly as the entity, rather than an intermediate object
+                    ace_entity_type_with_subtype = instance_argument_as_entity.get_best_entity_type()
+                    ace_entity_type = ace_entity_type_with_subtype.split(".")[0]
+                    if ace_entity_type_with_subtype in predicate_mappings or ace_entity_type in predicate_mappings:
+                        # there is a listed override for the predicate for the entity type
+                        if ace_entity_type_with_subtype in predicate_mappings:
+                            # look at the more specific type first
+                            [namespace_name, ontology_class] = predicate_mappings[
+                                ace_entity_type_with_subtype].split(":")
+                        else:
+                            [namespace_name, ontology_class] = predicate_mappings[ace_entity_type].split(":")
+                    else:
+                        # there is no listed override for the entity type, so just use the default predicate
+                        [namespace_name, ontology_class] = predicate_mappings["default"].split(":")
+                else:
+                    # argument will be linked in RDF as an intermediate object, so just use the default predicate
+                    [namespace_name, ontology_class] = predicate_mappings["default"].split(":")
+                mpred = self.namespace[namespace_name][ontology_class]
+                event_instance = self.get_event_instance_id(kb_event,event_type)
+
+                # Discard triples that violate domain/range constraints
+                if not self.check_subclass_rules(
+                        event_instance, mpred, arg_instance):
+                    print('dropping: {}, {}, {}'.format(event_instance, mpred, arg_instance))
+                    continue
+
+                # create a triple for argument attachment
+                self.create_triples(
+                    "event-arg-instance",
+                    [],
+                    var_mappings={
+                        "instance": event_instance,
+                        "pred": mpred,
+                        "arg_instance": arg_instance
+                    }
+                )
+            elif isinstance(kb_argument,KBValueMention):
+                # Looking for original implementation here
+                # http://e-gitlab.bbn.com/text-group/Hume/blob/R2020_04_22/src/python/knowledge_base/serializers/rdf_serializer.py#L985
+                # It was not handeled. Skipping
+                print("DROPPING {} {} {}".format(kb_event_mention.trigger, role_type, kb_argument.value_mention_text))
+
+            else:
+                raise NotImplemented("Unhandeled argument type {}".format(type(kb_argument)))
+
+    def get_event_instance_id(self,kb_event,event_type):
+        shrinked_event_type = event_type.split("#")[-1]
+        return self.namespace["BBNTA1"]["{}-{}".format(kb_event.id,shrinked_event_type)]
+
+
 
     def create_triples_from_event(self, kb_event):
 
         kb_document = kb_event.get_document()
         docId = kb_document.id
 
-        event_type = kb_event.event_type_to_confidence.keys()[0]
 
-        # already grounded?
-        if self._event_type_is_grounded(event_type):
-            type_assignment = URIRef(event_type)
-            add_generic_genericity = type_assignment.endswith("#Factor")
-            event_basename = event_type.split('/')[-1].split('#')[-1]
-            event_label = self._get_event_type_label(event_basename)
-            if self._grounded_event_type_is_bbnta1(event_type):
-                namespace_name = "BBNTA1"
-            else:
-                namespace_name = "EVENT"
-
-        # not already grounded.
-        else:
-            if event_type in self.config["mappings"]["event"]:
-                [namespace_name, ontology_class] = self.config["mappings"]["event"][event_type].split(":")
-                add_generic_genericity = (ontology_class == "Factor") # per ODP guidelines, all EVENT:Factor events should be tagged with a genericity value that is Generic
-            else:
-                add_generic_genericity = False
-                [namespace_name, ontology_class] = self.config["mappings"]["event"]["default"].split(":")
-            type_assignment = self.namespace[namespace_name][ontology_class]  # URIRef
-            event_label = self._get_event_type_label(event_type)
-            event_basename = event_type
-
-        var_mappings = {
-            "instance": self.namespace["BBNTA1"][kb_event.id],
-            "label": Literal(re.sub("\n", " ", event_label), datatype=XSD.string),
-            "ontology_class": type_assignment,
-            "confidence": Literal(format(kb_event.confidence, '0.2f'), datatype = XSD.decimal),
-        }
-        optional_fields = []
-
-        # hack to make sure that events with type BBNTA1:[...] also have an ODP event type
-        # this indicates that we need to find a suitable ODP type to use instead
-        if namespace_name == "BBNTA1":
-            self.add_triples_bbn_event(type_assignment)
-            
-            # unclear why this is done instead of using the old function above
-            second_event_type = self.namespace["EVENT"]["Event"]
-            ontology_class = event_basename
-            print "WARNING: Adding second event type %s to an event mapped to type %s" % (str(second_event_type), str(self.namespace[namespace_name][ontology_class]))
-            optional_fields.append("extra_event_type")
-            var_mappings["extra_ontology_class"] = second_event_type
-
-        if add_generic_genericity:
-             optional_fields.append("genericity")
-             var_mappings["genericity"] = self.namespace["EVENT"]["Generic"]
-        if kb_event.properties is not None:
-            event_property_fields = ["tense", "modality", "polarity"]
-            if not add_generic_genericity:
-                event_property_fields.append("genericity")
-            for field in event_property_fields:
-                if field in kb_event.properties:
-                    value = kb_event.properties[field]
-                    if value not in (
-                            "Unspecified", "unavailable", "Specific", 
-                            "Positive", "Asserted", "historical", "current"):
-                        optional_fields.append(field)
-                        var_mappings[field] = self.config["mappings"]["event-property"][
-                            kb_event.properties[field]]
-
-        # TODO: fix this hack
-        # I believe this section is deprecated, based on the contents of the yaml.  @criley
-        # triples here: Boolean-is_supply_adequate?, generic_instance_for_artifact, ODP_type_of_artifact
-        # 'Shortage': (False, self.namespace["BBNTA1"].generic_artifact, '?'),
-        supply_map = {'FuelShortage': (0, self.namespace["BBNTA1"].generic_fuel,
-                                       self.namespace["EVENTARTIFACT"].Fuel),
-                      'WaterShortage': (0, self.namespace["BBNTA1"].generic_water,
-                                        self.namespace["EVENTARTIFACT"].Water),
-                      'FoodShortage': (0, self.namespace["BBNTA1"].generic_food,
-                                       self.namespace["EVENTARTIFACT"].Food),
-                      'CommunicationServicesAvailable': (1, self.namespace["BBNTA1"].generic_communication_services,
-                                                         self.namespace["EVENTARTIFACT"].CommunicationsServices),
-                      'CommunicationServicesNotAvailable': (0, self.namespace["BBNTA1"].generic_communication_services,
-                                                            self.namespace["EVENTARTIFACT"].CommunicationsServices),
-                      'SchoolsOrTrainingAvailable': (1, self.namespace["BBNTA1"].generic_schools_or_training,
-                                                     self.namespace["EVENTARTIFACT"].SchoolsOrTraining),
-                      'SchoolsOrTrainingNotAvailable': (0, self.namespace["BBNTA1"].generic_schools_or_training,
-                                                        self.namespace["EVENTARTIFACT"].SchoolsOrTraining),
-                      'ServicesAvailable': (1, self.namespace["BBNTA1"].generic_services,
-                                            self.namespace["EVENTARTIFACT"].Services),
-                      'ServicesNotAvailable': (0, self.namespace["BBNTA1"].generic_services,
-                                               self.namespace["EVENTARTIFACT"].Services),
-                      'ElectricPowerAvailable': (1, self.namespace["BBNTA1"].generic_electricity,
-                                                 self.namespace["EVENTARTIFACT"].ElectricityOrPowerAndHeat),
-                      'ElectricPowerNotAvailable': (0, self.namespace["BBNTA1"].generic_electricity,
-                                                    self.namespace["EVENTARTIFACT"].ElectricityOrPowerAndHeat),
-                      'HospitalAvailable': (1, self.namespace["BBNTA1"].generic_hospital,
-                                            self.namespace["CCO"].Hospital),
-                      'HospitalNotAvailable': (0, self.namespace["BBNTA1"].generic_hospital,
-                                               self.namespace["CCO"].Hospital),
-                      'Human.Healthcare': (1, self.namespace["BBNTA1"].generic_healthcare_services,
-                                           self.namespace["EVENTARTIFACT"].HealthcareServices),
-                      'ShelterAvailable': (1, self.namespace["BBNTA1"].generic_shelter,
-                                           self.namespace["EVENTARTIFACT"].ShelterOrHousing),
-                      'ShelterNotAvailable': (0, self.namespace["BBNTA1"].generic_shelter,
-                                              self.namespace["EVENTARTIFACT"].ShelterOrHousing),
-                      # TODO add event:SpecificTypeOfArtifact paradigm here
-                      'FishingResourcesPresent': (1, self.namespace["BBNTA1"].generic_fisheries,
-                                                  self.namespace["EVENTARTIFACT"].LandResources),
-                      }
-
-        if event_basename in supply_map:
-            if supply_map[event_basename][0]:  # Adequate supply
-                optional_fields.append("event_adequate_supply_artifact")
-            else:  # Shortage
-                optional_fields.append("event_shortage_artifact")
-            var_mappings["generic_artifact_instance"] = supply_map[event_basename][1]
-            var_mappings["artifact_type"] = supply_map[event_basename][2]
 
         for kb_event_mention in kb_event.event_mentions:
-            
+            # Handle span
             # create a span and link it to the event
             # prefer to use the trigger, but use the snippet if there is no trigger
             if kb_event_mention.trigger is not None:
-                event_span_text = kb_event_mention.trigger
+                event_span_text = kb_event_mention.trigger_original_text
                 event_span_start = kb_event_mention.trigger_start
                 event_span_end = kb_event_mention.trigger_end
             else:
@@ -843,33 +1323,34 @@ class RDFSerializer:
                 self.span_and_docid_to_id[(event_span_start, event_span_end, docId)] = spanID
 
             span_var_mappings = {
-                    "spanInstance": self.namespace["BBNTA1"][spanID],
-                    "startOffset": Literal(self.adjust_offset(event_span_start, kb_event_mention.document), datatype=XSD.long),
-                    "textLength": Literal(event_span_end - event_span_start + 1,
-                                          datatype=XSD.long),
-                    "text": Literal(re.sub("\n", " ", event_span_text), datatype=XSD.string),
-                    "docInstance": self.get_causeex_docid(kb_document),
-                    "sentenceInstance": self.namespace["BBNTA1"][kb_event_mention.sentence.id],
-                    "instance": self.namespace["BBNTA1"][kb_event.id]
-                }
+                "spanInstance": self.namespace["BBNTA1"][spanID],
+                "startOffset": Literal(self.adjust_offset(event_span_start, kb_event_mention.document),
+                                       datatype=XSD.long),
+                "textLength": Literal(event_span_end - event_span_start + 1,
+                                      datatype=XSD.long),
+                "text": Literal(re.sub("\n", " ", event_span_text), datatype=XSD.string),
+                "docInstance": self.get_causeex_docid(kb_document),
+                "sentenceInstance": self.namespace["BBNTA1"][kb_event_mention.sentence.id],
+            }
 
             span_optional_fields = []
-            span_optional_fields.append("instance")
 
             trigger_words = None
-            if kb_event_mention.triggering_phrase:
+            if kb_event_mention.trigger_original_text:
+                trigger_words = kb_event_mention.trigger_original_text
+            elif kb_event_mention.triggering_phrase:
                 trigger_words = kb_event_mention.triggering_phrase
             elif kb_event_mention.trigger:
                 trigger_words = kb_event_mention.trigger
             elif kb_event_mention.proposition_infos and len(kb_event_mention.proposition_infos) > 0:
                 trigger_words = kb_event_mention.proposition_infos[0][0]
             if trigger_words:
-                span_var_mappings["triggerWords"] =  Literal(trigger_words, datatype=XSD.string)
+                span_var_mappings["triggerWords"] = Literal(trigger_words.replace("\t"," ").replace("\n"," "), datatype=XSD.string)
                 span_optional_fields.append("trigger_words")
 
             if "pattern_id" in kb_event_mention.properties:
                 span_var_mappings["pattern_id"] = Literal(re.sub("\n", " ", kb_event_mention.properties["pattern_id"]),
-                                                     datatype=XSD.string)
+                                                          datatype=XSD.string)
                 span_optional_fields.append("pattern_id")
 
             self.create_triples(
@@ -878,270 +1359,80 @@ class RDFSerializer:
                 var_mappings=span_var_mappings
             )
 
-            if kb_event_mention.has_topic is not None:
-                # How does this work in an event_mention -> event context?
-                topic_event_id = self.kb_event_mention_to_kb_event[kb_event_mention.has_topic].id
-                var_mappings["topic_event_instance"] = self.namespace["BBNTA1"][topic_event_id]
-                optional_fields.append("event_topic")
+            # Handle event type
+            for event_type,confidence in kb_event_mention.external_ontology_sources:
+                add_generic_genericity = False
+                type_assignment = URIRef(event_type)
+                add_generic_genericity = (add_generic_genericity or type_assignment.endswith("#Factor"))
+                event_instance_id = self.get_event_instance_id(kb_event,event_type)
+                self.create_triples_for_event_grounding(event_instance_id,event_type,kb_event_mention.event_confidence)
 
-            self.event_count += 1
-            self.create_triples(
-                "event",
-                optional_fields,
-                var_mappings=var_mappings
-            )
+                # Handle ICM factor type
+                for kb_causal_factor in kb_event_mention.causal_factors:
+                    self.create_triples_for_icm_factor_grounding(event_instance_id,kb_causal_factor)
 
-            # for debug
-            '''
-            if event_basename == "Affiliation":
-                print "args (Person/Entity/Position/Time) for Affiliation event mention %s" % kb_event_mention.id
-                for kb_arg_role in [kar for kar in kb_event_mention.arguments if kar in ("Person", "Entity", "Position", "Time")]:
-                    entid_and_mention_text = list()
-                    for kb_argument in kb_event_mention.arguments[kb_arg_role]:
-                        if isinstance(kb_argument, KBValueMention):
-                            mention_text = kb_argument.value_mention_text
-                            entid = "VALUEMENTION-ID-%s" % ascii_me(re.sub("\s", "_", kb_argument.value_mention_text))
-                        else:
-                            mention_text = kb_argument.mention_text
-                            entid = self.kb.kb_mention_to_entid[kb_argument]
-                        entid_and_mention_text.append((entid, mention_text))
-                    print "%s: %s" % (kb_arg_role, str(entid_and_mention_text))
-            '''
-
-            # See if we can infer an affiiliation relationship based on the event type and the arguments
-            # Note: this is similar to how to create AffiliationDetails for entity-entity relations
-            # TODO: Also do this for the "Marriage" / "Wedding", and other "affiliation-like" event types?
-            if event_basename == "Affiliation" and "Person" in kb_event_mention.arguments:
-
-                var_mappings_for_affiliation = {}
+                marked_up_sentence = get_marked_up_string_for_event(kb_event)
+                var_mappings = {
+                    "instance": event_instance_id,
+                    "marked_sentence":Literal(re.sub("\n", " ", marked_up_sentence), datatype=XSD.string),
+                    "spanInstance":self.namespace["BBNTA1"][spanID],
+                    "docInstance":self.get_causeex_docid(kb_document)
+                }
                 optional_fields = []
 
-                has_affiliation_relationship = "has_affiliation"
-                var_mappings_for_affiliation["relationship"] = self.namespace["ACTOR"][has_affiliation_relationship]
+                if add_generic_genericity:
+                     optional_fields.append("genericity")
+                     var_mappings["genericity"] = self.namespace["EVENT"]["Generic"]
+                if kb_event.properties is not None:
+                    event_property_fields = ["tense", "modality"]
+                    if not add_generic_genericity:
+                        event_property_fields.append("genericity")
+                    for field in event_property_fields:
+                        if field in kb_event.properties:
+                            value = kb_event.properties[field]
+                            if value not in (
+                                    "Unspecified", "unavailable"):
+                                optional_fields.append(field)
+                                var_mappings[field] = self.config["mappings"]["event-property"][
+                                    kb_event.properties[field]]
+                    field = "polarity"
+                    value = kb_event.properties[field]
+                    optional_fields.append(field)
+                    var_mappings[field] = self.config["mappings"]["general-concepts-property"][value]
+                field = "trend"
+                value = kb_event_mention.properties["direction_of_change"]
+                optional_fields.append(field)
+                var_mappings[field] = self.config["mappings"]["icm-property"][value]
 
-                [namespace_name, ontology_class] = self.config["mappings"]["entity-relation-arg-details"][has_affiliation_relationship]["concept_details"].split(":")
-                var_mappings_for_affiliation["arg_details_concept"] = self.namespace[namespace_name][ontology_class]
-                [namespace_name, ontology_class] = self.config["mappings"]["entity-relation-arg-details"][has_affiliation_relationship]["predicate"].split(":")
-                concept_predicate = self.namespace[namespace_name][ontology_class]
-
-                if "Time" in kb_event_mention.arguments:
-                    time_arguments = kb_event_mention.arguments["Time"]
-
-                    # TODO: Handle multiple time arguments
-                    # assert len(kb_event_mention.arguments["Time"]) == 1 # not a valid assertion
-                    time_arguments = [time_arguments[0]]
-
-                    optional_fields.append("arg_instance_time")
-                    var_mappings_for_affiliation["time"] = Literal(re.sub("\n", " ", kb_event_mention.arguments["Time"][0].value_mention_text), datatype=XSD.string)
-
-                if not ("Entity" in kb_event_mention.arguments or "Position" in kb_event_mention.arguments):
-                    print "WARNING: Affiliation event mention %s has no Entity or Position arguments" % kb_event_mention.id
-                else:
-                    if "Position" in kb_event_mention.arguments:
-                        position_arguments = kb_event_mention.arguments["Position"]
-                        if len(position_arguments) > 1:
-                            print "WARNING: Affiliation event mention %s has more than one Position argument" % kb_event_mention.id
-                            position_arguments = [position_arguments[0]]
-                        position_argument = position_arguments[0]
-                        optional_fields.append("arg_instance_position_or_role")
-                        position_argument_text = re.sub("\n", " ", position_argument.value_mention_text)
-                        var_mappings_for_affiliation["position_or_role"] = Literal(position_argument_text, datatype=XSD.string)
+                if kb_event_mention.has_topic is not None:
+                    # How does this work in an event_mention -> event context?
+                    # topic_event_id = self.kb_event_mention_to_kb_event[kb_event_mention.has_topic].id
+                    for rdf_event_id in self.kb_event_to_rdf_event_ids[self.kb.evid_to_kb_event]:
+                        self.create_triples(
+                            "event_topic",
+                            [],
+                            var_mappings={
+                                "instance":event_instance_id,
+                                "topic_event_instance":rdf_event_id
+                            }
+                        )
+                self.event_count += 1
+                self.create_triples(
+                    "event",
+                    optional_fields,
+                    var_mappings=var_mappings
+                )
+                for kb_arg_role in kb_event_mention.arguments:
+                    args_for_role = kb_event_mention.arguments[kb_arg_role]
+                    if kb_arg_role in {"has_time","has_start_time","has_end_time"}:
+                        args_for_role = [args_for_role[0]] # TODO: Remove this hack and implement an intelligent way to combine multiple conflicting time arguments
+                        self.create_triples_for_event_arg_time(kb_event,event_type,kb_event_mention,kb_arg_role,args_for_role)
+                    elif kb_arg_role in {"has_location","has_origin_location","has_destination_location","has_intermediate_location"}:
+                        self.create_triples_for_event_arg_location(kb_event,event_type,kb_event_mention,kb_arg_role,args_for_role)
                     else:
-                        position_argument_text = None
-
-                    for person_argument in kb_event_mention.arguments["Person"]:
-                        person_entity_id = self.kb.kb_mention_to_entid[person_argument]
-                        var_mappings_for_affiliation["left_arg"] = self.namespace["BBNTA1"][person_entity_id]
-                        optional_fields.append("left-sentence")
-                        var_mappings_for_affiliation["left_sentence_id"] = self.namespace["BBNTA1"][person_argument.sentence.id]
-                        assert person_argument.sentence.id == kb_event_mention.sentence.id
-                        if "Entity" in kb_event_mention.arguments:
-                            for entity_argument in kb_event_mention.arguments["Entity"]:
-                                optional_fields.append("arg_instance_predicate")
-                                entity_entity_id = self.kb.kb_mention_to_entid[entity_argument]
-                                var_mappings_for_affiliation["pred"] = concept_predicate
-                                var_mappings_for_affiliation["arg_entity_instance"] = self.namespace["BBNTA1"][entity_entity_id]
-                                optional_fields.append("right-sentence")
-                                var_mappings_for_affiliation["right_sentence_id"] = self.namespace["BBNTA1"][entity_argument.sentence.id]
-                                assert entity_argument.sentence.id == kb_event_mention.sentence.id
-
-                                if position_argument_text is not None:
-                                    event_affiliation_identifier = "EventAffiliation-%s-%s-%s" % (person_entity_id, entity_entity_id, ascii_me(re.sub("[\s\"`]", "_", position_argument_text)))
-                                else:
-                                    event_affiliation_identifier = "EventAffiliation-%s-%s" % (person_entity_id, entity_entity_id)
-                                var_mappings_for_affiliation["arg_instance"] = self.namespace["BBNTA1"][event_affiliation_identifier]
-                                self.create_triples("entity-relation-arg-details", optional_fields, var_mappings = var_mappings_for_affiliation)
-                        else: # just use the position argument
-                                event_affiliation_identifier = "EventAffiliation-%s-%s" % (person_entity_id, ascii_me(re.sub("[\s\"`]", "_", position_argument_text)))
-                                var_mappings_for_affiliation["arg_instance"] = self.namespace["BBNTA1"][event_affiliation_identifier]
-                                self.create_triples("entity-relation-arg-details", optional_fields, var_mappings = var_mappings_for_affiliation)
+                        self.create_triples_for_event_arg_other(kb_event,event_type,kb_event_mention,kb_arg_role,args_for_role)
 
 
-        for kb_arg_role in kb_event.arguments:
-            args_for_role = kb_event.arguments[kb_arg_role]
-            if kb_arg_role == "Time" or kb_arg_role == "has_time":
-                args_for_role = [args_for_role[0]] # TODO: Remove this hack and implement an intelligent way to combine multiple conflicting time arguments
-            for kb_argument in args_for_role:
-                # There are two methods for representing arguments:
-                # 1) Mentions directly reference the argument as a literal (this uses the event-arg template), i.e.:
-                #   <event> <gconcept#earliest_possible_start_time> "2014-01-01T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>
-                # 2) Mentions reference the argument through an intermediary object (this uses the event-arg-instance template), i.e.:
-                #   <event> <gconcept#associated_monetary_amount> <http://graph.causeex.com/bbn#MONETARY-2267>
-                #   <http://graph.causeex.com/bbn#MONETARY-2267> <type> <...>
-                #   <http://graph.causeex.com/bbn#MONETARY-2267> <amount_text> <...>
-                argument_attached_thru_instance = False
-                instance_argument_as_entity = None
-
-                # get argument mention text
-                if isinstance(kb_argument, KBValueMention):
-                    mention_text = kb_argument.value_mention_text
-                elif isinstance(kb_argument, KBEntity):
-                    mention_text = kb_argument.canonical_name
-                else:
-                    if kb_argument is None:
-                        continue
-                    else:
-                        print ("Not entity nor valueMention: " + str(kb_argument))
-                        sys.exit(-1)
-
-                if kb_arg_role == "Money":  # create money object, but don't attach it to the event yet
-                    argument_attached_thru_instance = True
-                    optional_fields = []
-
-                    arg_instance = self.namespace["BBNTA1"]["MONETARY-" + kb_argument.id]
-                    var_mappings["moninstance"] = arg_instance
-                    var_mappings["amount_text"] = Literal(mention_text, datatype=RDFS.Literal)
-
-                    if kb_argument.currency_amount is not None:
-                        var_mappings["money_amount"] = self.create_currency_rdf_double(kb_argument.currency_amount)
-                        optional_fields.append("money-numeric-amount")
-                    if kb_argument.currency_type is not None:
-                        currencies_not_found_in_cco = {'DjiboutiFranc', 'SomaliaShilling'}  # TODO a bit hacky?
-                        if kb_argument.currency_type in currencies_not_found_in_cco:
-                            currency_namespace = "GCONCEPT"
-                        else:
-                            currency_namespace = "CCO"
-                        var_mappings["currency_type"] = self.namespace[currency_namespace][kb_argument.currency_type]
-                        optional_fields.append("money-numeric-currency-type")
-                    if kb_argument.currency_minimum is not None:
-                        var_mappings["smallest_possible_amount"] = self.create_currency_rdf_double(kb_argument.currency_minimum)
-                        optional_fields.append("money-numeric-smallest-possible-amount")
-                    if kb_argument.currency_maximum is not None:
-                        var_mappings["largest_possible_amount"] = self.create_currency_rdf_double(kb_argument.currency_maximum)
-                        optional_fields.append("money-numeric-largest-possible-amount")
-
-                    self.create_triples(
-                        "value-money",
-                        optional_fields,
-                        var_mappings=var_mappings
-                    )
-                elif kb_arg_role == "Crime": # create crime object, but don't attach it to the event yet
-                    argument_attached_thru_instance = True
-                    optional_fields = []
-
-                    arg_instance = self.namespace["BBNTA1"]["CRIME-" + kb_argument.id]
-                    var_mappings["crimeinstance"] = arg_instance
-                    var_mappings["crime_text"] = Literal(mention_text, datatype=RDFS.Literal)
-
-                    self.create_triples(
-                        "value-crime",
-                        optional_fields,
-                        var_mappings=var_mappings
-                    )
-                elif kb_arg_role == "Time" or kb_arg_role == "time" or kb_arg_role == "has_time": # attach time triples to event TODO: fix this role to just one spelling
-                    kb_arg_role == "Time"
-                    argument_attached_thru_instance = False
-                    optional_fields = []
-
-                    time_text = Literal(re.sub("\n", " ", mention_text), datatype=XSD.string)
-                    var_mappings["time_text"] = time_text
-                    optional_fields.append("time_text")
-
-                    if kb_argument.normalized_date is not None:
-                        startTime, endTime = self.time_matcher.match_time(kb_argument.normalized_date)
-                        if startTime is not None and endTime is not None:
-                            var_mappings["earliest_possible_start_time"] = Literal(
-                                startTime.replace(microsecond=0).isoformat(), datatype=XSD.dateTime)
-                            #var_mappings["earliest_possible_end_time"] = Literal(
-                            #    startTime.replace(microsecond=0).isoformat(), datatype=XSD.dateTime)
-                            #var_mappings["latest_possible_start_time"] = Literal(
-                            #    endTime.replace(microsecond=0).isoformat(), datatype=XSD.dateTime)
-                            var_mappings["latest_possible_end_time"] = Literal(
-                                endTime.replace(microsecond=0).isoformat(), datatype=XSD.dateTime)
-                            #optional_fields.append("time_quadriple")
-                            optional_fields.append("time_tuple")
-                    self.create_triples(
-                        "event-arg",
-                        optional_fields,
-                        var_mappings
-                    )
-                elif isinstance(kb_argument, KBValueMention): # Handle other types of value mentions; just attach their mention_text to the event using the appropriate predicate
-                    argument_attached_thru_instance = False
-                    optional_fields = ["value-mention"]
-
-                    var_mappings["instance"] = self.namespace["BBNTA1"][kb_event.id]
-                    if event_basename in self.config["mappings"]["event-role"]["byEventType"]:
-                        [namespace_name, ontology_class] = self.config["mappings"]["event-role"]["byEventType"][event_basename][kb_arg_role]["default"].split(":")
-                    else:
-                        [namespace_name, ontology_class] = self.config["mappings"]["event-role"]["default"][kb_arg_role]["default"].split(":")
-                    var_mappings["pred"] = self.namespace[namespace_name][ontology_class]
-                    var_mappings["mention_text"] = Literal(mention_text, datatype=RDFS.Literal)
-
-                    self.create_triples(
-                        "event-arg",
-                        optional_fields,
-                        var_mappings
-                    )
-
-                elif kb_argument in self.kb.entid_to_kb_entity:
-                    argument_attached_thru_instance = True
-                    instance_argument_as_entity = self.kb.entid_to_kb_entity[kb_argument]
-
-                    arg_instance = self.get_entity_ontology_object(instance_argument_as_entity)
-
-                if argument_attached_thru_instance:
-                    # create triples for argument
-                    # get a predicate from event role
-                    if event_basename in self.config["mappings"]["event-role"]["byEventType"]:
-                        predicate_mappings = self.config["mappings"]["event-role"]["byEventType"][event_basename][kb_arg_role]
-                    else:
-                        predicate_mappings = self.config["mappings"]["event-role"]["default"][kb_arg_role]
-                    if instance_argument_as_entity is not None:
-                        # argument will be linked in RDF directly as the entity, rather than an intermediate object
-                        ace_entity_type_with_subtype = instance_argument_as_entity.get_best_entity_type()
-                        ace_entity_type = ace_entity_type_with_subtype.split(".")[0]
-                        if ace_entity_type_with_subtype in predicate_mappings or ace_entity_type in predicate_mappings:
-                            # there is a listed override for the predicate for the entity type
-                            if ace_entity_type_with_subtype in predicate_mappings:
-                                 # look at the more specific type first
-                                [namespace_name, ontology_class] = predicate_mappings[ace_entity_type_with_subtype].split(":")
-                            else:
-                                [namespace_name, ontology_class] = predicate_mappings[ace_entity_type].split(":")
-                        else:
-                            # there is no listed override for the entity type, so just use the default predicate
-                            [namespace_name, ontology_class] = predicate_mappings["default"].split(":")
-                    else:
-                        # argument will be linked in RDF as an intermediate object, so just use the default predicate
-                        [namespace_name, ontology_class] = predicate_mappings["default"].split(":")
-                    mpred = self.namespace[namespace_name][ontology_class]
-                    event_instance = self.namespace["BBNTA1"][kb_event.id]
-
-                    # Discard triples that violate domain/range constraints
-                    if not self.check_subclass_rules(
-                            event_instance, mpred, arg_instance):
-                        #print('dropping: {}, {}, {}'.format(event_instance, mpred, arg_instance))
-                        continue
-
-                    # create a triple for argument attachment
-                    self.create_triples(
-                        "event-arg-instance",
-                        [],
-                        var_mappings={
-                            "instance": event_instance,
-                            "pred": mpred,
-                            "arg_instance": arg_instance
-                        }
-                    )
 
     def get_entity_mention_ontology_type_object(self, kb_mention_type):
         mention_type_mappings = {
@@ -1182,15 +1473,17 @@ class RDFSerializer:
         for whitelists_file in os.listdir(whitelists_dirpath):
             self.whitelist.extend(self.read_file_lines(whitelists_dirpath + "/" + whitelists_file))
 
-    def add_triples_seed_description(self, seed_milestone, seed_type, seed_version):
+    def add_triples_seed_description(self, author, seed_milestone, seed_type, seed_version, time_completed):
         self.create_triples(
             "seed",
             [],
             var_mappings={
+                "author": Literal(author.replace("\t"," ").replace("\n"," "), datatype=XSD.string),
                 "instance": self.namespace["BBNTA1"]["Seed-" + datetime.now().strftime("%Y%m%d")],
                 "seed_milestone": Literal(seed_milestone, datatype=XSD.string),
                 "seed_type": Literal(seed_type, datatype=XSD.string),
-                "seed_version": Literal(seed_version, datatype=XSD.string)
+                "seed_version": Literal(seed_version, datatype=XSD.string),
+                "time_completed": Literal(time_completed, datatype=XSD.dateTime)
             }
         )
 
@@ -1199,15 +1492,6 @@ class RDFSerializer:
         seen_uuids = set()
         for docid in self.kb.docid_to_kb_document:
             kb_document = self.kb.docid_to_kb_document.get(docid)
-            document_properties = kb_document.properties
-
-            var_mappings = {
-                "instance": self.get_causeex_docid(kb_document),
-                "credibility": Literal(document_properties["credibility"], datatype=XSD.float)
-            }
-
-            optional_fields = []
-            self.create_triples("documents", optional_fields, var_mappings=var_mappings)
 
             for kb_sentence in kb_document.sentences:
                 sentenceId = kb_sentence.id
@@ -1220,7 +1504,7 @@ class RDFSerializer:
                         "sentenceCharOffset": Literal(self.adjust_offset(kb_sentence.start_offset, kb_document), datatype=XSD.long),
                         "sentenceCharLength": Literal(kb_sentence.end_offset - kb_sentence.start_offset + 1,
                                                       datatype=XSD.long),
-                        "sentenceTextValue": Literal(re.sub("\n", " ", kb_sentence.text), datatype=XSD.string)
+                        "sentenceTextValue": Literal(re.sub("\n", " ", kb_sentence.original_text), datatype=XSD.string)
                     }
                 )
 
@@ -1233,6 +1517,15 @@ class RDFSerializer:
             if kb_document.properties["uuid"] in seen_uuids:
                 continue
             seen_uuids.add(kb_document.properties["uuid"])
+
+            document_properties = kb_document.properties
+            var_mappings = {
+                "instance": self.get_causeex_docid(kb_document),
+                "credibility": Literal(document_properties["credibility"], datatype=XSD.float)
+            }
+
+            optional_fields = []
+            self.create_triples("documents", optional_fields, var_mappings=var_mappings)
 
             original_cdr_file = document_properties["source"]
             if os.path.exists(original_cdr_file):
@@ -1247,7 +1540,7 @@ class RDFSerializer:
                     line = line.replace("DataProvenance#description>", "GeneralConcepts#description>") 
                     # Sanity check on triples from cdr
                     if line.count(">") != line.count("<"):
-                        print "Skipping metadata triple from " + kb_document.id + " due to differing number of brackets"
+                        print("Skipping metadata triple from " + kb_document.id + " due to differing number of brackets")
                         continue
                     self.triples_from_cdr += line
                     self.triples_from_cdr += "\n"
@@ -1323,8 +1616,8 @@ class RDFSerializer:
 
         for input_count, input_document in \
                 enumerate(self.kb.structured_documents):
-            print "RDFSerializer creating triples from StructuredInput (" + \
-                  str(input_count) + "/" + str(inputs_length) + ")"
+            print("RDFSerializer creating triples from StructuredInput (" + \
+                  str(input_count) + "/" + str(inputs_length) + ")")
             self.structured_input_file_count += 1
 
             for worksheet in input_document.sheets:
@@ -1367,9 +1660,9 @@ class RDFSerializer:
         for count, causal_relation in enumerate(
                 self.kb.structured_relationships):
             if count % 1000 == 0:
-                print "RDFSerializer creating triples from " \
+                print("RDFSerializer creating triples from " \
                       "StructuredRelationship (" + \
-                      str(count) + "/" + str(num_relationships) + ")"
+                      str(count) + "/" + str(num_relationships) + ")")
             self.structured_relationship_count += 1
             # write to graph
             causal_relation.serialize(self.graph)
@@ -1508,11 +1801,20 @@ class RDFSerializer:
                 if not self.check_subclass_rules(s, p, o):
                     self.graph.remove((s, p, o))
                     missed_failures[predicate] += 1
+                    print ("REMOVE: {}\t{}\t{}".format(s, p, o))
         if len(missed_failures) > 0:
-            print 'Discarded triples with bad domain/range which were mistakenly added:'
+            print('Discarded triples with bad domain/range which were mistakenly added:')
         for k in sorted(missed_failures.keys()):
-            print missed_failures[k], k
+            print(missed_failures[k], k)
 
+    def get_canonical_name_from_entity(self, kb_entity):
+        if "canonical_mention" in kb_entity.properties:
+            canonical_mention = kb_entity.properties["canonical_mention"]
+            if canonical_mention.mention_type == "name":
+                return canonical_mention.mention_original_head_text
+            else:
+                return canonical_mention.mention_original_text
+        return None
 
 # Typically, we don't run from the command line, we use this class as 
 # part of kb_constructor.py run. But if we've run the KBPickleSerializer
@@ -1520,14 +1822,14 @@ class RDFSerializer:
 # pickled KB here.
 if __name__ == "__main__":
     if len(sys.argv) != 8:
-        print "Usage: " + sys.argv[0] + " mode pickled_kb_file seed_milestone seed_type seed_version output_ttl_file output_nt_file"
+        print("Usage: " + sys.argv[0] + " mode pickled_kb_file seed_milestone seed_type seed_version output_ttl_file output_nt_file")
         sys.exit(1)
 
     mode,seed_milestone, seed_type, seed_version, pickled_kb_file, output_ttl_file, output_nt_file = sys.argv[1:]
     with open(pickled_kb_file, "rb") as pickle_stream:
-        print "Loading pickle file..."
+        print("Loading pickle file...")
         kb = pickle.load(pickle_stream)
-        print "Done loading. Serializing..."
+        print("Done loading. Serializing...")
         rdf_serializer = RDFSerializer()
         rdf_serializer.serialize(kb, mode,seed_milestone, seed_type, seed_version,output_ttl_file, output_nt_file)
         print('Dropped triples for the following subclassing constraints:')

@@ -57,15 +57,15 @@
 
   "http://ontology.causeex.com/ontology/odps/Event#has_destination": {
     "range": [
-      "http://ontology.causeex.com/ontology/odps/Event#Location",
-      "http://ontology.causeex.com/ontology/odps/Event#LocationDetails"],
+      "http://ontology.causeex.com/ontology/odps/GeneralConcepts#Location",
+      "http://ontology.causeex.com/ontology/odps/GeneralConcepts#LocationDetails"],
     "domain": ["http://ontology.causeex.com/ontology/odps/Event#Event"]
   },
 
   "http://ontology.causeex.com/ontology/odps/Event#has_origin": {
     "range": [
-      "http://ontology.causeex.com/ontology/odps/Event#Location",
-      "http://ontology.causeex.com/ontology/odps/Event#LocationDetails"],
+      "http://ontology.causeex.com/ontology/odps/GeneralConcepts#Location",
+      "http://ontology.causeex.com/ontology/odps/GeneralConcepts#LocationDetails"],
     "domain": ["http://ontology.causeex.com/ontology/odps/Event#Event"]
   },
 

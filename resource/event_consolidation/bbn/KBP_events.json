@@ -1,0 +1,247 @@
+{
+  "mappings": {
+    "event": {
+      "Business.Declare-Bankruptcy" : "Event",
+      "Business.Declare.Bankruptcy" : "Event",
+      "Business.Merge-Org" : "Event",
+      "Business.Merge.Org" : "Event",
+      "Conflict.Attack" : "Event",
+      "Conflict.Demonstrate" : "Event",
+      "Contact.Broadcast" : "Event",
+      "Contact.Contact" : "Event",
+      "Contact.Correspondence" : "Event",
+      "Contact.Meet" : "Event",
+      "Contact.Phone-Write" : "Event",
+      "Contact.Phone.Write" : "Event",
+      "Justice.Appeal" : "Event",
+      "Justice.Acquit" : "Event",
+      "Justice.Arrest-Jail" : "Event",
+      "Justice.Arrest.Jail" : "Event",
+      "Justice.Charge-Indict" : "Event",
+      "Justice.Charge.Indict" : "Event",
+      "Justice.Convict" : "Event",
+      "Justice.Execute" : "Event",
+      "Justice.Extradite" : "Event",
+      "Justice.Fine" : "Event",
+      "Justice.Pardon" : "Event",
+      "Justice.Release-Parole" : "Event",
+      "Justice.Release.Parole" : "Event",
+      "Justice.Sentence" : "Event",
+      "Justice.Sue" : "Event",
+      "Justice.Trial-Hearing" : "Event",
+      "Justice.Trial.Hearing" : "Event",
+      "Life.Be-Born" : "Event",
+      "Life.Be.Born" : "Event",
+      "Life.Die" : "Event",
+      "Life.Divorce" : "Event",
+      "Life.Injure" : "Event",
+      "Life.Marry" : "Event",
+      "Manufacture.Artifact" : "Event",
+      "Movement.Transport" : "Event",
+      "Movement.Transport-Artifact" : "Event",
+      "Movement.Transport.Artifact" : "Event",
+      "Movement.Transport-Person" : "Event",
+      "Movement.Transport.Person" : "Event",
+      "Personnel.Elect" : "Event",
+      "Personnel.Nominate" : "Event",
+      "Transaction.Transaction" : "Event",
+      "Transaction.Transfer-Money" : "Event",
+      "Transaction.Transfer.Money" : "Event",
+      "Transaction.Transfer-Ownership" : "Event",
+      "Transaction.Transfer.Ownership" : "Event",
+      "Business.Start-Org" : "Event",
+      "Business.Start.Org" : "Event",
+      "Business.End-Org" : "Event",
+      "Business.End.Org" : "Event",
+      "Personnel.End-Position" : "Event",
+      "Personnel.End.Position" : "Event",
+      "Personnel.Start-Position" : "Event",
+      "Personnel.Start.Position" : "Event"
+    },
+    "event-role": {
+      "default": {
+        "Source": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+        "Target": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+        "active": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+        "affected": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+        "provider": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+        "recipient": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+        "Place": { "default": "has_location" },
+        "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+	"Speaker" : { "default": "has_active_actor" }
+      },
+      "byEventType": {
+        "Business.Start-Org": {},
+        "Business.Declare-Bankruptcy": {},
+        "Business.End-Org": {},
+        "Business.Merge-Org": {},
+        "Conflict.Attack": {
+          "Attacker": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+          "Instrument": { "default": "has_artifact" },
+          "Target": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+          "Place": { "default": "has_location" },
+          "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
+        },
+        "Conflict.Demonstrate":
+        {
+            "Entity": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
+        },
+        "Contact.Broadcast":
+        {
+            "Audience": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Entity": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
+        },
+        "Contact.Contact":
+        {
+            "Entity": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
+        },
+        "Contact.Correspondence":
+        {
+            "Entity": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
+        },
+        "Contact.Meet":
+        {
+            "Entity": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
+        },
+        "Contact.Phone-Write": {},
+        "Justice.Appeal": {},
+        "Justice.Acquit": {},
+        "Justice.Arrest-Jail":
+        {
+            "Agent": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Person": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
+        },
+        "Justice.Charge-Indict": {},
+        "Justice.Convict": {},
+        "Justice.Execute": {},
+        "Justice.Extradite": {},
+        "Justice.Fine": {},
+        "Justice.Pardon": {},
+        "Justice.Release-Parole": {},
+        "Justice.Sentence": {},
+        "Justice.Sue": {},
+        "Justice.Trial-Hearing": {},
+        "Life.Be-Born": {},
+        "Life.Die":
+        {
+            "Agent": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Instrument": { "default": "has_artifact" },
+            "Victim": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
+        },
+        "Life.Divorce": {},
+        "Life.Injure":
+        {
+            "Agent": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Instrument": { "default": "has_artifact" },
+            "Victim": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
+        },
+        "Life.Marry": {},
+        "Manufacture.Artifact":
+        {
+            "Agent": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Artifact": { "default": "has_artifact", "ORG": "has_actor" },
+            "Instrument": { "default": "has_artifact" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
+        },
+        "Movement.Transport":
+        {
+            "Agent": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Artifact": { "default": "has_artifact", "ORG": "has_actor" },
+            "Destination": { "default": "has_destination_location" },
+            "Instrument": { "default": "has_artifact" },
+            "Origin": { "default": "has_origin_location" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
+        },
+        "Movement.Transport-Artifact":
+        {
+            "Agent": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Artifact": { "default": "has_artifact", "ORG": "has_actor" },
+            "Destination": { "default": "has_destination_location" },
+            "Instrument": { "default": "has_artifact" },
+            "Origin": { "default": "has_origin_location" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
+        },
+        "Movement.Transport-Person":
+        {
+            "Agent": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Destination": { "default": "has_destination_location" },
+            "Instrument": { "default": "has_artifact" },
+            "Origin": { "default": "has_origin_location" },
+            "Person": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
+        },
+        "Personnel.Elect":
+        {
+            "Agent": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Person": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Position": { "default": "has_actor" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
+        },
+        "Personnel.End-Position":
+        {
+            "Entity": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Person": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Position": { "default": "has_actor" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
+        },
+        "Personnel.Nominate": {},
+        "Personnel.Start-Position":
+        {
+            "Entity": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Person": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Position": { "default": "has_actor" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
+        },
+        "Transaction.Transaction":
+        {
+            "Beneficiary": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Giver": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Recipient": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
+        },
+        "Transaction.Transfer-Money":
+        {
+            "Beneficiary": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Giver": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Money": { "default": "has_artifact" },
+            "Recipient": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
+        },
+        "Transaction.Transfer-Ownership":
+        {
+            "Beneficiary": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Giver": { "default": "has_active_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Recipient": { "default": "has_affected_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" },
+            "Thing": { "default": "has_artifact", "ORG": "has_actor" },
+            "Place": { "default": "has_location" },
+            "Actor": { "default": "has_actor", "VEH": "has_artifact", "WEA": "has_artifact", "FAC": "has_artifact", "LOC": "has_artifact", "GPE.Continent": "has_artifact" }
+        }
+      }
+    }
+  }
+}

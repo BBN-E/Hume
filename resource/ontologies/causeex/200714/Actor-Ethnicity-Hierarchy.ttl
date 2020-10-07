@@ -1,0 +1,1714 @@
+@prefix : <http://ontology.causeex.com/ontology/odps/Actor#> .
+@prefix actor: <http://ontology.causeex.com/ontology/odps/Actor#> .
+@prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ontology.causeex.com/ontology/odps/Actor-Ethnicity-Hierarchy> rdf:type owl:Ontology ;
+    dcterms:description "Ontology extending and adjusting the CCO Ethnicity class hierarchy. Some of the existing classes from the OEEthnicity ontology are replicated to avoid importing the file, which was incomplete, duplicative (e.g., both Acehnese and Aceh_of_Sumatra classes are defined), ambiguous (for example, Caucasian_Peoples could refer to either people living in the Caucasus or 'white people'), location- or language-oriented (e.g, Borneo-Kalimantan is defined) and/or incorrect (Deaf not being ethnicity but a disability). Also note that NamedIndividuals are not defined - classes can be used as individuals via OWL punning."@en ;
+    dcterms:created "April 18, 2018"^^xsd:string ;
+    dcterms:modified "February 5, 2019"^^xsd:string ;
+    rdfs:comment """February 5th 2019 revisions:
+                    Corrected non-UTF-8 characters in class descriptions.
+                    Corrected Java Unicode to be UTF-8 hexidecimal.
+                    Separated the ActorExtensions ontology into separate ontologies - this one deals with ethnicities.
+                    Many of the ethnicities and their descriptions are taken from their Wikipedia entries (especially referencing https://en.wikipedia.org/wiki/List_of_contemporary_ethnic_groups).
+                    Other ethnicities are drawn from the information on the page, https://www.nationmaster.com/country-info/stats/People/Ethnic-groups.
+                  October 22nd 2018 revisions:
+                    Added European-related ethnicities and individuals.
+                    Modified the imports to only add the ontologies explicitly referenced.
+                  August 3rd 2018 revisions:
+                    Added import of the Actor ontology for completeness."""@en ;
+    owl:imports <http://ontology.causeex.com/ontology/odps/Actor-ReificationsAndProperties> ;
+    owl:imports <http://purl.org/dc/terms> ;
+    owl:versionInfo "Version 0.4"^^xsd:string .
+
+
+#################################################################
+#   Classes
+#################################################################
+
+:Abazin a owl:Class ;
+    rdfs:label "Abazin (aka, Abazinians or Abaza)"@en ;
+    rdfs:comment "Ethnic group of the Northwest Caucasus. Their language, Abaza, is derived from Abazgi."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Abkhazian a owl:Class ;
+    rdfs:label "Abkhazian"@en ;
+    rdfs:comment "Ethnic group of the Northwest Caucasus. Sub-groups include the Bzyb, Abzhui and Zamurzakan.  Their language, Abkhaz, is derived from Abazgi."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:AboriginalAustralian a owl:Class ;
+    rdfs:label "Aboriginal Australian (aka Aborigine)"@en ;
+    rdfs:comment "Indigenous to Australia and the island of Tasmania. Sub-groups include the Tjapukai or Djabugay people."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Acehnese a owl:Class ;
+    rdfs:label "Acehnese"@en ;
+    rdfs:comment "Ethnic group from Aceh, Indonesia, on the northernmost tip of the island of Sumatra. Their language, Acehnese, is derived from Chamic."@en ;
+    rdfs:subClassOf :Austronesian .
+
+:Achang a owl:Class ;
+    rdfs:label "Achang (aka Ngac'ang or Maingtha)"@en ;
+    rdfs:comment "Chinese ethnic group from Yunnan province."@en ;
+    rdfs:subClassOf :Chinese .
+
+:Acoli a owl:Class ;
+    rdfs:label "Acoli (aka Acholi)"@en ;
+    rdfs:comment "Ethnic group from South Sudan, northern Uganda (an area sometimes referred to as Acoliland) and Kenya."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Adi a owl:Class ;
+    rdfs:label "Adi"@en ;
+    rdfs:comment "Indigenous ethnic group from the Indian state of Arunachal and Tibet."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Adjoukrou a owl:Class ;
+    rdfs:label "Adjoukrou (aka Adyukru, Adioukrou, Adyoukrou, Ajukru, Ajukru or Bubari)"@en ;
+    rdfs:comment "Tribe indigenous to the Ivory Coast. Their language, Adjukru, is a branch of the Kwa."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Afar a owl:Class ;
+    rdfs:label "Afar (aka Danakil, Adali or Odali)"@en ;
+    rdfs:comment "Cushitic peoples inhabiting the Horn of Africa."@en ;
+    rdfs:subClassOf :Cushite .
+
+:Afemai a owl:Class ;
+    rdfs:label "Afemai (aka Afenmai)"@en ;
+    rdfs:comment "Ethnic group of people living in the northern part of Edo State in Nigeria."@en ;
+    rdfs:subClassOf :Cushite .
+
+:AfricanPygmy a owl:Class ;
+    rdfs:label "African Pygmy (aka Congo Pygmy)"@en ;
+    rdfs:comment "Group of various tribal ethnicities, living (at least partially) a forager and hunter-gatherer lifestyle, native to Central Africa. The various ethnicities usually are classified by geography into three groups: 1) the Mbenga or Binga near the Atlantic (which include the Aka, Baka, Bedzan, Beku, Bongo, Gyele - aka Jelli, Koa, Kola, Koya - aka Kuya, Rimba, and Yaga), 2) the Ituri forest people in the north/northeast portion of the Democratic Republic of the Congo (which include the Mbuti - aka Kango, Efe and Asua), and 3) the Twa (aka Cwa or Gesera) scattered through Rwanda, Burundi, the Democratic Republic of the Congo, Tanzania, Uganda, Zambia, Angola and Namibia."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Afrikaner a owl:Class ;
+    rdfs:label "Afrikaner"@en ;
+    rdfs:comment "An Afrikaans-speaking person in South Africa, typically descended from the Dutch and Huguenot settlers."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Agaw a owl:Class ;
+    rdfs:label "Agaw"@en ;
+    rdfs:comment "Cushitic group inhabiting Ethiopia and neighboring Eritrea. Sub-groups include the Bilen (aka Blin), Awi and Qemant."@en ;
+    rdfs:subClassOf :Cushite .
+
+:Ahom a owl:Class ;
+    rdfs:label "Ahom (aka Tai-Ahom)"@en ;
+    rdfs:comment "People of Assam and Arunachal (India) and Kachin (China)."@en ;
+    rdfs:subClassOf :Tai .
+
+:Aimaq a owl:Class ;
+    rdfs:label "Aimaq (aka Aimak or Aymaq)"@en ;
+    rdfs:comment "Collection of Persian-speaking nomadic and semi-nomadic tribes found mostly in Afghanistan, Pakistan and Iran. Sub-groups include the Aimaq Hazara, Firozkohi, Jamshidi, Kipchak, Timuri (aka Taimuri) and Taymani, although the latter regard themselves as Pashtun."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Akan a owl:Class ;
+    rdfs:label "Akan"@en ;
+    rdfs:comment "Group of ethnicities predominantly speaking Central Tano languages and residing in Ghana. Sub-groups include the Asante, Akuapem, Akyem, Wassa, Abron (aka Bono), Anyi, Baoule (Baoul&#x00E9;, aka Baule), Sefwi, Nzema, Ahanta, Tchaman (aka Ebrie/&#x00C9;bri&#x00E9;), Abbe (Abb&#x00E9;), Chakosi and Abidji."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Alawite a owl:Class ;
+    rdfs:label "Alawite (aka Alawi)"@en ;
+    rdfs:comment "Ethnoreligious group and sect of Shia Islam, primarily centered in Syria."@en ;
+    rdfs:subClassOf :Syrian .
+
+:Albanian a owl:Class ;
+    rdfs:label "Albanian"@en ;
+    rdfs:comment "Ethnic group native to the Balkan Peninsula, primarily living in Albania, Kosovo, Macedonia, Montenegro, Serbia, Croatia, Greece and Italy, also forming a diaspora in other areas of the globe. Sub-groups include the Gheg (aka Geg), Tosk, Kosovar, Cham Albanian, Arbereshe (Arb&#x00EB;resh&#x00EB;), among others."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Alur a owl:Class ;
+    rdfs:label "Alur"@en ;
+    rdfs:comment "Ethnic group who live in northwestern Uganda and northeastern Democratic Republic of the Congo, part of the larger Luo-speaking community."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Ambundu a owl:Class ;
+    rdfs:label "Ambundu (aka Northern Mbundu)"@en ;
+    rdfs:comment "Bantu people living in Angola's north-west."@en ;
+    rdfs:subClassOf :Bantu .
+
+:AmericanIndigenous a owl:Class ;
+    rdfs:label "Indigenous peoples from North, Central and South America"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Amhara a owl:Class ;
+    rdfs:label "Amhara (aka Abyssinian)"@en ;
+    rdfs:comment "Ethnic group traditionally inhabiting the northern and central highlands of Ethiopia. Their language, Amharic, is a Semitic language."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Anaang a owl:Class ;
+    rdfs:label "Anaang (aka Annang)"@en ;
+    rdfs:comment "Ethnic group native to Nigeria."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Anabaptist a owl:Class ;
+    rdfs:label "Anabaptist"@en ;
+    rdfs:comment "Various ethnoreligious communities including Amish, Hutterite and Mennonite."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Anuak a owl:Class ;
+    rdfs:label "Anuak (aka Anyuak, Anywaa or Anywaa)"@en ;
+    rdfs:comment "Ethnic group inhabiting parts of East Africa whose language belongs to the Luo family."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Arab a owl:Class ;
+    rdfs:label "Arab"@en ;
+    rdfs:comment "A member of the population descended from or living in the Arab World (Algeria, Bahrain, the Comoros Islands, Djibouti, Egypt, Iraq, Jordan, Kuwait, Lebanon, Libya, Morocco, Mauritania, Oman, Palestine, Qatar, Saudi Arabia, Somalia, Sudan, Syria, Tunisia, the United Arab Emirates, and Yemen). Arabs also are part of a significant diaspora across the globe."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Armenian a owl:Class ;
+    rdfs:label "Armenian"@en ;
+    rdfs:comment "Ethnic group native to the Armenian Highlands in western Asia. Sub-groups include the Hemshin (aka Hemshinli, Hamshenis or Homshetsi), Cherkesogai (aka Circassian Armenians) and Karabakhi."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Aromanian a owl:Class ;
+    rdfs:label "Aromanian"@en ;
+    rdfs:comment "Ethnic group native to the Balkans, traditionally living in northern and central Greece, central and southern Albania, the Republic of Macedonia, Kosovo and south-western Bulgaria."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Arvanite a owl:Class ;
+    rdfs:label "Arvanite"@en ;
+    rdfs:subClassOf :Albanian .
+
+:Ashkali a owl:Class ;
+    rdfs:label "Ashkali (aka Ashkaeli)"@en ;
+    rdfs:comment "A 'new' ethnicity (established in the 1990s) who mainly inhabit Kosovo. They speak the Albanian language."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Asmat a owl:Class ;
+    rdfs:label "Asmat"@en ;
+    rdfs:comment "Ethnic group of New Guinea, residing in the Papua province of Indonesia."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Assamese a owl:Class ;
+    rdfs:label "Assamese"@en ;
+    rdfs:comment "Indigenous people of the state of Assam in northeast India. Sub-groups include the Chutiya."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Asturian a owl:Class ;
+    rdfs:label "Asturian"@en ;
+    rdfs:comment "Ethnic group of the Principality of Asturias in Spain, with smaller communities in other Spanish provinces."@en ;
+    rdfs:subClassOf :Spanish .
+
+:Assyrian a owl:Class ;
+    rdfs:label "Assyrian (aka Syriac, Aramean or Chaldean)"@en ;
+    rdfs:comment "Ethnic group indigenous to Western Asia. Sub-groups include the Mandaean, Iraqi, Syrian and Rum (R&#x00FB;m, aka Antiochian Greek Christians)."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Atoni a owl:Class ;
+    rdfs:label "Atoni (aka Atoin Meto, Atoin Pah Meto or Dawan)"@en ;
+    rdfs:comment "Ethnic group in Timor, Indonesian West Timor and the East Timorese enclave of Oecussi-Ambeno."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Atyap a owl:Class ;
+    rdfs:label "Atyap (aka Kataf)"@en ;
+    rdfs:comment "Ethnic group occupying part of the Zangon-Kataf Local Government Area of Kaduna State, Nigeria."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:AustraloMelanesianPygmy a owl:Class ;
+    rdfs:label "Australo-Melanesian Pygmy"@en ;
+    rdfs:comment "Group of various tribal ethnicities, including various indigenous peoples of the Philippines (such as the Batak and Agta - aka Aeta), the Andamanese of the Andaman Islands, the Semang of the Malay Peninsula, and the Rampasasa pygmies of Flores, Indonesia."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Austronesian a owl:Class ;
+    rdfs:label "Austronesian"@en ;
+    rdfs:comment "Various groups of peoples in Southeast Asia, Oceania and East Africa that speak Austronesian languages. These include the majority of ethnic groups in the Philippines, East Timor, Indonesia, Malaysia, Brunei, Cocos (Keeling) Islands, Polynesia, Micronesia and Madagascar, as well as the Malays of Singapore, the Polynesians of New Zealand and Hawaii and the non-Papuan peoples of Melanesia."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Austrian a owl:Class ;
+    rdfs:label "Austrian"@en ;
+    rdfs:comment "Ethnic groups native to modern Austria and South Tyrol that share a common culture, descent and history."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Avar a owl:Class ;
+    rdfs:label "Avar"@en ;
+    rdfs:comment "Northeast Caucasian native ethnic group in the Russian republic of Dagestan."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Awori a owl:Class ;
+    rdfs:label "Awori"@en ;
+    rdfs:comment "Tribe of the Yoruba people speaking a distinct dialect, found in Ogun State and Lagos State, Nigeria."@en ;
+    rdfs:subClassOf :Yoruba .
+
+:Aymara a owl:Class ;
+    rdfs:label "Aymara (aka Aimara)"@en ;
+    rdfs:comment "Indigenous nation in the Andes, Altiplano regions of South America, Bolivia, Peru and Chile."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Azerbaijani a owl:Class ;
+    rdfs:label "Azerbaijani (aka Azeri or Azerbaijani Turk)"@en ;
+    rdfs:comment "People living mainly in the Iranian region of Azerbaijan and the (former Soviet) Republic of Azerbaijan. Sub-groups include the Qarapapaq (aka Karapapak), Bayat, Shahsevan, Qaradaghi (aka Karadaghi) and Ayrum. Their language is part of the Turkic family."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Bafuliiru a owl:Class ;
+    rdfs:label "Bafuliiru. (aka Fuliiru, Bafuliru, Kifuliru, Kifuliiru, Bafuliru, Bafuliiru or Bafuliru)"@en ;
+    rdfs:subClassOf :Bantu .
+
+:Baggara a owl:Class ;
+    rdfs:label "Baggara (Bagg&#x00E3;ra, aka Shuwa/Diffa Arab)"@en ;
+    rdfs:comment "Arab ethnic groups inhabiting the portion of Africa's Sahel mainly between Lake Chad and southern Kordofan."@en ;
+    rdfs:subClassOf :Arab .
+
+:Bahraini a owl:Class ;
+    rdfs:label "Bahraini (aka Baharna)"@en ;
+    rdfs:comment "Shia Muslim ethnoreligious group who mainly inhabit the historical region of Eastern Arabia."@en ;
+    rdfs:subClassOf :Arab .
+
+:Bai a owl:Class ;
+    rdfs:label "Bai (aka Baip)"@en ;
+    rdfs:subClassOf :Chinese .
+
+:Bakhtiari a owl:Class ;
+    rdfs:label "Bakhtiari"@en ;
+    rdfs:comment "Southwestern Iranian tribe and a subgroup of the Lurs."@en ;
+    rdfs:subClassOf :Lur .
+
+:Balanta a owl:Class ;
+    rdfs:label "Balanta"@en ;
+    rdfs:comment "Ethnic group found in Guinea-Bissau, Senegal and The Gambia."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Balinese a owl:Class ;
+    rdfs:label "Balinese"@en ;
+    rdfs:comment "Austronesian ethnic group native to the Indonesian island of Bali. Sub-groups include the Betawi."@en ;
+    rdfs:subClassOf :Austronesian .
+
+:BalkanEgyptian a owl:Class ;
+    rdfs:label "Balkan Egyptian (aka Egypcani)"@en ;
+    rdfs:comment "A 'new' ethnicity (established in the 1990s) who mainly inhabit Macedonia and Kosovo. They speak the Albanian language."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Balkar a owl:Class ;
+    rdfs:label "Balkar"@en ;
+    rdfs:comment "People of the Caucasus region, one of the primary populations of Kabardino-Balkaria. Their language is part of the Turkic family."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Baloch a owl:Class ;
+    rdfs:label "Baloch (aka Balochi or Baluch)"@en ;
+    rdfs:comment "People who live mainly in the Balochistan region of the southeastern-most edge of the Iranian plateau in Pakistan, Iran, and Afghanistan, as well as in the Arabian Peninsula."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Balti a owl:Class ;
+    rdfs:label "Balti"@en ;
+    rdfs:comment "Ethnic group of Tibetan and Dardic descent who live in the Gilgit–Baltistan region of Pakistan and the Kargil region of India."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Bamar a owl:Class ;
+    rdfs:label "Bamar (aka Burmese or Burman)"@en ;
+    rdfs:comment "Dominant ethnic group in Mynamar."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Bambara a owl:Class ;
+    rdfs:label "Bambara"@en ;
+    rdfs:comment "Mande ethnic group native to much of West Africa, primarily southern Mali, Guinea, Burkina Faso and Senegal. Sub-groups include the Haratin (aka Harratin, Haratine or Hartani)."@en ;
+    rdfs:subClassOf :Mande .
+
+:Bamileke a owl:Class ;
+    rdfs:label "Bamileke"@en ;
+    rdfs:comment "Dominant group in Cameroon's West and Northwest Regions."@en ;
+    rdfs:subClassOf :Bantu .
+
+:Banda a owl:Class ;
+    rdfs:label "Banda"@en ;
+    rdfs:comment "Ethnic group of the Central African Republic, the Democratic Republic of the Congo, Cameroon, and South Sudan."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Banjarese a owl:Class ;
+    rdfs:label "Banjarese (aka Banjar)"@en ;
+    rdfs:comment "Ethnic group in South Kalimantan, Indonesia."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Bantu a owl:Class ;
+    rdfs:label "Bantu"@en ;
+    rdfs:comment "Speakers of Bantu languages, comprising several hundred ethnic groups in sub-Saharan Africa, which include Ambala, Ambuun, Angba, Babindi, Baboma, Baholo, Bangala, Bango, Bangoli, Batsamba, Bazombe, Bira, Bowa, Dikidiki, Dzing, Havu, Hunde, Iboko, Kanioka, Kaonde, Kuba, Kumu, Kwango, Lengola, Lokele, Lomwe, Lupu, Lwalwa, Mbala, Mbole, Mbuza (aka Budja), Nande, Ngoli, Nkole, Nkumu, Nyanga, Pende, Popoi, Poto, Sango, Shi, Songo, Sukus, Tabwa, Tchokwé, Téké, Tembo, Tetela, Topoke, Ungana, Vira, Wakuti, Yaka, Yakoma, Yanzi, Yeke and Yela, in addition to other ethnicities listed as sub-classing from :Bantu."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Bari a owl:Class ;
+    rdfs:label "Bari (aka Karo or Duor)"@en ;
+    rdfs:comment "Ethnic group mainly inhabiting South Sudan, as well as adjacent parts of northwestern Uganda. Sub-groups include the Pojulu, Kakwa, Nyangwara, Mandari and Kuku. Their language is part of the Nilotic family."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Bariba a owl:Class ;
+    rdfs:label "Bariba (aka Baatonu)"@en ;
+    rdfs:comment "Ethnic group found in Benin and Nigeria."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Bassa a owl:Class ;
+    rdfs:label "Bassa"@en ;
+    rdfs:comment "West African ethnic group primarily found in the central coastal regions of Liberia."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Bashkir a owl:Class ;
+    rdfs:label "Bashkir"@en ;
+    rdfs:comment "Ethnic group, indigenous to Bashkortostan. Smaller communities also live in other Russian republics, Kazakhstan and other countries. Their language is part of the Turkic family."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Basque a owl:Class ;
+    rdfs:label "Basque"@en ;
+    rdfs:comment "Indigenous ethnic group characterised by the Basque language, and a common culture and shared ancestry to the ancient Vascones and Aquitanians. Basques primarily inhabit a region that is located at the western end of the Pyrenees."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Batak a owl:Class ;
+    rdfs:label "Batak"@en ;
+    rdfs:comment "Number of closely related Austronesian ethnic groups predominantly found in North Sumatra, Indonesia who speak Batak languages. Sub-groups include the Karo (aka Karonese), Pakpak (aka. Pakpak Dairi), Simalungun, Toba, Angkola, and Mandailing. Note that this ethnicities is distinct from the AustraloMelanesianPygmy sub-group with the same name."@en ;
+    rdfs:subClassOf :Austronesian .
+
+:Bedouin a owl:Class ;
+    rdfs:label "Bedouin (aka Bedu)"@en ;
+    rdfs:subClassOf :Arab .
+
+:Beja a owl:Class ;
+    rdfs:label "Beja"@en ;
+    rdfs:comment "Ethnic Cushitic peoples inhabiting Sudan, as well as parts of Eritrea and Egypt. Sub-groups include the Ababda (aka Ababde), Bishari, Hadendoa, Hedareb (aka T'bdawe), Amarar, Beni-Amer (aka Beni-Amir)."@en ;
+    rdfs:subClassOf :Cushite .
+
+:Belarusian a owl:Class ;
+    rdfs:label "Belarusian (aka Byelorussian)"@en ;
+    rdfs:comment "East Slavic ethnic group, native to modern-day Belarus and the immediate region."@en ;
+    rdfs:subClassOf :Slav .
+
+:Bemba a owl:Class ;
+    rdfs:label "Bemba (aka BaBemba, Awemba or BaWemba)"@en ;
+    rdfs:comment "Group of Bantu peoples mainly in Zambia."@en ;
+    rdfs:subClassOf :Bantu .
+
+:Bembe a owl:Class ;
+    rdfs:label "Bembe"@en ;
+    rdfs:comment "Ethnic and linguistic group based in the eastern Democratic Republic of the Congo and western Tanzania."@en ;
+    rdfs:subClassOf :Bantu .
+
+:Bengali a owl:Class ;
+    rdfs:label "Bengali (aka Bangalee)"@en ;
+    rdfs:comment "Ethnic group native to the Bengal region in South Asia, currently divided between Bangladesh and several Indian states of West Bengal. The peoples speak Bengali. Sub-groups include the Bangladeshi."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Berber a owl:Class ;
+    rdfs:label "Berber"@en ;
+    rdfs:comment "Ethnic group indigenous to North Africa. Sub-groups include the Arab-Berber."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Berom a owl:Class ;
+    rdfs:label "Berom (aka Birom)"@en ;
+    rdfs:comment "Largest indigenous ethnic group in the Plateau State, central Nigeria."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Berta a owl:Class ;
+    rdfs:label "Berta (aka Bertha)"@en ;
+    rdfs:comment "Ethnic group living along the border of Sudan and Ethiopia."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Bhil a owl:Class ;
+    rdfs:label "Bhil (aka Bheel)"@en ;
+    rdfs:comment "Ethnic group primarily in India and Pakistan, speaking the Bhil languages. Sub-groups include the Barda, Bhagalia, Bhilala, Gametia, Garasia (including Dungri Garasia), Kataria, Mama, Mavchi, Dholi, Dungri, Damor, Mewasi, Nirdhi (aka Nilde), Rawal, Tadvi and Vasava."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Bihari a owl:Class ;
+    rdfs:label "Bihari"@en ;
+    rdfs:comment "Can be separated into three main ethnic groups, the Bhojpuri, Maithil (aka Maithili) and Magahi. They are found throughout India, Nepal, Pakistan and Bangladesh."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Bissa a owl:Class ;
+    rdfs:label "Bissa (aka Busanga (singular), Bisa or Busansi (plural))"@en ;
+    rdfs:comment "Mande ethnic group of Burkina Faso, Ghana, Togo and Benin."@en ;
+    rdfs:subClassOf :Mande .
+
+:Bhojpuri a owl:Class ;
+    rdfs:label "Bhojpuri"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Blang a owl:Class ;
+    rdfs:label "Blang"@en ;
+    rdfs:subClassOf :Chinese .
+
+:Bobo a owl:Class ;
+    rdfs:label "Bobo"@en ;
+    rdfs:comment "Ethnic group living primarily in Burkina Faso and Mali."@en ;
+    rdfs:subClassOf :Mande .
+
+:Bonan a owl:Class ;
+    rdfs:label "Bonan"@en ;
+    rdfs:subClassOf :Chinese .
+
+:Bodo a owl:Class ;
+    rdfs:label "Bodo"@en ;
+    rdfs:comment "Ethnic and linguistic group from northeastern India."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Bosniak a owl:Class ;
+    rdfs:label "Bodo"@en ;
+    rdfs:comment "South Slavic nation and ethnic group mainly living in Bosnia and Herzegovina, although also living in other countries in the Balkans."@en ;
+    rdfs:subClassOf :Slav .
+
+:Bouyei a owl:Class ;
+    rdfs:label "Bouyei (aka Buxqyaix, Puyi, Buyei, Buyi, Puzhong, Burao or Puman)"@en ;
+    rdfs:comment "Ethnic group living in southern mainland China."@en ;
+    rdfs:subClassOf :Chinese .
+
+:Brahui a owl:Class ;
+    rdfs:label "Brahui (aka Brahvi)"@en ;
+    rdfs:comment "Ethnic group found in Pakistan, Afghanistan, and in other Middle Eastern states."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Breton a owl:Class ;
+    rdfs:label "Breton"@en ;
+    rdfs:comment "Celtic ethnic group located in the region of Brittany, in France."@en ;
+    rdfs:subClassOf :Celt .
+
+:Bubi a owl:Class ;
+    rdfs:label "Bubi (aka Bobe, Voove or Ewota)"@en ;
+    rdfs:comment "Bantu ethnic group of Central Africa who are indigenous to Bioko Island, Equatorial Guinea."@en ;
+    rdfs:subClassOf :Bantu .
+
+:Budu a owl:Class ;
+    rdfs:label "Budu"@en ;
+    rdfs:comment "Bantu people living in the Democratic Republic of the Congo."@en ;
+    rdfs:subClassOf :Bantu .
+
+:Buduma a owl:Class ;
+    rdfs:label "Buduma (aka Yedina)"@en ;
+    rdfs:comment "Ethnic group of Chad, Cameroon, and Nigeria who inhabit many of the islands of Lake Chad."@en ;
+    rdfs:subClassOf :Bantu .
+
+:Bugi a owl:Class ;
+    rdfs:label "Bugi (aka Buginese)"@en ;
+    rdfs:comment "Ethnic group of Sulawesi, Indonesia."@en ;
+    rdfs:subClassOf :Austronesian .
+
+:Bulgarian a owl:Class ;
+    rdfs:label "Bulgarian"@en ;
+    rdfs:comment "South Slavic ethnic group native to Bulgaria and its neighboring regions. Sub-groups include the Pomak."@en ;
+    rdfs:subClassOf :Slav .
+
+:Butonese a owl:Class ;
+    rdfs:label "Butonese (aka Butuni, Butung or Wolio)"@en ;
+    rdfs:comment "Term that embraces a number of sub-ethnic groups from Buton and its neighbouring islands in Indonesia."@en ;
+    rdfs:subClassOf :Austronesian .
+
+:Bungku a owl:Class ;
+    rdfs:label "Bungku"@en ;
+    rdfs:comment "Ethnic group of Indonesia. Sub-groups include the Lambatu, Epe, Ro'tua, Reta, and Wowoni."@en ;
+    rdfs:subClassOf :Austronesian .
+
+:Burusho a owl:Class ;
+    rdfs:label "Burusho (aka Burusho, Brusho, Hunza or Botraj)"@en ;
+    rdfs:comment "Ethnic group of Pakistan and India. They speak the Burushaski language."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Buryat a owl:Class ;
+    rdfs:label "Buryat (aka Burusho, Brusho, Hunza or Botraj)"@en ;
+    rdfs:comment "Indigenous people in Siberia, mainly concentrated in the Buryat Republic."@en ;
+    rdfs:subClassOf :Mongolian .
+
+:Carolinian a owl:Class ;
+    rdfs:label "Carolinian (aka Refaluwasch)"@en ;
+    rdfs:subClassOf :Austronesian .
+
+:Castilian a owl:Class ;
+    rdfs:label "Castilian"@en ;
+    rdfs:comment "Most commonly associated with the sparsely populated inner plateau of the Iberian peninsula."@en ;
+    rdfs:subClassOf :Spanish .
+
+:Catalan a owl:Class ;
+    rdfs:label "Castilian"@en ;
+    rdfs:comment "Most commonly associated with Catalonia, an autonomous community in Spain, with the Roussillon region in southeast France. Sub-groups include the Valencian."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Celt a owl:Class ;
+    rdfs:label "Celt (aka Celtic people)"@en ;
+    rdfs:comment "Indo-European ethnolinguistic group of Europe identified by their use of Celtic languages and many cultural similarities."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Chagossian a owl:Class ;
+    rdfs:label "Chagossian (aka Ilois/&#x00CE;lois or Chagos Islander)"@en ;
+    rdfs:comment "People of African origin who originally inhabited the Chagos Islands, but were evicted in the late 1960s and early 1970s for the installation of a United States military base."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Chakma a owl:Class ;
+    rdfs:label "Chakma (aka Chagma)"@en ;
+    rdfs:comment "Ethnic group in India and Bangladesh."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Cham a owl:Class ;
+    rdfs:label "Cham"@en ;
+    rdfs:comment "Ethnic group of Austronesian origin in Southeast Asia. Their language, Cham, is derived from Chamic."@en ;
+    rdfs:subClassOf :Austronesian .
+
+:Chamba a owl:Class ;
+    rdfs:label "Chamba (aka Samba, Tchamba, Tsamba, Daka and Chamba-Ndagan)"@en ;
+    rdfs:comment "Ethnic group found in east-central Nigeria and northern Cameroon."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Chamorro a owl:Class ;
+    rdfs:label "Chamorro"@en ;
+    rdfs:comment "Undigenous people of the Mariana Islands."@en ;
+    rdfs:subClassOf :Austronesian .
+
+:Chaoui a owl:Class ;
+    rdfs:label "Chaoui (aka Shawia or Shawiya)"@en ;
+    rdfs:comment "Berber population inhabiting the regions located in and surrounded by the Aurès Mountains, and also living in eastern Algeria and Tunisia."@en ;
+    rdfs:subClassOf :Berber .
+
+:Chechen a owl:Class ;
+    rdfs:label "Chechen (aka Nokhchiy, Nokhchi (singular), Nakhchuo or Nakhtche)"@en ;
+    rdfs:comment "Ethnic group in eastern Europe. Sub-groups include the Kist."@en ;
+    rdfs:subClassOf :Vainakh .
+
+:Chewa a owl:Class ;
+    rdfs:label "Chewa"@en ;
+    rdfs:comment "Bantu people of central and southern Africa."@en ;
+    rdfs:subClassOf :Bantu .
+
+:Chokwe a owl:Class ;
+    rdfs:label "Chokwe (aka Kioko, Bajokwe, Chibokwe, Kibokwe, Ciokwe, Cokwe or Badjok)"@en ;
+    rdfs:comment "Ethnic group of central and southern Africa."@en ;
+    rdfs:subClassOf :Bantu .
+
+:Chuukese a owl:Class ;
+    rdfs:label "Chuukese (aka Trukese)"@en ;
+    rdfs:comment "Austronesian-speaking ethnic group indigenous to the islands of Micronesia."@en ;
+    rdfs:subClassOf :Austronesian .
+
+:Chuvash a owl:Class ;
+    rdfs:label "Chuvash"@en ;
+    rdfs:comment "Ethnic group found throughout the Russian Federation. Sub-groups include the Virjal (aka Viryal) and Anatri. Their language is part of the Turkic family."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Circassian a owl:Class ;
+    rdfs:label "Circassian (aka Adyghe)"@en ;
+    rdfs:comment "There are twelve Adyghe princedoms (three democratic and nine aristocratic): Abdzakh (aka Abdzakh or Abadzekh), Besleney (aka Beslenei or Baslaney), Bzhedug (aka Bazdug), Hatuqwai (aka Hatukay, Hatuqwai, Hetuqwai, Hatukaj, Hatquai, Tatukai, Khatukai, Gatukai, Gatiukai or Khatoukhay), Kabardian (aka Kabardinian or the plural terms, Kabardin, Kebertei or Kabarday), Mamkhegh (aka Mamheg), Natukhai, Shapsug (aka Shapsugh or Shapsogh, Temirgoy (aka Chemirgoy or Kemgui), Ubykh, Yegeruqwai and Zhaney (aka Janes)."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Copt a owl:Class ;
+    rdfs:label "Copt"@en ;
+    rdfs:comment "Ethnoreligious group indigenous to Northeast Africa."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Cornish a owl:Class ;
+    rdfs:label "Cornish"@en ;
+    rdfs:comment "Celtic ethnic group native to, or associated with, Cornwall in the United Kingdom."@en ;
+    rdfs:subClassOf :Celt .
+
+:Corsican a owl:Class ;
+    rdfs:label "Corsican"@en ;
+    rdfs:comment "Native to Corsica, a Mediterranean island and a territorial collectivity of France."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:CrimeanKaraite a owl:Class ;
+    rdfs:label "CrimeanKaraite (aka Krymkaraylar, Karaim or Qaray)"@en ;
+    rdfs:comment "Ethnic group derived from Turkic-speaking adherents of Karaite Judaism in Central and Eastern Europe."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Croatian a owl:Class ;
+    rdfs:label "Croatian (aka Croati or Croat)"@en ;
+    rdfs:comment "Nation and South Slavic ethnic group native to Croatia, Bosnia and Herzegovina, but also found throughout Europe. Sub-groups include the Bunjevci, Krashovani, Janjevci and Sokci (&#x0160;okci)."@en ;
+    rdfs:subClassOf :Slav .
+
+:Cushite a owl:Class ;
+    rdfs:label "Cushite"@en ;
+    rdfs:comment "A set of peoples primarily indigenous to Northeast Africa who speak Cushitic languages."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Czech a owl:Class ;
+    rdfs:label "Czech"@en ;
+    rdfs:comment "West Slavic ethnic group and a nation native to the Czech Republic in Central Europe. Sub-groups include the Bohemian, Moravian and Silesian."@en ;
+    rdfs:subClassOf :Slav .
+
+:Vainakh a owl:Class ;
+    rdfs:label "Vainakh or Nakh"@en ;
+    rdfs:comment "Speakers of the Vainakh languages, chiefly the Chechen and Ingush peoples of the North Caucasus. The term, Nakh peoples, has also been used to refer to a wider linguistic family which includes the Vainakh and Bats languages."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Zo a owl:Class ;
+    rdfs:label "Zo"@en ;
+    rdfs:comment "The Zo people identify the tribes living in the Chin area of Mynamar and Bangladesh. Sub-groups include the Chin, Zomi (aka Zou), Mizo, Kuki, Hmar and Naga."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+
+#################################################################
+#   Input of existing Ethnicity classes
+#   with minimal cleanup
+#################################################################
+
+:African a owl:Class ;
+    rdfs:label "African"@en ;
+    rdfs:comment "Racial classification."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:British a owl:Class ;
+    rdfs:label "British (aka English)"@en ;
+    rdfs:comment "Nation and ethnic group native to England/the United Kingdom, who speak the English language."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:BurmeseIndian a owl:Class ;
+    rdfs:label "Burmese Indian"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Chilean a owl:Class ;
+    rdfs:label "Chilean"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Chinese a owl:Class ;
+    rdfs:label "Chinese"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:DalmatianItalian a owl:Class ;
+    rdfs:label "DalmatianItalian"@en ;
+    rdfs:subClassOf :Italian .
+
+:Dane a owl:Class ;
+    rdfs:label "Dane (aka Danish)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Dayak a owl:Class ;
+    rdfs:label "Dayak (aka Dyak or Dayuh)"@en ;
+    rdfs:comment "Native people of Borneo"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Druze a owl:Class ;
+    rdfs:label "Druze"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Dutch a owl:Class ;
+    rdfs:label "Dutch"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Dyula a owl:Class ;
+    rdfs:label "Dyula (aka Dioula, Jula or Juula)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Ebira a owl:Class ;
+    rdfs:label "Ebira (aka Egbira)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Edo a owl:Class ;
+    rdfs:label "Edo (aka Bini)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Efik a owl:Class ;
+    rdfs:label "Efik"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Esan a owl:Class ;
+    rdfs:label "Esan"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Estonian a owl:Class ;
+    rdfs:label "Estonian"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Egba a owl:Class ;
+    rdfs:label "Egba"@en ;
+    rdfs:subClassOf :Yoruba .
+
+:Egyptian a owl:Class ;
+    rdfs:label "Egyptian"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Ekoi a owl:Class ;
+    rdfs:label "Ekoi (aka Ejagham)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Embu a owl:Class ;
+    rdfs:label "Embu (aka Aembu)"@en ;
+    rdfs:subClassOf :Bantu .
+
+:Faroese a owl:Class ;
+    rdfs:label "Faroese (aka Faroe Islander)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Fijian a owl:Class ;
+    rdfs:label "Fijian"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Filipino a owl:Class ;
+    rdfs:label "Filipino"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Finn a owl:Class ;
+    rdfs:label "Finn (aka Finnish)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Fleming a owl:Class ;
+    rdfs:label "Fleming (aka Flemish)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Fon a owl:Class ;
+    rdfs:label "Fon"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+ 
+:French a owl:Class ;
+    rdfs:label "French"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+ 
+:Frisian a owl:Class ;
+    rdfs:label "Frisian"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+ 
+:Friulian a owl:Class ;
+    rdfs:label "Friulian (or Furlan)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Fulani a owl:Class ;
+    rdfs:label "Fulani (aka Fulbe or Fula)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Fur a owl:Class ;
+    rdfs:label "Fur"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Gagauz a owl:Class ;
+    rdfs:label "Gagauz (aka Gagauze)"@en ;
+    rdfs:comment "Their language is part of the Turkic family."@en ;
+    rdfs:subClassOf cco:Ethnicity.
+
+:Galician a owl:Class ;
+    rdfs:label "Galician"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Garo a owl:Class ;
+    rdfs:label "Garo"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Gbagyi a owl:Class ;
+    rdfs:label "Gbagyi (aka Gbari or Agbagyi (plural))"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Georgian a owl:Class ;
+    rdfs:label "Georgian (aka Kartvelian)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:German a owl:Class ;
+    rdfs:label "German"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Golok a owl:Class ;
+    rdfs:label "Golok (aka Ngolok)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Gondi a owl:Class ;
+    rdfs:label "Gondi (G&#x014;Dndi, aka Gond)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Gorani a owl:Class ;
+    rdfs:label "Gorani (aka Goranci)"@en ;
+    rdfs:comment "Slavic Muslim ethnicity."@en ;
+    rdfs:subClassOf :Slav .
+
+:Gorontaloan a owl:Class ;
+    rdfs:label "Gorontaloan"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Greek a owl:Class ;
+    rdfs:label "Greek"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Guarani a owl:Class ;
+    rdfs:label "Guarani (Guaran&#x00ED;)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Gujarati a owl:Class ;
+    rdfs:label "Gujarati"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Han a owl:Class ;
+    rdfs:label "Han"@en ;
+    rdfs:subClassOf :Chinese .
+
+:Hani a owl:Class ;
+    rdfs:label "Hani (aka Ho)"@en ;
+    rdfs:subClassOf :Chinese .
+
+:Hausa a owl:Class ;
+    rdfs:label "Hausa"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:HausaFulani a owl:Class ;
+    rdfs:label "Hausa-Fulani"@en ;
+# Union of Hausa and Fulani
+    rdfs:subClassOf cco:Ethnicity .
+
+:Herero a owl:Class ;
+    rdfs:label "Herero (aka Ovaherero)"@en ;
+    rdfs:subClassOf :Bantu .
+
+:Hispanic a owl:Class ;
+    rdfs:label "Hispanic"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Hmong a owl:Class ;
+    rdfs:label "Hmong (aka Miao)"@en ;
+    rdfs:subClassOf :Miao .
+
+:Hui a owl:Class ;
+    rdfs:label "Hui"@en ;
+    rdfs:subClassOf :Chinese .
+
+:Hungarian a owl:Class ;
+    rdfs:label "Hungarian"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Hutu a owl:Class ;
+    rdfs:label "Hutu"@en ;
+    rdfs:subClassOf :Bantu .
+
+:Ibibio a owl:Class ;
+    rdfs:label "Ibibio"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Icelander a owl:Class ;
+    rdfs:label "Icelander"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Idoma a owl:Class ;
+    rdfs:label "Idoma"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Igala a owl:Class ;
+    rdfs:label "Igala"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Igbo a owl:Class ;
+    rdfs:label "Igbo (aka Ibo)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Igede a owl:Class ;
+    rdfs:label "Igede"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Ijaw a owl:Class ;
+    rdfs:label "Ijaw"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Ikwerre a owl:Class ;
+    rdfs:label "Ikwerre"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Ingush a owl:Class ;
+    rdfs:label "Ingush"@en ;
+    rdfs:subClassOf :Vainakh .
+
+:Inuit a owl:Class ;
+    rdfs:label "Inuit"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Iranian a owl:Class ;
+    rdfs:label "Iranian"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Irish a owl:Class ;
+    rdfs:label "Irish"@en ;
+    rdfs:subClassOf :Celt .
+
+:Italian a owl:Class ;
+    rdfs:label "Italian"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Itsekiri a owl:Class ;
+    rdfs:label "Itsekiri (aka Isekiri, iJekri, Itsekri, Ishekiri, or Itsekhiri)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Japanese a owl:Class ;
+    rdfs:label "Japanese"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Jat a owl:Class ;
+    rdfs:label "Jat"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Javanese a owl:Class ;
+    rdfs:label "Javanese (aka Orang Jawa)"@en ;
+    rdfs:comment "Ethnic group that is native to Java, Indonesia. Sub-groups include the Mataram, Cirebonese, Osing, Tenggerese, Samin, Naganese and Banyumasan, among others."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Jew a owl:Class ;
+    rdfs:label "Jew (aka Jewish)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Jola a owl:Class ;
+    rdfs:label "Jola"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Jukun a owl:Class ;
+    rdfs:label "Jukun"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Kabyle a owl:Class ;
+    rdfs:label "Kabyle"@en ;
+    rdfs:subClassOf :Berber .
+
+:Kachin a owl:Class ;
+    rdfs:label "Kachin (aka Jingpho or Wunpong)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:KailiTomini a owl:Class ;
+    rdfs:label "Kaili-Tomini"@en ;
+    rdfs:subClassOf :Bantu .
+
+:Kalmyk a owl:Class ;
+    rdfs:label "Kalmyk (aka Oirat in Russia)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+	
+:Kamba a owl:Class ;
+    rdfs:label "Kamba (aka Akamba)"@en ;
+    rdfs:subClassOf :Bantu .
+
+:Kamuku a owl:Class ;
+    rdfs:label "Kamuku"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Kannadiga a owl:Class ;
+    rdfs:label "Kannadiga (aka Kannada or Kannadigaru)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Kanuri a owl:Class ;
+    rdfs:label "Kanuri"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Karen a owl:Class ;
+    rdfs:label "Karen"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Kashmiri a owl:Class ;
+    rdfs:label "Kashmiri"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:KashmiriPandit a owl:Class ;
+    rdfs:label "Kashmiri Pandit"@en ;
+    rdfs:subClassOf :Kashmiri .
+
+:Kazakh a owl:Class ;
+    rdfs:label "Kazakh"@en ;
+    rdfs:comment "Their language is part of the Turkic family."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Khmer a owl:Class ;
+    rdfs:label "Khmer"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Khoisan a owl:Class ;
+    rdfs:label "Khoisan"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Kilba a owl:Class ;
+    rdfs:label "Kilba"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Kongo a owl:Class ;
+    rdfs:label "Kongo (aka Bakongo)"@en ;
+    rdfs:subClassOf :Bantu .
+
+:Konkani a owl:Class ;
+    rdfs:label "Konkani"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Korean a owl:Class ;
+    rdfs:label "Korean"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Krahn a owl:Class ;
+    rdfs:label "Krahn"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Kru a owl:Class ;
+    rdfs:label "Kru (aka Kroo)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Kurd a owl:Class ;
+    rdfs:label "Kurd (aka Kurdish)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Kurukh a owl:Class ;
+    rdfs:label "Kurukh (aka Oraon, Uraon, Oran, or Oram)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Kuteb a owl:Class ;
+    rdfs:label "Kuteb (aka Kutep)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Kyrgyz	a owl:Class ;
+    rdfs:label "Kyrgyz"@en ;
+    rdfs:comment "Their language is part of the Turkic family."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Ladin a owl:Class ;
+    rdfs:label "Ladin"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Lampung a owl:Class ;
+    rdfs:label "Lampung"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Laotian a owl:Class ;
+    rdfs:label "Laotian (aka Lao)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Latvian a owl:Class ;
+    rdfs:label "Latvian (aka Lett)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Laz a owl:Class ;
+    rdfs:label "Laz (aka Lazi)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Lebanese a owl:Class ;
+    rdfs:label "Lebanese"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Leonese a owl:Class ;
+    rdfs:label "Leonese"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Lezgin a owl:Class ;
+    rdfs:label "Lezgin"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Lhotshampa a owl:Class ;
+    rdfs:label "Lhotshampa (aka Lhotsampa)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Li a owl:Class ;
+    rdfs:label "Li"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Lisu a owl:Class ;
+    rdfs:label "Lisu"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Lithuanian a owl:Class ;
+    rdfs:label "Lithuanian"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Longuda a owl:Class ;
+    rdfs:label "Longuda"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Luba a owl:Class ;
+    rdfs:label "Luba"@en ;
+    rdfs:subClassOf :Bantu .
+
+:Luo a owl:Class ;
+    rdfs:label "Luo (aka Joluo, Jonagi/Onagi and (singular) Jaluo, Jaonagi or Joramogi/Nyikwaramogi)"@en ;
+    rdfs:comment "Ethnic group in Kenya, Uganda and Tanzania. They are part of the larger Luo-speaking family of ethnicities."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Lur a owl:Class ;
+    rdfs:label "Lur (aka Lurish or Luri)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Luxembourger a owl:Class ;
+    rdfs:label "Luxembourger"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Macedonian a owl:Class ;
+    rdfs:label "Macedonian"@en ;
+    rdfs:comment "South Slavic ethnic group."@en ;
+    rdfs:subClassOf :Slav .
+
+:Madurese a owl:Class ;
+    rdfs:label "Madurese (aka Madurace or Madhure)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Maithil a owl:Class ;
+    rdfs:label "Maithil (aka Maithili)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Makassarese a owl:Class ;
+    rdfs:label "Makassarese (aka Makassar, Mangasara, Mengkasara, Macassar, Taena, Tena or Gowa)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Makua a owl:Class ;
+    rdfs:label "Makua (aka Makhuwa)"@en ;
+    rdfs:subClassOf :Bantu .
+
+:Malagasy a owl:Class ;
+    rdfs:label "Malagasy"@en ;
+    rdfs:subClassOf :Austronesian .
+
+:Malay a owl:Class ;
+    rdfs:label "Malay"@en ;
+    rdfs:subClassOf :Austronesian .
+
+:Malayali a owl:Class ;
+    rdfs:label "Malayali (aka Malayalee)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:MalaysianIndian a owl:Class ;
+    rdfs:label "Malaysian Indian"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Maldivian a owl:Class ;
+    rdfs:label "Maldivian (aka Maldive Islander)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Maltese a owl:Class ;
+    rdfs:label "Maltese"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Mambilla a owl:Class ;
+    rdfs:label "Mambilla (aka Mambila)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Manchu a owl:Class ;
+    rdfs:label "Manchu (aka Manchurian)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Mandinka a owl:Class ;
+    rdfs:label "Mandinka (aka Malinke, Maninka, Manding, Mandingo, Mandenka or Mandinko)"@en ;
+    rdfs:subClassOf :Mande .
+
+:Mande a owl:Class ;
+    rdfs:label "Mande (Mand&#x00E9;)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Manx a owl:Class ;
+    rdfs:label "Manx"@en ;
+    rdfs:subClassOf :Celt .
+
+:Marathi a owl:Class ;
+    rdfs:label "Marathi (aka Maharashtrian)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:MeskhetianTurk a owl:Class ;
+    rdfs:label "Meskhetian Turk"@en ;
+    rdfs:subClassOf :Turk .
+
+:Miao a owl:Class ;
+    rdfs:label "Miao"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Minahasan a owl:Class ;
+    rdfs:label "Minahasan (aka Minahassa, Mina hasa or Manado)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Minangkabau a owl:Class ;
+    rdfs:label "Minangkabau (aka Minang)"@en ;
+    rdfs:subClassOf :Austronesian .
+
+:Mising a owl:Class ;
+    rdfs:label "Mising (aka Miri)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Mixe a owl:Class ;
+    rdfs:label "Mixe"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Mixtec a owl:Class ;
+    rdfs:label "Mixtec (aka Mixteco)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Moldovan a owl:Class ;
+    rdfs:label "Moldovan (aka Moldavian)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Moluccan a owl:Class ;
+    rdfs:label "Moluccan"@en ;
+    rdfs:subClassOf :Austronesian .
+
+:Mongolian a owl:Class ;
+    rdfs:label "Mongolian (aka Mongol)"@en ;
+    rdfs:subClassOf :Chinese .
+
+:Montenegrin a owl:Class ;
+    rdfs:label "Montenegrin"@en ;
+    rdfs:comment "South Slavic ethnic group."@en ;
+    rdfs:subClassOf :Slav .
+
+:Moravian a owl:Class ;
+    rdfs:label "Moravian"@en ;
+    rdfs:comment "West Slavic ethnographic group."@en ;
+    rdfs:subClassOf :Slav .
+
+:Mordvin a owl:Class ;
+    rdfs:label "Mordvin (aka Mordva, Mordvinian or Mordovian)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Moro a owl:Class ;
+    rdfs:label "Moro"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Moroccan a owl:Class ;
+    rdfs:label "Moroccan (aka Moor or Moorish)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Mumuye a owl:Class ;
+    rdfs:label "Mumuye"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Munda a owl:Class ;
+    rdfs:label "Munda"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Nama a owl:Class ;
+    rdfs:label "Nama (aka Namaqua)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Nias a owl:Class ;
+    rdfs:label "Nias"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Nguni a owl:Class ;
+    rdfs:label "Nguni"@en ;
+    rdfs:subClassOf :Bantu .
+
+:NiloticPeople a owl:Class ;
+    rdfs:label "Nilotic people"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Norwegian a owl:Class ;
+    rdfs:label "Norwegian"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Nubian a owl:Class ;
+    rdfs:label "Nubian"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Nupe a owl:Class ;
+    rdfs:label "Nupe"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Nuristani a owl:Class ;
+    rdfs:label "Nuristani"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Occitan a owl:Class ;
+    rdfs:label "Occitan"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Odia a owl:Class ;
+    rdfs:label "Odia (aka Oriya)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Ogoni a owl:Class ;
+    rdfs:label "Ogoni"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Ogu a owl:Class ;
+    rdfs:label "Ogu (aka Egun)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:OmoticPeople a owl:Class ;
+    rdfs:label "Omotic people"@en ;
+    rdfs:comment "Omotic ethnic groups include the Wolayta (aka Welayta), Hamar (aka Hamer) and Chara."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Oromo a owl:Class ;
+    rdfs:label "Oromo"@en ;
+    rdfs:subClassOf :Cushite .
+
+:Ossetian a owl:Class ;
+    rdfs:label "Ossetian (aka Ossete)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Otomi a owl:Class ;
+    rdfs:label "Otomi"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Owan a owl:Class ;
+    rdfs:label "Owan"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:PacificIslander a owl:Class ;
+    rdfs:label "Pacific Islander (aka Pasifika)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Pakistani a owl:Class ;
+    rdfs:label "Pakistani"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Pahari a owl:Class ;
+    rdfs:label "Pahari (aka Pahadi or Parbati)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Palestinian a owl:Class ;
+    rdfs:label "Palestinian"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Parsi a owl:Class ;
+    rdfs:label "Parsi (aka Parsee)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Pashtun a owl:Class ;
+    rdfs:label "Pashtun"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Persian a owl:Class ;
+    rdfs:label "Persian"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Pole a owl:Class ;
+    rdfs:label "Pole (aka Polish)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Polynesian a owl:Class ;
+    rdfs:label "Polynesian"@en ;
+    rdfs:subClassOf :Austronesian .
+
+:Portuguese a owl:Class ;
+    rdfs:label "Portuguese"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Punjabi a owl:Class ;
+    rdfs:label "Punjabi"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Quechua a owl:Class ;
+    rdfs:label "Quechua"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Rajasthani a owl:Class ;
+    rdfs:label "Rajasthani"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Rejangese a owl:Class ;
+    rdfs:label "Rejangese"@en ;
+    rdfs:subClassOf :Austronesian .
+
+:Rifian a owl:Class ;
+    rdfs:label "Rifian (aka Irifiyen, Riff, Riyefa or Ruafa)"@en ;
+    rdfs:subClassOf :Berber .
+
+:Rohingya a owl:Class ;
+    rdfs:label "Rohingya"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Roma a owl:Class ;
+    rdfs:label "Roma (aka Romani)"@en ;
+    rdfs:comment "Colloquially known as Gypsies"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Romanian a owl:Class ;
+    rdfs:label "Romanian"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Russian a owl:Class ;
+    rdfs:label "Russian"@en ;
+    rdfs:comment "East Slavic ethnic group."@en ;
+    rdfs:subClassOf :Slav .
+
+:Rusyn a owl:Class ;
+    rdfs:label "Rusyn (aka Ruthene)"@en ;
+    rdfs:comment "East Slavic ethnic group."@en ;
+    rdfs:subClassOf :Slav .
+
+:SamaBajau a owl:Class ;
+    rdfs:label "Sama-Bajau (aka Sama, Samah, Bajau, Badjao, Bajaw, Badjau, Badjaw, Bajo, Bayao or Samal)"@en ;
+    rdfs:comment "Several Austronesian ethnic groups of southeast Asia."@en ;
+    rdfs:subClassOf :Austronesian .
+
+:Sami a owl:Class ;
+    rdfs:label "Sami (aka Saami)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Sangirese a owl:Class ;
+    rdfs:label "Sangirese (aka Sangirese or Sangihe)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Santal a owl:Class ;
+    rdfs:label "Santal (aka Santhal)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Sara a owl:Class ;
+    rdfs:label "Sara (aka Bagirmi)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Sardinian a owl:Class ;
+    rdfs:label "Sardinian (aka Sard)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Sasak a owl:Class ;
+    rdfs:label "Sasak"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Scandinavian a owl:Class ;
+    rdfs:label "Scandinavian"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Scot a owl:Class ;
+    rdfs:label "Scot (aka Scottish)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Sena a owl:Class ;
+    rdfs:label "Sena"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Serbian a owl:Class ;
+    rdfs:label "Serbian (aka Serb)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Serer a owl:Class ;
+    rdfs:label "Serer"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Shan a owl:Class ;
+    rdfs:label "Shan"@en ;
+    rdfs:comment "Tai ethnic group of Southeast Asia"@en ;
+    rdfs:subClassOf :Tai .
+
+:Shilha a owl:Class ;
+    rdfs:label "Shilha (aka Soussi, Isussin or Swassa)"@en ;
+    rdfs:comment "Tai ethnic group of Southeast Asia"@en ;
+    rdfs:subClassOf :Berber .
+
+:Shona a owl:Class ;
+    rdfs:label "Shona"@en ;
+    rdfs:subClassOf :Bantu .
+
+:Sicilian a owl:Class ;
+    rdfs:label "Sicilian"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Sindhi a owl:Class ;
+    rdfs:label "Sindhi"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Sinhalese a owl:Class ;
+    rdfs:label "Sinhalese (aka Sinhala)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Slav a owl:Class ;
+    rdfs:label "Slav (aka Slavic)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Slovak a owl:Class ;
+    rdfs:label "Slovak"@en ;
+    rdfs:comment "West Slavic ethnic group."@en ;
+    rdfs:subClassOf :Slav .
+
+:Slovene a owl:Class ;
+    rdfs:label "Slovene"@en ;
+    rdfs:comment "South Slavic ethnic group."@en ;
+    rdfs:subClassOf :Slav .
+
+:Somali a owl:Class ;
+    rdfs:label "Somali"@en ;
+    rdfs:subClassOf :Cushite .
+
+:Songhai a owl:Class ;
+    rdfs:label "Songhai (aka Songhay or Sonrai)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Soninke a owl:Class ;
+    rdfs:label "Soninke (aka Sarakole, Seraculeh, or Serahuli)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Sotho a owl:Class ;
+    rdfs:label "Sotho (aka Basotho)"@en ;
+    rdfs:subClassOf :Bantu .
+
+:Spanish a owl:Class ;
+    rdfs:label "Spanish (aka Spaniard)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Sumba a owl:Class ;
+    rdfs:label "Sumba (aka Sumbese)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Sundanese a owl:Class ;
+    rdfs:label "Sundanese"@en ;
+    rdfs:subClassOf :Austronesian .
+
+:Susu a owl:Class ;
+    rdfs:label "Susu (aka Soso or Soussou)"@en ;
+    rdfs:subClassOf :Mande .
+
+:Swahili a owl:Class ;
+    rdfs:label "Swahili (aka Waswahili)"@en ;
+    rdfs:subClassOf :Bantu .
+
+:Swede a owl:Class ;
+    rdfs:label "Swede (aka Swedish)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Syriac a owl:Class ;
+    rdfs:label "Syric (aka Syriac Orthodox Christian)"@en ;
+    rdfs:subClassOf :Assyrian .
+
+:Syrian a owl:Class ;
+    rdfs:label "Syrian"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Tai a owl:Class ;
+    rdfs:label "Tai"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:TaiDam a owl:Class ;
+    rdfs:label "Tai Dam"@en ;
+    rdfs:subClassOf :Tai .
+
+:TaiwaneseIndigenous a owl:Class ;
+    rdfs:label "Taiwanese Indigenous"@en ;
+    rdfs:subClassOf :Austronesian .
+
+:Tajik a owl:Class ;
+    rdfs:label "Tajik"@en ;
+    rdfs:comment "Persian-speaking Iranian ethnic group native to Afghanistan, Tajikistan, and Uzbekistan."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Talysh a owl:Class ;
+    rdfs:label "Talysh (aka Talishi, Taleshi or Talyshi)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Tamil a owl:Class ;
+    rdfs:label "Tamil (aka Tamilar or Tamilan)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Tarok a owl:Class ;
+    rdfs:label "Tarok"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Tatar a owl:Class ;
+    rdfs:label "Tatar"@en ;
+    rdfs:comment "Their language is part of the Turkic family."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Telugu a owl:Class ;
+    rdfs:label "Telugu"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Thai a owl:Class ;
+    rdfs:label "Thai"@en ;
+    rdfs:subClassOf :Tai .
+
+:Tibetan a owl:Class ;
+    rdfs:label "Tibetan"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Tiv a owl:Class ;
+    rdfs:label "Tiv (aka Tivi)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Toraja a owl:Class ;
+    rdfs:label "Toraja"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Toucouleur a owl:Class ;
+    rdfs:label "Toucouleur (aka Tukulor or Haalpulaar)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Tripuri a owl:Class ;
+    rdfs:label "Tripuri"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Tswana a owl:Class ;
+    rdfs:label "Tswana"@en ;
+    rdfs:subClassOf :Bantu .
+
+:Tuareg a owl:Class ;
+    rdfs:label "Tuareg (aka Twareg or Touareg)"@en ;
+    rdfs:subClassOf :Berber .
+
+:Turk a owl:Class ;
+    rdfs:label "Turk (aka Turkish or Turkic)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Turkmen a owl:Class ;
+    rdfs:label "Turkmen"@en ;
+    rdfs:comment "Their language is part of the Turkic family."@en ;
+    rdfs:subClassOf :Turk .
+
+:Tutsi a owl:Class ;
+    rdfs:label "Tutsi"@en ;
+    rdfs:subClassOf :Bantu .
+
+:Ukrainian a owl:Class ;
+    rdfs:label "Ukrainian"@en ;
+    rdfs:comment "East Slavic ethnic group."@en ;
+    rdfs:subClassOf :Slav .
+
+:Urhobo a owl:Class ;
+    rdfs:label "Urhobo"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Urum a owl:Class ;
+    rdfs:label "Urum"@en ;
+    rdfs:comment "Their language is part of the Turkic family."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Uyghur a owl:Class ;
+    rdfs:label "Uyghur (aka Uighur or Uygur)"@en ;
+    rdfs:comment "Their language is part of the Turkic family."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Uzbek a owl:Class ;
+    rdfs:label "Uzbek"@en ;
+    rdfs:comment "Their language is part of the Turkic family."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Valencian a owl:Class ;
+    rdfs:label "Valencian"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Vietnamese a owl:Class ;
+    rdfs:label "Vietnamese"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Vlach a owl:Class ;
+    rdfs:label "Vlach"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Walloon a owl:Class ;
+    rdfs:label "Walloon"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Welsh a owl:Class ;
+    rdfs:label "Welsh"@en ;
+    rdfs:subClassOf :Celt .
+
+:White a owl:Class ;
+    rdfs:label "White/Caucasian"@en ;
+    rdfs:comment "Racial classification used mostly for people of European descent."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Wolof a owl:Class ;
+    rdfs:label "Wolof"@en ;
+    rdfs:comment "West African ethnic group found in northwestern Senegal, Gambia and southwestern coastal Mauritania."@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Yao a owl:Class ;
+    rdfs:label "Yao (East African)"@en ;
+    rdfs:subClassOf :Bantu .
+
+:YaoMien a owl:Class ;
+    rdfs:label "Mien branch of Yao people (Chinese and Vietnamese)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Yazidi a owl:Class ;
+    rdfs:label "Yazidi (aka Yezidi or Ezidi)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Yi a owl:Class ;
+    rdfs:label "Yi (aka Nuosuo, Nosu or Lolo)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Yoruba a owl:Class ;
+    rdfs:label "Yoruba"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Yugoslav a owl:Class ;
+    rdfs:label "Yugoslav (aka Yugoslavian)"@en ;
+    rdfs:comment "South Slavic ethnic group."@en ;
+    rdfs:subClassOf :Slav .
+
+:Zapotec a owl:Class ;
+    rdfs:label "Zapotec (aka Zoogocho)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Zarma a owl:Class ;
+    rdfs:label "Zarma"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Zaza a owl:Class ;
+    rdfs:label "Zaza (aka Kird, Kirmanc or Dimili)"@en ;
+    rdfs:subClassOf cco:Ethnicity .
+
+:Zhuang a owl:Class ;
+    rdfs:label "Zhuang"@en ;
+    rdfs:subClassOf :Chinese .
+
+:Zulu a owl:Class ;
+    rdfs:label "Zulu"@en ;
+    rdfs:subClassOf :Bantu .

@@ -1,0 +1,71 @@
+
+
+############
+## Pipeline
+############
+job_name: cord19_test.052820.cx.v1
+
+stages_to_run: learnit-decoder,pyserif,serialization,visualization
+mode: BBN
+
+num_of_batches_global: 100
+max_number_of_tokens_per_sentence: 128
+only_cpu_available: false
+breaking_point: 10000
+
+################
+# CDR digestion
+################
+input_cdr_list: /nfs/raid88/u10/users/hqiu/raw_corpus/cx/cx_sams_small_testset.list
+
+
+metadata_file: /nfs/raid88/u10/users/hqiu/raw_corpus/cord_19/metadata.txt
+########
+# Serif
+########
+serif_input_sgm_list: GENERATED
+serif_input_awake_db: /nfs/raid87/u10/shared/Hume/common/serif/causeex_dbpedia_20170308_collab2_with_baltic_states.sqlite
+serif_fast_mode: false
+
+#######
+## BERT
+########
+bert_input_serifxml_list: GENERATED
+bert_layers: -1
+
+######
+# KBP
+######
+kbp_input_serifxml_list: GENERATED
+
+
+####################################
+## LearnIt  Decoder
+#####################################
+learnit_decoder_input_serifxml_list: /home/hqiu/tmp/cord19_5000.list
+learnit_event_and_event_arg_pattern_dir: DEFAULT
+learnit_event_event_relation_pattern_dir: DEFAULT
+input_serif_cause_effect_relations_dir:/d4m/ears/expts/46889_cord_19/expts/hume_test.041420.cx.v1/serif_cause_effect_json
+generic_event_noun_whitelist: GENERATED
+generic_event_blacklist: GENERATED
+
+######################
+# PySerif
+######################
+pyserif_input_serifxml_list: GENERATED
+copyArgumentSentenceWindow: 1
+bert_npz_filelist: GENERATED
+grounding_mode: fast
+
+################
+# Serialization
+################
+serialization_input_awake_db: /nfs/raid87/u10/shared/Hume/common/serif/causeex_dbpedia_20170308_collab2_with_baltic_states.sqlite
+serialization_input_serifxml_list: GENERATED
+serialization_input_factfinder_json_file: GENERATED
+serialization_input_learnit_triple_file: GENERATED
+serialization_input_learnit_event_count_file: GENERATED
+serialization_do_event_uploading: False
+
+
+serialization_root: GENERATED

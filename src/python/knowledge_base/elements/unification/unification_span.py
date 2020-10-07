@@ -1,5 +1,5 @@
 from elements.kb_sentence import KBSentence
-from unification_element import UnificationElement
+from elements.unification.unification_element import UnificationElement
 
 class UnificationSpan(UnificationElement):
     def __init__(self, kb_document, start, end, text):
@@ -25,6 +25,15 @@ class UnificationSpan(UnificationElement):
             return UnificationSpan(
                 kb_document, prop_info[1],
                 prop_info[2], prop_info[0])
+        return None
+    
+    @classmethod 
+    def create_from_event_mention_anchor(cls, kb_event_mention):
+        kb_document = kb_event_mention.document
+        if kb_event_mention.anchor_info:
+            return UnificationSpan(
+                kb_document, kb_event_mention.anchor_info[1],
+                kb_event_mention.anchor_info[2], kb_event_mention.anchor_info[0])
         return None
     
     def is_duplicate_of(self, other):

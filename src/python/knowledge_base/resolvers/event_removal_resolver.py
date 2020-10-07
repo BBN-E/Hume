@@ -1,6 +1,6 @@
 import sys, os, codecs
 from knowledge_base import KnowledgeBase
-from kb_resolver import KBResolver
+from resolvers.kb_resolver import KBResolver
 
 class EventRemovalResolver(KBResolver):
     def __init__(self):
@@ -34,7 +34,7 @@ class EventRemovalResolver(KBResolver):
         return event
 
     def resolve(self, kb):
-        print "EventRemovalResolver RESOLVE"
+        print("EventRemovalResolver RESOLVE")
 
         resolved_kb = KnowledgeBase()
         super(EventRemovalResolver, self).copy_all(resolved_kb, kb)

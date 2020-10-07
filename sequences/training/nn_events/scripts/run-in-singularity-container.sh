@@ -5,7 +5,7 @@ cmd="$@"
 
 #SINGULARITY=/opt/singularity-2.3.1-x86_64_sl69_no_new_privs_set/bin/singularity
 #SINGULARITY_IMAGE=/nfs/mercury-07/u35/jsilovsk/singularity/images/cuda9.0-cudnn7-devel-ubuntu16.04-tensorflow-gpu-1.6.0-py3-tensor2tensor.9e17755
-SINGULARITY_ROOT="/usr/local"
+SINGULARITY_ROOT="/usr/"
 LD_LIBRARY_PATH="$SINGULARITY_ROOT/lib:$LD_LIBRARY_PATH"
 SINGULARITY_BIN="$SINGULARITY_ROOT/bin/singularity"
 SINGULARITY_IMAGE="/nfs/raid87/u14/CauseEx/NN-events-requirements/singularity_image/nlplingo_v1.img"
@@ -15,6 +15,9 @@ env -i \
   SINGULARITYENV_CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES \
   $SINGULARITY_BIN\
   exec \
+  -B /nfs/raid66/u15 \
+  -B /nfs/raid83/u12 \
+  -B /nfs/raid85/u13 \
   -B /nfs/raid87/u10 \
   -B /nfs/raid87/u11 \
   -B /nfs/raid87/u12 \

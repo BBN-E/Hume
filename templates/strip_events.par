@@ -3,4 +3,3 @@ outputDirectory: +output_dir+
 strippedFileList: +output_file_list+
 keepTriggers: false
 keepArguments: false
-com.bbn.serif.typeOntologyModule: com.bbn.serif.AllDynamicTypeOntologyM

@@ -1,184 +1,236 @@
-import re
+
 import json
-import os
-import sys
-import string
-import uuid
-import operator
-import rdflib
-from rdflib import Graph, ConjunctiveGraph, Literal, BNode, Namespace, RDF, URIRef, XSD, RDFS
-from rdflib.namespace import DC, FOAF
-import copy
-import pprint
-import time
-from datetime import datetime
-from datetime import date
-from datetime import timedelta
-from calendar import monthrange
-from time_matcher import TimeMatcher
-import uuid
-from elements.kb_mention import KBMention
-from elements.kb_value_mention import KBValueMention, KBTimeValueMention, KBMoneyValueMention
-from json_encoder import ComplexEncoder
-import json, codecs
 
-import pickle
+def get_marked_up_string_for_event_event_relation(kb_relation,left_kb_event,right_kb_event):
+    relation_type = kb_relation.relation_type
+    left_marked_up_starting_points_to_cnt = dict()
+    left_marked_up_ending_points_to_cnt = dict()
+    right_marked_up_starting_points_to_cnt = dict()
+    right_marked_up_ending_points_to_cnt = dict()
+    kb_sentence = None
+    left_trigger = None
+    right_trigger = None
+    for left_kb_event_mention in left_kb_event.event_mentions:
+        if kb_sentence is None:
+            kb_sentence = left_kb_event_mention.sentence
+        else:
+            # Only within sentence event please
+            assert kb_sentence == left_kb_event_mention.sentence
+        start_char_off = left_kb_event_mention.trigger_start-kb_sentence.start_offset
+        end_char_off = left_kb_event_mention.trigger_end-kb_sentence.start_offset
+        left_marked_up_starting_points_to_cnt[start_char_off] = left_marked_up_starting_points_to_cnt.get(start_char_off,0)+1
+        left_marked_up_ending_points_to_cnt[end_char_off] = left_marked_up_ending_points_to_cnt.get(end_char_off,0)+1
+        left_trigger = left_kb_event_mention.trigger
+    for right_kb_event_mention in right_kb_event.event_mentions:
+        if kb_sentence is None:
+            kb_sentence = right_kb_event_mention.sentence
+        else:
+            # Only within sentence event please
+            assert kb_sentence == right_kb_event_mention.sentence
+        start_char_off = right_kb_event_mention.trigger_start-kb_sentence.start_offset
+        end_char_off = right_kb_event_mention.trigger_end-kb_sentence.start_offset
+        right_marked_up_starting_points_to_cnt[start_char_off] = right_marked_up_starting_points_to_cnt.get(start_char_off,0)+1
+        right_marked_up_ending_points_to_cnt[end_char_off] = right_marked_up_ending_points_to_cnt.get(end_char_off,0)+1
+        right_trigger = right_kb_event_mention.trigger
+    ret = ""
+    for c_idx,c in enumerate(kb_sentence.text):
+        s = ""
+        for _ in range(left_marked_up_starting_points_to_cnt.get(c_idx,0)):
+            s = "<span class=\"slot0\">" + s
+        for _ in range(right_marked_up_starting_points_to_cnt.get(c_idx,0)):
+            s = "<span class=\"slot1\">" + s
+        s = s + c
+        for _ in range(left_marked_up_ending_points_to_cnt.get(c_idx,0)):
+            s = s + "</span>"
+        for _ in range(right_marked_up_ending_points_to_cnt.get(c_idx,0)):
+            s = s + "</span>"
+        ret = ret + s
+    return ret
 
-reload(sys)
-sys.setdefaultencoding('utf8')
+def get_marked_up_string_for_event(kb_event):
+    marked_up_starting_points_to_cnt = dict()
+    marked_up_ending_points_to_cnt = dict()
+    kb_sentence = None
+    for kb_event_mention in kb_event.event_mentions:
+        if kb_sentence is None:
+            kb_sentence = kb_event_mention.sentence
+        else:
+            # Only within sentence event please
+            assert kb_sentence == kb_event_mention.sentence
+        start_char_off = kb_event_mention.trigger_start-kb_sentence.start_offset
+        end_char_off = kb_event_mention.trigger_end-kb_sentence.start_offset
+        marked_up_starting_points_to_cnt[start_char_off] = marked_up_starting_points_to_cnt.get(start_char_off,0)+1
+        marked_up_ending_points_to_cnt[end_char_off] = marked_up_ending_points_to_cnt.get(end_char_off,0)+1
+
+    ret = ""
+    for c_idx,c in enumerate(kb_sentence.text):
+        s = ""
+        for _ in range(marked_up_starting_points_to_cnt.get(c_idx,0)):
+            s = "<span class=\"slot0\">" + s
+        s = s + c
+        for _ in range(marked_up_ending_points_to_cnt.get(c_idx,0)):
+            s = s + "</span>"
+        ret = ret + s
+    return ret
+
+class Node(object):
+    def __init__(self,node_id):
+        self.node_id = node_id
+        self._cnt = 0
+        self.examples = set()
+
+    @property
+    def node_name(self):
+        return self._node_name
+
+    @node_name.setter
+    def node_name(self,val):
+        self._node_name = val
+
+    @property
+    def node_type(self):
+        return self._node_type
+
+    @node_type.setter
+    def node_type(self,val):
+        self._node_type = val
+
+    @property
+    def cnt(self):
+        return self._cnt
+
+    def increse_cnt(self):
+        self._cnt += 1
+
+    def put_example(self,example,max_examples_per_elem):
+        if len(self.examples) < max_examples_per_elem:
+            self.examples.add(example)
+
+    def to_dict(self):
+        return {
+            "node_name":self._node_name,
+            "node_type":self._node_type,
+            "cnt":self._cnt,
+            "node_id":self.node_id,
+            "examples":list(self.examples)
+        }
+
+class Edge(object):
+    def __init__(self,left_node,right_node,edge_name,edge_type):
+        self.left_node = left_node
+        self.right_node = right_node
+        self.edge_name = edge_name
+        self.edge_type = edge_type
+        self._cnt = 0
+        self.examples = set()
+
+    @property
+    def cnt(self):
+        return self._cnt
+
+    def increse_cnt(self):
+        self._cnt += 1
+
+    def to_dict(self):
+        return {
+            "left_node_id":self.left_node.node_id,
+            "right_node_id":self.right_node.node_id,
+            "edge_name":self.edge_name,
+            "edge_type":self.edge_type,
+            "cnt":self._cnt,
+            "examples":list(self.examples)
+        }
+
+    def put_example(self,example,max_examples_per_elem):
+        if len(self.examples) < max_examples_per_elem:
+            self.examples.add(example)
 
 class VisualizationSerializer:
-    good_date_re = re.compile(r"\d{4}")
-    
+
     def __init__(self):
-        self.eventgroup2eventgroupid = {}
-        self.eventgroupid2eventgroup = {}
+        self.max_examples_per_elem = 10
 
-        self.event2eventid = {}
-        self.eventid2event = {}
 
-        self.entity2entityid = {}
-        self.entityid2entity = {}
+    def handle_eer(self,left_em_types,relation_type,right_em_types,trigger_node_left,trigger_node_right,node_type,edge_type,unification_link,unification_relation_type,unification_type,left_kb_evt,right_kb_evt,kb_relation):
+        # Process event type correctly
+        for left_em_type in left_em_types:
+            for right_em_type in right_em_types:
+                left_node_id = "{}_{}".format(node_type,left_em_type)
+                node_for_left = self.node_id_to_nodes.setdefault(left_node_id,
+                                                                 Node(left_node_id))
+                node_for_left.node_name = left_em_type
+                node_for_left.node_type = "{}".format(node_type)
+                node_for_left.increse_cnt()
+                node_for_left.put_example(get_marked_up_string_for_event(left_kb_evt), self.max_examples_per_elem)
 
-        self.relations_eventgroup2eventgroup = set()
-        self.relations_eventgroup2event = set()
-        self.relations_event2entity = set()
+                right_node_id = "{}_{}".format(node_type,right_em_type)
+                node_for_right = self.node_id_to_nodes.setdefault(right_node_id,
+                                                                  Node(right_node_id))
+                node_for_right.node_name = right_em_type
+                node_for_right.node_type = "{}".format(node_type)
+                node_for_right.increse_cnt()
+                node_for_right.put_example(get_marked_up_string_for_event(right_kb_evt), self.max_examples_per_elem)
 
-        pass
+                edge = self.edge_id_to_edges.setdefault((node_for_left, node_for_right, relation_type, edge_type),
+                                                        Edge(node_for_left, node_for_right, relation_type, edge_type))
+                edge.increse_cnt()
+                edge.put_example(get_marked_up_string_for_event_event_relation(kb_relation, left_kb_evt, right_kb_evt),
+                                 self.max_examples_per_elem)
+
+                # Build Unify edge
+                if unification_link is True:
+                    unify_left = self.edge_id_to_edges.setdefault((node_for_left,trigger_node_left,unification_relation_type,unification_type),Edge(node_for_left,trigger_node_left,unification_relation_type,unification_type))
+                    unify_left.increse_cnt()
+                    unify_left.put_example(get_marked_up_string_for_event(left_kb_evt),self.max_examples_per_elem)
+
+                    unify_right = self.edge_id_to_edges.setdefault((node_for_right,trigger_node_right,unification_relation_type,unification_type),Edge(node_for_right,trigger_node_right,unification_relation_type,unification_type))
+                    unify_right.increse_cnt()
+                    unify_right.put_example(get_marked_up_string_for_event(right_kb_evt),self.max_examples_per_elem)
+
+
+
 
     def serialize(self, kb, output_graph_file):
         self.kb = kb
+        self.node_id_to_nodes = dict()
+        self.edge_id_to_edges = dict()
+        for relid, kb_relation in self.kb.relid_to_kb_relation.items():
+            if kb_relation.argument_pair_type == "event-event":
+                relation_type = kb_relation.relation_type
+                left_kb_evt = self.kb.evid_to_kb_event[kb_relation.left_argument_id]
+                right_kb_evt = self.kb.evid_to_kb_event[kb_relation.right_argument_id]
+                for left_kb_em in left_kb_evt.event_mentions:
+                    for right_kb_em in right_kb_evt.event_mentions:
+                        # Create phrase phrase relation
+                        left_trigger = left_kb_em.trigger
+                        right_trigger = right_kb_em.trigger
+                        left_node_id = "trigger_{}".format(left_trigger)
+                        node_for_left = self.node_id_to_nodes.setdefault(left_node_id,Node(left_node_id))
+                        node_for_left.node_name = left_trigger
+                        node_for_left.node_type = "trigger"
+                        node_for_left.increse_cnt()
+                        node_for_left.put_example(get_marked_up_string_for_event(left_kb_evt),self.max_examples_per_elem)
 
-        for relation_group_id, kb_relation_group in self.kb.relgroupid_to_kb_relation_group.iteritems():
-            # skip relation groups that are added by kb constructor
-            # we only process relation groups generated by kb_unification_resolver
-            if "RelationUnified" in relation_group_id:
-                continue
+                        right_node_id = "trigger_{}".format(right_trigger)
+                        node_for_right = self.node_id_to_nodes.setdefault(right_node_id,Node(right_node_id))
+                        node_for_right.node_name = right_trigger
+                        node_for_right.node_type = "trigger"
+                        node_for_right.increse_cnt()
+                        node_for_right.put_example(get_marked_up_string_for_event(right_kb_evt),self.max_examples_per_elem)
 
-            left_event_group_id = kb_relation_group.left_argument_id
-            right_event_group_id = kb_relation_group.right_argument_id
 
-            # print "relation_group_id="+kb_relation_group.id
-            # print "left_event_group_id="+left_event_group_id
-            # print "right_event_group_id=" + right_event_group_id
+                        edge = self.edge_id_to_edges.setdefault((node_for_left,node_for_right,relation_type,"trigger_trigger_relation"),Edge(node_for_left,node_for_right,relation_type,"trigger_trigger_relation"))
+                        edge.increse_cnt()
+                        edge.put_example(get_marked_up_string_for_event_event_relation(kb_relation,left_kb_evt,right_kb_evt),self.max_examples_per_elem)
 
-            left_event_group = kb.evgroupid_to_kb_event_group[left_event_group_id]
-            right_event_group = kb.evgroupid_to_kb_event_group[right_event_group_id]
-
-            self.add_event_group(left_event_group.id, left_event_group_id)
-            self.add_event_group(right_event_group.id, right_event_group_id)
-
-            relation_type = kb_relation_group.relation_type
-
-            self.relations_eventgroup2eventgroup.add((left_event_group_id, relation_type, right_event_group_id))
-
-            for kb_event in left_event_group.members:
-                kb_event_mention = kb_event.event_mentions[0]
-                event_trigger = kb_event_mention.trigger
-                if kb_event_mention.triggering_phrase is not None:
-                    event_trigger = kb_event_mention.triggering_phrase
-                    # print "graph: event_trigger\t" + kb_event_mention.trigger + "\t" + kb_event_mention.triggering_phrase
-                event_id = self.add_event_default(event_trigger)
-                self.relations_eventgroup2event.add((left_event_group_id, "unifies", event_id))
-                self.add_event_arguments(kb_event_mention, event_id)
-            for kb_event in right_event_group.members:
-                kb_event_mention = kb_event.event_mentions[0]
-                event_trigger = kb_event_mention.trigger
-                if kb_event_mention.triggering_phrase is not None:
-                    event_trigger = kb_event_mention.triggering_phrase
-                    # print "graph: event_trigger\t" + kb_event_mention.trigger + "\t" + kb_event_mention.triggering_phrase
-                event_id = self.add_event_default(event_trigger)
-                self.relations_eventgroup2event.add((right_event_group_id, "unifies", event_id))
-                self.add_event_arguments(kb_event_mention, event_id)
-
+                        # Create grounding grounding relation
+                        self.handle_eer((i[0] for i in left_kb_em.external_ontology_sources),relation_type,(i[0] for i in right_kb_em.external_ontology_sources),node_for_left,node_for_right,"event_grounding","event_grounding_event_grounding_relation",True,"unifies","unifies",left_kb_evt,right_kb_evt,kb_relation)
+                        self.handle_eer((i.factor_class for i in left_kb_em.causal_factors),relation_type,(i.factor_class for i in right_kb_em.causal_factors),node_for_left,node_for_right,"factor_grounding","factor_grounding_factor_grounding_relation",True,"unifies","unifies",left_kb_evt,right_kb_evt,kb_relation)
         self.write_graph(output_graph_file)
-
         return
 
-    def add_event_group(self, event_group, event_group_id):
-        self.eventgroup2eventgroupid[event_group] = event_group_id
-        self.eventgroupid2eventgroup[event_group_id] = event_group
-
-    def add_event_default(self, event):
-        if event in self.event2eventid:
-            return self.event2eventid[event]
-        else:
-            self.event2eventid[event] = "EVENT" + str(len(self.event2eventid))
-            self.eventid2event[self.event2eventid[event]] = event
-
-            return self.event2eventid[event]
-
-    def add_event(self, event, eventid):
-        self.event2eventid[event] = eventid
-        self.eventid2event[eventid] = event
-
-    def add_entity_default(self, entity):
-        if entity in self.entity2entityid:
-            return self.entity2entityid[entity]
-        else:
-            self.entity2entityid[entity] = "ENTITY" + str(len(self.entity2entityid))
-            self.entityid2entity[self.entity2entityid[entity]] = entity
-
-            return self.entity2entityid[entity]
-
-    def add_entity(self, entity, entityid):
-        self.entity2entityid[entity] = entityid
-        self.entityid2entity[entityid] = entity
-
-    def add_event_arguments(self, kb_event_mention, event_id):
-        for kb_arg_role in kb_event_mention.arguments:
-            args_for_role = kb_event_mention.arguments[kb_arg_role]
-            if type(args_for_role[0]) == list:
-                args_for_role = args_for_role[0]
-            for kb_argument in args_for_role:
-                # get argument mention text
-                if isinstance(kb_argument, KBTimeValueMention):
-
-                    relation_type = kb_arg_role.encode('utf-8')
-                    arg_entity_str = kb_argument.normalized_date
-
-                    if arg_entity_str is None:
-                        continue
-                    if not VisualizationSerializer.good_date_re.match(arg_entity_str):
-                        continue
-                    
-                    entity_id = self.add_entity_default(arg_entity_str)
-                    self.relations_event2entity.add((event_id, relation_type, entity_id))
-                else:
-                    if isinstance(kb_argument, KBMention):
-                        mention_text = kb_argument.mention_text
-                    else:
-                        mention_text = kb_argument.value_mention_text
-
-                    if kb_argument in self.kb.kb_mention_to_entid:
-                        arg_entity_id = self.kb.entid_to_kb_entity[self.kb.kb_mention_to_entid[kb_argument]]
-
-                        for entity_type_info_key in arg_entity_id.entity_type_to_confidence.keys():
-                            entity_type_info = entity_type_info_key.split(".")
-                            entity_type = entity_type_info[0]
-                            entity_subtype = entity_type_info[1]
-                            if arg_entity_id.canonical_name is not None and kb_event_mention.trigger is not None:
-                                relation_type = kb_arg_role.encode('utf-8')
-                                arg_entity_str = arg_entity_id.canonical_name.encode('utf-8').strip()
-
-                                entity_id = self.add_entity_default(arg_entity_str)
-                                self.relations_event2entity.add((event_id, relation_type, entity_id))
-
     def write_graph(self, output_graph_file):
-        nodes = []
-        edges = []
-        for id,eventgroup in self.eventgroupid2eventgroup.items():
-            nodes.append({'data':{'id':id,'name':eventgroup},'classes':"eventgroup"})
-        for id,event in self.eventid2event.items():
-            nodes.append({'data':{'id':id,'name':event},'classes':"event"})
-        for id,entity in self.entityid2entity.items():
-            nodes.append({'data':{'id':id,'name':entity},'classes':"entity"})
-
-        for i in self.relations_eventgroup2eventgroup:
-            edges.append({'data':{'source':i[0],'target':i[2],'name':i[1]},'classes':'eventgroup2eventgroup '+ i[1]})
-        for i in self.relations_eventgroup2event:
-            edges.append({'data':{'source':i[0],'target':i[2],'name':i[1]},'classes':i[1]})
-        for i in self.relations_event2entity:
-            edges.append({'data':{'source':i[0],'target':i[2],'name':i[1]},'classes':'event2entity '+ i[1]})
+        nodes = [node.to_dict() for node in self.node_id_to_nodes.values()]
+        edges = [edge.to_dict() for edge in self.edge_id_to_edges.values()]
         with open(output_graph_file,'w') as fp:
-            json.dump({'elements': {"nodes": nodes, "edges": edges}},fp, sort_keys=True, indent=4)
+            json.dump({"nodes":nodes,"edges":edges},fp,indent=4,sort_keys=True,ensure_ascii=False)

@@ -1,0 +1,454 @@
+@prefix : <http://ontology.causeex.com/ontology/odps/Actor#> .
+@prefix actor: <http://ontology.causeex.com/ontology/odps/Actor#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix oereligion: <http://www.ontologylibrary.mil/OperationalEnvironment/Mid/OEReligionOntology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://ontology.causeex.com/ontology/odps/Actor-Religion-Hierarchy> rdf:type owl:Ontology ;
+    dcterms:description "Ontology extending and adjusting the OE Religion class hierarchy. The classes from the OEReligion ontology are not used. They defined religions from a personal identification perspective (e.g., Christian vs Christianity), by selecting only a single example of a set of beliefs/churchs (e.g., Maronite which is only one of the Eastern Catholic churches), or by non-standard/ambiguous terms (e.g., Coptic which may be either Oriental Orthodox or Eastern Catholic). Note that NamedIndividuals are not defined - classes can also be used as individuals via OWL punning."@en ;
+    dcterms:created "April 18, 2018"^^xsd:string ;
+    dcterms:modified "May 15, 2019"^^xsd:string ;
+    rdfs:comment """May 15th 2019 revisions:
+                     Updated the comment/description for AhmadiyyaMuslimCommunity.
+                   January 22nd 2019 revisions:
+                     Added new religions from the Wikipedia page, https://en.wikipedia.org/wiki/Demographics_of_the_world, and added the actor: prefix.
+                     Updated the ontology name, replicated OEReligion concepts in the Actor namespace (following the CauseEx naming conventions), renamed 
+                       classes to remove the _Class suffix and use proper noun forms, removed the definition of NamedIndividuals, and removed unused prefixes.
+                     Labeled the entities using both the religion and the terms (nouns) that identify individuals who are members of the religion.
+                  June 27th 2018 revisions:
+                    Added the Salafist religion."""@en ;
+    owl:imports <http://ontology.causeex.com/ontology/odps/Actor-ReificationsAndProperties> ;
+    owl:imports <http://purl.org/dc/terms> ;
+    owl:versionInfo "Version 0.91"^^xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+:Adventism a owl:Class ;
+    rdfs:label "Adventism (personal identification: Adventist)"@en ;
+    rdfs:comment "Adventism was originally defined by William Miller (1782-1849) based on the belief in the second coming of Jesus of Nazareth (the 'Second Advent') in 1843-1844. The group split after the Great Disappointment. The largest group is now the Seventh-day Adventist Church."@en ;
+    rdfs:subClassOf :Protestantism .
+
+:AfricanZionism a owl:Class ;
+    rdfs:label "African Zionism"@en ;
+    rdfs:comment "African Zionism combines Christianity and traditional, African religions. It is practiced in Southern Africa."@en ;
+    rdfs:subClassOf :Christianity .
+
+:Agnosticism a owl:Class ;
+    rdfs:label "Agnosticism (personal identification: Agnostic)"@en ;
+    rdfs:subClassOf :Nontheism .
+
+:Akhbarism a owl:Class ;
+    rdfs:label "Akhbarism (personal identification: Akhbari)"@en ;
+    rdfs:subClassOf :TwelverShiaIslam .
+
+:AhmadiyyaMuslimCommunity a owl:Class ;
+    rdfs:label "Ahmadiyya Muslim Community (personal identification: Ahmadi)"@en ;
+    rdfs:comment "Ahmadi are considered by some Muslims as heretical and/or outside of Islam."@en ;
+    rdfs:subClassOf :Islam .
+
+:AlaviBohraSect a owl:Class ;
+    rdfs:label "Alavi Bohra Sect (personal identification: Alavi)"@en ;
+    rdfs:subClassOf :MustaliIsmailism .
+
+:Alawism a owl:Class ;
+    rdfs:label "Alawism (personal identification: Alawite)"@en ;
+    rdfs:subClassOf :TwelverShiaIslam .
+
+:Alevism a owl:Class ;
+    rdfs:label "Alevism (personal identification: Alevi)"@en ;
+    rdfs:subClassOf :TwelverShiaIslam .
+
+:Anabaptism a owl:Class ;
+    rdfs:label "Anabaptism (personal identification: Anabaptist)"@en ;
+    rdfs:comment "Anabaptism is generally considered to be a form of Protestantism, and also defines various ethnoreligious communities. Examples of Anabaptist churches/groups are the Amish, Hutterites and Menonnites."@en ;
+    rdfs:subClassOf :Protestantism, :EthnicReligion .
+
+:Anglicanism a owl:Class ;
+    rdfs:label "Anglicanism (personal identification: Anglican)"@en ;
+    rdfs:subClassOf :Protestantism .
+
+:Animism a owl:Class ;
+    rdfs:label "Animism (personal identification: Animist)"@en ;
+    rdfs:comment "Animism is based on the belief that places, creatures, objects and even natural phenomena (i.e., both animate and inanimate objects) possess a spirit or soul, and are alive."@en ;
+    rdfs:subClassOf oereligion:Religion .
+
+:Apatheism a owl:Class ;
+    rdfs:label "Apatheism (personal identification: Apatheist)"@en ;
+    rdfs:subClassOf :Nontheism .
+
+:Atheism a owl:Class ;
+    rdfs:label "Atheism (personal identification: Atheist)"@en ;
+    rdfs:subClassOf :Nontheism .
+
+:BahaiFaith a owl:Class ;
+    rdfs:label "Bahai (or Baha'i) Faith (personal identification: Baha'i)"@en ;
+    rdfs:comment "Bahai believe that all religions have value and that all people are equal and should be united."@en ;
+    rdfs:subClassOf oereligion:Religion .
+
+:BaptistChurch a owl:Class ;
+    rdfs:label "Baptist Church (personal identification: Baptist)"@en ;
+    rdfs:subClassOf :Protestantism .
+
+:Buddhism a owl:Class ;
+    rdfs:label "Buddhism (personal identification: Buddhist)"@en ;
+    rdfs:comment "Buddhism is a variety of traditions, beliefs and practices based on the teachings of 'the Buddha'. Buddhists strive to conquer suffering and the cycle of death and rebirth, by attaining Nirvana or achieving the rank of Buddha. Various branches of Buddhism exist. The main ones are Mahayana, Theravada and Vajrayana (although some scholars consider the latter to be a type of Mahayana)."@en ;
+    rdfs:subClassOf oereligion:Religion .
+
+:Calvinism a owl:Class ;
+    rdfs:label "Calvinism (personal identification: Calvinist)"@en ;
+    rdfs:subClassOf :Protestantism .
+
+:Caodaism a owl:Class ;
+    rdfs:label "Caodaism or Cao Dai (Cao &#x0110;&#x00E0;i, personal identification: Caodaist)"@en ;
+    rdfs:comment "Caodaism was founded in the 1920s in Vietnam."@en ;
+    rdfs:subClassOf oereligion:Religion .
+
+:Catholicism a owl:Class ;
+    rdfs:label "Catholicism or Roman Catholicism (personal identification: Catholic)"@en ;
+    rdfs:comment "Catholicism includes the Roman Catholic Church (Western Church) and the 23 Eastern Catholic Churches."@en ;
+    rdfs:subClassOf :Christianity .
+
+:Cheondoism a owl:Class ;
+    rdfs:label "Cheondoism or Chondoism (personal identification: Cheondoist)"@en ;
+    rdfs:comment "Cheondoism was founded in Korea and is based on Confucianism with Shamanistic elements."@en ;
+    rdfs:subClassOf oereligion:Religion .
+
+:ChristianScience a owl:Class ;
+    rdfs:label "Christian Science (personal identification: Christian Scientist)"@en ;
+    rdfs:comment "Christian Science was started by Mary Baker Eddy (1821-1910) based on her book, Science and Health with Key to the Scriptures, which argued that illness can be cured by prayer."@en ;
+    rdfs:subClassOf :Nontrinitarianism .
+
+:Confucianism a owl:Class ;
+    rdfs:label "Confucianism or Ruism (personal identification: Confucianist)"@en ;
+    rdfs:comment "Confucianism is more a way of life than a formal, organized religion. It is based on the teachings of Confucius which focused on charity, honesty, conscientiousness, loyalty, altruism, consideration for others, knowledge, integrity, correct behavior and ritual/worship."@en ;
+    rdfs:subClassOf oereligion:Religion .
+
+:ConservativeJudaism a owl:Class ;
+    rdfs:label "Conservative Judaism or Masorti Judaism"@en ;
+    rdfs:subClassOf :Judaism .
+
+:Christianity a owl:Class ;
+    rdfs:label "Christianity (personal identification: Christian)"@en ;
+    rdfs:comment "Christianity is based on the teachings of Jesus of Nazareth, who is defined as the savior predicted in the Bible's Old Testament, and whose life is chronicled in the New Testament. Examples of Christianity include Catholicism and Eastern/Oriental Orthodoxy."@en ;
+    rdfs:subClassOf oereligion:Religion .
+
+:DawoodiBohraSect a owl:Class ;
+    rdfs:label "Dawoodi Bohra Sect"@en ;
+    rdfs:subClassOf :Ismailism .
+
+:DruzeFaith a owl:Class ;
+    rdfs:label "Druze Faith"@en ;
+    rdfs:subClassOf oereligion:Religion .
+
+:EasternCatholicism a owl:Class ;
+    rdfs:label "Eastern Catholicism (personal identification: Eastern Catholic)"@en ;
+    rdfs:comment "There are 23 Eastern Catholic Churches. These include the Ukrainian Greek Catholic Church (Byzantine Rite), Syro-Malabar Church (East Syriac Rite), Maronite Church (West Syriac Rite), the Melkite Catholic Church (Byzantine Rite), Italo-Albanian Greek Catholic Church (Byzantine Rite), Coptic Catholic Church (Alexandrian Rite) and the Armenian Catholic Church (Armenian Rite)."@en ;
+    rdfs:subClassOf :Catholicism .
+
+:EasternOrthodoxy a owl:Class ;
+    rdfs:label "Eastern Orthodoxy or Orthodox Catholic Church (personal identification: Eastern Orthodox)"@en ;
+    rdfs:comment "The Eastern Orthodox Church broke with the Roman Catholic Church in 1054 over doctrinal disputes, especially related to the authority of the pope."@en ;
+    rdfs:subClassOf :Christianity .
+
+:EthnicReligion a owl:Class ;
+    rdfs:label "Ethnic or Folk Religion"@en ;
+    rdfs:comment "An ethnic religion is associated with a particular ethnic group and help to define members of the group and their identity. Examples include Hinduism, Judaism, Chinese folk religion of the Han Chinese, Shintoism, and many of the Anabaptist religions (such as Amish or Menonnite)."@en ;
+    rdfs:subClassOf oereligion:Religion .
+
+:Evangelicalism a owl:Class ;
+    rdfs:label "Evangelicalism (personal identification: Evangelical)"@en ;
+    rdfs:comment "Evangelicalism is rooted in the rivivalist movements that began in the 1730s in Britain and North America. Its main tenents are a necessity to be 'born again', a reverence for the Bible, a focus on the death and resurrection of Jesus of Nazareth, and activism (preaching and social action)."@en ;
+    rdfs:subClassOf :Christianity .
+
+:HanafiFiqh a owl:Class ;
+    rdfs:label "Hanafi Fiqh (School)"@en ;
+    rdfs:comment "One of the four schools of jurispuridence in Sunni Islam."@en ;
+    rdfs:subClassOf :SunniIslam .
+
+:HanbaliFiqh a owl:Class ;
+    rdfs:label "Hanbali Fiqh (School)"@en ;
+    rdfs:comment "One of the four schools of jurispuridence in Sunni Islam."@en ;
+    rdfs:subClassOf :SunniIslam .
+
+:HarediJudaism a owl:Class ;
+    rdfs:label "Haredi Judaism, Orthodox Judaism or Traditional Orthodox Judaism (personal identification: Haredi Jew or Haridim)"@en ;
+    rdfs:comment "A Jewish movement that rejects modern, secular culture. An extreme form of Haredi Judaism is Hasidism."@en ;
+    rdfs:subClassOf :Judaism .
+
+:Hasidism a owl:Class ;
+    rdfs:label "Hasidism, Ulta-Orthodox Judaism or Hasidic Judaism (personal identification: Hasidic Jew)"@en ;
+    rdfs:subClassOf :HarediJudaism .
+
+:Haymanot a owl:Class ;
+    rdfs:label "Haymanot or Ethiopian Judaism (personal identification: Ethiopian Jew)"@en ;
+    rdfs:subClassOf :Judaism .
+
+:HebtiahsBohraSect a owl:Class ;
+    rdfs:label "Hebtiahs Bohra Sect"@en ;
+    rdfs:subClassOf :MustaliIsmailism .
+
+:Hinduism a owl:Class ;
+    rdfs:label "Hinduism (personal identification: Hindu)"@en ;
+    rdfs:comment "Hinduism is a religion and a way of life that resulted from the merging of various Indian cultures and traditions. Its main themes focus on ethics, duties, work, passions, the cycle of death and rebirth, action, intent and consequences and the various Yogas (paths to salvation)."@en ;
+    rdfs:subClassOf oereligion:Religion .
+
+:Humanism a owl:Class ;
+    rdfs:label "Humanism (personal identification: Humanist)"@en ;
+    rdfs:subClassOf :Nontheism .
+
+:Ibadism a owl:Class ;
+    rdfs:label "Ibadism or Ibadiyya (personal identification: Ibadi)"@en ;
+    rdfs:subClassOf :Islam .
+
+:Ismailism a owl:Class ;
+    rdfs:label "Isma'ilism (personal identification: Isma'ili)"@en ;
+    rdfs:comment "A branch of Shia Islam, that is further divided into Nazari and Musta'li Isma'ilism."@en ;
+    rdfs:subClassOf :ShiaIslam .
+
+:Islam a owl:Class ;
+    rdfs:label "Islam (personal identification: Muslim)"@en ;
+    rdfs:comment "Islam is a monotheistic religion with one God, Allah, and Muhammed as his messenger. The primary scripture of Islam is the Quran. Its main denominations are Shia and Sunni Islam."@en ;
+    rdfs:subClassOf oereligion:Religion .
+
+:Jainism a owl:Class ;
+    rdfs:label "Jainism (personal identification: Jain)"@en ;
+    rdfs:comment "Jainism is an ancient Indian religion based on non-violence, understanding that truth is many-sided, non-attachment and asceticism. Its main sects are Digambaras and Svetambaras."@en ;
+    rdfs:subClassOf oereligion:Religion .
+
+:JapaneseNewReligion a owl:Class ;
+    rdfs:label "Japanese New Religion"@en ;
+    rdfs:comment "Japanese 'new' religions encompass a broad set of religions founded in Japan anytime in the 1800's or later. They are contrasted with the 'traditional' religions of Buddhism and Shintoism. The religions include Tenri-kyo (Tenri-ky&#x014D;, aka Tenrikyo or Tenriism), Reiyu-kai (Reiy&#x016B;-kai, aka Reiyukai/Reiy&#x016B;kai which is translated as the Spiritual Friendship Association, or Reiyukai Shakaden/Reiy&#x016B;kai Shakaden), Perfect Liberty Kyodan (Perfect Liberty Ky&#x014D;dan, aka PL Kyodan or the Church of Perfect Liberty), Soka Gakkai (S&#x014D;ka Gakkai), Shinnyo-en, Rissho Kosei-kai (Rissh&#x014D; K&#x014D;sei-kai, aka Rissho Kosei Kai or Dai-Nippon Rissho Kosei Kai), Bussho Gonenkai Kyodan (Bussho Gonenkai Ky&#x014D;dan), the Church of World Messianity (aka Sekai Kyusei Kyo/Sekai Ky&#x016B;sei Ky&#x014D; and abbreviated COWM) and Seicho no Ie (Seich&#x014D; no Ie, translated as the House of Growth), among many others."@en ;
+    rdfs:subClassOf oereligion:Religion .
+
+:JehovahsWitnesses a owl:Class ;
+    rdfs:label "Jehovah's Witnesses (personal identification: Jehovah's Witness)"@en ;
+    rdfs:subClassOf :Nontrinitarianism .
+
+:Judaism a owl:Class ;
+    rdfs:label "Judaism (personal identification: Jew)"@en ;
+    rdfs:comment "Judaism is a monotheistic religion with one God, Yahweh. The primary scripture of Islam is the Tanakh (or Mikra/Hebrew Bible), of which the Torah is a part. There is also an oral tradition that includes the Midrash and Talmud. Beyond Orthodox Judaism, there are other denominations including Conservative, Reform, Karaite and Reconstructionist Judaism."@en ;
+    rdfs:subClassOf oereligion:Religion .
+
+:KaraiteJudaism a owl:Class ;
+    rdfs:label "Karaite Judaism, Karaism, Qaraite Judaism or Qaraism (personal identification: Karaite)"@en ;
+    rdfs:subClassOf :Judaism .
+
+:Kharijism a owl:Class ;
+    rdfs:label "Kharijism or Khawarij (personal identification: Khawarij Muslim or Kharijite)"@en ;
+    rdfs:subClassOf :Islam .
+
+:Lutheranism a owl:Class ;
+    rdfs:label "Lutheranism (personal identification: Lutheran)"@en ;
+    rdfs:subClassOf :Protestantism .
+
+:MahayanaBuddhism a owl:Class ;
+    rdfs:label "Mahayana Buddhism (personal identification: Mahayana Buddhist)"@en ;
+    rdfs:comment "A branch of Buddhism that includes Chan Buddhism, Korean Seon, Japanese Zen, Pure Land Buddhism, Nichiren Buddhism and Vietnamese Buddhism, among others."@en ;
+    rdfs:subClassOf :Buddhism .
+
+:MalikiFiqh a owl:Class ;
+    rdfs:label "Maliki Fiqh (School)"@en ;
+    rdfs:comment "One of the four schools of jurispuridence in Sunni Islam."@en ;
+    rdfs:subClassOf :SunniIslam .
+
+:Methodism a owl:Class ;
+    rdfs:label "Methodism (personal identification: Methodist)"@en ;
+    rdfs:subClassOf :Protestantism .
+
+:ModernOrthodoxJudaism a owl:Class ;
+    rdfs:label "Modern Orthodox Judaism"@en ;
+    rdfs:comment "A Jewish movement that attempts to combine Jewish values and laws with modern, secular culture."@en ;
+    rdfs:subClassOf :Judaism .
+
+:Moism a owl:Class ;
+    rdfs:label "Moism, Mo or Zhuang Shigongism"@en ;
+    rdfs:comment "Religion of most Zhuang people, the largest ethnic minority of China."@en ;
+    rdfs:subClassOf oereligion:Religion .
+
+:Mormonism a owl:Class ;
+    rdfs:label "Mormonism or The Church of Jesus Christ of Latter-day Saints (personal identification: Mormon)"@en ;
+    rdfs:subClassOf :Nontrinitarianism .
+
+:MustaliIsmailism a owl:Class ;
+    rdfs:label "Musta'li, Musta'ali or Tayyibi Ismailism (personal identification: Musta'li or Taiyabi)"@en ;
+    rdfs:comment "Originally, there were two sects of Musta'li - Taiyabi and Hafizi, but the Hafizi lost support. Now, all Musta'li are Taiyabi. Most are part of one of the various Bohras."@en ;
+    rdfs:subClassOf :Ismailism .
+
+:Naturalism a owl:Class ;
+    rdfs:label "Naturalism (personal identification: Naturalist)"@en ;
+    rdfs:subClassOf :Nontheism .
+
+:NizariIsmailism a owl:Class ;
+    rdfs:label "Nizari Isma'ilism"@en ;
+    rdfs:subClassOf :Ismailism .
+
+:Nontheism a owl:Class ;
+    rdfs:label "Nontheism (personal identification: Nontheist)"@en ;
+    rdfs:comment "Nontheism is a general term to refer to any of the movements/ideologies (religious and non-religious) that do not believe in a God or gods, or to whome the concept of God/gods is irrelevant. Examples are agnosticism, ignosticism/igtheism, atheism, apatheism and humanism."@en ;
+    rdfs:subClassOf oereligion:Religion .
+
+:Nontrinitarianism a owl:Class ;
+    rdfs:label "Nontrinitarianism (personal identification: Nontrinitarian)"@en ;
+    rdfs:comment "Nontrinitarianism is a form of Christianity that rejects the concept of God as a trinity. Some examples of nontrinitarian religions are The Church of Jesus Christ of Latter-day Saints ('Mormons'), Oneness Pentecostals, Jehovah's Witnesses, La Luz del Mundo, the Iglesia ni Cristo, Christian Scientists and Unitarian Universalist Christians, among others."@en ;
+    rdfs:subClassOf :Christianity .
+
+:OrientalOrthodoxy a owl:Class ;
+    rdfs:label "Oriental Orthodoxy"@en ;
+    rdfs:comment "The Oriental Orthodox Church is composed of six autocephalous churches: the Coptic Orthodox Church of Alexandria, the Syriac Orthodox Church of Antioch, the Armenian Apostolic Church, the Ethiopian Orthodox Tewahedo Church, the Eritrean Orthodox Tewahedo Church, and the Malankara Orthodox Syrian Church. It separated from the Eastern Orthodox Church over issues related to Christology."@en ;
+    rdfs:subClassOf :Christianity .
+
+:Paganism a owl:Class ;
+    rdfs:label "Paganism (personal identification: Pagan)"@en ;
+    rdfs:comment "Paganism is polytheistic and typically nature-based. It includes religions such as Roman Polytheistic Reconstructionism, Hellenism, Slavic Native Faith, Celtic Reconstructionist Paganism, Heathenry, Druidism (or Druidry), Discordianism, aboriginal religions, New Age spirituality, Spiritualism, Haitian Vodou (or Voodoo), Santeria (Santer&#x016B;a) and Espiritu, among others. In addition, sub-classes of Paganism are defined."@en ;
+    rdfs:subClassOf oereligion:Religion .
+
+:Pentecostalism a owl:Class ;
+    rdfs:label "Pentecostalism (personal identification: Pentacostal)"@en ;
+    rdfs:subClassOf :Protestantism .
+
+:Protestantism a owl:Class ;
+    rdfs:label "Protestantism (personal identification: Protestant)"@en ;
+    rdfs:comment "A branch of Christianity that originated in the teachings of Martin Luther (1483-1546), and that further divides to include Lutheranism and Methodism."@en ;
+    rdfs:subClassOf :Christianity .
+
+:Quakerism a owl:Class ;
+    rdfs:label "Quakerism (personal identification: Quaker)"@en ;
+    rdfs:subClassOf :Protestantism .
+
+:Rastafari a owl:Class ;
+    rdfs:label "Rastafari or Rastafarianism (personal identification: Rastafari, Rastafarian, or Rasta)"@en ;
+    rdfs:comment "Rastafari is an Afrocentric religious and social movement that originated in Jamaica in the 1930s."@en ;
+    rdfs:subClassOf oereligion:Religion .
+
+:ReconstructionistJudaism a owl:Class ;
+    rdfs:label "Reconstructionist Judaism"@en ;
+    rdfs:subClassOf :Judaism .
+
+:ReformJudaism a owl:Class ;
+    rdfs:label "Reform Judaism, Liberal Judaism or Progressive Judaism"@en ;
+    rdfs:subClassOf :Judaism .
+
+:Salafism a owl:Class ;
+    rdfs:label "Salafism, Salafiya or Salafist Movement (personal identification: Salafi)"@en ;
+    rdfs:comment "A fundamentalist branch of Sunni Islam, some members of which want change via preaching/evangelizing while others want change through violence."@en ;
+    rdfs:subClassOf :HanbaliFiqh .
+
+:SalafiJihadism a owl:Class ;
+    rdfs:label "Salafi Jihadism or Jihadist-Salafism (personal identification: Salafi jihadi or jihadist)"@en ;
+    rdfs:subClassOf :Salafism, :Wahhabism .
+
+:ShafiiFiqh a owl:Class ;
+    rdfs:label "Shafi'i or Shafei Fiqh (School)"@en ;
+    rdfs:comment "One of the four schools of jurispuridence in Sunni Islam."@en ;
+    rdfs:subClassOf :SunniIslam .
+
+:Shaktism a owl:Class ;
+    rdfs:label "Shaktism (personal identification: Shakta Hindu)"@en ;
+    rdfs:comment "A branch of Hinduism, Shaktism venerates Adi Parashakti as the Supreme Being. It includes a variety of goddesses (such as Kali, Saraswati, Lakshmi and Parvati), who are all considered aspects of Adi Parashakti."@en ;
+    rdfs:subClassOf :Hinduism .
+
+:Shaivism a owl:Class ;
+    rdfs:label "Shaivism (personal identification: Shaiva Hindu)"@en ;
+    rdfs:comment "A branch of Hinduism, Shaivism venerates Shiva as the Supreme Being. Its denominations include Kashmir Shaivism, Veerashaivism and Nath."@en ;
+    rdfs:subClassOf :Hinduism .
+
+:Shamanism a owl:Class ;
+    rdfs:label "Shamanism"@en ;
+    rdfs:comment "Belief that via altered consciousness/trances, a person (shaman) can communicate with the spirit world and cure illness/injury."@en ;
+    rdfs:subClassOf oereligion:Religion .
+
+:ShiaIslam a owl:Class ;
+    rdfs:label "Shi'ism, Shi'itism or Shia or Shi'ah Islam (personal identification: Shia Muslim, Shi'i or Shi'ite)"@en ;
+    rdfs:comment "A branch of Islam that includes Isma'ilism, Twelver Shia Islam (or Imamiyyah) and Zaidism (or Zaidiyyah)."@en ;
+    rdfs:subClassOf :Islam .
+
+:Shintoism a owl:Class ;
+    rdfs:label "Shintoism or Shinto (personal identification: Shintoist)"@en ;
+    rdfs:comment "Shintoism is an ancient religion in Japan and has the notion of kami, dealing with the presence of gods and spirits in nature."@en ;
+    rdfs:subClassOf oereligion:Religion .
+
+:Sikhism a owl:Class ;
+    rdfs:label "Sikhism or Sikhi (personal identification: Sikh)"@en ;
+    rdfs:comment "Sikhism originated in the Punjab region of India and is a monotheistic faith with a focus on equality of all people and service to all."@en ;
+    rdfs:subClassOf oereligion:Religion .
+
+:Sufism a owl:Class ;
+    rdfs:label "Sufism (personal identification: Sufi)"@en ;
+    rdfs:comment "A branch of Islamic mysticism. The majority of the Sufi are Sunni but there are also sects within Shia Islam. Sufi orders include Bektashi, Chishti, Mawlawiyya (or Mawlawi), Naqshbandi, Qadiriyyah, Suhrawardiyya, Tijaniyyah, Muridiyya, Shadhiliyya (or Shadhil), Nimatullahi (or Ne'matollahi), Kubrawiya (or or Kubrawi) and Senussi."@en ;
+    rdfs:subClassOf :Islam .
+
+:SulaymaniBohraSect a owl:Class ;
+    rdfs:label "Sulaymani or Sulaimani Bohra Sect"@en ;
+    rdfs:subClassOf :MustaliIsmailism .
+
+:SunniIslam a owl:Class ;
+    rdfs:label "Sunnism or Sunni Islam (personal identification: Sunni Muslim)"@en ;
+    rdfs:comment "A branch of Islam that includes the four schools, Hanafi, Hanbali, Maliki and Shafi'i."@en ;
+    rdfs:subClassOf :Islam .
+
+:SunniBohraSect a owl:Class ;
+    rdfs:label "Sunni Bohra, Sunni Vahora, Sunni Vhora, Jafari Bohra or Patani Bohra Sect"@en ;
+    rdfs:comment "Derived from an Indian community that split from the Dawoodi Bohra and converted to Sunni Islam."@en ;
+    rdfs:subClassOf :SunniIslam .
+
+:Taoism a owl:Class ;
+    rdfs:label "Taoism or Daoism (personal identification: Taoist or Daoist)"@en ;
+    rdfs:comment "Taoism is an ancient religion in China and has the notion of the Tao ('The Way'), in which all things are connected."@en ;
+    rdfs:subClassOf oereligion:Religion .
+
+:TheravadaBuddhism a owl:Class ;
+    rdfs:label "Theravada Buddhism (personal identification: Theravada Buddhist)"@en ;
+    rdfs:comment "A branch of Buddhism that includes Buddhist modernism, the Vipassana movement, and the Thai Forest Tradition, among others."@en ;
+    rdfs:subClassOf :Buddhism .
+
+:TwelverShiaIslam a owl:Class ;
+    rdfs:label "Twelver Shia Islam or Imamiyyah"@en ;
+    rdfs:comment "A branch of Shia Islam that believes in twelve divinely ordained imans/leaders. Sub-branches include Alawism, Alevism, Ahkbarism and the Usulism."@en ;
+    rdfs:subClassOf :ShiaIslam .
+
+:Unitarianism a owl:Class ;
+    rdfs:label "Unitarianism (personal identification: Unitarian)"@en ;
+    rdfs:subClassOf :Nontrinitarianism .
+
+:UnitarianUniversalism a owl:Class ;
+    rdfs:label "Unitarian Universalism (personal identification: Unitarian Universalist)"@en ;
+    rdfs:subClassOf :Unitarianism .
+
+:Usulism a owl:Class ;
+    rdfs:label "Usulism (personal identification: Usuli)"@en ;
+    rdfs:subClassOf :TwelverShiaIslam .
+
+:Vaishnavism a owl:Class ;
+    rdfs:label "Vaishnavism (personal identification: Vaishnava Hindu)"@en ;
+    rdfs:comment "A branch of Hinduism, Vaishnavism venerates Vishnu as the Supreme Being. Its denominations include Sri Vaishnava Sampradaya, Brahma Sampradaya, Nimbarka Sampradaya and Pushti marg."@en ;
+    rdfs:subClassOf :Hinduism .
+
+:VajrayanaBuddhism a owl:Class ;
+    rdfs:label "Vajrayana, Mantrayana or Guhyamantrayana Buddhism (personal identification: Vajrayana Buddhist)"@en ;
+    rdfs:comment "A branch of Buddhism that is sometimes considered a type of Mahayana Buddhism that includes Tiantai, Tendai, Shingon Buddhism, and Tibetan Buddhism, among others."@en ;
+    rdfs:subClassOf :Buddhism .
+
+:Wahhabism a owl:Class ;
+    rdfs:label "Wahhabism or Wahhabi Islam (personal identification: Wahhabi)"@en ;
+    rdfs:comment "A fundamentalist branch of Sunni Islam, which rejected modern influences and culture and has put emphasis on jihad."@en ;
+    rdfs:subClassOf :Salafism .
+
+:Wicca a owl:Class ;
+    rdfs:label "Wicca (personal identification: Wiccan)"@en ;
+    rdfs:comment "Wicca is typically a duotheistic religion, worshipping both a God and Goddess, who can have different aspects that can be identified as deities from various times in history. Wiccans are considered witches."@en ;
+    rdfs:subClassOf :Paganism .
+
+:Zaidism a owl:Class ;
+    rdfs:label "Zaidism or Zaidiyyah (personal identification: Zaydi or Zaidi)"@en ;
+    rdfs:subClassOf :ShiaIslam .
+
+:Zoroastrianism a owl:Class ;
+    rdfs:label "Zoroastrianism or Mazdayasna (personal identification: Zoroastrian)"@en ;
+    rdfs:comment "Zoroastrianism is believes in a single creator god and the existence of good and evil (predicting the ultimate destruction of evil). It is based on the teachings of Zoroaster (also known as Zarathustra)."@en ;
+    rdfs:subClassOf oereligion:Religion .

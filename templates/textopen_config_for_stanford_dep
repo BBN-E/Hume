@@ -1,0 +1,9 @@
+# testing config file
+
+# implementations go here
+IMPLEMENTATIONS
++textopen_root+/src/python/serif/model/impl/dependency_parser/stanford_nlp_dependency_parser.py
+
+DEPENDENCY_MODEL StanfordNLPDependencyParser
+lang en
+models_dir /nfs/raid87/u10/shared/Hume/common/stanfordnlp_resources

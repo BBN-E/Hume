@@ -114,7 +114,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "the agricultural season ,",
+                    "text": "the agricultural season",
                     "wn_sense": null
                 }
             },
@@ -177,7 +177,14 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "farm production .",
+                    "text": "harvesting",
+                    "wn_sense": null
+                }
+            },
+            {
+                "trigger": {
+                    "POS": null,
+                    "text": "farm production",
                     "wn_sense": null
                 }
             },
@@ -884,13 +891,6 @@
                 "trigger": {
                     "POS": null,
                     "text": "disclosed",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
-                    "text": "SOUTH SUDAN Food Security Outlook",
                     "wn_sense": null
                 }
             },
@@ -2757,28 +2757,14 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "produced",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
-                    "text": "production",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
-                    "text": "producing",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
                     "text": "crop production",
+                    "wn_sense": null
+                }
+            },
+            {
+                "trigger": {
+                    "POS": null,
+                    "text": "crops",
                     "wn_sense": null
                 }
             }
@@ -2797,27 +2783,6 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "Imported",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
-                    "text": "trading",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
-                    "text": "trade",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
                     "text": "traded",
                     "wn_sense": null
                 }
@@ -2825,7 +2790,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "export",
+                    "text": "exported",
                     "wn_sense": null
                 }
             },
@@ -2833,13 +2798,6 @@
                 "trigger": {
                     "POS": null,
                     "text": "imports",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
-                    "text": "Exports",
                     "wn_sense": null
                 }
             },
@@ -2994,7 +2952,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "blockade ,",
+                    "text": "blockade",
                     "wn_sense": null
                 }
             },
@@ -3036,7 +2994,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "bar )",
+                    "text": "bar",
                     "wn_sense": null
                 }
             },
@@ -3050,7 +3008,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "protected .",
+                    "text": "protected",
                     "wn_sense": null
                 }
             },
@@ -3072,6 +3030,13 @@
                     "text": "demand for oil",
                     "wn_sense": null
                 }
+            },
+            {
+                "trigger": {
+                    "POS": null,
+                    "text": "market demand",
+                    "wn_sense": null
+                }
             }
         ],
         "name": "Demand"
@@ -3081,7 +3046,28 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "strike",
+                    "text": "strikes",
+                    "wn_sense": null
+                }
+            },
+            {
+                "trigger": {
+                    "POS": null,
+                    "text": "boycott",
+                    "wn_sense": null
+                }
+            },
+            {
+                "trigger": {
+                    "POS": null,
+                    "text": "demonstrations",
+                    "wn_sense": null
+                }
+            },
+            {
+                "trigger": {
+                    "POS": null,
+                    "text": "rally",
                     "wn_sense": null
                 }
             }
@@ -3093,28 +3079,28 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "destroy",
+                    "text": "destroy crops",
                     "wn_sense": null
                 }
             },
             {
                 "trigger": {
                     "POS": null,
-                    "text": "destroying",
+                    "text": "destroying fields",
                     "wn_sense": null
                 }
             },
             {
                 "trigger": {
                     "POS": null,
-                    "text": "destroys",
+                    "text": "damaged crops",
                     "wn_sense": null
                 }
             },
             {
                 "trigger": {
                     "POS": null,
-                    "text": "destroyed",
+                    "text": "decimated crop yields",
                     "wn_sense": null
                 }
             }
@@ -3335,21 +3321,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "procurement ,",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
-                    "text": "access",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
-                    "text": "acute malnutrition ,",
+                    "text": "procurement",
                     "wn_sense": null
                 }
             },
@@ -3363,14 +3335,14 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "surplus .",
+                    "text": "surplus",
                     "wn_sense": null
                 }
             },
             {
                 "trigger": {
                     "POS": null,
-                    "text": "economy ,",
+                    "text": "economy",
                     "wn_sense": null
                 }
             },
@@ -3384,7 +3356,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "fees ,",
+                    "text": "fees",
                     "wn_sense": null
                 }
             },
@@ -3398,14 +3370,14 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "taxation ;",
+                    "text": "taxation",
                     "wn_sense": null
                 }
             },
             {
                 "trigger": {
                     "POS": null,
-                    "text": "the market .",
+                    "text": "the market",
                     "wn_sense": null
                 }
             },
@@ -3419,21 +3391,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "food prices",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
                     "text": "depreciation",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
-                    "text": "short",
                     "wn_sense": null
                 }
             },
@@ -3517,7 +3475,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "net production .",
+                    "text": "net production",
                     "wn_sense": null
                 }
             },
@@ -3608,13 +3566,6 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "deprivation ,",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
                     "text": "borrowed",
                     "wn_sense": null
                 }
@@ -3622,7 +3573,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "dividends .",
+                    "text": "dividends",
                     "wn_sense": null
                 }
             },
@@ -3678,7 +3629,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "Compensation .",
+                    "text": "Compensation",
                     "wn_sense": null
                 }
             },
@@ -3720,13 +3671,6 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "siege ,",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
                     "text": "acquisition",
                     "wn_sense": null
                 }
@@ -3755,21 +3699,14 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "dispossessed .",
+                    "text": "dispossessed",
                     "wn_sense": null
                 }
             },
             {
                 "trigger": {
                     "POS": null,
-                    "text": "food consumption",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
-                    "text": "funded .",
+                    "text": "funded",
                     "wn_sense": null
                 }
             },
@@ -3860,14 +3797,14 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "retail )",
+                    "text": "retail",
                     "wn_sense": null
                 }
             },
             {
                 "trigger": {
                     "POS": null,
-                    "text": "economies ,",
+                    "text": "economies",
                     "wn_sense": null
                 }
             },
@@ -3930,13 +3867,6 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "adjust .",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
                     "text": "contraction",
                     "wn_sense": null
                 }
@@ -3958,7 +3888,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "poor .",
+                    "text": "poor",
                     "wn_sense": null
                 }
             },
@@ -3993,7 +3923,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "economic decline ,",
+                    "text": "economic decline",
                     "wn_sense": null
                 }
             },
@@ -4028,7 +3958,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "adversity .",
+                    "text": "adversity",
                     "wn_sense": null
                 }
             },
@@ -4084,7 +4014,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "hoarding .",
+                    "text": "hoarding",
                     "wn_sense": null
                 }
             },
@@ -4098,20 +4028,6 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "the economic crisis .",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
-                    "text": "The market",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
                     "text": "earnings",
                     "wn_sense": null
                 }
@@ -4119,14 +4035,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "poverty ,",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
-                    "text": "seasonality ,",
+                    "text": "poverty",
                     "wn_sense": null
                 }
             },
@@ -4140,14 +4049,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "recession .",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
-                    "text": "food consumption ,",
+                    "text": "recession",
                     "wn_sense": null
                 }
             },
@@ -4161,13 +4063,6 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "deprivation .",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
                     "text": "repayment",
                     "wn_sense": null
                 }
@@ -4175,7 +4070,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "dividends ,",
+                    "text": "dividends",
                     "wn_sense": null
                 }
             },
@@ -4203,14 +4098,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "sanctions .",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
-                    "text": "malnutrition",
+                    "text": "sanctions",
                     "wn_sense": null
                 }
             },
@@ -4218,13 +4106,6 @@
                 "trigger": {
                     "POS": null,
                     "text": "disruptions",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
-                    "text": "correction",
                     "wn_sense": null
                 }
             },
@@ -4245,20 +4126,6 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "The economic crisis ,",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
-                    "text": "shortages",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
                     "text": "GDP",
                     "wn_sense": null
                 }
@@ -4267,20 +4134,6 @@
                 "trigger": {
                     "POS": null,
                     "text": "consumption",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
-                    "text": "correction ,",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
-                    "text": "The economic crisis",
                     "wn_sense": null
                 }
             },
@@ -4301,35 +4154,14 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "the price",
+                    "text": "economic pressures",
                     "wn_sense": null
                 }
             },
             {
                 "trigger": {
                     "POS": null,
-                    "text": "High food prices",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
-                    "text": "economic pressures .",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
-                    "text": "issues",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
-                    "text": "earnings ,",
+                    "text": "earnings",
                     "wn_sense": null
                 }
             },
@@ -6565,13 +6397,6 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "lighting ,",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
                     "text": "burning",
                     "wn_sense": null
                 }
@@ -6594,6 +6419,13 @@
                 "trigger": {
                     "POS": null,
                     "text": "fire",
+                    "wn_sense": null
+                }
+            },
+            {
+                "trigger": {
+                    "POS": null,
+                    "text": "wildfire",
                     "wn_sense": null
                 }
             },
@@ -6652,6 +6484,20 @@
             {
                 "trigger": {
                     "POS": null,
+                    "text": "nutrition",
+                    "wn_sense": null
+                }
+            },
+            {
+                "trigger": {
+                    "POS": null,
+                    "text": "eating grains",
+                    "wn_sense": null
+                }
+            },
+            {
+                "trigger": {
+                    "POS": null,
                     "text": "consumption",
                     "wn_sense": null
                 }
@@ -6678,20 +6524,6 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "price",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
-                    "text": "Prices",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
                     "text": "costs",
                     "wn_sense": null
                 }
@@ -6699,7 +6531,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "food price",
+                    "text": "value of maize",
                     "wn_sense": null
                 }
             }
@@ -6718,7 +6550,14 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "food shortage",
+                    "text": "unable to eat",
+                    "wn_sense": null
+                }
+            },
+            {
+                "trigger": {
+                    "POS": null,
+                    "text": "food insecurity",
                     "wn_sense": null
                 }
             }
@@ -6726,7 +6565,15 @@
         "name": "FoodShortage"
     },
     "Forecast": {
-        "exemplars": [],
+        "exemplars": [
+            {
+                "trigger": {
+                    "POS": null,
+                    "text": "forecast",
+                    "wn_sense": null
+                }
+            }
+        ],
         "name": "Forecast"
     },
     "Healthcare": {
@@ -7652,13 +7499,6 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "transport ,",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
                     "text": "leaving",
                     "wn_sense": null
                 }
@@ -7729,7 +7569,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "relocated )",
+                    "text": "relocated",
                     "wn_sense": null
                 }
             },
@@ -7764,7 +7604,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "displaced people .",
+                    "text": "displaced people",
                     "wn_sense": null
                 }
             },
@@ -7834,7 +7674,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "the displaced .",
+                    "text": "the displaced",
                     "wn_sense": null
                 }
             },
@@ -7848,7 +7688,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "displacement ,",
+                    "text": "displacement",
                     "wn_sense": null
                 }
             },
@@ -11107,13 +10947,6 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "crop",
-                    "wn_sense": null
-                }
-            },
-            {
-                "trigger": {
-                    "POS": null,
                     "text": "reduce",
                     "wn_sense": null
                 }
@@ -11156,7 +10989,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "matured ,",
+                    "text": "matured",
                     "wn_sense": null
                 }
             },
@@ -11170,7 +11003,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "deteriorating ,",
+                    "text": "deteriorating",
                     "wn_sense": null
                 }
             },
@@ -11289,7 +11122,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "progress ,",
+                    "text": "progress",
                     "wn_sense": null
                 }
             },
@@ -11303,7 +11136,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "supplements ,",
+                    "text": "supplements",
                     "wn_sense": null
                 }
             },
@@ -11324,7 +11157,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "faltering growth ,",
+                    "text": "faltering growth",
                     "wn_sense": null
                 }
             },
@@ -11408,21 +11241,21 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "erupted .",
+                    "text": "erupted",
                     "wn_sense": null
                 }
             },
             {
                 "trigger": {
                     "POS": null,
-                    "text": "accumulated .",
+                    "text": "accumulated",
                     "wn_sense": null
                 }
             },
             {
                 "trigger": {
                     "POS": null,
-                    "text": "curtailed ,",
+                    "text": "curtailed",
                     "wn_sense": null
                 }
             },
@@ -11471,7 +11304,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "jump \u2019",
+                    "text": "jump",
                     "wn_sense": null
                 }
             },
@@ -11499,7 +11332,7 @@
             {
                 "trigger": {
                     "POS": null,
-                    "text": "swelling .",
+                    "text": "swelling",
                     "wn_sense": null
                 }
             },
@@ -12668,6 +12501,32 @@
             }
         ],
         "name": "WaterShortage"
+    },
+    "Injury": {
+        "exemplars": [
+            {
+                "trigger": {
+                    "POS": null,
+                    "text": "injured",
+                    "wn_sense": null
+                }
+            },
+            {
+                "trigger": {
+                    "POS": null,
+                    "text": "wounded",
+                    "wn_sense": null
+                }
+            },
+            {
+                "trigger": {
+                    "POS": null,
+                    "text": "injury",
+                    "wn_sense": null
+                }
+            }
+        ],
+        "name": "Injury"
     },
     "Weather": {
         "exemplars": [

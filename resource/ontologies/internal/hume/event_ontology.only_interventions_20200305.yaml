@@ -1,0 +1,849 @@
+- Event:
+  - _source: ['HUME: /event', 'WM: /wm/concept/causal_factor']
+  - {_description: NA}
+  - _examples: [NA]
+  - Intervention:
+    - _source: [NN, 'WM: /wm/concept/causal_factor/interventions', 'HUME: /event/intervention']
+    - {_description: NA}
+    - _examples: [NA]
+    - ProvisionOfGoodsAndServices:
+      - _source: ['WM: /wm/concept/causal_factor/interventions/provide']
+      - {_description: NA}
+      - _examples: [NA]
+      - ProvideMovingOfHouseholds:
+        - _source: [NN, 'HUME: /event/intervention/provide moving of houseHolds']
+        - {_description: NA}
+        - _examples: [NA]
+      - DebrisRemoval:
+        - _source: []
+        - {_description: NA}
+        - _examples: [NA]
+      - LegalAid:
+        - _source: [
+            NN,
+            'HUME: /event/intervention/legal aid']
+        - {_description: NA}
+        - _examples: [NA]
+        - LegalAidForDisplacedPersons:
+          - _source: []
+          - {_description: NA}
+          - _examples: [NA]
+      - ProvideAgricultureInputs:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs']
+        - {_description: NA}
+        - _examples: [NA]
+        - ProvideLivestockProduction:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/livestock_production']
+          - {_description: NA}
+          - _examples: [NA]
+          - LivestockDestocking:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/livestock_production']
+            - {_description: NA}
+            - _examples: [NA]
+          - LivestockRestocking:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/livestock_production']
+            - {_description: NA}
+            - _examples: [NA]
+          - ProvideLivestockFeed:
+            - _source: [
+              NN,
+              'HUME: /event/intervention/provide humanitarian resources/provide livestock feed',
+              'WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/livestock_production/livestock_feed']
+            - {_description: NA}
+            - _examples: [NA]
+          - ProvideVeterinaryService:
+            - _source: [
+              NN,
+              'HUME: /event/intervention/provide humanitarian resources/provide veterinary service',
+              'WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/livestock_production/veterinary_services']
+            - {_description: NA}
+            - _examples: [NA]
+          - ProvisionOfWaterForLivestock:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/livestock_production/livestock_watering']
+            - {_description: NA}
+            - _examples: [NA]
+        - ProvideCropProduction:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production']
+          - {_description: NA}
+          - _examples: [NA]
+          - ProvideFarmingTool:
+            - _source: [
+                NN,
+                'HUME: /event/intervention/provide humanitarian resources/provide farming tool',
+                'WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/farm_equipment']
+            - {_description: NA}
+            - _examples: [NA]
+          - ProvideHarvestingEquipment:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/harvesting_equipment']
+            - {_description: NA}
+            - _examples: [NA]
+          - ProvideIrrigation:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/irrigation']
+            - {_description: NA}
+            - _examples: [NA]
+            - ProvideWaterSource:
+              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/irrigation/water_source']
+              - {_description: NA}
+              - _examples: [NA]
+            - ProvidePumps:
+              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/irrigation/pumps']
+              - {_description: NA}
+              - _examples: [NA]
+            - ProvideFieldIrrigation:
+              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/irrigation/field_irrigation']
+              - {_description: NA}
+              - _examples: [NA]
+          - ProvideSoilInputs:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/soil_inputs']
+            - {_description: NA}
+            - _examples: [NA]
+            - ProvideFertilizer:
+              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/soil_inputs/fertilizer']
+              - {_description: NA}
+              - _examples: [NA]
+            - FertilizerSubsidy:
+              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/soil_inputs/fertilizer_subsidy']
+              - {_description: NA}
+              - _examples: [NA]
+          - ProvideSeed:
+            - _source: [
+              NN,
+              'HUME: /event/intervention/provide humanitarian resources/provide seed',
+              'WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/seed']
+            - {_description: NA}
+            - _examples: [NA]
+          - ProvideWeedPestControl:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/weed_pest_control']
+            - {_description: NA}
+            - _examples: [NA]
+            - LocustControlOperation:
+              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/weed_pest_control']
+              - {_description: NA}
+              - _examples: [NA]
+            - ProvideBiologicalControl:
+              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/weed_pest_control/biological']
+              - {_description: NA}
+              - _examples: [NA]
+            - ProvideChemicalControl:
+              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/weed_pest_control/chemical']
+              - {_description: NA}
+              - _examples: [NA]
+            - ProvideOrganicControl:
+              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/weed_pest_control/organic']
+              - {_description: NA}
+              - _examples: [NA]
+        - ProvidePostHarvest:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/post-harvest']
+          - {_description: NA}
+          - _examples: [NA]
+          - ProvideProcessingEquipment:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/post-harvest/processing_equipment']
+            - {_description: NA}
+            - _examples: [NA]
+          - ProvidePackaging:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/post-harvest/packaging']
+            - {_description: NA}
+            - _examples: [NA]
+          - ProvideWarehousing:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/post-harvest/warehousing']
+            - {_description: NA}
+            - _examples: [NA]
+      - InformationServices:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/provide/information_services']
+        - {_description: NA}
+        - _examples: [NA]
+        - ProvideSurveillanceSystem:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/provide/information_services/surveillance_system']
+          - {_description: NA}
+          - _examples: [NA]
+          - EpidemiologicalSurveillanceSystem:
+            - _source: [
+                NN,
+                'HUME: /event/intervention/epidemiological surveillance system',
+                'WM: /wm/concept/causal_factor/interventions/provide/information_services/surveillance_system']
+            - {_description: NA}
+            - _examples: [NA]
+          - FoodSecurityOrFamineEarlyWarningSystem:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/information_services/surveillance_system']
+            - {_description: NA}
+            - _examples: [NA]
+        - HumanRightsMonitoringInvestigationAndReporting:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/provide/information_services/human_rights_monitoring']
+          - {_description: NA}
+          - _examples: [NA]
+          - ProvideVictimsMonitoring:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/information_services/human_rights_monitoring/victims']
+            - {_description: NA}
+            - _examples: [NA]
+            - ChildRights:
+              - _source: [
+                  NN,
+                  'HUME: /event/intervention/child rights',
+                  'WM: /wm/concept/causal_factor/interventions/provide/information_services/human_rights_monitoring/victims']
+              - {_description: NA}
+              - _examples: [NA]
+          - ProvidePerpetratorsMonitoring:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/information_services/human_rights_monitoring/perpetrators']
+            - {_description: NA}
+            - _examples: [NA]
+          - ProvideViolationsMonitoring:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/information_services/human_rights_monitoring/violations']
+            - {_description: NA}
+            - _examples: [NA]
+        - ProvideStatistics:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/provide/information_services/statistics']
+          - {_description: NA}
+          - _examples: [NA]
+          - ProvideNationalSurvey:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/information_services/statistics/national_survey']
+            - {_description: NA}
+            - _examples: [NA]
+        - ProvideWeatherMonitoring:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/provide/information_services/weather_monitoring']
+          - {_description: NA}
+          - _examples: [NA]
+        - ProvidePriceMonitoring:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/provide/information_services/price_monitoring']
+          - {_description: NA}
+          - _examples: [NA]
+      - ProvideHumanitarianResources:
+        - _source: [
+            NN,
+            'WM: /wm/concept/causal_factor/interventions/provide/livelihood_support',
+            'HUME: /event/intervention/provide humanitarian resources'
+          ]
+        - {_description: NA}
+        - _examples: [NA]
+        - Assistance:
+          - _source: [
+              NN,
+              'WM: /wm/concept/causal_factor/interventions/provide/livelihood_support',
+              'HUME: /event/intervention/assistance'
+            ]
+          - {_description: NA}
+          - _examples: [NA]
+        - ProvideFood:
+          - _source: [
+            NN,
+            'HUME: /event/intervention/provide humanitarian resources/provide food',
+            'WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/food_aid']
+          - {_description: NA}
+          - _examples: [NA]
+          - FoodVouchers:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/food_aid']
+            - {_description: NA}
+            - _examples: [NA]
+          - FoodForWork:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/food_aid']
+            - {_description: NA}
+            - _examples: [NA]
+          - FoodForTraining:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/food_aid']
+            - {_description: NA}
+            - _examples: [NA]
+          - FoodForAssets:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/food_aid']
+            - {_description: NA}
+            - _examples: [NA]
+          - SchoolFeeding:
+            - _source: [
+                NN,
+                'HUME: /event/intervention/school feeding',
+                'WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/food_aid']
+            - {_description: NA}
+            - _examples: [NA]
+        - ProvideNutritionSupport:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/nutrition_support']
+          - {_description: NA}
+          - _examples: [NA]
+          - FoodFortification:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/nutrition_support']
+            - {_description: NA}
+            - _examples: [NA]
+          - InfantAndYoungChildFeedingSupport:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/nutrition_support']
+            - {_description: NA}
+            - _examples: [NA]
+          - MicroNutrientSupplementation:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/nutrition_support']
+            - {_description: NA}
+            - _examples: [NA]
+          - SupplementaryFeeding:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/nutrition_support']
+            - {_description: NA}
+            - _examples: [NA]
+        - ProvideWater:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/water']
+          - {_description: NA}
+          - _examples: [NA]
+          - WaterTrucking:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/water']
+            - {_description: NA}
+            - _examples: [NA]
+        - HouseholdReliefNonFoodItemPackage:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/humanitarian_non-food_items']
+          - {_description: NA}
+          - _examples: [NA]
+          - ProvideDeliveryKit:
+            - _source: [
+              NN,
+              'HUME: /event/intervention/provide humanitarian resources/provide delivery kit',
+              'WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/humanitarian_non-food_items']
+            - {_description: NA}
+            - _examples: [NA]
+          - ProvideHygieneTool:
+            - _source: [
+              NN,
+              'HUME: /event/intervention/provide humanitarian resources/provide hygiene tool',
+              'WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/humanitarian_non-food_items']
+            - {_description: NA}
+            - _examples: [NA]
+          - ProvideShelter:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/humanitarian_non-food_items/shelter']
+            - {_description: NA}
+            - _examples: [NA]
+            - HousingProvisionLeasingOrRentalServices:
+              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/humanitarian_non-food_items/shelter']
+              - {_description: NA}
+              - _examples: [NA]
+            - ProvideTentShelter:
+              - _source: [
+                NN,
+                'HUME: /event/intervention/provide humanitarian resources/provide tent shelter',
+                'WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/humanitarian_non-food_items/shelter']
+              - {_description: NA}
+              - _examples: [NA]
+          - ProvidingEducationalMaterials:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/humanitarian_non-food_items']
+            - {_description: NA}
+            - _examples: [NA]
+            - ProvideStationary:
+              - _source: [
+                NN,
+                'HUME: /event/intervention/provide humanitarian resources/provide stationary',
+                'WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/humanitarian_non-food_items']
+              - {_description: NA}
+              - _examples: [NA]
+        - ProvideFinancialAssistance:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/financial_assistance']
+          - {_description: NA}
+          - _examples: [NA]
+          - ProvideCash:
+            - _source: [
+              NN,
+              'HUME: /event/intervention/provide humanitarian resources/provide cash',
+              'WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/financial_assistance']
+            - {_description: NA}
+            - _examples: [NA]
+            - OnceOffCashTransferToFacilitateReturn:
+              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/financial_assistance']
+              - {_description: NA}
+              - _examples: [NA]
+            - CashForWork:
+              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/financial_assistance']
+              - {_description: NA}
+              - _examples: [NA]
+            - CashForAssets:
+              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/financial_assistance']
+              - {_description: NA}
+              - _examples: [NA]
+        - ProvideLivelihoodAssets:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/livelihood_assets']
+          - {_description: NA}
+          - _examples: [NA]
+          - ProvideFishingTool:
+            - _source: [
+              NN,
+              'HUME: /event/intervention/provide humanitarian resources/provide fishing tool',
+              'WM: /wm/concept/causal_factor/interventions/provide/livelihood_support/livelihood_assets']
+            - {_description: NA}
+            - _examples: [NA]
+      - ProvideMedicalInputs:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/provide/medical_inputs']
+        - {_description: NA}
+        - _examples: [NA]
+        - ProvideVaccine:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/provide/medical_inputs/vaccine']
+          - {_description: NA}
+          - _examples: [NA]
+          - MassVaccinationCampaign:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/medical_inputs/vaccine']
+            - {_description: NA}
+            - _examples: [NA]
+          - DiseaseOutbreakControl:
+            - _source: [
+                NN,
+                'HUME: /event/intervention/disease outbreak control',
+                'WM: /wm/concept/causal_factor/interventions/provide/medical_inputs/vaccine']
+            - {_description: NA}
+            - _examples: [NA]
+        - ProvideMedicalTreatment:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/provide/medical_inputs/medical_treatment']
+          - {_description: NA}
+          - _examples: [NA]
+          - AntiRetroviralTreatment:
+            - _source: [
+                NN,
+                'HUME: /event/intervention/anti-retroviral treatment',
+                'WM: /wm/concept/causal_factor/interventions/provide/medical_inputs/medical_treatment']
+            - {_description: NA}
+            - _examples: [NA]
+          - FirstAidBasicMedicalCare:
+            - _source: [
+                NN,
+                'HUME: /event/intervention/provide humanitarian resources/first aid basic medical care',
+                'WM: /wm/concept/causal_factor/interventions/provide/medical_inputs/medical_treatment']
+            - {_description: NA}
+            - _examples: [NA]
+          - NewbornAndChildhoodEssentialHealthCareServices:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/medical_inputs/medical_treatment']
+            - {_description: NA}
+            - _examples: [NA]
+          - ObstetricNewbornCare:
+            - _source: [
+              NN,
+              'HUME: /event/intervention/provide humanitarian resources/obstetric newborn care',
+              'WM: /wm/concept/causal_factor/interventions/provide/medical_inputs/medical_treatment']
+            - {_description: NA}
+            - _examples: [NA]
+          - OperationOfMobileClinics:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/medical_inputs/medical_treatment']
+            - {_description: NA}
+            - _examples: [NA]
+          - TherapeuticFeedingOrTreating:
+            - _source: [
+                NN,
+                'HUME: /event/intervention/therapeutic feeding or treating',
+                'WM: /wm/concept/causal_factor/interventions/provide/medical_inputs/medical_treatment']
+            - {_description: NA}
+            - _examples: [NA]
+          - TraumaInjuryAndPostOperativeRehabilitation:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/medical_inputs/medical_treatment']
+            - {_description: NA}
+            - _examples: [NA]
+          - TraumaAndSurgicalCare:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/medical_inputs/medical_treatment']
+            - {_description: NA}
+            - _examples: [NA]
+        - ProvidePrevention:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/provide/medical_inputs/prevention']
+          - {_description: NA}
+          - _examples: [NA]
+          - MalnutritionScreening:
+            - _source: [
+              NN,
+              'HUME: /event/intervention/provide humanitarian resources/malnutrition screening',
+              'WM: /wm/concept/causal_factor/interventions/provide/medical_inputs/prevention']
+            - {_description: NA}
+            - _examples: [NA]
+          - ProvisionOfInsecticideTreatedBednets:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/medical_inputs/prevention']
+            - {_description: NA}
+            - _examples: [NA]
+          - VectorControl:
+            - _source: [
+                NN,
+                'HUME: /event/intervention/vector control',
+                'WM: /wm/concept/causal_factor/interventions/provide/medical_inputs/prevention']
+            - {_description: NA}
+            - _examples: [NA]
+        - PsychologicalSupport:
+          - _source: [
+              NN,
+              'HUME: /event/intervention/psychological support',
+              'WM: /wm/concept/causal_factor/interventions/provide/medical_inputs/psychological']
+          - {_description: NA}
+          - _examples: [NA]
+          - SexualViolenceManagement:
+            - _source: [
+                NN,
+                'HUME: /event/intervention/sexual violence management',
+                'WM: /wm/concept/causal_factor/interventions/provide/medical_inputs/psychological']
+            - {_description: NA}
+            - _examples: [NA]
+      - SanitationServices:
+        - _source: [
+          NN,
+          'HUME: /event/intervention/sanitation services',
+          'WM: /wm/concept/causal_factor/interventions/provide/sanitation_and_hygiene_inputs']
+        - {_description: NA}
+        - _examples: [NA]
+        - DesludgingOfToiletsSepticTanksAndExcretaContainers:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/provide/sanitation_and_hygiene_inputs']
+          - {_description: NA}
+          - _examples: [NA]
+        - HouseholdSolidWasteManagement:
+          - _source: [
+            NN,
+            'HUME: /event/intervention/household solid waste management',
+            'WM: /wm/concept/causal_factor/interventions/provide/sanitation_and_hygiene_inputs']
+          - {_description: NA}
+          - _examples: [NA]
+        - PointOfUseWaterTreatmentAtHouseholdLevel:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/provide/sanitation_and_hygiene_inputs']
+          - {_description: NA}
+          - _examples: [NA]
+        - WaterTreatmentOfPipedWaterSupply:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/provide/sanitation_and_hygiene_inputs']
+          - {_description: NA}
+          - _examples: [NA]
+    - ConstructionOfInfrastructure:
+      - _source: ['WM: /wm/concept/causal_factor/interventions/build']
+      - {_description: NA}
+      - _examples: [NA]
+      - BuildAgricultureInfrastructure:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/build/agriculture_infrastructure']
+        - {_description: NA}
+        - _examples: [NA]
+        - BuildLivestockProduction:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/build/agriculture_infrastructure/livestock_production']
+          - {_description: NA}
+          - _examples: [NA]
+          - LivestockShelterAndSettlement:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/build/agriculture_infrastructure/livestock_production/livestock_shelter']
+            - {_description: NA}
+            - _examples: [NA]
+        - BuildCropProduction:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/build/agriculture_infrastructure/crop_production']
+          - {_description: NA}
+          - _examples: [NA]
+          - BuildIrrigationInfrastructure:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/build/agriculture_infrastructure/crop_production/irrigation_infrastructure']
+            - {_description: NA}
+            - _examples: [NA]
+            - RehabilitationOfIrrigationSchemes:
+              - _source: ['WM: /wm/concept/causal_factor/interventions/build/agriculture_infrastructure/crop_production/irrigation_infrastructure']
+              - {_description: NA}
+              - _examples: [NA]
+          - BuildExtensionOffices:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/build/agriculture_infrastructure/crop_production/extension_offices']
+            - {_description: NA}
+            - _examples: [NA]
+          - BuildGreenhouse:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/build/agriculture_infrastructure/crop_production/greenhouse']
+            - {_description: NA}
+            - _examples: [NA]
+          - BuildPostHarvest:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/build/agriculture_infrastructure/crop_production/post-harvest']
+            - {_description: NA}
+            - _examples: [NA]
+      - BuildTradeInfrastructure:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/build/trade_infrastructure']
+        - {_description: NA}
+        - _examples: [NA]
+      - BuildEducationalInfrastructure:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/build/educational_infrastructure']
+        - {_description: NA}
+        - _examples: [NA]
+        - ChildFriendlyLearningSpaces:
+          - _source: [
+            NN,
+            'HUME: /event/intervention/child friendly learning spaces',
+            'WM: /wm/concept/causal_factor/interventions/build/educational_infrastructure']
+          - {_description: NA}
+          - _examples: [NA]
+        - RehabilitationOfSchools:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/build/educational_infrastructure']
+          - {_description: NA}
+          - _examples: [NA]
+      - BuildShelter:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/build/shelter']
+        - {_description: NA}
+        - _examples: [NA]
+        - TemporaryCommunalSettlement:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/build/shelter']
+          - {_description: NA}
+          - _examples: [NA]
+      - BuildWASHInfrastructure:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/build/WASH_infrastructure']
+        - {_description: NA}
+        - _examples: [NA]
+        - BoreholeRepair:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/build/WASH_infrastructure']
+          - {_description: NA}
+          - _examples: [NA]
+        - CommunalWashingAndBathing:
+          - _source: [
+            NN,
+            'HUME: /event/intervention/communal washing and bathing',
+            'WM: /wm/concept/causal_factor/interventions/build/WASH_infrastructure']
+          - {_description: NA}
+          - _examples: [NA]
+        - CreationOfTemporaryWaterPoints:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/build/WASH_infrastructure']
+          - {_description: NA}
+          - _examples: [NA]
+        - LatrineConstruction:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/build/WASH_infrastructure']
+          - {_description: NA}
+          - _examples: [NA]
+      - BuildMedicalInfrastructure:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/build/medical_infrastructure']
+        - {_description: NA}
+        - _examples: [NA]
+        - DeploymentOfFieldHospitals:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/build/medical_infrastructure']
+          - {_description: NA}
+          - _examples: [NA]
+      - BuildTransportationInfrastructure:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/build/transportation_infrastructure']
+        - {_description: NA}
+        - _examples: [NA]
+        - BridgeRepair:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/build/transportation_infrastructure']
+          - {_description: NA}
+          - _examples: [NA]
+        - BuildingLongTermRoads:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/build/transportation_infrastructure']
+          - {_description: NA}
+          - _examples: [NA]
+        - BuildingRailwayLines:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/build/transportation_infrastructure']
+          - {_description: NA}
+          - _examples: [NA]
+        - BuildingTemporaryRoads:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/build/transportation_infrastructure']
+          - {_description: NA}
+          - _examples: [NA]
+        - RoadRehabilitation:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/build/transportation_infrastructure']
+          - {_description: NA}
+          - _examples: [NA]
+      - BuildCommunicationInfrastructure:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/build/communication_infrastructure']
+        - {_description: NA}
+        - _examples: [NA]
+      - BuildEnergyInfrastructure:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/build/energy_infrastructure']
+        - {_description: NA}
+        - _examples: [NA]
+      - BuildingConstruction:
+        - _source: []
+        - {_description: NA}
+        - _examples: [NA]
+        - ConstructionOfPrefabricatedBuildings:
+          - _source: [
+              NN,
+              'HUME: /event/intervention/construction of prefabricated buildings']
+          - {_description: NA}
+          - _examples: [NA]
+
+
+    - TeachingTrainingAndPublicAwareness:
+      - _source: ['WM: /wm/concept/causal_factor/interventions/train']
+      - {_description: NA}
+      - _examples: [NA]
+      - TrainAgricultureTraining:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/train/agriculture_training']
+        - {_description: NA}
+        - _examples: [NA]
+        - TrainProductionPractices:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/train/agriculture_training/production_practices']
+          - {_description: NA}
+          - _examples: [NA]
+          - TrainPlanting:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/train/agriculture_training/production_practices/planting']
+            - {_description: NA}
+            - _examples: [NA]
+            - TrainingFarmersOnPlantingTimes:
+              - _source: ['WM: /wm/concept/causal_factor/interventions/train/agriculture_training/production_practices/planting']
+              - {_description: NA}
+              - _examples: [NA]
+            - TrainingFarmersOnCropSpacing:
+              - _source: ['WM: /wm/concept/causal_factor/interventions/train/agriculture_training/production_practices/planting']
+              - {_description: NA}
+              - _examples: [NA]
+          - TrainPestWeedControl:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/train/agriculture_training/production_practices/pest_weed_control']
+            - {_description: NA}
+            - _examples: [NA]
+            - TrainingFarmersOnWeedControl:
+              - _source: ['WM: /wm/concept/causal_factor/interventions/train/agriculture_training/production_practices/pest_weed_control']
+              - {_description: NA}
+              - _examples: [NA]
+          - TrainPostHarvestPractices:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/train/agriculture_training/production_practices/post-harvest_practices']
+            - {_description: NA}
+            - _examples: [NA]
+        - TrainAgricultureInformation:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/train/agriculture_training/agriculture_information']
+          - {_description: NA}
+          - _examples: [NA]
+      - TrainMedicalTraining:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/train/medical_training']
+        - {_description: NA}
+        - _examples: [NA]
+        - AssessmentAndTriageOfHealthFacilities:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/train/medical_training/assessment_and_triage_of_health_facilities']
+          - {_description: NA}
+          - _examples: [NA]
+        - CapacityBuildingOfMedicalStaff:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/train/medical_training/capacity_building_of_medical_staff']
+          - {_description: NA}
+          - _examples: [NA]
+      - CapacityBuildingHumanRights:
+        - _source: [
+            NN,
+            'HUME: /event/intervention/capacity building human rights',
+            'WM: /wm/concept/causal_factor/interventions/train/human_rights_training']
+        - {_description: NA}
+        - _examples: [NA]
+      - TrainFinancialManagement:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/train/financial_management']
+        - {_description: NA}
+        - _examples: [NA]
+        - ProvisionOfCreditAndTrainingForIncomeGeneration:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/train/financial_management']
+          - {_description: NA}
+          - _examples: [NA]
+      - TrainEducationSystems:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/train/education_systems']
+        - {_description: NA}
+        - _examples: [NA]
+        - ProvisionOfNonFormalEducation:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/train/education_systems']
+          - {_description: NA}
+          - _examples: [NA]
+        - TrainingCommunitySourcedTemporaryTeachers:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/train/education_systems']
+          - {_description: NA}
+          - _examples: [NA]
+      - PublicHealthInformationCampaign:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/train/public_health_campaigns']
+        - {_description: NA}
+        - _examples: [NA]
+        - HygienePromotionCampaigns:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/train/public_health_campaigns']
+          - {_description: NA}
+          - _examples: [NA]
+      - TrainPublicSafetyCampaigns:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/train/public_safety_campaigns']
+        - {_description: NA}
+        - _examples: [NA]
+        - PublicInformationCampaignsOnExplosiveHazards:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/train/public_safety_campaigns']
+          - {_description: NA}
+          - _examples: [NA]
+          - MineRiskEducation:
+            - _source: [
+                NN,
+                'HUME: /event/intervention/mine risk education',
+                'WM: /wm/concept/causal_factor/interventions/train/public_safety_campaigns']
+            - {_description: NA}
+            - _examples: [NA]
+      - TrainEmergencyPreparednessTraining:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/train/emergency_preparedness_training']
+        - {_description: NA}
+        - _examples: [NA]
+        - TrainSurveillanceSystemStrengthening:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/train/emergency_preparedness_training/surveillance_system_stregthening']
+          - {_description: NA}
+          - _examples: [NA]
+        - TrainHumanitarianCertifications:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/train/emergency_preparedness_training/humanitarian_certifications']
+          - {_description: NA}
+          - _examples: [NA]
+    - PeaceKeepingAndSecurity:
+      - _source: ['WM: /wm/concept/causal_factor/interventions/secure']
+      - {_description: NA}
+      - _examples: [NA]
+      - SecureLivelihoodProtections:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/secure/livelihood_protections']
+        - {_description: NA}
+        - _examples: [NA]
+      - SecureCommunitySecurity:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/secure/community_security']
+        - {_description: NA}
+        - _examples: [NA]
+        - SecureMineClearance:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/secure/community_security/mine_clearance']
+          - {_description: NA}
+          - _examples: [NA]
+        - PolicingServices:
+          - _source: [
+              NN,
+              'HUME: /event/intervention/policing services',
+              'WM: /wm/concept/causal_factor/interventions/secure/community_security/temporary_policing_services']
+          - {_description: NA}
+          - _examples: [NA]
+          - BorderPatrols:
+            - _source: ['WM: /wm/concept/causal_factor/interventions/secure/community_security/temporary_policing_services']
+            - {_description: NA}
+            - _examples: [NA]
+      - ConflictMediationAndPoliticalDialogue:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/secure/conflict_resolution']
+        - {_description: NA}
+        - _examples: [NA]
+        - CommunityLevelConflictResolution:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/secure/conflict_resolution']
+          - {_description: NA}
+          - _examples: [NA]
+        - DisarmamentDemobilizationAndReintegration:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/secure/conflict_resolution']
+          - {_description: NA}
+          - _examples: [NA]
+        - FamilyReunification:
+          - _source: [
+              NN,
+              'HUME: /event/intervention/family reunification',
+              'WM: /wm/concept/causal_factor/interventions/secure/conflict_resolution']
+          - {_description: NA}
+          - _examples: [NA]
+        - PeaceTreaty:
+          - _source: [
+            NN,
+            'HUME: /event/peace treaty',
+            'WM: /wm/concept/causal_factor/interventions/secure/conflict_resolution']
+          - {_description: NA}
+          - _examples: [NA]
+        - RehabilitationOfChildSoldiers:
+          - _source: ['WM: /wm/concept/causal_factor/interventions/secure/conflict_resolution']
+          - {_description: NA}
+          - _examples: [NA]
+      - SecureNaturalResources:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/secure/natural_resources']
+        - {_description: NA}
+        - _examples: [NA]
+      - SecureCulturalResources:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/secure/cultural_resources']
+        - {_description: NA}
+        - _examples: [NA]
+    - Legislate:
+      - _source: ['WM: /wm/concept/causal_factor/interventions/legislate']
+      - {_description: NA}
+      - _examples: [NA]
+      - LegislateSubsidize:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/legislate/subsidize']
+        - {_description: NA}
+        - _examples: [NA]
+        - RentalSubsidies:
+          - _source: [
+            NN,
+            'HUME: /event/intervention/rental subsidies',
+            'WM: /wm/concept/causal_factor/interventions/legislate/subsidize']
+          - {_description: NA}
+          - _examples: [NA]
+      - Tax:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/legislate/tax', NN, 'HUME: /event/intervention/tax']
+        - {_description: NA}
+        - _examples: [NA]
+      - LegislateControlPrices:
+        - _source: ['WM: /wm/concept/causal_factor/interventions/legislate/control_prices']
+        - {_description: NA}
+        - _examples: [NA]
+      - InstitutionalSupport:
+        - _source: []
+        - {_description: NA}
+        - _examples: [NA]
+        - PrisonSystemReform:
+          - _source: []
+          - {_description: NA}
+          - _examples: [NA]
+        - SupportToHealthFacilities:
+          - _source: []
+          - {_description: NA}
+          - _examples: [NA]
+        - SupportToVeterinaryServices:
+          - _source: []
+          - {_description: NA}
+          - _examples: [NA]

@@ -1,0 +1,32 @@
+- Relation:
+  - _source: []
+  - {_description: NA}
+  - _examples: [NA]
+  - Cause-Effect:
+    - _source: []
+    - {_description: NA}
+    - _argument_types:
+      - slot0: ["Event"]
+      - slot1: ["Event"]
+    - _examples: [NA]
+  - Before-After:
+    - _source: []
+    - {_description: NA}
+    - _argument_types:
+      - slot0: ["Event"]
+      - slot1: ["Event"]
+    - _examples: [NA]
+  - EmployedBy:
+    - _source: []
+    - {_description: NA}
+    - _argument_types:
+      - slot0: ["Entity/Person"]
+      - slot1: ["Entity/Organization", "Entity/GeoPoliticalEntity"]
+    - _examples: [NA]
+  - HasLocation:
+    - _source: []
+    - {_description: NA}
+    - _argument_types:
+      - slot0: ["Event"]
+      - slot1: ["Entity/Location"]
+    - _examples: [NA]

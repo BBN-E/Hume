@@ -41,7 +41,7 @@ max_before_after_restrictions_per_pattern:	10
 max_num_patterns_to_freeze:	100
 max_num_seeds_to_freeze:	300
 max_prop_depth:	3
-max_regexp_pattern_words:	3
+max_regexp_pattern_words:	5
 mention_alignment_threshold:	1
 mention_alignment_type:	head
 min_frequency_for_pattern_extraction:	5

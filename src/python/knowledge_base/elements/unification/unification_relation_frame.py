@@ -1,8 +1,9 @@
 from elements.kb_relation_mention import KBRelationMention
-from unification_relation_argument import UnificationRelationArgument
-from unification_provenance import UnificationProvenance
-from unification_span import UnificationSpan
-from unification_element import UnificationElement
+from elements.unification.unification_relation_argument import UnificationRelationArgument
+from elements.unification.unification_event_frame import UnificationEventFrame
+from elements.unification.unification_provenance import UnificationProvenance
+from elements.unification.unification_span import UnificationSpan
+from elements.unification.unification_element import UnificationElement
 
 class UnificationRelationFrame(UnificationElement):
 
@@ -24,15 +25,20 @@ class UnificationRelationFrame(UnificationElement):
         # Left argument
         role = self.get_argument_role(kb_relation, "left")
         event_mention = kb_relation_mention.left_mention
-        self.arguments.append(UnificationRelationArgument(role, event_mention, kb))
+        event_frame = UnificationEventFrame(event_mention, kb)
+        confidence = event_mention.get_max_grounding_confidence()
+        self.arguments.append(UnificationRelationArgument(role, event_frame, confidence))
         
         # Right argument
         role = self.get_argument_role(kb_relation, "right")
         event_mention = kb_relation_mention.right_mention
-        self.arguments.append(UnificationRelationArgument(role, event_mention, kb))
+        event_frame = UnificationEventFrame(event_mention, kb)
+        confidence = event_mention.get_max_grounding_confidence()
+        self.arguments.append(UnificationRelationArgument(role, event_frame, confidence))
 
         self.properties = dict()
         self.properties["confidence"] = kb_relation_mention.confidence
+        self.properties["polarity"] = kb_relation.polarity
         self.evidence = dict()
         self.evidence["sentence"] = UnificationSpan.create_from_sentence( 
             kb_relation_mention.left_mention.sentence, kb_relation_mention.document)
@@ -72,7 +78,7 @@ class UnificationRelationFrame(UnificationElement):
 
     def is_duplicate_of(self, other):
         if len(self.arguments) != 2 or len(other.arguments) != 2:
-            print "Bad arguemnts in relation frame!"
+            print("Bad arguemnts in relation frame!")
             sys.exit(1)
 
         if ((self.arguments[0].is_duplicate_of(other.arguments[0]) and self.arguments[1].is_duplicate_of(other.arguments[1])) or

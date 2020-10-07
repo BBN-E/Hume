@@ -16,7 +16,7 @@ class EntityData:
         self.mar_entity_type = mar_entity_type
         # todo populate with e.g. entity's country for use in grounder
         self.properties = {}
-        self.internal_ontology_class = None
+        # self.internal_ontology_class = None
         self.external_ontology_sources = []
         self.grounded_individuals = {}  # keys are internal types' names from external_ontology_sources
 
@@ -40,12 +40,12 @@ class EntityData:
             reported_value.serialize(graph)
 
         if self.external_ontology_sources:
-            print '---'
-            print self.entity_id, "with label `", self.label, \
-                "` was provided with type", self.entity_type
+            print('---')
+            print(self.entity_id, "with label `", self.label, \
+                "` was provided with type", self.entity_type)
             for (_, source), similarity in self.external_ontology_sources:
-                print similarity, ':', source
-            print '---'
+                print(similarity, ':', source)
+            print('---')
             best_source = self.external_ontology_sources[0][0][1]
             graph.add((self.get_uri(),
                        RDF.type,

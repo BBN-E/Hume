@@ -1,6 +1,6 @@
 import sys, os, codecs
 from knowledge_base import KnowledgeBase
-from kb_resolver import KBResolver
+from resolvers.kb_resolver import KBResolver
 from elements.kb_mention import KBMention
 from elements.kb_value_mention import KBValueMention
 from elements.kb_group import KBEventGroup
@@ -17,7 +17,7 @@ class RemovalRule:
     def matches_relation_mention(self, relation_mention, kb):
         for role, entity_type in self.role_type_pairs:
             if role != "left_argument" and role != "right_argument":
-                print "WARNING: RemovalByTypeResolver -- Bad relation role in type_removal.txt -- " + role
+                print("WARNING: RemovalByTypeResolver -- Bad relation role in type_removal.txt -- " + role)
                 return False
             
             if role == "left_argument" and not relation_mention.left_mention:
@@ -95,7 +95,7 @@ class RemovalByTypeResolver(KBResolver):
         trf.close()
 
     def resolve(self, kb):
-        print "RemovalByTypeResolver RESOLVE"
+        print("RemovalByTypeResolver RESOLVE")
 
         resolved_kb = KnowledgeBase()
         super(RemovalByTypeResolver, self).copy_all(resolved_kb, kb)

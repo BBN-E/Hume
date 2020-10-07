@@ -1,0 +1,81 @@
+# Run on full CauseEx korea peninsula docs (KoreaPeninsula)
+
+job_name: causeex_collab2_0913a_m24_shaved_dataset
+
+###########
+# Pipeline
+###########
+stages_to_run: nn-events,nn-factors,event-consolidation,event-event-relations,probabilistic-grounding,bert
+jserif_branch: 364-add-event-from-json
+mode: CauseEx
+batch_size: 10
+
+########
+# Serif
+########
+serif_input_sgm_list: /nfs/raid87/u11/CauseEx_Datasets/Collab2/batch_files/m24-shaved-dataset.list
+serif_input_awake_db: /nfs/raid87/u11/CauseEx_Datasets/Collab2/awake_dbs/causeex_dbpedia_20170308_collab2.sqlite
+
+
+#######
+## BERT
+########
+bert_input_serifxml_list: /nfs/raid87/u11/users/azamania/runjobs/expts/Hume/causeex_collab2_0913a_m24_shaved_dataset/generic_events_serifxml_out.list
+singularity_gpu_queue: nongaleGPUs
+bert_layers: -1
+
+
+######
+# KBP
+######
+kbp_input_serifxml_list: GENERATED
+
+##################
+## Generic events
+##################
+generic_events_input_serifxml_list: GENERATED
+
+#######################
+## NN event extraction
+#######################
+nn_events_input_serifxml_list: /nfs/raid87/u11/users/azamania/runjobs/expts/Hume/causeex_collab2_0913a_m24_shaved_dataset/generic_events_serifxml_out.list
+nn_events_model_list: DEFAULT
+
+#######################
+## NN factor extraction
+#######################
+nn_factors_input_bert_npz_list: GENERATED
+nn_factors_input_serifxml_list: GENERATED
+nn_factors_model_list: DEFAULT
+
+######################
+# Event consolidation
+######################
+event_consolidation_input_serifxml_list: GENERATED
+event_consolidation_input_metadata_file: /nfs/raid87/u11/CauseEx_Datasets/Collab2/metadata_files/metadata-m24-shaved-dataset.txt
+copyArgumentSentenceWindow: 1
+
+########################
+# Event-Event relations
+########################
+eer_input_serifxml_list: GENERATED
+eer_input_serif_cause_effect_relations_dir: GENERATED
+learnit_pattern_dir: DEFAULT
+learnit_min_freq_event_pairs: 1
+
+##########################
+# Probabilistic grounding
+##########################
+grounding_input: GENERATED
+grounding_bert_npz_filelist: GENERATED
+truncate_npz_span: 0:768
+
+################
+# Serialization
+################
+serialization_input_serifxml_list: GENERATED
+serialization_input_metadata_file: /nfs/raid87/u11/CauseEx_Datasets/Collab2/metadata_files/metadata-m24-shaved-dataset.txt
+serialization_input_factfinder_json_file: GENERATED
+serialization_input_learnit_triple_file: GENERATED
+serialization_input_learnit_event_count_file: GENERATED
+serialization_input_awake_db: /nfs/raid87/u11/CauseEx_Datasets/Collab2/awake_dbs/causeex_dbpedia_20170308_collab2.sqlite

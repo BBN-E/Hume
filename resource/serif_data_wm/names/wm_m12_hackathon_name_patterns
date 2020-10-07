@@ -77,15 +77,6 @@ water
 
 )
 
-(MEDICAL
-
-medical_resource
-medical_resources
-de-wormer
-de-wormers
-
-)
-
 (FERTILIZER
 
 fertilizer
@@ -191,7 +182,7 @@ sexual_abuse
 
 )
 
-(STATIONARY
+(EDUCATION_SUPPLIES
 
 education_kit
 education_kits
@@ -219,14 +210,6 @@ animal_services
 
 delivery_kit
 delivery_kits
-
-)
-
-(FARMING_TOOL
-
-fertilizer
-fertilizers
-farming tools
 
 )
 
@@ -282,8 +265,6 @@ nutritious_food
 (regex (return (type WATER) (force YES))
        (re (text (string WATER))))
 
-(regex (return (type MEDICAL) (force YES))
-       (re (text (string MEDICAL))))
 
 (regex (return (type FERTILIZER) (force YES))
        (re (text (string FERTILIZER))))
@@ -297,9 +278,6 @@ nutritious_food
 
 (regex (return (type DELIVERY_KIT) (force YES))
        (re (text (string DELIVERY_KIT))))
-
-(regex (return (type FARMING_TOOL) (force YES))
-       (re (text (string FARMING_TOOL))))
        
 (regex (return (type FISHING_TOOL) (force YES))
        (re (text (string FISHING_TOOL))))
@@ -319,8 +297,8 @@ nutritious_food
 (regex (return (type SEXUAL_VIOLENCE) (force YES))
        (re (text (string SEXUAL_VIOLENCE))))
 
-(regex (return (type STATIONARY) (force YES))
-       (re (text (string STATIONARY))))
+(regex (return (type EDUCATION_SUPPLIES) (force YES))
+       (re (text (string EDUCATION_SUPPLIES))))
 
 (regex (return (type VETERINARY_SERVICE) (force YES))
        (re (text (string VETERINARY_SERVICE))))

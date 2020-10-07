@@ -116,7 +116,7 @@ def word_to_number(w):
     if w == "hundreds of billions":
         return 100000000000
     
-    print "Could not translate: " + w + " to number"
+    print("Could not translate: " + w + " to number")
     return 1
 
 def change_to_numeral(number, numeric_word):
@@ -137,7 +137,7 @@ def mod_amount(currency, amount, mod):
         return currency, None, None, None
 
 def replace_small_written_numbers(s):
-    for key, value in small_numbers.iteritems():
+    for key, value in small_numbers.items():
         s = re.sub(r"\b" + key + r"\b", value, s, re.I)
     return s
 
@@ -257,6 +257,6 @@ def normalize(s):
 
 if __name__ == "__main__":
     s = "$)"
-    print str(normalize(s))
+    print(str(normalize(s)))
 
  

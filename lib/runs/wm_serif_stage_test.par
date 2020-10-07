@@ -1,0 +1,16 @@
+
+############
+## Pipeline
+############
+job_name: wm_serif_stage_test
+stages_to_run: serif
+mode: CauseEx
+
+########
+# Serif
+########
+
+serif_input_sgm_list: /nfs/raid88/u10/users/hqiu/sgm_corpus/cx/cx_sams_expt_1.120419.separate/sgms.list.1doc
+serif_input_awake_db: /nfs/raid87/u10/shared/Hume/common/serif/wm_eval_before_060119.sqlite
+use_basic_cipher_stream: false
+track_serif_files_read: true
