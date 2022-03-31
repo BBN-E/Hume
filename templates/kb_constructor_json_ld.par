@@ -28,6 +28,7 @@ SERIALIZER JSONLDSerializer
 +jsonld_output_file+
 +mode+
 +use_compositional_ontology+
++wm_external_ontology_hash+
++regrounding_mode+
 
-SERIALIZER VisualizationSerializer
-+json_graph_file+
+

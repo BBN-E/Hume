@@ -1,0 +1,38 @@
+# Template file for learnit params
+
+learnit_root:+learnit_root+
+source_lists:+source_lists+
+corpus_dir: %source_lists%
+corpus_name:+corpus_name+
+
+bilingual: true
+languages:English,Chinese
+min_alignment_overlap: 0.2
+should_reverse_alignment_table:true
+
+loader_concurrency: 5
+learnit_expt_suffix:default
+min_seed_frequency_per_batch: 1
+min_pattern_frequency_per_batch: 1
+max_unary_prop_depth: 3
+max_binary_prop_depth: 2
+max_regexp_pattern_words:5
+aggregated_frequency_filter_pattern_max: -1
+aggregated_frequency_filter_pattern_min: -1
+max_number_of_tokens_per_sentence: +max_number_of_tokens_per_sentence+
+
+
+use_whitelist: false
+slot_head_whitelists: %learnit_root%/inputs/whitelists/migration
+use_blacklist: false
+slot_head_blacklists: %learnit_root%/inputs/blacklists/migration
+mention_premod_stop_words:%learnit_root%/inputs/resources/stopwords/mention_premod_stop_words.txt
+relation_type_blacklists: %learnit_root%/inputs/relation_type_blacklists
+relation_type_whitelists: %learnit_root%/inputs/relation_type_whitelists
+
+stages_to_run:+stages_to_run+
+generic_event_noun_whitelist:+generic_event_noun_whitelist+
+generic_event_blacklist:+generic_event_blacklist+
+unary_event_and_binary_event_argument_extractors:+unary_event_and_binary_event_argument_extractors+
+binary_event_event_extractors:+binary_event_event_extractors+
+unary_entity_extractors:+unary_entity_extractors+

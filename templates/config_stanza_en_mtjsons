@@ -1,0 +1,64 @@
+# implementations go here
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/ingester/bbn_mt_json_ingester.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/dependency_parser/stanford_nlp_dependency_parser.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/parser/benepar_parser.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/parser/all_token_flatten_parser.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/sentence_splitter/newline_sentence_splitter.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/stanza_adapter.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/mention/name_mention_model.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/mention/noun_phrase_mention_model.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/mention/pronoun_mention_model.py
+
+INGESTER BBNMTJSONIngester
+lang English
+extraction_field SERIF_TOKENIZED_MT
+
+SENTENCE_SPLITTING_MODEL NewlineSentenceSplitter
+create_empty
+
+BASE_MODEL StanzaAdapter
+lang en
+dir +LANGUAGE_MODELS_DIR+/stanza/
+trust_tokenization
+max_tokens 200
+
+PARSE_MODEL BeneparParser
+model +LANGUAGE_MODELS_DIR+/nltk_data/benepar_en
+add_heads
+max_tokens 200
+
+PARSE_MODEL AllTokenFlattenParser
+postag_attr_getter_str xpos
+fallback_pos_tag X
+skip_sentence_has_parsing true
+
+MENTION_MODEL NounPhraseMentionModel
+
+MENTION_MODEL PronounMentionModel
+modify_existing_mention
+
+MENTION_MODEL NameMentionModel
+modify_existing_mention
+
+DEPENDENCY_MODEL StanfordNLPDependencyParser
+lang en
+models_dir NON_AVAILABLE
+use_data_from_stanford_adapter

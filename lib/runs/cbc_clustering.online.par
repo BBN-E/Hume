@@ -1,0 +1,13 @@
+
+job_name: hume_test.dart.082720.wm.v1.iter2
+stages_to_run: cbc,map-to-ontology,json
+
+input_npz_list: /d4m/ears/expts/48102.bbn_p3.20210505.serif_distilbert/expts/hume_test.dart.082720.wm.v1/distilbert/distilbert_npz.list
+input_serifxml_list: /d4m/ears/expts/48174.050521.v1/expts/hume_test.dart.082720.wm.v1/serif_serifxml.list
+saliency_list: /nfs/raid83/u10/jmacbrid-ad/WM/cluster_analysis_on_p3_bbn/salient_words.test2.tsv
+
+ontology_cache: /d4m/ears/expts/48200.test.v3/expts/hume_test.dart.082720.wm.v1/build_ontology_cache/
+
+similarity_dir: /d4m/ears/expts/48176.test5/expts/hume_test.dart.082720.wm.v1/similarity
+sentence_jsonl: /d4m/ears/expts/48176.test5/expts/hume_test.dart.082720.wm.v1/generate_candidates/sentence.ljson
+corpus_cache: /d4m/ears/expts/48176.test5/expts/hume_test.dart.082720.wm.v1/corpus_cache/

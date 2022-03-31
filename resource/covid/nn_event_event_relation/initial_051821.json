@@ -1,0 +1,45 @@
+{
+    "add_serif_entity_mentions": false,
+    "add_serif_event_mentions": true,
+    "allow_anchor_as_event_argument": false,
+    "allow_event_mention_as_event_argument": false,
+    "data": {
+        "train": {
+            "filelist": "/nfs/raid66/u11/users/brozonoy-ad/nlplingo.v2/eer.lists/joint.list"
+        },
+        "dev": {
+            "filelist": "/nfs/raid88/u10/users/ychan-ad/nlplingo_models/canonical/eer/dev.list"
+        }
+    },
+    "extractors": [
+        {
+            "cache_dir": "/nfs/raid66/u11/users/brozonoy-ad/.cache/huggingface/transformers",
+            "domain_ontology": "/nfs/raid88/u10/users/jcai/code/learnit_eer_train/expts/train_learnit_eer_5_27_20/train_model/create_ontology/ontology.txt",
+            "hyper-parameters": {
+                "batch_size": 32,
+                "epoch": 10,
+                "max_sentence_length": 128,
+                "decode_mode": true
+            },
+            "model_path": "/nfs/raid66/u11/users/brozonoy-ad/nlp_tasks/eer/output.v2/epoch-0/",
+            "extractor_type": "event-event-relation_spanpair",
+            "optimizer": {
+                "name": "adamw",
+                "lr": 1e-5,
+                "lr_decay": 1e-5,
+                "gradient_accumulation_steps": 1,
+                "warmup_steps": 5
+            },
+            "seed": 1234,
+            "model_saving_policy": {
+                "save_models": true,
+                "save_every_epoch": true,
+                "save_top_k_models": 5,
+                "save_every_kth_epoch": 5,
+                "save_from_kth_epoch": 5
+            },
+            "task": "event-event-relation",
+            "encoder_name": "xlm-roberta-base"
+        }
+    ]
+}

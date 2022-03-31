@@ -156,7 +156,7 @@ class FactReader:
                         event_mention = KBEventMention(
                             event_mention_id, kb_document, title_text,
                             job_title_start_offset, job_title_end_offset, snippet,
-                            [], [], kb_sentence, [], None, "FACTFINDER",0.5,title_text)
+                            [], [], kb_sentence, [], None, "FACTFINDER",0.5,title_text,None,None)
 
                         for flag in ontology_flags.split(','):
                             for mapping in (

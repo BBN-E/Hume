@@ -31,3 +31,7 @@ class KBRelation(KBElement):
             if i.properties.get("trigger_text") and len(i.properties.get("trigger_text")) > len(max_s):
                 max_s = i.properties.get("trigger_text")
         return max_s
+
+    @property
+    def document(self):
+        return self.relation_mentions[0].document

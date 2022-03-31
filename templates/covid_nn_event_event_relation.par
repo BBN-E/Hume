@@ -1,0 +1,13 @@
+# implementations go here
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/ingester/serifxml_ingester.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/nlplingo_decoder.py
+
+INGESTER SerifxmlIngester
+
+BASE_MODEL NLPLingoDecoder
+params_path +hume_root+/resource/covid/nn_event_event_relation/initial_051821.json
+use_sequence_tagging_adder true

@@ -1,0 +1,39 @@
+{
+  "runjobs_config": {
+      "job_name": "ir.building_index.INDEXING.090120"
+  },
+  "feature_extractors": [
+    {
+      "id": "feature_1",
+      "name": "SerifEventMentionBertExtractor",
+      "original_serif_list": "/nfs/raid88/u10/users/bmin/experiments/better-hitl-ir/better-ir-eng-queries-and-rel-serifxml.txt",
+      "number_of_batches": 10,
+      "need_merge": false,
+      "args": {
+        "input_serif_list": "+serif_list_slice+",
+        "input_bert_list": "/nfs/raid88/u10/users/bmin/experiments/better-hitl-ir/better-ir-eng-queries-and-rel-npz.txt",
+        "cap": 70,
+        "output_path": "+output_path+",
+        "input_feature_list": "+input_feature_list+"
+      }
+    }
+  ],
+  "indexing_features": [
+    {
+      "feature_id": "feature_1",
+      "id": "index_1",
+      "name": "Annoy",
+      "number_of_batches": 10,
+      "args": {
+        "input_feature_list": "+input_feature_list+",
+        "annoy_metric": "angular",
+        "n_trees": 100,
+        "output_path": "+output_path+"
+      }
+    }
+  ],
+  "queries": [
+  ],
+  "dumpers": [
+  ]
+}

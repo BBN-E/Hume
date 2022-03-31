@@ -1,0 +1,11 @@
+job_name: hume_test.dart.082720.wm.v1
+stages_to_run: generate-candidates,sample-avg-embeddings,build-ontology-cache
+
+input_npz_list: /d4m/ears/expts/48102.bbn_p3.20210505.serif_distilbert/expts/hume_test.dart.082720.wm.v1/distilbert/distilbert_npz.list
+input_serifxml_list: /d4m/ears/expts/48174.050521.v1/expts/hume_test.dart.082720.wm.v1/serif_serifxml.list
+
+ontology_path: /nfs/raid83/u10/jmacbrid-ad/git/Hume/resource/dependencies/probabilistic_grounding/WM_Ontologies/CompositionalOntology.yml
+ontology_metadata_path: /nfs/raid83/u10/jmacbrid-ad/git/Hume/resource/dependencies/probabilistic_grounding/WM_Ontologies/CompositionalOntology_metadata.yml
+
+annotation_npz_list: /nfs/raid83/u10/jmacbrid-ad/WM/distillbert/distilbert-annotation.list
+annotation_event_jsonl: /nfs/raid88/u10/users/hqiu_ad/annotation/WM/030921/annotation.ljson

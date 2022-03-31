@@ -1,0 +1,37 @@
+
+
+############
+## Pipeline
+############
+job_name: dsmte.learnit_prepare_031522.v1
+stages_to_run: learnit-decoder
+mode: WorldModelers
+use_compositional_ontology: true
+
+num_of_batches_global: 300
+max_number_of_tokens_per_sentence: 128
+
+external_ontology_path: /nfs/raid88/u10/users/hqiu_ad/data/wm/ontology_10269353-4545-422d-8a7d-d9be9e9dbfc5.yml
+external_ontology_version: 10269353-4545-422d-8a7d-d9be9e9dbfc5
+use_regrounding_cache: false
+regrounding_cache_path: /nfs/mercury-06/u23/hqiu_ad/wm_cache
+
+################
+# CDR digestion
+################
+input_cdr_list:/nfs/raid88/u10/users/hqiu_ad/raw_corpus/wm/dart.030122.list
+breaking_point: 10000
+
+
+metadata_file: GENERATED
+
+####################################
+## LearnIt  Decoder
+#####################################
+learnit_decoder_input_serifxml_list: /nfs/raid88/u10/users/hqiu_ad/serifxml_corpus/wm_dsmte.list
+learnit_event_and_event_arg_pattern_dir: DEFAULT
+learnit_unary_entity_pattern_dir: DEFAULT
+learnit_event_event_relation_pattern_dir: DEFAULT
+input_serif_cause_effect_relations_dir:GENERATED
+generic_event_noun_whitelist: GENERATED
+generic_event_blacklist: GENERATED

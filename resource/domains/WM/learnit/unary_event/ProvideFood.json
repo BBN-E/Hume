@@ -6,337 +6,446 @@
       "valList" : [ "java.util.ArrayList", [ ] ],
       "entries" : [ "java.util.ArrayList", [ ] ]
     } ],
-    "iteration" : 227
+    "iteration" : 230
   } ],
   "patternScores" : [ "com.bbn.akbc.neolearnit.scoring.tables.PatternScoreTable", {
     "data" : [ "com.bbn.akbc.neolearnit.storage.EfficientMapDataStore", {
       "keyList" : [ "java.util.ArrayList", [ [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate assistance) (args (argument (role <ref>) (mention (acetype OTH))) (argument (role <unknown>) (mention (acetype FOOD)))))",
-        "toPrettyString" : " [ [FOOD] [n]assistance[0] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate needing) (args (argument (role <obj>) (mention (headword aid) (acetype OTH) (regex (regex (re (text (string \"food\")))))))))",
-        "toPrettyString" : " [ [v]needing[0] <obj> food aid[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mprop (return slot0) (predicate emergency) (args (argument (role <ref>) (mention (headword aid) (acetype OTH) (regex (regex (re (text (string \"emergency food\")))))))))",
-        "toPrettyString" : " [ [m]emergency[0] food aid[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (acetype FOOD))) (argument (role <sub>) (mention (acetype OTH)))))",
-        "toPrettyString" : " [ [OTH] <sub> [v]provide[0] <obj> [FOOD] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword assistance) (acetype OTH) (regex (regex (re (text (string \"emergency food\"))))))",
-        "toPrettyString" : " emergency food assistance[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword programs) (acetype OTH) (regex (regex (re (text (string \"food security\"))))))",
-        "toPrettyString" : " food security programs[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword deliveries) (acetype OTH) (regex (regex (re (text (string \"food\"))))))",
-        "toPrettyString" : " food deliveries[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate distributions) (args (argument (role <unknown>) (mention (acetype FOOD)))))",
-        "toPrettyString" : " [ [FOOD] [n]distributions[0] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword assistance) (acetype OTH) (regex (regex (re (text (string \"relief food\"))))))",
-        "toPrettyString" : " relief food assistance[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword subsidies) (acetype OTH) (regex (regex (re (text (string \"food\"))))))",
-        "toPrettyString" : " food subsidies[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate deliver) (args (argument (role <obj>) (mention (headword food) (acetype FOOD)))))",
-        "toPrettyString" : " [ [v]deliver[0] <obj> food[FOOD] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword assistance) (acetype OTH) (regex (regex (re (text (string \"humanitarian food\"))))))",
-        "toPrettyString" : " humanitarian food assistance[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (acetype FOOD))) (argument (role to) (mention (acetype REFUGEE)))))",
-        "toPrettyString" : " [ [v]provide[0] <obj> [FOOD] to [REFUGEE] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate delivery) (args (argument (role of) (mention (headword assistance)))))",
-        "toPrettyString" : " [ [n]delivery[0] of assistance ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate delivery) (args (argument (role <ref>) (mention (headword delivery) (acetype OTH))) (argument (role of) (mention (headword food) (acetype FOOD)))))",
-        "toPrettyString" : " [ [n]delivery[0] of food[FOOD] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (headword aid)))))",
-        "toPrettyString" : " [ [v]provide[0] <obj> aid ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword assistance) (acetype OTH) (regex (regex (re (text (string \"significant humanitarian food\"))))))",
-        "toPrettyString" : " significant humanitarian food assistance[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword delivery) (regex (regex (re (text (string \"the of food assistance even in\"))))))",
-        "toPrettyString" : " the of food assistance even in delivery[0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword program) (acetype OTH) (regex (regex (re (text (string \"food\"))))))",
-        "toPrettyString" : " food program[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate programs) (args (argument (role <ref>) (mention (acetype OTH))) (argument (role <unknown>) (mention (acetype FOOD)))))",
-        "toPrettyString" : " [ [FOOD] [n]programs[0] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword programme) (acetype OTH) (regex (regex (re (text (string \"food\"))))))",
-        "toPrettyString" : " food programme[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate delivery) (args (argument (role <ref>) (mention (headword delivery) (acetype OTH))) (argument (role <unknown>) (mention (headword food) (acetype FOOD)))))",
-        "toPrettyString" : " [ food[FOOD] [n]delivery[0] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate programmes) (args (argument (role <ref>) (mention (acetype OTH))) (argument (role <unknown>) (mention (acetype FOOD)))))",
-        "toPrettyString" : " [ [FOOD] [n]programmes[0] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (headword assistance) (acetype OTH) (regex (regex (re (text (string \"food\")))))))))",
-        "toPrettyString" : " [ [v]provide[0] <obj> food assistance[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate provision) (args (argument (role <ref>) (mention (acetype OTH))) (argument (role <unknown>) (mention (acetype FOOD)))))",
-        "toPrettyString" : " [ [FOOD] [n]provision[0] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword delivery) (regex (regex (re (text (string \"the of food assistance even\"))))))",
-        "toPrettyString" : " the of food assistance even delivery[0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate assistance) (args (argument (role <ref>) (mention (acetype OTH))) (argument (role <temp>) (mention (acetype OTH))) (argument (role <unknown>) (mention (acetype FOOD)))))",
-        "toPrettyString" : " [ [FOOD] [n]assistance[0] <temp> [OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate distribution) (args (argument (role <ref>) (mention (acetype OTH))) (argument (role of) (mention (acetype FOOD)))))",
-        "toPrettyString" : " [ [n]distribution[0] of [FOOD] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate aid) (args (argument (role <ref>) (mention (acetype OTH))) (argument (role <unknown>) (mention (acetype FOOD)))))",
-        "toPrettyString" : " [ [FOOD] [n]aid[0] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate provision) (args (argument (role <ref>) (mention (acetype OTH))) (argument (role of) (mention (acetype FOOD)))))",
-        "toPrettyString" : " [ [n]provision[0] of [FOOD] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword distribution) (acetype OTH) (regex (regex (re (text (string \"food\"))))))",
-        "toPrettyString" : " food distribution[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (headword food) (acetype FOOD)))))",
-        "toPrettyString" : " [ [v]provide[0] <obj> food[FOOD] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword delivery) (regex (regex (re (text (string \"food assistance\"))))))",
-        "toPrettyString" : " food assistance delivery[0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate deliver) (args (argument (role <obj>) (mention (headword food))) (argument (role by) (mention (headword ?) (regex (regex (re (text (string \"all means possible\")))))))))",
-        "toPrettyString" : " [ [v]deliver[0] by all means possible ? <obj> food ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate provided) (args (argument (role <obj>) (mention (headword assistance) (acetype OTH) (regex (regex (re (text (string \"food\")))))))))",
-        "toPrettyString" : " [ [v]provided[0] <obj> food assistance[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate deliver) (args (argument (role <obj>) (mention (headword commodities) (regex (regex (re (text (string \"food and nutrition\"))))))) (argument (role by) (mention (headword ?) (regex (regex (re (text (string \"road , air and river\")))))))))",
-        "toPrettyString" : " [ [v]deliver[0] by road , air and river ? <obj> food and nutrition commodities ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (acetype FOOD)))))",
-        "toPrettyString" : " [ [v]provide[0] <obj> [FOOD] ]"
+        "toIDString" : "(vprop (return slot0) (predicate providing) (args (argument (role <obj>) (mention (headword assistance) (acetype OTH) (regex (regex (re (text (string \"food\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]providing[0] <obj> food assistance[OTH] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (headword aid) (regex (regex (re (text (string \"emergency food\")))))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " [ [v]provide[0] <obj> emergency food aid ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate deliver) (args (argument (role <obj>) (mention (headword commodities) (regex (regex (re (text (string \"food and nutrition\")))))))))",
-        "toPrettyString" : " [ [v]deliver[0] <obj> food and nutrition commodities ]"
+        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <iobj>) (mention (headword food) (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]provide[0] <iobj> food[FOOD] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mprop (return slot0) (predicate emergency) (args (argument (role <ref>) (mention (headword assistance) (acetype OTH) (regex (regex (re (text (string \"food\")))))))))",
-        "toPrettyString" : " [ [m]emergency[0] food assistance[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword distributions) (acetype OTH) (regex (regex (re (text (string \"food\"))))))",
-        "toPrettyString" : " food distributions[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate distributed) (args (argument (role <obj>) (mention (acetype FOOD)))))",
-        "toPrettyString" : " [ [v]distributed[0] <obj> [FOOD] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate program) (args (argument (role <ref>) (mention (acetype OTH))) (argument (role <unknown>) (mention (acetype FOOD)))))",
-        "toPrettyString" : " [ [FOOD] [n]program[0] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate distribution) (args (argument (role <ref>) (mention (acetype OTH))) (argument (role <unknown>) (mention (acetype FOOD)))))",
-        "toPrettyString" : " [ [FOOD] [n]distribution[0] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate requiring) (args (argument (role <obj>) (mention (headword assistance) (acetype OTH) (regex (regex (re (text (string \"food\")))))))))",
-        "toPrettyString" : " [ [v]requiring[0] <obj> food assistance[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword aid) (acetype OTH) (regex (regex (re (text (string \"food\"))))))",
-        "toPrettyString" : " food aid[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword programmes) (acetype OTH) (regex (regex (re (text (string \"food\"))))))",
-        "toPrettyString" : " food programmes[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate provision) (args (argument (role <unknown>) (mention (acetype FOOD)))))",
-        "toPrettyString" : " [ [FOOD] [n]provision[0] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate distributions) (args (argument (role <ref>) (mention (acetype OTH))) (argument (role <unknown>) (mention (acetype FOOD)))))",
-        "toPrettyString" : " [ [FOOD] [n]distributions[0] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <iobj>) (mention (acetype FOOD)))))",
-        "toPrettyString" : " [ [v]provide[0] <iobj> [FOOD] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate distribute) (args (argument (role <obj>) (mention (acetype FOOD)))))",
-        "toPrettyString" : " [ [v]distribute[0] <obj> [FOOD] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate provided) (args (argument (role with) (mention (acetype FOOD)))))",
-        "toPrettyString" : " [ [v]provided[0] with [FOOD] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (headword assistance) (regex (regex (re (text (string \"food and nutrition\")))))))))",
-        "toPrettyString" : " [ [v]provide[0] <obj> food and nutrition assistance ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate required) (args (argument (role <obj>) (mention (headword assistance) (acetype OTH) (regex (regex (re (text (string \"food\")))))))))",
-        "toPrettyString" : " [ [v]required[0] <obj> food assistance[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate program) (args (argument (role <unknown>) (mention (acetype FOOD)))))",
-        "toPrettyString" : " [ [FOOD] [n]program[0] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate aid) (args (argument (role <unknown>) (mention (acetype FOOD)))))",
-        "toPrettyString" : " [ [FOOD] [n]aid[0] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword delivery) (regex (regex (re (text (string \"of food\"))))))",
-        "toPrettyString" : " of food delivery[0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate distribute) (args (argument (role <obj>) (mention (headword aid)))))",
-        "toPrettyString" : " [ [v]distribute[0] <obj> aid ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword delivery) (regex (regex (re (text (string \"the of food assistance to\"))))))",
-        "toPrettyString" : " the of food assistance to delivery[0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate receive) (args (argument (role <obj>) (mention (headword aid) (acetype OTH) (regex (regex (re (text (string \"food\")))))))))",
-        "toPrettyString" : " [ [v]receive[0] <obj> food aid[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mprop (return slot0) (predicate emergency) (args (argument (role <ref>) (mention (headword aid) (acetype OTH) (regex (regex (re (text (string \"food\")))))))))",
+        "toIDString" : "(mprop (return slot0) (predicate emergency) (args (argument (role <ref>) (mention (headword aid) (acetype OTH) (regex (regex (re (text (string \"emergency food\")))))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " [ [m]emergency[0] food aid[OTH] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (headword food) (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]provide[0] <obj> food[FOOD] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate deliver) (args (argument (role <obj>) (mention (headword food))) (argument (role by) (mention (headword road)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]deliver[0] by road <obj> food ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword delivery) (regex (regex (re (text (string \"food assistance\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " food assistance delivery[0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (headword food))) (argument (role <obj>) (mention (headword assistance) (regex (regex (re (text (string \"food and nutrition\")))))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " [ [v]provide[0] <obj> food and nutrition assistance <obj> food ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (acetype FOOD))) (argument (role <sub>) (mention (acetype ORG)))))",
-        "toPrettyString" : " [ [ORG] <sub> [v]provide[0] <obj> [FOOD] ]"
+        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (headword assistance) (regex (regex (re (text (string \"food\"))))))) (argument (role <sub>) (mention (headword wfp)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ wfp <sub> [v]provide[0] <obj> food assistance ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (headword food) (acetype OTH)))))",
-        "toPrettyString" : " [ [v]provide[0] <obj> food[OTH] ]"
+        "toIDString" : "(mention (return slot0) (headword assistance) (acetype OTH) (regex (regex (re (text (string \"emergency food\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " emergency food assistance[OTH][0]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword aid) (acetype OTH) (regex (regex (re (text (string \"direct food\"))))))",
-        "toPrettyString" : " direct food aid[OTH][0]"
+        "toIDString" : "(vprop (return slot0) (predicate receive) (args (argument (role <obj>) (mention (headword aid) (acetype OTH) (regex (regex (re (text (string \"food\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]receive[0] <obj> food aid[OTH] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword assistance) (acetype OTH) (regex (regex (re (text (string \"food\"))))))",
-        "toPrettyString" : " food assistance[OTH][0]"
+        "toIDString" : "(mention (return slot0) (headword aid) (acetype OTH) (regex (regex (re (text (string \"emergency food\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " emergency food aid[OTH][0]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate delivery) (args (argument (role of) (mention (headword assistance) (regex (regex (re (text (string \"food\")))))))))",
-        "toPrettyString" : " [ [n]delivery[0] of food assistance ]"
+        "toIDString" : "(mprop (return slot0) (predicate aid) (args (argument (role <ref>) (mention (headword distribution) (acetype OTH) (regex (regex (re (text (string \"food\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [m]aid[0] food distribution[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword assistance) (acetype OTH) (regex (regex (re (text (string \"relief food\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " relief food assistance[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate assistance) (args (argument (role <temp>) (mention (acetype OTH))) (argument (role <unknown>) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [FOOD] [n]assistance[0] <temp> [OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mprop (return slot0) (predicate emergency) (args (argument (role <ref>) (mention (headword assistance) (acetype OTH) (regex (regex (re (text (string \"emergency food\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [m]emergency[0] food assistance[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate required) (args (argument (role <obj>) (mention (headword assistance) (acetype OTH) (regex (regex (re (text (string \"food\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]required[0] <obj> food assistance[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate require) (args (argument (role <obj>) (mention (headword assistance) (acetype OTH) (regex (regex (re (text (string \"food\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]require[0] <obj> food assistance[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate providing) (args (argument (role <obj>) (mention (headword food)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]providing[0] <obj> food ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword delivery) (regex (regex (re (text (string \"the of food\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " the of food delivery[0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate assistance) (args (argument (role <ref>) (mention (acetype OTH))) (argument (role <temp>) (mention (acetype OTH))) (argument (role <unknown>) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [FOOD] [n]assistance[0] <temp> [OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mprop (return slot0) (predicate aid) (args (argument (role <ref>) (mention (headword program) (acetype OTH) (regex (regex (re (text (string \"food\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [m]aid[0] food program[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate provision) (args (argument (role <ref>) (mention (headword provision) (acetype OTH))) (argument (role of) (mention (headword food) (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [n]provision[0] of food[FOOD] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword distribution) (acetype OTH) (regex (regex (re (text (string \"food\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " food distribution[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (headword assistance) (acetype OTH) (regex (regex (re (text (string \"food\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]provide[0] <obj> food assistance[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate distribution) (args (argument (role <unknown>) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [FOOD] [n]distribution[0] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(mention (return slot0) (headword distribution) (regex (regex (re (text (string \"food\"))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " food distribution[0]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(mention (return slot0) (headword programs) (acetype OTH) (regex (regex (re (text (string \"food\"))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " food programs[OTH][0]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (headword assistance) (regex (regex (re (text (string \"food\"))))))) (argument (role to) (mention (headword populations)))))",
-        "toPrettyString" : " [ [v]provide[0] <obj> food assistance to populations ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate require) (args (argument (role <obj>) (mention (headword assistance) (acetype OTH) (regex (regex (re (text (string \"food\"))))))) (argument (role <sub>) (mention (headword people) (acetype PER)))))",
-        "toPrettyString" : " [ people[PER] <sub> [v]require[0] <obj> food assistance[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate deliver) (args (argument (role <obj>) (mention (headword food))) (argument (role by) (mention (headword ?) (regex (regex (re (text (string \"road , air and river\")))))))))",
-        "toPrettyString" : " [ [v]deliver[0] by road , air and river ? <obj> food ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(nprop (return slot0) (predicate programmes) (args (argument (role <unknown>) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
         "toPrettyString" : " [ [FOOD] [n]programmes[0] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mprop (return slot0) (predicate aid) (args (argument (role <ref>) (mention (headword program) (acetype OTH) (regex (regex (re (text (string \"food\")))))))))",
-        "toPrettyString" : " [ [m]aid[0] food program[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate distribute) (args (argument (role <obj>) (mention (headword food) (acetype FOOD)))))",
-        "toPrettyString" : " [ [v]distribute[0] <obj> food[FOOD] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate deliver) (args (argument (role <obj>) (mention (headword food))) (argument (role by) (mention (headword road)))))",
-        "toPrettyString" : " [ [v]deliver[0] by road <obj> food ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate require) (args (argument (role <obj>) (mention (headword assistance) (acetype OTH) (regex (regex (re (text (string \"food\"))))))) (argument (role <sub>) (mention (headword people) (acetype PER) (regex (regex (re (text (string \"million\")))))))))",
-        "toPrettyString" : " [ million people[PER] <sub> [v]require[0] <obj> food assistance[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword aid) (acetype OTH) (regex (regex (re (text (string \"emergency food\"))))))",
-        "toPrettyString" : " emergency food aid[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate deliver) (args (argument (role <obj>) (mention (headword food))) (argument (role by) (mention (headword means)))))",
-        "toPrettyString" : " [ [v]deliver[0] <obj> food by means ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword delivery) (regex (regex (re (text (string \"the of food\"))))))",
-        "toPrettyString" : " the of food delivery[0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate deliver) (args (argument (role <obj>) (mention (headword food))) (argument (role <obj>) (mention (headword commodities) (regex (regex (re (text (string \"food and nutrition\")))))))))",
-        "toPrettyString" : " [ [v]deliver[0] <obj> food <obj> food and nutrition commodities ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate deliver) (args (argument (role <obj>) (mention (headword commodities) (regex (regex (re (text (string \"food and nutrition\"))))))) (argument (role by) (mention (headword road)))))",
-        "toPrettyString" : " [ [v]deliver[0] by road <obj> food and nutrition commodities ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mprop (return slot0) (predicate emergency) (args (argument (role <ref>) (mention (headword assistance) (acetype OTH) (regex (regex (re (text (string \"emergency food\")))))))))",
-        "toPrettyString" : " [ [m]emergency[0] food assistance[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate provision) (args (argument (role <ref>) (mention (headword provision) (acetype OTH))) (argument (role of) (mention (headword food) (acetype FOOD)))))",
-        "toPrettyString" : " [ [n]provision[0] of food[FOOD] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (headword assistance) (regex (regex (re (text (string \"food\"))))))) (argument (role <sub>) (mention (headword wfp)))))",
-        "toPrettyString" : " [ wfp <sub> [v]provide[0] <obj> food assistance ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate distribution) (args (argument (role <unknown>) (mention (acetype FOOD)))))",
-        "toPrettyString" : " [ [FOOD] [n]distribution[0] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate require) (args (argument (role <obj>) (mention (headword assistance) (acetype OTH) (regex (regex (re (text (string \"food\")))))))))",
-        "toPrettyString" : " [ [v]require[0] <obj> food assistance[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mprop (return slot0) (predicate aid) (args (argument (role <ref>) (mention (headword distribution) (acetype OTH) (regex (regex (re (text (string \"food\")))))))))",
-        "toPrettyString" : " [ [m]aid[0] food distribution[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate assistance) (args (argument (role <temp>) (mention (acetype OTH))) (argument (role <unknown>) (mention (acetype FOOD)))))",
-        "toPrettyString" : " [ [FOOD] [n]assistance[0] <temp> [OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword aid) (acetype OTH) (regex (regex (re (text (string \"the food\"))))))",
-        "toPrettyString" : " the food aid[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate providing) (args (argument (role <obj>) (mention (headword assistance) (acetype OTH) (regex (regex (re (text (string \"food\")))))))))",
-        "toPrettyString" : " [ [v]providing[0] <obj> food assistance[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate deliver) (args (argument (role <obj>) (mention (headword commodities) (regex (regex (re (text (string \"food and nutrition\"))))))) (argument (role by) (mention (headword means)))))",
-        "toPrettyString" : " [ [v]deliver[0] <obj> food and nutrition commodities by means ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate assistance) (args (argument (role <unknown>) (mention (acetype FOOD)))))",
-        "toPrettyString" : " [ [FOOD] [n]assistance[0] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate distribution) (args (argument (role of) (mention (acetype FOOD)))))",
-        "toPrettyString" : " [ [n]distribution[0] of [FOOD] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate provision) (args (argument (role of) (mention (acetype FOOD)))))",
+        "toIDString" : "(nprop (return slot0) (predicate provision) (args (argument (role <ref>) (mention (acetype OTH))) (argument (role of) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
         "toPrettyString" : " [ [n]provision[0] of [FOOD] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <iobj>) (mention (headword food) (acetype FOOD)))))",
-        "toPrettyString" : " [ [v]provide[0] <iobj> food[FOOD] ]"
+        "toIDString" : "(nprop (return slot0) (predicate provision) (args (argument (role <ref>) (mention (acetype OTH))) (argument (role <unknown>) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [FOOD] [n]provision[0] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (headword assistance) (regex (regex (re (text (string \"food and nutrition\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]provide[0] <obj> food and nutrition assistance ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate provision) (args (argument (role <unknown>) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [FOOD] [n]provision[0] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate provided) (args (argument (role <obj>) (mention (headword assistance) (acetype OTH) (regex (regex (re (text (string \"food\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]provided[0] <obj> food assistance[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword program) (acetype OTH) (regex (regex (re (text (string \"food\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " food program[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate deliver) (args (argument (role <obj>) (mention (headword food))) (argument (role by) (mention (headword ?) (regex (regex (re (text (string \"road , air and river\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]deliver[0] by road , air and river ? <obj> food ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate require) (args (argument (role <obj>) (mention (headword assistance) (acetype OTH) (regex (regex (re (text (string \"food\"))))))) (argument (role <sub>) (mention (headword people) (acetype PER) (regex (regex (re (text (string \"million\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ million people[PER] <sub> [v]require[0] <obj> food assistance[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword delivery) (regex (regex (re (text (string \"the of food assistance even in\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " the of food assistance even in delivery[0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate program) (args (argument (role <ref>) (mention (acetype OTH))) (argument (role <unknown>) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [FOOD] [n]program[0] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (acetype FOOD))) (argument (role <sub>) (mention (acetype OTH)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [OTH] <sub> [v]provide[0] <obj> [FOOD] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate assistance) (args (argument (role <ref>) (mention (acetype OTH))) (argument (role <unknown>) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [FOOD] [n]assistance[0] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword assistance) (acetype OTH) (regex (regex (re (text (string \"significant humanitarian food\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " significant humanitarian food assistance[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate deliver) (args (argument (role <obj>) (mention (headword food))) (argument (role <obj>) (mention (headword commodities) (regex (regex (re (text (string \"food and nutrition\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]deliver[0] <obj> food <obj> food and nutrition commodities ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate deliver) (args (argument (role <obj>) (mention (headword commodities) (regex (regex (re (text (string \"food and nutrition\"))))))) (argument (role by) (mention (headword ?) (regex (regex (re (text (string \"road , air and river\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]deliver[0] by road , air and river ? <obj> food and nutrition commodities ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate distribute) (args (argument (role <obj>) (mention (headword aid)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]distribute[0] <obj> aid ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword aid) (acetype OTH) (regex (regex (re (text (string \"direct food\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " direct food aid[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (headword assistance) (regex (regex (re (text (string \"food\"))))))) (argument (role to) (mention (headword populations)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]provide[0] <obj> food assistance to populations ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate distribute) (args (argument (role <obj>) (mention (headword food) (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]distribute[0] <obj> food[FOOD] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (headword aid)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]provide[0] <obj> aid ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate requiring) (args (argument (role <obj>) (mention (headword assistance) (acetype OTH) (regex (regex (re (text (string \"food\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]requiring[0] <obj> food assistance[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate delivery) (args (argument (role of) (mention (headword assistance)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [n]delivery[0] of assistance ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword subsidies) (acetype OTH) (regex (regex (re (text (string \"food\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " food subsidies[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate programmes) (args (argument (role <ref>) (mention (acetype OTH))) (argument (role <unknown>) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [FOOD] [n]programmes[0] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword assistance) (regex (regex (re (text (string \"provide food\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " provide food assistance[0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate deliver) (args (argument (role <obj>) (mention (headword commodities) (regex (regex (re (text (string \"food and nutrition\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]deliver[0] <obj> food and nutrition commodities ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate deliver) (args (argument (role <obj>) (mention (headword food) (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]deliver[0] <obj> food[FOOD] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate distributed) (args (argument (role <obj>) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]distributed[0] <obj> [FOOD] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate aid) (args (argument (role <ref>) (mention (acetype OTH))) (argument (role <unknown>) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [FOOD] [n]aid[0] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (acetype FOOD))) (argument (role to) (mention (acetype REFUGEE)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]provide[0] <obj> [FOOD] to [REFUGEE] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate distributions) (args (argument (role <ref>) (mention (acetype OTH))) (argument (role <unknown>) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [FOOD] [n]distributions[0] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (headword food) (acetype OTH)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]provide[0] <obj> food[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate distribution) (args (argument (role <ref>) (mention (acetype OTH))) (argument (role of) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [n]distribution[0] of [FOOD] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate delivery) (args (argument (role <ref>) (mention (headword delivery) (acetype OTH))) (argument (role of) (mention (headword food) (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [n]delivery[0] of food[FOOD] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate deliver) (args (argument (role <obj>) (mention (headword commodities) (regex (regex (re (text (string \"food and nutrition\"))))))) (argument (role by) (mention (headword road)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]deliver[0] by road <obj> food and nutrition commodities ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (headword assistance) (regex (regex (re (text (string \"food\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]provide[0] <obj> food assistance ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword assistance) (acetype OTH) (regex (regex (re (text (string \"humanitarian food\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " humanitarian food assistance[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword interventions) (acetype OTH) (regex (regex (re (text (string \"food\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " food interventions[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate distribution) (args (argument (role <ref>) (mention (acetype OTH))) (argument (role <unknown>) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [FOOD] [n]distribution[0] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword programme) (acetype OTH) (regex (regex (re (text (string \"food\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " food programme[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate distributions) (args (argument (role <unknown>) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [FOOD] [n]distributions[0] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate assistance) (args (argument (role <unknown>) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [FOOD] [n]assistance[0] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword programmes) (acetype OTH) (regex (regex (re (text (string \"food\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " food programmes[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate provided) (args (argument (role with) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]provided[0] with [FOOD] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(nprop (return slot0) (predicate programs) (args (argument (role <unknown>) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [FOOD] [n]programs[0] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword delivery) (regex (regex (re (text (string \"of food\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " of food delivery[0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (acetype FOOD))) (argument (role <sub>) (mention (acetype ORG)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [ORG] <sub> [v]provide[0] <obj> [FOOD] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword distributions) (acetype OTH) (regex (regex (re (text (string \"food\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " food distributions[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate program) (args (argument (role <unknown>) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [FOOD] [n]program[0] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate delivery) (args (argument (role of) (mention (headword assistance) (regex (regex (re (text (string \"food\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [n]delivery[0] of food assistance ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword aid) (acetype OTH) (regex (regex (re (text (string \"the food\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " the food aid[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword programs) (acetype OTH) (regex (regex (re (text (string \"food security\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " food security programs[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate deliver) (args (argument (role <obj>) (mention (headword commodities) (regex (regex (re (text (string \"food and nutrition\"))))))) (argument (role <sub>) (mention (headword wfp)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ wfp <sub> [v]deliver[0] <obj> food and nutrition commodities ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate aid) (args (argument (role <unknown>) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [FOOD] [n]aid[0] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword aid) (acetype OTH) (regex (regex (re (text (string \"food\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " food aid[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mprop (return slot0) (predicate emergency) (args (argument (role <ref>) (mention (headword aid) (acetype OTH) (regex (regex (re (text (string \"food\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [m]emergency[0] food aid[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword delivery) (regex (regex (re (text (string \"food aid\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " food aid delivery[0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword deliveries) (acetype OTH) (regex (regex (re (text (string \"food\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " food deliveries[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate require) (args (argument (role <obj>) (mention (headword assistance) (acetype OTH) (regex (regex (re (text (string \"food\"))))))) (argument (role <sub>) (mention (headword people) (acetype PER)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ people[PER] <sub> [v]require[0] <obj> food assistance[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate provision) (args (argument (role of) (mention (headword food) (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [n]provision[0] of food[FOOD] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]provide[0] <obj> [FOOD] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate delivery) (args (argument (role <ref>) (mention (headword delivery) (acetype OTH))) (argument (role <unknown>) (mention (headword food) (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ food[FOOD] [n]delivery[0] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate programs) (args (argument (role <ref>) (mention (acetype OTH))) (argument (role <unknown>) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
         "toPrettyString" : " [ [FOOD] [n]programs[0] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(nprop (return slot0) (predicate delivery) (args (argument (role of) (mention (headword quantities) (regex (regex (re (text (string \"food assistance even in limited\")))))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " [ [n]delivery[0] of food assistance even in limited quantities ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate deliver) (args (argument (role <obj>) (mention (headword commodities) (regex (regex (re (text (string \"food and nutrition\"))))))) (argument (role <sub>) (mention (headword wfp)))))",
-        "toPrettyString" : " [ wfp <sub> [v]deliver[0] <obj> food and nutrition commodities ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <obj>) (mention (headword assistance) (regex (regex (re (text (string \"food\")))))))))",
-        "toPrettyString" : " [ [v]provide[0] <obj> food assistance ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate deliver) (args (argument (role <obj>) (mention (headword food))) (argument (role <sub>) (mention (headword wfp)))))",
-        "toPrettyString" : " [ wfp <sub> [v]deliver[0] <obj> food ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate distribute) (args (argument (role <obj>) (mention (headword aid) (regex (regex (re (text (string \"emergency food\")))))))))",
-        "toPrettyString" : " [ [v]distribute[0] <obj> emergency food aid ]"
+        "toIDString" : "(vprop (return slot0) (predicate distribute) (args (argument (role <obj>) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]distribute[0] <obj> [FOOD] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(nprop (return slot0) (predicate provision) (args (argument (role of) (mention (headword food)))))",
+        "isUDPattern" : false,
         "toPrettyString" : " [ [n]provision[0] of food ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword assistance) (regex (regex (re (text (string \"provide food\"))))))",
-        "toPrettyString" : " provide food assistance[0]"
+        "toIDString" : "(vprop (return slot0) (predicate deliver) (args (argument (role <obj>) (mention (headword food))) (argument (role by) (mention (headword ?) (regex (regex (re (text (string \"all means possible\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]deliver[0] by all means possible ? <obj> food ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate providing) (args (argument (role <obj>) (mention (headword food)))))",
-        "toPrettyString" : " [ [v]providing[0] <obj> food ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate provision) (args (argument (role of) (mention (headword food) (acetype FOOD)))))",
-        "toPrettyString" : " [ [n]provision[0] of food[FOOD] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword interventions) (acetype OTH) (regex (regex (re (text (string \"food\"))))))",
-        "toPrettyString" : " food interventions[OTH][0]"
+        "toIDString" : "(mprop (return slot0) (predicate emergency) (args (argument (role <ref>) (mention (headword assistance) (acetype OTH) (regex (regex (re (text (string \"food\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [m]emergency[0] food assistance[OTH] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(vprop (return slot0) (predicate deliver) (args (argument (role <obj>) (mention (headword commodities) (regex (regex (re (text (string \"food and nutrition\"))))))) (argument (role by) (mention (headword ?) (regex (regex (re (text (string \"all means possible\")))))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " [ [v]deliver[0] by all means possible ? <obj> food and nutrition commodities ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword delivery) (regex (regex (re (text (string \"food aid\"))))))",
-        "toPrettyString" : " food aid delivery[0]"
+        "toIDString" : "(mention (return slot0) (headword delivery) (regex (regex (re (text (string \"the of food assistance to\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " the of food assistance to delivery[0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate distribution) (args (argument (role of) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [n]distribution[0] of [FOOD] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword delivery) (regex (regex (re (text (string \"the of food assistance even\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " the of food assistance even delivery[0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate deliver) (args (argument (role <obj>) (mention (headword food))) (argument (role <sub>) (mention (headword wfp)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ wfp <sub> [v]deliver[0] <obj> food ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate deliver) (args (argument (role <obj>) (mention (headword food))) (argument (role by) (mention (headword means)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]deliver[0] <obj> food by means ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate provide) (args (argument (role <iobj>) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]provide[0] <iobj> [FOOD] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate distribute) (args (argument (role <obj>) (mention (headword aid) (regex (regex (re (text (string \"emergency food\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]distribute[0] <obj> emergency food aid ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate deliver) (args (argument (role <obj>) (mention (headword commodities) (regex (regex (re (text (string \"food and nutrition\"))))))) (argument (role by) (mention (headword means)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]deliver[0] <obj> food and nutrition commodities by means ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword assistance) (acetype OTH) (regex (regex (re (text (string \"food\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " food assistance[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate provision) (args (argument (role of) (mention (acetype FOOD)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [n]provision[0] of [FOOD] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate needing) (args (argument (role <obj>) (mention (headword aid) (acetype OTH) (regex (regex (re (text (string \"food\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]needing[0] <obj> food aid[OTH] ]"
       } ] ] ],
       "valList" : [ "java.util.ArrayList", [ [ "com.bbn.akbc.neolearnit.scoring.scores.PatternScore", {
         "precision" : 0.95,
@@ -345,7 +454,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 265,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -362,6 +471,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -389,6 +499,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -399,7 +510,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 6,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -416,6 +527,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -443,6 +555,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -470,6 +583,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -497,6 +611,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -524,6 +639,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -534,7 +650,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 33,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -551,6 +667,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -578,6 +695,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -605,6 +723,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -632,6 +751,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -659,6 +779,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -686,6 +807,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -696,7 +818,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 10,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -713,6 +835,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -740,6 +863,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -767,6 +891,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -794,6 +919,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -821,6 +947,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -848,6 +975,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -858,7 +986,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 15,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -875,6 +1003,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -902,6 +1031,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -929,6 +1059,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -956,6 +1087,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -983,6 +1115,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1010,6 +1143,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1037,6 +1171,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1064,6 +1199,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1074,7 +1210,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 8,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -1091,6 +1227,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1101,7 +1238,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 150,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -1118,6 +1255,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1145,6 +1283,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1172,6 +1311,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1199,6 +1339,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1226,6 +1367,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1253,6 +1395,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1280,6 +1423,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1307,6 +1451,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1317,7 +1462,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 5,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -1334,6 +1479,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1361,6 +1507,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1388,6 +1535,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1398,7 +1546,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 21,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -1415,6 +1563,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1442,6 +1591,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1469,6 +1619,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1479,7 +1630,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 8,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -1496,6 +1647,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1506,7 +1658,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 58,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -1523,6 +1675,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1550,6 +1703,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1577,6 +1731,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1604,6 +1759,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1631,6 +1787,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1641,7 +1798,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 33,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -1658,6 +1815,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1685,6 +1843,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1712,6 +1871,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1739,6 +1899,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1766,6 +1927,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1793,6 +1955,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1803,7 +1966,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 8,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -1820,6 +1983,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1830,7 +1994,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 150,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -1847,6 +2011,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1874,6 +2039,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1901,6 +2067,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1928,6 +2095,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1955,6 +2123,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1965,7 +2134,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 6,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -1982,6 +2151,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2009,6 +2179,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2036,6 +2207,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2063,6 +2235,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2090,6 +2263,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2117,6 +2291,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2144,6 +2319,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2154,7 +2330,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 63,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -2171,6 +2347,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2198,6 +2375,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2225,6 +2403,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2252,6 +2431,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2279,6 +2459,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2306,6 +2487,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2333,6 +2515,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2360,6 +2543,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2387,6 +2571,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2414,6 +2599,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2441,6 +2627,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2468,6 +2655,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2495,6 +2683,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2522,6 +2711,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2549,6 +2739,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2559,7 +2750,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 21,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -2576,6 +2767,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2603,6 +2795,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2630,6 +2823,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2640,7 +2834,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 58,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -2657,6 +2851,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2667,7 +2862,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 11,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -2684,6 +2879,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2694,7 +2890,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 5,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -2711,6 +2907,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2738,6 +2935,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2765,6 +2963,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2792,6 +2991,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2819,6 +3019,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2829,7 +3030,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 265,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -2846,6 +3047,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2856,7 +3058,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 8,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -2873,6 +3075,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2900,6 +3103,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2927,6 +3131,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2937,7 +3142,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 15,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -2954,6 +3159,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2981,6 +3187,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -3008,6 +3215,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -3035,6 +3243,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -3062,6 +3271,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -3089,6 +3299,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -3116,6 +3327,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -3143,6 +3355,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -3170,6 +3383,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -3197,6 +3411,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -3224,6 +3439,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -3251,6 +3467,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -3278,6 +3495,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -3611,7 +3829,7 @@
         "value" : 108
       } ] ] ]
     } ],
-    "iteration" : 42
+    "iteration" : 45
   } ],
   "tripleScores" : [ "com.bbn.akbc.neolearnit.scoring.tables.TripleScoreTable", {
     "data" : [ "com.bbn.akbc.neolearnit.storage.EfficientMapDataStore", {
@@ -3621,34 +3839,10 @@
     } ],
     "iteration" : 0
   } ],
-  "iteration" : 227,
+  "iteration" : 230,
   "goodSeedPrior" : 0.08,
   "totalConfidenceDenominator" : 1000.0,
   "stage" : "initial",
-  "params" : [ "java.util.HashMap", {
-    "aggregated_frequency_filter_pattern_min" : "5",
-    "max_unary_prop_depth" : "1",
-    "languages" : "English",
-    "bert_npz_list" : "/home/hqiu/ld100/Hume_pipeline_int/Hume/expts/wm_dart_bert.060520/bert/bert_npz.list",
-    "linux_queue" : "nongale-sl6",
-    "serif_data" : "#Set this to your SERIF data checkout e.g. /nfs/mercury-04/u60/DEFT/users/msrivast/Active/Data/SERIF/",
-    "bootstrap_serifxml_list" : "/d4m/ears/expts/47922.generic_event.v1/expts/hume_test.040120.wm.v1/learnit_decoder/learnit/learnit_decoder.list",
-    "corpus_name" : "wm_dart382.090920",
-    "loader_concurrency" : "5",
-    "domain_root" : "/home/hqiu/ld100/learnit_wm_entity/inputs/domains/WM",
-    "aggregated_frequency_filter_pattern_max" : "-1",
-    "max_regexp_pattern_words" : "5",
-    "learnit_expt_suffix" : "default",
-    "use_human_label" : "false",
-    "source_root" : "/home/hqiu/ld100/learnit_wm_entity/neolearnit",
-    "min_seed_frequency_per_batch" : "1",
-    "learnit_data_root" : "/nfs/raid88/u10/users/hqiu/learnit_data/wm_dart382.090920",
-    "max_binary_prop_depth" : "2",
-    "learnit_root" : "/home/hqiu/ld100/learnit_wm_entity",
-    "queue_priority" : "5",
-    "min_pattern_frequency_per_batch" : "2",
-    "max_prop_depth" : "2",
-    "stopwords" : "/home/hqiu/ld100/learnit_wm_entity/inputs/resources/stopwords/english_causal_relationships.txt"
-  } ],
+  "params" : null,
   "experimentName" : "default"
 } ]

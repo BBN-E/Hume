@@ -1,0 +1,6 @@
+input_serifxml_list: +input_serifxml_list+
+output_serifxml_directory: +output_serifxml_directory+
+
+resolvers: ClearEventsResolver,EventTypeOntologyComplianceResolver,EventEventRelationReAttachResolver,SimpleEventCreator
+
+eventOntologyFiles: +hume_repo_root+/resource/domains/COVID/learnit/ontology/unary_event_ontology.yaml

@@ -7,6 +7,7 @@ from knowledge_base import KnowledgeBase
 from readers.causal_relation_reader import CausalRelationReader
 from readers.fact_reader import FactReader
 from readers.serifxml_reader import SerifXMLReader
+from readers.special_text_reader import SpecialTextReader
 
 from resolvers.additional_entity_type_resolver import AdditionalEntityTypeResolver
 from resolvers.attach_geoname_resolver import AttachGeoNameResolver
@@ -25,6 +26,7 @@ from resolvers.factor_event_generic_genericity_resolver import FactorEventGeneri
 from resolvers.kb_unification_resolver import KbUnificationResolver
 from resolvers.mention_numeric_resolver import EntityMentionNumericResolver
 from resolvers.precision_resolver import PrecisionResolver
+from resolvers.premod_precision_resolver import PremodPrecisionResolver
 from resolvers.redundant_event_resolver import RedundantEventResolver
 from resolvers.redundant_relation_resolver import RedundantRelationResolver
 from resolvers.removal_by_type_resolver import RemovalByTypeResolver
@@ -33,6 +35,9 @@ from resolvers.add_generic_event_type_if_only_causal_factor_type_available impor
 from resolvers.additional_affiliation_resolver import AdditionalAffiliationResolver
 from resolvers.factor_relation_trend_resolver import FactorRelationTrendResolver
 from resolvers.drop_negative_polarity_causal_assertion_resolver import DropNegativePolarityCausalAssertionResolver
+from resolvers.event_location_resolver import EventLocationResolver
+from resolvers.event_event_relation_renaming_resolver import EventEventRelationRenamingResolver
+from resolvers.event_location_resolver_no_entity_linking import EventLocationResolverNoEntityLinking
 
 from serializers.event_tsv_serializer import EventTSVSerializer
 from serializers.json_serializer import JSONSerializer
@@ -40,10 +45,11 @@ from serializers.jsonld_serializer import JSONLDSerializer
 from serializers.pickle_serializer import KBPickleSerializer
 from serializers.relation_tsv_serializer import RelationTSVSerializer
 from serializers.wm_tabular_format_serializer import WMTabularFormatSerializer
-from serializers.event_tsv_serializer import EventTSVSerializer
+from serializers.event_location_time_serializer import EventLocationTimeSerializer
 from serializers.unification_serializer import UnificationSerializer
 from serializers.visualization_serializer import VisualizationSerializer
 from serializers.rdf_serializer import RDFSerializer
+from serializers.fillable_tcag_serializer import FillableTCAGSerializer
 
 class KBConstructor:
     
@@ -56,7 +62,10 @@ class KBConstructor:
     def construct(self):
         kb = KnowledgeBase()
         for reader in self.readers:
-            reader.read(kb, *(self.parameters[reader]))
+            if reader not in self.parameters:
+                reader.read(kb)
+            else:
+                reader.read(kb, *(self.parameters[reader]))
         return kb
 
     def resolve(self, kb):

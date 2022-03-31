@@ -39,7 +39,7 @@ def read_ontology(ontology_file_path):
     # print "Reading the ontology file..."
     ontology_dict = defaultdict(set)
     with open(ontology_file_path) as ontology_fp:
-        ontology = yaml.load(ontology_fp)
+        ontology = yaml.safe_load(ontology_fp)
         __read_tree(ontology,ontology_dict,[])
     return ontology_dict
 

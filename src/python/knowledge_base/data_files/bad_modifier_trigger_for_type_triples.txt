@@ -1,0 +1,2 @@
+great	depression	AnxietyOrDepression
+economic	depression	AnxietyOrDepression

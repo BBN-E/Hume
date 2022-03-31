@@ -11,14 +11,7 @@ public class SimpleEntityCreator implements DocumentResolver, Resolver {
     public DocTheory resolve(DocTheory docTheory) {
         Set<Mention> touchedMentions = new HashSet<>();
         for(SentenceTheory sentenceTheory:docTheory.nonEmptySentenceTheories()){
-            for(EventMention eventMention:sentenceTheory.eventMentions()){
-                for(EventMention.Argument argument: eventMention.arguments()){
-                    if(argument instanceof EventMention.MentionArgument){
-                        EventMention.MentionArgument mentionArgument = (EventMention.MentionArgument)argument;
-                        touchedMentions.add(mentionArgument.mention());
-                    }
-                }
-            }
+            touchedMentions.addAll(sentenceTheory.mentions().asList());
         }
         Set<Mention> entityCoveredMentions = new HashSet<>();
         for(Entity entity:docTheory.entities()){

@@ -1,0 +1,29 @@
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/ingester/serifxml_ingester.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/mention/empty_mention_set_model.py
+
+# IMPLEMENTATIONS
+# +TEXT_OPEN_PYTHONPATH+/serif/model/impl/mention/mention_cleaner_for_jserif.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/event_mention/empty_event_mention_set_model.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/event_mention/attach_eventmention_anchornode_from_semanticphrase_model.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/event_mention/event_mention_cleaner_for_jserif.py
+
+INGESTER SerifxmlIngester
+
+MENTION_MODEL EmptyMentionSetModel
+
+# BASE_MODEL MentionCleanerForJSerif
+
+EVENT_MENTION_MODEL EmptyEventMentionSetModel
+
+BASE_MODEL AttachEventMentionAnchorNodeFromSemanticPhraseModel
+
+BASE_MODEL EventMentionCleanerForJSerif

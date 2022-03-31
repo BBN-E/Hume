@@ -1,0 +1,33 @@
+
+
+############
+## Pipeline
+############
+job_name: wm_382.generic.093020
+stages_to_run: learnit-decoder
+mode: WorldModelers
+use_compositional_ontology: true
+
+num_of_batches_global: 50
+max_number_of_tokens_per_sentence: 128
+
+
+################
+# CDR digestion
+################
+input_cdr_list: /nfs/raid88/u10/users/hqiu/raw_corpus/wm/dart.082720.list
+breaking_point: 10000
+
+
+metadata_file: GENERATED
+
+####################################
+## LearnIt  Decoder
+#####################################
+learnit_decoder_input_serifxml_list: /d4m/ears/expts/47943.092420.v1/expts/hume_test.dart.082720.wm.v1/serif_serifxml.list
+learnit_event_and_event_arg_pattern_dir: DEFAULT
+learnit_unary_entity_pattern_dir: DEFAULT
+learnit_event_event_relation_pattern_dir: DEFAULT
+input_serif_cause_effect_relations_dir:GENERATED
+generic_event_noun_whitelist: GENERATED
+generic_event_blacklist: GENERATED

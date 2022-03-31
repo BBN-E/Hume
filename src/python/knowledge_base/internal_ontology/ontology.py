@@ -1,10 +1,9 @@
-
 from collections import defaultdict
+
 import io
 import json
-import os
 import yaml
-
+import logging
 
 try:
     from internal_ontology import utility
@@ -13,7 +12,7 @@ except ImportError:
     from knowledge_base.internal_ontology import utility
     from knowledge_base.internal_ontology import Node
 
-
+logger = logging.getLogger(__name__)
 class Ontology(object):
 
     # TODO do we want to handle multiple inheritance?
@@ -54,6 +53,7 @@ class Ontology(object):
                 ret = _recur_on_node(child)
                 if ret is not None:
                     return ret
+
         try:
             assert path.startswith(self.root.get_path())
 
@@ -96,7 +96,7 @@ class Ontology(object):
                 child.update_parent_with_exemplars(current_node, self._exemplar_decay)
 
         with io.open(yaml_path, encoding='utf8') as y:
-            ontology_list = yaml.load(y)
+            ontology_list = yaml.safe_load(y)
         root_name = list(ontology_list[0].keys())[0]
         self.root = Node(root_name)
         self.root.set_path_from_string('')
@@ -105,12 +105,12 @@ class Ontology(object):
     @staticmethod
     def _get_yaml_from_string(yaml_str):
         with io.StringIO(yaml_str) as string_handle:
-            return yaml.load(string_handle)
+            return yaml.safe_load(string_handle)
 
     @staticmethod
     def _get_yaml_from_file(yaml_path):
         with io.open(yaml_path, 'r', encoding='utf8') as file_handle:
-            return yaml.load(file_handle)
+            return yaml.safe_load(file_handle)
 
     def add_internal_exemplars_from_json(self, exemplars_json, mapper, flag):
         exemplars = self.load_internal_exemplars(exemplars_json)
@@ -169,6 +169,7 @@ class Ontology(object):
         self._as_string = yaml_string
 
     def load_from_yaml_with_metadata(self, yaml_path):
+        raise RuntimeError("This is deprecated!!!")
 
         def _load_node(current_node, child_dicts):
             for child_dict in child_dicts:
@@ -178,7 +179,10 @@ class Ontology(object):
                     leaf_node.set_path_from_parent(current_node)
                     exemplars = child_dict.get('examples', [])
                     for exemplar in exemplars:
-                        leaf_node.add_exemplar(utility.strip_comments(exemplar))
+                        if isinstance(exemplar, str):
+                            leaf_node.add_exemplar(utility.strip_comments(exemplar))
+                        else:
+                            print("WARNING: data corruption at file {} node {}".format(yaml_path, leaf_name))
                     current_node.add_child(leaf_node)
                 else:
                     for key, value in child_dict.items():
@@ -196,6 +200,45 @@ class Ontology(object):
         self.root = Node(utility.strip_comments(root_name))
         self.root.set_path_from_string('')
         _load_node(self.root, ontology_list[0][root_name])
+
+    def load_from_yaml_with_metadata_new(self, yaml_path):
+        logger.info("Reading external ontology {}".format(yaml_path))
+        def build_ontology_tree(yaml_root, parent_node, current_stack, external_ontology_path_to_node):
+            if isinstance(yaml_root, dict):
+                assert len(yaml_root.keys()) == 1 and list(yaml_root.keys())[0] == "node"
+                real_root = yaml_root["node"]
+                current_path = "{}/{}".format(current_stack, real_root['name'])
+                if current_path not in external_ontology_path_to_node:
+                    leaf_name = utility.strip_comments(real_root['name'])
+                    leaf_node = Node(leaf_name)
+                    external_ontology_path_to_node[current_path] = leaf_node
+                    if parent_node:
+                        leaf_node.set_path_from_parent(parent_node)
+                    else:
+                        leaf_node.set_path_from_string('')
+                leaf_node = external_ontology_path_to_node[current_path]
+                exemplars = real_root.get('examples', [])
+                for exemplar in exemplars or ():
+                    if isinstance(exemplar, str):
+                        leaf_node.add_exemplar(utility.strip_comments(exemplar))
+                    else:
+                        print("WARNING: data corruption at file {} node {}".format(yaml_path, real_root['name']))
+                if parent_node:
+                    parent_node.add_child(leaf_node)
+                for child in real_root.get("children", ()) or ():
+                    build_ontology_tree(child, leaf_node, current_path, external_ontology_path_to_node)
+                for child in leaf_node.get_children():
+                    child.update_parent_with_exemplars(leaf_node, self._exemplar_decay)
+            else:
+                raise NotImplementedError()
+
+        ontology_yaml_root = self._get_yaml_from_file(yaml_path)
+        ontology_yaml_root = ontology_yaml_root[0]
+        root_node_name = ontology_yaml_root["node"]["name"]
+        external_ontology_path_to_node = dict()
+        build_ontology_tree(ontology_yaml_root, None, "", external_ontology_path_to_node)
+        self.root = external_ontology_path_to_node["/{}".format(root_node_name)]
+        logger.info("Finish reading external ontology")
 
     def load_from_yaml_plain(self, yaml_path):
 
@@ -225,6 +268,7 @@ class Ontology(object):
     def add_embeddings_to_nodes(self, node=None):
         if node is None:
             node = self.get_root()
+        logger.info("Adding embeddings to node {}".format(node.get_name()))
         node.embed_name(self.embeddings)
         node.embed_exemplars(self.embeddings)
         for child in node.get_children():
@@ -283,6 +327,48 @@ class OntologyMapper(object):
         internal_ontology.load_from_internal_yaml(yaml_file, ontology_map=self.mapping)
         self._root = internal_ontology.get_root().get_name()
         self._dictify()
+
+    def correct_external_mapping(self, external_ontology, source_flag_care, root_paths):
+        """
+        Because external ontology can change significantly, we need to remove non-groundable endpoints
+        :param external_ontology:
+        :param source_flag:
+        :return:
+        """
+        logger.info("Correcting internal->external mappings")
+        def dfs_visit_external_ontology(root, path_set):
+            path_set.add(root.path)
+            for child in root.children:
+                dfs_visit_external_ontology(child, path_set)
+
+        path_set = set()
+        dfs_visit_external_ontology(external_ontology.root, path_set)
+        def find_closest_groundable_endpoint(current_path,path_set):
+            while len(current_path) > 1:
+                if current_path in path_set:
+                    return current_path
+                current_path = "/".join(current_path.split("/")[:-1])
+            return None
+        resolved_mapping = dict()
+        for internal_type_string, d in self.mapping.items():
+            resolve_en = resolved_mapping.setdefault(internal_type_string, dict())
+            for source_flag, l in d.items():
+                if source_flag != source_flag_care:
+                    resolve_en[source_flag] = l
+                else:
+                    resolved = []
+                    for current_end in l:
+                        t = find_closest_groundable_endpoint(current_end, path_set)
+                        if t != None:
+                            resolved.append(t)
+                            if t != current_end:
+                                logger.warning("{} is not groundable. Changed it to {}".format(current_end, t))
+                        else:
+                            logger.warning("{} is not groundable. Change it to root_paths {}".format(current_end, root_paths))
+                            resolved.extend(root_paths)
+                    resolve_en[source_flag] = list(set(resolved))
+        self.mapping = resolved_mapping
+        logger.info("Finished correcting internal->external mappings")
 
     def load_name_to_path_map(self, ontology):
 

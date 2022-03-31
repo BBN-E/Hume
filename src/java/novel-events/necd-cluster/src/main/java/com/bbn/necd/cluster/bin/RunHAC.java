@@ -36,8 +36,8 @@ public final class RunHAC {
 
     // we want to know which word pairs are just grammatical variants
     Multimap<Symbol, Symbol> lemmaMap = ArrayListMultimap.create();
-    readLemmaFile(params.getExistingFile("lemma.noun"), lemmaMap, membersToCluster);
-    readLemmaFile(params.getExistingFile("lemma.verb"), lemmaMap, membersToCluster);
+//    readLemmaFile(params.getExistingFile("lemma.noun"), lemmaMap, membersToCluster);
+//    readLemmaFile(params.getExistingFile("lemma.verb"), lemmaMap, membersToCluster);
 
     final MemberSimilarity memberSimilarity = MemberSimilarity
         .from(params.getExistingFile("interMemberSimilarity"), Optional.of(membersToCluster),
@@ -53,7 +53,7 @@ public final class RunHAC {
         .withClusterMembers(clusterMemberManager.getClusterMembers());
     final HAC hac = hacBuilder.performClustering(false, memberSimilarity).build();
 
-    final ImmutableList<String> hacStructure = hac.getHACStructure();
+    final ImmutableSet<String> hacStructure = hac.getHACStructure();
     Files.asCharSink(params.getCreatableFile("hac.output"), Charsets.UTF_8).writeLines(hacStructure);
 
   }

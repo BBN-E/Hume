@@ -1,0 +1,23 @@
+# implementations go here
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/ingester/serifxml_ingester.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/mention_coreference/entity_coreference_cleaner.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/mention_coreference/allennlp_coreference_model.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/mention_coreference/simple_entity_model.py
+
+
+INGESTER SerifxmlIngester
+
+MENTION_COREF_MODEL EntityCoreferenceCleaner
+
+MENTION_COREF_MODEL AllenNLPCoreferenceModel
+model /nfs/raid66/u15/aida/trained_models/allennlp/coref-spanbert-large-2020.02.27.tar.gz
+
+MENTION_COREF_MODEL SimpleEntityModel

@@ -1,0 +1,86 @@
+{
+  "runjobs_config": {
+      "job_name": "COVID_ECBPLUS.v3"
+  },
+  "feature_extractors": [
+    {
+      "id": "feature_1",
+      "name": "SerifEventMentionBertExtractor",
+      "original_serif_list": "/nfs/raid88/u10/users/hqiu_ad/data/covid/ecb_serif.list",
+      "number_of_batches": 50,
+      "args": {
+        "input_serif_list": "+serif_list_slice+",
+        "input_bert_list": "/d4m/ears/expts/48288.bert.092121/expts/hume_test.dart.082720.wm.v1/bert/bert_npz.list",
+        "output_path": "+output_path+",
+        "drop_generic_event": false,
+        "em_representation_mode": "SEMANTIC_PHRASE"
+      }
+    }
+  ],
+  "indexing_features": [
+    {
+      "feature_id": "feature_1",
+      "id": "index_1",
+      "name": "Annoy",
+      "number_of_batches": 20,
+      "args": {
+        "input_feature_list": "+input_feature_list+",
+        "annoy_metric": "angular",
+        "n_trees": 100,
+        "output_path": "+output_path+"
+      }
+    }
+  ],
+  "queries": [
+    {
+      "id": "queries_1",
+      "name": "BUILD_PAIRWISE_CACHE",
+      "number_of_batches": 20,
+      "index_id": "index_1",
+      "query_feature_id": "feature_1",
+      "args": {
+        "query_feature_list": "+query_feature_list+",
+        "key_getter_mapping": [
+          {
+            "index": "bert",
+            "query": "bert"
+          }
+        ],
+        "threshold": 100,
+        "cutoff": 1500,
+        "input_cache_list": "+input_cache_list+",
+        "output_path": "+output_path+"
+      }
+    }
+  ],
+  "dumpers": [
+    {
+      "id": "dumper_1",
+      "name": "DumpECBPlusNLPLingo",
+      "query_id": "queries_1",
+      "merge_feature_list": true,
+      "number_of_batches": 20,
+      "args": {
+        "query_feature_list": "+query_feature_list+",
+        "index_feature_list": "+index_feature_list+",
+        "input_sim_matrix_list": "+input_sim_matrix_list+",
+        "cutoff": 1500,
+        "output_path": "+output_path+"
+      }
+    },
+    {
+      "id": "dumper_2",
+      "name": "FileDumper",
+      "query_id": "queries_1",
+      "merge_feature_list": true,
+      "number_of_batches": 20,
+      "args": {
+        "query_feature_list": "+query_feature_list+",
+        "index_feature_list": "+index_feature_list+",
+        "input_sim_matrix_list": "+input_sim_matrix_list+",
+        "cutoff": 100,
+        "output_path": "+output_path+"
+      }
+    }
+  ]
+}

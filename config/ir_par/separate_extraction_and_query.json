@@ -1,0 +1,60 @@
+{
+  "runjobs_config": {
+    "job_name": "ir_test_081420.v3"
+  },
+  "feature_extractors": [
+    {
+      "id": "feature_1",
+      "name": "SerifEventMentionBertExtractor",
+      "original_serif_list": "/home/hqiu/ld100/Hume_pipeline_int/Hume/expts/hume_test.073020.cx.v3/serif_ir_test.list",
+      "number_of_batches": 10,
+      "args": {
+        "input_serif_list": "+serif_list_slice+",
+        "input_bert_list": "/home/hqiu/ld100/Hume_pipeline_int/Hume/expts/hume_test.073020.cx.v3/bert/bert_npz.list",
+        "output_path": "+output_path+"
+      }
+    }
+  ],
+  "indexing_features": [
+
+  ],
+  "queries": [
+    {
+      "id": "queries_1",
+      "name": "BUILD_PAIRWISE_CACHE",
+      "number_of_batches": 2,
+      "index_cache_list": "/home/hqiu/ld100/Hume_pipeline_int/Hume/expts/ir_test_081320.v2/build_index/index_1/index.list",
+      "index_feature_list": "/home/hqiu/ld100/Hume_pipeline_int/Hume/expts/ir_test_081320.v2/merge_features/feature_1/features.list",
+      "query_feature_id": "feature_1",
+      "args": {
+        "query_feature_list": "+query_feature_list+",
+        "key_getter_mapping": [
+          {
+            "index": "aveBERTEmb",
+            "query": "bert"
+          }
+        ],
+        "threshold": 100,
+        "cutoff": 100,
+        "input_cache_list": "+input_cache_list+",
+        "output_path": "+output_path+"
+      }
+    }
+  ],
+  "dumpers": [
+    {
+      "id": "dumper_1",
+      "name": "FileDumper",
+      "query_id": "queries_1",
+      "merge_feature_list": true,
+      "number_of_batches": 2,
+      "args": {
+        "query_feature_list": "+query_feature_list+",
+        "index_feature_list": "+index_feature_list+",
+        "input_sim_matrix_list": "+input_sim_matrix_list+",
+        "cutoff": 100,
+        "output_path": "+output_path+"
+      }
+    }
+  ]
+}

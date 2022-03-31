@@ -6,43 +6,58 @@
       "valList" : [ "java.util.ArrayList", [ ] ],
       "entries" : [ "java.util.ArrayList", [ ] ]
     } ],
-    "iteration" : 227
+    "iteration" : 230
   } ],
   "patternScores" : [ "com.bbn.akbc.neolearnit.scoring.tables.PatternScoreTable", {
     "data" : [ "com.bbn.akbc.neolearnit.storage.EfficientMapDataStore", {
       "keyList" : [ "java.util.ArrayList", [ [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate received) (args (argument (role <obj>) (mention (headword rains) (regex (regex (re (text (string \"above-average\")))))))))",
-        "toPrettyString" : " [ [v]received[0] <obj> above-average rains ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate received) (args (argument (role <obj>) (mention (headword rainfall)))))",
-        "toPrettyString" : " [ [v]received[0] <obj> rainfall ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate received) (args (argument (role <obj>) (mention (headword rains) (regex (regex (re (text (string \"heavy\")))))))))",
-        "toPrettyString" : " [ [v]received[0] <obj> heavy rains ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword reduction) (regex (regex (re (text (string \"rainfall\"))))))",
-        "toPrettyString" : " rainfall reduction[0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword reduction) (regex (regex (re (text (string \"precipitation\"))))))",
-        "toPrettyString" : " precipitation reduction[0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate started) (args (argument (role <sub>) (mention (headword rainfall)))))",
-        "toPrettyString" : " [ rainfall <sub> [v]started[0] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate received) (args (argument (role <sub>) (mention (headword rains)))))",
-        "toPrettyString" : " [ rains <sub> [v]received[0] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate received) (args (argument (role <obj>) (mention (headword rains) (regex (regex (re (text (string \"aboveaverage\")))))))))",
-        "toPrettyString" : " [ [v]received[0] <obj> aboveaverage rains ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate distribution) (args (argument (role of) (mention (headword rainfall) (acetype OTH)))))",
-        "toPrettyString" : " [ [n]distribution[0] of rainfall[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(nprop (return slot0) (predicate absence) (args (argument (role of) (mention (headword rainfall)))))",
+        "isUDPattern" : false,
         "toPrettyString" : " [ [n]absence[0] of rainfall ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(nprop (return slot0) (predicate reduction) (args (argument (role in) (mention (headword rainfall)))))",
+        "isUDPattern" : false,
         "toPrettyString" : " [ [n]reduction[0] in rainfall ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate started) (args (argument (role <sub>) (mention (headword rainfall)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ rainfall <sub> [v]started[0] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate distribution) (args (argument (role of) (mention (headword rainfall) (acetype OTH)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [n]distribution[0] of rainfall[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate received) (args (argument (role <sub>) (mention (headword rains)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ rains <sub> [v]received[0] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate received) (args (argument (role <obj>) (mention (headword rains) (regex (regex (re (text (string \"aboveaverage\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]received[0] <obj> aboveaverage rains ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate received) (args (argument (role <obj>) (mention (headword rainfall)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]received[0] <obj> rainfall ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword reduction) (regex (regex (re (text (string \"precipitation\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " precipitation reduction[0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate received) (args (argument (role <obj>) (mention (headword rains) (regex (regex (re (text (string \"above-average\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]received[0] <obj> above-average rains ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword reduction) (regex (regex (re (text (string \"rainfall\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " rainfall reduction[0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate received) (args (argument (role <obj>) (mention (headword rains) (regex (regex (re (text (string \"heavy\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]received[0] <obj> heavy rains ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword precipitation))",
+        "isUDPattern" : true,
+        "toPrettyString" : " precipitation[0]"
       } ] ] ],
       "valList" : [ "java.util.ArrayList", [ [ "com.bbn.akbc.neolearnit.scoring.scores.PatternScore", {
         "precision" : 0.95,
@@ -58,8 +73,8 @@
         "frozenPatternInstanceCount" : 0,
         "tp" : 0.0,
         "fp" : 0.0,
-        "fn" : 0.0,
-        "tn" : 0.0,
+        "fn" : 500.0,
+        "tn" : 500.0,
         "frozen" : true,
         "proposed" : false,
         "iteration" : 0,
@@ -68,33 +83,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
-        "patternWeightedPrecision" : 0.0,
-        "patternPrecision" : 0.0,
-        "patternFrequency" : 0.0
-      } ], [ "com.bbn.akbc.neolearnit.scoring.scores.PatternScore", {
-        "precision" : 0.95,
-        "recall" : 0.01,
-        "confidence" : 1.0,
-        "confidenceFromSimilarity" : 0.0,
-        "confidenceNumerator" : 0.0,
-        "confidenceDenominator" : 0.0,
-        "frequency" : 80,
-        "knownFrequency" : 0,
-        "seedFrequency" : 0,
-        "knownSeedFrequency" : 0,
-        "frozenPatternInstanceCount" : 0,
-        "tp" : 0.0,
-        "fp" : 0.0,
-        "fn" : 0.0,
-        "tn" : 0.0,
-        "frozen" : true,
-        "proposed" : false,
-        "iteration" : 0,
-        "frozenIteration" : 0,
-        "sources" : [ "com.bbn.akbc.neolearnit.storage.EfficientMultisetDataStore", {
-          "keyList" : [ "java.util.ArrayList", [ ] ],
-          "entries" : [ "java.util.ArrayList", [ ] ]
-        } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -112,8 +101,8 @@
         "frozenPatternInstanceCount" : 0,
         "tp" : 0.0,
         "fp" : 0.0,
-        "fn" : 0.0,
-        "tn" : 0.0,
+        "fn" : 500.0,
+        "tn" : 500.0,
         "frozen" : true,
         "proposed" : false,
         "iteration" : 0,
@@ -122,6 +111,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -139,8 +129,8 @@
         "frozenPatternInstanceCount" : 0,
         "tp" : 0.0,
         "fp" : 0.0,
-        "fn" : 0.0,
-        "tn" : 0.0,
+        "fn" : 500.0,
+        "tn" : 500.0,
         "frozen" : true,
         "proposed" : false,
         "iteration" : 0,
@@ -149,6 +139,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -166,8 +157,8 @@
         "frozenPatternInstanceCount" : 0,
         "tp" : 0.0,
         "fp" : 0.0,
-        "fn" : 0.0,
-        "tn" : 0.0,
+        "fn" : 500.0,
+        "tn" : 500.0,
         "frozen" : true,
         "proposed" : false,
         "iteration" : 0,
@@ -176,6 +167,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -193,8 +185,8 @@
         "frozenPatternInstanceCount" : 0,
         "tp" : 0.0,
         "fp" : 0.0,
-        "fn" : 0.0,
-        "tn" : 0.0,
+        "fn" : 500.0,
+        "tn" : 500.0,
         "frozen" : true,
         "proposed" : false,
         "iteration" : 0,
@@ -203,6 +195,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -220,8 +213,8 @@
         "frozenPatternInstanceCount" : 0,
         "tp" : 0.0,
         "fp" : 0.0,
-        "fn" : 0.0,
-        "tn" : 0.0,
+        "fn" : 500.0,
+        "tn" : 500.0,
         "frozen" : true,
         "proposed" : false,
         "iteration" : 0,
@@ -230,6 +223,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -247,8 +241,8 @@
         "frozenPatternInstanceCount" : 0,
         "tp" : 0.0,
         "fp" : 0.0,
-        "fn" : 0.0,
-        "tn" : 0.0,
+        "fn" : 500.0,
+        "tn" : 500.0,
         "frozen" : true,
         "proposed" : false,
         "iteration" : 0,
@@ -257,6 +251,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -274,8 +269,8 @@
         "frozenPatternInstanceCount" : 0,
         "tp" : 0.0,
         "fp" : 0.0,
-        "fn" : 0.0,
-        "tn" : 0.0,
+        "fn" : 500.0,
+        "tn" : 500.0,
         "frozen" : true,
         "proposed" : false,
         "iteration" : 0,
@@ -284,33 +279,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
-        "patternWeightedPrecision" : 0.0,
-        "patternPrecision" : 0.0,
-        "patternFrequency" : 0.0
-      } ], [ "com.bbn.akbc.neolearnit.scoring.scores.PatternScore", {
-        "precision" : 0.95,
-        "recall" : 0.01,
-        "confidence" : 1.0,
-        "confidenceFromSimilarity" : 0.0,
-        "confidenceNumerator" : 0.0,
-        "confidenceDenominator" : 0.0,
-        "frequency" : 6,
-        "knownFrequency" : 0,
-        "seedFrequency" : 0,
-        "knownSeedFrequency" : 0,
-        "frozenPatternInstanceCount" : 0,
-        "tp" : 0.0,
-        "fp" : 0.0,
-        "fn" : 0.0,
-        "tn" : 0.0,
-        "frozen" : true,
-        "proposed" : false,
-        "iteration" : 0,
-        "frozenIteration" : 0,
-        "sources" : [ "com.bbn.akbc.neolearnit.storage.EfficientMultisetDataStore", {
-          "keyList" : [ "java.util.ArrayList", [ ] ],
-          "entries" : [ "java.util.ArrayList", [ ] ]
-        } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -328,8 +297,8 @@
         "frozenPatternInstanceCount" : 0,
         "tp" : 0.0,
         "fp" : 0.0,
-        "fn" : 0.0,
-        "tn" : 0.0,
+        "fn" : 500.0,
+        "tn" : 500.0,
         "frozen" : true,
         "proposed" : false,
         "iteration" : 0,
@@ -338,6 +307,91 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
+        "patternWeightedPrecision" : 0.0,
+        "patternPrecision" : 0.0,
+        "patternFrequency" : 0.0
+      } ], [ "com.bbn.akbc.neolearnit.scoring.scores.PatternScore", {
+        "precision" : 0.95,
+        "recall" : 0.01,
+        "confidence" : 1.0,
+        "confidenceFromSimilarity" : 0.0,
+        "confidenceNumerator" : 0.0,
+        "confidenceDenominator" : 0.0,
+        "frequency" : 0,
+        "knownFrequency" : 0,
+        "seedFrequency" : 0,
+        "knownSeedFrequency" : 0,
+        "frozenPatternInstanceCount" : 0,
+        "tp" : 0.0,
+        "fp" : 0.0,
+        "fn" : 500.0,
+        "tn" : 500.0,
+        "frozen" : true,
+        "proposed" : false,
+        "iteration" : 0,
+        "frozenIteration" : 0,
+        "sources" : [ "com.bbn.akbc.neolearnit.storage.EfficientMultisetDataStore", {
+          "keyList" : [ "java.util.ArrayList", [ ] ],
+          "entries" : [ "java.util.ArrayList", [ ] ]
+        } ],
+        "PMI" : 0.0,
+        "patternWeightedPrecision" : 0.0,
+        "patternPrecision" : 0.0,
+        "patternFrequency" : 0.0
+      } ], [ "com.bbn.akbc.neolearnit.scoring.scores.PatternScore", {
+        "precision" : 0.95,
+        "recall" : 0.01,
+        "confidence" : 1.0,
+        "confidenceFromSimilarity" : 0.0,
+        "confidenceNumerator" : 0.0,
+        "confidenceDenominator" : 0.0,
+        "frequency" : 0,
+        "knownFrequency" : 0,
+        "seedFrequency" : 0,
+        "knownSeedFrequency" : 0,
+        "frozenPatternInstanceCount" : 0,
+        "tp" : 0.0,
+        "fp" : 0.0,
+        "fn" : 500.0,
+        "tn" : 500.0,
+        "frozen" : true,
+        "proposed" : false,
+        "iteration" : 0,
+        "frozenIteration" : 0,
+        "sources" : [ "com.bbn.akbc.neolearnit.storage.EfficientMultisetDataStore", {
+          "keyList" : [ "java.util.ArrayList", [ ] ],
+          "entries" : [ "java.util.ArrayList", [ ] ]
+        } ],
+        "PMI" : 0.0,
+        "patternWeightedPrecision" : 0.0,
+        "patternPrecision" : 0.0,
+        "patternFrequency" : 0.0
+      } ], [ "com.bbn.akbc.neolearnit.scoring.scores.PatternScore", {
+        "precision" : 0.95,
+        "recall" : 0.01,
+        "confidence" : 1.0,
+        "confidenceFromSimilarity" : 0.0,
+        "confidenceNumerator" : 50.0,
+        "confidenceDenominator" : 50.0,
+        "frequency" : 50,
+        "knownFrequency" : 48,
+        "seedFrequency" : 0,
+        "knownSeedFrequency" : 0,
+        "frozenPatternInstanceCount" : 0,
+        "tp" : 47.5,
+        "fp" : 2.500000000000002,
+        "fn" : 1132.5,
+        "tn" : -182.5,
+        "frozen" : true,
+        "proposed" : false,
+        "iteration" : 43,
+        "frozenIteration" : 228,
+        "sources" : [ "com.bbn.akbc.neolearnit.storage.EfficientMultisetDataStore", {
+          "keyList" : [ "java.util.ArrayList", [ ] ],
+          "entries" : [ "java.util.ArrayList", [ ] ]
+        } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -375,9 +429,12 @@
       } ], [ "com.bbn.akbc.neolearnit.storage.EfficientMapDataStore$MappedEntry", {
         "key" : 10,
         "value" : 10
+      } ], [ "com.bbn.akbc.neolearnit.storage.EfficientMapDataStore$MappedEntry", {
+        "key" : 11,
+        "value" : 11
       } ] ] ]
     } ],
-    "iteration" : 42
+    "iteration" : 45
   } ],
   "tripleScores" : [ "com.bbn.akbc.neolearnit.scoring.tables.TripleScoreTable", {
     "data" : [ "com.bbn.akbc.neolearnit.storage.EfficientMapDataStore", {
@@ -387,34 +444,10 @@
     } ],
     "iteration" : 0
   } ],
-  "iteration" : 227,
-  "goodSeedPrior" : 1.18,
+  "iteration" : 230,
+  "goodSeedPrior" : 0.5,
   "totalConfidenceDenominator" : 1000.0,
   "stage" : "initial",
-  "params" : [ "java.util.HashMap", {
-    "aggregated_frequency_filter_pattern_min" : "5",
-    "max_unary_prop_depth" : "1",
-    "languages" : "English",
-    "bert_npz_list" : "/home/hqiu/ld100/Hume_pipeline_int/Hume/expts/wm_dart_bert.060520/bert/bert_npz.list",
-    "linux_queue" : "nongale-sl6",
-    "serif_data" : "#Set this to your SERIF data checkout e.g. /nfs/mercury-04/u60/DEFT/users/msrivast/Active/Data/SERIF/",
-    "bootstrap_serifxml_list" : "/d4m/ears/expts/47922.generic_event.v1/expts/hume_test.040120.wm.v1/learnit_decoder/learnit/learnit_decoder.list",
-    "corpus_name" : "wm_dart382.090920",
-    "loader_concurrency" : "5",
-    "domain_root" : "/home/hqiu/ld100/learnit_wm_entity/inputs/domains/WM",
-    "aggregated_frequency_filter_pattern_max" : "-1",
-    "max_regexp_pattern_words" : "5",
-    "learnit_expt_suffix" : "default",
-    "use_human_label" : "false",
-    "source_root" : "/home/hqiu/ld100/learnit_wm_entity/neolearnit",
-    "min_seed_frequency_per_batch" : "1",
-    "learnit_data_root" : "/nfs/raid88/u10/users/hqiu/learnit_data/wm_dart382.090920",
-    "max_binary_prop_depth" : "2",
-    "learnit_root" : "/home/hqiu/ld100/learnit_wm_entity",
-    "queue_priority" : "5",
-    "min_pattern_frequency_per_batch" : "2",
-    "max_prop_depth" : "2",
-    "stopwords" : "/home/hqiu/ld100/learnit_wm_entity/inputs/resources/stopwords/english_causal_relationships.txt"
-  } ],
+  "params" : null,
   "experimentName" : "default"
 } ]

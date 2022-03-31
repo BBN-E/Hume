@@ -11,14 +11,15 @@ import java.util.Map;
  */
 public class InternalOntologyNode {
 
-    List<InternalOntologyNode> children;
-    String originalKey;
-    Optional<InternalOntologyNode> parent;
+    public List<InternalOntologyNode> children;
+    public String originalKey;
+    public Optional<InternalOntologyNode> parent;
 
-    List<String> _source;
-    String _description;
-    List<String> _examples;
-    String _alternative_id;
+    public List<String> _source;
+    public String _description;
+    public List<String> _examples;
+    public String _alternative_id;
+    public List<String> _is_a;
 
     public InternalOntologyNode() {
         this.children = new ArrayList<>();
@@ -27,6 +28,7 @@ public class InternalOntologyNode {
         this._examples = new ArrayList<>();
         this.parent = Optional.absent();
         this._alternative_id = null;
+        this._is_a = new ArrayList<>();
     }
 
     public static InternalOntologyNode buildInternalOntologyHierachy(List<Map> root,
@@ -53,7 +55,15 @@ public class InternalOntologyNode {
                         }
                     } else if (key.equals("_alternative_id")) {
                         newOntologyRoot._alternative_id = (String) i.get(dictKeyObj);
-                    } else {
+                    }
+                    else if (key.equals("_is_a")) {
+                        for (String _is_a : (List<String>) i.get(dictKeyObj)) {
+                            if (!_is_a.toLowerCase().equals("na")) {
+                                newOntologyRoot._is_a.add(_is_a);
+                            }
+                        }
+                    }
+                    else {
                         throw new RuntimeException("The field " + key
                             + " is reserved for internal usage, which you didn't parse it");
                     }

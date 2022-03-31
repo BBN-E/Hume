@@ -1,7 +1,7 @@
 # sample call: python3 /nfs/raid66/u14/users/azamania/git/Hume/src/python/actor_aggregation/output_relation_counts_from_kb.py /nfs/raid87/u11/users/azamania/actor_aggregation/actor_id_list.txt /nfs/raid87/u11/users/azamania/runjobs/expts/Hume/causeex_collab2_0916c_m24_shaved_dataset_serialization/serialization/COLLAB2_0/causeex_collab2_0916c_m24_shaved_dataset_serialization.p /nfs/raid87/u11/users/azamania/actor_aggregation_dec/kb_relations.tsv
 
 import pickle
-import os, sys, codecs, unidecode, operator
+import os, sys, codecs, operator
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'knowledge_base'))
 

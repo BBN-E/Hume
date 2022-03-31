@@ -3,7 +3,6 @@ package com.bbn.serif.util.resolver;
 import com.bbn.bue.common.files.FileUtils;
 import com.bbn.bue.common.parameters.Parameters;
 
-import com.bbn.serif.io.SerifIOUtils;
 import com.bbn.serif.io.SerifXMLLoader;
 import com.bbn.serif.io.SerifXMLWriter;
 import com.bbn.serif.theories.DocTheory;
@@ -17,9 +16,7 @@ import com.bbn.serif.util.resolver.sentenceresolver.*;
 
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.io.CharSink;
 
-import javax.print.Doc;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -306,6 +303,24 @@ public final class DocTheoryResolver {
                     break;
                 case "TrendEventDropper":
                     resolvers.add(new TrendEventDropper());
+                    break;
+                case "EventMentionTypeResolver":
+                    resolvers.add(new EventMentionTypeResolver());
+                    break;
+                case "AnchorEventMentionMerger":
+                    resolvers.add(new AnchorEventMentionMerger());
+                    break;
+                case "PatternPruner":
+                    String patternFile = params.getString("PatternPruner.patternFile");
+                    int eventContextSize = params.getInteger("PatternPruner.eventContextWindowSize");
+                    Optional<Integer> maxEERDistance = params.getOptionalInteger("PatternPruner.maxEERTokenDistance");
+                    resolvers.add(new PatternPruner(patternFile, eventContextSize, maxEERDistance));
+                    break;
+                case "EventTypeOntologyComplianceResolver":
+                    resolvers.add(new EventTypeOntologyComplianceResolver(params.getStringList("eventOntologyFiles")));
+                    break;
+                case "ExternalGenericEventRemover":
+                    resolvers.add(new ExternalGenericEventRemover(params.getStringList("ExternalGenericEventRemover.eventOntologyFiles")));
                     break;
                 default:
                     throw new Exception("Unknown resolver: " + name);

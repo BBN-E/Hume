@@ -1,0 +1,12 @@
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/ingester/serifxml_ingester.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/dependency_parser/stanza_nlp_dependency_parser.py
+
+INGESTER SerifxmlIngester
+
+DEPENDENCY_MODEL StanzaDependencyParser
+lang en
+dir +LANGUAGE_MODELS_DIR+/stanza/
+max_tokens 200

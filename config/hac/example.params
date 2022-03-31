@@ -1,0 +1,6 @@
+cbc.calculateRealCentroid: false
+interMemberSimilarity: /nfs/raid88/u10/users/hqiu_ad/repos/Hume/expts/covid_2000_pilot.081821/dumping/dumper_1/0/EconomicCrisis/sim
+lemma.noun: /home/hqiu/ld100/jserif/serif-events/src/main/resources/lemma.noun
+lemma.verb: /home/hqiu/ld100/jserif/serif-events/src/main/resources/lemma.verb
+targetMembers.list: /nfs/raid88/u10/users/hqiu_ad/repos/Hume/expts/covid_2000_pilot.081821/dumping/dumper_1/0/EconomicCrisis/vocab
+hac.output: /home/hqiu/tmp/hac.out

@@ -7,5 +7,9 @@
   "/wm_compositional/property/insecurity": "/wm_compositional/property/security",
   "/wm_compositional/property/nonutilization": "/wm_compositional/property/utilization",
   "/wm_compositional/property/unavailability": "/wm_compositional/property/availability",
-  "/wm_compositional/property/instability": "/wm_compositional/property/instability"
+  "/wm_compositional/property/instability": "/wm_compositional/property/instability",
+  "/wm/property/insecurity": "/wm/property/security",
+  "/wm/property/nonutilization": "/wm/property/utilization",
+  "/wm/property/unavailability": "/wm/property/availability",
+  "/wm/property/instability": "/wm/property/instability"
 }

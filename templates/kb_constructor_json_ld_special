@@ -1,0 +1,11 @@
+READER SpecialTextReader
+
+
+SERIALIZER JSONLDSerializer
+/home/hqiu/tmp/json_ld_before_after
+WorldModelers
+true
+after
+true
+
+

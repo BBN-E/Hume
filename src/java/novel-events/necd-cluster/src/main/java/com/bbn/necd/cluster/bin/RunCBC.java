@@ -341,7 +341,7 @@ public final class RunCBC {
 
     for (final Cluster cluster : clusters) {
       // instead of the previous cluster.getId() , we now get the centriod id
-      lines.add(cluster.getCentroid().getId().asString() + " " + cluster.getCohesion() + " " + StringUtils.SpaceJoiner.join(cluster.getMemberIds()));
+      lines.add(cluster.getId().asString() + " " + cluster.getCohesion() + " " + StringUtils.SpaceJoiner.join(cluster.getMemberIds()));
     }
     Files.asCharSink(outfile, Charsets.UTF_8).writeLines(lines.build());
   }
@@ -353,7 +353,7 @@ public final class RunCBC {
     for (final Cluster cluster : cbc.getCommittees()) {
       idsBuilder.addAll(cluster.getMemberIds());
       // instead of the previous cluster.getId() , we now get the centriod id
-      lines.add(cluster.getCentroid().getId().asString() + " " + cluster.getCohesion() + " " + StringUtils.SpaceJoiner.join(cluster.getMemberIds()));
+      lines.add(cluster.getId().asString() + " " + cluster.getCohesion() + " " + StringUtils.SpaceJoiner.join(cluster.getMemberIds()));
     }
 
     Files.asCharSink(outfile, Charsets.UTF_8).writeLines(lines.build());

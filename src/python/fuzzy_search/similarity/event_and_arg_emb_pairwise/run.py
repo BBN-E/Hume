@@ -1,4 +1,4 @@
-import os, sys, json, logging, time, multiprocessing
+import os, sys, logging
 
 import numpy as np
 
@@ -8,23 +8,17 @@ project_root = os.path.realpath(os.path.join(
 sys.path.append(project_root)
 
 
-from similarity.event_and_arg_emb_pairwise.annoy_index_builder import annoy_index_builder
-from similarity.event_and_arg_emb_pairwise.build_pairwise_cache import build_pairwise_cache
-from similarity.event_and_arg_emb_pairwise.dump_pairwise_similarity_to_file import dump_pairwise_to_file
-from similarity.event_and_arg_emb_pairwise.merge_pairwise_cache import merge_pairwise_cache
-from similarity.event_and_arg_emb_pairwise.dump_pairwise_similarity_to_learnit_tabular import dump_pairwise_to_learnit_tabular
+from similarity.event_and_arg_emb_pairwise.cache_storage_adapter.annoy_index_builder import annoy_index_builder
+from similarity.event_and_arg_emb_pairwise.querier.weighted_querier import build_pairwise_cache
+from similarity.event_and_arg_emb_pairwise.dumper.dump_similarity_to_file import dump_pairwise_to_file
+from similarity.event_and_arg_emb_pairwise.utils.merge_pairwise import merge_pairwise_cache
+from similarity.event_and_arg_emb_pairwise.dumper.dump_pairwise_similarity_to_learnit_tabular import dump_pairwise_to_learnit_tabular
+from similarity.event_and_arg_emb_pairwise.cache_storage_adapter.annoy_storage import AnnoyAdapter
+from similarity.event_and_arg_emb_pairwise.utils.common import create_file_name_to_path
 
 logger = logging.getLogger(__name__)
 
 
-def create_doc_id_to_path(file_list, extension):
-    docid_to_path = dict()
-    with open(file_list) as fp:
-        for i in fp:
-            i = i.strip()
-            docid = os.path.basename(i).replace(extension, "")
-            docid_to_path[docid] = i
-    return docid_to_path
 
 
 def main():
@@ -64,8 +58,8 @@ def main():
     args = parser.parse_args()
 
     if args.mode == "BUILD_SERIF_DOC_NLPLINGO_FEATURE":
-        from similarity.event_and_arg_emb_pairwise.serif_nlplingo_feature_extractor import \
-            extract_serif_nlplingo_feature
+        from similarity.event_and_arg_emb_pairwise.feature_extractor.serif_nlplingo_feature_extractor import \
+            SerifNLPLingoFeatureExtractor
         serif_list = args.input_serif_list
         npz_dir = args.input_serif_npz_dir
         output_path = args.output_path
@@ -73,25 +67,27 @@ def main():
         key_getter_strs = args.key_getter_str
         input_bert_npz_list = args.input_bert_npz_list
 
-        doc_id_to_bert_npz_path = create_doc_id_to_path(input_bert_npz_list,
+        doc_id_to_bert_npz_path = create_file_name_to_path(input_bert_npz_list,
                                                         ".npz")
 
         list_features_all = list()
-        extracted_features = extract_serif_nlplingo_feature(
+        serif_nlplingo_feature_extractor = SerifNLPLingoFeatureExtractor(
             serif_list, npz_dir, doc_id_to_bert_npz_path, key_getter_strs)
+        extracted_features = serif_nlplingo_feature_extractor.extract_features()
         list_features_all.extend(extracted_features)
         with open(os.path.join(
                 output_path, output_prefix + "features.npz"), 'wb') as fp:
             np.savez_compressed(fp, features=list_features_all)
 
     elif args.mode == "BUILD_LEARNIT_OBVERSATION_FEATURE":
-        from similarity.event_and_arg_emb_pairwise.learnit_obversation_ave_bert_feature_extractor import \
-            extract_average_bert_emb_for_learnit_obversation
+        from similarity.event_and_arg_emb_pairwise.feature_extractor.learnit_obversation_ave_bert_feature_extractor import \
+            LearnItObversationFeatureExtractor
         input_bert_npz_list = args.input_bert_npz_list # This is not from pipeline
         input_learnit_obversation_instance_json_file = args.input_learnit_obversation_instance_json_file
         output_path = args.output_path
         output_prefix = args.output_prefix
-        feature_list = extract_average_bert_emb_for_learnit_obversation(input_bert_npz_list,input_learnit_obversation_instance_json_file)
+        learnit_obversation_feature_extractor = LearnItObversationFeatureExtractor(input_bert_npz_list,input_learnit_obversation_instance_json_file)
+        feature_list = learnit_obversation_feature_extractor.extract_features()
         with open(os.path.join(
                 output_path, output_prefix + "features.npz"), 'wb') as fp:
             np.savez_compressed(fp, features=feature_list)
@@ -109,7 +105,7 @@ def main():
                 features = np.load(i, allow_pickle=True)["features"]
                 for feature in features:
                     if should_drop_features_array_when_merging is True:
-                        feature.features = dict()
+                        feature.drop_features()
                     list_features_all.append(feature)
         with open(os.path.join(output_path), 'wb') as fp:
             np.savez_compressed(fp, features=list_features_all)
@@ -119,31 +115,15 @@ def main():
         annoy_metric = args.annoy_metric
         n_trees = args.n_trees
         output_path = args.output_path
-        (feature_name_to_annoy_cache,
-         feature_id_to_annoy_idx,
-         feature_name_to_dimension
-         ) = annoy_index_builder(annoy_metric, n_trees, feature_list_path)
-        with open(os.path.join(
-                output_path, "feature_id_to_annoy_idx.npz"), 'wb') as fp:
-            np.savez_compressed(
-                fp, feature_id_to_annoy_idx=feature_id_to_annoy_idx)
-        for feature_name, annoy_cache in feature_name_to_annoy_cache.items():
-            annoy_cache.save(
-                os.path.join(output_path, "{}.ann".format(feature_name)))
-        with open(os.path.join(
-                output_path, "feature_name_to_dimension.npz"), 'wb') as fp:
-            np.savez_compressed(
-                fp, feature_name_to_dimension=feature_name_to_dimension)
+        annoy_index_builder(annoy_metric, n_trees, feature_list_path,output_path)
+
 
     elif args.mode == "BUILD_PAIRWISE_CACHE":
-        from annoy import AnnoyIndex
         feature_list = args.input_feature_list
         chosen_feature_names = args.key_getter_str
         chosen_feature_weights = args.key_getter_weights
         annoy_metric = args.annoy_metric
-        input_annoy_cache_list = args.input_annoy_cache_list
-        feature_name_to_dimension_path  = args.feature_name_to_dimension_path
-        feature_id_to_annoy_idx_path = args.feature_id_to_annoy_idx_path
+        input_annoy_cache_path = args.input_annoy_cache_path
         threshold = args.threshold
         cutoff = args.cutoff
         output_path = args.output_path
@@ -151,24 +131,8 @@ def main():
         assert (chosen_feature_weights is None
                 or len(chosen_feature_weights) == len(chosen_feature_names))
 
-        feature_id_to_annoy_idx = dict(
-            np.load(feature_id_to_annoy_idx_path, allow_pickle=True)
-            ["feature_id_to_annoy_idx"].item())
-        feature_name_to_dimension = dict(
-            np.load(feature_name_to_dimension_path, allow_pickle=True)
-            ["feature_name_to_dimension"].item())
-        feature_name_to_annoy_path = create_doc_id_to_path(
-            input_annoy_cache_list, ".ann")
-        feature_name_to_annoy_cache = dict()
-        for feature_name, annoy_path in feature_name_to_annoy_path.items():
+        cache_storage = AnnoyAdapter.load_storage(input_annoy_cache_path,annoy_metric,chosen_feature_names)
 
-            if feature_name not in chosen_feature_names:
-                continue
-
-            annoy_ins = AnnoyIndex(feature_name_to_dimension[feature_name],
-                                   annoy_metric)
-            annoy_ins.load(annoy_path)
-            feature_name_to_annoy_cache[feature_name] = annoy_ins
         list_features_all = list()
         with open(feature_list) as fp:
             for i in fp:
@@ -178,9 +142,8 @@ def main():
         sim_matrix = build_pairwise_cache(
             chosen_feature_names,
             chosen_feature_weights,
+            cache_storage,
             list_features_all,
-            feature_name_to_annoy_cache,
-            feature_id_to_annoy_idx,
             threshold,
             cutoff)
         with open(os.path.join(output_path), 'wb') as fp:

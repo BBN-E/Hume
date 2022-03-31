@@ -79,6 +79,7 @@ public final class MemberSimilarity {
   public ImmutableList<Map.Entry<Symbol, Double>> getMostSimilarMembers(final Symbol id) {
     if(!mostSimilarMembersSimilarity.containsKey(id)) {
       log.info("cannot find most similar members for {} in {} keys", id.asString(), mostSimilarMembersSimilarity.keySet().size());
+      return ImmutableList.<Map.Entry<Symbol, Double>>builder().build();
     }
     return mostSimilarMembersSimilarity.get(id);
   }

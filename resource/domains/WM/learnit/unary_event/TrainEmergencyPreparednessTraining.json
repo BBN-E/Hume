@@ -6,67 +6,86 @@
       "valList" : [ "java.util.ArrayList", [ ] ],
       "entries" : [ "java.util.ArrayList", [ ] ]
     } ],
-    "iteration" : 52
+    "iteration" : 55
   } ],
   "patternScores" : [ "com.bbn.akbc.neolearnit.scoring.tables.PatternScoreTable", {
     "data" : [ "com.bbn.akbc.neolearnit.storage.EfficientMapDataStore", {
       "keyList" : [ "java.util.ArrayList", [ [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mprop (return slot0) (predicate resilience) (args (argument (role <ref>) (mention (headword efforts) (acetype OTH) (regex (regex (re (text (string \"resilience building\")))))))))",
-        "toPrettyString" : " [ [m]resilience[0] building efforts[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword programming) (acetype OTH) (regex (regex (re (text (string \"resilience\"))))))",
-        "toPrettyString" : " resilience programming[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword management) (acetype OTH) (regex (regex (re (text (string \"disaster risk\"))))))",
-        "toPrettyString" : " disaster risk management[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mprop (return slot0) (predicate resilience) (args (argument (role <ref>) (mention (headword programming) (acetype OTH) (regex (regex (re (text (string \"resilience\")))))))))",
-        "toPrettyString" : " [ [m]resilience[0] programming[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate enhance) (args (argument (role <obj>) (mention (headword capacity) (acetype OTH) (regex (regex (re (text (string \"the resilience\")))))))))",
-        "toPrettyString" : " [ [v]enhance[0] <obj> the resilience capacity[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword reduction) (acetype OTH) (regex (regex (re (text (string \"disaster risk\"))))))",
-        "toPrettyString" : " disaster risk reduction[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate build) (args (argument (role <obj>) (mention (headword capacity) (acetype OTH) (regex (regex (re (text (string \"resilience\")))))))))",
-        "toPrettyString" : " [ [v]build[0] <obj> resilience capacity[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate enhancing) (args (argument (role <obj>) (mention (headword capacity) (acetype OTH) (regex (regex (re (text (string \"resilience\")))))))))",
-        "toPrettyString" : " [ [v]enhancing[0] <obj> resilience capacity[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(mprop (return slot0) (predicate management) (args (argument (role <ref>) (mention (headword approach) (acetype OTH) (regex (regex (re (text (string \"disaster\")))))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " [ [m]management[0] disaster approach[OTH] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate build) (args (argument (role <obj>) (mention (headword capacity) (acetype OTH) (regex (regex (re (text (string \"resilience\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]build[0] <obj> resilience capacity[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(vprop (return slot0) (predicate building) (args (argument (role <obj>) (mention (headword capacity) (acetype OTH) (regex (regex (re (text (string \"resilience\")))))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " [ [v]building[0] <obj> resilience capacity[OTH] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate enhance) (args (argument (role <obj>) (mention (headword capacity) (acetype OTH) (regex (regex (re (text (string \"resilience\"))))))) (argument (role <sub>) (mention (headword efforts) (acetype OTH)))))",
-        "toPrettyString" : " [ efforts[OTH] <sub> [v]enhance[0] <obj> resilience capacity[OTH] ]"
+        "toIDString" : "(mprop (return slot0) (predicate resilience) (args (argument (role <ref>) (mention (headword efforts) (acetype OTH) (regex (regex (re (text (string \"resilience building\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [m]resilience[0] building efforts[OTH] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate enhance) (args (argument (role <obj>) (mention (headword capacity) (acetype OTH) (regex (regex (re (text (string \"resilience\")))))))))",
-        "toPrettyString" : " [ [v]enhance[0] <obj> resilience capacity[OTH] ]"
+        "toIDString" : "(mention (return slot0) (headword management) (acetype OTH) (regex (regex (re (text (string \"disaster risk\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " disaster risk management[OTH][0]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate enhance) (args (argument (role <obj>) (mention (headword capacity) (acetype OTH) (regex (regex (re (text (string \"the resilience\"))))))) (argument (role <sub>) (mention (headword efforts) (acetype OTH) (regex (regex (re (text (string \"ngo\")))))))))",
-        "toPrettyString" : " [ ngo efforts[OTH] <sub> [v]enhance[0] <obj> the resilience capacity[OTH] ]"
+        "toIDString" : "(mention (return slot0) (headword reduction) (acetype OTH) (regex (regex (re (text (string \"disaster risk\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " disaster risk reduction[OTH][0]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(vprop (return slot0) (predicate enhance) (args (argument (role <obj>) (mention (headword capacity) (acetype OTH) (regex (regex (re (text (string \"the resilience\"))))))) (argument (role <sub>) (mention (headword efforts) (acetype OTH)))))",
+        "isUDPattern" : false,
         "toPrettyString" : " [ efforts[OTH] <sub> [v]enhance[0] <obj> the resilience capacity[OTH] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate enhance) (args (argument (role <obj>) (mention (headword capacity) (acetype OTH) (regex (regex (re (text (string \"resilience\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]enhance[0] <obj> resilience capacity[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mprop (return slot0) (predicate resilience) (args (argument (role <ref>) (mention (headword programming) (acetype OTH) (regex (regex (re (text (string \"resilience\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [m]resilience[0] programming[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(mprop (return slot0) (predicate resilience) (args (argument (role <ref>) (mention (headword building) (acetype FAC) (regex (regex (re (text (string \"resilience\")))))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " [ [m]resilience[0] building[FAC] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate build) (args (argument (role <obj>) (mention (headword capacity) (acetype OTH) (regex (regex (re (text (string \"resilience\"))))))) (argument (role <sub>) (mention (headword efforts) (acetype OTH)))))",
-        "toPrettyString" : " [ efforts[OTH] <sub> [v]build[0] <obj> resilience capacity[OTH] ]"
+        "toIDString" : "(mention (return slot0) (headword efforts) (acetype OTH) (regex (regex (re (text (string \"resilience building\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " resilience building efforts[OTH][0]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate enhance) (args (argument (role <obj>) (mention (headword capacity) (acetype OTH) (regex (regex (re (text (string \"resilience\"))))))) (argument (role <sub>) (mention (headword efforts) (acetype OTH) (regex (regex (re (text (string \"ngo\")))))))))",
-        "toPrettyString" : " [ ngo efforts[OTH] <sub> [v]enhance[0] <obj> resilience capacity[OTH] ]"
+        "toIDString" : "(mention (return slot0) (headword programming) (acetype OTH) (regex (regex (re (text (string \"resilience\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " resilience programming[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate enhance) (args (argument (role <obj>) (mention (headword capacity) (acetype OTH) (regex (regex (re (text (string \"the resilience\"))))))) (argument (role <sub>) (mention (headword efforts) (acetype OTH) (regex (regex (re (text (string \"ngo\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ ngo efforts[OTH] <sub> [v]enhance[0] <obj> the resilience capacity[OTH] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(mprop (return slot0) (predicate resilience) (args (argument (role <ref>) (mention (headword capacity) (acetype OTH) (regex (regex (re (text (string \"resilience\")))))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " [ [m]resilience[0] capacity[OTH] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword efforts) (acetype OTH) (regex (regex (re (text (string \"resilience building\"))))))",
-        "toPrettyString" : " resilience building efforts[OTH][0]"
+        "toIDString" : "(vprop (return slot0) (predicate enhance) (args (argument (role <obj>) (mention (headword capacity) (acetype OTH) (regex (regex (re (text (string \"resilience\"))))))) (argument (role <sub>) (mention (headword efforts) (acetype OTH)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ efforts[OTH] <sub> [v]enhance[0] <obj> resilience capacity[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate enhancing) (args (argument (role <obj>) (mention (headword capacity) (acetype OTH) (regex (regex (re (text (string \"resilience\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]enhancing[0] <obj> resilience capacity[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate enhance) (args (argument (role <obj>) (mention (headword capacity) (acetype OTH) (regex (regex (re (text (string \"resilience\"))))))) (argument (role <sub>) (mention (headword efforts) (acetype OTH) (regex (regex (re (text (string \"ngo\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ ngo efforts[OTH] <sub> [v]enhance[0] <obj> resilience capacity[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate enhance) (args (argument (role <obj>) (mention (headword capacity) (acetype OTH) (regex (regex (re (text (string \"the resilience\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]enhance[0] <obj> the resilience capacity[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate build) (args (argument (role <obj>) (mention (headword capacity) (acetype OTH) (regex (regex (re (text (string \"resilience\"))))))) (argument (role <sub>) (mention (headword efforts) (acetype OTH)))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ efforts[OTH] <sub> [v]build[0] <obj> resilience capacity[OTH] ]"
       } ] ] ],
       "valList" : [ "java.util.ArrayList", [ [ "com.bbn.akbc.neolearnit.scoring.scores.PatternScore", {
         "precision" : 0.95,
@@ -92,6 +111,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -119,6 +139,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -146,6 +167,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -173,6 +195,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -200,6 +223,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -227,6 +251,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -254,6 +279,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -281,6 +307,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -308,6 +335,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -335,6 +363,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -362,6 +391,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -389,6 +419,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -416,6 +447,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -443,6 +475,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -470,6 +503,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -497,6 +531,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -524,6 +559,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -551,6 +587,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -578,6 +615,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -641,7 +679,7 @@
         "value" : 18
       } ] ] ]
     } ],
-    "iteration" : 42
+    "iteration" : 45
   } ],
   "tripleScores" : [ "com.bbn.akbc.neolearnit.scoring.tables.TripleScoreTable", {
     "data" : [ "com.bbn.akbc.neolearnit.storage.EfficientMapDataStore", {
@@ -651,34 +689,10 @@
     } ],
     "iteration" : 0
   } ],
-  "iteration" : 52,
+  "iteration" : 55,
   "goodSeedPrior" : 0.04,
   "totalConfidenceDenominator" : 1000.0,
   "stage" : "initial",
-  "params" : [ "java.util.HashMap", {
-    "aggregated_frequency_filter_pattern_min" : "5",
-    "max_unary_prop_depth" : "1",
-    "languages" : "English",
-    "bert_npz_list" : "/home/hqiu/ld100/Hume_pipeline_int/Hume/expts/wm_dart_bert.060520/bert/bert_npz.list",
-    "linux_queue" : "nongale-sl6",
-    "serif_data" : "#Set this to your SERIF data checkout e.g. /nfs/mercury-04/u60/DEFT/users/msrivast/Active/Data/SERIF/",
-    "bootstrap_serifxml_list" : "/d4m/ears/expts/47922.generic_event.v1/expts/hume_test.040120.wm.v1/learnit_decoder/learnit/learnit_decoder.list",
-    "corpus_name" : "wm_dart382.090920",
-    "loader_concurrency" : "5",
-    "domain_root" : "/home/hqiu/ld100/learnit_wm_entity/inputs/domains/WM",
-    "aggregated_frequency_filter_pattern_max" : "-1",
-    "max_regexp_pattern_words" : "5",
-    "learnit_expt_suffix" : "default",
-    "use_human_label" : "false",
-    "source_root" : "/home/hqiu/ld100/learnit_wm_entity/neolearnit",
-    "min_seed_frequency_per_batch" : "1",
-    "learnit_data_root" : "/nfs/raid88/u10/users/hqiu/learnit_data/wm_dart382.090920",
-    "max_binary_prop_depth" : "2",
-    "learnit_root" : "/home/hqiu/ld100/learnit_wm_entity",
-    "queue_priority" : "5",
-    "min_pattern_frequency_per_batch" : "2",
-    "max_prop_depth" : "2",
-    "stopwords" : "/home/hqiu/ld100/learnit_wm_entity/inputs/resources/stopwords/english_causal_relationships.txt"
-  } ],
+  "params" : null,
   "experimentName" : "default"
 } ]

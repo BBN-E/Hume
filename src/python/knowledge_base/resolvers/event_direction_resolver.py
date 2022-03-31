@@ -69,7 +69,9 @@ class EventDirectionResolver(KBResolver):
                     None,
                     kb_event_mention.model,
                     kb_event_mention.event_confidence,
-                    kb_event_mention.trigger_original_text
+                    kb_event_mention.trigger_original_text,
+                    kb_event_mention.trigger_start_token_idx,
+                    kb_event_mention.trigger_end_token_idx
                 )
                 for grounding in event_type_to_grounded_types[direction]:
                     new_kb_event_mention.add_or_change_grounding(

@@ -24,7 +24,7 @@ if __name__ == "__main__":
     # filename = "/home/hqiu/ld100/hume_pipeline_read_only/Hume/expts/wm_dart.082919/serialization/analytic/wm_dart.082919.json-ld"
     # filename="/home/hqiu/ld100/Hume_pipeline/Hume/expts/wm_hume_indra_unittest.082619.v3/serialization/analytic/wm_hume_indra_unittest.082619.v3.json-ld"
 
-    for root, dirs, files in os.walk("/home/hqiu/ld100/Hume_pipeline/Hume/expts/wm_dart.101419.v1/serialization"):
+    for root, dirs, files in os.walk("/nfs/raid88/u10/users/hqiu_ad/repos/Hume/expts/dsmte.021722.v1/serialization"):
         for file in files:
             if file.endswith(".json-ld"):
                 filename = os.path.join(root,file)

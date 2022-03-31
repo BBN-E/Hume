@@ -1,0 +1,86 @@
+
+
+############
+## Pipeline
+############
+job_name: wm_m12.ben_sentence.v1
+mode: WorldModelers
+stages_to_run: cdr-ingestion,serif,learnit-decoder,pyserif_before_pg,pyserif_after_pg,serialization
+
+ANACONDA_ROOT: /usr/local/
+PYTHON3_KB: /opt/Python-3.5.2-x86_64/bin/python3 -u
+use_neural_net: true
+use_bert: false
+only_cpu_available: true
+use_basic_cipher_stream: true
+track_serif_files_read: false
+max_number_of_tokens_per_sentence: 128
+breaking_point: 10000
+num_of_batches_global: [PENDING_NUM_OF_BATCHES]
+single_bert_thread_mode: true
+number_of_batches_pyserif: 1
+number_of_batches_bert_cpu: 1
+num_of_scheduling_jobs_for_nn: [PENDING_NUM_OF_SCHEDULING_JOBS_FOR_NN]
+use_compositional_ontology: true
+external_ontology_path: [PENDING_EXTERNAL_ONTOLOGY_PATH]
+external_ontology_version: [PENDING_EXTERNAL_ONTOLOGY_VERSION]
+use_regrounding_cache: [PENDING_USE_REGROUNDING_CACHE]
+regrounding_cache_path: [PENDING_REGROUNDING_CACHE_PATH]
+
+################
+# CDR digestion
+################
+input_cdr_list: [PENDING_CDR_LIST_PATH]
+
+
+
+metadata_file: GENERATED
+########
+# Serif
+########
+serif_input_sgm_list: GENERATED
+serif_input_awake_db: /nfs/raid87/u10/shared/Hume/common/serif/wm_eval_before_060119.sqlite
+serif_fast_mode: true
+
+#######
+## BERT
+########
+bert_input_serifxml_list: GENERATED
+bert_layers: -1
+
+####################################
+## LearnIt  Decoder
+#####################################
+learnit_decoder_input_serifxml_list: GENERATED
+learnit_event_and_event_arg_pattern_dir: DEFAULT
+learnit_unary_entity_pattern_dir: DEFAULT
+learnit_event_event_relation_pattern_dir: DEFAULT
+input_serif_cause_effect_relations_dir:GENERATED
+generic_event_noun_whitelist: GENERATED
+generic_event_blacklist: GENERATED
+
+
+######################
+# PySerif
+######################
+pyserif_before_pg_input_serifxml_list: GENERATED
+pyserif_after_pg_input_serifxml_list: GENERATED
+copyArgumentSentenceWindow: 1
+bert_npz_filelist: GENERATED
+grounding_mode: medium
+
+
+
+
+################
+# Serialization
+################
+serialization_input_awake_db: /nfs/raid87/u10/shared/Hume/common/serif/wm_eval_before_060119.sqlite
+serialization_input_serifxml_list: GENERATED
+serialization_input_trigger_finder_file: NA
+serialization_input_factfinder_json_file: /empty_array.json
+serialization_input_learnit_triple_file: GENERATED
+serialization_input_learnit_event_count_file: GENERATED
+serialization_do_event_uploading: False
+
+dump_extraction: True

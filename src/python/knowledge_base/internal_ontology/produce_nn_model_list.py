@@ -10,7 +10,7 @@ import sys
 
 input_path = sys.argv[1]
 
-data = yaml.load(open(input_path,'r'))
+data = yaml.safe_load(open(input_path,'r'))
 
 def traverse_tree(node, list_):
     

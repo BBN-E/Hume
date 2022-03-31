@@ -1,0 +1,72 @@
+{
+  "runjobs_config": {
+      "job_name": "covid_2000_pilot.081821"
+  },
+  "feature_extractors": [
+    {
+      "id": "feature_1",
+      "name": "SerifEventMentionBertExtractor",
+      "original_serif_list": "/d4m/ears/expts/48158.071921.aylien_10p.v1/expts/time-modules/learnit_event_and_eer/en/learnit_decoder_English.list.2000",
+      "number_of_batches": 10,
+      "args": {
+        "input_serif_list": "+serif_list_slice+",
+        "input_bert_list": "/d4m/ears/expts/48258.2000.bert.081821/expts/hume_test.dart.082720.wm.v1/bert/bert_npz.list",
+        "output_path": "+output_path+",
+        "drop_generic_event": true,
+        "em_representation_mode": "AllSynNode"
+      }
+    }
+  ],
+  "indexing_features": [
+    {
+      "feature_id": "feature_1",
+      "id": "index_1",
+      "name": "Annoy",
+      "number_of_batches": 2,
+      "args": {
+        "input_feature_list": "+input_feature_list+",
+        "annoy_metric": "angular",
+        "n_trees": 100,
+        "output_path": "+output_path+"
+      }
+    }
+  ],
+  "queries": [
+    {
+      "id": "queries_1",
+      "name": "BUILD_PAIRWISE_CACHE",
+      "number_of_batches": 1,
+      "index_id": "index_1",
+      "query_feature_id": "feature_1",
+      "args": {
+        "query_feature_list": "+query_feature_list+",
+        "key_getter_mapping": [
+          {
+            "index": "bert",
+            "query": "bert"
+          }
+        ],
+        "threshold": 100,
+        "cutoff": 500,
+        "input_cache_list": "+input_cache_list+",
+        "output_path": "+output_path+"
+      }
+    }
+  ],
+  "dumpers": [
+    {
+      "id": "dumper_1",
+      "name": "TwoColumnTypedDumper",
+      "query_id": "queries_1",
+      "merge_feature_list": true,
+      "number_of_batches": 1,
+      "args": {
+        "query_feature_list": "+query_feature_list+",
+        "index_feature_list": "+index_feature_list+",
+        "input_sim_matrix_list": "+input_sim_matrix_list+",
+        "cutoff": 100,
+        "output_path": "+output_path+"
+      }
+    }
+  ]
+}

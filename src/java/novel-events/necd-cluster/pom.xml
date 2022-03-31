@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
     <parent>
@@ -53,41 +54,68 @@
                 <configuration>
                     <programs>
 
-			<program>
-			    <mainClass>com.bbn.necd.cluster.bin.RunCBC</mainClass>
-			    <name>runCBC</name>
+                        <program>
+                            <mainClass>com.bbn.necd.cluster.bin.RunCBC</mainClass>
+                            <name>runCBC</name>
                             <jvmSettings>
                                 <maxMemorySize>24g</maxMemorySize>
                             </jvmSettings>
-			</program>
+                        </program>
 
-			<program>
-			    <mainClass>com.bbn.necd.cluster.bin.RunHAC</mainClass>
-			    <name>runHAC</name>
-			</program>
+                        <program>
+                            <mainClass>com.bbn.necd.cluster.bin.RunHAC</mainClass>
+                            <name>runHAC</name>
+                        </program>
 
-			<program>
-			    <mainClass>com.bbn.necd.cluster.bin.TabulateClusterMistakes</mainClass>
-			    <name>tabulateClusterMistakes</name>
+                        <program>
+                            <mainClass>com.bbn.necd.cluster.bin.TabulateClusterMistakes</mainClass>
+                            <name>tabulateClusterMistakes</name>
                             <jvmSettings>
                                 <maxMemorySize>8g</maxMemorySize>
                             </jvmSettings>
-			</program>
+                        </program>
 
-			<program>
-			    <mainClass>com.bbn.necd.cluster.bin.ScoreClustering</mainClass>
-			    <name>scoreClustering</name>
-			</program>
+                        <program>
+                            <mainClass>com.bbn.necd.cluster.bin.ScoreClustering</mainClass>
+                            <name>scoreClustering</name>
+                        </program>
 
-			<program>
-			    <mainClass>com.bbn.necd.cluster.bin.AssignCluster</mainClass>
-			    <name>assignCluster</name>
-			</program>
+                        <program>
+                            <mainClass>com.bbn.necd.cluster.bin.AssignCluster</mainClass>
+                            <name>assignCluster</name>
+                        </program>
 
 
                     </programs>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.4.1</version>
+                <configuration>
+                    <!-- get all project dependencies -->
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <!-- MainClass in mainfest make a executable jar -->
+                    <archive>
+
+                    </archive>
+
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <!-- bind to the packaging phase -->
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 </project>

@@ -1,0 +1,43 @@
+JAVA_CLASSPATH
++doc_resolver_jar_path+
+
+IMPLEMENTATIONS
++textopen_root+/src/python/serif/model/impl/java_doc_resolver.py
+
+IMPLEMENTATIONS
++textopen_root+/src/python/serif/model/impl/event_mention/probabilistic_grounding.py
+
+# PG CausalFactor
+BASE_MODEL ProbabilisticGrounding
+probabilictic_grounding_main_entry +probabilictic_grounding_main_entry+
+max_number_of_tokens_per_sentence +max_number_of_tokens_per_sentence+
+which_ontology WM
+keywords +keywords+
+stopwords +stopwords+
+event_ontology_yaml +external_ontology+
+internal_ontology_yaml +ontologyFile+
+grounding_mode +grounding_mode+
+embeddings +embeddings+
+exemplars +event_exemplars+
+bert_centroids +event_centroid_file+
+bert_npz_file_list +bert_npz_file_list+
+n_best +n_best+
+only_use_bert_from_root false
+blacklist +event_blacklist+
+event_mention_typing_field factor_types
+threshold +threshold+
+
+# EC Magnitude
+JAVA_BASE_MODEL JavaDocResolverModel
+# Resolvers
+resolvers ClearEventsResolver,FlipOppositeCFToPositiveResolver,EventFactorMagnitudeResolver,EventDirectionOfChangeAndCFTrendResolver,ThemeArgumentAdder,EventEventRelationReAttachResolver,EventEventRelationPolarityResolver,EventEventRelationRationaleResolver,SimpleEntityCreator,SimpleEventCreator
+EventFactorMagnitudeResolver.propertiesFile  +propertiesFile+
+EventDirectionOfChangeAndCFTrendResolver.propertiesFile +propertiesFile+
+EventFactorMagnitudeResolver.reverseFactorTypesFile  +reverseFactorTypesFile+
+FlipOppositeCFToPositiveResolver.pendingFlippingOppositeTypeMap  +pendingflip+
+EventEventRelationPolarityResolver.negation_file +causalRelationNegationFile+
+EventEventRelationRationaleResolver.word_list +causalRelationDirectory+
+ThemeArgumentAdder.selectionConstraints +themeConstraints+
+ThemeArgumentAdder.validFactorTypes +themeFactors+
+ThemeArgumentAdder.invalidThemeTypes +themeIllegalTypes+
+ExternalGenericEventRemover.eventOntologyFiles +ontologyFile+

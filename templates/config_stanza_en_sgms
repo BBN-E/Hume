@@ -1,0 +1,75 @@
+# implementations go here
+JAVA_CLASSPATH
+/nfs/raid66/u11/users/brozonoy-ad/python-heideltime/HeidelTime/de.unihd.dbs.heideltime.standalone.jar
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/ingester/sgm_ingester.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/sentence_splitter/stanza_sentence_splitter.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/dependency_parser/stanford_nlp_dependency_parser.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/parser/benepar_parser.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/parser/all_token_flatten_parser.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/stanza_adapter.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/mention/name_mention_model.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/mention/noun_phrase_mention_model.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/mention/pronoun_mention_model.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/time_value_mention/heideltime_time_value_mention_model.py
+
+INGESTER SgmIngester
+lang English
+metadata_file_path +METADATA_FILE_PATH+
+
+SENTENCE_SPLITTING_MODEL StanzaSentenceSplitter
+lang en
+dir +LANGUAGE_MODELS_DIR+/stanza/
+split_on_newlines
+
+BASE_MODEL StanzaAdapter
+lang en
+dir +LANGUAGE_MODELS_DIR+/stanza/
+max_tokens 200
+
+PARSE_MODEL BeneparParser
+model +LANGUAGE_MODELS_DIR+/nltk_data/benepar_en
+add_heads
+max_tokens 200
+
+PARSE_MODEL AllTokenFlattenParser
+postag_attr_getter_str xpos
+fallback_pos_tag X
+skip_sentence_has_parsing true
+
+MENTION_MODEL NounPhraseMentionModel
+
+MENTION_MODEL PronounMentionModel
+modify_existing_mention
+
+MENTION_MODEL NameMentionModel
+modify_existing_mention
+
+DEPENDENCY_MODEL StanfordNLPDependencyParser
+lang en
+models_dir NON_AVAILABLE
+use_data_from_stanford_adapter
+
+TIME_VALUE_MENTION_MODEL HeidelTime_TimeValueMentionModel
+lang english
+timeout 500
+max_sents_per_doc 200

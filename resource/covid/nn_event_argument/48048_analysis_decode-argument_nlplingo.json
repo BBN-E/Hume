@@ -1,0 +1,38 @@
+{
+    "add_serif_event_mentions": true,
+    "allow_anchor_as_event_argument": true,
+    "data": {
+        "test": {
+            "filelist": "+test_filelist+"
+        }
+    },
+    "extractors": [
+        {
+            "cache_dir": "/nfs/raid88/u10/users/ychan-ad/BETTER/transformers_ner/cache",
+            "domain_ontology": "/nfs/raid88/u10/users/ychan/data/ace/role_mappings.ace.txt",
+            "model_file": "/nfs/raid88/u10/users/ychan-ad/BETTER/granular-events/nlplingo_models/argument_span/ace_all/b16lr1e-05/output/epoch-28",
+            "hyper-parameters": {
+                "batch_size": 16, 
+                "epoch": 50,
+                "decode_mode": true,
+                "max_sentence_length": 256
+            },
+            "optimizer": {
+                "name": "adamw",
+                "lr": 1e-05
+            },
+            "engine": "pytorch",
+            "model_type": "sequence_xlmr-base",
+            "features": [],
+            "seed": 1,
+            "task": "event-argument",
+            "use_only_begin_tag": false,
+            "annotation_scheme": "identification_classification",
+            "use_only_headword": false,
+            "save_every_epoch": true,
+            "decode_using_gold_triggers": true
+        }
+    ],
+    "output_dir": "+output_dir+",
+    "predictions_file": "+output_dir+/predictions.json.as_obj"
+}

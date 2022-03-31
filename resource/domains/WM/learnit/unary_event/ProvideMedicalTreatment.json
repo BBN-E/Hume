@@ -6,223 +6,294 @@
       "valList" : [ "java.util.ArrayList", [ ] ],
       "entries" : [ "java.util.ArrayList", [ ] ]
     } ],
-    "iteration" : 67
+    "iteration" : 70
   } ],
   "patternScores" : [ "com.bbn.akbc.neolearnit.scoring.tables.PatternScoreTable", {
     "data" : [ "com.bbn.akbc.neolearnit.storage.EfficientMapDataStore", {
       "keyList" : [ "java.util.ArrayList", [ [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword program) (acetype OTH) (regex (regex (re (text (string \"therapeutic\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " therapeutic program[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate combating) (args (argument (role <obj>) (mention (headword aids) (acetype OTH) (regex (regex (re (text (string \"hiv /\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]combating[0] <obj> hiv / aids[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mprop (return slot0) (predicate care) (args (argument (role <ref>) (mention (headword services) (acetype OTH) (regex (regex (re (text (string \"health care\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ health [m]care[0] services[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mprop (return slot0) (predicate emergency) (args (argument (role <ref>) (mention (headword response) (acetype OTH) (regex (regex (re (text (string \"health\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [m]emergency[0] health response[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword aid) (acetype OTH) (regex (regex (re (text (string \"medical\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " medical aid[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(vprop (return slot0) (predicate provided) (args (argument (role <obj>) (mention (headword services) (acetype OTH) (regex (regex (re (text (string \"health\")))))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " [ [v]provided[0] <obj> health services[OTH] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword assistance) (acetype OTH) (regex (regex (re (text (string \"medical\"))))))",
-        "toPrettyString" : " medical assistance[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword programs) (acetype OTH) (regex (regex (re (text (string \"health\"))))))",
-        "toPrettyString" : " health programs[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mprop (return slot0) (predicate care) (args (argument (role <ref>) (mention (headword programmes) (acetype OTH) (regex (regex (re (text (string \"therapeutic\")))))))))",
-        "toPrettyString" : " [ [m]care[0] therapeutic programmes[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword treatments) (acetype OTH) (regex (regex (re (text (string \"medical\"))))))",
-        "toPrettyString" : " medical treatments[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword care) (acetype OTH) (regex (regex (re (text (string \"medical\"))))))",
-        "toPrettyString" : " medical care[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword circumcision) (acetype OTH) (regex (regex (re (text (string \"voluntary medical male\"))))))",
-        "toPrettyString" : " voluntary medical male circumcision[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mprop (return slot0) (predicate healthcare) (args (argument (role <ref>) (mention (headword services) (acetype OTH) (regex (regex (re (text (string \"healthcare\")))))))))",
-        "toPrettyString" : " [ [m]healthcare[0] services[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword services) (acetype OTH) (regex (regex (re (text (string \"medical\"))))))",
-        "toPrettyString" : " medical services[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword care) (acetype OTH) (regex (regex (re (text (string \"basic health\"))))))",
-        "toPrettyString" : " basic health care[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate provision) (args (argument (role of) (mention (headword services) (acetype OTH) (regex (regex (re (text (string \"health\")))))))))",
-        "toPrettyString" : " [ [n]provision[0] of health services[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(nprop (return slot0) (predicate provision) (args (argument (role <ref>) (mention (headword provision) (acetype OTH))) (argument (role of) (mention (headword services) (acetype OTH) (regex (regex (re (text (string \"health\")))))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " [ [n]provision[0] of health services[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword coverage) (acetype OTH) (regex (regex (re (text (string \"health\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " health coverage[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate combating) (args (argument (role <obj>) (mention (headword aids) (acetype OTH) (regex (regex (re (text (string \"hiv\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]combating[0] <obj> hiv aids[OTH] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(mention (return slot0) (headword interventions) (acetype OTH) (regex (regex (re (text (string \"health\"))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " health interventions[OTH][0]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate treatment) (args (argument (role <ref>) (mention (headword treatment) (acetype OTH))) (argument (role from) (mention (headword facility) (acetype FAC) (regex (regex (re (text (string \"a health\")))))))))",
-        "toPrettyString" : " [ [n]treatment[0] from a health facility[FAC] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mprop (return slot0) (predicate trauma) (args (argument (role <ref>) (mention (headword services) (acetype OTH) (regex (regex (re (text (string \"trauma\")))))))))",
-        "toPrettyString" : " [ [m]trauma[0] services[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword programmes) (acetype OTH) (regex (regex (re (text (string \"therapeutic care\"))))))",
-        "toPrettyString" : " therapeutic care programmes[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword assistance) (acetype OTH) (regex (regex (re (text (string \"health\"))))))",
-        "toPrettyString" : " health assistance[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate treatment) (args (argument (role from) (mention (headword facility) (acetype FAC) (regex (regex (re (text (string \"a health\")))))))))",
-        "toPrettyString" : " [ [n]treatment[0] from a health facility[FAC] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mprop (return slot0) (predicate aid) (args (argument (role <ref>) (mention (headword group) (acetype ORG) (regex (regex (re (text (string \"medical\")))))))))",
-        "toPrettyString" : " [ [m]aid[0] medical group[ORG] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mprop (return slot0) (predicate care) (args (argument (role <ref>) (mention (headword services) (acetype OTH) (regex (regex (re (text (string \"health\")))))))))",
-        "toPrettyString" : " [ [m]care[0] health services[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate treatment) (args (argument (role from) (mention (headword facility) (acetype FAC) (regex (regex (re (text (string \"health\")))))))))",
-        "toPrettyString" : " [ [n]treatment[0] from health facility[FAC] ]"
+        "toIDString" : "(mention (return slot0) (headword interventions) (acetype OTH) (regex (regex (re (text (string \"hiv\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " hiv interventions[OTH][0]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(vprop (return slot0) (predicate providing) (args (argument (role <obj>) (mention (headword services) (acetype OTH) (regex (regex (re (text (string \"health\")))))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " [ [v]providing[0] <obj> health services[OTH] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword services) (acetype OTH) (regex (regex (re (text (string \"free medical\"))))))",
-        "toPrettyString" : " free medical services[OTH][0]"
+        "toIDString" : "(mprop (return slot0) (predicate care) (args (argument (role <ref>) (mention (headword programmes) (acetype OTH) (regex (regex (re (text (string \"therapeutic\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [m]care[0] therapeutic programmes[OTH] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword program) (acetype OTH) (regex (regex (re (text (string \"health\"))))))",
-        "toPrettyString" : " health program[OTH][0]"
+        "toIDString" : "(mention (return slot0) (headword care) (acetype OTH) (regex (regex (re (text (string \"therapeutic\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " therapeutic care[OTH][0]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mprop (return slot0) (predicate rehabilitation) (args (argument (role <ref>) (mention (headword services) (acetype OTH) (regex (regex (re (text (string \"rehabilitation\")))))))))",
-        "toPrettyString" : " [ [m]rehabilitation[0] services[OTH] ]"
+        "toIDString" : "(mention (return slot0) (headword treatments) (acetype OTH) (regex (regex (re (text (string \"health\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " health treatments[OTH][0]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword services) (acetype OTH) (regex (regex (re (text (string \"rehabilitation\"))))))",
-        "toPrettyString" : " rehabilitation services[OTH][0]"
+        "toIDString" : "(mention (return slot0) (headword programme) (acetype OTH) (regex (regex (re (text (string \"therapeutic\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " therapeutic programme[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword care) (acetype OTH) (regex (regex (re (text (string \"health\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " health care[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate treatment) (args (argument (role <ref>) (mention (headword treatment) (acetype OTH) (regex (regex (re (text (string \"diarrhea\"))))))) (argument (role from) (mention (headword facility) (acetype FAC) (regex (regex (re (text (string \"a health\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ diarrhea [n]treatment[0] from a health facility[FAC] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword services) (acetype OTH) (regex (regex (re (text (string \"medical\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " medical services[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword care) (acetype OTH) (regex (regex (re (text (string \"primary health\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " primary health care[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword programmes) (acetype OTH) (regex (regex (re (text (string \"therapeutic\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " therapeutic programmes[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword treatment) (acetype OTH) (regex (regex (re (text (string \"medical\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " medical treatment[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mprop (return slot0) (predicate healthcare) (args (argument (role <ref>) (mention (headword services) (acetype OTH) (regex (regex (re (text (string \"healthcare\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [m]healthcare[0] services[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword care) (acetype OTH) (regex (regex (re (text (string \"antenatal\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " antenatal care[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mprop (return slot0) (predicate care) (args (argument (role <ref>) (mention (headword services) (acetype OTH) (regex (regex (re (text (string \"health\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [m]care[0] health services[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate providing) (args (argument (role <obj>) (mention (headword care) (acetype OTH) (regex (regex (re (text (string \"health\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]providing[0] <obj> health care[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword programmes) (acetype OTH) (regex (regex (re (text (string \"therapeutic care\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " therapeutic care programmes[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword services) (acetype OTH) (regex (regex (re (text (string \"trauma\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " trauma services[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword treatment) (acetype OTH) (regex (regex (re (text (string \"hiv\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " hiv treatment[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate treatment) (args (argument (role <ref>) (mention (headword treatment) (acetype OTH))) (argument (role from) (mention (headword facility) (acetype FAC) (regex (regex (re (text (string \"a health\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [n]treatment[0] from a health facility[FAC] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword assistance) (acetype OTH) (regex (regex (re (text (string \"health\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " health assistance[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword programs) (acetype OTH) (regex (regex (re (text (string \"health\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " health programs[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword attention) (acetype OTH) (regex (regex (re (text (string \"medical\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " medical attention[OTH][0]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(mention (return slot0) (headword care) (acetype OTH) (regex (regex (re (text (string \"surgical\"))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " surgical care[OTH][0]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(mention (return slot0) (headword services) (acetype OTH) (regex (regex (re (text (string \"basic health\"))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " basic health services[OTH][0]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword care) (acetype OTH) (regex (regex (re (text (string \"health\"))))))",
-        "toPrettyString" : " health care[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate combating) (args (argument (role <obj>) (mention (headword aids) (acetype OTH) (regex (regex (re (text (string \"hiv /\")))))))))",
-        "toPrettyString" : " [ [v]combating[0] <obj> hiv / aids[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword care) (acetype OTH) (regex (regex (re (text (string \"hiv / aids\"))))))",
-        "toPrettyString" : " hiv / aids care[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword aid) (acetype OTH) (regex (regex (re (text (string \"medical\"))))))",
-        "toPrettyString" : " medical aid[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword care) (acetype OTH) (regex (regex (re (text (string \"antenatal\"))))))",
-        "toPrettyString" : " antenatal care[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword attention) (acetype OTH) (regex (regex (re (text (string \"medical\"))))))",
-        "toPrettyString" : " medical attention[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate combating) (args (argument (role <obj>) (mention (headword aids) (acetype OTH) (regex (regex (re (text (string \"hiv\")))))))))",
-        "toPrettyString" : " [ [v]combating[0] <obj> hiv aids[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate treatment) (args (argument (role <ref>) (mention (headword treatment) (acetype OTH) (regex (regex (re (text (string \"diarrhea\"))))))) (argument (role from) (mention (headword facility) (acetype FAC) (regex (regex (re (text (string \"health\")))))))))",
-        "toPrettyString" : " [ diarrhea [n]treatment[0] from health facility[FAC] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(mention (return slot0) (headword programs) (acetype OTH) (regex (regex (re (text (string \"therapeutic\"))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " therapeutic programs[OTH][0]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword program) (acetype OTH) (regex (regex (re (text (string \"therapeutic\"))))))",
-        "toPrettyString" : " therapeutic program[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword treatment) (acetype OTH) (regex (regex (re (text (string \"hiv\"))))))",
-        "toPrettyString" : " hiv treatment[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate providing) (args (argument (role <sub>) (mention (headword facilities) (acetype FAC) (regex (regex (re (text (string \"health\")))))))))",
-        "toPrettyString" : " [ health facilities[FAC] <sub> [v]providing[0] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword treatment) (acetype OTH) (regex (regex (re (text (string \"medical\"))))))",
-        "toPrettyString" : " medical treatment[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(mention (return slot0) (headword services) (acetype OTH) (regex (regex (re (text (string \"essential and life-saving health care\"))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " essential and life-saving health care services[OTH][0]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword services) (acetype OTH) (regex (regex (re (text (string \"trauma\"))))))",
-        "toPrettyString" : " trauma services[OTH][0]"
+        "toIDString" : "(mention (return slot0) (headword services) (acetype OTH) (regex (regex (re (text (string \"rehabilitation\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " rehabilitation services[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword services) (acetype OTH) (regex (regex (re (text (string \"hiv\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " hiv services[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword program) (acetype OTH) (regex (regex (re (text (string \"health\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " health program[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate provision) (args (argument (role of) (mention (headword services) (acetype OTH) (regex (regex (re (text (string \"health\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [n]provision[0] of health services[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword care) (acetype OTH) (regex (regex (re (text (string \"medical\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " medical care[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword services) (acetype OTH) (regex (regex (re (text (string \"health\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " health services[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword circumcision) (acetype OTH) (regex (regex (re (text (string \"medical\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " medical circumcision[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword programme) (acetype OTH) (regex (regex (re (text (string \"hiv\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " hiv programme[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword help) (acetype OTH) (regex (regex (re (text (string \"medical\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " medical help[OTH][0]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(mention (return slot0) (headword services) (acetype OTH) (regex (regex (re (text (string \"healthcare\"))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " healthcare services[OTH][0]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate treatment) (args (argument (role <ref>) (mention (headword treatment) (acetype OTH) (regex (regex (re (text (string \"diarrhea\"))))))) (argument (role from) (mention (headword facility) (acetype FAC) (regex (regex (re (text (string \"a health\")))))))))",
-        "toPrettyString" : " [ diarrhea [n]treatment[0] from a health facility[FAC] ]"
+        "toIDString" : "(mention (return slot0) (headword care) (acetype OTH) (regex (regex (re (text (string \"basic health\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " basic health care[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate treatment) (args (argument (role <ref>) (mention (headword treatment) (acetype OTH) (regex (regex (re (text (string \"diarrhea\"))))))) (argument (role from) (mention (headword facility) (acetype FAC) (regex (regex (re (text (string \"health\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ diarrhea [n]treatment[0] from health facility[FAC] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword circumcision) (acetype OTH) (regex (regex (re (text (string \"voluntary medical male\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " voluntary medical male circumcision[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword programs) (acetype OTH) (regex (regex (re (text (string \"therapeutic feeding\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " therapeutic feeding programs[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword care) (acetype OTH) (regex (regex (re (text (string \"hiv / aids\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " hiv / aids care[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mprop (return slot0) (predicate aid) (args (argument (role <ref>) (mention (headword group) (acetype ORG) (regex (regex (re (text (string \"medical\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [m]aid[0] medical group[ORG] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mprop (return slot0) (predicate care) (args (argument (role <ref>) (mention (headword programmes) (acetype OTH) (regex (regex (re (text (string \"therapeutic care\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ therapeutic [m]care[0] programmes[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword care) (acetype OTH) (regex (regex (re (text (string \"obstetric\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " obstetric care[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword services) (acetype OTH) (regex (regex (re (text (string \"health care\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " health care services[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate treatment) (args (argument (role from) (mention (headword facility) (acetype FAC) (regex (regex (re (text (string \"a health\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [n]treatment[0] from a health facility[FAC] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword therapy) (acetype OTH) (regex (regex (re (text (string \"anti-retroviral\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " anti-retroviral therapy[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate treatment) (args (argument (role <ref>) (mention (headword treatment) (acetype OTH))) (argument (role from) (mention (headword facility) (acetype FAC) (regex (regex (re (text (string \"health\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [n]treatment[0] from health facility[FAC] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword services) (acetype OTH) (regex (regex (re (text (string \"free medical\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " free medical services[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mprop (return slot0) (predicate trauma) (args (argument (role <ref>) (mention (headword services) (acetype OTH) (regex (regex (re (text (string \"trauma\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [m]trauma[0] services[OTH] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(mention (return slot0) (headword provision) (acetype OTH) (regex (regex (re (text (string \"health\"))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " health provision[OTH][0]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(mention (return slot0) (headword rehabilitation) (acetype OTH) (regex (regex (re (text (string \"health\"))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " health rehabilitation[OTH][0]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword treatments) (acetype OTH) (regex (regex (re (text (string \"health\"))))))",
-        "toPrettyString" : " health treatments[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword programmes) (acetype OTH) (regex (regex (re (text (string \"therapeutic\"))))))",
-        "toPrettyString" : " therapeutic programmes[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword therapy) (acetype OTH) (regex (regex (re (text (string \"anti-retroviral\"))))))",
-        "toPrettyString" : " anti-retroviral therapy[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword interventions) (acetype OTH) (regex (regex (re (text (string \"hiv\"))))))",
-        "toPrettyString" : " hiv interventions[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword services) (acetype OTH) (regex (regex (re (text (string \"hiv\"))))))",
-        "toPrettyString" : " hiv services[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword services) (acetype OTH) (regex (regex (re (text (string \"health care\"))))))",
-        "toPrettyString" : " health care services[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword care) (acetype OTH) (regex (regex (re (text (string \"primary health\"))))))",
-        "toPrettyString" : " primary health care[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(mprop (return slot0) (predicate care) (args (argument (role <ref>) (mention (headword services) (acetype OTH) (regex (regex (re (text (string \"essential and life-saving health care\")))))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " [ essential and life-saving health [m]care[0] services[OTH] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword circumcision) (acetype OTH) (regex (regex (re (text (string \"medical\"))))))",
-        "toPrettyString" : " medical circumcision[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword services) (acetype OTH) (regex (regex (re (text (string \"health\"))))))",
-        "toPrettyString" : " health services[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mprop (return slot0) (predicate care) (args (argument (role <ref>) (mention (headword programmes) (acetype OTH) (regex (regex (re (text (string \"therapeutic care\")))))))))",
-        "toPrettyString" : " [ therapeutic [m]care[0] programmes[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword programme) (acetype OTH) (regex (regex (re (text (string \"therapeutic\"))))))",
-        "toPrettyString" : " therapeutic programme[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mprop (return slot0) (predicate care) (args (argument (role <ref>) (mention (headword services) (acetype OTH) (regex (regex (re (text (string \"health care\")))))))))",
-        "toPrettyString" : " [ health [m]care[0] services[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword programme) (acetype OTH) (regex (regex (re (text (string \"hiv\"))))))",
-        "toPrettyString" : " hiv programme[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate providing) (args (argument (role <obj>) (mention (headword care) (acetype OTH) (regex (regex (re (text (string \"health\")))))))))",
-        "toPrettyString" : " [ [v]providing[0] <obj> health care[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword care) (acetype OTH) (regex (regex (re (text (string \"hiv\"))))))",
-        "toPrettyString" : " hiv care[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate treatment) (args (argument (role <ref>) (mention (headword treatment) (acetype OTH))) (argument (role from) (mention (headword facility) (acetype FAC) (regex (regex (re (text (string \"health\")))))))))",
+        "toIDString" : "(nprop (return slot0) (predicate treatment) (args (argument (role from) (mention (headword facility) (acetype FAC) (regex (regex (re (text (string \"health\")))))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " [ [n]treatment[0] from health facility[FAC] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword programs) (acetype OTH) (regex (regex (re (text (string \"therapeutic feeding\"))))))",
-        "toPrettyString" : " therapeutic feeding programs[OTH][0]"
+        "toIDString" : "(mention (return slot0) (headword assistance) (acetype OTH) (regex (regex (re (text (string \"medical\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " medical assistance[OTH][0]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword help) (acetype OTH) (regex (regex (re (text (string \"medical\"))))))",
-        "toPrettyString" : " medical help[OTH][0]"
+        "toIDString" : "(mention (return slot0) (headword care) (acetype OTH) (regex (regex (re (text (string \"hiv\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " hiv care[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate providing) (args (argument (role <sub>) (mention (headword facilities) (acetype FAC) (regex (regex (re (text (string \"health\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ health facilities[FAC] <sub> [v]providing[0] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mprop (return slot0) (predicate rehabilitation) (args (argument (role <ref>) (mention (headword services) (acetype OTH) (regex (regex (re (text (string \"rehabilitation\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [m]rehabilitation[0] services[OTH] ]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(mention (return slot0) (headword consultations) (acetype OTH) (regex (regex (re (text (string \"medical\"))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " medical consultations[OTH][0]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mprop (return slot0) (predicate emergency) (args (argument (role <ref>) (mention (headword response) (acetype OTH) (regex (regex (re (text (string \"health\")))))))))",
-        "toPrettyString" : " [ [m]emergency[0] health response[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword care) (acetype OTH) (regex (regex (re (text (string \"therapeutic\"))))))",
-        "toPrettyString" : " therapeutic care[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword care) (acetype OTH) (regex (regex (re (text (string \"obstetric\"))))))",
-        "toPrettyString" : " obstetric care[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword coverage) (acetype OTH) (regex (regex (re (text (string \"health\"))))))",
-        "toPrettyString" : " health coverage[OTH][0]"
+        "toIDString" : "(mention (return slot0) (headword treatments) (acetype OTH) (regex (regex (re (text (string \"medical\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " medical treatments[OTH][0]"
       } ] ] ],
       "valList" : [ "java.util.ArrayList", [ [ "com.bbn.akbc.neolearnit.scoring.scores.PatternScore", {
         "precision" : 0.95,
@@ -248,6 +319,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -275,6 +347,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -302,6 +375,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -329,6 +403,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -356,6 +431,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -383,6 +459,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -410,6 +487,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -420,7 +498,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 8,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -437,6 +515,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -464,6 +543,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -491,6 +571,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -518,6 +599,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -545,6 +627,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -572,6 +655,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -599,6 +683,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -626,6 +711,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -653,6 +739,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -680,6 +767,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -707,6 +795,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -734,6 +823,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -744,7 +834,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 7,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -761,6 +851,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -788,6 +879,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -815,6 +907,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -842,6 +935,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -869,6 +963,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -896,6 +991,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -923,6 +1019,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -950,6 +1047,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -977,6 +1075,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1004,6 +1103,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1031,6 +1131,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1058,6 +1159,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1085,6 +1187,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1112,6 +1215,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1139,6 +1243,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1166,6 +1271,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1193,6 +1299,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1220,6 +1327,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1247,6 +1355,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1274,6 +1383,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1301,6 +1411,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1328,6 +1439,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1355,6 +1467,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1382,6 +1495,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1409,6 +1523,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1436,6 +1551,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1463,6 +1579,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1490,6 +1607,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1517,6 +1635,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1544,6 +1663,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1571,6 +1691,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1598,6 +1719,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1625,6 +1747,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1652,6 +1775,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1679,6 +1803,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1706,6 +1831,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1733,6 +1859,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1760,6 +1887,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1787,6 +1915,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1814,6 +1943,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1824,7 +1954,7 @@
         "confidenceFromSimilarity" : 0.0,
         "confidenceNumerator" : 0.0,
         "confidenceDenominator" : 0.0,
-        "frequency" : 6,
+        "frequency" : 0,
         "knownFrequency" : 0,
         "seedFrequency" : 0,
         "knownSeedFrequency" : 0,
@@ -1841,6 +1971,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1868,6 +1999,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1895,6 +2027,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1922,6 +2055,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1949,6 +2083,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -1976,6 +2111,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2003,6 +2139,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2030,6 +2167,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2057,6 +2195,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2084,6 +2223,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2111,6 +2251,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2138,6 +2279,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -2357,7 +2499,7 @@
         "value" : 70
       } ] ] ]
     } ],
-    "iteration" : 42
+    "iteration" : 45
   } ],
   "tripleScores" : [ "com.bbn.akbc.neolearnit.scoring.tables.TripleScoreTable", {
     "data" : [ "com.bbn.akbc.neolearnit.storage.EfficientMapDataStore", {
@@ -2367,34 +2509,10 @@
     } ],
     "iteration" : 0
   } ],
-  "iteration" : 67,
+  "iteration" : 70,
   "goodSeedPrior" : 0.08,
   "totalConfidenceDenominator" : 1000.0,
   "stage" : "initial",
-  "params" : [ "java.util.HashMap", {
-    "aggregated_frequency_filter_pattern_min" : "5",
-    "max_unary_prop_depth" : "1",
-    "languages" : "English",
-    "bert_npz_list" : "/home/hqiu/ld100/Hume_pipeline_int/Hume/expts/wm_dart_bert.060520/bert/bert_npz.list",
-    "linux_queue" : "nongale-sl6",
-    "serif_data" : "#Set this to your SERIF data checkout e.g. /nfs/mercury-04/u60/DEFT/users/msrivast/Active/Data/SERIF/",
-    "bootstrap_serifxml_list" : "/d4m/ears/expts/47922.generic_event.v1/expts/hume_test.040120.wm.v1/learnit_decoder/learnit/learnit_decoder.list",
-    "corpus_name" : "wm_dart382.090920",
-    "loader_concurrency" : "5",
-    "domain_root" : "/home/hqiu/ld100/learnit_wm_entity/inputs/domains/WM",
-    "aggregated_frequency_filter_pattern_max" : "-1",
-    "max_regexp_pattern_words" : "5",
-    "learnit_expt_suffix" : "default",
-    "use_human_label" : "false",
-    "source_root" : "/home/hqiu/ld100/learnit_wm_entity/neolearnit",
-    "min_seed_frequency_per_batch" : "1",
-    "learnit_data_root" : "/nfs/raid88/u10/users/hqiu/learnit_data/wm_dart382.090920",
-    "max_binary_prop_depth" : "2",
-    "learnit_root" : "/home/hqiu/ld100/learnit_wm_entity",
-    "queue_priority" : "5",
-    "min_pattern_frequency_per_batch" : "2",
-    "max_prop_depth" : "2",
-    "stopwords" : "/home/hqiu/ld100/learnit_wm_entity/inputs/resources/stopwords/english_causal_relationships.txt"
-  } ],
+  "params" : null,
   "experimentName" : "default"
 } ]

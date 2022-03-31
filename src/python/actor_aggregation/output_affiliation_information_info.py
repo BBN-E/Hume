@@ -6,7 +6,7 @@
 
 
 import pickle, pg8000
-import os, sys, codecs, unidecode, operator
+import os, sys, codecs, operator
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'knowledge_base'))
 

@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # common routines for making release/sandbox
 # SCRIPT VERSION: 2018-12-04
 # 2018-12-04: fix typo
@@ -6,6 +7,8 @@
 set -e
 set -o pipefail
 set -u
+
+export PATH="/opt/git-2.29.2/bin:$PATH"
 
 if ! git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
     echo "$script_dir is not inside a git work tree. This script must run from a valid git repository."

@@ -150,8 +150,8 @@ public final class Cluster {
             if (sim.isPresent()) {
               sumSimilarity += sim.get();
             } else {
-              log.error("ERROR: Cluster.calculateCentroid, cannot find similarity between {} {}",
-                  id, otherId);
+//              log.error("ERROR: Cluster.calculateCentroid, cannot find similarity between {} {}",
+//                  id, otherId);
             }
           }
         }
@@ -190,8 +190,8 @@ public final class Cluster {
           if (sim.isPresent()) {
             interSimilarity += sim.get();
           } else {
-            log.error("ERROR: Cluster.groupSimilarity, cannot find similarity between {} {}", id,
-                otherId);
+//            log.error("ERROR: Cluster.groupSimilarity, cannot find similarity between {} {}", id,
+//                otherId);
           }
         }
       }
@@ -213,8 +213,8 @@ public final class Cluster {
             interSimilarity += sim.get();
             count += 1;
           } else {
-            log.error("ERROR: Cluster.groupSimilarity, cannot find similarity between {} {}", id,
-                otherId);
+//            log.error("ERROR: Cluster.groupSimilarity, cannot find similarity between {} {}", id,
+//                otherId);
           }
         } else {
           interSimilarity += 1.0;

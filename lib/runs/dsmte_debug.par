@@ -1,0 +1,76 @@
+
+
+############
+## Pipeline
+############
+job_name: dsmte_debug.030822.1doc.v1
+stages_to_run: cdr-ingestion,serif,learnit-decoder,pyserif_before_pg,pyserif_after_pg,serialization
+mode: WorldModelers
+use_compositional_ontology: true
+
+num_of_batches_global: 1
+max_number_of_tokens_per_sentence: 128
+
+external_ontology_path: /nfs/raid88/u10/users/hqiu_ad/data/wm/ontology_10269353-4545-422d-8a7d-d9be9e9dbfc5_modified.yml
+external_ontology_version: 10269353-4545-422d-8a7d-d9be9e9dbfc5_modified
+use_regrounding_cache: false
+regrounding_cache_path: /nfs/mercury-06/u23/hqiu_ad/wm_cache
+
+################
+# CDR digestion
+################
+input_cdr_list:/nfs/raid88/u10/users/hqiu_ad/raw_corpus/wm/dart.030122.list.1doc
+breaking_point: 10000
+
+
+metadata_file: GENERATED
+########
+# Serif
+########
+serif_input_sgm_list: GENERATED
+serif_input_awake_db: /nfs/raid87/u10/shared/Hume/common/serif/wm_eval_before_060119.sqlite
+serif_fast_mode: true
+
+#######
+## BERT
+########
+bert_input_serifxml_list: GENERATED
+bert_layers: -1
+
+####################################
+## LearnIt  Decoder
+#####################################
+learnit_decoder_input_serifxml_list: GENERATED
+learnit_event_and_event_arg_pattern_dir: DEFAULT
+learnit_unary_entity_pattern_dir: DEFAULT
+learnit_event_event_relation_pattern_dir: DEFAULT
+input_serif_cause_effect_relations_dir:GENERATED
+generic_event_noun_whitelist: GENERATED
+generic_event_blacklist: GENERATED
+
+
+######################
+# PySerif
+######################
+pyserif_before_pg_input_serifxml_list: GENERATED
+pyserif_after_pg_input_serifxml_list: GENERATED
+copyArgumentSentenceWindow: 1
+bert_npz_filelist: GENERATED
+grounding_mode: medium
+
+
+
+
+################
+# Serialization
+################
+serialization_input_awake_db: /nfs/raid87/u10/shared/Hume/common/serif/wm_eval_before_060119.sqlite
+serialization_input_serifxml_list: GENERATED
+serialization_input_trigger_finder_file: NA
+serialization_input_factfinder_json_file: /nfs/mercury-04/u42/bmin/projects/WM/m12/empty.json
+serialization_input_learnit_triple_file: GENERATED
+serialization_input_learnit_event_count_file: GENERATED
+serialization_do_event_uploading: False
+serialization_regrounding_mode: false
+
+dump_extraction: True

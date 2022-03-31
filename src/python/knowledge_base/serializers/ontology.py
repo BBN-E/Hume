@@ -107,13 +107,13 @@ class Ontology:
 
     def __read_yaml(self, parent_to_children_nodes, all_leaf_nodes):
         with open(self.ontology_file_path) as ontology_fp:
-            yaml_ontology = yaml.load(ontology_fp)
+            yaml_ontology = yaml.safe_load(ontology_fp)
             self.__read_tree(yaml_ontology, parent_to_children_nodes, [], all_leaf_nodes)
         return parent_to_children_nodes, all_leaf_nodes
 
     def __read_ttl(self, parent_to_children_nodes, all_leaf_nodes):
         yamlified = self.__yamlify_ontology()
-        yaml_ontology = yaml.load(yamlified)
+        yaml_ontology = yaml.safe_load(yamlified)
         self.__read_tree(yaml_ontology, parent_to_children_nodes, [], all_leaf_nodes)
         return parent_to_children_nodes, all_leaf_nodes
 

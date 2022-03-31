@@ -1,0 +1,23 @@
+# implementations go here
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/ingester/sgm_ingester.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/sentence_splitter/stanza_sentence_splitter.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/stanza_adapter.py
+
+INGESTER SgmIngester
+lang English
+
+SENTENCE_SPLITTING_MODEL StanzaSentenceSplitter
+lang en
+dir +STANZA_MODEL_DIR+
+split_on_newlines
+
+BASE_MODEL StanzaAdapter
+lang en
+dir +STANZA_MODEL_DIR+
+max_tokens 200
+no_ner

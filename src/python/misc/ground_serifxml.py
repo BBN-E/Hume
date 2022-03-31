@@ -1,11 +1,11 @@
-
 import argparse
+import enum
 import io
 import json
+import logging
 import os
 import sys
-import enum
-import logging
+
 logger = logging.getLogger(__name__)
 from collections import defaultdict
 
@@ -42,12 +42,13 @@ class PGEventType(object):
     """
     Duck class for handle event type sources
     """
-    def __init__(self,event_type,score):
+
+    def __init__(self, event_type, score):
         self.event_type = event_type
         self.score = score
 
     def __str__(self):
-        return "{}: {}".format(self.event_type,self.score)
+        return "{}: {}".format(self.event_type, self.score)
 
     def __repr__(self):
         return self.__str__()
@@ -59,7 +60,7 @@ class PGEventType(object):
         ret = list()
         if (serif_event_mention_typing_field
                 == SerifEventMentionTypingField.event_type):
-            ret.append(PGEventType(serif_em.event_type,serif_em.score))
+            ret.append(PGEventType(serif_em.event_type, serif_em.score))
         elif (serif_event_mention_typing_field
               == SerifEventMentionTypingField.event_types):
             for event_type in serif_em.event_types:
@@ -71,12 +72,15 @@ class PGEventType(object):
         return ret
 
 
-
 ONTOLOGIES_REQUIRING_PRE_MAP = {"WM"}
 ONTOLOGIES_REQUIRING_POST_MAP = {"CAUSEEX", "ICM", "BBN"}
 
+
 class SerifXMLGrounder(object):
-    def __init__(self,max_number_of_tokens_per_sentence:int,which_ontology,keywords,stopwords,event_ontology_yaml,internal_ontology_yaml,grounding_mode,embeddings,exemplars,bert_centroids,bert_npz_file_list,n_best:int,only_use_bert_from_root:bool,blacklist,event_mention_typing_field,threshold:float,**kwargs):
+    def __init__(self, max_number_of_tokens_per_sentence: int, which_ontology, keywords, stopwords, event_ontology_yaml,
+                 internal_ontology_yaml, grounding_mode, embeddings, exemplars, bert_centroids, bert_npz_file_list,
+                 n_best: int, only_use_bert_from_root: bool, blacklist, event_mention_typing_field, threshold: float,
+                 **kwargs):
         self.counter = defaultdict(int)
         self.ontology = Ontology()
         self.ontology_mapper = OntologyMapper()
@@ -88,14 +92,15 @@ class SerifXMLGrounder(object):
         self.n_best = n_best
         self.bert_docid_to_npz = None
         if self.which_ontology in ONTOLOGIES_REQUIRING_PRE_MAP:
-            if "compositional" in event_ontology_yaml.lower():
-                root_path = "/wm_compositional/process"  # TODO don't hard-code
-            else:
-                root_path = "/wm/concept/causal_factor"  # TODO don't hard-code
+            root_paths = [  # TODO don't hard-code
+                "/wm/process",
+                "/wm/concept",
+            ]
             kws = utils.read_keywords_from_bbn_annotation(keywords)
             stops = utils.read_stopwords_from_hume_resources(stopwords)
-            self.ontology.load_from_yaml_with_metadata(event_ontology_yaml)
+            self.ontology.load_from_yaml_with_metadata_new(event_ontology_yaml)
             self.ontology_mapper.load_ontology(internal_ontology_yaml)
+            self.ontology_mapper.correct_external_mapping(self.ontology, self.which_ontology, root_paths)
             # bert_function = ontology.add_node_contextual_embeddings_with_mapper
             # bert_function_args = [ontology_mapper, args.which_ontology]
 
@@ -109,7 +114,7 @@ class SerifXMLGrounder(object):
                 # utils.SimilarityMode.COMPARE_MENTION_KEYWORDS_TO_EXEMPLARS_AVG
                 # uses the embeddings associated with wm_metadata.yml file exemplars
                 # --these are currently always static.
-                self.force_entry_points_into_groundings = False
+                self.force_entry_points_into_groundings = True
                 self.grounding_modes = [
                     utils.SimilarityMode.COMPARE_MENTION_KEYWORDS_TO_EXEMPLARS_AVG,
                     utils.SimilarityMode.COMPARE_MENTION_STRING_TO_EXEMPLARS_AVG,
@@ -118,7 +123,7 @@ class SerifXMLGrounder(object):
                 self.ontology.init_embeddings(embeddings)
 
             elif grounding_mode == 'full':
-                self.force_entry_points_into_groundings = False
+                self.force_entry_points_into_groundings = True
                 self.grounding_modes = [
                     utils.SimilarityMode.COMPARE_MENTION_KEYWORDS_TO_EXEMPLARS_AVG,
                     utils.SimilarityMode.COMPARE_MENTION_STRING_TO_EXEMPLARS_AVG,
@@ -128,7 +133,7 @@ class SerifXMLGrounder(object):
             else:
                 raise NotImplementedError("No supported {}".format(grounding_mode))
         else:
-            root_path = None
+            root_paths = []
             kws = {}
             stops = utils.read_stopwords_from_hume_resources(stopwords)
             self.ontology_mapper.load_ontology(event_ontology_yaml)
@@ -181,9 +186,9 @@ class SerifXMLGrounder(object):
             else:
                 raise NotImplementedError("No supported {}".format(grounding_mode))
         logger.info("Mode: {}\nForcing entry points into output: {}\nSimilarity modes: {}"
-              .format(grounding_mode,
-                      self.force_entry_points_into_groundings,
-                      self.grounding_modes))
+                    .format(grounding_mode,
+                            self.force_entry_points_into_groundings,
+                            self.grounding_modes))
 
         self.top_k = self.n_best
         # due to potential for duplication, let's keep extras
@@ -192,7 +197,7 @@ class SerifXMLGrounder(object):
 
         self.grounder = Grounder(self.ontology, self.top_k)
         self.grounder.build_grounder(kws, stops)
-        self.grounder.specify_user_root_path(root_path)
+        self.grounder.specify_user_root_paths(root_paths)
 
         self.remove_zero_score_groundings = False
         if self.only_use_bert_from_root is True:
@@ -209,8 +214,7 @@ class SerifXMLGrounder(object):
 
         self.cache = {}
 
-
-    def process_doc(self,serif_doc):
+    def process_doc(self, serif_doc):
         docid, mentions_and_entry_points, serif_doc = self.read_serifxml_event_mentions(
             serif_doc
         )
@@ -221,7 +225,7 @@ class SerifXMLGrounder(object):
             if len(entry_points) == 0 and len(serifxml_entry_types) > 0:
                 # map blacklisted node without grounding
                 logger.warning("Mapping blacklisted node without grounding.  Scores may "
-                      "be unexpected.")
+                               "be unexpected.")
                 grounded_classes = []
                 for blacklisted_type in serifxml_entry_types:
                     blacklisted_paths = self.ontology_mapper.look_up_external_types(
@@ -283,7 +287,7 @@ class SerifXMLGrounder(object):
                 if self.only_use_bert_from_root is False:
                     if self.which_ontology in ONTOLOGIES_REQUIRING_PRE_MAP:
                         logging.warning("We cannot find external type mappings "
-                              "for {}".format(serifxml_entry_types))
+                                        "for {}".format(serifxml_entry_types))
                         grounded_classes = self.grounder.get_top_k_from_dict(
                             {self.grounder.get_user_root_path(): 0.00001})
 
@@ -306,12 +310,12 @@ class SerifXMLGrounder(object):
                 grounded_classes,
                 mention_candidate,
                 serifxml_entry_types,
-                )
+            )
 
             self.maintain_serif_doc_event_mention(
                 serif_em,
                 grounded_classes,
-                )
+            )
 
     def read_serifxml_event_mentions(
             self,
@@ -323,7 +327,7 @@ class SerifXMLGrounder(object):
         contextual_embeddings = None
         contextual_token_map = None
         if using_bert:
-            if hasattr(serif_doc,"aux") and hasattr(serif_doc.aux,"bert_npz"):
+            if hasattr(serif_doc, "aux") and hasattr(serif_doc.aux, "bert_npz"):
                 contextual_embeddings, contextual_token_map = (utils.truncation_npz(serif_doc.aux.bert_npz))
             else:
                 npz_path = self.bert_docid_to_npz.get(docid)
@@ -337,9 +341,16 @@ class SerifXMLGrounder(object):
 
             for sentence_theory in sentence.sentence_theories:
                 if self.max_number_of_tokens_per_sentence > -1:
-                    if len(sentence_theory.token_sequence) == 0 or len(sentence_theory.token_sequence) > self.max_number_of_tokens_per_sentence:
-                        logger.info("Will not process lengthy sentences docid: {}, sentid: {}, sent: {}".format(docid,sentence_index," ".join(
-                    token.text for token in sentence_theory.token_sequence)))
+                    if len(sentence_theory.token_sequence) == 0 or len(
+                            sentence_theory.token_sequence) > self.max_number_of_tokens_per_sentence:
+                        logger.info("Will not process lengthy sentences docid: {}, sentid: {}, sent: {}".format(docid,
+                                                                                                                sentence_index,
+                                                                                                                " ".join(
+                                                                                                                    token.text
+                                                                                                                    for
+                                                                                                                    token
+                                                                                                                    in
+                                                                                                                    sentence_theory.token_sequence)))
                         continue
                 sentence_string = u" ".join(
                     token.text for token in sentence_theory.token_sequence)
@@ -358,7 +369,7 @@ class SerifXMLGrounder(object):
                         PGEventType.from_serif_event_typing_to_pg_event_type_list(
                             event_mention, self.event_mention_typing_field))
 
-                    #original_score = event_mention.score
+                    # original_score = event_mention.score
 
                     sentence_tokens = list(sentence.token_sequence)
                     mention_start = int(event_mention.semantic_phrase_start)
@@ -408,7 +419,7 @@ class SerifXMLGrounder(object):
 
         return docid, mentions, serif_doc
 
-    def maintain_serif_doc_event_mention(self,serif_em,
+    def maintain_serif_doc_event_mention(self, serif_em,
                                          grounded_classes,
                                          ):
         assert isinstance(serif_em, serifxml3.EventMention)
@@ -438,16 +449,14 @@ class SerifXMLGrounder(object):
         else:
             raise NotImplementedError
 
-
-    def add_groundings_to_cache(self,groundings, mc, entry_types):
+    def add_groundings_to_cache(self, groundings, mc, entry_types):
         cache_key = utils.get_legacy_cache_key(
             mc,
             sorted([et.event_type for et in entry_types]),
             self.grounder.get_ontology().get_root().get_name())
         self.cache[cache_key] = groundings
 
-
-    def dump_cache(self,output):
+    def dump_cache(self, output):
 
         # print json.dumps(cache, indent=4, sort_keys=True, cls=ComplexEncoder)
         if output is not None:
@@ -461,10 +470,11 @@ class SerifXMLGrounder(object):
                     for grounding, score in self.cache.get(cache_key, []):
                         f.write(u'\t{}\t{}\n'.format(grounding, score))
 
-    def write_serifxmls(self,output_serifxml_dir, doc):
+    def write_serifxmls(self, output_serifxml_dir, doc):
         if output_serifxml_dir.lower() != "none":
             os.makedirs(output_serifxml_dir, exist_ok=True)
-            doc.save(os.path.join(output_serifxml_dir,"{}.xml".format(doc.docid)))
+            doc.save(os.path.join(output_serifxml_dir, "{}.xml".format(doc.docid)))
+
 
 def str2bool(v):
     """
@@ -481,6 +491,7 @@ def str2bool(v):
     else:
         raise argparse.ArgumentTypeError('Boolean value expected.')
 
+
 def main():
     arg_parser = argparse.ArgumentParser()
     arg_parser.add_argument("--event_ontology_yaml")
@@ -492,16 +503,16 @@ def main():
     arg_parser.add_argument("--which_ontology")
     arg_parser.add_argument("--threshold", type=float)
     arg_parser.add_argument("--n_best", type=int, default=5)
-    arg_parser.add_argument("--max_number_of_tokens_per_sentence",type=int,default=-1)
+    arg_parser.add_argument("--max_number_of_tokens_per_sentence", type=int, default=-1)
     arg_parser.add_argument("--serifxmls")
     arg_parser.add_argument("--bert_centroids", default="NONE")
     arg_parser.add_argument("--bert_npz_file_list", default="NONE")
     arg_parser.add_argument("--blacklist", default="NONE")
     arg_parser.add_argument('--output', nargs='?', default=None)
-    arg_parser.add_argument('--only_use_bert_from_root', default=False,const=True,type=str2bool,nargs='?')
+    arg_parser.add_argument('--only_use_bert_from_root', default=False, const=True, type=str2bool, nargs='?')
     arg_parser.add_argument('--grounding_mode', default="full", choices=["full", "fast", "medium"])
-    arg_parser.add_argument('--event_mention_typing_field',type=str,required=True)
-    arg_parser.add_argument('--output_serifxml_dir',type=str,default="NONE")
+    arg_parser.add_argument('--event_mention_typing_field', type=str, required=True)
+    arg_parser.add_argument('--output_serifxml_dir', type=str, default="NONE")
     args = arg_parser.parse_args()
 
     serifxml_grounder = SerifXMLGrounder(**args.__dict__)
@@ -514,9 +525,41 @@ def main():
     for serifxml in serifxmls:
         serif_doc = serifxml3.Document(serifxml)
         serifxml_grounder.process_doc(serif_doc)
-        serifxml_grounder.write_serifxmls(args.output_serifxml_dir,serif_doc)
+        serifxml_grounder.write_serifxmls(args.output_serifxml_dir, serif_doc)
     serifxml_grounder.dump_cache(args.output)
 
 
+def debug_function():
+    logging.basicConfig(level=logging.INFO)
+    # event_ontology_yaml = "/d4m/nlp/releases/Hume/R2021_03_15/resource/dependencies/probabilistic_grounding/WM_Ontologies//CompositionalOntology_metadata.yml"
+    wm_gitlab_mirror_root = "/nfs/raid88/u10/users/hqiu_ad/repos/Ontologies/"
+    file_root = os.path.join(wm_gitlab_mirror_root, 'CompositionalOntology_metadata.yml')
+    ontology = Ontology()
+    ontology.load_from_yaml_with_metadata_new(file_root)
+
+def dfs_visit_external_ontology(ontology_root,current_stack):
+    examplers = set(ontology_root.get_exemplars_with_weights())
+    current_stack.append(ontology_root.get_name())
+    logging.debug("{}: {}".format("/".join(current_stack), examplers))
+    for child in ontology_root.get_children():
+        dfs_visit_external_ontology(child,current_stack)
+    current_stack.pop()
+
+def debug_function2():
+    logging.basicConfig(level=logging.INFO)
+    internal_ontology_path = "/nfs/raid88/u10/users/hqiu_ad/repos/Hume/resource/ontologies/internal/hume/compositional_event_ontology.yaml"
+    external_ontology_path = "/nfs/raid88/u10/users/hqiu_ad/data/wm/ontology_49277ea4-7182-46d2-ba4e-87800ee5a315.yml"
+    # external_ontology_path = "/home/hqiu/Downloads/ontology_after.yml"
+    ontology_mapper = OntologyMapper()
+    ontology_mapper.load_ontology(internal_ontology_path)
+    ontology = Ontology()
+    ontology.load_from_yaml_with_metadata_new(external_ontology_path)
+    ontology_mapper.correct_external_mapping(ontology, "WM", [  # TODO don't hard-code
+        "/wm/process",
+        "/wm/concept",
+    ])
+    dfs_visit_external_ontology(ontology.root,[])
+
+
 if __name__ == "__main__":
-    main()
+    debug_function2()

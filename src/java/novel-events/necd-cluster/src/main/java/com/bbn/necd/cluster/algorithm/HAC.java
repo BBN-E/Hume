@@ -5,10 +5,7 @@ import com.bbn.necd.cluster.common.ClusterMember;
 import com.bbn.necd.common.metric.MemberSimilarity;
 
 import com.google.common.base.Optional;
-import com.google.common.collect.HashBasedTable;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Sets;
-import com.google.common.collect.Table;
+import com.google.common.collect.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,6 +29,9 @@ public final class HAC {
   }
 
   public static double calculateAverageGroupSimilarity(final int clusterSize, final double groupSimilarity) {
+    if (clusterSize == 1) {
+      return 1.0;
+    }
     return ( ( 1.0/(double) ((clusterSize)*(clusterSize-1)) ) * groupSimilarity );
   }
 
@@ -71,24 +71,25 @@ public final class HAC {
     return ret.build();
   }
 
-  public ImmutableList<String> getHACStructure() {
-    final ImmutableList.Builder<String> ret = ImmutableList.builder();
+  public ImmutableSet<String> getHACStructure() {
+    final ImmutableSet.Builder<String> ret = ImmutableSet.builder();
 
     if(rootCluster.isPresent()) {
-      ret.add(rootCluster.get().getId().asString());
-      ret.addAll(getHACSubStructures(rootCluster.get(), rootCluster.get().getId().asString()));
+//      ret.add(rootCluster.get().getId().asString());
+      ret.addAll(getHACSubStructures(rootCluster.get(), "root"));
     }
 
     return ret.build();
   }
 
-  private ImmutableList<String> getHACSubStructures(final Cluster parent, String pathSoFar) {
-    final ImmutableList.Builder<String> ret = ImmutableList.builder();
+  private ImmutableSet<String> getHACSubStructures(final Cluster parent, String pathSoFar) {
+    final ImmutableSet.Builder<String> ret = ImmutableSet.builder();
 
     for(final Cluster child : parent.getChildrenClusters()) {
-      ret.add(pathSoFar + "." + child.getId().asString());
+      ret.add(pathSoFar + "->" + child.getId().asString());
       if(child.getChildrenClusters().size() > 0) {
-        ret.addAll(getHACSubStructures(child, pathSoFar + "." + child.getId().asString()));
+//        ret.addAll(getHACSubStructures(child, pathSoFar + "->" + child.getId().asString()));
+        ret.addAll(getHACSubStructures(child, child.getId().asString()));
       }
     }
 
@@ -100,7 +101,7 @@ public final class HAC {
   public Optional<Cluster> getClusterWithMaxCohesion() {
     final ImmutableList<Cluster> clusters = getAllClusters();
 
-    double maxCohesion = 0;
+    double maxCohesion = -1;
     Cluster maxCluster = null;
     for(final Cluster cluster : clusters) {
       final double cohesion = cluster.getCohesion();

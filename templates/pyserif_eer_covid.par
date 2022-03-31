@@ -1,0 +1,13 @@
+# implementations go here
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/ingester/serifxml_ingester.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/nlplingo_decoder.py
+
+INGESTER SerifxmlIngester
+
+BASE_MODEL NLPLingoDecoder
+params_path +hume_root+/templates/nlplingo_decode.eer.json
+max_number_of_tokens_per_sentence +max_number_of_tokens_per_sentence+

@@ -3,7 +3,7 @@ from knowledge_base import KnowledgeBase
 from resolvers.kb_resolver import KBResolver
 from resolvers.utilities.awake_db import AwakeDB
 
-import codecs, unidecode, os, re
+import codecs, os, re
 
 class AdditionalAffiliationResolver(KBResolver):
     cameo_code_re = re.compile(r"\w\w\w")

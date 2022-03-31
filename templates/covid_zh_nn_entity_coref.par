@@ -1,0 +1,26 @@
+# implementations go here
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/ingester/serifxml_ingester.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/mention_coreference/entity_coreference_cleaner.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/mention_coreference/uw_coref_model.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/mention_coreference/simple_entity_model.py
+
+
+INGESTER SerifxmlIngester
+
+MENTION_COREF_MODEL EntityCoreferenceCleaner
+
+MENTION_COREF_MODEL UWCoreferenceModel
+lang chinese
+model_name train_chinese_bert_base_epoch_30_max_train_sentence_11
+config_file_path /nfs/raid88/u10/users/bmin-ad/Repo/coref/experiments.conf
+vocab_file /nfs/raid88/u10/users/bmin-ad/Repo/coref/data_gigabertv4_lowercase/multi_cased_L-12_H-768_A-12/vocab.txt
+
+MENTION_COREF_MODEL SimpleEntityModel

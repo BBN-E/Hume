@@ -1042,9 +1042,6 @@ if (exists $stages{"pyserif"}) {
             "$hume_repo_root/resource/event_consolidation/causeex" :
             "$hume_repo_root/resource/event_consolidation/wm";
 
-        my $dc_template = $mode eq "CauseEx" ?
-            "pyserif_main_cx.par" :
-            "pyserif_main_wm.par";
 
         # my $dc_template = "pyserif_eer.par";
 
@@ -1103,7 +1100,7 @@ if (exists $stages{"pyserif"}) {
         else {
             $internal_ontology_yaml = $event_ontology;
             $event_ontology = "$external_ontology_dir/wm_flat_metadata.yml";
-            $grounding_blacklist = "$external_dependencies_root/wm/wm.blacklist.interventions_20200305.json";
+            $grounding_blacklist = "$external_dependencies_root/wm/wm.blacklist.interventions_20210315.json";
             $pendingflip = "$hume_repo_root/resource/event_consolidation/wm/pending_flip_typelist.json";
         }
 

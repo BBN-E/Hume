@@ -16,7 +16,9 @@ public class StandaloneGenericEventPruner implements DocumentResolver, Resolver 
     static Set<String> genericTypes = Sets.newHashSet(
             "http://ontology.causeex.com/ontology/odps/Event#Event",
             "http://ontology.causeex.com/ontology/odps/ICM#Factor",
-            "/wm/concept/causal_factor"
+            "/wm/concept/causal_factor",
+            "/wm/process",
+            "/wm/concept"
     );
     @Override
     public DocTheory resolve(DocTheory dt) {

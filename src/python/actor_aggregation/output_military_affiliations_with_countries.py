@@ -6,7 +6,7 @@
 
 
 import pg8000
-import os, sys, codecs, unidecode, operator
+import os, sys, codecs, operator
 
 blacklist = []
 actor_id_to_iso_code = dict()

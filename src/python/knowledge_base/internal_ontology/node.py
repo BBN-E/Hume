@@ -1,8 +1,8 @@
 
-try:
-    from internal_ontology import utility
-except ImportError:
-    from knowledge_base.internal_ontology import utility
+
+from internal_ontology import utility
+# except ImportError:
+#     from knowledge_base.internal_ontology import utility
 
 
 class Node(object):

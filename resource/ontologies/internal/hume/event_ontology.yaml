@@ -803,119 +803,119 @@
         - {_description: NA}
         - _examples: [NA]
         - ProvideLivestockProduction:
-          - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/livestock_production']
+          - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/livestock_production_inputs']
           - {_description: NA}
           - _examples: [NA]
           - LivestockDestocking:
-            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/livestock_production']
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/livestock_production_inputs']
             - {_description: NA}
             - _examples: [NA]
           - LivestockRestocking:
-            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/livestock_production']
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/livestock_production_inputs']
             - {_description: NA}
             - _examples: [NA]
           - ProvideLivestockFeed:
             - _source: [
               NN,
               'HUME: /event/intervention/provide humanitarian resources/provide livestock feed',
-              'WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/livestock_production/livestock_feed']
+              'WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/livestock_production_inputs/livestock_feed']
             - {_description: NA}
             - _examples: [NA]
           - ProvideVeterinaryService:
             - _source: [
               NN,
               'HUME: /event/intervention/provide humanitarian resources/provide veterinary service',
-              'WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/livestock_production/veterinary_services']
+              'WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/livestock_production_inputs/veterinary_services']
             - {_description: NA}
             - _examples: [NA]
           - ProvisionOfWaterForLivestock:
-            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/livestock_production/livestock_watering']
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/livestock_production_inputs/livestock_watering']
             - {_description: NA}
             - _examples: [NA]
         - ProvideCropProduction:
-          - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production']
+          - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production_equipment']
           - {_description: NA}
           - _examples: [NA]
           - ProvideFarmingTool:
             - _source: [
                 NN,
                 'HUME: /event/intervention/provide humanitarian resources/provide farming tool',
-                'WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/farm_equipment']
+                'WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production_equipment/farm_equipment']
             - {_description: NA}
             - _examples: [NA]
           - ProvideHarvestingEquipment:
-            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/harvesting_equipment']
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production_equipment/harvesting_equipment']
             - {_description: NA}
             - _examples: [NA]
           - ProvideIrrigation:
-            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/irrigation']
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production_equipment/irrigation_equipment']
             - {_description: NA}
             - _examples: [NA]
             - ProvideWaterSource:
-              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/irrigation/water_source']
+              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production_equipment/irrigation_equipment/water_source']
               - {_description: NA}
               - _examples: [NA]
             - ProvidePumps:
-              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/irrigation/pumps']
+              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production_equipment/irrigation_equipment/pumps']
               - {_description: NA}
               - _examples: [NA]
             - ProvideFieldIrrigation:
-              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/irrigation/field_irrigation']
+              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production_equipment/irrigation_equipment/field_irrigation']
               - {_description: NA}
               - _examples: [NA]
           - ProvideSoilInputs:
-            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/soil_inputs']
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production_equipment/soil_inputs']
             - {_description: NA}
             - _examples: [NA]
             - ProvideFertilizer:
-              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/soil_inputs/fertilizer']
+              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production_equipment/soil_inputs/fertilizer']
               - {_description: NA}
               - _examples: [NA]
             - FertilizerSubsidy:
-              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/soil_inputs/fertilizer_subsidy']
+              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production_equipment/soil_inputs/fertilizer_subsidy']
               - {_description: NA}
               - _examples: [NA]
           - ProvideSeed:
             - _source: [
               NN,
               'HUME: /event/intervention/provide humanitarian resources/provide seed',
-              'WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/seed']
+              'WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production_equipment/seed']
             - {_description: NA}
             - _examples: [NA]
           - ProvideWeedPestControl:
-            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/weed_pest_control']
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production_equipment/weed_pest_control']
             - {_description: NA}
             - _examples: [NA]
             - LocustControlOperation:
-              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/weed_pest_control']
+              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production_equipment/weed_pest_control']
               - {_description: NA}
               - _examples: [NA]
             - ProvideBiologicalControl:
-              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/weed_pest_control/biological']
+              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production_equipment/weed_pest_control/biological']
               - {_description: NA}
               - _examples: [NA]
             - ProvideChemicalControl:
-              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/weed_pest_control/chemical']
+              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production_equipment/weed_pest_control/chemical']
               - {_description: NA}
               - _examples: [NA]
             - ProvideOrganicControl:
-              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production/weed_pest_control/organic']
+              - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/crop_production_equipment/weed_pest_control/organic']
               - {_description: NA}
               - _examples: [NA]
         - ProvidePostHarvest:
-          - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/post_harvest']
+          - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/post_harvest_inputs']
           - {_description: NA}
           - _examples: [NA]
           - ProvideProcessingEquipment:
-            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/post_harvest/processing_equipment']
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/post_harvest_inputs/processing_equipment']
             - {_description: NA}
             - _examples: [NA]
           - ProvidePackaging:
-            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/post_harvest/packaging']
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/post_harvest_inputs/packaging']
             - {_description: NA}
             - _examples: [NA]
           - ProvideWarehousing:
-            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/post_harvest/warehousing']
+            - _source: ['WM: /wm/concept/causal_factor/interventions/provide/agriculture_inputs/post_harvest_inputs/warehousing']
             - {_description: NA}
             - _examples: [NA]
       - InformationServices:
@@ -1266,35 +1266,35 @@
         - {_description: NA}
         - _examples: [NA]
         - BuildLivestockProduction:
-          - _source: ['WM: /wm/concept/causal_factor/interventions/build/agriculture_infrastructure/livestock_production']
+          - _source: ['WM: /wm/concept/causal_factor/interventions/build/agriculture_infrastructure/livestock_production_infrastructure']
           - {_description: NA}
           - _examples: [NA]
           - LivestockShelterAndSettlement:
-            - _source: ['WM: /wm/concept/causal_factor/interventions/build/agriculture_infrastructure/livestock_production/livestock_shelter']
+            - _source: ['WM: /wm/concept/causal_factor/interventions/build/agriculture_infrastructure/livestock_production_infrastructure/livestock_shelter']
             - {_description: NA}
             - _examples: [NA]
         - BuildCropProduction:
-          - _source: ['WM: /wm/concept/causal_factor/interventions/build/agriculture_infrastructure/crop_production']
+          - _source: ['WM: /wm/concept/causal_factor/interventions/build/agriculture_infrastructure/crop_production_infrastructure']
           - {_description: NA}
           - _examples: [NA]
           - BuildIrrigationInfrastructure:
-            - _source: ['WM: /wm/concept/causal_factor/interventions/build/agriculture_infrastructure/crop_production/irrigation_infrastructure']
+            - _source: ['WM: /wm/concept/causal_factor/interventions/build/agriculture_infrastructure/crop_production_infrastructure/irrigation_infrastructure']
             - {_description: NA}
             - _examples: [NA]
             - RehabilitationOfIrrigationSchemes:
-              - _source: ['WM: /wm/concept/causal_factor/interventions/build/agriculture_infrastructure/crop_production/irrigation_infrastructure']
+              - _source: ['WM: /wm/concept/causal_factor/interventions/build/agriculture_infrastructure/crop_production_infrastructure/irrigation_infrastructure']
               - {_description: NA}
               - _examples: [NA]
           - BuildExtensionOffices:
-            - _source: ['WM: /wm/concept/causal_factor/interventions/build/agriculture_infrastructure/crop_production/extension_offices']
+            - _source: ['WM: /wm/concept/causal_factor/interventions/build/agriculture_infrastructure/crop_production_infrastructure/extension_offices']
             - {_description: NA}
             - _examples: [NA]
           - BuildGreenhouse:
-            - _source: ['WM: /wm/concept/causal_factor/interventions/build/agriculture_infrastructure/crop_production/greenhouse']
+            - _source: ['WM: /wm/concept/causal_factor/interventions/build/agriculture_infrastructure/crop_production_infrastructure/greenhouse']
             - {_description: NA}
             - _examples: [NA]
           - BuildPostHarvest:
-            - _source: ['WM: /wm/concept/causal_factor/interventions/build/agriculture_infrastructure/crop_production/post_harvest']
+            - _source: ['WM: /wm/concept/causal_factor/interventions/build/agriculture_infrastructure/crop_production_infrastructure/post_harvest_infrastructure']
             - {_description: NA}
             - _examples: [NA]
       - BuildTradeInfrastructure:
@@ -1571,7 +1571,7 @@
           - {_description: NA}
           - _examples: [NA]
       - SecureNaturalResources:
-        - _source: ['WM: /wm/concept/causal_factor/interventions/secure/natural_resources']
+        - _source: ['WM: /wm/concept/causal_factor/interventions/secure/secure_natural_resources']
         - {_description: NA}
         - _examples: [NA]
       - SecureCulturalResources:

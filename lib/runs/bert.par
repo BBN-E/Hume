@@ -1,3 +1,4 @@
+
 ############
 ## Pipeline
 ############
@@ -5,6 +6,7 @@ job_name: bert_test.091820.after.v6
 
 stages_to_run: bert
 mode: CauseEx
+
 
 num_of_batches_global: 1
 max_number_of_tokens_per_sentence: 512

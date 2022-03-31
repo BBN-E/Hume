@@ -6,64 +6,82 @@
       "valList" : [ "java.util.ArrayList", [ ] ],
       "entries" : [ "java.util.ArrayList", [ ] ]
     } ],
-    "iteration" : 56
+    "iteration" : 59
   } ],
   "patternScores" : [ "com.bbn.akbc.neolearnit.scoring.tables.PatternScoreTable", {
     "data" : [ "com.bbn.akbc.neolearnit.storage.EfficientMapDataStore", {
       "keyList" : [ "java.util.ArrayList", [ [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate construction) (args (argument (role <ref>) (mention (headword construction) (acetype OTH))) (argument (role of) (mention (headword project) (acetype OTH) (regex (regex (re (text (string \"road\")))))))))",
-        "toPrettyString" : " [ [n]construction[0] of road project[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate construction) (args (argument (role <ref>) (mention (headword construction) (acetype OTH))) (argument (role of) (mention (headword line) (acetype OTH) (regex (regex (re (text (string \"railway\")))))))))",
-        "toPrettyString" : " [ [n]construction[0] of railway line[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate engaged) (args (argument (role <obj>) (mention (headword company) (acetype ORG))) (argument (role in) (mention (headword construction) (acetype OTH) (regex (regex (re (text (string \"road\")))))))))",
-        "toPrettyString" : " [ [v]engaged[0] in road construction[OTH] <obj> company[ORG] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mprop (return slot0) (predicate construction) (args (argument (role <ref>) (mention (headword projects) (acetype OTH) (regex (regex (re (text (string \"road\")))))))))",
-        "toPrettyString" : " [ [m]construction[0] road projects[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate construction) (args (argument (role of) (mention (headword line) (acetype OTH) (regex (regex (re (text (string \"railway\")))))))))",
-        "toPrettyString" : " [ [n]construction[0] of railway line[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mprop (return slot0) (predicate construction) (args (argument (role <ref>) (mention (headword project) (acetype OTH) (regex (regex (re (text (string \"road\")))))))))",
-        "toPrettyString" : " [ [m]construction[0] road project[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate construction) (args (argument (role <ref>) (mention (headword construction) (acetype OTH))) (argument (role of) (mention (headword lines) (acetype OTH) (regex (regex (re (text (string \"railway\")))))))))",
-        "toPrettyString" : " [ [n]construction[0] of railway lines[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword construction) (acetype OTH) (regex (regex (re (text (string \"railway\"))))))",
-        "toPrettyString" : " railway construction[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword construction) (acetype OTH) (regex (regex (re (text (string \"road\"))))))",
-        "toPrettyString" : " road construction[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword construction) (acetype OTH) (regex (regex (re (text (string \"cobble stone road\"))))))",
-        "toPrettyString" : " cobble stone road construction[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate engaged) (args (argument (role in) (mention (headword construction) (acetype OTH) (regex (regex (re (text (string \"road\")))))))))",
-        "toPrettyString" : " [ [v]engaged[0] in road construction[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate construction) (args (argument (role <ref>) (mention (headword construction) (acetype OTH) (regex (regex (re (text (string \"the\"))))))) (argument (role of) (mention (headword project) (acetype OTH) (regex (regex (re (text (string \"road\")))))))))",
-        "toPrettyString" : " [ the [n]construction[0] of road project[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(vprop (return slot0) (predicate engaged) (args (argument (role <obj>) (mention (headword company) (acetype ORG) (regex (regex (re (text (string \"the\"))))))) (argument (role in) (mention (headword construction) (acetype OTH) (regex (regex (re (text (string \"road\")))))))))",
-        "toPrettyString" : " [ [v]engaged[0] in road construction[OTH] <obj> the company[ORG] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate construction) (args (argument (role of) (mention (headword project) (acetype OTH) (regex (regex (re (text (string \"road\")))))))))",
-        "toPrettyString" : " [ [n]construction[0] of road project[OTH] ]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword development) (acetype OTH) (regex (regex (re (text (string \"road\"))))))",
-        "toPrettyString" : " road development[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(mention (return slot0) (headword development) (acetype OTH) (regex (regex (re (text (string \"railway\"))))))",
-        "toPrettyString" : " railway development[OTH][0]"
-      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
         "toIDString" : "(mention (return slot0) (headword program) (acetype OTH) (regex (regex (re (text (string \"road\"))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " road program[OTH][0]"
       } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
-        "toIDString" : "(nprop (return slot0) (predicate construction) (args (argument (role of) (mention (headword lines) (acetype OTH) (regex (regex (re (text (string \"railway\")))))))))",
+        "toIDString" : "(mprop (return slot0) (predicate construction) (args (argument (role <ref>) (mention (headword projects) (acetype OTH) (regex (regex (re (text (string \"road\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [m]construction[0] road projects[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate engaged) (args (argument (role <obj>) (mention (headword company) (acetype ORG))) (argument (role in) (mention (headword construction) (acetype OTH) (regex (regex (re (text (string \"road\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]engaged[0] in road construction[OTH] <obj> company[ORG] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword development) (acetype OTH) (regex (regex (re (text (string \"railway\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " railway development[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate engaged) (args (argument (role in) (mention (headword construction) (acetype OTH) (regex (regex (re (text (string \"road\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]engaged[0] in road construction[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword development) (acetype OTH) (regex (regex (re (text (string \"road\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " road development[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate construction) (args (argument (role <ref>) (mention (headword construction) (acetype OTH) (regex (regex (re (text (string \"the\"))))))) (argument (role of) (mention (headword project) (acetype OTH) (regex (regex (re (text (string \"road\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ the [n]construction[0] of road project[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate construction) (args (argument (role <ref>) (mention (headword construction) (acetype OTH))) (argument (role of) (mention (headword line) (acetype OTH) (regex (regex (re (text (string \"railway\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [n]construction[0] of railway line[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate construction) (args (argument (role of) (mention (headword line) (acetype OTH) (regex (regex (re (text (string \"railway\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [n]construction[0] of railway line[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword construction) (acetype OTH) (regex (regex (re (text (string \"road\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " road construction[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mprop (return slot0) (predicate construction) (args (argument (role <ref>) (mention (headword project) (acetype OTH) (regex (regex (re (text (string \"road\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [m]construction[0] road project[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(vprop (return slot0) (predicate engaged) (args (argument (role <obj>) (mention (headword company) (acetype ORG) (regex (regex (re (text (string \"the\"))))))) (argument (role in) (mention (headword construction) (acetype OTH) (regex (regex (re (text (string \"road\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [v]engaged[0] in road construction[OTH] <obj> the company[ORG] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate construction) (args (argument (role <ref>) (mention (headword construction) (acetype OTH))) (argument (role of) (mention (headword project) (acetype OTH) (regex (regex (re (text (string \"road\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [n]construction[0] of road project[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword construction) (acetype OTH) (regex (regex (re (text (string \"railway\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " railway construction[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(mention (return slot0) (headword construction) (acetype OTH) (regex (regex (re (text (string \"cobble stone road\"))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " cobble stone road construction[OTH][0]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate construction) (args (argument (role <ref>) (mention (headword construction) (acetype OTH))) (argument (role of) (mention (headword lines) (acetype OTH) (regex (regex (re (text (string \"railway\")))))))))",
+        "isUDPattern" : false,
         "toPrettyString" : " [ [n]construction[0] of railway lines[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate construction) (args (argument (role of) (mention (headword lines) (acetype OTH) (regex (regex (re (text (string \"railway\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [n]construction[0] of railway lines[OTH] ]"
+      } ], [ "com.bbn.akbc.neolearnit.observations.pattern.SerifPattern", {
+        "toIDString" : "(nprop (return slot0) (predicate construction) (args (argument (role of) (mention (headword project) (acetype OTH) (regex (regex (re (text (string \"road\")))))))))",
+        "isUDPattern" : false,
+        "toPrettyString" : " [ [n]construction[0] of road project[OTH] ]"
       } ] ] ],
       "valList" : [ "java.util.ArrayList", [ [ "com.bbn.akbc.neolearnit.scoring.scores.PatternScore", {
         "precision" : 0.95,
@@ -89,6 +107,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -116,6 +135,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -143,6 +163,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -170,6 +191,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -197,6 +219,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -224,6 +247,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -251,6 +275,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -278,6 +303,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -305,6 +331,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -332,6 +359,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -359,6 +387,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -386,6 +415,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -413,6 +443,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -440,6 +471,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -467,6 +499,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -494,6 +527,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -521,6 +555,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -548,6 +583,7 @@
           "keyList" : [ "java.util.ArrayList", [ ] ],
           "entries" : [ "java.util.ArrayList", [ ] ]
         } ],
+        "PMI" : 0.0,
         "patternWeightedPrecision" : 0.0,
         "patternPrecision" : 0.0,
         "patternFrequency" : 0.0
@@ -608,7 +644,7 @@
         "value" : 17
       } ] ] ]
     } ],
-    "iteration" : 42
+    "iteration" : 45
   } ],
   "tripleScores" : [ "com.bbn.akbc.neolearnit.scoring.tables.TripleScoreTable", {
     "data" : [ "com.bbn.akbc.neolearnit.storage.EfficientMapDataStore", {
@@ -618,34 +654,10 @@
     } ],
     "iteration" : 0
   } ],
-  "iteration" : 56,
+  "iteration" : 59,
   "goodSeedPrior" : 0.04,
   "totalConfidenceDenominator" : 1000.0,
   "stage" : "initial",
-  "params" : [ "java.util.HashMap", {
-    "aggregated_frequency_filter_pattern_min" : "5",
-    "max_unary_prop_depth" : "1",
-    "languages" : "English",
-    "bert_npz_list" : "/home/hqiu/ld100/Hume_pipeline_int/Hume/expts/wm_dart_bert.060520/bert/bert_npz.list",
-    "linux_queue" : "nongale-sl6",
-    "serif_data" : "#Set this to your SERIF data checkout e.g. /nfs/mercury-04/u60/DEFT/users/msrivast/Active/Data/SERIF/",
-    "bootstrap_serifxml_list" : "/d4m/ears/expts/47922.generic_event.v1/expts/hume_test.040120.wm.v1/learnit_decoder/learnit/learnit_decoder.list",
-    "corpus_name" : "wm_dart382.090920",
-    "loader_concurrency" : "5",
-    "domain_root" : "/home/hqiu/ld100/learnit_wm_entity/inputs/domains/WM",
-    "aggregated_frequency_filter_pattern_max" : "-1",
-    "max_regexp_pattern_words" : "5",
-    "learnit_expt_suffix" : "default",
-    "use_human_label" : "false",
-    "source_root" : "/home/hqiu/ld100/learnit_wm_entity/neolearnit",
-    "min_seed_frequency_per_batch" : "1",
-    "learnit_data_root" : "/nfs/raid88/u10/users/hqiu/learnit_data/wm_dart382.090920",
-    "max_binary_prop_depth" : "2",
-    "learnit_root" : "/home/hqiu/ld100/learnit_wm_entity",
-    "queue_priority" : "5",
-    "min_pattern_frequency_per_batch" : "2",
-    "max_prop_depth" : "2",
-    "stopwords" : "/home/hqiu/ld100/learnit_wm_entity/inputs/resources/stopwords/english_causal_relationships.txt"
-  } ],
+  "params" : null,
   "experimentName" : "default"
 } ]

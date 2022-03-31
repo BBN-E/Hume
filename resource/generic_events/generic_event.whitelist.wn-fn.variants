@@ -17,6 +17,7 @@ aberrance
 abettal
 abhorrence
 abidance
+ability
 abiotrophy
 abjuration
 abjurations
@@ -79,6 +80,7 @@ accentuation
 acceptance
 acceptances
 acceptation
+access
 accident
 accidents
 acclaim
@@ -147,9 +149,10 @@ actuation
 actuations
 acupressure
 acupuncture
-ad-lib
 adagio
 adagios
+# Added by Bonan by reviewing WM M18 output
+adaptation
 addiction
 addictions
 adduction
@@ -165,6 +168,7 @@ adjuration
 adjurations
 adjustment
 adjustments
+ad-lib
 # administration
 # administrations
 administrivia
@@ -364,8 +368,8 @@ allures
 allusion
 allusions
 alms
-alms-giving
 almsgiving
+alms-giving
 # alpha
 # alphabet
 alphabetisation
@@ -452,8 +456,8 @@ anguishing
 angulation
 animadversion
 animadversions
-animal-worship
 animalisation
+animal-worship
 animation
 animations
 annealing
@@ -572,11 +576,11 @@ arguing
 argument
 arguments
 argy-bargy
-arm-twisting
 armageddon
 armageddons
 arming
 armis
+arm-twisting
 # aroma
 # aromas
 aromatherapy
@@ -591,6 +595,9 @@ arresting
 arrests
 arrival
 arrivals
+arrive
+arrived
+arriving
 arrogance
 arrogances
 arrogation
@@ -651,6 +658,8 @@ assertion
 assertions
 assessment
 assessments
+asset
+assets
 asseverations
 assignation
 assignations
@@ -685,9 +694,9 @@ astonishments
 astray
 astrolatry
 astronavigation
-at-bat
 atavism
 atavisms
+at-bat
 # athletics
 # atmospherics
 atomisation
@@ -724,6 +733,7 @@ attestations
 attitude
 attitudes
 attorneyship
+attributed
 attribution
 attributions
 auction
@@ -756,7 +766,6 @@ authorizations
 authorship
 authorships
 auto-da-fe
-auto-suggestion
 autogamy
 autogenics
 autograph
@@ -768,8 +777,10 @@ autopsy
 autopsying
 autosexing
 autosuggestion
+auto-suggestion
 autotomy
 avail
+availability
 availed
 availing
 avails
@@ -801,6 +812,7 @@ award
 awarded
 awarding
 awards
+awareness
 awe
 awes
 awing
@@ -820,10 +832,10 @@ baccalaureates
 baccarat
 bacchanalia
 bacchanalias
-back-blast
 backbend
 backbends
 backblast
+back-blast
 backdown
 backdowns
 backfire
@@ -1009,6 +1021,7 @@ benedictions
 benefaction
 benefactions
 benefice
+benefit
 # benefit
 benefited
 benefiting
@@ -1081,8 +1094,8 @@ binging
 bingle
 bingo
 bingos
-# bio-assay
 # bioassay
+# bio-assay
 # bioassays
 bioattack
 bioattacks
@@ -1094,6 +1107,8 @@ biopiracy
 biopsies
 biopsy
 bioremediation
+biosecurity
+bio-security
 bioterrorism
 birdnesting
 birling
@@ -1158,6 +1173,7 @@ blendings
 blends
 blessing
 blessings
+blight
 blind
 blinded
 blinding
@@ -1180,9 +1196,10 @@ blockade
 blockaded
 blockades
 blockading
+blocking
 blockings
-blood-bath
 bloodbath
+blood-bath
 bloodbaths
 bloodletting
 bloodlettings
@@ -1334,7 +1351,6 @@ bray
 brayed
 braying
 brays
-break-in
 breakage
 breakages
 breakaway
@@ -1342,6 +1358,7 @@ breakaways
 breakdown
 breakdowns
 breakers
+break-in
 breakings
 breakout
 breakouts
@@ -1406,8 +1423,8 @@ bruise
 bruised
 bruises
 bruising
-brush-off
 brushings
+brush-off
 brushup
 brutalisation
 brutalities
@@ -1422,6 +1439,9 @@ budgeted
 buffetings
 buffooneries
 buffoonery
+build
+building
+built
 bulge
 bulged
 bulges
@@ -1433,7 +1453,6 @@ bullfighting
 bullshit
 bullshitting
 bullying
-bun-fight
 bunce
 # bunch
 bunched
@@ -1441,6 +1460,7 @@ bunching
 bunco
 bundlings
 bunfight
+bun-fight
 bungle
 bungled
 bungles
@@ -1469,16 +1489,16 @@ bursted
 bursting
 bursts
 burying
-# business
-# businesses
+business
+businesses
 buss
 bussed
 bussing
 bust
-bust-up
 busted
 busting
 busts
+bust-up
 busywork
 butcheries
 butcherings
@@ -1496,13 +1516,12 @@ buzz
 buzzed
 buzzes
 buzzing
-by-election
-by-line
 bye
 bye-election
+by-election
 byes
+by-line
 byplay
-c-section
 cabal
 cabalism
 cabals
@@ -1534,7 +1553,6 @@ calibration
 calibrations
 calisthenics
 call
-call-out
 callathump
 callback
 callbacks
@@ -1545,6 +1563,7 @@ callisthenics
 callithump
 callosectomy
 callosotomy
+call-out
 calls
 calming
 calorimetry
@@ -1597,6 +1616,8 @@ canulation
 canulisation
 canulization
 canvassing
+capacity
+capital
 capitalisation
 capitalisations
 capitalization
@@ -1667,6 +1688,7 @@ carrys
 cartage
 carting
 cartography
+cases
 casework
 # cash
 cashed
@@ -1802,18 +1824,18 @@ champerty
 # championship
 # championships
 # chance
-chance-medley
 chanced
 # chancellorship
 # chancellorships
+chance-medley
 # chances
 chancing
 chandelle
-# change
-change-of-pace
-change-up
+change
 changed
-# changes
+change-of-pace
+changes
+change-up
 changing
 channelisation
 channelization
@@ -1857,8 +1879,8 @@ chawed
 chawing
 chaws
 cheatings
-check-in
 checkers
+check-in
 checkmate
 checkmated
 checkmates
@@ -2092,9 +2114,6 @@ clunking
 clunks
 clusterings
 clutches
-co-occurrence
-co-optation
-co-option
 coaching
 coachings
 coaction
@@ -2189,7 +2208,6 @@ colostomies
 colostomy
 colouration
 colourcast
-comb-out
 combat
 combated
 combates
@@ -2201,6 +2219,7 @@ combination
 combinations
 combings
 combining
+comb-out
 comeback
 comebacks
 comedown
@@ -2361,6 +2380,8 @@ condemnations
 condensing
 condescension
 condescensions
+condition
+conditions
 condolence
 condolences
 condonation
@@ -2471,6 +2492,7 @@ constraints
 constriction
 constrictions
 construal
+constructed
 construction
 constructions
 consubstantiation
@@ -2483,6 +2505,7 @@ consultation
 consultations
 consumerism
 consummation
+consumption
 contact
 contacted
 contacting
@@ -2511,6 +2534,7 @@ continuance
 continuances
 continuation
 continuations
+continue
 contortion
 contortions
 contour
@@ -2586,6 +2610,7 @@ convoys
 convulsion
 convulsions
 coo
+co-occurrence
 cooed
 cooing
 # cook
@@ -2597,9 +2622,12 @@ cookings
 # cooks
 cooperation
 cooperations
+co-optation
+co-option
 coordination
 coordinations
 coos
+cope
 copied
 # copies
 copout
@@ -2634,6 +2662,7 @@ corroboration
 corroborations
 corrugation
 corrugations
+corrupt
 cortege
 corteges
 coruscation
@@ -2659,13 +2688,10 @@ counseling
 # counselorship
 countdown
 countdowns
-counter-attack
-counter-countermeasures
-counter-offensive
-counter-sabotage
 counteraction
 counteractions
 counterattack
+counter-attack
 counterattacked
 counterattacking
 counterattacks
@@ -2680,6 +2706,7 @@ counterclaim
 counterclaimed
 counterclaiming
 counterclaims
+counter-countermeasures
 countercoup
 countercoups
 counterdemonstration
@@ -2702,6 +2729,7 @@ countermine
 countermove
 countermoves
 counteroffensive
+counter-offensive
 counteroffensives
 counterplay
 counterplot
@@ -2714,6 +2742,7 @@ counterpunch
 counterpunches
 counterrevolution
 counterrevolutions
+counter-sabotage
 countershots
 countersign
 countersigned
@@ -2728,10 +2757,10 @@ coups
 courante
 coursework
 coursing
-court-martial
 # courtesies
 # courtesy
 courtings
+court-martial
 courtship
 courtships
 couture
@@ -2740,16 +2769,25 @@ covenant
 covenanted
 covenanting
 covenants
-cover-up
 coverage
 coverages
+cover-up
 covetousness
+covid
+covid-19
+covid_19
+corona
+coronavirus
+coronavirus_disease
+coronavirus_disease_2019
+sars
+sars-cov-2
 cozenage
 cpi
 cpr
-crack-up
 crackdown
 crackdowns
+crack-up
 cradlesong
 crafts
 craniotomies
@@ -2831,17 +2869,18 @@ crop-dusting
 cropping
 croquet
 croquets
-cross-examination
-cross-fertilisation
-cross-fertilization
-cross-index
-cross-pollination
-cross-question
 crosscheck
 crosschecks
 crosses
+cross-examination
+cross-fertilisation
+cross-fertilization
 crossfire
 crossfires
+cross-index
+crossing
+cross-pollination
+cross-question
 crosstalk
 crouch
 crouched
@@ -2874,6 +2913,7 @@ crying
 cryosurgery
 cryptography
 crys
+c-section
 cuckoldry
 cuddle
 cuddled
@@ -2887,6 +2927,8 @@ culled
 culling
 culls
 cultism
+cultivate
+cultivated
 cumulation
 cunctation
 cuppings
@@ -2925,29 +2967,25 @@ custody
 # customs
 cut
 cut-and-thrust
-cut-in
 cutback
 cutbacks
 cuted
 cutes
+cut-in
 cuting
 cutpurse
 cutpurses
 cuts
 cutting
 # cva
-cyber-terrorism
 cybercrime
 cybercrimes
 # cybernation
+cyber-terrorism
 cyberwar
 cyberwars
 cycling
 # cytophotometry
-d'etat
-d'honneur
-d'oeil
-da'wah
 dacoities
 dacoity
 dairying
@@ -2982,6 +3020,7 @@ datelined
 datings
 daubing
 dawah
+da'wah
 dawdlings
 # dawn
 dawned
@@ -3002,11 +3041,11 @@ dazing
 dazzle
 dazzled
 dazzles
-de-escalation
 deactivation
 deactivations
 deadening
 # deaf
+deal
 dealings
 # deanship
 # deanships
@@ -3113,7 +3152,9 @@ deduction
 deductions
 # deed
 # deeds
+deepening
 deerstalking
+de-escalation
 defacement
 defacements
 defalcation
@@ -3175,6 +3216,7 @@ deliberations
 delinquencies
 delinquency
 deliquium
+deliver
 deliverance
 deliverances
 deliveries
@@ -3183,6 +3225,7 @@ delusion
 delusions
 demagoguery
 demagogy
+demand
 demarche
 demarches
 demise
@@ -3297,6 +3340,7 @@ descriptions
 desecration
 desecrations
 desegregation
+deserting
 desertion
 desertions
 deserts
@@ -3327,8 +3371,11 @@ despondence
 despondency
 destabilisation
 destabilization
+destabilize
 destinies
 destiny
+destroy
+destroying
 destruction
 destructions
 desynchronisation
@@ -3340,6 +3387,7 @@ detailed
 detailing
 detailings
 # details
+d'etat
 detecting
 detente
 detention
@@ -3372,6 +3420,8 @@ devaluation
 devaluations
 devastation
 devastations
+developed
+developing
 development
 developments
 deviance
@@ -3379,11 +3429,11 @@ deviances
 deviation
 deviationism
 deviations
-devil-worship
 devilment
 devilry
 deviltries
 deviltry
+devil-worship
 devisal
 devise
 devised
@@ -3399,6 +3449,7 @@ devotional
 devotionals
 devotions
 dextrorotation
+d'honneur
 diabolatry
 diagnosing
 diagnosis
@@ -3487,6 +3538,7 @@ disarray
 disarrayed
 disassembly
 disassociation
+disaster
 disavowal
 disavowals
 disbandment
@@ -3555,6 +3607,8 @@ disdained
 disdainfulness
 disdaining
 disdains
+disease
+diseases
 disembarkation
 disembarkations
 disembarkment
@@ -3652,6 +3706,10 @@ dispersal
 dispersals
 dispersion
 dispersions
+displace
+displaced
+displacement
+displacements
 displeasure
 displeasures
 disposition
@@ -3679,6 +3737,8 @@ disrespect
 disrespected
 disrespecting
 disrespects
+disrupt
+disrupting
 disruption
 disruptions
 dissatisfaction
@@ -3724,6 +3784,8 @@ distractions
 distraint
 distress
 distresses
+distribute
+distributed
 distribution
 distributions
 distrust
@@ -3763,7 +3825,6 @@ divorces
 divorcing
 divulgement
 divulgence
-do-si-do
 doble
 # docket
 docketed
@@ -3777,6 +3838,7 @@ dodge
 dodged
 dodges
 dodging
+d'oeil
 dogfight
 dogfighting
 dogfights
@@ -3786,8 +3848,8 @@ dogtrot
 # doing
 # doings
 dolens
-domestic violence
 domesticity
+domestic violence
 domination
 dominations
 domineeringness
@@ -3805,6 +3867,7 @@ dooms
 # doomsdays
 dormancy
 dorsiflexion
+do-si-do
 dosimetry
 double-bogey
 double-crossing
@@ -3897,6 +3960,7 @@ dropkick
 dropkicked
 dropkicking
 dropkicks
+drought
 drubbing
 drubbings
 drudgeries
@@ -3907,8 +3971,8 @@ drumbeats
 drumfire
 drumming
 drunkenness
-dry run
 dry-gulching
+dry run
 duckings
 duckpins
 duel
@@ -3933,16 +3997,15 @@ duplication
 duplications
 duplicities
 duplicity
-dust-up
 dustup
+dust-up
 dustups
 dutch
 duties
 duty
+dwindle
 dwindling
 dyeing
-e-commerce
-e-mail
 eagre
 earful
 earfuls
@@ -3952,6 +4015,7 @@ earmarking
 earmarks
 earnings
 earthing
+earthquake
 ease
 eased
 easement
@@ -3980,11 +4044,13 @@ eclipsed
 eclipses
 eclipsing
 ecm
-eco-warfare
+e-commerce
 economies
 economy
+economic
 ecoterrorism
 ecotourism
+eco-warfare
 ect
 eddied
 eddies
@@ -4005,7 +4071,9 @@ effecting
 # effects
 effectuation
 effleurage
+effort
 # effort
+efforts
 # efforts
 effusion
 effusions
@@ -4062,6 +4130,7 @@ eluding
 elusion
 emaciation
 email
+e-mail
 emailed
 emailing
 emails
@@ -4107,6 +4176,8 @@ emigration
 emigrations
 emigre
 emigres
+emission
+emissions
 emotion
 emotions
 empathies
@@ -4145,6 +4216,7 @@ encores
 encoring
 encouragement
 encouragements
+encouraging
 encroachment
 encroachments
 encryption
@@ -4176,6 +4248,7 @@ ends
 # endurances
 enema
 enemas
+energy
 energizing
 enervation
 enfeeblement
@@ -4189,12 +4262,15 @@ enforcement
 enforcements
 enfranchisement
 enfranchisements
+engaged
 engagement
 engagements
 # english
 engrossment
+enhance
 enhancement
 enhancements
+enhancing
 enjoining
 enjoyment
 enjoyments
@@ -4213,6 +4289,7 @@ enquiry
 enragement
 enrichment
 enrichments
+enroll
 enrollment
 enrollments
 enrolment
@@ -4508,6 +4585,7 @@ expenditure
 expenditures
 expense
 expenses
+experience
 # experience
 experienced
 experienceing
@@ -4538,6 +4616,8 @@ explorations
 explosion
 explosions
 exponentiation
+export
+exports
 exporting
 expose
 exposed
@@ -4594,16 +4674,18 @@ exuberances
 exultation
 exultations
 eye-beaming
-# eye-drop
 # eyedrop
+# eye-drop
 # eyedrops
 fabrication
 fabrications
-face-off
 facelift
 facelifts
+face-off
 facial
 facials
+facility
+facilities
 # fact
 factoring
 factorisation
@@ -4615,7 +4697,10 @@ fadeout
 fadeouts
 fades
 fading
+fail
 failings
+failure
+failures
 faint
 fainted
 fainting
@@ -4718,6 +4803,8 @@ federalisation
 federalization
 # federation
 # federations
+feed
+feeding
 feelings
 feigning
 feint
@@ -4812,27 +4899,27 @@ finds
 fine
 fined
 fines
-finger-roll
 fingerings
 fingerprint
 fingerprinted
 fingerprinting
 fingerprints
+finger-roll
 fingerspelling
 fining
 finis
 finishings
 # fire
-fire-raising
-fire-worship
 fired
 firefight
+fire-raising
 fires
+fire-worship
 firing
-# firing squad
 firings
-fish-worship
+# firing squad
 fishing
+fish-worship
 fission
 fissions
 fistfight
@@ -4853,9 +4940,9 @@ fizzled
 fizzles
 fizzling
 flagellation
-flame-out
 flamenco
 flamencos
+flame-out
 flapping
 flare-up
 flashback
@@ -4874,6 +4961,9 @@ flaw
 flawed
 flaws
 flection
+fled
+flee
+fleeing
 flex
 flexed
 flexes
@@ -4902,6 +4992,7 @@ flocked
 flocking
 # flocks
 floggings
+floods
 floodings
 floorshow
 floriculture
@@ -4933,9 +5024,9 @@ foetometry
 foetoscopy
 foiling
 follies
+followings
 follow-on
 follow-through
-followings
 folly
 foolery
 foolishness
@@ -4961,8 +5052,8 @@ forbearances
 forbiddance
 forbidding
 # force
-force-out
 forced
+force-out
 # forces
 forcing
 fording
@@ -4997,6 +5088,7 @@ forgings
 forgiveness
 forgoing
 forking
+form
 formalisation
 formalism
 formalisms
@@ -5011,6 +5103,7 @@ formations
 # formats
 formatted
 formatting
+formed
 formication
 forsaking
 forswearing
@@ -5023,16 +5116,16 @@ fosterage
 fostering
 fought
 foul
-foul-up
 fouled
 fouls
+foul-up
 found
 foundering
 founding
-fox-trot
 foxhunt
 foxhunting
 foxtrot
+fox-trot
 foxtrots
 foxtrotting
 fracas
@@ -5059,9 +5152,9 @@ frazzle
 frazzled
 frazzles
 frazzling
-free-for-all
 freedom
 freedoms
+free-for-all
 freeing
 freemail
 # freestyle
@@ -5093,6 +5186,7 @@ frolics
 fronted
 fronting
 # fronts
+frost
 froth
 frothed
 frothing
@@ -5148,7 +5242,6 @@ fuss
 fussed
 fusses
 fussing
-g-jo
 gabble
 gabbled
 gabbling
@@ -5186,9 +5279,11 @@ gambols
 games
 gaming
 gaolbreak
+gap
 gape
 gaped
 gapes
+gaps
 gardening
 garnishment
 garnishments
@@ -5265,6 +5360,7 @@ gimp
 gimped
 gimping
 gimps
+give
 # give
 give-and-take
 giveaway
@@ -5274,6 +5370,7 @@ given
 gives
 giving
 givings
+g-jo
 glamorisation
 glamorization
 glamour
@@ -5328,10 +5425,9 @@ gnarl
 gnarled
 gnarling
 gnarls
-go-around
-go-slow
 goadings
 goal-kick
+go-around
 gobble
 gobbled
 gobbles
@@ -5350,6 +5446,7 @@ goofing
 google
 googlies
 googly
+go-slow
 gossipings
 gotten
 governance
@@ -5375,8 +5472,8 @@ graftings
 graining
 grammatolatry
 grant
-grant-in-aid
 granted
+grant-in-aid
 granting
 grants
 # graph
@@ -5564,8 +5661,8 @@ hap
 happenings
 happenstance
 happenstances
-hara-kiri
 harakiri
+hara-kiri
 harangue
 harangued
 harangues
@@ -5587,6 +5684,7 @@ harmonization
 harmonizations
 harmony
 harmonys
+harvest
 harvestings
 hassle
 hassled
@@ -5618,15 +5716,16 @@ headlining
 headmasterships
 headmistressship
 # headroom
-heads-up
 headshakes
 headshaking
 headship
 # headsman
 # headstand
 # headstands
+heads-up
 headway
 headways
+health
 healthcare
 hearsay
 # heartbeat
@@ -5635,11 +5734,11 @@ hearsay
 hecatomb
 heckling
 hedging
-hee-haw
 heed
 heeded
 heeding
 heeds
+hee-haw
 hegira
 heist
 heisted
@@ -5687,8 +5786,6 @@ hide-and-seek
 hidings
 hierolatry
 high-handedness
-high-low
-high-low-jack
 highjack
 highjacked
 highjacking
@@ -5700,6 +5797,8 @@ highlight
 highlighted
 highlighting
 highlights
+high-low
+high-low-jack
 hijack
 hijacked
 hijacking
@@ -5734,9 +5833,9 @@ hoards
 hobbyism
 # hockey
 hold-down
-hold-up
 holdings
 holdup
+hold-up
 holdups
 # holiday
 holidayed
@@ -5785,10 +5884,10 @@ hoot
 hooted
 hooting
 hoots
-hop-step-and-jump
 hopes
 hopscotch
 hopscotches
+hop-step-and-jump
 horseplay
 horseshoes
 horseshows
@@ -5805,11 +5904,11 @@ hotfooting
 hounds
 # hour
 # hours
-house-raising
 housebreakings
 housecleaning
 housecleanings
 housekeeping
+house-raising
 housewifery
 housework
 howl
@@ -5860,6 +5959,7 @@ hunches
 hunching
 # hundred
 # hundreds
+hunger
 hunt
 hunted
 hunting
@@ -5874,6 +5974,7 @@ hurls
 hurrah
 hurrahed
 hurrahs
+hurricane
 hurried
 hurries
 hurry
@@ -6018,7 +6119,9 @@ implication
 implications
 implosion
 implosions
+import
 importing
+imports
 importunities
 imposition
 impositions
@@ -6044,14 +6147,13 @@ impromptu
 impromptus
 improprieties
 impropriety
+improve
 improvement
 improvements
 impulse
 impulses
 imputation
 imputations
-in-fighting
-in-migration
 inactivities
 inactivity
 inaugural
@@ -6169,11 +6271,16 @@ infanticides
 infantilism
 infatuation
 infatuations
+infection
+infections
 inference
 inferences
+infest
 infestation
 infestations
+infests
 infighting
+in-fighting
 infiltration
 infiltrations
 # infix
@@ -6227,11 +6334,13 @@ initiative
 initiatives
 injunction
 injunctions
+injured
 injuries
 injury
 injustice
 injustices
 inmarriage
+in-migration
 innervation
 innervations
 innings
@@ -6250,6 +6359,7 @@ inroad
 inroads
 inscription
 inscriptions
+insecurity
 insertion
 insertions
 insinuation
@@ -6262,6 +6372,7 @@ insolence
 inspection
 inspections
 inspectorship
+instability
 installing
 installment
 installments
@@ -6409,6 +6520,7 @@ invention
 # invention artifact
 inventions
 inventorying
+invest
 investigating
 investigation
 investigations
@@ -6580,9 +6692,9 @@ juggling
 jugglings
 jujitsu
 jujutsu
-jump-start
 jumpings
 jumpstart
+jump-start
 jumpstarted
 jumpstarting
 jumpstarts
@@ -6687,6 +6799,7 @@ kwanzaa
 kwanzas
 laceration
 lacerations
+lack
 # lack
 lacked
 lackes
@@ -6757,13 +6870,14 @@ lawmaking
 # laws
 lawsuit
 lawsuits
-lay-off
-lay-up
+lay
 layoff
+lay-off
 layoffs
 layout
 layouts
 layup
+lay-up
 layups
 laziness
 leadership
@@ -6791,13 +6905,13 @@ leaping
 leaps
 leapt
 lease
-lease-lend
 leased
+lease-lend
 leases
 leasing
 leave
-leave-taking
 leaved
+leave-taking
 leaving
 leavings
 lecture
@@ -6806,8 +6920,6 @@ lectures
 lectureship
 lectureships
 lecturing
-leg-pull
-leg-pulling
 legacies
 legacy
 legalisation
@@ -6826,10 +6938,12 @@ legislatures
 legitimacies
 legitimacy
 legitimation
+leg-pull
+leg-pulling
 leisure
 leisures
-lend-lease
 lendings
+lend-lease
 lengthenings
 lenience
 leniencies
@@ -6945,8 +7059,11 @@ litigation
 litigations
 liturgies
 liturgy
+livelihood
 liveliness
+# livestock
 # lives
+living
 livings
 load-shedding
 loafing
@@ -6976,6 +7093,7 @@ lockout
 lockouts
 lockstep
 locomotion
+locust
 lodgement
 lodgements
 logging
@@ -7009,6 +7127,7 @@ lordships
 losings
 loss
 losses
+lost
 # lot
 lotes
 # lots
@@ -7072,8 +7191,8 @@ magnification
 magnifications
 # magnitude
 # magnitudes
-# mah-jongg
 # mahjong
+# mah-jongg
 mailings
 maintenance
 maintenances
@@ -7082,13 +7201,13 @@ maintenances
 majeure
 # make
 make-believe
-make-do
-make-work
 maked
+make-do
 makeready
 makes
 makeshift
 makeshifts
+make-work
 # making
 mal
 malediction
@@ -7103,7 +7222,9 @@ malfunctioning
 malfunctions
 malignment
 malingering
+malnourished
 malnourishment
+malnutrition
 malpractice
 malpractices
 maltreatment
@@ -7166,6 +7287,8 @@ marchs
 mared
 mares
 mariticide
+markets
+marketing
 marketings
 markup
 markups
@@ -7184,6 +7307,9 @@ marveling
 marvelled
 marvelling
 marvels
+mask
+masks
+masking
 massacre
 massacred
 massacres
@@ -7203,9 +7329,9 @@ mastery
 mastication
 mastoidectomy
 mastopexy
-match-up
 matchmaking
 matchup
+match-up
 matchups
 maternalism
 matric
@@ -7249,6 +7375,7 @@ medivac
 meet
 meeted
 meeting
+meetings
 meets
 megadeath
 megadeaths
@@ -7295,9 +7422,9 @@ merriment
 merrymaking
 meshugaas
 mesmerism
-mess-up
 messaging
 messiahship
+mess-up
 metalworking
 metamorphosis
 metarule
@@ -7348,8 +7475,8 @@ mintage
 minuet
 minuets
 miracle
-miracle-worship
 miracles
+miracle-worship
 misadventure
 misadventures
 misalignment
@@ -7467,8 +7594,8 @@ mitsvah
 mitzvah
 mitzvahs
 mitzvoth
-mix-up
 mixings
+mix-up
 mmpi
 mnemonic
 mnemonics
@@ -7532,9 +7659,9 @@ monte
 moo
 mooed
 mooing
-moon-worship
 moonwalk
 moonwalks
+moon-worship
 moos
 moot
 mooted
@@ -7579,6 +7706,7 @@ mournings
 move
 moved
 moveing
+movement
 moves
 moviemaking
 moving
@@ -7601,9 +7729,9 @@ multimedia
 multiplication
 multiplications
 mumble
-mumble-the-peg
 mumbled
 mumbles
+mumble-the-peg
 mumblety-peg
 mumbling
 mumblings
@@ -7682,6 +7810,8 @@ nazism
 neap
 necropsies
 necropsy
+needing
+needs
 negation
 negations
 neglect
@@ -7731,16 +7861,15 @@ nicknames
 nicknaming
 niente
 # night
-night-stop
 nightlife
 # nights
+night-stop
 nightwork
 nim
 ninepins
 # ninjitsu
 # ninjutsu
 nino
-# no-trump
 nod
 nodded
 nodding
@@ -7752,9 +7881,6 @@ nomenklatura
 nomination
 nominations
 non
-non-engagement
-non-involvement
-non-proliferation
 nonacceptance
 nonaccomplishment
 nonachievement
@@ -7767,10 +7893,12 @@ nonconformism
 nonconformities
 nonconformity
 # none
+non-engagement
 # nones
 nonevent
 nonevents
 nonfeasance
+non-involvement
 nonobservance
 nonparticipation
 nonpayment
@@ -7780,6 +7908,7 @@ nonperformances
 # nonprofit
 # nonprofits
 nonproliferation
+non-proliferation
 nonproliferations
 nonremittal
 nonresistance
@@ -7790,15 +7919,16 @@ normalisation
 normalization
 normalizations
 nosecount
-not-for-profit
 notation
 notations
+not-for-profit
 notice
 noticed
 notices
 noticing
 notification
 notifications
+# no-trump
 novation
 novelisation
 novelization
@@ -7827,6 +7957,8 @@ nurtured
 nurtures
 nurturing
 nutation
+nutrition
+nutritional
 nystagmus
 oath
 oaths
@@ -7925,6 +8057,7 @@ oophorectomy
 oophorosalpingectomy
 oozings
 opalescence
+opened
 operandi
 operation
 operations
@@ -7935,6 +8068,8 @@ opinion
 opinions
 # opportunities
 # opportunity
+opposition
+oppositions
 oppression
 oppressions
 optics
@@ -7996,13 +8131,14 @@ ostracism
 otoplasty
 oustings
 # out
-out-migration
 outage
 outages
 outbreak
 outbreaks
 outburst
 outbursts
+outcome
+outcomes
 outcried
 outcries
 outcry
@@ -8015,6 +8151,7 @@ outlay
 outlays
 outlook
 outlooks
+out-migration
 outrage
 outraged
 outrages
@@ -8024,7 +8161,6 @@ outreaches
 outs
 outstroke
 ovariectomy
-over-crowding
 overachievement
 overacting
 overbearingness
@@ -8037,6 +8173,7 @@ overcharge
 overcharged
 overcharges
 overcharging
+over-crowding
 overeating
 overestimate
 overestimated
@@ -8134,10 +8271,10 @@ paging
 paid
 pains
 palatopharyngoplasty
-pall-mall
 palliation
 palliative
 palliatives
+pall-mall
 pallone
 palpation
 palpitation
@@ -8229,7 +8366,6 @@ parryed
 parrying
 parrys
 pars
-part-singing
 participation
 participations
 particularisation
@@ -8238,6 +8374,7 @@ partition
 partitioned
 partitioning
 partitions
+part-singing
 pases
 passado
 passant
@@ -8401,6 +8538,8 @@ pertinency
 perusal
 perusals
 pervaporation
+pest
+pests
 petition
 petitioned
 petitioning
@@ -8446,10 +8585,10 @@ piaffe
 piaffes
 pianism
 pick
-pick-off
 picked
 picking
 pickings
+pick-off
 pickpocket
 pickpockets
 picks
@@ -8480,9 +8619,9 @@ piloting
 pinball
 pinballs
 ping
-ping-pong
 pinged
 pinging
+ping-pong
 pings
 pinings
 pinnings
@@ -8507,9 +8646,9 @@ placarding
 placards
 placation
 place-kicking
-place-worship
 placement
 placements
+place-worship
 plagiarisation
 plagiarism
 plagiarisms
@@ -8518,7 +8657,12 @@ plague
 plagued
 plagues
 plaguing
+plan
+planning
 plannings
+plant
+planted
+planting
 plantings
 plash
 plashes
@@ -8626,8 +8770,8 @@ pontificated
 pontificates
 pontificating
 pony-trekking
-pop-fly
 popery
+pop-fly
 popping
 popularisation
 popularization
@@ -8656,7 +8800,6 @@ positing
 positioning
 positionings
 posits
-post-mortem
 postage
 postings
 postmark
@@ -8664,6 +8807,7 @@ postmarked
 postmarking
 postmarks
 postmortem
+post-mortem
 postmortems
 postponement
 postponements
@@ -8686,6 +8830,7 @@ pounces
 pouncing
 poundage
 poundings
+poverty
 powwow
 powwowed
 powwowing
@@ -8722,7 +8867,6 @@ prattles
 prattling
 praxes
 praxis
-pre-emption
 preachification
 preachings
 preachment
@@ -8740,6 +8884,7 @@ precedent
 precedents
 precentorship
 preceptorship
+precipitation
 precis
 preclusion
 preconception
@@ -8766,6 +8911,7 @@ predispositions
 predominance
 predomination
 preemption
+pre-emption
 preemptions
 preexistence
 prefabrication
@@ -8878,8 +9024,8 @@ previews
 prevision
 previsions
 price
-price-fixing
 priced
+price-fixing
 prices
 pricing
 prickings
@@ -8892,8 +9038,8 @@ printmaking
 # priorities
 # priority
 priorship
-prison-breaking
 prisonbreak
+prison-breaking
 privation
 privations
 privatisation
@@ -8934,8 +9080,10 @@ procurements
 proddings
 prodigality
 # product
+produce
 production
 productions
+productivity
 # products
 profanation
 profanations
@@ -9035,6 +9183,7 @@ prostitutions
 prostration
 prostrations
 protagonism
+protection
 protectorship
 protege
 proteges
@@ -9050,7 +9199,11 @@ protrusion
 protrusions
 protuberance
 protuberances
+provide
+provided
 providence
+provides
+providing
 provision
 provisioned
 provisiones
@@ -9140,11 +9293,11 @@ pushup
 pushups
 put
 put-down
-put-on
 puted
 putes
 puting
 putoff
+put-on
 putout
 putouts
 puts
@@ -9181,7 +9334,7 @@ quaffs
 # qualifications
 qualifyings
 # qualities
-# quality
+quality
 quantification
 quantisation
 # quantities
@@ -9273,7 +9426,9 @@ raid
 raided
 raids
 railroadings
+rainfall
 rainmaking
+raised
 raisings
 raiu
 rake-off
@@ -9333,10 +9488,9 @@ rascalities
 rascality
 raspings
 rassling
+rataplan
 rat-a-tat
 rat-a-tat-tat
-rat-tat
-rataplan
 ratification
 ratifications
 ratings
@@ -9344,6 +9498,7 @@ ratiocination
 rationale
 rationales
 rationing
+rat-tat
 ratting
 rattlings
 ravage
@@ -9364,11 +9519,8 @@ ravishments
 razing
 razzing
 rbi
-re-afforestation
-re-creation
-re-establishment
-re-formation
-re-sentencing
+reaches
+reaching
 reachings
 reaction
 reactions
@@ -9385,6 +9537,7 @@ reaffiliation
 reaffiliations
 reaffirmation
 reaffirmations
+re-afforestation
 realisation
 realisations
 # realities
@@ -9456,8 +9609,11 @@ receding
 receipt
 receipted
 receipts
+receive
+received
 receivership
 receiverships
+receiving
 recession
 recessional
 recessions
@@ -9512,6 +9668,7 @@ recounts
 recourse
 recourses
 recreation
+re-creation
 recreations
 recrudescence
 recrudescences
@@ -9552,6 +9709,7 @@ redress
 redressed
 redresses
 redressing
+reduce
 reduction
 reductions
 redundancies
@@ -9570,10 +9728,12 @@ reenforcements
 reenlistment
 reentries
 reentry
+re-establishment
 reevaluation
 reevaluations
 reexamination
 reexaminations
+ <ref> 
 refabrication
 refereeing
 referendum
@@ -9588,6 +9748,7 @@ refocusing
 reforestation
 reform
 reformation
+re-formation
 reformations
 reformed
 reforming
@@ -9689,6 +9850,7 @@ relegation
 relegations
 reliance
 reliances
+relief
 relinquishing
 relinquishment
 relinquishments
@@ -9825,6 +9987,7 @@ reprisal
 reprisals
 reprobation
 reprocessing
+reproduction
 reproof
 reproofs
 reproval
@@ -9850,6 +10013,9 @@ requests
 requiem
 requiems
 requiescat
+require
+required
+requiring
 requisition
 requisitioned
 requisitioning
@@ -9875,6 +10041,7 @@ resection
 resections
 resemblance
 resemblances
+re-sentencing
 resentment
 resentments
 resettlement
@@ -9908,13 +10075,14 @@ response
 responses
 # responsibilities
 # responsibility
-rest-cure
 restatement
 restatements
+rest-cure
 restitution
 restitutions
 restriction
 restrictions
+result
 # result
 resultant
 resultants
@@ -10125,10 +10293,10 @@ risen
 rises
 rising
 risings
-# risk
+risk
 risked
 risking
-# risks
+risks
 rite
 rites
 ritual
@@ -10171,6 +10339,7 @@ romanticizations
 rope-a-dope
 ropings
 rorschach
+rose
 rot
 rotation
 rotations
@@ -10219,6 +10388,7 @@ ruffianism
 # rugbys
 ruggedisation
 ruggedization
+ruin
 ruination
 ruinations
 ruining
@@ -10237,12 +10407,12 @@ rumours
 rumpus
 rumpuses
 run-in
-run-through
-run-up
 runnings
 runoff
 runoffs
+run-through
 runup
+run-up
 runups
 rupture
 ruptured
@@ -10251,6 +10421,7 @@ rupturing
 ruse
 ruses
 rushing
+rust
 rustication
 rustle
 rustled
@@ -10283,6 +10454,7 @@ safeguarded
 safeguarding
 safeguards
 safekeeping
+safety
 safire
 sag
 sagged
@@ -10357,11 +10529,11 @@ savours
 savvy
 sawm
 say
-say-so
 sayed
 saying
 sayings
 says
+say-so
 scalage
 scald
 scalded
@@ -10521,11 +10693,11 @@ scurry
 scurrying
 scuttlebutt
 sea-duty
+seafaring
+sealings
 sea-poose
 sea-purse
 sea-puss
-seafaring
-sealings
 seatings
 secession
 secessions
@@ -10535,6 +10707,7 @@ secondments
 secretaryship
 sectionalisation
 sectionalization
+security
 secularisation
 secularization
 sedation
@@ -10548,6 +10721,7 @@ seeked
 seeking
 seekings
 seeks
+seen
 seepage
 seepages
 segue
@@ -10588,6 +10762,7 @@ self-gratification
 self-help
 self-improvement
 self-indulgence
+selflessness
 self-mortification
 self-organisation
 self-organization
@@ -10605,7 +10780,6 @@ self-sacrifice
 self-service
 self-suggestion
 self-worship
-selflessness
 sell
 selling
 sellings
@@ -10619,8 +10793,8 @@ sells
 seminar
 seminars
 senatorship
-send-off
 sendings
+send-off
 sense
 sensed
 senses
@@ -10668,13 +10842,14 @@ serving
 servings
 session
 sessions
-set-to
+set
 setback
 setbacks
 settling
+set-to
 seul
-seven-up
 sevens
+seven-up
 severance
 severances
 severings
@@ -10685,10 +10860,10 @@ sexploitation
 shabbiness
 shadowboxing
 shadowings
-shake-up
 shakedown
 shakedowns
 shakeup
+shake-up
 shakeups
 shakings
 shamble
@@ -10733,6 +10908,8 @@ shirking
 shirring
 shitwork
 shivering
+shock
+shocks
 shoemaking
 shoeshine
 shoeshines
@@ -10744,6 +10921,8 @@ shootout
 shootouts
 shoplifting
 shoppings
+shortage
+shortages
 shot
 shots
 shotted
@@ -10753,9 +10932,9 @@ shouted
 shouting
 shouts
 shove
-shove-ha'penny
-shove-halfpenny
 shoved
+shove-halfpenny
+shove-ha'penny
 shovelboard
 shoves
 shoving
@@ -10873,8 +11052,8 @@ singeing
 singes
 singings
 single
-single-foot
 singled
+single-foot
 singles
 singling
 singsong
@@ -10890,12 +11069,13 @@ sip
 sipped
 sipping
 sips
-sit-down
-sit-in
-sit-up
 sitcom
 sitcoms
+sit-down
+sit-in
 sittings
+sit-up
+situation
 sizzle
 sizzled
 sizzles
@@ -10908,8 +11088,8 @@ skedaddling
 skeet
 skiings
 skimmings
-skin-dive
 skincare
+skin-dive
 skinny-dip
 skip
 skipped
@@ -10994,10 +11174,10 @@ smarted
 smarting
 smarts
 smash
-smash-up
 smashed
 smashes
 smashing
+smash-up
 smattering
 smatterings
 smell
@@ -11190,6 +11370,7 @@ speech
 speeches
 speechmaking
 speechs
+speed
 speedings
 speedup
 speedups
@@ -11254,14 +11435,15 @@ spoofing
 spoofs
 spoonfeeding
 sportfishing
-spot-welding
 spottings
+spot-welding
 sprain
 sprained
 spraining
 sprains
 sprawling
 sprayings
+spread
 spreading
 spring-cleaning
 springtide
@@ -11322,6 +11504,8 @@ stabbing
 stabilisation
 stabilization
 stabilizations
+stabilize
+stability
 stabs
 stagnancy
 stagnation
@@ -11342,16 +11526,17 @@ stampedes
 stampeding
 stance
 stances
-stand-down
 standardisation
 standardisations
 standardization
 standardizations
 standdown
+stand-down
 standdowns
 standings
 standoff
 standoffs
+stands
 standstill
 standstills
 stapedectomy
@@ -11361,8 +11546,9 @@ stares
 stargazing
 staring
 # stars
-start-off
+started
 starting
+start-off
 starts
 # startup
 # startups
@@ -11396,11 +11582,11 @@ steganography
 stenography
 # step
 step-down
-step-up
 steped
 stepped
 stepping
 # steps
+step-up
 stereotype
 stereotypes
 stereotyping
@@ -11410,9 +11596,9 @@ sterilizations
 stewardship
 stewardships
 stewing
-stick-up
 stickball
 stickup
+stick-up
 stickups
 stifling
 stigmatisation
@@ -11436,14 +11622,14 @@ stirring
 stirrings
 stirs
 stitchings
-stock-take
-stock-taking
 stockpile
 stockpiled
 stockpiles
 stockpiling
 stocktake
+stock-take
 stocktaking
+stock-taking
 stolen
 stomp
 stomped
@@ -11501,8 +11687,8 @@ strikeout
 strikeouts
 strikes
 striking
-strip-jack-naked
 striping
+strip-jack-naked
 strivings
 stroke
 stroked
@@ -11547,7 +11733,6 @@ stymieing
 stymies
 stymying
 suasion
-sub-test
 subbing
 subcontract
 subcontracted
@@ -11600,6 +11785,7 @@ substituting
 substitution
 substitutions
 subsumption
+sub-test
 subtitle
 subtitled
 subtitles
@@ -11612,6 +11798,7 @@ subversion
 subversions
 succour
 succussion
+suffer
 sufferance
 sufferances
 sufferings
@@ -11643,7 +11830,6 @@ summerset
 summoning
 sumo
 sumos
-sun-worship
 sunburn
 sunburned
 sunburning
@@ -11652,6 +11838,7 @@ sunna
 sunnah
 suntan
 suntans
+sun-worship
 sup
 suped
 superannuation
@@ -11724,6 +11911,7 @@ survey
 surveyed
 surveying
 surveys
+survive
 suspicion
 suspicions
 suspiration
@@ -11739,6 +11927,8 @@ swaping
 swapped
 swapping
 swaps
+swarm
+swarms
 swash
 swashed
 swashes
@@ -11811,7 +12001,6 @@ syllable
 syllables
 syllogism
 syllogisms
-symbol-worship
 symbolatry
 symbolisation
 symbolising
@@ -11820,6 +12009,7 @@ symbolisms
 symbolizations
 symbolizing
 symbololatry
+symbol-worship
 sympathectomy
 sympathies
 sympathy
@@ -11869,9 +12059,9 @@ taint
 tainted
 tainting
 taints
-take-in
 takedown
 takedowns
+take-in
 takings
 talk
 talked
@@ -11892,8 +12082,8 @@ tangos
 tankage
 tantalization
 tantalus
-tap-off
 tapering
+tap-off
 tapotement
 tappings
 tarantella
@@ -11950,8 +12140,8 @@ teaming
 teamwork
 teasings
 # tech
-# technologies
-# technology
+technologies
+technology
 # techs
 teeoff
 teeoffs
@@ -11979,10 +12169,10 @@ tellings
 temperament
 temperaments
 temperance
+temperature
 tempering
 temptation
 temptations
-ten-strike
 tenancies
 tenancy
 tenantry
@@ -11991,6 +12181,7 @@ tenderization
 tending
 # tennis
 # tenpins
+ten-strike
 tenting
 tenure
 tenured
@@ -12028,10 +12219,9 @@ thanks
 thanksgiving
 thaumatolatry
 thaumaturgy
-the breaks
-the sack
 theatrical
 theatricals
+the breaks
 theft
 thefts
 thelarche
@@ -12051,6 +12241,7 @@ thermography
 thermogravimetry
 thermometry
 thermotherapy
+the sack
 # thief
 # thiefs
 thievery
@@ -12076,6 +12267,8 @@ thrashed
 thrashes
 thrashing
 thrashings
+threat
+threats
 threshings
 thrill
 thrilled
@@ -12121,8 +12314,6 @@ thwacking
 thwacks
 thwarting
 thyroidectomies
-# tic-tac-toe
-# tick-tack-toe
 # ticket
 ticketed
 ticketing
@@ -12132,17 +12323,19 @@ tickled
 tickles
 tickling
 ticktacktoe
+# tick-tack-toe
 ticktacktoo
 ticktock
 ticktocks
 tictac
 tictacs
+# tic-tac-toe
 tiddlywinks
 # tie
-tie-up
 tied
 tieing
 # ties
+tie-up
 tiff
 tiffs
 tightenings
@@ -12159,7 +12352,6 @@ timekeeping
 # timework
 # timing
 # timings
-tin-plating
 ting
 tinge
 tinged
@@ -12176,6 +12368,7 @@ tinkled
 tinkles
 tinkling
 tinning
+tin-plating
 tint
 tinted
 tintes
@@ -12189,7 +12382,6 @@ tippled
 tipples
 tirade
 tirades
-tit-tat-toe
 titillation
 titillations
 titivation
@@ -12197,6 +12389,7 @@ titration
 titrations
 titre
 titres
+tit-tat-toe
 tittivation
 tittle-tattle
 tko
@@ -12278,12 +12471,13 @@ tpn
 tracheostomy
 tracheotomies
 tracheotomy
+tracing
 tracking
 trade
-trade-in
-trade-off
 traded
+trade-in
 tradeoff
+trade-off
 tradeoffs
 trades
 trading
@@ -12298,6 +12492,8 @@ traffics
 tragedies
 tragedy
 trailing
+train
+training
 trainings
 trample
 trampled
@@ -12313,7 +12509,9 @@ transactions
 transcendence
 transcendencies
 transcendency
+transfer
 transferral
+transfers
 transfiguration
 transfigurations
 transformation
@@ -12333,6 +12531,7 @@ transmigration
 transmigrations
 transmittal
 transmittals
+transmitted
 transmitting
 transmogrification
 transmogrifications
@@ -12341,6 +12540,7 @@ transmutations
 transplantation
 transplantations
 transplanting
+transport
 transposition
 transpositions
 transshipment
@@ -12422,18 +12622,18 @@ trill
 trilled
 trills
 trip
-trip-up
 triped
 triping
 triple
-triple-spacing
 tripled
 triples
+triple-spacing
 tripling
 tripos
 tripped
 tripping
 trips
+trip-up
 triumph
 triumphed
 triumphing
@@ -12471,9 +12671,9 @@ trusted
 trusting
 trusts
 try
-try-on
 tryed
 trying
+try-on
 tryout
 tryouts
 trys
@@ -12494,15 +12694,14 @@ tumblings
 tumult
 tumults
 # tune
-tune-up
 tuned
 tunes
+tune-up
 tuning
 tunings
 turmoil
 turmoils
 turn
-turn-on
 turnabout
 turnabouts
 turndown
@@ -12510,6 +12709,7 @@ turndowns
 turned
 turnes
 turning
+turn-on
 turnround
 turns
 turp
@@ -12567,7 +12767,6 @@ typography
 typologies
 typology
 tyrannicide
-u-turn
 ultrasonography
 ululation
 ululations
@@ -12601,6 +12800,7 @@ underscore
 underscored
 underscores
 underscoring
+understand
 understandings
 understatement
 understatements
@@ -12621,6 +12821,7 @@ undulations
 unfairness
 unfairnesses
 unfastening
+unfavorable
 unification
 unifications
 unionisation
@@ -12659,6 +12860,7 @@ uprising
 uprisings
 uproar
 uproars
+uprooted
 upsurge
 upsurges
 upthrows
@@ -12669,6 +12871,7 @@ upturn
 upturns
 uranalysis
 uranoplasty
+urged
 urgencies
 urgency
 urgings
@@ -12690,6 +12893,7 @@ utilization
 utilizations
 utterance
 utterances
+u-turn
 uvulopalatopharyngoplasty
 vacation
 vacationed
@@ -12829,6 +13033,7 @@ violence
 violences
 # visa
 # visas
+virus
 viscometry
 viscosimetry
 vision
@@ -12896,6 +13101,8 @@ vrooming
 vrooms
 vulgarisation
 vulgarization
+vulnerability
+vulnerabilities
 vulvectomy
 waddle
 waddled
@@ -12972,13 +13179,13 @@ wassermann
 wastefulness
 wasting
 watchings
-water-skiing
 waterloo
-wave-off
+water-skiing
 waveform
 waveforms
 wavelet
 wavelets
+wave-off
 waverings
 wavings
 waxings
@@ -12986,6 +13193,7 @@ waxings
 wayfaring
 # ways
 weakenings
+weakness
 weaning
 weaponization
 weavings
@@ -13110,9 +13318,9 @@ wish
 wished
 wishes
 wishing
-witch-hunt
 witcheries
 witchery
+witch-hunt
 witching
 withdrawal
 withdrawals
@@ -13122,22 +13330,22 @@ wobble
 wobbled
 wobbles
 wobbling
-woman-worship
 womanhood
+woman-worship
 wonderment
 wonderments
 woodworking
 wooings
 woolgatherings
-word-worship
 wording
 wordings
 # words
+word-worship
 work
-work-in
 worked
 workflow
 workflows
+work-in
 working
 workload
 workloads
@@ -13190,8 +13398,8 @@ wrinkles
 wrinkling
 write
 write-down
-write-off
 writees
+write-off
 writes
 writing
 written
@@ -13202,13 +13410,13 @@ wronged
 wronging
 wrongs
 wrought
-x-raying
 xenotransplant
 xenotransplantation
 xenotransplantations
 xenotransplants
 xerography
 xeroradiography
+x-raying
 yachting
 yack
 yacking
@@ -13229,7 +13437,9 @@ yelpings
 yelps
 # yen
 # yens
+yield
 yielding
+yields
 yip
 yips
 yodel
@@ -13262,44 +13472,3 @@ zoom
 zoomed
 zooming
 zooms
-hunger
-displacement
-# Added by Bonan by reviewing WM M18 output
-displacements
-blocking
-effort
-efforts
-weakness
-disrupt
-speed
-awareness
-understand
-rose
-attributed
-enroll
-deepening
-fail
-cope
-dwindle
-deal
-frost
-movement
-benefit
-suffer
-unfavorable
-survive
-disrupting
-stands
-needs
-experience
-ability
-meetings
-livelihood
-asset
-assets
-condition
-conditions
-shortage
-shortages
-lack
-drought

@@ -1,11 +1,13 @@
 
 import sys
+import logging
 
 try:
     from . import utils
 except ImportError:
     import utils
 
+logger = logging.getLogger(__name__)
 
 class Grounder(object):
 
@@ -18,16 +20,26 @@ class Grounder(object):
         self._cache = dict()
         self.stopwords = set()
         self.keywords = dict()
-        self._user_root_path = None
+        self._user_root_paths = []
 
     def specify_user_root_path(self, path):
         if path is not None:
             # just ensures that the node exists
             self._ontology.get_node_by_path(path)
-        self._user_root_path = path
+        self._user_root_paths = [path]
+
+    def specify_user_root_paths(self, paths):
+        for path in paths:
+            if path is not None:
+                # just ensures that the node exists
+                self._ontology.get_node_by_path(path)
+            self._user_root_paths.append(path)
 
     def get_user_root_path(self):
-        return self._user_root_path
+        if self._user_root_paths:
+            return self._user_root_paths[0]
+        else:
+            return None
 
     def flush_cache(self):
         """Needed when ontology is updated."""
@@ -166,23 +178,28 @@ class Grounder(object):
             mention_candidate.update_groundings(groundings_dict)
         grounding_decisions = mention_candidate.get_groundings()
 
-        # filter out items outside of our target subtree
-        if self._user_root_path is not None:
+        # filter out items outside of our target subtree(s)
+        if len(self._user_root_paths) > 0:
             filtered_groundings = {}
             for grounding_string, (score, mode) in grounding_decisions.items():
                 node = self._ontology.get_node_by_path(grounding_string)
-                if node.get_path().startswith(self._user_root_path):
-                    filtered_groundings[grounding_string] = (score, mode)
+                for root_path in self._user_root_paths:
+                    if node.get_path().startswith(root_path):
+                        filtered_groundings[grounding_string] = (score, mode)
+                        break
             if verbose > 0:
                 print("Filtering out groundings from outside the user-specified"
-                      " target subtree {}:\nBefore: {}\nAfter:{}"
-                      .format(self._user_root_path,
+                      " target subtree(s) {}:\nBefore: {}\nAfter:{}"
+                      .format(self._user_root_paths,
                               grounding_decisions,
                               filtered_groundings))
 
             # while we are here, prefer deeper groundings when available:
-            if len(filtered_groundings) > 1:
-                filtered_groundings.pop(self._user_root_path, None)
+            for g in filtered_groundings.keys():
+                if g not in self._user_root_paths:
+                    for r in self._user_root_paths:
+                        filtered_groundings.pop(r, None)
+                    break
 
             grounding_decisions = filtered_groundings
 
@@ -216,7 +233,7 @@ class Grounder(object):
             threshold,
             modes,
             verbose)
-
+        logger.debug("{}: {}".format(mention_candidate.get_original_mention_string(), top_k_groundings))
         top_k_groundings = (
             top_k_groundings[:self.MIN_GROUNDINGS_FROM_ENTRY_POINT])
 

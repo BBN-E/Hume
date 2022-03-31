@@ -1,0 +1,47 @@
+{
+    "add_serif_event_mentions": true,
+    "allow_anchor_as_event_argument": true,
+    "allow_event_mention_as_event_argument": true,
+    "data": {
+        "train": {
+            "filelist": "/nfs/raid83/u10/jmacbrid-ad/COVID/event-argument/filelists/ace/english_chinese_projected/train.filelist"
+        },
+        "dev": {
+            "filelist": "/nfs/raid83/u10/jmacbrid-ad/COVID/event-argument/filelists/ace/english_chinese_projected/dev.filelist"
+        }
+    },
+    "extractors": [
+        {
+            "cache_dir": "/nfs/raid88/u10/users/ychan-ad/BETTER/transformers_ner/cache",
+            "domain_ontology": "/nfs/raid88/u10/users/ychan/data/ace/role_mappings.ace.txt",
+            "model_path": "/d4m/ears/expts/48168_covid_english_chinese/expts/covid.20210507.2e5/train/event_argument/epoch-23",
+            "hyper-parameters": {
+                "batch_size": 64,
+                "epoch": 23,
+                "decode_mode": true,
+                "max_sentence_length": 256
+            },
+            "optimizer": {
+                "name": "adamw",
+                "lr": 0.00005
+            },
+            "extractor_type": "event-argument_sequence",
+            "engine": "pytorch",
+            "encoder_name": "xlm-roberta-base",
+            "features": [],
+            "seed": 1,
+            "task": "event-argument",
+            "use_only_begin_tag": false,
+            "annotation_scheme": "identification_classification",
+            "use_only_headword": false,
+            "model_saving_policy": {
+                "save_models": true,
+                "save_every_epoch": true,
+                "save_top_k_models": 5,
+                "save_every_kth_epoch": 5,
+                "save_from_kth_epoch": 5
+            },
+            "decode_using_gold_triggers": true
+        }
+    ]
+}

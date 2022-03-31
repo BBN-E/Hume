@@ -1,1717 +1,1976 @@
 - Event:
-  - _source: ['HUME: /event', 'WM: /wm_compositional/process']
-  - {_description: NA}
-  - _examples: [NA]
-  - Environmental:
-    - _source: [NN, 'WM: /wm_compositional/concept/environment']
+    - _source: ['HUME: /event', 'WM: /wm/process', 'WM: /wm/concept']
     - {_description: NA}
     - _examples: [NA]
-    - Environment:
-      - _source: [NN, 'WM: /wm_compositional/concept/environment', 'HUME: /event/environment']
-      - {_description: 'Environment-related factors.'}
-      - _examples: [NA]
-    - Pollution:
-      - _source: ['WM: /wm_compositional/concept/environment/pollution']
-      - {_description: NA}
-      - _examples: [NA]
-      - ClimateChange:
-        - _source: ['WM: /wm_compositional/concept/environment/climate_change']
+    - Environmental:
+        - _source: [NN, 'WM: /wm/concept/environment']
         - {_description: NA}
         - _examples: [NA]
-      - LandPollution:
-        - _source: ['WM: /wm_compositional/concept/environment/pollution']
-        - {_description: NA}
-        - _examples: [NA]
-      - AirPollution:
-        - _source: ['WM: /wm_compositional/concept/environment/pollution']
-        - {_description: NA}
-        - _examples: [NA]
-    - Meteorologic:
-      - _source: ['WM: /wm_compositional/concept/environment/meteorology']
-      - {_description: NA}
-      - _examples: [NA]
-      - Temperature:
-        - _source: ['WM: /wm_compositional/concept/environment/meteorology/temperature']
-        - {_description: NA}
-        - _examples: [NA]
-      - Climate:
-        - _source: [ 'WM: /wm_compositional/concept/environment/climate']
-        - {_description: NA}
-        - _examples: [NA]
-      - Weather:
-        - _source: [NN, 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/weather', 'HUME: /event/weather', 'WM: /wm_compositional/concept/environment/meteorology/weather']
-        - {_description: 'Any environmental condition related to atmospheric conditions in an area. Weather includes temperature, wind, clouds/precipitation, etc. and their effects.'}
-        - _examples: [NA]
-        - Precipitation:
-          - _source: [NN, 'HUME_INDICATOR: /indicator/Rainfall', 'WM: /wm_compositional/concept/environment/meteorology/precipitation', 'HUME: /event/weather/precipitation', 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/weather/rainfall']
-          - {_description: 'Rain, snow, sleet, or hail that falls to the ground.'}
-          - _examples: [NA]
-        - Rainfall:
-          - _source: [NN, 'HUME: /event/weather/rainfall', 'WM: /wm_compositional/concept/environment/meteorology/precipitation']
-          - {_description: NA}
-          - _examples: [NA]
-        - Flooding:
-          - _source: [NN, 'HUME: /event/weather/flooding', 'HUME_INDICATOR: /indicator/Rainfall', 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/weather/rainfall', 'WM: /wm_compositional/concept/crisis_or_disaster/environmental/flood']
-          - {_description: 'The covering or submerging of normally dry land with a large amount of water. Cover or submerge (a place or area) with water.'}
-          - _examples: [NA]
-        - Drought:
-          - _source: [NN, 'HUME: /event/weather/drought', 'HUME_INDICATOR: /indicator/Rainfall', 'WM: /wm_compositional/concept/crisis_or_disaster/environmental/drought', 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/weather/rainfall']
-          - {_description: 'A prolonged period of abnormally low rainfall, leading to a shortage of water.'}
-          - _examples: [NA]
-        - Storm:
-          - _source: [NN, 'WM: /wm_compositional/concept/environment/meteorology/precipitation', 'HUME: /event/weather/storm']
-          - {_description: 'A violent disturbance of the atmosphere with strong winds and usually rain, thunder, lightning, or snow.'}
-          - _examples: [NA]
-    - NaturalResources:
-      - _source: ['WM: /wm_compositional/concept/environment/natural_resources']
-      - {_description: NA}
-      - _examples: [NA]
-      - Soil:
-        - _source: ['WM: /wm_compositional/concept/environment/natural_resources/soil']
-        - {_description: NA}
-        - _examples: [NA]
-      - FossilFuels:
-        - _source: ['WM: /wm_compositional/concept/environment/natural_resources/fossil_fuels']
-        - {_description: NA}
-        - _examples: [NA]
-      - WaterBodies:
-        - _source: ['WM: /wm_compositional/concept/environment/natural_resources/water_bodies']
-        - {_description: NA}
-        - _examples: [NA]
-    - ResourceManagement:
-      - _source: ['WM: /wm_compositional/process/manage']
-      - {_description: NA}
-      - _examples: [NA]
-    - Forestry:
-      - _source: ['WM: /wm_compositional/concept/environment/forestry']
-      - {_description: NA}
-      - _examples: [NA]
-    - ClimateChangeMitigation:
-      - _source: ['WM: /wm_compositional/process/mitigate']
-      - {_description: NA}
-      - _examples: [NA]
-  - Factor:
-    - _source: [NN, 'HUME: /event/factor', 'WM: /wm_compositional/process']
-    - {_description: NA}
-    - _examples: [NA]
-  - Agriculture:
-    - _source: ['WM: /wm_compositional/concept/agriculture']
-    - {_description: NA}
-    - _examples: [NA]
-    - AnimalDisease:
-      - _source: [
-          NN,
-          'HUME: /event/healthcare/animal disease',
-          'WM: /wm_compositional/concept/agriculture/disease/livestock_disease'
-        ]
-      - {_description: 'Animal disease.'}
-      - _examples: [NA]
-    - PlantDisease:
-      - _source: [NN, 'HUME: /event/healthcare/plant disease', 'WM: /wm_compositional/concept/agriculture/disease/crop_disease']
-      - {_description: 'Plant disease.'}
-      - _examples: [NA]
-      - PestInfestation:
-        - _source: [NN, 'WM: /wm_compositional/process/infest', 'HUME: /event/healthcare/pest infestation']
-        - {_description: 'Pest infestation.'}
-        - _examples: [NA]
-    - Pesticide:
-      - _source: ['WM: /wm_compositional/concept/goods/agricultural/pesticide']
-      - {_description: NA}
-      - _examples: [NA]
-    - CropStorage:
-      - _source: ['WM: /wm_compositional/concept/storage']
-      - {_description: NA}
-      - _examples: [NA]
-    - Planting:
-      - _source: ['WM: /wm_compositional/process/farming/planting']
-      - {_description: NA}
-      - _examples: [NA]
-  - SocialAndPolitical:
-    - _source: ['WM_deprecated: /wm/concept/causal_factor/social_and_political']
-    - {_description: NA}
-    - _examples: [NA]
-    - Disarmament:
-      - _source: ['WM: /wm_compositional/process/conflict/disarmament']
-      - {_description: NA}
-      - _examples: [NA]
-    - PhysicalInsecurity:
-      - _source: ['WM: /wm_compositional/concept/crisis_or_disaster/conflict/physical_insecurity']
-      - {_description: NA}
-      - _examples: [NA]
-    - Government:
-      - _source: ['WM: /wm_compositional/concept/government']
-      - {_description: NA}
-      - _examples: [NA]
-      - Census:
-        - _source: ['WM: /wm_compositional/concept/government/government_program']
-        - {_description: NA}
-        - _examples: [NA]
-    - Educational:
-      - _source: ['WM: /wm_compositional/concept/education']
-      - {_description: NA}
-      - _examples: [NA]
-      - Education:
-        - _source: [NN, 'HUME: /event/intervention/education', 'WM: /wm_compositional/concept/education']
-        - {_description: NA}
-        - _examples: [NA]
-      - EducationalMaterials:
-        - _source: ['WM: /wm_compositional/concept/goods/education_supplies']
-        - {_description: NA}
-        - _examples: [NA]
-    - PopulationGroup:
-      - _source: ['WM: /wm_compositional/concept/population/demographics']
-      - {_description: NA}
-      - _examples: [NA]
-      - Overcrowding:
-        - _source: ['WM: /wm_compositional/concept/population/density/overcrowding']
-        - {_description: NA}
-        - _examples: [NA]
-      - Depopulation:
-        - _source: ['WM: /wm_compositional/concept/population/density/de-population']
-        - {_description: NA}
-        - _examples: [NA]
-      - PopulationDensity:
-        - _source: ['WM: /wm_compositional/concept/population/density']
-        - {_description: NA}
-        - _examples: [NA]
-    - BasicServices:
-      - _source: ['WM_deprecated: /wm/concept/causal_factor/social_and_political/basic_services']
-      - {_description: NA}
-      - _examples: [NA]
-    - Political:
-      - _source: ['WM_deprecated: /wm/concept/causal_factor/social_and_political/political']
-      - {_description: NA}
-      - _examples: [NA]
-      - Independence:
-        - _source: ['WM_deprecated: /wm/concept/causal_factor/social_and_political/political/independence']
-        - {_description: NA}
-        - _examples: [NA]
-      - Corruption:
-        - _source: ['WM: /wm_compositional/concept/government/corruption']
-        - {_description: NA}
-        - _examples: [NA]
-      - PoliticalInstability:
-        - _source: ['WM_deprecated: /wm/concept/causal_factor/social_and_political/political/political_instability']
-        - {_description: NA}
-        - _examples: [NA]
-      - Sanction:
-        - _source: [NN, 'WM: /wm_compositional/concept/government/sanction', 'HUME: /event/intervention/sanction']
-        - {_description: NA}
-        - _examples: [NA]
-    - Personal:
-      - _source: [NN, 'HUME: /event/personal']
-      - {_description: NA}
-      - _examples: [NA]
-      - MarriageOrDivorce:
-        - _source: [NN, 'HUME: /event/personal/marriage or divorce']
-        - {_description: NA}
-        - _examples: [NA]
-    - Conflict:
-      - _source: [NN, 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/conflict/population displacement','WM: /wm_compositional/process/conflict', 'HUME_INDICATOR: /indicator/Conflict/Population Displacement', 'HUME: /event/conflict']
-      - {_description: 'A serious disagreement or argument, typically a protracted one. For example, a prolonged armed struggle, or a condition in which a person experiences a clash of opposing wishes or needs.'}
-      - _examples: [NA]
-      - Tension:
-        - _source: [NN, 'WM: /wm_compositional/concept/crisis_or_disaster/conflict/tension', 'HUME: /event/tension']
-        - {_description: NA}
-        - _examples: [NA]
-      - LivestockRaid:
-        - _source: ['WM: /wm_compositional/process/conflict/livestock_raid']
-        - {_description: NA}
-        - _examples: [NA]
-      - Hostility:
-        - _source: [NN, 'HUME: /event/conflict/hostility', 'WM: /wm_compositional/concept/crisis_or_disaster/conflict/hostility']
-        - {_description: 'Hostile behavior; unfriendliness or opposition.'}
-        - _examples: [NA]
-      - Demonstrate:
-        - _source: [NN, 'WM: /wm_compositional/process/conflict/demonstrate', 'HUME: /event/conflict/demostrate']
-        - {_description: 'A public meeting or march protesting against something or expressing views on a political issue.'}
-        - _examples: [NA]
-      - War:
-        - _source: [NN, 'HUME: /event/conflict/war', 'WM: /wm_compositional/process/conflict/war']
-        - {_description: 'A state of armed conflict between different nations or states or different groups within a nation or state.'}
-        - _examples: [NA]
-      - MilitaryOperation:
-        - _source: [NN, 'WM: /wm_compositional/process/conflict', 'HUME: /event/intervention/military operation']
-        - {_description: NA}
-        - _examples: [NA]
-      - Attack:
-        - _source: [NN, 'HUME_INDICATOR: /indicator/Conflict/Population Displacement', 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/conflict/population displacement', 'HUME: /event/conflict/attack', 'WM: /wm_compositional/process/conflict/attack']
-        - {_description: 'Take aggressive action against (a place or enemy forces) with weapons or armed force, typically in a battle or war. An aggressive and violent action against a person or place.'}
-        - _examples: [NA]
-        - CounterTerrorismOperation:
-          - _source: [NN, 'HUME: /event/intervention/military operation/counter terrorism operation', 'WM: /wm_compositional/process/conflict/attack']
-          - {_description: NA}
-          - _examples: [NA]
-      - Terrorism:
-        - _source: [NN, 'WM: /wm_compositional/process/conflict/terrorism', 'HUME: /event/conflict/terrorism']
-        - {_description: NA}
-        - _examples: [NA]
-      - Sabotage:
-        - _source: [NN, 'HUME: /event/conflict/sabotage', 'WM: /wm_compositional/process/conflict']
-        - {_description: NA}
-        - _examples: [NA]
-      - Strike:
-        - _source: [NN, 'WM: /wm_compositional/process/conflict/attack', 'HUME: /event/conflict/strike']
-        - {_description: NA}
-        - _examples: [NA]
-  - Death:
-    - _source: [NN, 'WM: /wm_compositional/process/population/death', 'HUME: /event/death']
-    - {_description: NA}
-    - _examples: [NA]
-  - Offense:
-    - _source: [NN, 'HUME: /event/offense', 'WM: /wm_compositional/concept/crisis_or_disaster/conflict/crime', 'WM: /wm_compositional/process/conflict/threat', 'WM: /wm_compositional/process/conflict/attack']
-    - {_description: NA}
-    - _examples: [NA]
-    - Criminal:
-      - _source: ['WM: /wm_compositional/concept/crisis_or_disaster/conflict/crime']
-      - {_description: NA}
-      - _examples: [NA]
-      - Crime:
-        - _source: [NN, 'HUME: /event/offense/crime', 'WM: /wm_compositional/concept/crisis_or_disaster/conflict/crime']
-        - {_description: 'An action or omission that constitutes an offense that may be prosecuted by the state and is punishable by law.'}
-        - _examples: [NA]
-      - Abduction:
-        - _source: ['WM: /wm_compositional/process/conflict/abduct']
-        - {_description: NA}
-        - _examples: [NA]
-    - Exploitation:
-      - _source: [NN, 'WM: /wm_compositional/process/conflict/exploit', 'HUME: /event/offense/exploitation']
-      - {_description: NA}
-      - _examples: [NA]
-  - Healthcare:
-    - _source: [NN, 'WM: /wm_compositional/concept/health', 'HUME: /event/healthcare']
-    - {_description: NA}
-    - _examples: [NA]
-    - BasicNeeds:
-      - _source: ['WM_deprecated: /wm/concept/causal_factor/health_and_life/basic_needs']
-      - {_description: NA}
-      - _examples: [NA]
-    - Birth:
-      - _source: ['WM: /wm_compositional/process/population/birth']
-      - {_description: NA}
-      - _examples: [NA]
-    - Biometrics:
-      - _source: ['WM: /wm_compositional/concept/health/biometrics']
-      - {_description: NA}
-      - _examples: [NA]
-    - Nutrition:
-      - _source: ['WM: /wm_compositional/concept/health/nutrition']
-      - {_description: NA}
-      - _examples: [NA]
-      - BreastFeeding:
-        - _source: ['WM: /wm_compositional/concept/health/nutrition/breast_feeding']
-        - {_description: NA}
-        - _examples: [NA]
-      - Malnutrition:
-        - _source: ['WM: /wm_compositional/concept/health/nutrition/malnutrition']
-        - {_description: NA}
-        - _examples: [NA]
-      - FoodDiversity:
-        - _source: ['WM: /wm_compositional/property/diversity']
-        - {_description: NA}
-        - _examples: [NA]
-      - FoodIntake:
-        - _source: ['WM: /wm_compositional/concept/health/nutrition/food_intake']
-        - {_description: NA}
-        - _examples: [NA]
-      - FoodPreparation:
-        - _source: ['WM: /wm_compositional/process/prepare']
-        - {_description: NA}
-        - _examples: [NA]
-      - FoodPreference:
-        - _source: ['WM: /wm_compositional/concept/health/nutrition/food_preference']
-        - {_description: NA}
-        - _examples: [NA]
-    - LivingCondition:
-      - _source: ['WM: /wm_compositional/concept/health/living_condition']
-      - {_description: NA}
-      - _examples: [NA]
-      - SanitationAndHygiene:
-        - _source: ['WM: /wm_compositional/concept/health/living_condition']
-        - {_description: NA}
-        - _examples: [NA]
-      - WaterSafety:
-        - _source: ['WM: /wm_compositional/property/safety']
-        - {_description: NA}
-        - _examples: [NA]
-      - FoodSafety:
-        - _source: ['WM: /wm_compositional/property/safety']
-        - {_description: NA}
-        - _examples: [NA]
-    - Disease:
-      - _source: [NN, 'WM: /wm_compositional/concept/health/disease']
-      - {_description: ''}
-      - _examples: [NA]
-      - AlcoholDrugAndSubstanceAbuse:
-        - _source: ['WM: /wm_compositional/concept/health/substance_abuse']
-        - {_description: NA}
-        - _examples: [NA]
-      - HumanDisease:
-        - _source: [NN, 'WM: /wm_compositional/concept/health/disease', 'HUME: /event/healthcare/human disease']
-        - {_description: 'Human disease.'}
-        - _examples: [NA]
-    - Treatment:
-      - _source: [NN, 'HUME: /event/healthcare/treatment', 'WM: /wm_compositional/concept/health/treatment']
-      - {_description: 'Medical care given to a patient for an illness or injury.'}
-      - _examples: [NA]
-      - HealthTreatment:
-        - _source: ['WM: /wm_compositional/concept/health/treatment']
-        - {_description: NA}
-        - _examples: [NA]
-    - Injury:
-      - _source: [NN, 'WM: /wm_compositional/concept/health/injury']
-      - {_description: ''}
-      - _examples: [NA]
-  - Movement:
-    - _source: [NN, 'WM_deprecated: /wm/concept/causal_factor/movement', 'HUME: /event/movement']
-    - {_description: 'An act of changing physical location or position or of having this changed.'}
-    - _examples: [NA]
-    - AnimalMigration:
-        - _source: ['WM: /wm_compositional/concept/migration/animal_migration']
-        - {_description: NA}
-        - _examples: [NA]
-    - Migration:
-      - _source: [NN, 'WM: /wm_compositional/concept/migration']
-      - {_description: NA}
-      - _examples: [NA]
-      - RefugeePopulation:
-        - _source: [NN, 'HUME: /event/refugee population', 'WM: /wm_compositional/concept/migration/human_migration']
-        - {_description: NA}
-        - _examples: [NA]
-      - SeasonalMigration:
-        - _source: ['WM_deprecated: /wm/concept/causal_factor/social_and_political/migration/seasonal_migration']
-        - {_description: NA}
-        - _examples: [NA]
-      - MigrationReturnees:
-        - _source: ['WM: /wm_compositional/concept/migration/returnees']
-        - {_description: NA}
-        - _examples: [NA]
-      - Immigration:
-        - _source: ['WM: /wm_compositional/process/population/immigrate']
-        - {_description: NA}
-        - _examples: [NA]
-      - Emigration:
-        - _source: ['WM: /wm_compositional/process/population/emmigrate']
-        - {_description: NA}
-        - _examples: [NA]
-      - HostingIDPs:
-        - _source: ['WM: /wm_compositional/concept/migration/IDP']
-        - {_description: NA}
-        - _examples: [NA]
-      - HumanDisplacement:
-        - _source: [NN, 'HUME: /event/movement/human displacement', 'HUME_INDICATOR: /indicator/Conflict/Population Displacement', 'WM: /wm_compositional/concept/migration', 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/conflict/population displacement']
-        - {_description: 'The forced movement of people from their home, or country of origin.'}
-        - _examples: [NA]
-    - Transport:
-      - _source: [NN, 'HUME: /event/movement/transport', 'WM: /wm_compositional/process/transport']
-      - {_description: 'Take or carry (people or goods) from one place to another by means of a vehicle, aircraft, or ship.'}
-      - _examples: [NA]
-    - EvacuateHumanitarianWorkers:
-      - _source: [NN, 'WM: /wm_compositional/concept/crisis_or_disaster/evacuation', 'HUME: /event/movement/evacuate humanitarian workers']
-      - {_description: NA}
-      - _examples: [NA]
-  - EconomicAndCommerce:
-    - _source: [NN, 'WM: /wm_compositional/concept/economy']
-    - {_description: 'Should be a parent class of EconomicActivity'}
-    - _examples: [NA]
-    - Poverty:
-      - _source: [NN, 'HUME: /event/condition/poverty', 'WM: /wm_compositional/concept/poverty']
-      - {_description: NA}
-      - _examples: [NA]
-    - EconomicActivity:
-      - _source: [NN, 'WM: /wm_compositional/concept/economy', 'HUME: /event/economic activity']
-      - {_description: 'Economic activities.'}
-      - _examples: [NA]
-      - Currency:
-        - _source: ['WM: /wm_compositional/concept/economy/currency']
-        - {_description: ''}
-        - _examples: [NA]
-      - Livelihood:
-        - _source: [NN, 'WM: /wm_compositional/concept/economy/livelihoods']
-        - {_description: ''}
-        - _examples: [NA]
-        - Farming:
-          - _source: ['WM: /wm_compositional/process/farming']
-          - {_description: ''}
-          - _examples: [NA]
-      - CrossBorderTrade:
-        - _source: [NN, 'HUME: /event/economic activity/cross border trade', 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/commerce/Cross Border Trade', 'HUME_INDICATOR: /indicator/Commerce/Cross Border Trade', 'WM: /wm_compositional/process/trade']
-        - {_description: 'Cross-border trade.'}
-        - _examples: [NA]
-        - Import:
-          - _source: [NN, 'WM: /wm_compositional/process/trade/import', 'HUME: /event/economic activity/cross border trade/import', 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/commerce/Cross Border Trade', 'HUME_INDICATOR: /indicator/Commerce/Cross Border Trade']
-          - {_description: 'Bring (goods or services) into a country from abroad for sale.'}
-          - _examples: [NA]
-          - FoodImport:
-            - _source: [NN, 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/commerce/Cross Border Trade', 'HUME_INDICATOR: /indicator/Commerce/Cross Border Trade', 'HUME: /event/economic activity/cross border trade/import/food import', 'WM: /wm_compositional/process/trade/import']
-            - {_description: 'Import of food.'}
+        - Environment:
+            - _source: [NN, 'WM: /wm/concept/environment', 'HUME: /event/environment']
+            - {_description: 'Environment-related factors.'}
             - _examples: [NA]
-        - Export:
-          - _source: [NN, 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/commerce/Cross Border Trade', 'WM: /wm_compositional/process/trade/export', 'HUME: /event/economic activity/cross border trade/export', 'HUME_INDICATOR: /indicator/Commerce/Cross Border Trade']
-          - {_description: 'Send (goods or services) to another country for sale.'}
-          - _examples: [NA]
-          - FoodExport:
-            - _source: [NN, 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/commerce/Cross Border Trade', 'WM: /wm_compositional/process/trade/export', 'HUME: /event/economic activity/cross border trade/export/food export', 'HUME_INDICATOR: /indicator/Commerce/Cross Border Trade']
-            - {_description: 'Export of food.'}
+        - Pollution:
+            - _source: ['WM: /wm/concept/environment/pollution']
+            - {_description: NA}
             - _examples: [NA]
-      - Production:
-        - _source: [NN, 'WM: /wm_compositional/concept/economy', 'HUME: /event/economic activity/production']
+            - ClimateChange:
+                - _source: ['WM: /wm/concept/environment/climate_change']
+                - {_description: NA}
+                - _examples: [NA]
+            - LandPollution:
+                - _source: ['WM: /wm/concept/environment/pollution']
+                - {_description: NA}
+                - _examples: [NA]
+            - AirPollution:
+                - _source: ['WM: /wm/concept/environment/pollution']
+                - {_description: NA}
+                - _examples: [NA]
+        - Meteorologic:
+            - _source: ['WM: /wm/concept/environment/meteorology']
+            - {_description: NA}
+            - _examples: [NA]
+            - Temperature:
+                - _source: ['WM: /wm/concept/environment/meteorology/temperature']
+                - {_description: NA}
+                - _examples: [NA]
+            - Climate:
+                - _source: [ 'WM: /wm/concept/environment/climate']
+                - {_description: NA}
+                - _examples: [NA]
+            - Weather:
+                - _source: [NN, 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/weather', 'HUME: /event/weather', 'WM: /wm/concept/environment/meteorology']
+                - {_description: 'Any environmental condition related to atmospheric conditions in an area. Weather includes temperature, wind, clouds/precipitation, etc. and their effects.'}
+                - _examples: [NA]
+                - Precipitation:
+                    - _source: [NN, 'HUME_INDICATOR: /indicator/Rainfall', 'WM: /wm/concept/environment/meteorology/precipitation', 'HUME: /event/weather/precipitation', 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/weather/rainfall']
+                    - {_description: 'Rain, snow, sleet, or hail that falls to the ground.'}
+                    - _examples: [NA]
+                - Rainfall:
+                    - _source: [NN, 'HUME: /event/weather/rainfall', 'WM: /wm/concept/environment/meteorology/precipitation']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - Flooding:
+                    - _source: [NN, 'HUME: /event/weather/flooding', 'HUME_INDICATOR: /indicator/Rainfall', 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/weather/rainfall', 'WM: /wm/concept/crisis_or_disaster/natural_disaster/flood']
+                    - {_description: 'The covering or submerging of normally dry land with a large amount of water. Cover or submerge (a place or area) with water.'}
+                    - _examples: [NA]
+                - Drought:
+                    - _source: [NN, 'HUME: /event/weather/drought', 'HUME_INDICATOR: /indicator/Rainfall', 'WM: /wm/concept/crisis_or_disaster/natural_disaster/drought', 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/weather/rainfall']
+                    - {_description: 'A prolonged period of abnormally low rainfall, leading to a shortage of water.'}
+                    - _examples: [NA]
+                - Storm:
+                    - _source: [NN, 'WM: /wm/concept/environment/meteorology/precipitation', 'HUME: /event/weather/storm']
+                    - {_description: 'A violent disturbance of the atmosphere with strong winds and usually rain, thunder, lightning, or snow.'}
+                    - _examples: [NA]
+        - NaturalResources:
+            - _source: ['WM: /wm/concept/environment/natural_resources']
+            - {_description: NA}
+            - _examples: [NA]
+            - Soil:
+                - _source: ['WM: /wm/concept/environment/natural_resources/soil']
+                - {_description: NA}
+                - _examples: [NA]
+            - FossilFuels:
+                - _source: ['WM: /wm/concept/environment/natural_resources/fossil_fuels']
+                - {_description: NA}
+                - _examples: [NA]
+            - WaterBodies:
+                - _source: ['WM: /wm/concept/environment/natural_resources/fresh_water_bodies']
+                - {_description: NA}
+                - _examples: [NA]
+        - ResourceManagement:
+            - _source: ['WM: /wm/process/management']
+            - {_description: NA}
+            - _examples: [NA]
+        - Forestry:
+            - _source: ['WM: /wm/concept/environment/forestry']
+            - {_description: NA}
+            - _examples: [NA]
+        - ClimateChangeMitigation:
+            - _source: ['WM: /wm/process/mitigation']
+            - {_description: NA}
+            - _examples: [NA]
+    - Factor:
+        - _source: [NN, 'HUME: /event/factor', 'WM: /wm/process']
         - {_description: NA}
         - _examples: [NA]
-        - AgricultureProduction:
-          - _source: [
+    - Agriculture:
+        - _source: ['WM: /wm/concept/agriculture']
+        - {_description: NA}
+        - _examples: [NA]
+        - AnimalDisease:
+            - _source: [
               NN,
-              'HUME: /event/economic activity/production/agriculture production',
-              'WM: /wm_compositional/concept/agriculture'
+              'HUME: /event/healthcare/animal disease',
+              'WM: /wm/concept/agriculture/disease/livestock_disease'
             ]
-          - {_description: 'Agriculture production.'}
-          - _examples: [NA]
-          - LandAvailability:
-            - _source: [NN, 'WM: /wm_compositional/concept/environment/natural_resources/land']
-            - {_description: 'Availability of land.'}
+            - {_description: 'Animal disease.'}
             - _examples: [NA]
-          - Pasture:
-            - _source: [NN, 'WM: /wm_compositional/concept/environment/natural_resources/pasture']
+        - PlantDisease:
+            - _source: [NN, 'HUME: /event/healthcare/plant disease', 'WM: /wm/concept/agriculture/disease/crop_disease']
+            - {_description: 'Plant disease.'}
+            - _examples: [NA]
+            - PestInfestation:
+                - _source: [NN, 'WM: /wm/process/infestation', 'WM: /wm/concept/agriculture/pest', 'HUME: /event/healthcare/pest infestation']
+                - {_description: 'Pest infestation.'}
+                - _examples: [NA]
+                - ArmyWorm:
+                    - _source: ['WM: /wm/concept/agriculture/pest/army_worm']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - Locust:
+                    - _source: ['WM: /wm/concept/agriculture/pest/locust']
+                    - {_description: NA}
+                    - _examples: [NA]
+                    - LocustBreeding:
+                        - _source:
+                            - "WM: /wm/process/breeding"
+                        - _description: "NA"
+                        - _examples: []
+                        - _alternative_id: null
+                    - LocustHatching:
+                        - _source:
+                            - "WM: /wm/process/hatching"
+                        - _description: "NA"
+                        - _examples: []
+                        - _alternative_id: null
+                    - LocustEggs:
+                        - _source: ['WM: /wm/concept/agriculture/pest/locust/locust_eggs']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - Gregarious:
+                        - _source: ['WM: /wm/concept/agriculture/pest/locust/gregarious']
+                        - {_description: NA}
+                        - _examples: [NA]
+                        - LocustSwarm:
+                            - _source: ['WM: /wm/concept/agriculture/pest/locust/gregarious/locust_swarm']
+                            - {_description: NA}
+                            - _examples: [NA]
+                        - HopperBand:
+                            - _source: ['WM: /wm/concept/agriculture/pest/locust/gregarious/hopper_band']
+                            - {_description: NA}
+                            - _examples: [NA]
+                    - Solitary:
+                        - _source: ['WM: /wm/concept/agriculture/pest/locust/solitary']
+                        - {_description: NA}
+                        - _examples: [NA]
+                        - SolitaryLocust:
+                            - _source: ['WM: /wm/concept/agriculture/pest/locust/solitary/solitary_locust']
+                            - {_description: NA}
+                            - _examples: [NA]
+                        - SolitaryHopper:
+                            - _source: ['WM: /wm/concept/agriculture/pest/locust/solitary/solitary_hopper']
+                            - {_description: NA}
+                            - _examples: [NA]
+        - Pesticide:
+            - _source: ['WM: /wm/concept/goods/agricultural/pesticide']
             - {_description: NA}
             - _examples: [NA]
-          - Irrigation:
-            - _source: [NN, 'HUME: /event/economic activity/production/agriculture production/irrigation', 'WM: /wm_compositional/process/farming']
-            - {_description: 'The supply of water to land or crops to help growth, typically by means of channels.'}
+        - CropStorage:
+            - _source: ['WM: /wm/concept/storage']
+            - {_description: NA}
             - _examples: [NA]
-          - Fertilization:
-            - _source: [NN, 'WM: /wm_compositional/process/farming', 'HUME: /event/economic activity/production/agriculture production/fertilization']
-            - {_description: 'The action or process of applying a fertilizer to soil or land.'}
+        - Planting:
+            - _source: ['WM: /wm/process/farming/planting']
+            - {_description: NA}
             - _examples: [NA]
-          - CropProduction:
-            - _source: [NN, 'WM: /wm_compositional/process/produce', 'HUME: /event/economic activity/production/agriculture production/crop production']
-            - {_description: 'Crop production.'}
-            - _examples: [NA]
-          - LivestockProduction:
-            - _source: [NN, 'HUME_INDICATOR: /indicator/Agriculture/Livestock Production', 'WM: /wm_compositional/process/produce', 'HUME: /event/economic activity/production/agriculture production/livestock production']
-            - {_description: 'Livestock production.'}
-            - _examples: [NA]
-        - OilProduction:
-          - _source: [NN, 'WM: /wm_compositional/concept/environment/natural_resources/fossil_fuels', 'HUME: /event/economic activity/production/oil production']
-          - {_description: 'Oil production.'}
-          - _examples: [NA]
-      - Market:
-        - _source: [NN, 'WM: /wm_compositional/concept/economy/domestic_market', 'HUME: /event/economic activity/market']
+    - SocialAndPolitical:
+        - _source: ['WM_deprecated: /wm/concept/causal_factor/social_and_political']
         - {_description: NA}
         - _examples: [NA]
-        - Employment:
-          - _source: [NN, 'HUME: /wm/concept/causal_factor/economic_and_commerce/economic activity/market/labor_market', 'WM_deprecated: /wm/concept/causal_factor/economic_and_commerce/economic_activity/market/labor_market']
-          - {_description: NA}
-          - _examples: [NA]
-        - Budget:
-          - _source: ['WM: /wm_compositional/concept/economy/budget']
-          - {_description: NA}
-          - _examples: [NA]
-        - Assets:
-          - _source: ['WM: /wm_compositional/concept/economy/assets']
-          - {_description: NA}
-          - _examples: [NA]
-        - Revenue:
-          - _source: ['WM: /wm_compositional/concept/economy/income']
-          - {_description: NA}
-          - _examples: [NA]
-          - FarmerIncome:
-            - _source: ['WM: /wm_compositional/concept/economy/income']
+        - Disarmament:
+            - _source: ['WM: /wm/process/conflict/disarmament']
             - {_description: NA}
             - _examples: [NA]
-          - HouseholdIncome:
-            - _source: ['WM: /wm_compositional/concept/economy/income']
+        - PhysicalInsecurity:
+            - _source: ['WM: /wm/concept/crisis_or_disaster/conflict']
             - {_description: NA}
             - _examples: [NA]
-        - FoodStocks:
-          - _source: ['WM_deprecated: /wm/concept/causal_factor/economic_and_commerce/economic_activity/market/food_stocks']
-          - {_description: NA}
-          - _examples: [NA]
-        - Depreciation:
-          - _source: ['WM: /wm_compositional/process/depreciate']
-          - {_description: NA}
-          - _examples: [NA]
-        - Supply:
-          - _source: [NN, 'HUME: /event/economic activity/market/supply', 'WM: /wm_compositional/process/supply']
-          - {_description: NA}
-          - _examples: [NA]
-          - FoodSupply:
-            - _source: [NN, 'WM: /wm_compositional/process/supply', 'HUME: /event/economic activity/market/supply/food supply']
-            - {_description: 'Food supply.'}
-            - _examples: [NA]
-        - Transaction:
-          - _source: [NN, 'HUME: /event/economic activity/market/transaction', 'WM: /wm_compositional/process/transaction']
-          - {_description: 'An instance of buying or selling something; a business deal.'}
-          - _examples: [NA]
-          - OilTransaction:
-            - _source: [NN, 'WM: /wm_compositional/process/transaction', 'HUME: /event/economic activity/market/transaction/oil transaction']
+        - Government:
+            - _source: ['WM: /wm/concept/government']
             - {_description: NA}
             - _examples: [NA]
-          - FoodPurchase:
-            - _source: ['WM: /wm_compositional/process/transaction']
+            - Census:
+                - _source: ['WM: /wm/concept/government/government_program']
+                - {_description: NA}
+                - _examples: [NA]
+        - Educational:
+            - _source: ['WM: /wm/concept/education']
             - {_description: NA}
             - _examples: [NA]
-        - Inflation:
-          - _source: [NN, 'WM: /wm_compositional/process/inflation', 'HUME: /event/economic activity/market/inflation']
-          - {_description: 'A general increase in prices and fall in the purchasing value of money.'}
-          - _examples: [NA]
-        - CurrencyDevaluation:
-          - _source: [NN, 'HUME: /event/economic activity/market/currency devaluation', 'WM: /wm_compositional/process/depreciate']
-          - {_description: 'A deliberate downward adjustment of the value of a country currency against another currency.'}
-          - _examples: [NA]
-        - Price:
-          - _source: [NN, 'WM: /wm_compositional/property/price_or_cost', 'HUME: /event/economic activity/market/price']
-          - {_description: NA}
-          - _examples: [NA]
-          - FoodPrice:
-            - _source: [NN, 'HUME: /event/economic activity/market/price/food price', 'WM: /wm_compositional/property/price_or_cost']
-            - {_description: 'Food price.'}
-            - _examples: [NA]
-          - CropPrice:
-            - _source: ['WM: /wm_compositional/property/price_or_cost']
+            - Education:
+                - _source: [NN, 'HUME: /event/intervention/education', 'WM: /wm/concept/education']
+                - {_description: NA}
+                - _examples: [NA]
+            - EducationalMaterials:
+                - _source: ['WM: /wm/concept/goods/education_supplies']
+                - {_description: NA}
+                - _examples: [NA]
+        - PopulationGroup:
+            - _source: ['WM: /wm/concept/population_demographics']
             - {_description: NA}
             - _examples: [NA]
-          - OilPrice:
-            - _source: [NN, 'WM: /wm_compositional/property/price_or_cost', 'HUME: /event/economic activity/market/price/oil price']
-            - {_description: "Oil price."}
+            - Overcrowding:
+                - _source: ['WM: /wm/concept/population_demographics/population_density/overcrowding']
+                - {_description: NA}
+                - _examples: [NA]
+            - Depopulation:
+                - _source: ['WM: /wm/concept/population_demographics/population_density/de-population']
+                - {_description: NA}
+                - _examples: [NA]
+            - PopulationDensity:
+                - _source: ['WM: /wm/concept/population_demographics/population_density']
+                - {_description: NA}
+                - _examples: [NA]
+        - BasicServices:
+            - _source: ['WM_deprecated: /wm/concept/causal_factor/social_and_political/basic_services']
+            - {_description: NA}
             - _examples: [NA]
-      - Consumption:
-        - _source: [NN, 'WM: /wm_compositional/concept/economy', 'HUME: /event/economic activity/consumption']
+        - Political:
+            - _source: ['WM_deprecated: /wm/concept/causal_factor/social_and_political/political']
+            - {_description: NA}
+            - _examples: [NA]
+            - Independence:
+                - _source: ['WM_deprecated: /wm/concept/causal_factor/social_and_political/political/independence']
+                - {_description: NA}
+                - _examples: [NA]
+            - Corruption:
+                - _source: ['WM: /wm/concept/government/corruption']
+                - {_description: NA}
+                - _examples: [NA]
+            - PoliticalInstability:
+                - _source: ['WM_deprecated: /wm/concept/causal_factor/social_and_political/political/political_instability', 'WM: /wm/property/instability']
+                - {_description: NA}
+                - _examples: [NA]
+            - Sanction:
+                - _source: [NN, 'WM: /wm/concept/government/sanction', 'HUME: /event/intervention/sanction']
+                - {_description: NA}
+                - _examples: [NA]
+        - Personal:
+            - _source: [NN, 'HUME: /event/personal']
+            - {_description: NA}
+            - _examples: [NA]
+            - MarriageOrDivorce:
+                - _source: [NN, 'HUME: /event/personal/marriage or divorce']
+                - {_description: NA}
+                - _examples: [NA]
+        - Conflict:
+            - _source: [NN, 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/conflict/population displacement','WM: /wm/process/conflict', 'HUME_INDICATOR: /indicator/Conflict/Population Displacement', 'HUME: /event/conflict']
+            - {_description: 'A serious disagreement or argument, typically a protracted one. For example, a prolonged armed struggle, or a condition in which a person experiences a clash of opposing wishes or needs.'}
+            - _examples: [NA]
+            - Tension:
+                - _source: [NN, 'WM: /wm/concept/crisis_or_disaster/conflict/tension', 'HUME: /event/tension']
+                - {_description: NA}
+                - _examples: [NA]
+            - LivestockRaid:
+                - _source: ['WM: /wm/process/conflict']
+                - {_description: NA}
+                - _examples: [NA]
+            - Hostility:
+                - _source: [NN, 'HUME: /event/conflict/hostility', 'WM: /wm/concept/crisis_or_disaster/conflict/hostility']
+                - {_description: 'Hostile behavior; unfriendliness or opposition.'}
+                - _examples: [NA]
+            - Demonstrate:
+                - _source: [NN, 'WM: /wm/process/conflict/protest_or_demonstration', 'HUME: /event/conflict/demostrate']
+                - {_description: 'A public meeting or march protesting against something or expressing views on a political issue.'}
+                - _examples: [NA]
+            - War:
+                - _source: [NN, 'HUME: /event/conflict/war', 'WM: /wm/process/conflict/war']
+                - {_description: 'A state of armed conflict between different nations or states or different groups within a nation or state.'}
+                - _examples: [NA]
+            - MilitaryOperation:
+                - _source: [NN, 'WM: /wm/process/conflict', 'HUME: /event/intervention/military operation']
+                - {_description: NA}
+                - _examples: [NA]
+            - Attack:
+                - _source: [NN, 'HUME_INDICATOR: /indicator/Conflict/Population Displacement', 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/conflict/population displacement', 'HUME: /event/conflict/attack', 'WM: /wm/process/conflict/attack']
+                - {_description: 'Take aggressive action against (a place or enemy forces) with weapons or armed force, typically in a battle or war. An aggressive and violent action against a person or place.'}
+                - _examples: [NA]
+                - CounterTerrorismOperation:
+                    - _source: [NN, 'HUME: /event/intervention/military operation/counter terrorism operation', 'WM: /wm/process/conflict/attack']
+                    - {_description: NA}
+                    - _examples: [NA]
+            - Terrorism:
+                - _source: [NN, 'WM: /wm/process/conflict/terrorism', 'HUME: /event/conflict/terrorism']
+                - {_description: NA}
+                - _examples: [NA]
+            - Sabotage:
+                - _source: [NN, 'HUME: /event/conflict/sabotage', 'WM: /wm/process/conflict']
+                - {_description: NA}
+                - _examples: [NA]
+            - Strike:
+                - _source: [NN, 'WM: /wm/process/conflict/attack', 'HUME: /event/conflict/strike']
+                - {_description: NA}
+                - _examples: [NA]
+    - Death:
+        - _source: [NN, 'WM: /wm/process/population/death', 'HUME: /event/death']
         - {_description: NA}
         - _examples: [NA]
-        - FoodConsumption:
-          - _source: [NN, 'WM: /wm_compositional/concept/food_security', 'HUME: /event/economic activity/consumption/food consumption']
-          - {_description: NA}
-          - _examples: [NA]
-      - Competition:
-        - _source: [NN, 'HUME: /event/economic activity/competition', 'WM: /wm_compositional/concept/economy/competition']
+    - Offense:
+        - _source: [NN, 'HUME: /event/offense', 'WM: /wm/concept/crisis_or_disaster/conflict/crime', 'WM: /wm/process/conflict/threat', 'WM: /wm/process/conflict/attack']
         - {_description: NA}
         - _examples: [NA]
-      - Development:
-        - _source: [NN, 'HUME: /event/economic activity/development', 'WM: /wm_compositional/concept/economy/economic_development']
+        - Criminal:
+            - _source: ['WM: /wm/concept/crisis_or_disaster/conflict/crime']
+            - {_description: NA}
+            - _examples: [NA]
+            - Crime:
+                - _source: [NN, 'HUME: /event/offense/crime', 'WM: /wm/concept/crisis_or_disaster/conflict/crime']
+                - {_description: 'An action or omission that constitutes an offense that may be prosecuted by the state and is punishable by law.'}
+                - _examples: [NA]
+            - Abduction:
+                - _source: ['WM: /wm/process/conflict/abduction']
+                - {_description: NA}
+                - _examples: [NA]
+        - Exploitation:
+            - _source: [NN, 'WM: /wm/process/conflict/exploit', 'HUME: /event/offense/exploitation']
+            - {_description: NA}
+            - _examples: [NA]
+    - Healthcare:
+        - _source: [NN, 'WM: /wm/concept/health', 'HUME: /event/healthcare']
         - {_description: NA}
         - _examples: [NA]
-      - Demand:
-        - _source: [NN, 'WM: /wm_compositional/process/demand', 'HUME: /event/economic activity/demand']
+        - BasicNeeds:
+            - _source: ['WM_deprecated: /wm/concept/causal_factor/health_and_life/basic_needs']
+            - {_description: NA}
+            - _examples: [NA]
+        - Birth:
+            - _source: ['WM: /wm/process/population/birth']
+            - {_description: NA}
+            - _examples: [NA]
+        - Biometrics:
+            - _source: ['WM: /wm/concept/health/biometrics']
+            - {_description: NA}
+            - _examples: [NA]
+        - Nutrition:
+            - _source: ['WM: /wm/concept/health/nutrition']
+            - {_description: NA}
+            - _examples: [NA]
+            - BreastFeeding:
+                - _source: ['WM: /wm/concept/health/nutrition']
+                - {_description: NA}
+                - _examples: [NA]
+            - Malnutrition:
+                - _source: ['WM: /wm/concept/health/malnutrition']
+                - {_description: NA}
+                - _examples: [NA]
+            - FoodDiversity:
+                - _source: ['WM: /wm/property/diversity']
+                - {_description: NA}
+                - _examples: [NA]
+            - FoodIntake:
+                - _source: ['WM: /wm/process/intake']
+                - {_description: NA}
+                - _examples: [NA]
+            - FoodPreparation:
+                - _source: ['WM: /wm/process/preparation']
+                - {_description: NA}
+                - _examples: [NA]
+            - FoodPreference:
+                - _source: ['WM: /wm/property/preference']
+                - {_description: NA}
+                - _examples: [NA]
+        - LivingCondition:
+            - _source: ['WM: /wm/property/condition']
+            - {_description: NA}
+            - _examples: [NA]
+            - SanitationAndHygiene:
+                - _source: ['WM: /wm/property/condition']
+                - {_description: NA}
+                - _examples: [NA]
+            - WaterSafety:
+                - _source: ['WM: /wm/property/condition']
+                - {_description: NA}
+                - _examples: [NA]
+            - FoodSafety:
+                - _source: ['WM: /wm/property/condition']
+                - {_description: NA}
+                - _examples: [NA]
+        - Disease:
+            - _source: [NN, 'WM: /wm/concept/health/disease']
+            - {_description: ''}
+            - _examples: [NA]
+            - AlcoholDrugAndSubstanceAbuse:
+                - _source: ['WM: /wm/concept/health/substance_abuse']
+                - {_description: NA}
+                - _examples: [NA]
+            - Malaria:
+                - _source: ['WM: /wm/concept/health/disease/malaria']
+                - {_description: NA}
+                - _examples: [NA]
+            - Flu:
+                - _source: ['WM: /wm/concept/health/disease/flu']
+                - {_description: NA}
+                - _examples: [NA]
+            - CovidVirus:
+                - _source: ['WM: /wm/concept/health/disease/COVID']
+                - {_description: NA}
+                - _examples: [NA]
+            - HumanDisease:
+                - _source: [NN, 'WM: /wm/concept/health/disease', 'HUME: /event/healthcare/human disease']
+                - {_description: 'Human disease.'}
+                - _examples: [NA]
+            - Mitigation:
+                - _source:
+                    - "WM: /wm/process/medical"
+                - _description: NA
+                - _examples: []
+                - ContactTracing:
+                    - _source:
+                        - "WM: /wm/process/medical/contact_tracing"
+                    - _description: "NA"
+                    - _examples: []
+                    - _alternative_id: null
+                - Quarantine:
+                    - _source:
+                        - "WM: /wm/process/medical/quarantine"
+                    - _description: "NA"
+                    - _examples: []
+                    - _alternative_id: null
+                - SocialDistancing:
+                    - _source:
+                        - "WM: /wm/process/medical/social_distancing"
+                    - _description: "NA"
+                    - _examples: []
+                    - _alternative_id: null
+            - Transmission:
+                - _source:
+                    - "WM: /wm/process/transmission"
+                - _description: NA
+                - _examples: []
+            - Outbreak:
+                - _source:
+                    - "WM: /wm/process/outbreak"
+                - _description: NA
+                - _examples: []
+            - Pandemic:
+                - _source:
+                    - "WM: /wm/concept/crisis_or_disaster/epidemic"
+                - _description: NA
+                - _examples: []
+            - Pathogen:
+                - _source:
+                    - "WM: /wm/concept/health/pathogen"
+                - _description: NA
+                - _examples: []
+        - Treatment:
+            - _source: [NN, 'HUME: /event/healthcare/treatment', 'WM: /wm/concept/health/treatment']
+            - {_description: 'Medical care given to a patient for an illness or injury.'}
+            - _examples: [NA]
+            - HealthTreatment:
+                - _source: ['WM: /wm/concept/health/treatment']
+                - {_description: NA}
+                - _examples: [NA]
+        - Injury:
+            - _source: [NN, 'WM: /wm/concept/health/injury']
+            - {_description: ''}
+            - _examples: [NA]
+    - Movement:
+        - _source: [NN, 'WM_deprecated: /wm/concept/causal_factor/movement', 'HUME: /event/movement']
+        - {_description: 'An act of changing physical location or position or of having this changed.'}
+        - _examples: [NA]
+        - AnimalMigration:
+            - _source: [NN]
+            - {_description: NA}
+            - _examples: [NA]
+        - Migration:
+            - _source: [NN, 'WM: /wm/concept/entity/people/migration', 'WM: /wm/process/population/migrate']
+            - {_description: NA}
+            - _examples: [NA]
+            - RefugeePopulation:
+                - _source: [NN, 'HUME: /event/refugee population', 'WM: /wm/process/population/migrate/migrate']
+                - {_description: NA}
+                - _examples: [NA]
+            - SeasonalMigration:
+                - _source: ['WM_deprecated: /wm/concept/causal_factor/social_and_political/migration/seasonal_migration']
+                - {_description: NA}
+                - _examples: [NA]
+            - MigrationReturnees:
+                - _source: ['WM: /wm/process/population/migrate/migrate']
+                - {_description: NA}
+                - _examples: [NA]
+            - Immigration:
+                - _source: ['WM: /wm/process/population/migrate/immigrate']
+                - {_description: NA}
+                - _examples: [NA]
+            - Emigration:
+                - _source: ['WM: /wm/process/population/migrate/emigrate']
+                - {_description: NA}
+                - _examples: [NA]
+            - HostingIDPs:
+                - _source: ['WM: /wm/process/population/migrate/migrate']
+                - {_description: NA}
+                - _examples: [NA]
+            - HumanDisplacement:
+                - _source: [NN, 'HUME: /event/movement/human displacement', 'HUME_INDICATOR: /indicator/Conflict/Population Displacement', 'WM: /wm/concept/entity/people/migration', 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/conflict/population displacement']
+                - {_description: 'The forced movement of people from their home, or country of origin.'}
+                - _examples: [NA]
+        - Transport:
+            - _source: [NN, 'HUME: /event/movement/transport', 'WM: /wm/concept/infrastructure/transportation']
+            - {_description: 'Take or carry (people or goods) from one place to another by means of a vehicle, aircraft, or ship.'}
+            - _examples: [NA]
+        - EvacuateHumanitarianWorkers:
+            - _source: [NN, 'WM: /wm/process/evacuation', 'HUME: /event/movement/evacuate humanitarian workers']
+            - {_description: NA}
+            - _examples: [NA]
+    - EconomicAndCommerce:
+        - _source: [NN, 'WM: /wm/concept/economy']
+        - {_description: 'Should be a parent class of EconomicActivity'}
+        - _examples: [NA]
+        - Poverty:
+            - _source: [NN, 'HUME: /event/condition/poverty', 'WM: /wm/concept/poverty']
+            - {_description: NA}
+            - _examples: [NA]
+        - EconomicActivity:
+            - _source: [NN, 'WM: /wm/concept/economy', 'HUME: /event/economic activity']
+            - {_description: 'Economic activities.'}
+            - _examples: [NA]
+            - Currency:
+                - _source: ['WM: /wm/concept/economy/currency']
+                - {_description: ''}
+                - _examples: [NA]
+            - Livelihood:
+                - _source: [NN, 'WM: /wm/concept/economy/livelihood']
+                - {_description: ''}
+                - _examples: [NA]
+                - Farming:
+                    - _source: ['WM: /wm/process/farming']
+                    - {_description: ''}
+                    - _examples: [NA]
+            - CrossBorderTrade:
+                - _source: [NN, 'HUME: /event/economic activity/cross border trade', 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/commerce/Cross Border Trade', 'HUME_INDICATOR: /indicator/Commerce/Cross Border Trade', 'WM: /wm/process/trade']
+                - {_description: 'Cross-border trade.'}
+                - _examples: [NA]
+                - Import:
+                    - _source: [NN, 'WM: /wm/process/trade/import', 'HUME: /event/economic activity/cross border trade/import', 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/commerce/Cross Border Trade', 'HUME_INDICATOR: /indicator/Commerce/Cross Border Trade']
+                    - {_description: 'Bring (goods or services) into a country from abroad for sale.'}
+                    - _examples: [NA]
+                    - FoodImport:
+                        - _source: [NN, 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/commerce/Cross Border Trade', 'HUME_INDICATOR: /indicator/Commerce/Cross Border Trade', 'HUME: /event/economic activity/cross border trade/import/food import', 'WM: /wm/process/trade/import']
+                        - {_description: 'Import of food.'}
+                        - _examples: [NA]
+                - Export:
+                    - _source: [NN, 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/commerce/Cross Border Trade', 'WM: /wm/process/trade/export', 'HUME: /event/economic activity/cross border trade/export', 'HUME_INDICATOR: /indicator/Commerce/Cross Border Trade']
+                    - {_description: 'Send (goods or services) to another country for sale.'}
+                    - _examples: [NA]
+                    - FoodExport:
+                        - _source: [NN, 'WM_INDICATOR: /wm/concept/indicator_and_reported_property/commerce/Cross Border Trade', 'WM: /wm/process/trade/export', 'HUME: /event/economic activity/cross border trade/export/food export', 'HUME_INDICATOR: /indicator/Commerce/Cross Border Trade']
+                        - {_description: 'Export of food.'}
+                        - _examples: [NA]
+            - Production:
+                - _source: [NN, 'WM: /wm/process/production', 'HUME: /event/economic activity/production']
+                - {_description: NA}
+                - _examples: [NA]
+                - AgricultureProduction:
+                    - _source: [
+                      NN,
+                      'HUME: /event/economic activity/production/agriculture production',
+                      'WM: /wm/concept/agriculture'
+                    ]
+                    - {_description: 'Agriculture production.'}
+                    - _examples: [NA]
+                    - LandAvailability:
+                        - _source: [NN, 'WM: /wm/concept/environment/natural_resources/land']
+                        - {_description: 'Availability of land.'}
+                        - _examples: [NA]
+                    - Pasture:
+                        - _source: [NN, 'WM: /wm/concept/environment/natural_resources/land/pasture']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - Irrigation:
+                        - _source: [NN, 'HUME: /event/economic activity/production/agriculture production/irrigation', 'WM: /wm/process/farming']
+                        - {_description: 'The supply of water to land or crops to help growth, typically by means of channels.'}
+                        - _examples: [NA]
+                    - Fertilization:
+                        - _source: [NN, 'WM: /wm/process/farming', 'HUME: /event/economic activity/production/agriculture production/fertilization']
+                        - {_description: 'The action or process of applying a fertilizer to soil or land.'}
+                        - _examples: [NA]
+                    - CropProduction:
+                        - _source: [NN, 'WM: /wm/process/production', 'HUME: /event/economic activity/production/agriculture production/crop production']
+                        - {_description: 'Crop production.'}
+                        - _examples: [NA]
+                    - LivestockProduction:
+                        - _source: [NN, 'HUME_INDICATOR: /indicator/Agriculture/Livestock Production', 'WM: /wm/process/production', 'HUME: /event/economic activity/production/agriculture production/livestock production']
+                        - {_description: 'Livestock production.'}
+                        - _examples: [NA]
+                - OilProduction:
+                    - _source: [NN, 'WM: /wm/concept/environment/natural_resources/fossil_fuels', 'HUME: /event/economic activity/production/oil production']
+                    - {_description: 'Oil production.'}
+                    - _examples: [NA]
+            - Market:
+                - _source: [NN, 'WM: /wm/concept/economy', 'HUME: /event/economic activity/market']
+                - {_description: NA}
+                - _examples: [NA]
+                - Employment:
+                    - _source: [NN, 'HUME: /wm/concept/causal_factor/economic_and_commerce/economic activity/market/labor_market', 'WM_deprecated: /wm/concept/causal_factor/economic_and_commerce/economic_activity/market/labor_market']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - Budget:
+                    - _source: ['WM: /wm/concept/economy/budget']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - Assets:
+                    - _source: ['WM: /wm/concept/economy/assets']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - Revenue:
+                    - _source: ['WM: /wm/concept/economy/income']
+                    - {_description: NA}
+                    - _examples: [NA]
+                    - FarmerIncome:
+                        - _source: ['WM: /wm/concept/economy/income']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - HouseholdIncome:
+                        - _source: ['WM: /wm/concept/economy/income']
+                        - {_description: NA}
+                        - _examples: [NA]
+                - FoodStocks:
+                    - _source: ['WM_deprecated: /wm/concept/causal_factor/economic_and_commerce/economic_activity/market/food_stocks']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - Depreciation:
+                    - _source: ['WM: /wm/process/depreciation']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - Supply:
+                    - _source: [NN, 'HUME: /event/economic activity/market/supply', 'WM: /wm/property/availability']
+                    - {_description: NA}
+                    - _examples: [NA]
+                    - FoodSupply:
+                        - _source: [NN, 'WM: /wm/property/availability', 'HUME: /event/economic activity/market/supply/food supply']
+                        - {_description: 'Food supply.'}
+                        - _examples: [NA]
+                - Transaction:
+                    - _source: [NN, 'HUME: /event/economic activity/market/transaction', 'WM: /wm/process/transaction']
+                    - {_description: 'An instance of buying or selling something; a business deal.'}
+                    - _examples: [NA]
+                    - OilTransaction:
+                        - _source: [NN, 'WM: /wm/process/transaction', 'HUME: /event/economic activity/market/transaction/oil transaction']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - FoodPurchase:
+                        - _source: ['WM: /wm/process/transaction']
+                        - {_description: NA}
+                        - _examples: [NA]
+                - Inflation:
+                    - _source: [NN, 'WM: /wm/process/inflation', 'HUME: /event/economic activity/market/inflation']
+                    - {_description: 'A general increase in prices and fall in the purchasing value of money.'}
+                    - _examples: [NA]
+                - CurrencyDevaluation:
+                    - _source: [NN, 'HUME: /event/economic activity/market/currency devaluation', 'WM: /wm/process/depreciation']
+                    - {_description: 'A deliberate downward adjustment of the value of a country currency against another currency.'}
+                    - _examples: [NA]
+                - Price:
+                    - _source: [NN, 'WM: /wm/property/price_or_cost', 'HUME: /event/economic activity/market/price']
+                    - {_description: NA}
+                    - _examples: [NA]
+                    - FoodPrice:
+                        - _source: [NN, 'HUME: /event/economic activity/market/price/food price', 'WM: /wm/property/price_or_cost']
+                        - {_description: 'Food price.'}
+                        - _examples: [NA]
+                    - CropPrice:
+                        - _source: ['WM: /wm/property/price_or_cost']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - OilPrice:
+                        - _source: [NN, 'WM: /wm/property/price_or_cost', 'HUME: /event/economic activity/market/price/oil price']
+                        - {_description: "Oil price."}
+                        - _examples: [NA]
+            - Consumption:
+                - _source: [NN, 'WM: /wm/process/consumption', 'HUME: /event/economic activity/consumption']
+                - {_description: NA}
+                - _examples: [NA]
+                - FoodConsumption:
+                    - _source: [NN, 'WM: /wm/process/consumption', 'HUME: /event/economic activity/consumption/food consumption']
+                    - {_description: NA}
+                    - _examples: [NA]
+            - Competition:
+                - _source: [NN, 'HUME: /event/economic activity/competition', 'WM: /wm/concept/economy/competition']
+                - {_description: NA}
+                - _examples: [NA]
+            - Development:
+                - _source: [NN, 'HUME: /event/economic activity/development', 'WM: /wm/process/development']
+                - {_description: NA}
+                - _examples: [NA]
+            - Demand:
+                - _source: [NN, 'WM: /wm/process/demand', 'HUME: /event/economic activity/demand']
+                - {_description: NA}
+                - _examples: [NA]
+                - FoodDemand:
+                    - _source: [NN, 'WM: /wm/process/demand', 'HUME: /event/economic activity/demand/food demand']
+                    - {_description: NA}
+                    - _examples: [NA]
+            - Business:
+                - _source: [NN, 'HUME: /event/economic activity/business', 'WM: /wm/concept/economy/commercial_enterprise']
+                - {_description: NA}
+                - _examples: [NA]
+    - Personnel:
+        - _source: [NN, 'HUME: /event/personnel', 'WM: /wm/concept/economy/livelihood']
         - {_description: NA}
         - _examples: [NA]
-        - FoodDemand:
-          - _source: [NN, 'WM: /wm_compositional/process/demand', 'HUME: /event/economic activity/demand/food demand']
-          - {_description: NA}
-          - _examples: [NA]
-      - Business:
-        - _source: [NN, 'HUME: /event/economic activity/business', 'WM: /wm_compositional/concept/economy']
+    - Access:
+        - _source: [NN, 'HUME: /event/access', 'WM: /wm/process/access']
         - {_description: NA}
         - _examples: [NA]
-  - Personnel:
-    - _source: [NN, 'HUME: /event/personnel', 'WM: /wm_compositional/concept/economy/livelihoods']
-    - {_description: NA}
-    - _examples: [NA]
-  - Access:
-    - _source: [NN, 'HUME: /event/access', 'WM: /wm_compositional/process/access']
-    - {_description: NA}
-    - _examples: [NA]
-    - MarketAccess:
-      - _source: ['WM: /wm_compositional/process/access']
-      - {_description: NA}
-      - _examples: [NA]
-    - WaterAccess:
-      - _source: ['WM: /wm_compositional/process/access']
-      - {_description: NA}
-      - _examples: [NA]
-      - WaterShortage:
-        - _source: [
-            NN,
-            'HUME: /event/access/shortage/water shortage'
-          ]
-        - {_description: 'Shortage of water.'}
-        - _examples: [NA]
-    - InfrastructureAccess:
-      - _source: ['WM: /wm_compositional/process/access']
-      - {_description: NA}
-      - _examples: [NA]
-      - ConstructionMaterials:
-        - _source: ['WM: /wm_compositional/process/access']
-        - {_description: NA}
-        - _examples: [NA]
-      - Bridge:
-        - _source: ['WM: /wm_compositional/process/access']
-        - {_description: NA}
-        - _examples: [NA]
-      - RoadAccess:
-        - _source: ['WM: /wm_compositional/process/access']
-        - {_description: NA}
-        - _examples: [NA]
-      - Waste:
-        - _source: ['WM: /wm_compositional/process/access']
-        - {_description: NA}
-        - _examples: [NA]
-      - Electrical:
-        - _source: ['WM: /wm_compositional/process/access']
-        - {_description: NA}
-        - _examples: [NA]
-      - Medical:
-        - _source: ['WM: /wm_compositional/process/access']
-        - {_description: NA}
-        - _examples: [NA]
-        - MedicalFacility:
-          - _source: ['WM: /wm_compositional/process/access']
-          - {_description: NA}
-          - _examples: [NA]
-        - Ambulances:
-          - _source: ['WM: /wm_compositional/process/access']
-          - {_description: NA}
-          - _examples: [NA]
-      - Transportation:
-        - _source: ['WM: /wm_compositional/process/transport']
-        - {_description: NA}
-        - _examples: [NA]
-        - Shipping:
-          - _source: ['WM: /wm_compositional/process/transport/commercial_transportation']
-          - {_description: NA}
-          - _examples: [NA]
-        - Travel:
-          - _source: ['WM: /wm_compositional/process/transport/personal_transportation']
-          - {_description: NA}
-          - _examples: [NA]
-    - Shortage:
-      - _source: [NN, 'HUME: /event/access/shortage', 'WM: /wm_compositional/process/access']
-      - {_description: 'A state or situation in which something needed cannot be obtained in sufficient amounts.'}
-      - _examples: [NA]
-  - Intervention:
-    - _source: [NN, 'WM_deprecated: /wm/concept/causal_factor/interventions', 'HUME: /event/intervention']
-    - {_description: NA}
-    - _examples: [NA]
-    - ProvisionOfGoodsAndServices:
-      - _source: ['WM: /wm_compositional/process/provide']
-      - {_description: NA}
-      - _examples: [NA]
-      - ProvideMovingOfHouseholds:
-        - _source: [NN, 'HUME: /event/intervention/provide moving of houseHolds']
-        - {_description: NA}
-        - _examples: [NA]
-      - DebrisRemoval:
-        - _source: []
-        - {_description: NA}
-        - _examples: [NA]
-      - LegalAid:
-        - _source: [
-            NN,
-            'HUME: /event/intervention/legal aid']
-        - {_description: NA}
-        - _examples: [NA]
-        - LegalAidForDisplacedPersons:
-          - _source: []
-          - {_description: NA}
-          - _examples: [NA]
-      - ProvideAgricultureInputs:
-        - _source: ['WM: /wm_compositional/process/provide']
-        - {_description: NA}
-        - _examples: [NA]
-        - ProvideLivestockProduction:
-          - _source: ['WM: /wm_compositional/process/provide']
-          - {_description: NA}
-          - _examples: [NA]
-          - LivestockDestocking:
-            - _source: ['WM: /wm_compositional/process/provide']
+        - MarketAccess:
+            - _source: ['WM: /wm/process/access']
             - {_description: NA}
             - _examples: [NA]
-          - LivestockRestocking:
-            - _source: ['WM: /wm_compositional/process/provide']
+        - WaterAccess:
+            - _source: ['WM: /wm/process/access']
             - {_description: NA}
             - _examples: [NA]
-          - ProvideLivestockFeed:
-            - _source: [
-              NN,
-              'HUME: /event/intervention/provide humanitarian resources/provide livestock feed',
-              'WM: /wm_compositional/process/provide']
-            - {_description: NA}
-            - _examples: [NA]
-          - ProvideVeterinaryService:
-            - _source: [
-              NN,
-              'HUME: /event/intervention/provide humanitarian resources/provide veterinary service',
-              'WM: /wm_compositional/process/provide']
-            - {_description: NA}
-            - _examples: [NA]
-          - ProvisionOfWaterForLivestock:
-            - _source: ['WM: /wm_compositional/process/provide']
-            - {_description: NA}
-            - _examples: [NA]
-        - ProvideCropProduction:
-          - _source: ['WM: /wm_compositional/process/provide']
-          - {_description: NA}
-          - _examples: [NA]
-          - ProvideFarmingTool:
-            - _source: [
-                NN,
-                'HUME: /event/intervention/provide humanitarian resources/provide farming tool',
-                'WM: /wm_compositional/process/provide']
-            - {_description: NA}
-            - _examples: [NA]
-          - ProvideHarvestingEquipment:
-            - _source: ['WM: /wm_compositional/process/provide']
-            - {_description: NA}
-            - _examples: [NA]
-          - ProvideIrrigation:
-            - _source: ['WM: /wm_compositional/process/provide']
-            - {_description: NA}
-            - _examples: [NA]
-            - ProvideWaterSource:
-              - _source: ['WM: /wm_compositional/process/provide']
-              - {_description: NA}
-              - _examples: [NA]
-            - ProvidePumps:
-              - _source: ['WM: /wm_compositional/process/provide']
-              - {_description: NA}
-              - _examples: [NA]
-            - ProvideFieldIrrigation:
-              - _source: ['WM: /wm_compositional/process/provide']
-              - {_description: NA}
-              - _examples: [NA]
-          - ProvideSoilInputs:
-            - _source: ['WM: /wm_compositional/process/provide']
-            - {_description: NA}
-            - _examples: [NA]
-            - ProvideFertilizer:
-              - _source: ['WM: /wm_compositional/process/provide']
-              - {_description: NA}
-              - _examples: [NA]
-            - FertilizerSubsidy:
-              - _source: ['WM: /wm_compositional/process/provide']
-              - {_description: NA}
-              - _examples: [NA]
-          - ProvideSeed:
-            - _source: [
-              NN,
-              'HUME: /event/intervention/provide humanitarian resources/provide seed',
-              'WM: /wm_compositional/process/provide']
-            - {_description: NA}
-            - _examples: [NA]
-          - ProvideWeedPestControl:
-            - _source: ['WM: /wm_compositional/process/provide']
-            - {_description: NA}
-            - _examples: [NA]
-            - LocustControlOperation:
-              - _source: ['WM: /wm_compositional/process/provide']
-              - {_description: NA}
-              - _examples: [NA]
-            - ProvideBiologicalControl:
-              - _source: ['WM: /wm_compositional/process/provide']
-              - {_description: NA}
-              - _examples: [NA]
-            - ProvideChemicalControl:
-              - _source: ['WM: /wm_compositional/process/provide']
-              - {_description: NA}
-              - _examples: [NA]
-            - ProvideOrganicControl:
-              - _source: ['WM: /wm_compositional/process/provide']
-              - {_description: NA}
-              - _examples: [NA]
-        - ProvidePostHarvest:
-          - _source: ['WM: /wm_compositional/process/provide']
-          - {_description: NA}
-          - _examples: [NA]
-          - ProvideProcessingEquipment:
-            - _source: ['WM: /wm_compositional/process/provide']
-            - {_description: NA}
-            - _examples: [NA]
-          - ProvidePackaging:
-            - _source: ['WM: /wm_compositional/process/provide']
-            - {_description: NA}
-            - _examples: [NA]
-          - ProvideWarehousing:
-            - _source: ['WM: /wm_compositional/process/provide']
-            - {_description: NA}
-            - _examples: [NA]
-      - InformationServices:
-        - _source: ['WM: /wm_compositional/concept/service/information']
-        - {_description: NA}
-        - _examples: [NA]
-        - ProvideSurveillanceSystem:
-          - _source: ['WM: /wm_compositional/concept/service/information/surveillance_system']
-          - {_description: NA}
-          - _examples: [NA]
-          - EpidemiologicalSurveillanceSystem:
-            - _source: [
-                NN,
-                'HUME: /event/intervention/epidemiological surveillance system',
-                'WM: /wm_compositional/concept/service/information/surveillance_system']
-            - {_description: NA}
-            - _examples: [NA]
-          - FoodSecurityOrFamineEarlyWarningSystem:
-            - _source: ['WM: /wm_compositional/concept/service/information/surveillance_system']
-            - {_description: NA}
-            - _examples: [NA]
-        - HumanRightsMonitoringInvestigationAndReporting:
-          - _source: ['WM: /wm_compositional/concept/service/information']
-          - {_description: NA}
-          - _examples: [NA]
-          - ProvideVictimsMonitoring:
-            - _source: ['WM: /wm_compositional/concept/service/information']
-            - {_description: NA}
-            - _examples: [NA]
-            - ChildRights:
-              - _source: [
+            - WaterShortage:
+                - _source: [
                   NN,
-                  'HUME: /event/intervention/child rights',
-                  'WM: /wm_compositional/concept/service/information']
-              - {_description: NA}
-              - _examples: [NA]
-          - ProvidePerpetratorsMonitoring:
-            - _source: ['WM: /wm_compositional/concept/service/information']
+                  'HUME: /event/access/shortage/water shortage',
+                  'WM: /wm/property/shortage'
+                ]
+                - {_description: 'Shortage of water.'}
+                - _examples: [NA]
+        - InfrastructureAccess:
+            - _source: ['WM: /wm/process/access']
             - {_description: NA}
             - _examples: [NA]
-          - ProvideViolationsMonitoring:
-            - _source: ['WM: /wm_compositional/concept/service/information']
-            - {_description: NA}
+            - ConstructionMaterials:
+                - _source: ['WM: /wm/process/access']
+                - {_description: NA}
+                - _examples: [NA]
+            - Bridge:
+                - _source: ['WM: /wm/process/access']
+                - {_description: NA}
+                - _examples: [NA]
+            - RoadAccess:
+                - _source: ['WM: /wm/process/access']
+                - {_description: NA}
+                - _examples: [NA]
+            - Waste:
+                - _source: ['WM: /wm/process/access']
+                - {_description: NA}
+                - _examples: [NA]
+            - Electrical:
+                - _source: ['WM: /wm/process/access']
+                - {_description: NA}
+                - _examples: [NA]
+            - Medical:
+                - _source: ['WM: /wm/process/access']
+                - {_description: NA}
+                - _examples: [NA]
+                - MedicalFacility:
+                    - _source: ['WM: /wm/process/access']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - Ambulances:
+                    - _source: ['WM: /wm/process/access']
+                    - {_description: NA}
+                    - _examples: [NA]
+            - Transportation:
+                - _source: ['WM: /wm/concept/infrastructure/transportation']
+                - {_description: NA}
+                - _examples: [NA]
+                - Shipping:
+                    - _source: ['WM: /wm/concept/infrastructure/transportation']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - Travel:
+                    - _source: ['WM: /wm/concept/infrastructure/transportation']
+                    - {_description: NA}
+                    - _examples: [NA]
+        - Shortage:
+            - _source: [NN, 'HUME: /event/access/shortage', 'WM: /wm/property/shortage']
+            - {_description: 'A state or situation in which something needed cannot be obtained in sufficient amounts.'}
             - _examples: [NA]
-        - ProvideStatistics:
-          - _source: ['WM: /wm_compositional/concept/service/information']
-          - {_description: NA}
-          - _examples: [NA]
-          - ProvideNationalSurvey:
-            - _source: ['WM: /wm_compositional/concept/service/information']
-            - {_description: NA}
-            - _examples: [NA]
-        - ProvideWeatherMonitoring:
-          - _source: ['WM: /wm_compositional/concept/service/information']
-          - {_description: NA}
-          - _examples: [NA]
-        - ProvidePriceMonitoring:
-          - _source: ['WM: /wm_compositional/concept/service/information']
-          - {_description: NA}
-          - _examples: [NA]
-      - ProvideHumanitarianResources:
-        - _source: [
-            NN,
-            'WM_deprecated: /wm/concept/causal_factor/interventions/provide/livelihood_support',
-            'HUME: /event/intervention/provide humanitarian resources'
-          ]
+    - Intervention:
+        - _source: [NN, 'WM_deprecated: /wm/concept/causal_factor/interventions', 'HUME: /event/intervention']
         - {_description: NA}
         - _examples: [NA]
-        - Assistance:
-          - _source: [
-              NN,
-              'WM_deprecated: /wm/concept/causal_factor/interventions/provide/livelihood_support',
-              'HUME: /event/intervention/assistance'
-            ]
-          - {_description: NA}
-          - _examples: [NA]
-        - ProvideFood:
-          - _source: [
-            NN,
-            'HUME: /event/intervention/provide humanitarian resources/provide food',
-            'WM: /wm_compositional/concept/humanitarian_assistance/food_aid']
-          - {_description: NA}
-          - _examples: [NA]
-          - FoodVouchers:
-            - _source: ['WM: /wm_compositional/concept/humanitarian_assistance/food_aid']
+        - ProvisionOfGoodsAndServices:
+            - _source: ['WM: /wm/process/provision']
             - {_description: NA}
             - _examples: [NA]
-          - FoodForWork:
-            - _source: ['WM: /wm_compositional/concept/humanitarian_assistance/food_aid']
+            - ProvideMovingOfHouseholds:
+                - _source: [NN, 'HUME: /event/intervention/provide moving of houseHolds']
+                - {_description: NA}
+                - _examples: [NA]
+            - DebrisRemoval:
+                - _source: []
+                - {_description: NA}
+                - _examples: [NA]
+            - LegalAid:
+                - _source: [
+                  NN,
+                  'HUME: /event/intervention/legal aid']
+                - {_description: NA}
+                - _examples: [NA]
+                - LegalAidForDisplacedPersons:
+                    - _source: []
+                    - {_description: NA}
+                    - _examples: [NA]
+            - ProvideAgricultureInputs:
+                - _source: ['WM: /wm/process/provision']
+                - {_description: NA}
+                - _examples: [NA]
+                - ProvideLivestockProduction:
+                    - _source: ['WM: /wm/process/provision']
+                    - {_description: NA}
+                    - _examples: [NA]
+                    - LivestockDestocking:
+                        - _source: ['WM: /wm/process/provision']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - LivestockRestocking:
+                        - _source: ['WM: /wm/process/provision']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - ProvideLivestockFeed:
+                        - _source: [
+                          NN,
+                          'HUME: /event/intervention/provide humanitarian resources/provide livestock feed',
+                          'WM: /wm/process/provision']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - ProvideVeterinaryService:
+                        - _source: [
+                          NN,
+                          'HUME: /event/intervention/provide humanitarian resources/provide veterinary service',
+                          'WM: /wm/process/provision']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - ProvisionOfWaterForLivestock:
+                        - _source: ['WM: /wm/process/provision']
+                        - {_description: NA}
+                        - _examples: [NA]
+                - ProvideCropProduction:
+                    - _source: ['WM: /wm/process/provision']
+                    - {_description: NA}
+                    - _examples: [NA]
+                    - ProvideFarmingTool:
+                        - _source: [
+                          NN,
+                          'HUME: /event/intervention/provide humanitarian resources/provide farming tool',
+                          'WM: /wm/process/provision']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - ProvideHarvestingEquipment:
+                        - _source: ['WM: /wm/process/provision']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - ProvideIrrigation:
+                        - _source: ['WM: /wm/process/provision']
+                        - {_description: NA}
+                        - _examples: [NA]
+                        - ProvideWaterSource:
+                            - _source: ['WM: /wm/process/provision']
+                            - {_description: NA}
+                            - _examples: [NA]
+                        - ProvidePumps:
+                            - _source: ['WM: /wm/process/provision']
+                            - {_description: NA}
+                            - _examples: [NA]
+                        - ProvideFieldIrrigation:
+                            - _source: ['WM: /wm/process/provision']
+                            - {_description: NA}
+                            - _examples: [NA]
+                    - ProvideSoilInputs:
+                        - _source: ['WM: /wm/process/provision']
+                        - {_description: NA}
+                        - _examples: [NA]
+                        - ProvideFertilizer:
+                            - _source: ['WM: /wm/process/provision']
+                            - {_description: NA}
+                            - _examples: [NA]
+                        - FertilizerSubsidy:
+                            - _source: ['WM: /wm/process/provision']
+                            - {_description: NA}
+                            - _examples: [NA]
+                    - ProvideSeed:
+                        - _source: [
+                          NN,
+                          'HUME: /event/intervention/provide humanitarian resources/provide seed',
+                          'WM: /wm/process/provision']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - ProvideWeedPestControl:
+                        - _source: ['WM: /wm/process/provision']
+                        - {_description: NA}
+                        - _examples: [NA]
+                        - LocustControlOperation:
+                            - _source: ['WM: /wm/process/provision']
+                            - {_description: NA}
+                            - _examples: [NA]
+                        - ProvideBiologicalControl:
+                            - _source: ['WM: /wm/process/provision']
+                            - {_description: NA}
+                            - _examples: [NA]
+                        - ProvideChemicalControl:
+                            - _source: ['WM: /wm/process/provision']
+                            - {_description: NA}
+                            - _examples: [NA]
+                        - ProvideOrganicControl:
+                            - _source: ['WM: /wm/process/provision']
+                            - {_description: NA}
+                            - _examples: [NA]
+                - ProvidePostHarvest:
+                    - _source: ['WM: /wm/process/provision']
+                    - {_description: NA}
+                    - _examples: [NA]
+                    - ProvideProcessingEquipment:
+                        - _source: ['WM: /wm/process/provision']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - ProvidePackaging:
+                        - _source: ['WM: /wm/process/provision']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - ProvideWarehousing:
+                        - _source: ['WM: /wm/process/provision']
+                        - {_description: NA}
+                        - _examples: [NA]
+            - InformationServices:
+                - _source: [NN]
+                - {_description: NA}
+                - _examples: [NA]
+                - ProvideSurveillanceSystem:
+                    - _source: ['WM: /wm/concept/security/surveillance_system']
+                    - {_description: NA}
+                    - _examples: [NA]
+                    - EpidemiologicalSurveillanceSystem:
+                        - _source: [
+                          NN,
+                          'HUME: /event/intervention/epidemiological surveillance system',
+                          'WM_deprecated: /wm/concept/service/information/surveillance_system']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - FoodSecurityOrFamineEarlyWarningSystem:
+                        - _source: ['WM_deprecated: /wm/concept/service/information/surveillance_system']
+                        - {_description: NA}
+                        - _examples: [NA]
+                - HumanRightsMonitoringInvestigationAndReporting:
+                    - _source: ['WM_deprecated: /wm/concept/service/information']
+                    - {_description: NA}
+                    - _examples: [NA]
+                    - ProvideVictimsMonitoring:
+                        - _source: ['WM_deprecated: /wm/concept/service/information']
+                        - {_description: NA}
+                        - _examples: [NA]
+                        - ChildRights:
+                            - _source: [
+                              NN,
+                              'HUME: /event/intervention/child rights',
+                              'WM_deprecated: /wm/concept/service/information']
+                            - {_description: NA}
+                            - _examples: [NA]
+                    - ProvidePerpetratorsMonitoring:
+                        - _source: ['WM_deprecated: /wm/concept/service/information']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - ProvideViolationsMonitoring:
+                        - _source: ['WM_deprecated: /wm/concept/service/information']
+                        - {_description: NA}
+                        - _examples: [NA]
+                - ProvideStatistics:
+                    - _source: ['WM_deprecated: /wm/concept/service/information']
+                    - {_description: NA}
+                    - _examples: [NA]
+                    - ProvideNationalSurvey:
+                        - _source: ['WM_deprecated: /wm/concept/service/information']
+                        - {_description: NA}
+                        - _examples: [NA]
+                - ProvideWeatherMonitoring:
+                    - _source: ['WM_deprecated: /wm/concept/service/information']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - ProvidePriceMonitoring:
+                    - _source: ['WM_deprecated: /wm/concept/service/information']
+                    - {_description: NA}
+                    - _examples: [NA]
+            - ProvideHumanitarianResources:
+                - _source: [
+                  NN,
+                  'WM_deprecated: /wm/concept/causal_factor/interventions/provide/livelihood_support',
+                  'HUME: /event/intervention/provide humanitarian resources'
+                ]
+                - {_description: NA}
+                - _examples: [NA]
+                - Assistance:
+                    - _source: [
+                      NN,
+                      'WM_deprecated: /wm/concept/causal_factor/interventions/provide/livelihood_support',
+                      'HUME: /event/intervention/assistance'
+                    ]
+                    - {_description: NA}
+                    - _examples: [NA]
+                - ProvideFood:
+                    - _source: [
+                      NN,
+                      'HUME: /event/intervention/provide humanitarian resources/provide food',
+                      'WM: /wm/concept/humanitarian_assistance/food_aid']
+                    - {_description: NA}
+                    - _examples: [NA]
+                    - FoodVouchers:
+                        - _source: ['WM: /wm/concept/humanitarian_assistance/food_aid']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - FoodForWork:
+                        - _source: ['WM: /wm/concept/humanitarian_assistance/food_aid']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - FoodForTraining:
+                        - _source: ['WM: /wm/concept/humanitarian_assistance/food_aid']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - FoodForAssets:
+                        - _source: ['WM: /wm/concept/humanitarian_assistance/food_aid']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - SchoolFeeding:
+                        - _source: [
+                          NN,
+                          'HUME: /event/intervention/school feeding',
+                          'WM: /wm/concept/humanitarian_assistance/food_aid']
+                        - {_description: NA}
+                        - _examples: [NA]
+                - ProvideNutritionSupport:
+                    - _source: ['WM: /wm/concept/humanitarian_assistance/food_aid']
+                    - {_description: NA}
+                    - _examples: [NA]
+                    - FoodFortification:
+                        - _source: ['WM: /wm/concept/humanitarian_assistance/food_aid']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - InfantAndYoungChildFeedingSupport:
+                        - _source: ['WM: /wm/concept/humanitarian_assistance/food_aid']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - MicroNutrientSupplementation:
+                        - _source: ['WM: /wm/concept/humanitarian_assistance/food_aid']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - SupplementaryFeeding:
+                        - _source: ['WM: /wm/concept/humanitarian_assistance/food_aid']
+                        - {_description: NA}
+                        - _examples: [NA]
+                - ProvideWater:
+                    - _source: ['WM: /wm/process/provision']
+                    - {_description: NA}
+                    - _examples: [NA]
+                    - WaterTrucking:
+                        - _source: ['WM: /wm/process/provision']
+                        - {_description: NA}
+                        - _examples: [NA]
+                - HouseholdReliefNonFoodItemPackage:
+                    - _source: ['WM: /wm/process/provision']
+                    - {_description: NA}
+                    - _examples: [NA]
+                    - ProvideDeliveryKit:
+                        - _source: [
+                          NN,
+                          'HUME: /event/intervention/provide humanitarian resources/provide delivery kit',
+                          'WM: /wm/process/provision']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - ProvideHygieneTool:
+                        - _source: [
+                          NN,
+                          'HUME: /event/intervention/provide humanitarian resources/provide hygiene tool',
+                          'WM: /wm/process/provision']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - ProvideShelter:
+                        - _source: ['WM: /wm/process/provision']
+                        - {_description: NA}
+                        - _examples: [NA]
+                        - HousingProvisionLeasingOrRentalServices:
+                            - _source: ['WM: /wm/process/provision']
+                            - {_description: NA}
+                            - _examples: [NA]
+                        - ProvideTentShelter:
+                            - _source: [
+                              NN,
+                              'HUME: /event/intervention/provide humanitarian resources/provide tent shelter',
+                              'WM: /wm/process/provision']
+                            - {_description: NA}
+                            - _examples: [NA]
+                    - ProvidingEducationalMaterials:
+                        - _source: ['WM: /wm/process/provision']
+                        - {_description: NA}
+                        - _examples: [NA]
+                        - ProvideStationary:
+                            - _source: [
+                              NN,
+                              'HUME: /event/intervention/provide humanitarian resources/provide stationary',
+                              'WM: /wm/process/provision']
+                            - {_description: NA}
+                            - _examples: [NA]
+                - ProvideFinancialAssistance:
+                    - _source: ['WM: /wm/process/provision']
+                    - {_description: NA}
+                    - _examples: [NA]
+                    - ProvideCash:
+                        - _source: [
+                          NN,
+                          'HUME: /event/intervention/provide humanitarian resources/provide cash',
+                          'WM: /wm/process/provision']
+                        - {_description: NA}
+                        - _examples: [NA]
+                        - OnceOffCashTransferToFacilitateReturn:
+                            - _source: ['WM: /wm/process/provision']
+                            - {_description: NA}
+                            - _examples: [NA]
+                        - CashForWork:
+                            - _source: ['WM: /wm/process/provision']
+                            - {_description: NA}
+                            - _examples: [NA]
+                        - CashForAssets:
+                            - _source: ['WM: /wm/process/provision']
+                            - {_description: NA}
+                            - _examples: [NA]
+                - ProvideLivelihoodAssets:
+                    - _source: ['WM_deprecated: /wm/concept/causal_factor/interventions/provide/livelihood_support/livelihood_assets']
+                    - {_description: NA}
+                    - _examples: [NA]
+                    - ProvideFishingTool:
+                        - _source: [
+                          NN,
+                          'HUME: /event/intervention/provide humanitarian resources/provide fishing tool',
+                          'WM_deprecated: /wm/concept/causal_factor/interventions/provide/livelihood_support/livelihood_assets']
+                        - {_description: NA}
+                        - _examples: [NA]
+            - ProvideMedicalInputs:
+                - _source: ['WM: /wm/process/provision']
+                - {_description: NA}
+                - _examples: [NA]
+                - ProvideVaccine:
+                    - _source: ['WM: /wm/concept/health/vaccination']
+                    - {_description: NA}
+                    - _examples: [NA]
+                    - MassVaccinationCampaign:
+                        - _source: ['WM: /wm/concept/health/vaccination']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - DiseaseOutbreakControl:
+                        - _source: [
+                          NN,
+                          'HUME: /event/intervention/disease outbreak control',
+                          'WM: /wm/concept/health/vaccination']
+                        - {_description: NA}
+                        - _examples: [NA]
+                - ProvideMedicalTreatment:
+                    - _source: ['WM: /wm/concept/health/treatment']
+                    - {_description: NA}
+                    - _examples: [NA]
+                    - AntiRetroviralTreatment:
+                        - _source: [
+                          NN,
+                          'HUME: /event/intervention/anti-retroviral treatment',
+                          'WM: /wm/concept/health/treatment']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - FirstAidBasicMedicalCare:
+                        - _source: [
+                          NN,
+                          'HUME: /event/intervention/provide humanitarian resources/first aid basic medical care',
+                          'WM: /wm/concept/health/treatment']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - NewbornAndChildhoodEssentialHealthCareServices:
+                        - _source: ['WM: /wm/concept/health/treatment']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - ObstetricNewbornCare:
+                        - _source: [
+                          NN,
+                          'HUME: /event/intervention/provide humanitarian resources/obstetric newborn care',
+                          'WM: /wm/concept/health/treatment']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - OperationOfMobileClinics:
+                        - _source: ['WM: /wm/concept/health/treatment']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - TherapeuticFeedingOrTreating:
+                        - _source: [
+                          NN,
+                          'HUME: /event/intervention/therapeutic feeding or treating',
+                          'WM: /wm/concept/health/treatment']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - TraumaInjuryAndPostOperativeRehabilitation:
+                        - _source: ['WM: /wm/concept/health/treatment']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - TraumaAndSurgicalCare:
+                        - _source: ['WM: /wm/concept/health/treatment']
+                        - {_description: NA}
+                        - _examples: [NA]
+                - ProvidePrevention:
+                    - _source: ['WM: /wm/concept/health/treatment/preventative_treatment']
+                    - {_description: NA}
+                    - _examples: [NA]
+                    - MalnutritionScreening:
+                        - _source: [
+                          NN,
+                          'HUME: /event/intervention/provide humanitarian resources/malnutrition screening',
+                          'WM: /wm/concept/health/treatment/preventative_treatment']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - ProvisionOfInsecticideTreatedBednets:
+                        - _source: ['WM: /wm/concept/health/treatment/preventative_treatment']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - VectorControl:
+                        - _source: [
+                          NN,
+                          'HUME: /event/intervention/vector control',
+                          'WM: /wm/concept/health/treatment/preventative_treatment']
+                        - {_description: NA}
+                        - _examples: [NA]
+                - PsychologicalSupport:
+                    - _source: [
+                      NN,
+                      'HUME: /event/intervention/psychological support',
+                      'WM: /wm/concept/health/treatment/psychological_services']
+                    - {_description: NA}
+                    - _examples: [NA]
+                    - SexualViolenceManagement:
+                        - _source: [
+                          NN,
+                          'HUME: /event/intervention/sexual violence management',
+                          'WM: /wm/concept/health/treatment/psychological_services']
+                        - {_description: NA}
+                        - _examples: [NA]
+            - SanitationServices:
+                - _source: [
+                  NN,
+                  'HUME: /event/intervention/sanitation services',
+                  'WM: /wm/process/provision']
+                - {_description: NA}
+                - _examples: [NA]
+                - DesludgingOfToiletsSepticTanksAndExcretaContainers:
+                    - _source: ['WM: /wm/process/provision']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - HouseholdSolidWasteManagement:
+                    - _source: [
+                      NN,
+                      'HUME: /event/intervention/household solid waste management',
+                      'WM: /wm/process/provision']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - PointOfUseWaterTreatmentAtHouseholdLevel:
+                    - _source: ['WM: /wm/process/provision']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - WaterTreatmentOfPipedWaterSupply:
+                    - _source: ['WM: /wm/process/provision']
+                    - {_description: NA}
+                    - _examples: [NA]
+        - ConstructionOfInfrastructure:
+            - _source: ['WM: /wm/process/construction']
             - {_description: NA}
             - _examples: [NA]
-          - FoodForTraining:
-            - _source: ['WM: /wm_compositional/concept/humanitarian_assistance/food_aid']
-            - {_description: NA}
-            - _examples: [NA]
-          - FoodForAssets:
-            - _source: ['WM: /wm_compositional/concept/humanitarian_assistance/food_aid']
-            - {_description: NA}
-            - _examples: [NA]
-          - SchoolFeeding:
-            - _source: [
-                NN,
-                'HUME: /event/intervention/school feeding',
-                'WM: /wm_compositional/concept/humanitarian_assistance/food_aid']
-            - {_description: NA}
-            - _examples: [NA]
-        - ProvideNutritionSupport:
-          - _source: ['WM: /wm_compositional/concept/health/nutrition/supplementary_feeding']
-          - {_description: NA}
-          - _examples: [NA]
-          - FoodFortification:
-            - _source: ['WM: /wm_compositional/concept/health/nutrition/supplementary_feeding']
-            - {_description: NA}
-            - _examples: [NA]
-          - InfantAndYoungChildFeedingSupport:
-            - _source: ['WM: /wm_compositional/concept/health/nutrition/supplementary_feeding']
-            - {_description: NA}
-            - _examples: [NA]
-          - MicroNutrientSupplementation:
-            - _source: ['WM: /wm_compositional/concept/health/nutrition/supplementary_feeding']
-            - {_description: NA}
-            - _examples: [NA]
-          - SupplementaryFeeding:
-            - _source: ['WM: /wm_compositional/concept/health/nutrition/supplementary_feeding']
-            - {_description: NA}
-            - _examples: [NA]
-        - ProvideWater:
-          - _source: ['WM: /wm_compositional/process/provide']
-          - {_description: NA}
-          - _examples: [NA]
-          - WaterTrucking:
-            - _source: ['WM: /wm_compositional/process/provide']
-            - {_description: NA}
-            - _examples: [NA]
-        - HouseholdReliefNonFoodItemPackage:
-          - _source: ['WM: /wm_compositional/process/provide']
-          - {_description: NA}
-          - _examples: [NA]
-          - ProvideDeliveryKit:
-            - _source: [
-              NN,
-              'HUME: /event/intervention/provide humanitarian resources/provide delivery kit',
-              'WM: /wm_compositional/process/provide']
-            - {_description: NA}
-            - _examples: [NA]
-          - ProvideHygieneTool:
-            - _source: [
-              NN,
-              'HUME: /event/intervention/provide humanitarian resources/provide hygiene tool',
-              'WM: /wm_compositional/process/provide']
-            - {_description: NA}
-            - _examples: [NA]
-          - ProvideShelter:
-            - _source: ['WM: /wm_compositional/process/provide']
-            - {_description: NA}
-            - _examples: [NA]
-            - HousingProvisionLeasingOrRentalServices:
-              - _source: ['WM: /wm_compositional/process/provide']
-              - {_description: NA}
-              - _examples: [NA]
-            - ProvideTentShelter:
-              - _source: [
-                NN,
-                'HUME: /event/intervention/provide humanitarian resources/provide tent shelter',
-                'WM: /wm_compositional/process/provide']
-              - {_description: NA}
-              - _examples: [NA]
-          - ProvidingEducationalMaterials:
-            - _source: ['WM: /wm_compositional/process/provide']
-            - {_description: NA}
-            - _examples: [NA]
-            - ProvideStationary:
-              - _source: [
-                NN,
-                'HUME: /event/intervention/provide humanitarian resources/provide stationary',
-                'WM: /wm_compositional/process/provide']
-              - {_description: NA}
-              - _examples: [NA]
-        - ProvideFinancialAssistance:
-          - _source: ['WM: /wm_compositional/process/provide']
-          - {_description: NA}
-          - _examples: [NA]
-          - ProvideCash:
-            - _source: [
-              NN,
-              'HUME: /event/intervention/provide humanitarian resources/provide cash',
-              'WM: /wm_compositional/process/provide']
-            - {_description: NA}
-            - _examples: [NA]
-            - OnceOffCashTransferToFacilitateReturn:
-              - _source: ['WM: /wm_compositional/process/provide']
-              - {_description: NA}
-              - _examples: [NA]
-            - CashForWork:
-              - _source: ['WM: /wm_compositional/process/provide']
-              - {_description: NA}
-              - _examples: [NA]
-            - CashForAssets:
-              - _source: ['WM: /wm_compositional/process/provide']
-              - {_description: NA}
-              - _examples: [NA]
-        - ProvideLivelihoodAssets:
-          - _source: ['WM_deprecated: /wm/concept/causal_factor/interventions/provide/livelihood_support/livelihood_assets']
-          - {_description: NA}
-          - _examples: [NA]
-          - ProvideFishingTool:
-            - _source: [
-              NN,
-              'HUME: /event/intervention/provide humanitarian resources/provide fishing tool',
-              'WM_deprecated: /wm/concept/causal_factor/interventions/provide/livelihood_support/livelihood_assets']
-            - {_description: NA}
-            - _examples: [NA]
-      - ProvideMedicalInputs:
-        - _source: ['WM: /wm_compositional/process/provide']
-        - {_description: NA}
-        - _examples: [NA]
-        - ProvideVaccine:
-          - _source: ['WM: /wm_compositional/concept/health/vaccination']
-          - {_description: NA}
-          - _examples: [NA]
-          - MassVaccinationCampaign:
-            - _source: ['WM: /wm_compositional/concept/health/vaccination']
-            - {_description: NA}
-            - _examples: [NA]
-          - DiseaseOutbreakControl:
-            - _source: [
-                NN,
-                'HUME: /event/intervention/disease outbreak control',
-                'WM: /wm_compositional/concept/health/vaccination']
-            - {_description: NA}
-            - _examples: [NA]
-        - ProvideMedicalTreatment:
-          - _source: ['WM: /wm_compositional/concept/health/treatment']
-          - {_description: NA}
-          - _examples: [NA]
-          - AntiRetroviralTreatment:
-            - _source: [
-                NN,
-                'HUME: /event/intervention/anti-retroviral treatment',
-                'WM: /wm_compositional/concept/health/treatment']
-            - {_description: NA}
-            - _examples: [NA]
-          - FirstAidBasicMedicalCare:
-            - _source: [
-                NN,
-                'HUME: /event/intervention/provide humanitarian resources/first aid basic medical care',
-                'WM: /wm_compositional/concept/health/treatment']
-            - {_description: NA}
-            - _examples: [NA]
-          - NewbornAndChildhoodEssentialHealthCareServices:
-            - _source: ['WM: /wm_compositional/concept/health/treatment']
-            - {_description: NA}
-            - _examples: [NA]
-          - ObstetricNewbornCare:
-            - _source: [
-              NN,
-              'HUME: /event/intervention/provide humanitarian resources/obstetric newborn care',
-              'WM: /wm_compositional/concept/health/treatment']
-            - {_description: NA}
-            - _examples: [NA]
-          - OperationOfMobileClinics:
-            - _source: ['WM: /wm_compositional/concept/health/treatment']
-            - {_description: NA}
-            - _examples: [NA]
-          - TherapeuticFeedingOrTreating:
-            - _source: [
-                NN,
-                'HUME: /event/intervention/therapeutic feeding or treating',
-                'WM: /wm_compositional/concept/health/treatment']
-            - {_description: NA}
-            - _examples: [NA]
-          - TraumaInjuryAndPostOperativeRehabilitation:
-            - _source: ['WM: /wm_compositional/concept/health/treatment']
-            - {_description: NA}
-            - _examples: [NA]
-          - TraumaAndSurgicalCare:
-            - _source: ['WM: /wm_compositional/concept/health/treatment']
-            - {_description: NA}
-            - _examples: [NA]
-        - ProvidePrevention:
-          - _source: ['WM: /wm_compositional/concept/health/treatment/preventative_treatment']
-          - {_description: NA}
-          - _examples: [NA]
-          - MalnutritionScreening:
-            - _source: [
-              NN,
-              'HUME: /event/intervention/provide humanitarian resources/malnutrition screening',
-              'WM: /wm_compositional/concept/health/treatment/preventative_treatment']
-            - {_description: NA}
-            - _examples: [NA]
-          - ProvisionOfInsecticideTreatedBednets:
-            - _source: ['WM: /wm_compositional/concept/health/treatment/preventative_treatment']
-            - {_description: NA}
-            - _examples: [NA]
-          - VectorControl:
-            - _source: [
-                NN,
-                'HUME: /event/intervention/vector control',
-                'WM: /wm_compositional/concept/health/treatment/preventative_treatment']
-            - {_description: NA}
-            - _examples: [NA]
-        - PsychologicalSupport:
-          - _source: [
-              NN,
-              'HUME: /event/intervention/psychological support',
-              'WM: /wm_compositional/concept/health/treatment/psychological_services']
-          - {_description: NA}
-          - _examples: [NA]
-          - SexualViolenceManagement:
-            - _source: [
-                NN,
-                'HUME: /event/intervention/sexual violence management',
-                'WM: /wm_compositional/concept/health/treatment/psychological_services']
-            - {_description: NA}
-            - _examples: [NA]
-      - SanitationServices:
-        - _source: [
-          NN,
-          'HUME: /event/intervention/sanitation services',
-          'WM: /wm_compositional/process/provide']
-        - {_description: NA}
-        - _examples: [NA]
-        - DesludgingOfToiletsSepticTanksAndExcretaContainers:
-          - _source: ['WM: /wm_compositional/process/provide']
-          - {_description: NA}
-          - _examples: [NA]
-        - HouseholdSolidWasteManagement:
-          - _source: [
-            NN,
-            'HUME: /event/intervention/household solid waste management',
-            'WM: /wm_compositional/process/provide']
-          - {_description: NA}
-          - _examples: [NA]
-        - PointOfUseWaterTreatmentAtHouseholdLevel:
-          - _source: ['WM: /wm_compositional/process/provide']
-          - {_description: NA}
-          - _examples: [NA]
-        - WaterTreatmentOfPipedWaterSupply:
-          - _source: ['WM: /wm_compositional/process/provide']
-          - {_description: NA}
-          - _examples: [NA]
-    - ConstructionOfInfrastructure:
-      - _source: ['WM: /wm_compositional/process/build']
-      - {_description: NA}
-      - _examples: [NA]
-      - BuildAgricultureInfrastructure:
-        - _source: ['WM: /wm_compositional/process/build']
-        - {_description: NA}
-        - _examples: [NA]
-        - BuildLivestockProduction:
-          - _source: ['WM: /wm_compositional/process/build']
-          - {_description: NA}
-          - _examples: [NA]
-          - LivestockShelterAndSettlement:
-            - _source: ['WM: /wm_compositional/process/build']
-            - {_description: NA}
-            - _examples: [NA]
-        - BuildCropProduction:
-          - _source: ['WM: /wm_compositional/process/build']
-          - {_description: NA}
-          - _examples: [NA]
-          - BuildIrrigationInfrastructure:
-            - _source: ['WM: /wm_compositional/process/build']
-            - {_description: NA}
-            - _examples: [NA]
-            - RehabilitationOfIrrigationSchemes:
-              - _source: ['WM: /wm_compositional/process/build']
-              - {_description: NA}
-              - _examples: [NA]
-          - BuildExtensionOffices:
-            - _source: ['WM: /wm_compositional/process/build']
-            - {_description: NA}
-            - _examples: [NA]
-          - BuildGreenhouse:
-            - _source: ['WM: /wm_compositional/process/build']
-            - {_description: NA}
-            - _examples: [NA]
-          - BuildPostHarvest:
-            - _source: ['WM: /wm_compositional/process/build']
-            - {_description: NA}
-            - _examples: [NA]
-      - BuildTradeInfrastructure:
-        - _source: ['WM: /wm_compositional/process/build']
-        - {_description: NA}
-        - _examples: [NA]
-      - BuildEducationalInfrastructure:
-        - _source: ['WM: /wm_compositional/process/build']
-        - {_description: NA}
-        - _examples: [NA]
-        - ChildFriendlyLearningSpaces:
-          - _source: [
-            NN,
-            'HUME: /event/intervention/child friendly learning spaces',
-            'WM: /wm_compositional/process/build']
-          - {_description: NA}
-          - _examples: [NA]
-        - RehabilitationOfSchools:
-          - _source: ['WM: /wm_compositional/process/build']
-          - {_description: NA}
-          - _examples: [NA]
-      - BuildShelter:
-        - _source: ['WM: /wm_compositional/process/build']
-        - {_description: NA}
-        - _examples: [NA]
-        - TemporaryCommunalSettlement:
-          - _source: ['WM: /wm_compositional/process/build']
-          - {_description: NA}
-          - _examples: [NA]
-      - BuildWASHInfrastructure:
-        - _source: ['WM: /wm_compositional/process/build']
-        - {_description: NA}
-        - _examples: [NA]
-        - BoreholeRepair:
-          - _source: ['WM: /wm_compositional/process/build']
-          - {_description: NA}
-          - _examples: [NA]
-        - CommunalWashingAndBathing:
-          - _source: [
-            NN,
-            'HUME: /event/intervention/communal washing and bathing',
-            'WM: /wm_compositional/process/build']
-          - {_description: NA}
-          - _examples: [NA]
-        - CreationOfTemporaryWaterPoints:
-          - _source: ['WM: /wm_compositional/process/build']
-          - {_description: NA}
-          - _examples: [NA]
-        - LatrineConstruction:
-          - _source: ['WM: /wm_compositional/process/build']
-          - {_description: NA}
-          - _examples: [NA]
-      - BuildMedicalInfrastructure:
-        - _source: ['WM: /wm_compositional/process/build']
-        - {_description: NA}
-        - _examples: [NA]
-        - DeploymentOfFieldHospitals:
-          - _source: ['WM: /wm_compositional/process/build']
-          - {_description: NA}
-          - _examples: [NA]
-      - BuildTransportationInfrastructure:
-        - _source: ['WM: /wm_compositional/process/build']
-        - {_description: NA}
-        - _examples: [NA]
-        - BridgeRepair:
-          - _source: ['WM: /wm_compositional/process/build']
-          - {_description: NA}
-          - _examples: [NA]
-        - BuildingLongTermRoads:
-          - _source: ['WM: /wm_compositional/process/build']
-          - {_description: NA}
-          - _examples: [NA]
-        - BuildingRailwayLines:
-          - _source: ['WM: /wm_compositional/process/build']
-          - {_description: NA}
-          - _examples: [NA]
-        - BuildingTemporaryRoads:
-          - _source: ['WM: /wm_compositional/process/build']
-          - {_description: NA}
-          - _examples: [NA]
-        - RoadRehabilitation:
-          - _source: ['WM: /wm_compositional/process/build']
-          - {_description: NA}
-          - _examples: [NA]
-      - BuildCommunicationInfrastructure:
-        - _source: ['WM: /wm_compositional/process/build']
-        - {_description: NA}
-        - _examples: [NA]
-      - BuildEnergyInfrastructure:
-        - _source: ['WM: /wm_compositional/process/build']
-        - {_description: NA}
-        - _examples: [NA]
-      - BuildingConstruction:
-        - _source: []
-        - {_description: NA}
-        - _examples: [NA]
-        - ConstructionOfPrefabricatedBuildings:
-          - _source: [
-              NN,
-              'HUME: /event/intervention/construction of prefabricated buildings']
-          - {_description: NA}
-          - _examples: [NA]
+            - BuildAgricultureInfrastructure:
+                - _source: ['WM: /wm/process/construction']
+                - {_description: NA}
+                - _examples: [NA]
+                - BuildLivestockProduction:
+                    - _source: ['WM: /wm/process/construction']
+                    - {_description: NA}
+                    - _examples: [NA]
+                    - LivestockShelterAndSettlement:
+                        - _source: ['WM: /wm/process/construction']
+                        - {_description: NA}
+                        - _examples: [NA]
+                - BuildCropProduction:
+                    - _source: ['WM: /wm/process/construction']
+                    - {_description: NA}
+                    - _examples: [NA]
+                    - BuildIrrigationInfrastructure:
+                        - _source: ['WM: /wm/process/construction']
+                        - {_description: NA}
+                        - _examples: [NA]
+                        - RehabilitationOfIrrigationSchemes:
+                            - _source: ['WM: /wm/process/construction']
+                            - {_description: NA}
+                            - _examples: [NA]
+                    - BuildExtensionOffices:
+                        - _source: ['WM: /wm/process/construction']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - BuildGreenhouse:
+                        - _source: ['WM: /wm/process/construction']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - BuildPostHarvest:
+                        - _source: ['WM: /wm/process/construction']
+                        - {_description: NA}
+                        - _examples: [NA]
+            - BuildTradeInfrastructure:
+                - _source: ['WM: /wm/process/construction']
+                - {_description: NA}
+                - _examples: [NA]
+            - BuildEducationalInfrastructure:
+                - _source: ['WM: /wm/process/construction']
+                - {_description: NA}
+                - _examples: [NA]
+                - ChildFriendlyLearningSpaces:
+                    - _source: [
+                      NN,
+                      'HUME: /event/intervention/child friendly learning spaces',
+                      'WM: /wm/process/construction']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - RehabilitationOfSchools:
+                    - _source: ['WM: /wm/process/construction']
+                    - {_description: NA}
+                    - _examples: [NA]
+            - BuildShelter:
+                - _source: ['WM: /wm/process/construction']
+                - {_description: NA}
+                - _examples: [NA]
+                - TemporaryCommunalSettlement:
+                    - _source: ['WM: /wm/process/construction']
+                    - {_description: NA}
+                    - _examples: [NA]
+            - BuildWASHInfrastructure:
+                - _source: ['WM: /wm/process/construction']
+                - {_description: NA}
+                - _examples: [NA]
+                - BoreholeRepair:
+                    - _source: ['WM: /wm/process/construction']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - CommunalWashingAndBathing:
+                    - _source: [
+                      NN,
+                      'HUME: /event/intervention/communal washing and bathing',
+                      'WM: /wm/process/construction']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - CreationOfTemporaryWaterPoints:
+                    - _source: ['WM: /wm/process/construction']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - LatrineConstruction:
+                    - _source: ['WM: /wm/process/construction']
+                    - {_description: NA}
+                    - _examples: [NA]
+            - BuildMedicalInfrastructure:
+                - _source: ['WM: /wm/process/construction']
+                - {_description: NA}
+                - _examples: [NA]
+                - DeploymentOfFieldHospitals:
+                    - _source: ['WM: /wm/process/construction']
+                    - {_description: NA}
+                    - _examples: [NA]
+            - BuildTransportationInfrastructure:
+                - _source: ['WM: /wm/process/construction']
+                - {_description: NA}
+                - _examples: [NA]
+                - BridgeRepair:
+                    - _source: ['WM: /wm/process/construction']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - BuildingLongTermRoads:
+                    - _source: ['WM: /wm/process/construction']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - BuildingRailwayLines:
+                    - _source: ['WM: /wm/process/construction']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - BuildingTemporaryRoads:
+                    - _source: ['WM: /wm/process/construction']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - RoadRehabilitation:
+                    - _source: ['WM: /wm/process/construction']
+                    - {_description: NA}
+                    - _examples: [NA]
+            - BuildCommunicationInfrastructure:
+                - _source: ['WM: /wm/process/construction']
+                - {_description: NA}
+                - _examples: [NA]
+            - BuildEnergyInfrastructure:
+                - _source: ['WM: /wm/process/construction']
+                - {_description: NA}
+                - _examples: [NA]
+            - BuildingConstruction:
+                - _source: []
+                - {_description: NA}
+                - _examples: [NA]
+                - ConstructionOfPrefabricatedBuildings:
+                    - _source: [
+                      NN,
+                      'HUME: /event/intervention/construction of prefabricated buildings']
+                    - {_description: NA}
+                    - _examples: [NA]
 
 
-    - TeachingTrainingAndPublicAwareness:
-      - _source: ['WM: /wm_compositional/process/train_or_educate']
-      - {_description: NA}
-      - _examples: [NA]
-      - TrainAgricultureTraining:
-        - _source: ['WM: /wm_compositional/process/train_or_educate/agriculture_training']
-        - {_description: NA}
-        - _examples: [NA]
-        - TrainProductionPractices:
-          - _source: ['WM: /wm_compositional/process/train_or_educate/agriculture_training']
-          - {_description: NA}
-          - _examples: [NA]
-          - TrainPlanting:
-            - _source: ['WM: /wm_compositional/process/train_or_educate/agriculture_training']
+        - TeachingTrainingAndPublicAwareness:
+            - _source: ['WM: /wm/process/training']
             - {_description: NA}
             - _examples: [NA]
-            - TrainingFarmersOnPlantingTimes:
-              - _source: ['WM: /wm_compositional/process/train_or_educate/agriculture_training']
-              - {_description: NA}
-              - _examples: [NA]
-            - TrainingFarmersOnCropSpacing:
-              - _source: ['WM: /wm_compositional/process/train_or_educate/agriculture_training']
-              - {_description: NA}
-              - _examples: [NA]
-          - TrainPestWeedControl:
-            - _source: ['WM: /wm_compositional/process/train_or_educate/agriculture_training']
+            - TrainAgricultureTraining:
+                - _source: ['WM: /wm/process/training/agriculture_extension']
+                - {_description: NA}
+                - _examples: [NA]
+                - TrainProductionPractices:
+                    - _source: ['WM: /wm/process/training/agriculture_extension']
+                    - {_description: NA}
+                    - _examples: [NA]
+                    - TrainPlanting:
+                        - _source: ['WM: /wm/process/training/agriculture_extension']
+                        - {_description: NA}
+                        - _examples: [NA]
+                        - TrainingFarmersOnPlantingTimes:
+                            - _source: ['WM: /wm/process/training/agriculture_extension']
+                            - {_description: NA}
+                            - _examples: [NA]
+                        - TrainingFarmersOnCropSpacing:
+                            - _source: ['WM: /wm/process/training/agriculture_extension']
+                            - {_description: NA}
+                            - _examples: [NA]
+                    - TrainPestWeedControl:
+                        - _source: ['WM: /wm/process/training/agriculture_extension']
+                        - {_description: NA}
+                        - _examples: [NA]
+                        - TrainingFarmersOnWeedControl:
+                            - _source: ['WM: /wm/process/training/agriculture_extension']
+                            - {_description: NA}
+                            - _examples: [NA]
+                    - TrainPostHarvestPractices:
+                        - _source: ['WM: /wm/process/training/agriculture_extension']
+                        - {_description: NA}
+                        - _examples: [NA]
+                - TrainAgricultureInformation:
+                    - _source: ['WM: /wm/process/training/agriculture_extension']
+                    - {_description: NA}
+                    - _examples: [NA]
+            - TrainMedicalTraining:
+                - _source: ['WM: /wm/process/training/training']
+                - {_description: NA}
+                - _examples: [NA]
+                - AssessmentAndTriageOfHealthFacilities:
+                    - _source: ['WM: /wm/process/training/training']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - CapacityBuildingOfMedicalStaff:
+                    - _source: ['WM: /wm/process/training/training']
+                    - {_description: NA}
+                    - _examples: [NA]
+            - CapacityBuildingHumanRights:
+                - _source: [
+                  NN,
+                  'HUME: /event/intervention/capacity building human rights',
+                  'WM: /wm/process/training/training']
+                - {_description: NA}
+                - _examples: [NA]
+            - TrainFinancialManagement:
+                - _source: ['WM: /wm/process/training']
+                - {_description: NA}
+                - _examples: [NA]
+                - ProvisionOfCreditAndTrainingForIncomeGeneration:
+                    - _source: ['WM: /wm/process/training']
+                    - {_description: NA}
+                    - _examples: [NA]
+            - TrainEducationSystems:
+                - _source: ['WM: /wm/process/training/training']
+                - {_description: NA}
+                - _examples: [NA]
+                - ProvisionOfNonFormalEducation:
+                    - _source: ['WM: /wm/process/training/training']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - TrainingCommunitySourcedTemporaryTeachers:
+                    - _source: ['WM: /wm/process/training/training']
+                    - {_description: NA}
+                    - _examples: [NA]
+            - PublicHealthInformationCampaign:
+                - _source: ['WM: /wm/process/communication/campaign']
+                - {_description: NA}
+                - _examples: [NA]
+                - HygienePromotionCampaigns:
+                    - _source: ['WM: /wm/process/communication/campaign']
+                    - {_description: NA}
+                    - _examples: [NA]
+            - TrainPublicSafetyCampaigns:
+                - _source: ['WM: /wm/process/communication/campaign']
+                - {_description: NA}
+                - _examples: [NA]
+                - PublicInformationCampaignsOnExplosiveHazards:
+                    - _source: ['WM: /wm/process/communication/campaign']
+                    - {_description: NA}
+                    - _examples: [NA]
+                    - MineRiskEducation:
+                        - _source: [
+                          NN,
+                          'HUME: /event/intervention/mine risk education',
+                          'WM: /wm/process/communication/campaign']
+                        - {_description: NA}
+                        - _examples: [NA]
+            - TrainEmergencyPreparednessTraining:
+                - _source: ['WM: /wm/process/training']
+                - {_description: NA}
+                - _examples: [NA]
+                - TrainSurveillanceSystemStrengthening:
+                    - _source: ['WM: /wm/process/training']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - TrainHumanitarianCertifications:
+                    - _source: ['WM: /wm/process/training']
+                    - {_description: NA}
+                    - _examples: [NA]
+        - PeaceKeepingAndSecurity:
+            - _source: ['WM: /wm/concept/security']
             - {_description: NA}
             - _examples: [NA]
-            - TrainingFarmersOnWeedControl:
-              - _source: ['WM: /wm_compositional/process/train_or_educate/agriculture_training']
-              - {_description: NA}
-              - _examples: [NA]
-          - TrainPostHarvestPractices:
-            - _source: ['WM: /wm_compositional/process/train_or_educate/agriculture_training']
+            - SecureLivelihoodProtections:
+                - _source: ['WM: /wm/concept/security/economic_security']
+                - {_description: NA}
+                - _examples: [NA]
+            - SecureCommunitySecurity:
+                - _source: ['WM: /wm/concept/security/community_security']
+                - {_description: NA}
+                - _examples: [NA]
+                - SecureMineClearance:
+                    - _source: ['WM: /wm/concept/security/community_security']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - PolicingServices:
+                    - _source: [
+                      NN,
+                      'HUME: /event/intervention/policing services',
+                      'WM: /wm/concept/security/community_security']
+                    - {_description: NA}
+                    - _examples: [NA]
+                    - BorderPatrols:
+                        - _source: ['WM: /wm/concept/security/community_security']
+                        - {_description: NA}
+                        - _examples: [NA]
+            - ConflictMediationAndPoliticalDialogue:
+                - _source: ['WM: /wm/process/conflict/resolution']
+                - {_description: NA}
+                - _examples: [NA]
+                - CommunityLevelConflictResolution:
+                    - _source: ['WM: /wm/process/conflict/resolution']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - DisarmamentDemobilizationAndReintegration:
+                    - _source: ['WM: /wm/process/conflict/resolution']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - FamilyReunification:
+                    - _source: [
+                      NN,
+                      'HUME: /event/intervention/family reunification',
+                      'WM: /wm/process/conflict/resolution']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - PeaceTreaty:
+                    - _source: [
+                      NN,
+                      'HUME: /event/peace treaty',
+                      'WM: /wm/process/conflict/resolution']
+                    - {_description: NA}
+                    - _examples: [NA]
+                - RehabilitationOfChildSoldiers:
+                    - _source: ['WM: /wm/process/conflict/resolution']
+                    - {_description: NA}
+                    - _examples: [NA]
+            - SecureNaturalResources:
+                - _source: ['WM: /wm/concept/security/environmental_security']
+                - {_description: NA}
+                - _examples: [NA]
+            - SecureCulturalResources:
+                - _source: ['WM_deprecated: /wm/concept/causal_factor/interventions/secure/cultural_resources']
+                - {_description: NA}
+                - _examples: [NA]
+        - Legislate:
+            - _source: ['WM: /wm/process/legislation']
             - {_description: NA}
             - _examples: [NA]
-        - TrainAgricultureInformation:
-          - _source: ['WM: /wm_compositional/process/train_or_educate/agriculture_training']
-          - {_description: NA}
-          - _examples: [NA]
-      - TrainMedicalTraining:
-        - _source: ['WM: /wm_compositional/process/train_or_educate/medical_training']
+            - LegislateSubsidize:
+                - _source: ['WM: /wm/process/legislation/subsidization']
+                - {_description: NA}
+                - _examples: [NA]
+                - RentalSubsidies:
+                    - _source: [
+                      NN,
+                      'HUME: /event/intervention/rental subsidies',
+                      'WM: /wm/process/legislation/subsidization']
+                    - {_description: NA}
+                    - _examples: [NA]
+            - Tax:
+                - _source: ['WM: /wm/concept/economy/taxes', NN, 'HUME: /event/intervention/tax']
+                - {_description: NA}
+                - _examples: [NA]
+            - LegislateControlPrices:
+                - _source: ['WM_deprecated: /wm/concept/causal_factor/interventions/legislate/control_prices']
+                - {_description: NA}
+                - _examples: [NA]
+            - InstitutionalSupport:
+                - _source: []
+                - {_description: NA}
+                - _examples: [NA]
+                - PrisonSystemReform:
+                    - _source: []
+                    - {_description: NA}
+                    - _examples: [NA]
+                - SupportToHealthFacilities:
+                    - _source: []
+                    - {_description: NA}
+                    - _examples: [NA]
+                - SupportToVeterinaryServices:
+                    - _source: []
+                    - {_description: NA}
+                    - _examples: [NA]
+    - CrisisAndDisaster:
+        - _source: [NN, 'WM: /wm/concept/crisis_or_disaster']
         - {_description: NA}
         - _examples: [NA]
-        - AssessmentAndTriageOfHealthFacilities:
-          - _source: ['WM: /wm_compositional/process/train_or_educate/medical_training']
-          - {_description: NA}
-          - _examples: [NA]
-        - CapacityBuildingOfMedicalStaff:
-          - _source: ['WM: /wm_compositional/process/train_or_educate/medical_training']
-          - {_description: NA}
-          - _examples: [NA]
-      - CapacityBuildingHumanRights:
-        - _source: [
-            NN,
-            'HUME: /event/intervention/capacity building human rights',
-            'WM: /wm_compositional/process/train_or_educate/humanitarian_training']
-        - {_description: NA}
-        - _examples: [NA]
-      - TrainFinancialManagement:
-        - _source: ['WM: /wm_compositional/process/train_or_educate/financial_training']
-        - {_description: NA}
-        - _examples: [NA]
-        - ProvisionOfCreditAndTrainingForIncomeGeneration:
-          - _source: ['WM: /wm_compositional/process/train_or_educate/financial_training']
-          - {_description: NA}
-          - _examples: [NA]
-      - TrainEducationSystems:
-        - _source: ['WM: /wm_compositional/process/train_or_educate']
-        - {_description: NA}
-        - _examples: [NA]
-        - ProvisionOfNonFormalEducation:
-          - _source: ['WM: /wm_compositional/process/train_or_educate']
-          - {_description: NA}
-          - _examples: [NA]
-        - TrainingCommunitySourcedTemporaryTeachers:
-          - _source: ['WM: /wm_compositional/process/train_or_educate']
-          - {_description: NA}
-          - _examples: [NA]
-      - PublicHealthInformationCampaign:
-        - _source: ['WM: /wm_compositional/process/communicate/campaign']
-        - {_description: NA}
-        - _examples: [NA]
-        - HygienePromotionCampaigns:
-          - _source: ['WM: /wm_compositional/process/communicate/campaign']
-          - {_description: NA}
-          - _examples: [NA]
-      - TrainPublicSafetyCampaigns:
-        - _source: ['WM: /wm_compositional/process/communicate/campaign']
-        - {_description: NA}
-        - _examples: [NA]
-        - PublicInformationCampaignsOnExplosiveHazards:
-          - _source: ['WM: /wm_compositional/process/communicate/campaign']
-          - {_description: NA}
-          - _examples: [NA]
-          - MineRiskEducation:
-            - _source: [
-                NN,
-                'HUME: /event/intervention/mine risk education',
-                'WM: /wm_compositional/process/communicate/campaign']
+        - Crisis:
+            - _source: [NN, 'WM: /wm/concept/crisis_or_disaster', 'HUME: /event/crisis']
             - {_description: NA}
             - _examples: [NA]
-      - TrainEmergencyPreparednessTraining:
-        - _source: ['WM: /wm_compositional/process/train_or_educate/humanitarian_training/emergency_preparedness_training']
-        - {_description: NA}
-        - _examples: [NA]
-        - TrainSurveillanceSystemStrengthening:
-          - _source: ['WM: /wm_compositional/process/train_or_educate/humanitarian_training/emergency_preparedness_training']
-          - {_description: NA}
-          - _examples: [NA]
-        - TrainHumanitarianCertifications:
-          - _source: ['WM: /wm_compositional/process/train_or_educate/humanitarian_training/emergency_preparedness_training']
-          - {_description: NA}
-          - _examples: [NA]
-    - PeaceKeepingAndSecurity:
-      - _source: ['WM: /wm_compositional/concept/security']
-      - {_description: NA}
-      - _examples: [NA]
-      - SecureLivelihoodProtections:
-        - _source: ['WM: /wm_compositional/concept/security/economic_security']
-        - {_description: NA}
-        - _examples: [NA]
-      - SecureCommunitySecurity:
-        - _source: ['WM: /wm_compositional/concept/security/community_security']
-        - {_description: NA}
-        - _examples: [NA]
-        - SecureMineClearance:
-          - _source: ['WM: /wm_compositional/concept/security/community_security']
-          - {_description: NA}
-          - _examples: [NA]
-        - PolicingServices:
-          - _source: [
-              NN,
-              'HUME: /event/intervention/policing services',
-              'WM: /wm_compositional/concept/security/community_security']
-          - {_description: NA}
-          - _examples: [NA]
-          - BorderPatrols:
-            - _source: ['WM: /wm_compositional/concept/security/community_security']
+        - Economic:
+            - _source: [NN, 'WM: /wm/concept/crisis_or_disaster/recession']
             - {_description: NA}
             - _examples: [NA]
-      - ConflictMediationAndPoliticalDialogue:
-        - _source: ['WM: /wm_compositional/process/conflict/resolution']
-        - {_description: NA}
-        - _examples: [NA]
-        - CommunityLevelConflictResolution:
-          - _source: ['WM: /wm_compositional/process/conflict/resolution']
-          - {_description: NA}
-          - _examples: [NA]
-        - DisarmamentDemobilizationAndReintegration:
-          - _source: ['WM: /wm_compositional/process/conflict/resolution']
-          - {_description: NA}
-          - _examples: [NA]
-        - FamilyReunification:
-          - _source: [
-              NN,
-              'HUME: /event/intervention/family reunification',
-              'WM: /wm_compositional/process/conflict/resolution']
-          - {_description: NA}
-          - _examples: [NA]
-        - PeaceTreaty:
-          - _source: [
-            NN,
-            'HUME: /event/peace treaty',
-            'WM: /wm_compositional/process/conflict/resolution']
-          - {_description: NA}
-          - _examples: [NA]
-        - RehabilitationOfChildSoldiers:
-          - _source: ['WM: /wm_compositional/process/conflict/resolution']
-          - {_description: NA}
-          - _examples: [NA]
-      - SecureNaturalResources:
-        - _source: ['WM: /wm_compositional/concept/security/environmental_security']
-        - {_description: NA}
-        - _examples: [NA]
-      - SecureCulturalResources:
-        - _source: ['WM_deprecated: /wm/concept/causal_factor/interventions/secure/cultural_resources']
-        - {_description: NA}
-        - _examples: [NA]
-    - Legislate:
-      - _source: ['WM: /wm_compositional/process/legislate']
-      - {_description: NA}
-      - _examples: [NA]
-      - LegislateSubsidize:
-        - _source: ['WM: /wm_compositional/process/legislate/subsidize']
-        - {_description: NA}
-        - _examples: [NA]
-        - RentalSubsidies:
-          - _source: [
-            NN,
-            'HUME: /event/intervention/rental subsidies',
-            'WM: /wm_compositional/process/legislate/subsidize']
-          - {_description: NA}
-          - _examples: [NA]
-      - Tax:
-        - _source: ['WM: /wm_compositional/process/legislate/tax', NN, 'HUME: /event/intervention/tax']
-        - {_description: NA}
-        - _examples: [NA]
-      - LegislateControlPrices:
-        - _source: ['WM_deprecated: /wm/concept/causal_factor/interventions/legislate/control_prices']
-        - {_description: NA}
-        - _examples: [NA]
-      - InstitutionalSupport:
-        - _source: []
-        - {_description: NA}
-        - _examples: [NA]
-        - PrisonSystemReform:
-          - _source: []
-          - {_description: NA}
-          - _examples: [NA]
-        - SupportToHealthFacilities:
-          - _source: []
-          - {_description: NA}
-          - _examples: [NA]
-        - SupportToVeterinaryServices:
-          - _source: []
-          - {_description: NA}
-          - _examples: [NA]
-  - CrisisAndDisaster:
-    - _source: [NN, 'WM: /wm_compositional/concept/crisis_or_disaster']
-    - {_description: NA}
-    - _examples: [NA]
-    - Crisis:
-      - _source: [NN, 'WM: /wm_compositional/concept/crisis_or_disaster', 'HUME: /event/crisis']
-      - {_description: NA}
-      - _examples: [NA]
-    - Economic:
-      - _source: [NN, 'WM: /wm_compositional/concept/crisis_or_disaster/economic_crisis']
-      - {_description: NA}
-      - _examples: [NA]
-      - EconomicCrisis:
-        - _source: [NN, 'WM: /wm_compositional/concept/crisis_or_disaster/economic_crisis']
-        - {_description: NA}
-        - _examples: [NA]
-    - EnvironmentalDisasters:
-      - _source: ['WM: /wm_compositional/concept/crisis_or_disaster/environmental']
-      - {_description: NA}
-      - _examples: [NA]
-      - Disaster:
-        - _source: [NN, 'WM: /wm_compositional/concept/crisis_or_disaster/environmental', 'HUME: /event/crisis/disaster']
-        - {_description: 'A sudden event, such as an accident or a natural catastrophe, that causes great damage or loss of life.'}
-        - _examples: [NA]
-        - NaturalDisaster:
-          - _source: [NN, 'WM: /wm_compositional/concept/crisis_or_disaster/environmental']
-          - {_description: 'A sudden event, such as an accident or a natural catastrophe, that causes great damage or loss of life.'}
-          - _examples: [NA]
-          - Earthquake:
-            - _source: [NN, 'WM: /wm_compositional/concept/crisis_or_disaster/environmental', 'HUME: /event/crisis/disaster/earthquake']
+            - EconomicCrisis:
+                - _source: [NN, 'WM: /wm/concept/crisis_or_disaster/recession']
+                - {_description: NA}
+                - _examples: [NA]
+        - EnvironmentalDisasters:
+            - _source: ['WM: /wm/concept/crisis_or_disaster/natural_disaster']
             - {_description: NA}
             - _examples: [NA]
-          - VolcanicEruption:
-            - _source: ['WM: /wm_compositional/concept/crisis_or_disaster/environmental']
-            - {_description: NA}
+            - Disaster:
+                - _source: [NN, 'WM: /wm/concept/crisis_or_disaster/natural_disaster', 'HUME: /event/crisis/disaster']
+                - {_description: 'A sudden event, such as an accident or a natural catastrophe, that causes great damage or loss of life.'}
+                - _examples: [NA]
+                - NaturalDisaster:
+                    - _source: [NN, 'WM: /wm/concept/crisis_or_disaster/natural_disaster']
+                    - {_description: 'A sudden event, such as an accident or a natural catastrophe, that causes great damage or loss of life.'}
+                    - _examples: [NA]
+                    - Earthquake:
+                        - _source: [NN, 'WM: /wm/concept/crisis_or_disaster/natural_disaster/earthquake', 'HUME: /event/crisis/disaster/earthquake']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - VolcanicEruption:
+                        - _source: ['WM: /wm/concept/crisis_or_disaster/natural_disaster/volcanic_eruption']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - Wildfire:
+                        - _source: ['WM: /wm/concept/crisis_or_disaster/natural_disaster/wildfire']
+                        - {_description: NA}
+                        - _examples: [NA]
+                    - Avalanche:
+                        - _source: ['WM: /wm/concept/crisis_or_disaster/natural_disaster']
+                        - {_description: NA}
+                        - _examples: [NA]
+            - Fire:
+                - _source: [NN, 'WM: /wm/concept/crisis_or_disaster/natural_disaster/wildfire', 'HUME: /event/crisis/fire']
+                - {_description: NA}
+                - _examples: [NA]
+            - WeatherIssue:
+                - _source: ['WM: /wm/concept/crisis_or_disaster/natural_disaster']
+                - {_description: NA}
+                - _examples: [NA]
+                - ColdTemperature:
+                    - _source: ['WM: /wm/concept/environment/meteorology/temperature']
+                    - {_description: NA}
+                    - _examples: [NA]
+            - InsectInfestation:
+                - _source: ['WM: /wm/process/infestation']
+                - {_description: NA}
+                - _examples: [NA]
+        - Famine:
+            - _source: [NN, 'HUME_INDICATOR: /indicator/Health/Global Acute Malnutrition (GAM) rate', 'WM: /wm/concept/crisis_or_disaster/famine', 'HUME: /event/healthcare/famine']
+            - {_description: 'Extreme scarcity of food.'}
             - _examples: [NA]
-          - Wildfire:
-            - _source: ['WM: /wm_compositional/concept/crisis_or_disaster/environmental']
-            - {_description: NA}
-            - _examples: [NA]
-          - Avalanche:
-            - _source: ['WM: /wm_compositional/concept/crisis_or_disaster/environmental']
-            - {_description: NA}
-            - _examples: [NA]
-      - Fire:
-        - _source: [NN, 'WM: /wm_compositional/concept/crisis_or_disaster/environmental', 'HUME: /event/crisis/fire']
+    - FoodSecurity:
+        - _source: ['WM: /wm/property/security']
         - {_description: NA}
         - _examples: [NA]
-      - WeatherIssue:
-        - _source: ['WM: /wm_compositional/concept/crisis_or_disaster/environmental']
+        - FoodStability:
+            - _source: ['WM: /wm/property/stability']
+            - {_description: NA}
+            - _examples: [NA]
+        - FoodAccess:
+            - _source: ['WM: /wm/property/availability']
+            - {_description: NA}
+            - _examples: [NA]
+        - FoodUtilization:
+            - _source: ['WM: /wm/property/utilization']
+            - {_description: NA}
+            - _examples: [NA]
+        - FoodAvailability:
+            - _source: ['WM: /wm/property/availability']
+            - {_description: NA}
+            - _examples: [NA]
+        - FoodProduction:
+            - _source: ['WM: /wm/process/production']
+            - {_description: NA}
+            - _examples: [NA]
+        - HouseholdFoodStorage:
+            - _source: ['WM: /wm/concept/storage/household_food_storage']
+            - {_description: NA}
+            - _examples: [NA]
+    - FoodInsecurity:
+        - _source: ['WM: /wm/property/insecurity']
         - {_description: NA}
         - _examples: [NA]
-        - ColdTemperature:
-          - _source: ['WM: /wm_compositional/concept/crisis_or_disaster/environmental']
-          - {_description: NA}
-          - _examples: [NA]
-      - InsectInfestation:
-        - _source: ['WM: /wm_compositional/process/infest']
+        - FoodInstability:
+            - _source: ['WM: /wm/property/instability']
+            - {_description: NA}
+            - _examples: [NA]
+        - FoodNonaccess:
+            - _source: ['WM: /wm/property/shortage']
+            - {_description: NA}
+            - _examples: [NA]
+        - FoodNonutilization:
+            - _source: ['WM: /wm/property/nonutilization']
+            - {_description: NA}
+            - _examples: [NA]
+        - FoodShortage:
+            - _source: [NN, 'WM: /wm/property/shortage', 'HUME: /event/access/shortage/food shortage']
+            - {_description: 'Shortage of food.'}
+            - _examples: [NA]
+    - WildFoodSources:
+        - _source: ['WM_deprecated: /wm/concept/causal_factor/wild_food_sources']
+        - {_description: ''}
+        - _examples: [NA]
+        - Foraging:
+            - _source: ['WM: /wm/process/foraging']
+            - {_description: ''}
+            - _examples: [NA]
+        - Hunting:
+            - _source: ['WM: /wm/process/hunting']
+            - {_description: ''}
+            - _examples: [NA]
+    - Trend:
+        - _source: [NN, 'WM: /wm/concept/trend', 'HUME: /event/trend']
         - {_description: NA}
         - _examples: [NA]
-    - Famine:
-      - _source: [NN, 'HUME_INDICATOR: /indicator/Health/Global Acute Malnutrition (GAM) rate', 'WM: /wm_compositional/concept/crisis_or_disaster/famine', 'HUME: /event/healthcare/famine']
-      - {_description: 'Extreme scarcity of food.'}
-      - _examples: [NA]
-  - FoodSecurity:
-    - _source: ['WM: /wm_compositional/concept/food_security']
-    - {_description: NA}
-    - _examples: [NA]
-    - FoodStability:
-      - _source: ['WM: /wm_compositional/concept/food_security']
-      - {_description: NA}
-      - _examples: [NA]
-    - FoodAccess:
-      - _source: ['WM: /wm_compositional/concept/food_security']
-      - {_description: NA}
-      - _examples: [NA]
-    - FoodUtilization:
-      - _source: ['WM: /wm_compositional/concept/food_security']
-      - {_description: NA}
-      - _examples: [NA]
-    - FoodAvailability:
-      - _source: ['WM: /wm_compositional/concept/food_security']
-      - {_description: NA}
-      - _examples: [NA]
-    - FoodProduction:
-      - _source: ['WM: /wm_compositional/process/produce']
-      - {_description: NA}
-      - _examples: [NA]
-    - HouseholdFoodStorage:
-      - _source: ['WM: /wm_compositional/concept/storage/household_food_storage']
-      - {_description: NA}
-      - _examples: [NA]
-  - FoodInsecurity:
-    - _source: ['WM_deprecated: /wm/concept/causal_factor/food_insecurity']
-    - {_description: NA}
-    - _examples: [NA]
-    - FoodInstability:
-      - _source: ['WM_deprecated: /wm/concept/causal_factor/food_insecurity/food_instability']
-      - {_description: NA}
-      - _examples: [NA]
-    - FoodNonaccess:
-      - _source: ['WM_deprecated: /wm/concept/causal_factor/food_insecurity/food_nonaccess']
-      - {_description: NA}
-      - _examples: [NA]
-    - FoodNonutilization:
-      - _source: ['WM_deprecated: /wm/concept/causal_factor/food_insecurity/food_nonutilization']
-      - {_description: NA}
-      - _examples: [NA]
-    - FoodShortage:
-      - _source: [NN, 'WM_deprecated: /wm/concept/causal_factor/food_insecurity/food_unavailability', 'HUME: /event/access/shortage/food shortage']
-      - {_description: 'Shortage of food.'}
-      - _examples: [NA]
-  - WildFoodSources:
-    - _source: ['WM_deprecated: /wm/concept/causal_factor/wild_food_sources']
-    - {_description: ''}
-    - _examples: [NA]
-    - Foraging:
-      - _source: ['WM: /wm_compositional/process/forage']
-      - {_description: ''}
-      - _examples: [NA]
-    - Hunting:
-      - _source: ['WM: /wm_compositional/process/hunt']
-      - {_description: ''}
-      - _examples: [NA]
-  - Trend:
-    - _source: [NN, 'WM: /wm_compositional/concept/trend', 'HUME: /event/trend']
-    - {_description: NA}
-    - _examples: [NA]
-  - Forecast:
-    - _source: [NN, 'HUME: /event/forecast', 'WM: /wm_compositional/process']
-    - {_description: NA}
-    - _examples: [NA]
-    - Risk:
-      - _source: [NN, 'HUME: /event/forecast/risk', 'WM: /wm_compositional/process']
-      - {_description: NA}
-      - _examples: [NA]
-    - Likelihood:
-      - _source: [NN, 'HUME: /event/forecast/likelihood', 'WM: /wm_compositional/process']
-      - {_description: NA}
-      - _examples: [NA]
-  - Emotion:
-    - _source: [NN, 'WM: /wm_compositional/process', 'HUME: /event/emotion']
-    - {_description: NA}
-    - _examples: [NA]
-  - CognitiveProcess:
-    - _source: [NN, 'WM: /wm_compositional/process', 'HUME: /event/cognitive process']
-    - {_description: NA}
-    - _examples: [NA]
-  - Communication:
-    - _source: [NN, 'HUME: /event/communication', 'WM: /wm_compositional/process/communicate']
-    - {_description: NA}
-    - _examples: [NA]
-  - Legal:
-    - _source: [NN, 'HUME: /event/legal', 'WM: /wm_compositional/process/legislate/regulate']
-    - {_description: NA}
-    - _examples: [NA]
-  - Defensive:
-    - _source: [NN, 'HUME: /event/defensive', 'WM: /wm_compositional/process/conflict']
-    - {_description: NA}
-    - _examples: [NA]
-  - Condition:
-    - _source: [NN, 'HUME: /event/condition']
-    - {_description: NA}
-    - _examples: [NA]
-  - LeanSeason:
-    - _source: [NN, 'WM: /wm_compositional/time/season', 'HUME: /event/lean season']
-    - {_description: NA}
-    - _examples: [NA]
-  - DestroyCrops:
-    - _source: [NN, 'WM_deprecated: /wm/concept/causal_factor/crisis_and_disaster/environmental_disasters/crop_failure', 'HUME: /event/destroy crops']
-    - {_description: NA}
-    - _examples: [NA]
-  - Cost:
-    - _source: [NN, 'WM: /wm_compositional/property/price_or_cost']
-    - {_description: NA}
-    - _examples: [NA]
-    - CostOfLiving:
-      - _source: [NN, 'WM: /wm_compositional/property/price_or_cost']
-      - {_description: NA}
-      - _examples: [NA]
-    - CostOfTransportation:
-      - _source: [NN, 'WM: /wm_compositional/property/price_or_cost']
-      - {_description: NA}
-      - _examples: [NA]
-    - CostOfFood:
-      - _source: [NN, 'WM: /wm_compositional/property/price_or_cost']
-      - {_description: NA}
-      - _examples: [NA]
-  - Provide:
-    - _source: ['WM: /wm_compositional/process/provide']
-    - _description: ""
-    - _examples: []
-    - _alternative_id: null
+    - Forecast:
+        - _source: [NN, 'HUME: /event/forecast', 'WM: /wm/process']
+        - {_description: NA}
+        - _examples: [NA]
+        - Risk:
+            - _source: [NN, 'HUME: /event/forecast/risk', 'WM: /wm/property/risk']
+            - {_description: NA}
+            - _examples: [NA]
+        - Likelihood:
+            - _source: [NN, 'HUME: /event/forecast/likelihood', 'WM: /wm/process']
+            - {_description: NA}
+            - _examples: [NA]
+    - Emotion:
+        - _source: [NN, 'WM: /wm/process', 'HUME: /event/emotion']
+        - {_description: NA}
+        - _examples: [NA]
+    - CognitiveProcess:
+        - _source: [NN, 'WM: /wm/process', 'HUME: /event/cognitive process']
+        - {_description: NA}
+        - _examples: [NA]
+    - Communication:
+        - _source: [NN, 'HUME: /event/communication', 'WM: /wm/process/communication']
+        - {_description: NA}
+        - _examples: [NA]
+    - Legal:
+        - _source: [NN, 'HUME: /event/legal', 'WM: /wm/process/legislation/regulation']
+        - {_description: NA}
+        - _examples: [NA]
+    - Defensive:
+        - _source: [NN, 'HUME: /event/defensive', 'WM: /wm/process/conflict']
+        - {_description: NA}
+        - _examples: [NA]
+    - Condition:
+        - _source: [NN, 'HUME: /event/condition']
+        - {_description: NA}
+        - _examples: [NA]
+    - LeanSeason:
+        - _source: [NN, 'WM: /wm/concept/time/dry_season', 'HUME: /event/lean season']
+        - {_description: NA}
+        - _examples: [NA]
+    - DestroyCrops:
+        - _source: [NN, 'WM_deprecated: /wm/concept/causal_factor/crisis_and_disaster/environmental_disasters/crop_failure', 'HUME: /event/destroy crops']
+        - {_description: NA}
+        - _examples: [NA]
+    - Cost:
+        - _source: [NN, 'WM: /wm/property/price_or_cost']
+        - {_description: NA}
+        - _examples: [NA]
+        - CostOfLiving:
+            - _source: [NN, 'WM: /wm/property/price_or_cost']
+            - {_description: NA}
+            - _examples: [NA]
+        - CostOfTransportation:
+            - _source: [NN, 'WM: /wm/property/price_or_cost']
+            - {_description: NA}
+            - _examples: [NA]
+        - CostOfFood:
+            - _source: [NN, 'WM: /wm/property/price_or_cost']
+            - {_description: NA}
+            - _examples: [NA]
+    - Provide:
+        - _source: ['WM: /wm/process/provision']
+        - _description: ""
+        - _examples: []
+        - _alternative_id: null
+    - Compositional:
+        - _source: ['WM: /wm/property']
+        - _description: ""
+        - _examples: []
+        - _alternative_id: null
+        - Security:
+            - _source: ['WM: /wm/property/security']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Insecurity:
+            - _source: ['WM: /wm/property/insecurity']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - AidOrAssistance:
+            - _source: ['WM: /wm/process/aid_or_assistance']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Quality:
+            - _source: ['WM: /wm/property/quality']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - CaseVolume:
+            - _source: ['WM: /wm/concept/health/case_volume']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Productivity:
+            - _source: ['WM: /wm/property/productivity']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Energy:
+            - _source: ['WM: /wm/concept/energy']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Adaptation:
+            - _source: ['WM: /wm/process/adaptation']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Availability:
+            - _source: ['WM: /wm/property/availability']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Planning:
+            - _source: ['WM: /wm/process/planning']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - EconomicSecurity:
+            - _source: ['WM: /wm/concept/security/economic_security']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Emissions:
+            - _source: ['WM: /wm/concept/environment/emissions']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Technology:
+            - _source: ['WM: /wm/concept/technology']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Vulnerability:
+            - _source: ['WM: /wm/property/vulnerability']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Relief:
+            - _source: ['WM: /wm/process/relief']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Harvesting:
+            - _source: ['WM: /wm/process/farming/harvesting']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Failure:
+            - _source: ['WM: /wm/process/failure']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Research:
+            - _source: ['WM: /wm/process/research']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Destruction:
+            - _source: ['WM: /wm/process/destruction']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Illness:
+            - _source: ['WM: /wm/concept/health/disease/illness']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Commerce:
+            - _source: ['WM: /wm/concept/economy/commerce']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Marketing:
+            - _source: ['WM: /wm/concept/economy/marketing']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Opposition:
+            - _source: ['WM: /wm/process/communication/opposition']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Shocks:
+            - _source: ['WM: /wm/concept/crisis_or_disaster/shocks']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Instability:
+            - _source: ['WM: /wm/property/instability']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Stability:
+            - _source: ['WM: /wm/property/stability']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Reproduction:
+            - _source: ['WM: /wm/process/reproduction']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Damage:
+            - _source: ['WM: /wm/process/damage']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Stabilization:
+            - _source: ['WM: /wm/process/stabilization']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null
+        - Destabilization:
+            - _source: ['WM: /wm/process/destabilization']
+            - _description: ""
+            - _examples: []
+            - _alternative_id: null

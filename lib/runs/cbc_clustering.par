@@ -1,0 +1,9 @@
+
+job_name: hume_test.dart.082720.wm.v1
+stages_to_run: generate-candidates,build-corpus-cache,similarity,cbc,map-to-ontology,json
+
+input_npz_list: /d4m/ears/expts/48102.bbn_p3.20210505.serif_distilbert/expts/hume_test.dart.082720.wm.v1/distilbert/distilbert_npz.list
+input_serifxml_list: /d4m/ears/expts/48174.050521.v1/expts/hume_test.dart.082720.wm.v1/serif_serifxml.list
+saliency_list: /nfs/raid88/u10/users/ychan-ad/wm/ontology_expansion_050521/resources/salient_words.tsv
+
+ontology_cache: /d4m/ears/expts/48200.test.v3/expts/hume_test.dart.082720.wm.v1/build_ontology_cache/

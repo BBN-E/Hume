@@ -1,0 +1,65 @@
+=============================================
+event id: EventMention-ENG_NW_WM_aylien_3000742869_0-146932
+event mention id: EventMention-ENG_NW_WM_aylien_3000742869_0-146932
+trigger: "elections"
+sentence: "Corporate leaders have advised against any inquiry until after U.S. presidential elections in November to avoid political blame-shifting."
+        ARGUMENTS------------------------------------
+        Place   [('GPE', 'U.S.')]
+        Time-Within     [('TIMEX2.TIME', 'November')]
+        PROPERTIES-----------------------------------
+        best_month      2019-11
+        best_month_method       argument
+=============================================
+event id: EventMention-ENG_NW_WM_aylien_3006811190_0-154850
+event mention id: EventMention-ENG_NW_WM_aylien_3006811190_0-154850
+trigger: "community"
+sentence: "As the MIT community moved to remote learning in response to the Covid-19 pandemic, a math outreach program was moving online   and developing a project to allow high schoolers to help research the disease."
+        ARGUMENTS------------------------------------
+        PROPERTIES-----------------------------------
+        best_month      2020-05
+        best_month_method       document
+        state   CA
+        best_location_method    sentence
+=============================================
+event id: EventMention-ENG_NW_WM_aylien_3006811190_0-154995
+event mention id: EventMention-ENG_NW_WM_aylien_3006811190_0-154995
+trigger: "students"
+sentence: "Since 2011, over 600 students have participated in the various MIT PRIMES and MathROOTS programs, and more than 130 PRIMES alumni have matriculated at MIT."
+        ARGUMENTS------------------------------------
+        PROPERTIES-----------------------------------
+        best_month      2020-05
+        best_month_method       document
+        state   CA
+        best_location_method    sentence
+=============================================
+event id: EventMention-ENG_NW_WM_aylien_3006811190_0-154996
+event mention id: EventMention-ENG_NW_WM_aylien_3006811190_0-154996
+trigger: "participated"
+sentence: "Since 2011, over 600 students have participated in the various MIT PRIMES and MathROOTS programs, and more than 130 PRIMES alumni have matriculated at MIT."
+        ARGUMENTS------------------------------------
+        PROPERTIES-----------------------------------
+        best_month      2020-05
+        best_month_method       document
+        state   CA
+        best_location_method    sentence
+=============================================
+event id: EventMention-ENG_NW_WM_aylien_74045581_0-156419
+event mention id: EventMention-ENG_NW_WM_aylien_74045581_0-156419
+trigger: "letters"
+sentence: "He said he believed the complaint was  urgent  and  credible" in letters to lawmakers in August and September."
+        ARGUMENTS------------------------------------
+        Time-Within     [('TIMEX2.TIME', 'September')]
+        PROPERTIES-----------------------------------
+        best_month      2019-09
+        best_month_method       argument
+=============================================
+event id: EventMention-ENG_NW_WM_aylien_76560119_0-1780
+event mention id: EventMention-ENG_NW_WM_aylien_76560119_0-1780
+trigger: "WASHLITE"
+sentence: "WASHLITE claim FOX s broadcasting of false Covid19 information violates Washington state's consumer protection statute, and  wilfully and maliciously  spread false information and deliberately inflicted emotional distress in the process."
+        ARGUMENTS------------------------------------
+        PROPERTIES-----------------------------------
+        best_month      2020-04
+        best_month_method       document
+        state   DC
+        best_location_method    sentence

@@ -1,0 +1,2092 @@
+[
+    {
+        "id": "c0",
+        "score": "15.254418918918914",
+        "words_string": "faso burkina burkina_faso sierra_leone sierra cote niger guinea mauritania guinea_bissau bamako equatorial_guinea ivory_coast togo gambia french mali ghana benin senegal cameroon liberia comoros chad illinois congo ethiopia nigeria gambella northern_mali western_sahara sahara",
+        "cluster_name": "faso",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c10",
+        "score": "14.523604938271587",
+        "words_string": "lekuangole kotido oruchinga pibor labarab gumuruk rwamwanja nakivale kyangwali verteth yambio imvepi kitui palabek luo warrap kiryandongo hutus galmudug kakuma malakal doolow lujala torit renk kikuyu asongu lira dinka lou_nuer nyala galkayo bari bakool narok bentiu tonga murle kwale lamu mudug kano moroto river",
+        "cluster_name": "lekuangole",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c1000",
+        "score": "7.287787878787873",
+        "words_string": "routledge palgrave_macmillan macmillan wiley chicago_press elsevier penguin press francis academic_press john_wiley london sons chatham_house sage_publications california_press peace_press publishers",
+        "cluster_name": "routledge",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c1007",
+        "score": "2.1238947368421055",
+        "words_string": "thursday friday night images days locality morning rand_europe congress tv tuesday fall alerts june february world_vision",
+        "cluster_name": "thursday",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c1008",
+        "score": "3.0326666666666675",
+        "words_string": "car nepad most_households idmc energy_sector cc uhc rcc ifrc urban vac arra eca msmes sc adr sipri csa oda ford icc",
+        "cluster_name": "car",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c1014",
+        "score": "2.6855909090909087",
+        "words_string": "q k subx g mi renk dw gr z haz mc gsl ra w f ngn eq y",
+        "cluster_name": "q",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c1015",
+        "score": "2.289916666666667",
+        "words_string": "kassala hoa fulani mogadishu asongu issa jowhar giews issas austin es harari ali jonglei_state texas upper_nile annan hamdayet",
+        "cluster_name": "kassala",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c1020",
+        "score": "1.7372592592592593",
+        "words_string": "icu command sipri mil ipi hm_government unodc ssa_countries chief deau cia unisdr dod nrc icrc gfdrr j fo joint_chiefs nato idp imf",
+        "cluster_name": "icu",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c1021",
+        "score": "1.80312",
+        "words_string": "khorasan_chapter wagner desert salt arabic jordanians levant islamic_republic manchester shi hamas hendrix entirety tigray_television pasture arabs arizona daesh cairo isil zone baghdad colonization",
+        "cluster_name": "khorasan_chapter",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c1022",
+        "score": "1.9104285714285716",
+        "words_string": "unmiss amisom camp idp_camps second_phase hutus electoral_assistance operation ecomog raids lou_nuer sampling minusca ipc_analysis package process several_months reporting_period foot bentiu trainings renk",
+        "cluster_name": "unmiss",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c1023",
+        "score": "3.260449999999999",
+        "words_string": "beijing chang wang cao shi chinese chinese_authorities china_daily zhang italy zhao trump central_asians chinese_engagement moscow wu",
+        "cluster_name": "beijing",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c1024",
+        "score": "1.1943846153846154",
+        "words_string": "ce cers unodc drr snnpr ibrd ceni ppe rcc idp_camps aogs con bureau",
+        "cluster_name": "ce",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c1025",
+        "score": "1.9846129032258057",
+        "words_string": "echo odi telegram mfa bor_south ihr switzerland ingos pearl invest_program eu iom rand_europe who sachs elders iog cow dos alpha care fmps unicef arc",
+        "cluster_name": "echo",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c106",
+        "score": "8.452703703703701",
+        "words_string": "bagozzi roncoli cattaneo granovetter alesina ionesco justino gemenne di harari",
+        "cluster_name": "bagozzi",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c108",
+        "score": "11.764291666666658",
+        "words_string": "psychol appl hydrol agric meteorol proc econ phys chem lett ibid polit clim eds op ed pap biol cit lancet atmos",
+        "cluster_name": "psychol",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c109",
+        "score": "9.513205882352938",
+        "words_string": "southern_kenya northern_kenya western_kenya eastern_kenya nairobi_county kenya nairobi northern_tanzania northern_uganda victoria eastern pennsylvania west_pokot",
+        "cluster_name": "southern_kenya",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c11",
+        "score": "8.589435897435896",
+        "words_string": "oxford_university columbia_university princeton university stanford_university georgetown_university harvard_university princeton_university california_press stanford berkeley mexico_city macmillan london_school national_academy uct cambridge mit_press john john_wiley pennsylvania ithaca oxford washington_dc uppsala_university institution chicago",
+        "cluster_name": "oxford_university",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c123",
+        "score": "12.948403846153823",
+        "words_string": "sundberg persson olsson fjelde hovelsrud lind wallensteen urdal forsberg sweden stockholm uppsala lujala olken hulme oslo hansen smit besley tol hegre",
+        "cluster_name": "sundberg",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c125",
+        "score": "8.046394736842107",
+        "words_string": "banadir hirshabelle tadjourah sanaag dikhil jowhar mosul abiy bor aderghal wajir glob rabat daesh niamey baidoa sale oar west_kordofan berbera king maghreb meher ahmed salehyan obock ali",
+        "cluster_name": "banadir",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c126",
+        "score": "7.881365384615388",
+        "words_string": "acdeg afdb auc adb afd aga emb ceni icg eac aec ibrd arra mena prio faostat uneca amr undesa lga ofda issa deau comesa gtd idmc tvet ocha english usg arc ilo nema un_desa acbr oda etd acled aueoms",
+        "cluster_name": "acdeg",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c132",
+        "score": "8.458647058823525",
+        "words_string": "palestine palestinians gaza gaza_strip israel jordan hamas west_bank levant mena cyprus beirut arabs marsabit cairo",
+        "cluster_name": "palestine",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c133",
+        "score": "12.680595238095231",
+        "words_string": "richard david mark michael robert william christian patrick barry john christopher peter todd bert thomas burton walter martin alexander stephen lewis faith lawrence",
+        "cluster_name": "richard",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c136",
+        "score": "7.882607142857148",
+        "words_string": "other_hand words other_words hand same_time large_part other_things vein other_side essence opposite name whole most_part side example",
+        "cluster_name": "other_hand",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c137",
+        "score": "9.285760869565218",
+        "words_string": "weinstein meier horowitz weimann weidmann glaser maystadt posner schilling sageman herbst galtung theisen messer zartman nordhaus rosenzweig klein tol lobell bruck weber",
+        "cluster_name": "weinstein",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c148",
+        "score": "9.604222222222228",
+        "words_string": "tplf snnp spla splm adf iswap olf minusca saf eprdf lra snnpr whatsapp frud a covid afp odm hrw msf ond nrc ubos rla farc nsags dfid oau zimb wfp",
+        "cluster_name": "tplf",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c150",
+        "score": "12.429290909090904",
+        "words_string": "uruguay venezuelan_migrants paraguay chile albania iran gabon oceania kazakhstan bari bay mauritius ecuador bolivia belarus laos cambodia somalia argentina azerbaijan romania ukraine moldova poland cotton serbia jamaica australia bulgaria macedonia burma slovenia kyrgyzstan seychelles vietnam airport ithaca malaysia americas peru mexico latvia",
+        "cluster_name": "uruguay",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c151",
+        "score": "7.8059666666666665",
+        "words_string": "raila_odinga kibaki odinga president_museveni kanu moi yusuf luo nelson odm pnu dinka museveni fulani hutus",
+        "cluster_name": "raila_odinga",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c152",
+        "score": "9.831584415584393",
+        "words_string": "ic fr_ic ec ar ns gr sh ia nc fe sp pr ge ci po eq ho yi za sc lo h z u ju tt nd lt fo te_rn fan ri op lu ct ea io_n ceo io m fic se n nj re si ts sa iv ra",
+        "cluster_name": "ic",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c154",
+        "score": "6.394578125000005",
+        "words_string": "fpma giews_fpma afp ifpri acaps pippa mvam cmi res xaf supra dyn prio dw vac faostat kim hfa_plans mam rmse fic mail wmo ocha focac iasc print tuesday pheic psnp adb acad iog polit who busby cilss sydney knbs fo poc fp",
+        "cluster_name": "fpma",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c157",
+        "score": "4.966714285714284",
+        "words_string": "rand rand_corporation ard gef wall nrc world_development fsin arc nuclear_weapons aircraft million_tonnes rand_europe",
+        "cluster_name": "rand",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c158",
+        "score": "6.361370370370367",
+        "words_string": "piguet reuveny cilliers le_temps laitin angrist gemenne les le_billon sherbinin millet aderghal quebec dercon hallegatte",
+        "cluster_name": "piguet",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c166",
+        "score": "6.8039375",
+        "words_string": "eastern_drc dr_congo zaire drc province brazzaville kinshasa south_kivu central_africa tutsis n belgium east goma north_kivu northern_mozambique sadc basin anc",
+        "cluster_name": "eastern_drc",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c167",
+        "score": "9.59598113207547",
+        "words_string": "west_africa north_africa northern_africa saharan_africa mediterranean sahara central_africa africa_region subsaharan_africa african_region east_africa sub sahel_region western_sahara northern_ireland north_korea eastern_africa african_context belt central northwest horn african_citizens black continent subregion eastern",
+        "cluster_name": "west_africa",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c173",
+        "score": "5.365217391304345",
+        "words_string": "jfc cmo cmoc csos cis cve ltos cso ipi dos cpa usg",
+        "cluster_name": "jfc",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c174",
+        "score": "4.3713500000000005",
+        "words_string": "figs ols dalys poes ra sids ndcs sam subx annexes mc ond",
+        "cluster_name": "figs",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c176",
+        "score": "5.6422307692307685",
+        "words_string": "rcms ssps rems smeb ssts mepv fmps ppdc supra gcms nmme ssp dgsm mam sst cf hces wmo drr wms",
+        "cluster_name": "rcms",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c178",
+        "score": "8.402121212121203",
+        "words_string": "duffield pritchett kniveton mcleman goodhand besley mcadam bratton goldstone hulme smit daedalus herbst andrews annan blattman horgan pippa",
+        "cluster_name": "duffield",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c192",
+        "score": "14.559716981132079",
+        "words_string": "bhutan singapore armenia azerbaijan montenegro bulgaria qatar paraguay taiwan uruguay botswana malaysia nepal north_korea benin belgium czech_republic mauritius luxembourg gabon oman belarus moldova lithuania vanuatu portugal cambodia ecuador albania austria serbia iceland chile togo cuba south_korea romania cyprus mongolia jamaica slovenia macedonia croatia panama guatemala korea estonia",
+        "cluster_name": "bhutan",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c195",
+        "score": "6.275285714285714",
+        "words_string": "kabila tshisekedi museveni kwale kakuma supra bauchi moyo kigali harari goma kinshasa yusuf gombe",
+        "cluster_name": "kabila",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c198",
+        "score": "5.424323529411764",
+        "words_string": "hfa whz moh hhs htg hsc tfr ohw gef haz hn us mzn xaf sh faw twg mu ghsa pef",
+        "cluster_name": "hfa",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c199",
+        "score": "6.806033333333335",
+        "words_string": "geophys geogr polit_geogr geosci geoglam meteorology typology polit econ koren picture delimitation econometrica survey",
+        "cluster_name": "geophys",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c200",
+        "score": "4.514761904761906",
+        "words_string": "fews_net fews fewsnet cilss ess invest_program modeling doctors hdds fsin fsnau project_veritas elsevier sphere",
+        "cluster_name": "fews_net",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c202",
+        "score": "8.28547916666667",
+        "words_string": "dssi nsags dcd scad fsin hdds mdgs dhs pdsi ldcs ssps ndcs sids gtd rigging lcs iss hdi fgs sc asf rcsi ds msmes tb dmi undesa zimb csos soes cis di mddi ids cdc srs snnpr",
+        "cluster_name": "dssi",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c204",
+        "score": "7.294124999999997",
+        "words_string": "sheffield bennett hunter drake sachs myers walker wood turner stern santos davies epstein sutton phillips post black weber wolf beck art muller barrett parry powell",
+        "cluster_name": "sheffield",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c207",
+        "score": "8.824761904761903",
+        "words_string": "isiolo marsabit baringo garissa west_pokot turkana moroto wajir tana_river borana samburu narok mt nakivale mandera bari yambio shire eldoret karamoja_region moyale kajiado torit bossaso lake_turkana",
+        "cluster_name": "isiolo",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c210",
+        "score": "7.7430222222222165",
+        "words_string": "gfa ghsa gni gfs gcm cpia afcfta dac ihr gpi fgs hhs giz apsa undp aga sida fao fha ucdp wto dfid iiag wgi scad mofcom comesa sdgs dac_recommendation iss hfa_plans",
+        "cluster_name": "gfa",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c216",
+        "score": "6.0593",
+        "words_string": "given_year given_country given_time same_country particular_country specific_countries different_areas",
+        "cluster_name": "given_year",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c218",
+        "score": "7.412399999999999",
+        "words_string": "various_ways several_ways many_ways other_ways different_ways ways way alternative several_reasons many_forms different_approaches",
+        "cluster_name": "various_ways",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c220",
+        "score": "6.055769230769235",
+        "words_string": "punjab jammu kashmir pashtunwali india pakistan switzerland colorado oman kandahar province helmand",
+        "cluster_name": "punjab",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c225",
+        "score": "6.766086956521741",
+        "words_string": "samoa tuvalu kiribati new_zealand solomon_islands fiji kitui tonga vanuatu arua pacific solomon",
+        "cluster_name": "samoa",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c227",
+        "score": "5.090166666666667",
+        "words_string": "mokhnacheva kriticos kalyvas sambanis fosu shabani koren",
+        "cluster_name": "mokhnacheva",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c229",
+        "score": "7.637235294117646",
+        "words_string": "dhobley beletweyne garowe eldoret galkayo turkana kajiado kismayo gedo doolow mandera moyale borana nuer baidoa baringo bossaso hargeisa laitin gambella lamu",
+        "cluster_name": "dhobley",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c230",
+        "score": "8.231815789473675",
+        "words_string": "asia east_asia south_asia central_asia eastern_europe latin_america australia north_america southeast_asia oceania japan south_america americas europe eurasia america tropics",
+        "cluster_name": "asia",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c231",
+        "score": "7.137742857142857",
+        "words_string": "aprm abm slr apsim dgsm crm rea pnas amoc lcs apr_forum gpi cpia gam amr mepv dhs acled adr rla apsa cbi",
+        "cluster_name": "aprm",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c232",
+        "score": "7.52503448275862",
+        "words_string": "lemeilleur le cilliers le_billon sherbinin ruf quebec le_temps aderghal laitin deau environ dercon nuer",
+        "cluster_name": "lemeilleur",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c233",
+        "score": "7.599722222222228",
+        "words_string": "sul da_praia beira principe brazil portuguese santos para portugal da maputo northern_mozambique dos bentiu de bossaso baidoa",
+        "cluster_name": "sul",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c234",
+        "score": "7.926707317073169",
+        "words_string": "stanford_university tufts_university stanford mason uppsala_university california college harvard_university georgetown_university princeton_university berkeley oxford sage brookings_institution texas columbia_university arizona institution melbourne austin bloomberg",
+        "cluster_name": "stanford_university",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c24",
+        "score": "5.856772727272732",
+        "words_string": "lower_shabelle middle_shabelle shabelle sahel juba west_bank west_kordofan awash_basin aden tonj_east bakool west_nile sub hirshabelle",
+        "cluster_name": "lower_shabelle",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c245",
+        "score": "5.502399999999998",
+        "words_string": "medline med biol soc glob clim phys therapeutics ibid cdc doctor",
+        "cluster_name": "medline",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c247",
+        "score": "7.2624242424242444",
+        "words_string": "shapiro berman cohen kaplan epstein levy neumann schwartz stern kaufman sachs fisher solomon levine huntington wise sen",
+        "cluster_name": "shapiro",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c248",
+        "score": "5.793958333333333",
+        "words_string": "harare kampala mombasa northern_uganda kwale north_kivu goma kiryandongo museveni kampala_convention national_unity arua tutsi lake_victoria nyala uganda",
+        "cluster_name": "harare",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c251",
+        "score": "12.284546511627909",
+        "words_string": "mach burton robinson allen elliott davis miller anderson barnett keen ward roberts jones henry cramer phillips hunter king moran hugo jenkins bloom palmer harris andrews montenegro walker taylor mason fisher harvey singer huntington brown hansen wright maxwell james hall johnson nelson cook butler sutton austin grass parry mitchell norris black stark wagner conway weber nicholson wise barry thomas sellers adams",
+        "cluster_name": "mach",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c259",
+        "score": "4.970653846153846",
+        "words_string": "tonj_south tonj_north bor_south tonj_east aweil_south nord bay lake territory doolow one n north_kivu municipality bor county",
+        "cluster_name": "tonj_south",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c262",
+        "score": "14.148389830508467",
+        "words_string": "da_ta ta te ry da te_rn ai se ti tt ut si io po fo nd ia ju za tion ci ho lu io_n op u co id lo torit t k pa ts ge",
+        "cluster_name": "da_ta",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c263",
+        "score": "15.51846268656718",
+        "words_string": "baker jackson richardson hunter warner wright muller thomson newman kaufman stern lee bell mitchell campbell allen williams taylor reno diamond neumann gordon wolf powell simon moore parry marshall keen anderson stewart jensen lawrence lima roberts bates singh palmer bloom cramer ward klein ross clarke kaplan adams mu belt johnson raven jenkins hugo huntington",
+        "cluster_name": "baker",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c27",
+        "score": "7.593899999999997",
+        "words_string": "ny new new_york brookings washington chicago new_jersey dc brookings_institution sydney il boston nj illinois",
+        "cluster_name": "ny",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c276",
+        "score": "7.091883720930236",
+        "words_string": "gdn sdi osns gvcs rdc ddr parler dm sns fcs icg gtd wgi vnsa mepv mepv_data hdds video scad ndvi dmi gcms dcd ugx sdg climex frc package eac_protocol mddi",
+        "cluster_name": "gdn",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c283",
+        "score": "7.452027027027028",
+        "words_string": "honduras belize central_america nicaragua guatemala florida panama caribbean colombia mexico_city mexico jamaica cuba liberia haiti bangladesh michigan",
+        "cluster_name": "honduras",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c289",
+        "score": "6.534945945945956",
+        "words_string": "bangkok thailand laos vietnam jonglei lao_people burma cambodia singapore bangui myanmar southeast_asia bangladesh dhaka provinces korea south_korea nepal",
+        "cluster_name": "bangkok",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c292",
+        "score": "4.4345333333333325",
+        "words_string": "follows following_disclaimer following_questions factors parentheses following disclaimer",
+        "cluster_name": "follows",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c304",
+        "score": "4.861400000000002",
+        "words_string": "botha salehyan shabani dafna_rand hamdayet aderghal issa tadjourah abiy ahmed hassan lou_nuer nuer niem",
+        "cluster_name": "botha",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c31",
+        "score": "11.34730000000001",
+        "words_string": "borno borno_state kaduna kano ibadan adamawa nigeria lagos akobo niem yobe maiduguri kismayo northern_nigeria hn northeast_nigeria narok obock western_equatoria gombe jonglei_state bentiu abuja state",
+        "cluster_name": "borno",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c325",
+        "score": "4.939526315789476",
+        "words_string": "great_britain kingdom united_kingdom britain ireland northern_ireland north_korea czech_republic england british canada",
+        "cluster_name": "great_britain",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c327",
+        "score": "4.1714666666666655",
+        "words_string": "northern_regions far_north northern_areas northwest border_regions southern_areas several_areas new_areas left periphery entire_region major_cities northern north_kordofan",
+        "cluster_name": "northern_regions",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c330",
+        "score": "7.506571428571428",
+        "words_string": "montalvo esteban barrios adano de dube barros barro ebi coma mexico_city",
+        "cluster_name": "montalvo",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c331",
+        "score": "5.965312500000001",
+        "words_string": "umcs ldcs sdgs mdgs aogs ndcs cdf ltos rlas cve uhc gvcs undesa embs adr sdg vac msmes srs sam ssa lcs",
+        "cluster_name": "umcs",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c344",
+        "score": "4.041568627450982",
+        "words_string": "crr kenya_crr nigeria_crr para gurr jp peacekeeping_economy car gabon hungary ugx hrp municipality hrw slovenia ubos colorado rdc dhs cyprus afrobarometer ho marshall maldives dev ri ngn nepal chatham_house un_desa crrs georgia federation jan sambanis rwanda moyo japan cc",
+        "cluster_name": "crr",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c349",
+        "score": "5.005105263157894",
+        "words_string": "funk lyon williams turner jackson watts yang davies hall walker powell henry",
+        "cluster_name": "funk",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c350",
+        "score": "4.711518518518517",
+        "words_string": "maryland washington_dc md dc baltimore north_carolina nj hill minnesota british texas pennsylvania luxembourg nc dhaka washington",
+        "cluster_name": "maryland",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c354",
+        "score": "6.723774193548383",
+        "words_string": "few_months coming_weeks months coming_months several_months six_months days few_days ten_years past_month recent_months past_months night many_years short_term morning couple month next_year",
+        "cluster_name": "few_months",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c356",
+        "score": "5.877400000000001",
+        "words_string": "munich bonn heidelberg berlin hamburg nordhaus tokyo germany dordrecht vienna canberra seattle oslo melbourne paris",
+        "cluster_name": "munich",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c357",
+        "score": "7.403081081081079",
+        "words_string": "un unfccc unhcr nations gfa unsc undp oecd oecd_countries ipcc united_nations icrc ibrd world red_cross aec wfp un_office g united ilo unodc red unfpa iasc",
+        "cluster_name": "un",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c358",
+        "score": "6.284722222222227",
+        "words_string": "eip eiti oe eiu oie iw ehoa iri eck ebi oa ihr jee emb ebc ipi oda igo ef ec soes embs",
+        "cluster_name": "eip",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c359",
+        "score": "4.565050000000001",
+        "words_string": "uk uk_department uk_government ministry kingdom united_kingdom department state_department british house london parliament",
+        "cluster_name": "uk",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c361",
+        "score": "4.498249999999999",
+        "words_string": "democratic_republic congo brazzaville drc dr_congo burundi republic rwanda zaire",
+        "cluster_name": "democratic_republic",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c362",
+        "score": "5.7375833333333315",
+        "words_string": "chinese_academy xinhua wuhan shanghai chinese_ministry hsiang academy national china chinese taiwan mongolia kajiado",
+        "cluster_name": "chinese_academy",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c364",
+        "score": "7.855399999999994",
+        "words_string": "toronto cambridge geneva vienna birmingham rome moscow oxford tokyo philadelphia amsterdam hamburg princeton boston berlin ukraine oslo boulder helsinki ottawa kabul berkeley brighton canada london ce",
+        "cluster_name": "toronto",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c369",
+        "score": "4.680687500000002",
+        "words_string": "verwimp dordrecht hofstede anke_hoeffler verteth amsterdam zartman cederman",
+        "cluster_name": "verwimp",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c37",
+        "score": "10.975473684210511",
+        "words_string": "oromia amhara oromo amhara_region oromia_region woredas tigray afar tigray_television afar_region awash_basin somali_region karamoja harari belg rural_ethiopia africa_region district mena_region meher tigray_region greater_horn borana olf gambella karamoja_region jubaland dw",
+        "cluster_name": "oromia",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c377",
+        "score": "5.73818181818182",
+        "words_string": "sos earth_syst xof giews_fpma mzn fsnau ims csis bull iss glob aueom idps clim iom low plos soes giz ngn rmse wms",
+        "cluster_name": "sos",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c381",
+        "score": "4.129368421052632",
+        "words_string": "oxfam_america oxfam oxfam_international amnesty_international unfpa america fe ingos company",
+        "cluster_name": "oxfam_america",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c383",
+        "score": "7.507979999999993",
+        "words_string": "collier henderson poole norris hendrix barrett singer palmer dell drake olson newman kaufman conway moran spotlight bennett davis levine beck sutton burke cox richardson wagner schneider barnett bates warner lawrence thompson raleigh moore",
+        "cluster_name": "collier",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c385",
+        "score": "5.149",
+        "words_string": "r figure table lt overview abstract maps box note tables all release presentation gates op about sd sign history sections photo graphs see text map root europe iii",
+        "cluster_name": "r",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c389",
+        "score": "4.640916666666669",
+        "words_string": "august september jun july april jan may january february nrc conduct about timeline next_week same_day",
+        "cluster_name": "august",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c394",
+        "score": "5.684034482758619",
+        "words_string": "november march december october may april february july january june jan september jun",
+        "cluster_name": "november",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c399",
+        "score": "4.141277777777779",
+        "words_string": "mandela nelson_mandela apartheid johannesburg pretoria angola moi nelson hugo durban",
+        "cluster_name": "mandela",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c40",
+        "score": "9.692692307692296",
+        "words_string": "uzbekistan turkmenistan tajikistan russian_federation soviet_union russia kyrgyzstan kazakhstan russian mongolia belarus central_asia central_asians helmand moldova afghanistan central ukraine armenia georgia",
+        "cluster_name": "uzbekistan",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c401",
+        "score": "4.5205",
+        "words_string": "ifad ifes ifs ifc ifrc ims",
+        "cluster_name": "ifad",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c404",
+        "score": "4.956136363636364",
+        "words_string": "littlefield rowman ashgate lanham longman pritchett bottleneck hill zartman",
+        "cluster_name": "littlefield",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c412",
+        "score": "7.171062500000002",
+        "words_string": "same_day weeks last_month first_week few_days recent_weeks previous_month past_week recent_months week same_period phone several_months june same_month previous_months following same_time same_year six_months hours meantime prior_year coming_weeks night",
+        "cluster_name": "same_day",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c43",
+        "score": "12.991531914893603",
+        "words_string": "a_n r_t s_o v o m s f_r f g_e z c l r j il u t t_i e time_t x",
+        "cluster_name": "a_n",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c432",
+        "score": "3.9449999999999994",
+        "words_string": "ey th_ese ere th_e",
+        "cluster_name": "ey",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c439",
+        "score": "5.708037037037041",
+        "words_string": "kisumu ituri kikuyu samburu arua kigali eswatini lira north_kivu goma kanu asongu kakuma luo tutsi mombasa",
+        "cluster_name": "kisumu",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c452",
+        "score": "4.114857142857142",
+        "words_string": "cve_programmes cve_measures pce cve sdgs uhc jee rilabs evd programme challenge rlas programmes ct sids crrs",
+        "cluster_name": "cve_programmes",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c456",
+        "score": "4.5676000000000005",
+        "words_string": "kyrgyz_republic bishkek chechnya russian mokhnacheva ukraine russia galkayo khan texas soviet_union",
+        "cluster_name": "kyrgyz_republic",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c457",
+        "score": "6.095159999999999",
+        "words_string": "andrew stephen ca todd simon walter daniel patrick michael martin lawrence ross mark robert james christopher",
+        "cluster_name": "andrew",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c461",
+        "score": "5.343409090909094",
+        "words_string": "bahrain kuwait qatar libya oman uae egypt iraq russian_federation morocco",
+        "cluster_name": "bahrain",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c464",
+        "score": "4.692958333333333",
+        "words_string": "dominican_republic bolivarian_republic trinidad venezuela caribbean czech_republic maldives republic nicaragua colombia liberia national_assembly",
+        "cluster_name": "dominican_republic",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c465",
+        "score": "4.176849999999999",
+        "words_string": "rcp_scenarios rcp rcps rcsi ldcs rcc scenarios environ sdgs ssps fmps george crrs",
+        "cluster_name": "rcp_scenarios",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c467",
+        "score": "3.9428000000000005",
+        "words_string": "tilly fearon busby hallegatte ide smit daedalus gates nunn park adger",
+        "cluster_name": "tilly",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c469",
+        "score": "5.7062083333333335",
+        "words_string": "wbg meb cbi fgs dgsm htg emb smeb cdf gcm miga twg pef dtm gfdrr hfa_plans fp ugx",
+        "cluster_name": "wbg",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c472",
+        "score": "5.004666666666667",
+        "words_string": "noaa nmme usgs rcms wms frc ond hces wmo nasa iasc hrp ndvi amoc gcm gcms",
+        "cluster_name": "noaa",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c474",
+        "score": "5.503599999999996",
+        "words_string": "fax bibcode or_tb gsdrc photo ids fic url demography gtd cerf xof ppe ifpri tvet acbr ifrc ndvi ibrd idmc ibid mail id zimb gbd",
+        "cluster_name": "fax",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c481",
+        "score": "5.184052631578946",
+        "words_string": "easterly goldstone horgan longman sageman goodhand busby haider maystadt angrist mcleman annan cor",
+        "cluster_name": "easterly",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c484",
+        "score": "8.018483870967744",
+        "words_string": "ccm ccp sadc pnu rpp odm eprdf rdc tplf spla nuer anc idp splm frud psc dinka gacaca",
+        "cluster_name": "ccm",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c485",
+        "score": "5.01275",
+        "words_string": "ix vii vi xi viii x yi iv",
+        "cluster_name": "ix",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c489",
+        "score": "4.620913043478259",
+        "words_string": "norway denmark iceland finland estonia italy sweden ireland canada oslo austria copenhagen",
+        "cluster_name": "norway",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c493",
+        "score": "4.827388888888888",
+        "words_string": "malta lithuania latvia greece slovenia bulgaria romania estonia czech_republic poland hungary",
+        "cluster_name": "malta",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c494",
+        "score": "3.902944444444444",
+        "words_string": "sfa fha oa msf ssa saf afcfta fao nema hn aogs rla",
+        "cluster_name": "sfa",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c495",
+        "score": "6.189593749999996",
+        "words_string": "gray thompson campbell butler carter dell fisher brown gordon henderson moore ward park raleigh robinson scott lee davies ford harris turner adams olson maxwell",
+        "cluster_name": "gray",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c496",
+        "score": "4.203058823529413",
+        "words_string": "bosnia herzegovina kosovo serbia croatia macedonia montenegro",
+        "cluster_name": "bosnia",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c503",
+        "score": "3.996352941176471",
+        "words_string": "ipv ipc gbv fcv frc mepv idmc sgbv tfr cdr",
+        "cluster_name": "ipv",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c514",
+        "score": "5.456875000000003",
+        "words_string": "brussels hague netherlands paris amsterdam helsinki belgium madrid doha luxembourg stockholm",
+        "cluster_name": "brussels",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c515",
+        "score": "5.102794117647058",
+        "words_string": "stewart lewis gordon burke raven stark thomson scott young robinson alexander johnson conway cook barry martin butler roberts harvey ray moran miguel ross parry white",
+        "cluster_name": "stewart",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c518",
+        "score": "4.77347619047619",
+        "words_string": "wb wbgu wgi mm wto hrw pef gfs twg wu giz ohw gni",
+        "cluster_name": "wb",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c519",
+        "score": "4.893160000000002",
+        "words_string": "suppl acad biol faostat natl atmos cit nepad acaps pnas tion soc etd climex ard plos lo int",
+        "cluster_name": "suppl",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c520",
+        "score": "3.70623076923077",
+        "words_string": "spi spei pdsi jee apsim ssts sdi ssa",
+        "cluster_name": "spi",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c521",
+        "score": "4.138470588235295",
+        "words_string": "oti iri oie ehoa unamid acdeg icu oau cerf iasc arra unodc",
+        "cluster_name": "oti",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c527",
+        "score": "3.5460588235294126",
+        "words_string": "philippines mindanao indonesia korea taiwan spain malaysia bossaso moroto",
+        "cluster_name": "philippines",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c53",
+        "score": "14.671153846153851",
+        "words_string": "krueger hoeffler scheffran schlenker meehl ecker bruck gleditsch rosenzweig buhaug blattman messer anke_hoeffler schilling galtung cederman weidmann hofstede zartman glaser koren nordhaus",
+        "cluster_name": "krueger",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c532",
+        "score": "4.814666666666666",
+        "words_string": "paul patrick scott andrew peter richard daniel solomon henry lee sydney miguel george kim nelson ray christopher simon todd",
+        "cluster_name": "paul",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c533",
+        "score": "3.875578947368422",
+        "words_string": "smith fearon richards cook taylor brown sutton james mitchell humphreys cox hope moore andrews",
+        "cluster_name": "smith",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c538",
+        "score": "4.052904761904764",
+        "words_string": "ch_phase ipc_phase ch phase_classification evd roadmap fmps cbi sdg ipc dtm",
+        "cluster_name": "ch_phase",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c542",
+        "score": "3.741041666666668",
+        "words_string": "algeria tunisia morocco french libya switzerland france cameroon tunis western_sahara egypt albania georgia greece casablanca",
+        "cluster_name": "algeria",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c543",
+        "score": "4.623235294117646",
+        "words_string": "north_atlantic atlantic eastern_europe north arctic eurasia nato north_america indian_ocean",
+        "cluster_name": "north_atlantic",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c555",
+        "score": "4.040571428571429",
+        "words_string": "tigray_region region northern_areas northern_regions entire_region africa_region central_regions regional_conflict border_regions mena_region subregion",
+        "cluster_name": "tigray_region",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c558",
+        "score": "4.462120000000003",
+        "words_string": "tit li t_i cit tol gti hdi pi mi miga nepad t iw fe muac il",
+        "cluster_name": "tit",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c574",
+        "score": "4.508559999999997",
+        "words_string": "amo amoc enso oar pdo amr hsc eca omn fao iod acbr ssa eq",
+        "cluster_name": "amo",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c581",
+        "score": "3.3905384615384606",
+        "words_string": "istanbul turkey acemoglu cyprus greece spain",
+        "cluster_name": "istanbul",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c590",
+        "score": "3.6085",
+        "words_string": "britain kingdom uk_government british united_kingdom germany commons manchester england",
+        "cluster_name": "britain",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c595",
+        "score": "4.538950000000001",
+        "words_string": "iep iebc ipcc embs eac_protocol icrc sendai_framework gpi eca idp icg iota",
+        "cluster_name": "iep",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c601",
+        "score": "4.360083333333333",
+        "words_string": "iii ii part_ii viii iv annex chapters appendix_b appendix_c b annexes i appendix appendix_a inter_alia wave",
+        "cluster_name": "iii",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c603",
+        "score": "3.464473684210528",
+        "words_string": "tx q mt nat topics pdf hale ranges baseline son cf dl x lifetime ut sigma ci",
+        "cluster_name": "tx",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c610",
+        "score": "3.5064615384615374",
+        "words_string": "united_states us united_kingdom us_government kingdom usa americans",
+        "cluster_name": "united_states",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c614",
+        "score": "6.589407407407411",
+        "words_string": "james_currey axelrod humphreys fearon bratton amis hulme besley goodhand galtung posner horgan mcadam annan kniveton lobell alexander barro",
+        "cluster_name": "james_currey",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c617",
+        "score": "4.082941176470588",
+        "words_string": "rumbek juba hamdayet torit malakal gumuruk bor mudug renk karamoja acemoglu nyala sennar",
+        "cluster_name": "rumbek",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c618",
+        "score": "4.928428571428573",
+        "words_string": "cred pve pheic mc uhc dercon ocha frc cve eac cerf ch zimb ve re soap prio muac smeb call pef ere",
+        "cluster_name": "cred",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c624",
+        "score": "5.365423076923071",
+        "words_string": "ide adger haider cederman hegre olken dube easterly ess dafna_rand eck dercon ahmed desai smit akresh gurr",
+        "cluster_name": "ide",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c632",
+        "score": "3.67176",
+        "words_string": "unmil igad dfid unamid unfpa unisdr unsc ocha unmiss ceni unep ims ilo unodc hrw monusco ubos unhcr sipri",
+        "cluster_name": "unmil",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c637",
+        "score": "3.613562500000001",
+        "words_string": "vnsa veos vena nepad ve fsnau sns pve",
+        "cluster_name": "vnsa",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c653",
+        "score": "4.554374999999999",
+        "words_string": "peru bolivia south_america argentina lima ecuador paraguay latin_america chile mexico brazil madrid armenia colombia",
+        "cluster_name": "peru",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c659",
+        "score": "3.3242105263157877",
+        "words_string": "cs gs cc ds sa csi tx cso sd sc sigma nc",
+        "cluster_name": "cs",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c663",
+        "score": "3.829478260869564",
+        "words_string": "tunis baghdad casablanca morocco beirut cairo doha tunisia maldives johannesburg berbera geneva spain",
+        "cluster_name": "tunis",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c675",
+        "score": "3.648916666666666",
+        "words_string": "wilson norton peace_press international_peace peace_research brookings_institution chicago_press chatham_house brown peace_science wright chicago ford gates",
+        "cluster_name": "wilson",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c677",
+        "score": "3.2377222222222217",
+        "words_string": "hh h d hn iw ef htg moh fp haz air ohw u j",
+        "cluster_name": "hh",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c679",
+        "score": "3.9166315789473667",
+        "words_string": "recs cilss csis amis ess gvcs sids lcs csos soes fcs rilabs srs",
+        "cluster_name": "recs",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c68",
+        "score": "14.186868421052646",
+        "words_string": "south_darfur darfur north_darfur west_darfur darfur_region sudan southern_sudan south_sudan south_sudanese sudanese north_kordofan south_kordofan eastern_sudan nile blue_nile jonglei_state sennar west_kordofan nord western north_korea juba red_sea national_unity hamdayet upper_nile khartoum niger_delta dinka karamoja_region mosul independence southern greater_horn",
+        "cluster_name": "south_darfur",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c683",
+        "score": "3.321421052631579",
+        "words_string": "new_haven rhode_island michigan north_carolina new_jersey boston england illinois california pennsylvania",
+        "cluster_name": "new_haven",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c687",
+        "score": "3.0655",
+        "words_string": "first_time second_year row first_year past_year past_week reporting_period",
+        "cluster_name": "first_time",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c693",
+        "score": "5.389258064516129",
+        "words_string": "gam ecomog crm cmi mofcom iom miga igad board dtm mfa igo cor sida oda monusco icg giz oau pce undesa gacaca iiag comesa nema",
+        "cluster_name": "gam",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c697",
+        "score": "3.5204375",
+        "words_string": "mopti bouar eswatini bangui abidjan mena alpha bakool poc",
+        "cluster_name": "mopti",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c698",
+        "score": "5.104208333333333",
+        "words_string": "crossref chr cers ols cor rems adr rcc covid cdr recurrence ecmen trans evd ltos ond",
+        "cluster_name": "crossref",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c699",
+        "score": "4.0634814814814835",
+        "words_string": "rsf imf gfdrr iiag gti ifc dgsm iep freedom_house who hdi ubos gbd etd cia fcs idps eiu acled cdf",
+        "cluster_name": "rsf",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c710",
+        "score": "3.5250000000000004",
+        "words_string": "manag igo natl palabek galmudug mudug moyale ndvi mvam bor moyo bakool",
+        "cluster_name": "manag",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c72",
+        "score": "8.60970967741936",
+        "words_string": "last_week last_year year past_month previous_year next_week last_month previous_month recent_months previous_months following_year previous_years prior_year yearly_basis higher_year second_year past_months",
+        "cluster_name": "last_week",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c723",
+        "score": "3.689615384615386",
+        "words_string": "jeffrey paul_collier thomas james john daniel solomon scott",
+        "cluster_name": "jeffrey",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c724",
+        "score": "4.103652173913043",
+        "words_string": "madagascar haiti seychelles fiji uganda senegal tonga mauritius jamaica liberia vanuatu burundi bhutan rwanda gambia france",
+        "cluster_name": "madagascar",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c73",
+        "score": "7.937611111111108",
+        "words_string": "part_a article_history appendix_a appendix_c appendix_b a part_ii g_e corresponding_author annex annexes appendix special_report e contents ii",
+        "cluster_name": "part_a",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c735",
+        "score": "3.6623076923076927",
+        "words_string": "harvey watts wolf weber mueller wood paul_collier taylor campbell phillips mitchell chambers singer",
+        "cluster_name": "harvey",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c737",
+        "score": "3.1259444444444426",
+        "words_string": "co ma oh colorado il md ca fl boston austin mi usa",
+        "cluster_name": "co",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c741",
+        "score": "2.8392000000000004",
+        "words_string": "con_ict con_icts ve_organizations tor poes ecomog ct cao con remarks coalitions tion trans sci",
+        "cluster_name": "con_ict",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c744",
+        "score": "3.0584615384615397",
+        "words_string": "rs rems srs sns rcps ssps ns rcsi s rd",
+        "cluster_name": "rs",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c767",
+        "score": "4.626952380952382",
+        "words_string": "berger schneider lobell beck jensen wolf adams schwartz hansen olson burke mueller neumann klein",
+        "cluster_name": "berger",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c77",
+        "score": "7.42507894736842",
+        "words_string": "eac ebc auc focac aec eccas con apsa csa poc icc eca eac_protocol cpia cso miga fic sida xaf amis oau cerf afcfta gacaca cpa",
+        "cluster_name": "eac",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c772",
+        "score": "3.369533333333332",
+        "words_string": "gupta satyanath desai khan singh smit shabani akresh yang",
+        "cluster_name": "gupta",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c775",
+        "score": "3.8986315789473696",
+        "words_string": "uct ucdp sgbv gbv fcv ddr vnsa vac icu iog fp",
+        "cluster_name": "uct",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c779",
+        "score": "3.159277777777779",
+        "words_string": "ebook huntington baltimore seattle tokyo mis nigeria_crr forthcoming atlas raleigh jenkins w moi art boulder applications odi",
+        "cluster_name": "ebook",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c78",
+        "score": "18.522999999999968",
+        "words_string": "liu zhou chen tang xu zhang zhao yu cai feng dai lu wu yang chang wang southwest kim ce ge ma ju shi fan",
+        "cluster_name": "liu",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c781",
+        "score": "2.863583333333333",
+        "words_string": "mobutu ubuntu samburu arua kiryandongo rwamwanja maiduguri",
+        "cluster_name": "mobutu",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c784",
+        "score": "3.6837222222222232",
+        "words_string": "sussex east_anglia brighton melbourne birmingham london_school london manchester rand_europe",
+        "cluster_name": "sussex",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c791",
+        "score": "2.4900000000000007",
+        "words_string": "carter_center carter stern_review ottawa policy_brief theisen tuesday harris trump",
+        "cluster_name": "carter_center",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c793",
+        "score": "2.838692307692308",
+        "words_string": "dcha cmm gsdrc oecd_dac dac dtm daedalus gacaca",
+        "cluster_name": "dcha",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c795",
+        "score": "3.7694117647058833",
+        "words_string": "ciesin unisdr hces ecmen apsim gis ifes rilabs ndcs ionesco ingos nansen_initiative",
+        "cluster_name": "ciesin",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c797",
+        "score": "3.864529411764705",
+        "words_string": "lira lamu moyale diffa nyala tonj_east banadir lra gambella galmudug murle sanaag wajir",
+        "cluster_name": "lira",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c80",
+        "score": "11.907777777777788",
+        "words_string": "th_e th ed st ea es ab ri va io io_n ts rd da_ta oe int",
+        "cluster_name": "th_e",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c806",
+        "score": "2.854916666666666",
+        "words_string": "aceh indonesia malakal southeast_asia subsaharan_africa solomon_islands",
+        "cluster_name": "aceh",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c807",
+        "score": "2.5549374999999994",
+        "words_string": "philadelphia baltimore durban dc boulder amsterdam ottawa testimony chairperson manchester academia uppsala johannesburg helsinki",
+        "cluster_name": "philadelphia",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c814",
+        "score": "4.400315789473685",
+        "words_string": "northeastern_nigeria northeast northeast_nigeria northern northwest north far_north northern_somalia belt",
+        "cluster_name": "northeastern_nigeria",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c820",
+        "score": "2.6910000000000007",
+        "words_string": "gao northern_mali mali lac_region mopti garowe diffa",
+        "cluster_name": "gao",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c821",
+        "score": "3.048117647058824",
+        "words_string": "va bor_south iod plos nema msmes akobo obock igo aueom drr ju enso zika arra knbs mi",
+        "cluster_name": "va",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c83",
+        "score": "13.278411764705876",
+        "words_string": "south_africa southern_africa namibia southern_mozambique zimbabwe cape_town angola malawi pretoria mozambique africa south anc southern northern_mozambique botswana zambia tanzania durban",
+        "cluster_name": "south_africa",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c835",
+        "score": "3.1334999999999993",
+        "words_string": "aweil aueom gedo aueoms aweil_south unamid ecmen oh mzn jonglei dafna_rand dyn dikhil obock eldoret giews",
+        "cluster_name": "aweil",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c840",
+        "score": "5.64940740740741",
+        "words_string": "dac_members chepr psc pce aueoms dac fgs cso rcc aec deau mfa twg crrs pa undp chr rea",
+        "cluster_name": "dac_members",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c844",
+        "score": "3.5499545454545434",
+        "words_string": "lmics gsl gbd cdr rlas slr chr gdn rilabs dgsm mdgs rems subx natl drr rla mddi",
+        "cluster_name": "lmics",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c845",
+        "score": "3.6054",
+        "words_string": "w modernization video comment update f_r h f n d contest i t officials ia ti int l sa view",
+        "cluster_name": "w",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c86",
+        "score": "5.461611111111111",
+        "words_string": "laczko nawrotzki ignaciuk fosu poland koren eck gleditsch",
+        "cluster_name": "laczko",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c877",
+        "score": "2.965642857142857",
+        "words_string": "gis climex ucdp_data ols ifs gdn iod grid_cells mddi dmi pdsi ids giews ows",
+        "cluster_name": "gis",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c896",
+        "score": "2.190142857142857",
+        "words_string": "wau wms haz wmo ruf wto hfa_plans faw river wfp mam",
+        "cluster_name": "wau",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c899",
+        "score": "2.4296249999999997",
+        "words_string": "pi sp spi spei",
+        "cluster_name": "pi",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c916",
+        "score": "3.112874999999999",
+        "words_string": "bell bates davis jensen clarke miller schwartz singh james jones davies hale watts",
+        "cluster_name": "bell",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c929",
+        "score": "2.158916666666667",
+        "words_string": "roe levine cramer clarke newman barnett ray warner mueller",
+        "cluster_name": "roe",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c936",
+        "score": "2.3300625",
+        "words_string": "alaska seattle canberra arizona montreal northwest minnesota sydney",
+        "cluster_name": "alaska",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c968",
+        "score": "2.2219333333333333",
+        "words_string": "shire ethiopia gambia eastern_sudan gao man cameroon togo moldova za southwest aweil_south dhaka",
+        "cluster_name": "shire",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c980",
+        "score": "2.6153846153846163",
+        "words_string": "freetown hargeisa central_equatoria mogadishu garowe borno kasai south_kivu ibadan",
+        "cluster_name": "freetown",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c988",
+        "score": "3.939466666666668",
+        "words_string": "dakar niamey sahel_region sahel bamako niger_delta ivory_coast october beirut diffa",
+        "cluster_name": "dakar",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c992",
+        "score": "3.3306666666666667",
+        "words_string": "stat sci lett sen res final_report vol etd rea rcp pnas trans acbr ssts afdb mil invest pr fact_sheet csa hdi",
+        "cluster_name": "stat",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c994",
+        "score": "2.5736428571428576",
+        "words_string": "miguel_e p i e justino barros coma y dyn ali miguel eds ray portugal di dev md d stud akresh barro l andrews contents william gates k conway ebi mu alexander cox",
+        "cluster_name": "miguel_e",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c996",
+        "score": "1.8984166666666662",
+        "words_string": "hsiang china_daily shanghai man feng yu jee buhaug chinese xi wuhan desai",
+        "cluster_name": "hsiang",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    },
+    {
+        "id": "c997",
+        "score": "2.4635",
+        "words_string": "elpistostege adjumani mandera meher tana_river mena_region murle satyanath warrap belg dube mena cox sennar akresh urdal un_desa pibor miguel lujala imvepi jowhar karamoja igad island mcadam mofcom adano gurr garissa monusco hegre constitutive_act man bull alesina lou_nuer labarab",
+        "cluster_name": "elpistostege",
+        "comments": [],
+        "similarity_to_ontology_nodes": [],
+        "overlap_ontology_nodes": [],
+        "novel_ontology_nodes": []
+    }
+]

@@ -1,0 +1,17 @@
+# Template file for learnit params
+
+learnit_root:+learnit_root+
+source_lists:+source_lists+
+corpus_dir: %source_lists%
+corpus_name:+corpus_name+
+
+languages:English
+max_prop_depth:3
+max_regexp_pattern_words:5
+stopwords:%learnit_root%/inputs/resources/stopwords/english_causal_relationships.txt
+loader_concurrency:5
+learnit_expt_suffix:default
+max_unary_prop_depth:1
+max_binary_prop_depth:2
+max_number_of_tokens_per_sentence: 128
+

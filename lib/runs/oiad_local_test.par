@@ -1,0 +1,20 @@
+job_name: default_local
+stages_to_run: cdr-ingestion,serif,distilbert
+mode: WorldModelers
+use_compositional_ontology: true
+only_cpu_available: true
+single_bert_thread_mode: true
+use_distilbert: true
+
+num_of_batches_global: 4
+max_number_of_tokens_per_sentence: 128
+
+input_cdr_list: /nfs/raid88/u10/users/hqiu_ad/raw_corpus/wm/15_docs_test.list
+breaking_point: 10000
+metadata_file: GENERATED
+
+serif_input_sgm_list: GENERATED
+serif_input_awake_db: /nfs/raid87/u10/shared/Hume/common/serif/wm_eval_before_060119.sqlite
+serif_fast_mode: true
+use_cserif: false
+distilbert_input_serifxml_list: GENERATED

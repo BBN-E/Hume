@@ -5,7 +5,7 @@ import codecs
 # input_path = '/nfs/raid87/u12/ychan/repos/repo_clean_for_exp_wm_m12_hackathon/CauseEx/ontology/internal_ontology/hume/event_ontology.yaml'
 input_path = '/nfs/ld100/u10/bmin/repo_clean_for_exp_wm_m12_hackathon/CauseEx/ontology/internal_ontology/event_ontology.yaml'
 
-data = yaml.load(open(input_path,'r'))
+data = yaml.safe_load(open(input_path,'r'))
 
 id_to_path = []
 def traverse_tree(node, list_, prefix):

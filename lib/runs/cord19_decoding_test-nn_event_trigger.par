@@ -1,0 +1,75 @@
+
+
+############
+## Pipeline
+############
+job_name: covid_20210113b_medium_nntrig
+stages_to_run: serif,learnit-decoder,nn-event-trigger,nn-event-arg
+mode: WorldModelers
+use_compositional_ontology: false
+
+num_of_batches_global: 100
+max_number_of_tokens_per_sentence: 1280
+
+cpu_queue: cpunodes
+singularity_gpu_queue: gpu-12G
+
+metadata_file: /nfs/raid87/u11/users/azamania/hume-new-stage/metadata.txt
+########
+# Serif
+########
+serif_input_sgm_list: /nfs/raid87/u11/users/azamania/hume-new-stage/covid-files-medium.list
+serif_input_awake_db: /nfs/raid87/u10/shared/Hume/common/serif/wm_eval_before_060119.sqlite
+serif_fast_mode: true
+
+#######
+## BERT
+########
+bert_input_serifxml_list: GENERATED
+bert_layers: -1
+
+####################################
+## LearnIt  Decoder
+#####################################
+learnit_decoder_input_serifxml_list: GENERATED
+learnit_event_and_event_arg_pattern_dir: DEFAULT
+learnit_unary_entity_pattern_dir: DEFAULT
+learnit_event_event_relation_pattern_dir: DEFAULT
+input_serif_cause_effect_relations_dir:GENERATED
+generic_event_noun_whitelist: GENERATED
+generic_event_blacklist: GENERATED
+
+
+##################
+## NN event trigger
+##################
+nn_event_trigger_input_serifxml_list: GENERATED
+
+##################
+## NN event arg
+##################
+nn_event_arg_input_serifxml_list: GENERATED
+
+######################
+# PySerif
+######################
+pyserif_input_serifxml_list: GENERATED
+copyArgumentSentenceWindow: 1
+bert_npz_filelist: GENERATED
+grounding_mode: medium
+
+
+
+
+################
+# Serialization
+################
+serialization_input_awake_db: /nfs/raid87/u10/shared/Hume/common/serif/wm_eval_before_060119.sqlite
+serialization_input_serifxml_list: GENERATED
+serialization_input_trigger_finder_file: NA
+serialization_input_factfinder_json_file: /nfs/mercury-04/u42/bmin/projects/WM/m12/empty.json
+serialization_input_learnit_triple_file: GENERATED
+serialization_input_learnit_event_count_file: GENERATED
+serialization_do_event_uploading: False
+
+dump_extraction: True

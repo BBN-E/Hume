@@ -1,0 +1,17 @@
+#ProvideFood concept/food
+#/wm/concept/humanitarian_assistance/food_aid FOOD
+/wm/concept/humanitarian_assistance/food_aid FOOD
+
+#ProvideFinancialAssistance concept/cash
+#/wm/concept/causal_factor/interventions/provide/livelihood_support/financial_assistance CASH
+#/wm/concept/causal_factor/interventions/provide/livelihood_support/financial_assistance MONEY
+#ProvideFinancialAssistance CASH
+#ProvideFinancialAssistance MONEY
+
+#BuildMedicalInfrastructure concept/infrastructure/medical/facility
+#/wm/concept/causal_factor/interventions/build/medical_infrastructure FACILITY
+#BuildMedicalInfrastructure FACILITY
+
+#HouseholdReliefNonFoodItemPackage concept/humanitarian_assistance/non_food_items
+#/wm/concept/causal_factor/interventions/provide/livelihood_support/humanitarian_nonfood_items NON_FOOD_ITEMS
+#HouseholdReliefNonFoodItemPackage NON_FOOD_ITEMS

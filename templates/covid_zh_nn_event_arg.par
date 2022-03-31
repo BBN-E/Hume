@@ -1,0 +1,40 @@
+# implementations go here
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/ingester/serifxml_ingester.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/nlplingo_decoder.py
+
+# IMPLEMENTATIONS
+# +TEXT_OPEN_PYTHONPATH+/serif/model/impl/event_arg_remover_model.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/mention_coreference/simple_entity_model.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/actor_mention/dictionary_based_linker.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/entity/orphan_mention_to_entity_model.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/actor_entity/simple_actor_entity_model.py
+
+
+INGESTER SerifxmlIngester
+
+BASE_MODEL NLPLingoDecoder
+params_path +hume_root+/resource/covid/nn_event_argument/48168_covid_english_chinese.json
+use_sequence_tagging_adder true
+
+# BASE_MODEL EventArgRemoverModel
+
+MENTION_COREF_MODEL SimpleEntityModel
+
+ACTOR_MENTION_MODEL DictionaryBasedLinker
+spacy_model_path /nfs/raid87/u10/nlp/spacy_3_0_6/zh_core_web_sm
+name_dict_path /home/hqiu/tmp/processed_geoname_table.txt
+
+ACTOR_ENTITY_MODEL SimpleActorEntityModel
+

@@ -780,11 +780,11 @@ public class EventConsolidator {
         continue;
       }
 
-      if (isAllCaps(anchorTextOriginal)) {
-        System.out.println("removeEventMentionBasedOnKeyword: anchor is all caps, anchorText=["
-            + anchorTextOriginal + "]");
-        continue;
-      }
+//      if (isAllCaps(anchorTextOriginal)) {
+//        System.out.println("removeEventMentionBasedOnKeyword: anchor is all caps, anchorText=["
+//            + anchorTextOriginal + "]");
+//        continue;
+//      }
 
       if (!isAllLetter(anchorTextOriginal)) {
         System.out.println(

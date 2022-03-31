@@ -51,11 +51,13 @@ def my_tokenizer(serif_doc,sent_idx,eer_json_en):
     token_sequence = sentence.add_new_token_sequence(0.7)
     tokens = eer_json_en['token']
     cursor = 0
+    sentence_start_char_off = sentence.start_char
+    sentence_start_edt = sentence.start_edt
     for i in tokens:
         start_char_off = sentence.text.find(i,cursor)
         assert start_char_off != -1
         end_char_off = start_char_off + len(i) - 1
-        token_sequence.add_new_token(start_char_off,end_char_off,i)
+        token_sequence.add_new_token(sentence_start_edt + start_char_off,sentence_start_edt + end_char_off,i)
         cursor = end_char_off + 1
 
 
@@ -71,6 +73,8 @@ def find_or_add_em(serif_doc,sent_idx,eer_json_en,h_or_t):
     pre_terminals = serif_doc.sentences[sent_idx].sentence_theory.parse.root.preterminals
     head_node = pre_terminals[en['pos'][0]]
     tail_node = pre_terminals[en['pos'][-1]-1]
+    if head_node is None or tail_node is None:
+        return None
     event_mention_set = serif_doc.sentences[sent_idx].sentence_theory.event_mention_set
     if event_mention_set is None:
         event_mention_set = serif_doc.sentences[sent_idx].add_new_event_mention_set()
@@ -81,6 +85,8 @@ def find_or_add_em(serif_doc,sent_idx,eer_json_en,h_or_t):
     if anchor_node in syn_node_to_em:
         return syn_node_to_em[anchor_node]
     new_em = event_mention_set.add_new_event_mention("GIGAWORD_EVENT", anchor_node, 1.0)
+    new_em.semantic_phrase_start = en['pos'][0]
+    new_em.semantic_phrase_end = en['pos'][-1]-1
     return new_em
 
 def find_or_add_eer(serif_doc,sent_idx,eer_json_en):

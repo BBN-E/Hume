@@ -2,13 +2,14 @@ from elements.kb_element import KBElement
 
 class KBEntity(KBElement):
         
-    def __init__(self, id, canonical_name, entity_type):
+    def __init__(self, id, canonical_name, entity_type, conceiver_entity_links=None):
         self.id = id
         self.canonical_name = canonical_name
         self.entity_type_to_confidence = { entity_type: 0.8 }
         self.mentions = []
         self.properties = {}
         self.grounded_individuals = []
+        self.conceiver_entity_links = conceiver_entity_links
 
     def add_entity_type(self, entity_type, confidence):
         self.entity_type_to_confidence[entity_type] = confidence
@@ -31,3 +32,7 @@ class KBEntity(KBElement):
     @is_referred_in_kb.setter
     def is_referred_in_kb(self, is_referred_in_kb):
         self.properties["is_referred_in_kb"] = is_referred_in_kb
+
+    @property
+    def document(self):
+        return self.mentions[0].document

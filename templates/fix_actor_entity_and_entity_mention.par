@@ -1,0 +1,22 @@
+# implementations go here
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/ingester/serifxml_ingester.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/actor_entity/empty_actor_entity_model.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/actor_mention/actor_mention_complicance_model.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/actor_entity/simple_actor_entity_model.py
+
+
+INGESTER SerifxmlIngester
+
+ACTOR_ENTITY_MODEL EmptyActorEntityModel
+
+ACTOR_MENTION_MODEL ActorMentionCompliance
+
+ACTOR_ENTITY_MODEL SimpleActorEntityModel

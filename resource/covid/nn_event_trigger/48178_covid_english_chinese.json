@@ -1,0 +1,50 @@
+{
+  "add_serif_event_mentions": true,
+  "allow_anchor_as_event_argument": false,
+  "data": {
+    "train": {
+      "filelist": "/nfs/raid83/u10/jmacbrid-ad/COVID/event-trigger/filelists/learnit/english_chinese_projected/serif.train.v2.list"
+    },
+    "dev": {
+      "filelist": "/nfs/raid83/u10/jmacbrid-ad/COVID/event-trigger/filelists/learnit/english_chinese_projected/serif.dev.v2.list"
+    }
+  },
+  "extractors": [
+    {
+      "cache_dir": "/nfs/raid88/u10/users/ychan-ad/BETTER/transformers_ner/cache",
+      "domain_ontology": "/home/jmacbrid/COVID/event-ontology.txt",
+      "model_path": "/d4m/ears/expts/48178_covid_english_chinese/expts/covid.20210517.2e5/train/event_trigger/epoch-5",
+      "hyper-parameters": {
+        "batch_size": 64,
+        "epoch": 5,
+        "decode_mode": true,
+        "max_sentence_length": 256
+      },
+      "optimizer": {
+        "name": "adamw",
+        "lr": 0.00005
+      },
+      "engine": "pytorch",
+      "extractor_type": "event-trigger_sequence",
+      "encoder_name": "xlm-roberta-base",
+      "features": [],
+      "seed": 1,
+      "task": "event-trigger",
+      "sampler.max_per_type_and_pattern_id": 10,
+      "sampler.min_threshold_for_inclusion": 10,
+      "sampler.min_threshold_for_sampling": 500,
+      "model_saving_policy": {
+          "save_models": true,
+          "save_every_epoch": true,
+          "save_top_k_models": 5,
+          "save_every_kth_epoch": 5,
+          "save_from_kth_epoch": 5
+      }
+    }
+  ],
+  "train.score_file": "/d4m/ears/expts/48178_covid_english_chinese/expts/covid.20210517.2e5/train/event_trigger/dev.score",
+  "discard_training_examples_with_no_positive_label": true,
+  "save_model": true,
+  "test.score_file": "/d4m/ears/expts/48178_covid_english_chinese/expts/covid.20210517.2e5/train/event_trigger/test.score",
+  "output_dir": "/d4m/ears/expts/48178_covid_english_chinese/expts/covid.20210517.2e5/train/event_trigger"
+}

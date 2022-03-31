@@ -1,15 +1,14 @@
+import sys
+
 import logging
 import os
-import sys
 
 sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), ".."))
 
 from serializers.time_matcher import TimeMatcher
 from elements.kb_value_mention import KBValueMention, KBTimeValueMention
-from json_encoder import ComplexEncoder
-import json, codecs
-
-import pickle
+from elements.kb_mention import KBMention
+import json
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.WARNING)
@@ -18,12 +17,19 @@ formatter = logging.Formatter('[%(name)s]: %(asctime)s %(levelname)s: %(message)
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 
+
+def span_id_generator(provenance, span_type):
+    start, end = provenance["documentCharPositions"]["start"], provenance["documentCharPositions"]["end"]
+    doc_uuid = provenance["document"]["@id"]
+    return "{}#{}#{}#{}".format(doc_uuid, span_type, start, end)
+
+
 class JSONLDSerializer:
 
     def __init__(self):
         pass
 
-    def get_event_to_event_relation_name(self,relation):
+    def get_event_to_event_relation_name(self, relation):
         self.event_event_relation_old_to_new = {
             "Cause-Effect": "causation",
             "Precondition-Effect": "precondition",
@@ -65,34 +71,31 @@ class JSONLDSerializer:
         if arg_role in self.event_arg_role_old_to_new:
             return self.event_arg_role_old_to_new[arg_role]
         else:
-            raise ValueError("There's argument role type {} from event consolidator which you don't have valid mapping".format(arg_role))
+            raise ValueError(
+                "There's argument role type {} from event consolidator which you don't have valid mapping".format(
+                    arg_role))
             # logging.error("We're dropping role type {}".format(arg_role))
             # return None
-
 
     def get_event_text(self, kb_event_mention):
         event_text = kb_event_mention.triggering_phrase if kb_event_mention.triggering_phrase is not None else \
             kb_event_mention.trigger if kb_event_mention.trigger is not None else kb_event_mention.snippet[0]
         return event_text
 
-
-    def get_ontology_concept_for_event(self, kb_event_mention, config):
-
-        event_text = self.get_event_text(kb_event_mention)
+    def get_ontology_concept_for_event(self, kb_event_mention):
 
         groundings_with_scores = []
-
 
         # for groundings_to_external_ontology in kb_event_mention.external_ontology_sources:
         #     logger.debug("groundings_to_external_ontology: {}".format(groundings_to_external_ontology))
         #     type_external,score = groundings_to_external_ontology
         #     groundings_with_scores.append((type_external, score))
         for cf_type in kb_event_mention.causal_factors:
-            groundings_with_scores.append((cf_type.factor_class,cf_type.relevance))
+            groundings_with_scores.append((cf_type.factor_class, cf_type.relevance))
 
         if len(groundings_with_scores) < 1:
             ### grounding by looking up a table
-            logger.warn("Cannot find any valid ontology concept for internal ontology node {}".format(None))
+            logger.warning("Cannot find any valid ontology concept for internal ontology node {}".format(None))
 
         return groundings_with_scores
 
@@ -106,25 +109,29 @@ class JSONLDSerializer:
                 ontology_concept = self.config["mappings"][category][ins_type]["sub_types"][ins_subtype]
             return ontology_concept
         else:
-            logger.warn("Cannot find any valid ontology concept for {}: {}, subtype: {}".format(category, ins_type,ins_subtype))
+            logger.warning("Cannot find any valid ontology concept for {}: {}, subtype: {}".format(category, ins_type,
+                                                                                                   ins_subtype))
             ontology_concept = self.config["mappings"][category]["default_type"]
             return ontology_concept
 
     def get_ontology_concept_for_entity(self, ins_type, ins_subtype):
-        category="entity"
+        category = "entity"
         return self._get_ontology_concept_for_category(ins_type, ins_subtype, category)
 
     def get_ontology_concept_for_property(self, ins_type, ins_subtype):
         category = "property"
         return self._get_ontology_concept_for_category(ins_type, ins_subtype, category)
 
-    def serialize(self, kb, output_jsonld_file, mode, use_compositional_ontology):
+    def serialize(self, kb, output_dir, mode, use_compositional_ontology, wm_external_ontology_hash,
+                  regrounding_mode):
         print("JSONLDSerializer SERIALIZE")
+        os.makedirs(output_dir, exist_ok=True)
+        self.wm_external_ontology_hash = wm_external_ontology_hash
         self.kb_mention_to_serialized_entity_id = dict()
         self.namespace = dict()
         self.config = dict()
-        self.gid = 0
-        self.event_group_id_map = dict() # Maps ID from KB to better looking ID
+
+        self.event_group_id_map = dict()  # Maps ID from KB to better looking ID
         self.time_matcher = TimeMatcher()
 
         self.event_group_count = 0
@@ -134,6 +141,7 @@ class JSONLDSerializer:
 
         self.use_compositional_ontology = use_compositional_ontology == "true"
         self.mode = mode
+        self.regrounding_mode = True if regrounding_mode.lower() == "true" else False
 
         if self.mode == "CauseEx":
             self.config = self.read_config(
@@ -142,68 +150,55 @@ class JSONLDSerializer:
             self.config = self.read_config(
                 os.path.dirname(os.path.realpath(__file__)) + "/../config_files/config_ontology_wm.json")
 
-
         self.read_namespaces()
         self.kb = kb
-        self.kb_event_mention_to_kb_event = dict()
-        for kb_event_id, kb_event in self.kb.evid_to_kb_event.items():
-            for kb_event_mention in kb_event.event_mentions:
-                self.kb_event_mention_to_kb_event[kb_event_mention] = kb_event
+        doc_uuid_to_json_ld = dict()
 
-        o = codecs.open(output_jsonld_file, 'w', encoding='utf8')
+        self.add_extractions(doc_uuid_to_json_ld)
 
-        result = dict()
-        self.add_context(result)
-        self.add_ontology_meta(result)
-        result["@type"] = "Corpus"
+        for doc_uuid, json_ld_en in doc_uuid_to_json_ld.items():
+            self.add_context(json_ld_en)
+            self.add_ontology_meta(json_ld_en)
+            json_ld_dir = os.path.join(output_dir, doc_uuid)
+            os.makedirs(json_ld_dir, exist_ok=True)
+            with open(os.path.join(json_ld_dir, "{}.json-ld".format(doc_uuid)), 'w') as wfp:
+                json.dump(json_ld_en, wfp, indent=4, sort_keys=True, ensure_ascii=False)
 
-        self.add_documents_and_sentence(result)
-
-        self.add_extractions(result)
-
-        o.write(json.dumps(result, sort_keys=True, indent=4, cls=ComplexEncoder, ensure_ascii=False))
-        o.close()
-        info_file_path = os.path.realpath(os.path.join(output_jsonld_file,os.pardir))
-        info_file_path = os.path.join(info_file_path,os.path.basename(output_jsonld_file).split(".")[0] + ".info")
-        output_info_stream = codecs.open(info_file_path,'w',encoding='utf8')
-        output_info_stream.write("Entity count: " + str(self.entity_count) + "\n")
-        output_info_stream.write("Event count: " + str(self.event_count) + "\n")
-        output_info_stream.write("Causal assertion in text count: " + str(self.text_causal_assertion_count) + "\n")
-        output_info_stream.write("Event group count: "+str(self.event_group_count)+"\n")
-        output_info_stream.close()
+        info_file_path = os.path.join(output_dir, "output.info")
+        with open(info_file_path, 'w') as output_info_stream:
+            output_info_stream.write("Entity count: " + str(self.entity_count) + "\n")
+            output_info_stream.write("Event count: " + str(self.event_count) + "\n")
+            output_info_stream.write("Causal assertion in text count: " + str(self.text_causal_assertion_count) + "\n")
+            output_info_stream.write("Event group count: " + str(self.event_group_count) + "\n")
 
         return
 
-
-    def add_documents_and_sentence(self, result):
+    def add_documents_and_sentence(self, doc_id_to_json_ld):
         doc_uuid_to_doc_en = dict()
 
         # Generate documents and sentence spans
         for docid in self.kb.docid_to_kb_document:
             kb_document = self.kb.docid_to_kb_document.get(docid)
-            doc_en = doc_uuid_to_doc_en.setdefault(kb_document.properties["uuid"],dict())
+            doc_en = doc_uuid_to_doc_en.setdefault(kb_document.properties["uuid"], dict())
             doc_en["@type"] = "Document"
             doc_en["@id"] = kb_document.properties["uuid"]
-            doc_en["location"] = kb_document.properties["source"]
-            if self.mode == "CauseEx":
-                doc_en["location"] = doc_en["location"].replace("/nfs/raid87/u14/", "")
-                doc_en["@uuid"] = kb_document.properties["uuid"]
 
-            sentences = doc_en.setdefault("sentences",list())
+            if self.regrounding_mode is False:
+                sentences = doc_en.setdefault("sentences", list())
+                for kb_sentence in kb_document.sentences:
+                    sentence = dict()
+                    provenance = self.get_json_object_for_provenance(kb_document, kb_sentence.start_offset,
+                                                                     kb_sentence.end_offset, kb_sentence)
+                    sentence["@type"] = "Sentence"
+                    sentence["@id"] = provenance['sentence']
+                    sentence["text"] = kb_sentence.original_text
 
-            for kb_sentence in kb_document.sentences:
-                sentence = dict()
+                    sentences.append(sentence)
+        for doc_uuid, doc_en in doc_uuid_to_doc_en.items():
+            doc_id_to_json_ld.setdefault(doc_uuid, dict())['documents'] = [doc_en]
+            doc_id_to_json_ld.setdefault(doc_uuid, dict())['extractions'] = []
 
-                sentence["@type"] = "Sentence"
-                sentence["@id"] = kb_sentence.id
-                sentence["text"] = kb_sentence.original_text
-
-                sentences.append(sentence)
-
-
-        result["documents"] = list(doc_uuid_to_doc_en.values())
-
-    def get_count_objects_for_mention(self, kb_mention):
+    def get_count_objects_for_mention(self, kb_mention, entity_id):
         numeric_dict = kb_mention.properties['numeric']
         unit = "Absolute"
         if "time_interval" in numeric_dict.keys():
@@ -226,7 +221,7 @@ class JSONLDSerializer:
         else:
             value = 1 if numeric_dict.get('val', 'NA') == 'NA' else numeric_dict.get('val', 'NA')
         count_obj = {
-            "@id": kb_mention.id + "-CNT",
+            "@id": entity_id + "-CNT",
             "@type": "Count",
             "modifier": modifier,
             "value": value,
@@ -237,29 +232,31 @@ class JSONLDSerializer:
         else:
             return count_obj
 
-    def get_json_object_for_entity(self, kb_entity_id, kb_entity):
-        entities = [] # each mention is an entity; this function will return a list of entities
+    def get_json_object_for_entity(self, kb_entity_id, kb_entity, kb_entity_in_kb_events,
+                                   kb_entity_mention_in_kb_events):
+        entities = []  # each mention is an entity; this function will return a list of entities
         coreference_relations = []
 
-        mention_idx=1
+        if self.regrounding_mode is True and kb_entity not in kb_entity_in_kb_events:
+            return entities, coreference_relations
+
         for kb_mention in kb_entity.mentions:
             entity = dict()
-
-            entity_string = kb_entity.canonical_name
+            provenance = self.get_json_object_for_provenance(kb_mention.document, kb_mention.start_char,
+                                                             kb_mention.end_char, kb_mention.sentence)
+            entity["@id"] = span_id_generator(provenance, type(kb_mention).__name__)
             if kb_entity.canonical_name is not None:
                 entity["canonicalName"] = kb_entity.canonical_name
 
-            if kb_entity.properties.get("geonameid",None) is not None:
-                entity['geoname_id'] = kb_entity.properties.get("geonameid",None)
+            if kb_entity.properties.get("geonameid", None) is not None:
+                entity['geoname_id'] = kb_entity.properties.get("geonameid", None)
 
             entity["@type"] = "Extraction"
-
-            labels = ["Entity"]
-            entity["labels"] = labels
+            entity["labels"] = ["Entity"]
 
             if "numeric" in kb_mention.properties:
                 entity['counts'] = []
-                count_obj = self.get_count_objects_for_mention(kb_mention)
+                count_obj = self.get_count_objects_for_mention(kb_mention, entity["@id"])
                 if count_obj is not None:
                     entity['counts'].append(count_obj)
 
@@ -270,49 +267,42 @@ class JSONLDSerializer:
                 entity_type = entity_type_info[0]
                 entity_subtype = entity_type_info[1]
 
-                ontology_concept = self.get_ontology_concept_for_entity(entity_type,entity_subtype)
+                ontology_concept = self.get_ontology_concept_for_entity(entity_type, entity_subtype)
 
-
-                ontology_type = ontology_concept #"/entity/" + entity_type + "/" + entity_subtype
-                grounding = self.get_json_object_for_grounding(ontology_type, kb_entity.entity_type_to_confidence[entity_type_info_key])
+                ontology_type = ontology_concept  # "/entity/" + entity_type + "/" + entity_subtype
+                grounding = self.get_json_object_for_grounding(ontology_type, kb_entity.entity_type_to_confidence[
+                    entity_type_info_key])
                 groundings.append(grounding)
 
             if ontology_type is None:
-                return None
+                raise ValueError("Cannot find mapping for entity type {}".format(ontology_type))
             entity["grounding"] = groundings
             entity["type"] = "concept"
             entity["subtype"] = "entity"
 
-            provenance = self.get_json_object_for_provenance(kb_mention.document, kb_mention.start_char, kb_mention.end_char, kb_mention.sentence)
-            entity["@id"] = kb_entity_id + "-" + str(mention_idx)
             entity["provenance"] = [provenance]
             entity["text"] = kb_mention.mention_text
             self.kb_mention_to_serialized_entity_id[kb_mention] = entity["@id"]
             entities.append(entity)
-
-            # add coreference
-            if mention_idx>1:
-                self.gid += 1
-                coreference_relation_id = "coreference-" + str(self.gid)
-                coreference_relation = self.get_json_object_for_coreference_relation(coreference_relation_id, kb_entity_id + "-1", kb_entity_id + "-" + str(mention_idx))
+        if len(kb_entity.mentions) > 1:
+            first_entity_mention_output = entities[0]["@id"]
+            for idx, entity_mention in enumerate(entities[1:]):
+                coreference_relation = self.get_json_object_for_coreference_relation("{}-{}".format(kb_entity_id, idx),
+                                                                                     first_entity_mention_output,
+                                                                                     entity_mention["@id"])
                 coreference_relations.append(coreference_relation)
-            mention_idx=mention_idx+1
 
         return entities, coreference_relations
 
     def get_json_object_for_coreference_relation(self, relation_id, entity_id1, entity_id2):
-
-        relation_type = "coreference"
-
         relation = dict()
         relation["@type"] = "Extraction"
 
         relation["@id"] = relation_id
-        labels = []
-        labels.append(relation_type)
+
         relation["labels"] = ["DirectedRelation"]
         relation["type"] = "relation"
-        relation["subtype"] = relation_type
+        relation["subtype"] = "coreference"
 
         # add arguments
         arguments = []
@@ -334,7 +324,6 @@ class JSONLDSerializer:
         relation["arguments"] = arguments
 
         return relation
-
 
     def get_json_object_for_event_group(self, kb_event_group_id, kb_event_group):
         event_group = dict()
@@ -387,72 +376,23 @@ class JSONLDSerializer:
 
         return relation
 
-    '''
-    def get_json_object_for_entity_entity_relation(self, relid, kb_relation):
-        relation = dict()
-        relation["@type"] = "Event"
-        relation["@id"] = relid
-        relation["labels"] = ["DirectedRelation"]
-        relation["type"] = "/relation/entity relation/" + kb_relation.relation_type
-
-        # add arguments
-        arguments = []
-        argument = dict()
-        argument["@type"] = "Argument"
-        argument["type"] = "has_left_arg"
-        arg_ids = dict()
-        arg_ids["@id"] = kb_relation.left_argument_id
-        argument["value"] = arg_ids
-        arguments.append(argument)
-
-        argument = dict()
-        argument["@type"] = "Argument"
-        argument["type"] = "has_right_arg"
-        arg_ids = dict()
-        arg_ids["@id"] = kb_relation.right_argument_id
-        argument["value"] = arg_ids
-        arguments.append(argument)
-        relation["arguments"] = arguments
-
-        # provenance
-        kb_relation_mention = kb_relation.relation_mentions[0]
-        
-        left_mention = kb_relation_mention.left_mention
-        right_mention = kb_relation_mention.right_mention
-        relation_span_start, relation_span_end = self.get_relation_span(left_mention.start_char,
-                                                                        left_mention.end_char,
-                                                                        right_mention.start_char,
-                                                                        right_mention.end_char)
-        provenances = []
-        provenance = self.get_json_object_for_provenance(kb_relation_mention.document, relation_span_start, relation_span_end, left_mention.sentence.id)
-        provenances.append(provenance)
-        relation["provenance"] = provenances
-
-        return relation
-    '''
-
     def get_json_object_for_event_event_relation(self, kb_relation):
-        relation_type = kb_relation.relation_type
         kb_relation_mention = kb_relation.relation_mentions[0]
         left_mention = kb_relation_mention.left_mention
         right_mention = kb_relation_mention.right_mention
-        docId = kb_relation_mention.document.id
 
-        # print "E2E\trelation_type=" + relation_type + "\tleft_mention=" + left_mention.id + "\t" + left_mention.trigger + "\tright_mention=" + right_mention.id + "\t" + right_mention.trigger
-
-        source_event = self.kb_event_mention_to_kb_event[left_mention].id
-        target_event = self.kb_event_mention_to_kb_event[right_mention].id
+        left_mention_json_ld_id = self.kb_event_to_serialized_event_id[left_mention]
+        right_mention_jsonld_id = self.kb_event_to_serialized_event_id[right_mention]
 
         relation = dict()
         relation["@type"] = "Extraction"
-        relation["@id"] = kb_relation.id
+
         labels = []
         labels.append(kb_relation.relation_type)
         relation["labels"] = ["DirectedRelation"]
-        relation['type']="relation"
-        relation_type=self.get_event_to_event_relation_name(kb_relation.relation_type)
-        relation['subtype']=relation_type
-
+        relation['type'] = "relation"
+        relation_type = self.get_event_to_event_relation_name(kb_relation.relation_type)
+        relation['subtype'] = relation_type
 
         # add arguments
         arguments = []
@@ -461,7 +401,7 @@ class JSONLDSerializer:
         left_pred = self.config["mappings"]["event-event-relation"][relation_type]["left_predicate"]
         argument["type"] = left_pred
         arg_ids = dict()
-        arg_ids["@id"] = source_event
+        arg_ids["@id"] = left_mention_json_ld_id
         argument["value"] = arg_ids
         arguments.append(argument)
 
@@ -470,7 +410,7 @@ class JSONLDSerializer:
         right_pred = self.config["mappings"]["event-event-relation"][relation_type]["right_predicate"]
         argument["type"] = right_pred
         arg_ids = dict()
-        arg_ids["@id"] = target_event
+        arg_ids["@id"] = right_mention_jsonld_id
         argument["value"] = arg_ids
         arguments.append(argument)
         relation["arguments"] = arguments
@@ -481,11 +421,12 @@ class JSONLDSerializer:
                                                                         right_mention.trigger_start,
                                                                         right_mention.trigger_end)
         provenances = []
-        provenance = self.get_json_object_for_provenance(kb_relation_mention.document, relation_span_start, relation_span_end, left_mention.sentence)
+        provenance = self.get_json_object_for_provenance(kb_relation_mention.document, relation_span_start,
+                                                         relation_span_end, left_mention.sentence)
         provenances.append(provenance)
         relation["provenance"] = provenances
-
-        return relation
+        relation["@id"] = "{}#{}#{}".format(left_mention_json_ld_id, relation_type, right_mention_jsonld_id)
+        return relation, kb_relation_mention.document.properties["uuid"]
 
     def get_relation_span(self, arg1_start, arg1_end, arg2_start, arg2_end):
         start = arg1_start if arg1_start < arg2_start else arg2_start
@@ -512,7 +453,7 @@ class JSONLDSerializer:
     def get_json_object_for_grounding(self, type, confidence):
         grounding = dict()
         grounding["@type"] = "Grounding"
-        grounding["name"] = "bbn" # use the "BBN ontology" (for now, it's just a hierarchy of concepts)
+        grounding["name"] = "bbn"  # use the "BBN ontology" (for now, it's just a hierarchy of concepts)
         if self.mode == "CauseEx":
             type = self.get_causeex_ontology_concept(type)
         grounding["ontologyConcept"] = type
@@ -520,36 +461,39 @@ class JSONLDSerializer:
         return grounding
 
     def get_json_object_for_provenance(self, kb_document, char_start, char_end, kb_sentence):
-        sentence_id = kb_sentence.id
         provenance = dict()
         provenance["@type"] = "Provenance"
         doc_ref = dict()
         doc_ref["@id"] = kb_document.properties["uuid"]
         provenance["document"] = doc_ref
-        provenance["sentence"] = sentence_id
 
         position = dict()
         position["@type"] = "Interval"
-        position["start"] = char_start+kb_document.properties["offset"]
-        position["end"] = char_end+kb_document.properties["offset"]
+        position["start"] = char_start + kb_document.properties["offset"]
+        position["end"] = char_end + kb_document.properties["offset"]
         provenance["documentCharPositions"] = position
-
+        provenance["sentence"] = "{}#{}#{}".format(kb_document.properties["uuid"],
+                                                   kb_document.properties["offset"] + kb_sentence.start_offset,
+                                                   kb_document.properties["offset"] + kb_sentence.end_offset)
         sent_position = dict()
         sent_position["@type"] = "Interval"
-        sent_position["start"] = char_start-kb_sentence.start_offset
-        sent_position["end"] = char_end-kb_sentence.start_offset
+        sent_position["start"] = char_start - kb_sentence.start_offset
+        sent_position["end"] = char_end - kb_sentence.start_offset
         provenance["sentenceCharPositions"] = sent_position
 
         return provenance
 
     def make_value_mention_as_property_entities(self, value_mention):
         if isinstance(value_mention, KBValueMention):
-            self.gid+=1
             entity = dict()
-
+            provenance = self.get_json_object_for_provenance(
+                value_mention.document,
+                value_mention.head_start_char,
+                value_mention.head_end_char,
+                value_mention.sentence)
             entity["canonicalName"] = value_mention.value_mention_text
             entity["@type"] = "Extraction"
-            entity_id = "Property-" + str(self.gid)
+            entity_id = span_id_generator(provenance, type(value_mention).__name__)
             entity["@id"] = entity_id
             labels = ["Entity"]
             entity["labels"] = labels
@@ -561,18 +505,14 @@ class JSONLDSerializer:
             if len(value_type_info) == 2:
                 value_subtype = value_type_info[1]
             ontology_concept = self.get_ontology_concept_for_property(value_type, value_subtype)
-            grounding = self.get_json_object_for_grounding(ontology_concept, 0.75)  # TODO where is KBValueMention confidence?
+            grounding = self.get_json_object_for_grounding(ontology_concept,
+                                                           0.75)  # TODO where is KBValueMention confidence?
             groundings.append(grounding)
 
             entity["grounding"] = groundings
             entity["type"] = "concept"
             entity["subtype"] = "entity"  # ontology_type
 
-            provenance = self.get_json_object_for_provenance(
-                value_mention.document,
-                value_mention.head_start_char,
-                value_mention.head_end_char,
-                value_mention.sentence)
             entity["provenance"] = [provenance]
             entity["text"] = value_mention.value_mention_text
 
@@ -583,12 +523,13 @@ class JSONLDSerializer:
     def make_value_mention_as_temporal_entities(self, value_mention):
         if isinstance(value_mention, KBTimeValueMention):
             entity = dict()
-
+            provenance = self.get_json_object_for_provenance(value_mention.document, value_mention.head_start_char,
+                                                             value_mention.head_end_char, value_mention.sentence)
             entity["canonicalName"] = value_mention.normalized_date
 
             entity["@type"] = "Extraction"
-            self.gid+=1
-            entity_id = "Time-" + str(self.gid)
+
+            entity_id = span_id_generator(provenance, type(value_mention).__name__)
             entity["@id"] = entity_id
 
             labels = ["Entity"]
@@ -596,18 +537,16 @@ class JSONLDSerializer:
 
             groundings = []
             if self.use_compositional_ontology:
-                ontology_type = "/wm_compositional/time"  # grounding for temporal entity
+                ontology_type = "/wm/concept/time"  # grounding for temporal entity
             else:
-                ontology_type = "/wm/concept/time" # grounding for temporal entity
+                ontology_type = "/wm/concept/time"  # grounding for temporal entity
             grounding = self.get_json_object_for_grounding(ontology_type, 0.75)
             groundings.append(grounding)
 
             entity["grounding"] = groundings
             entity["type"] = "concept"
-            entity["subtype"] = "entity" # ontology_type
+            entity["subtype"] = "entity"  # ontology_type
 
-            provenance = self.get_json_object_for_provenance(value_mention.document, value_mention.head_start_char,
-                                                             value_mention.head_end_char, value_mention.sentence)
             entity["provenance"] = [provenance]
             entity["text"] = value_mention.value_mention_text
 
@@ -617,8 +556,9 @@ class JSONLDSerializer:
                 document_date = None
                 if "date_created" in kb_document.properties and kb_document.properties["date_created"] != "UNKNOWN":
                     document_date = kb_document.properties["date_created"]
-                earliestStartTime, earliestEndTime, latestStartTime, latestEndTime =\
-                    self.time_matcher.match_time(value_mention.normalized_date, value_mention.value_mention_text, document_date)
+                earliestStartTime, earliestEndTime, latestStartTime, latestEndTime = \
+                    self.time_matcher.match_time(value_mention.normalized_date, value_mention.value_mention_text,
+                                                 document_date)
                 if earliestStartTime is not None and latestEndTime is not None:
                     try:
                         entity['timeInterval'] = [{
@@ -633,27 +573,38 @@ class JSONLDSerializer:
         else:
             return None, None
 
+    def get_mentioned_kb_entity_kb_entity_mention_from_all_event(self):
+        mentioned_kb_entity = set()
+        mentioned_kb_entity_mention = set()
+        for evid, kb_event in self.kb.evid_to_kb_event.items():
+            for kb_event_mention in kb_event.event_mentions:
+                for kb_arg_role, args_for_role in kb_event_mention.arguments.items():
+                    for kb_argument, arg_score in args_for_role:
+                        if isinstance(kb_argument, KBMention):
+                            if kb_argument in self.kb.kb_mention_to_entid:
+                                kb_entity = self.kb.entid_to_kb_entity[self.kb.kb_mention_to_entid[kb_argument]]
+                                mentioned_kb_entity.add(kb_entity)
+                                mentioned_kb_entity_mention.add(kb_argument)
+        return mentioned_kb_entity, mentioned_kb_entity_mention
 
     def get_json_object_for_event(self, evid, kb_event):
         events = list()
-        argument_value_entities = []
+        argument_value_entities = list()
+        kb_event_mention_to_serialized_event_ids = dict()
         for kb_event_mention in kb_event.event_mentions:
+            provenance = self.get_json_object_for_provenance(kb_event_mention.document,
+                                                             kb_event_mention.trigger_start,
+                                                             kb_event_mention.trigger_end,
+                                                             kb_event_mention.sentence)
             event = dict()
-            # event_string = ""
             event["@type"] = "Extraction"
-            event["@id"] = kb_event_mention.id
-
-            # kb_event_mention = kb_event.event_mentions[0]  # assume one event mention per event
-            # event_type = kb_event_mention.event_type
-            # docId = kb_event_mention.document.id
-
-            # add labels
-            labels = ["Event"]
-            event["labels"] = labels
+            event["@id"] = span_id_generator(provenance, type(kb_event_mention).__name__)
+            kb_event_mention_to_serialized_event_ids[kb_event_mention] = event["@id"]
+            event["labels"] = ["Event"]
 
             event_text = self.get_event_text(kb_event_mention)
 
-            groundings_with_scores = self.get_ontology_concept_for_event(kb_event_mention, self.config)
+            groundings_with_scores = self.get_ontology_concept_for_event(kb_event_mention)
 
             groundings = []
             for (concept, score) in groundings_with_scores:
@@ -667,26 +618,18 @@ class JSONLDSerializer:
             trigger["head text"] = kb_event_mention.trigger if kb_event_mention.trigger else "NA"
             event["text"] = event_text
             event["canonicalName"] = event_text
-
             event["grounding"] = groundings
             event["type"] = "concept"
             event["subtype"] = "event"
-
-            if kb_event_mention.trigger is not None:
-                provenances = []
-                provenance = self.get_json_object_for_provenance(kb_event_mention.document,
-                                                                 kb_event_mention.trigger_start,
-                                                                 kb_event_mention.trigger_end,
-                                                                 kb_event_mention.sentence)
-                provenances.append(provenance)
-                trigger["provenance"] = provenances
-                event["provenance"] = provenances
-
+            trigger["provenance"] = [provenance]
+            event["provenance"] = [provenance]
             event["trigger"] = trigger
 
             # states
             states = []
-            focus_causal_factor = sorted(kb_event_mention.causal_factors,key=lambda x: (1,x.factor_class) if "food_security" in x.factor_class else (0,x.factor_class),reverse=True)[0]
+            focus_causal_factor = sorted(kb_event_mention.causal_factors,
+                                         key=lambda x: (1, x.factor_class) if "food_security" in x.factor_class else (
+                                             0, x.factor_class), reverse=True)[0]
             if kb_event_mention.properties is not None:
                 for field in "tense", "modality", "genericity":
                     if field in kb_event_mention.properties:
@@ -711,7 +654,7 @@ class JSONLDSerializer:
                 state["text"] = "Negative" if focus_causal_factor.magnitude < 0 else "Positive"
                 states.append(state)
 
-                #Handling direction_of_change
+                # Handling direction_of_change
                 state = dict()
                 state["@type"] = "State"
                 state["type"] = "direction_of_change"
@@ -722,8 +665,8 @@ class JSONLDSerializer:
 
             # add arguments
             arguments = []
-            for kb_arg_role,args_for_role in kb_event_mention.arguments.items():
-                for kb_argument,arg_score in args_for_role:
+            for kb_arg_role, args_for_role in kb_event_mention.arguments.items():
+                for kb_argument, arg_score in args_for_role:
                     # convert KBP roles to new role names
                     kb_arg_role_wm_ontology = self.get_event_argument_role(kb_arg_role)
 
@@ -735,7 +678,8 @@ class JSONLDSerializer:
 
                             if kb_arg_role_wm_ontology == "has_property":
                                 # Property value (such as the cost of an intervention)
-                                property_entity_id, property_entity = self.make_value_mention_as_property_entities(kb_argument)
+                                property_entity_id, property_entity = self.make_value_mention_as_property_entities(
+                                    kb_argument)
                                 if property_entity_id is not None and property_entity is not None:
                                     argument = dict()
                                     argument["@type"] = "Argument"
@@ -771,111 +715,81 @@ class JSONLDSerializer:
                             argument["@type"] = "Argument"
                             argument["type"] = kb_arg_role_wm_ontology
                             arg_ids = dict()
-                            # arg_ids["@id"] = arg_entity_id.id + "-1"  # hack to take the first mention
                             arg_ids["@id"] = self.kb_mention_to_serialized_entity_id[kb_argument]
                             argument["value"] = arg_ids
-
-                            event_arg_string = ""
-                            for entity_type_info_key in arg_entity_id.entity_type_to_confidence.keys():
-                                entity_type_info = entity_type_info_key.split(".")
-                                entity_type = entity_type_info[0]
-                                entity_subtype = entity_type_info[1]
                             arguments.append(argument)
             event["arguments"] = arguments
             events.append(event)
-        return events, argument_value_entities
+        return events, argument_value_entities, kb_event_mention_to_serialized_event_ids
 
-    def add_extractions(self, result):
-        extractions = []
+    def add_extractions(self, doc_uuid_to_json_ld):
+        self.add_documents_and_sentence(doc_uuid_to_json_ld)
+
+        kb_entity_in_kb_events, kb_entity_mention_in_kb_events = self.get_mentioned_kb_entity_kb_entity_mention_from_all_event()
 
         # add entities
         for entid, kb_entity in self.kb.entid_to_kb_entity.items():
-            entities, coreference_relations = self.get_json_object_for_entity(entid, kb_entity)
-            for entity in entities:
-                extractions.append(entity)
-                self.entity_count += 1
-            for relation in coreference_relations:
-                extractions.append(relation)
-
-        # # add event groups
-        # for kb_event_group_id, kb_event_group in self.kb.evgroupid_to_kb_event_group.items():
-        #     if "EventUnified" in kb_event_group_id:
-        #         continue
-        #
-        #     jsonld_event_group_id = "EventGroup-" + str(self.event_group_count)
-        #     self.event_group_count += 1
-        #     self.event_group_id_map[kb_event_group_id] = jsonld_event_group_id
-        #
-        #     event_group = self.get_json_object_for_event_group(kb_event_group_id, kb_event_group)
-        #     extractions.append(event_group)
-        #
-        #     # add event unification relationships
-        #     for kb_event in kb_event_group.members:
-        #         self.gid += 1
-        #         unified_relation_id = "unification-" + str(self.gid)
-        #         event_id = kb_event.id
-        #         relation = self.get_json_object_for_unified_relation(unified_relation_id, kb_event_group_id, event_id)
-        #         extractions.append(relation)
+            entities, coreference_relations = self.get_json_object_for_entity(entid, kb_entity, kb_entity_in_kb_events,
+                                                                              kb_entity_mention_in_kb_events)
+            doc_uuid = kb_entity.document.properties["uuid"]
+            doc_uuid_to_json_ld.setdefault(doc_uuid, dict()).setdefault("extractions", list()).extend(entities)
+            doc_uuid_to_json_ld.setdefault(doc_uuid, dict()).setdefault("extractions", list()).extend(
+                coreference_relations)
 
         # add events
+        self.kb_event_to_serialized_event_id = dict()
         for evid, kb_event in self.kb.evid_to_kb_event.items():
-            events, argument_value_entities = self.get_json_object_for_event(evid, kb_event)
-
-            extractions.extend(events)
+            events, argument_value_entities, kb_event_mention_to_serialized_event_ids_local = self.get_json_object_for_event(
+                evid, kb_event)
+            self.kb_event_to_serialized_event_id.update(kb_event_mention_to_serialized_event_ids_local)
+            doc_uuid = kb_event.get_document().properties["uuid"]
+            doc_uuid_to_json_ld.setdefault(doc_uuid, dict()).setdefault("extractions", list()).extend(events)
+            doc_uuid_to_json_ld.setdefault(doc_uuid, dict()).setdefault("extractions", list()).extend(
+                argument_value_entities)
             self.event_count += len(events)
-            # add time arguments as temporal entities
-            for temporal_entity in argument_value_entities:
-                extractions.append(temporal_entity)
 
         # add entity-entity and event-event relations
-        for relid, kb_relation in self.kb.relid_to_kb_relation.items():
-            # if kb_relation.argument_pair_type == "entity-entity" and self.is_good_entity_entity_relation(kb_relation):
-            #    relation = self.get_json_object_for_entity_entity_relation(relid, kb_relation)
-            #    extractions.append(relation)
+        if self.regrounding_mode is False:
+            for relid, kb_relation in self.kb.relid_to_kb_relation.items():
+                if kb_relation.argument_pair_type == "event-event":
+                    relation, doc_uuid = self.get_json_object_for_event_event_relation(kb_relation)
+                    doc_uuid_to_json_ld.setdefault(doc_uuid, dict()).setdefault("extractions", list()).append(relation)
+                    self.text_causal_assertion_count += 1
 
-            if kb_relation.argument_pair_type == "event-event":
-                relation = self.get_json_object_for_event_event_relation(kb_relation)
-                extractions.append(relation)
-                self.text_causal_assertion_count += 1
-        result["extractions"] = extractions
-
-    def is_good_entity_entity_relation(self, kb_relation):
-        kb_relation_mention = kb_relation.relation_mentions[0]
-        return kb_relation_mention.left_mention is not None and kb_relation_mention.right_mention is not None
-
-    def add_ontology_meta(self,result):
-        commit_hash = "858cd324011f1d94ce10816d6d61ddcf7f53edbf"
+    def add_ontology_meta(self, result):
+        commit_hash = self.wm_external_ontology_hash
         ontology_file = "wm_flat_metadata.yml"
         if self.use_compositional_ontology:
-            ontology_file = "CompositionalOntology_v2.1_metadata.yml"
+            ontology_file = "CompositionalOntology_metadata.yml"
         result['ontologyMeta'] = {
-            "URL":"https://github.com/WorldModelers/Ontologies/blob/{}/{}".format(commit_hash, ontology_file),
-            "commit":commit_hash,
-            "@type":"OntologyMeta"
+            "URL": "https://raw.githubusercontent.com/WorldModelers/Ontologies/{}/{}".format(commit_hash,
+                                                                                             ontology_file),
+            "commit": commit_hash,
+            "@type": "OntologyMeta"
         }
 
     def add_context(self, result):
         contexts = dict()
 
         prefix = "https://github.com/BBN-E/Hume/wiki#"
-        contexts["Corpus"]=prefix+"Corpus"
-        contexts["Document"]=prefix+"Document"
+        contexts["Corpus"] = prefix + "Corpus"
+        contexts["Document"] = prefix + "Document"
         # DCT
-        contexts["Sentence"]=prefix+"Sentence"
+        contexts["Sentence"] = prefix + "Sentence"
         contexts["Extraction"] = prefix + "Extraction"
         contexts["Grounding"] = prefix + "Grounding"
         contexts["Provenance"] = prefix + "Provenance"
         contexts["Interval"] = prefix + "Interval"
-        contexts["State"]=prefix+"State"
-        contexts["Trigger"]=prefix+"Trigger"
+        contexts["State"] = prefix + "State"
+        contexts["Trigger"] = prefix + "Trigger"
         contexts["Argument"] = prefix + "Argument"
         contexts["TimeInterval"] = prefix + "TimeInterval"
         contexts["TimeValueMention"] = prefix + "TimeValueMention"
         contexts["PropertyMention"] = prefix + "PropertyMention"
         contexts["Count"] = prefix + "Count"
         contexts["OntologyMeta"] = prefix + "OntologyMeta"
-
         result["@context"] = contexts
+        result["@type"] = "Corpus"
 
     def read_config(self, filepath):
         with open(filepath) as fp:
@@ -883,22 +797,22 @@ class JSONLDSerializer:
         return config
 
     def read_namespaces(self):
-        for namespace,URI in self.config.get('namespace',{}).items():
+        for namespace, URI in self.config.get('namespace', {}).items():
             self.namespace[namespace] = URI
 
 
-
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: " + sys.argv[0] + " pickled_kb_file output_jsonld_file mode")
-        sys.exit(1)
-
-    logger.setLevel(logging.DEBUG)
-
-    pickled_kb_file,output_jsonld_file,mode = sys.argv[1:]
-    with open(pickled_kb_file, "rb") as pickle_stream:
-        logger.info("Loading pickle file...")
-        kb = pickle.load(pickle_stream)
-        logger.info("Done loading. Serializing...")
-        rdf_serializer = JSONLDSerializer()
-        rdf_serializer.serialize(kb, output_jsonld_file, mode)
+    pass
+    # if len(sys.argv) != 4:
+    #     print("Usage: " + sys.argv[0] + " pickled_kb_file output_jsonld_file mode")
+    #     sys.exit(1)
+    #
+    # logger.setLevel(logging.DEBUG)
+    #
+    # pickled_kb_file,output_jsonld_file,mode = sys.argv[1:]
+    # with open(pickled_kb_file, "rb") as pickle_stream:
+    #     logger.info("Loading pickle file...")
+    #     kb = pickle.load(pickle_stream)
+    #     logger.info("Done loading. Serializing...")
+    #     rdf_serializer = JSONLDSerializer()
+    #     rdf_serializer.serialize(kb, output_jsonld_file, mode)

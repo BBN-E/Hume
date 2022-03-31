@@ -1,0 +1,16 @@
+READER SerifXMLReader
++batch_file_dir+
++mode+
++event_coreference_file+
+
+RESOLVER EventLocationResolver
+
+# RESOLVER PremodPrecisionResolver
+
+RESOLVER EventEventRelationRenamingResolver
+
+#SERIALIZER KBPickleSerializer
+#+pickle_output_file+
+
+SERIALIZER VisualizationSerializer
++json_graph_file+

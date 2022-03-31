@@ -1,0 +1,31 @@
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/ingester/serifxml_ingester.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/actor_entity/empty_actor_entity_model.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/mention_coreference/singlton_entity_cleaner.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/mention_coreference/agreesive_recall_driven_coreference_corrector_model.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/mention_coreference/simple_entity_model.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/actor_entity/simple_actor_entity_model.py
+
+
+INGESTER SerifxmlIngester
+
+ACTOR_ENTITY_MODEL EmptyActorEntityModel
+
+MENTION_COREF_MODEL SingltonEntityCleaner
+
+MENTION_COREF_MODEL AgreesiveRecallDrivenCoreferenceCorrectorModel
+
+MENTION_COREF_MODEL SimpleEntityModel
+
+ACTOR_ENTITY_MODEL SimpleActorEntityModel
+method multiple

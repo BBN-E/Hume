@@ -1,0 +1,39 @@
+# implementations go here
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/ingester/serifxml_ingester.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/actor_mention/actor_mention_cleaner.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/actor_mention/dictionary_based_linker.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/actor_entity/simple_actor_entity_model.py
+
+
+INGESTER SerifxmlIngester
+
+ACTOR_MENTION_MODEL ActorMentionCleaner
+
+# conceiver linking
+ACTOR_MENTION_MODEL DictionaryBasedLinker
+lang zh
+spacy_model_path /nfs/raid87/u10/nlp/spacy_3_0_6/zh_core_web_sm
+name_dict_path /nfs/raid66/u11/users/brozonoy-ad/claim_bank_data/wikidata/wikilinks.name_conceivers.zh.uniq.curated.txt
+mode qid
+link_name_mentions_only true
+source_note wikidata
+
+# geoname linking
+ACTOR_MENTION_MODEL DictionaryBasedLinker
+lang zh
+spacy_model_path /nfs/raid87/u10/nlp/spacy_3_0_6/zh_core_web_sm
+name_dict_path /home/hqiu/tmp/processed_geoname_table.txt
+mode multiple
+link_name_mentions_only true
+source_note geonames
+
+ACTOR_ENTITY_MODEL SimpleActorEntityModel
+method multiple

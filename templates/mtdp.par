@@ -1,0 +1,17 @@
+# implementations go here
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/ingester/serifxml_ingester.py
+
+IMPLEMENTATIONS
++TEXT_OPEN_PYTHONPATH+/serif/model/impl/mtdp_decoder.py
+
+INGESTER SerifxmlIngester
+
+BASE_MODEL MTDPDecoder
+data_type modal
+pretrained_model_dir /nfs/raid66/u11/users/brozonoy-ad/modal_and_temporal_parsing/xlm_modal
+
+BASE_MODEL MTDPDecoder
+data_type time
+pretrained_model_dir /nfs/raid66/u11/users/brozonoy-ad/modal_and_temporal_parsing/xlm_temporal

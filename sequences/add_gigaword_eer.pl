@@ -11,7 +11,6 @@ use Getopt::Long;
 use List::Util qw[min max];
 
 my $textopen_root;
-my $learnit_root;
 my $hume_root;
 BEGIN{
     $textopen_root = "/home/hqiu/ld100/text-open";
@@ -24,17 +23,17 @@ BEGIN{
 use runjobs4;
 use Utils;
 
-my $PYTHON3 = "/home/hqiu/ld100/miniconda_dev/envs/pyserif-cpu/bin/python3";
+my $PYTHON3 = "/d4m/material/software/python/singularity/bin/singularity-python.sh -i python3.6-cuda10.0 -v better-cpu  -l $textopen_root/src/python";
 my $CREATE_FILE_LIST_SCRIPT = "$textopen_root/src/python/util/common/create_filelist_with_batch_size.py";
 
 
 my ($expt_dir, $exp) = runjobs4::startjobs("queue_mem_limit" => '7G', "max_memory_over" => '0.5G');
 runjobs4::max_jobs(200);
-my $QUEUE = "nongale-sl6";
+my $QUEUE = "cpunodes-avx";
 my $job_prefix = "gigaword_eer_json";
 my $number_of_batches = 1000;
 my $output_dir = "$expt_dir/expts/$job_prefix";
-my $input_serif_list = "/home/hqiu/tmp/all.txt";
+my $input_serif_list = "/nfs/raid88/u10/users/hqiu_ad/data/gigaword_eer_all.ljson";
 
 (my $mappings_dir, undef) = Utils::make_output_dir("$output_dir", "$job_prefix/mkdir", []);
 (my $mappings_batch_dir, my $mkdir_batch_dir_jobid) = Utils::make_output_dir("$output_dir/batch", "$job_prefix/mkdir_batch", []);
@@ -70,7 +69,7 @@ for (my $batch = 0; $batch < $number_of_batches; $batch++) {
     push(@decoding_split_jobs, $learnit_decoder_jobid);
 }
 
-runjobs4::dojobs();
+
 runjobs4::endjobs();
 
 1;

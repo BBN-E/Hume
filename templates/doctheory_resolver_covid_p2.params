@@ -1,0 +1,9 @@
+input_serifxml_list: +input_serifxml_list+
+output_serifxml_directory: +output_serifxml_directory+
+
+resolvers: ClearEventsResolver,EventMentionTypeResolver,AnchorEventMentionMerger,EventTypeOntologyComplianceResolver,EventEventRelationReAttachResolver,PatternPruner,SimpleEventCreator
+
+eventOntologyFiles: +hume_repo_root+/resource/domains/COVID/learnit/ontology/unary_event_ontology.yaml
+PatternPruner.patternFile: +hume_repo_root+/resource/covid/doctheory_resolver/+pattern_file_name+
+PatternPruner.eventContextWindowSize: 5
+PatternPruner.maxEERTokenDistance: 10
